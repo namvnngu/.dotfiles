@@ -5,6 +5,9 @@ set -Ux PATH $HOME/Documents/Programming/bin $PATH
 set -Ux PATH $HOME/.local/bin $PATH
 set -Ux PATH $HOME/.composer/vendor/bin $PATH
 
+# Variables
+set FORMAT "ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
 # Starship
 starship init fish | source
 

@@ -5,7 +5,9 @@ export PATH=$PATH:/usr/local/Cellar/llvm/10.0.0_1/bin
 export PATH=$PATH:$HOME/Documents/Programming/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
-export PATH=$PATH:/usr/local/opt/openjdk@15/bin 
+
+# Variables
+export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -50,3 +52,5 @@ ccp()
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
