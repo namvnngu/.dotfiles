@@ -159,7 +159,18 @@ Plug 'morhetz/gruvbox'
 " Use nvim/vim's builtin terminal in the floating/popup window
 Plug 'voldikss/vim-floaterm'
 
+" Vim Align
+Plug 'junegunn/vim-easy-align'
+
 call plug#end()
+
+"""""""""""""""""
+" VIM-EASY-ALIGN
+"""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 """""""""""""""
 " VIM-FLOATERM
