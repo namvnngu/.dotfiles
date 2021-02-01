@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar /path/resources/gdx-setup.jar
