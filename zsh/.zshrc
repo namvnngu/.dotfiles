@@ -5,6 +5,7 @@ export PATH=$PATH:/usr/local/Cellar/llvm/10.0.0_1/bin
 export PATH=$PATH:$HOME/Documents/Programming/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.fzf/bin
 
 # Variables
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
