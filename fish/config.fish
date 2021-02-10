@@ -26,3 +26,6 @@ function f
     set -q XDG_CACHE_HOME; or set XDG_CACHE_HOME $HOME/.cache
     cd (cat $XDG_CACHE_HOME/fff/.fff_d)
 end
+
+# Vim mode
+fish_vi_key_bindings
