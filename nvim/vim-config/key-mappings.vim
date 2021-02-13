@@ -15,3 +15,4 @@ noremap <Leader>ay :%y+<CR>
 tnoremap <Esc> <C-\><C-n> "NeoVim
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+nnoremap <Leader>df ::CocCommand prettier.formatFile<CR>
