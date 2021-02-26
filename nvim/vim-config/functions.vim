@@ -24,3 +24,6 @@ endfunction
 function Html()
     :read $HOME/.config/nvim/templates/index.html
 endfunction
+function Java()
+    :read $HOME/.config/nvim/templates/Java.java
+endfunction
