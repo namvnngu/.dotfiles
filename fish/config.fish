@@ -1,4 +1,5 @@
 # fish_user_paths
+set -Ux fish_user_paths $HOME/.rbenv/bin $fish_user_paths
 set -Ux fish_user_paths $HOME/bin:/usr/local/bin $fish_user_paths
 set -Ux fish_user_paths /usr/local/Cellar/llvm/10.0.0_1/bin $fish_user_paths
 set -Ux fish_user_paths $HOME/Documents/Programming/bin $fish_user_paths
