@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 export TERM="xterm-256color"
-export PATH="$HOME/.rbenv/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/Cellar/llvm/10.0.0_1/bin
 export PATH=$PATH:$HOME/Documents/Programming/bin
