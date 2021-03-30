@@ -1,8 +1,8 @@
 syntax on
 let mapleader = " "
 set number
-set exrc
 " set term=screen-256color
+set exrc
 set autoread
 set backspace=indent,eol,start
 " set guifont=FiraCode\ Nerd\ Font\ Medium\ 11
