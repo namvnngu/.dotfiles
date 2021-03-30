@@ -21,9 +21,9 @@ source $HOME/.config/nvim/vim-config/compile-n-run.vim
 """""""""""""""""""
 " PLUGIN SETTINGS "
 """""""""""""""""""
+source $HOME/.config/nvim/plugin-configs/theme.vim
 source $HOME/.config/nvim/plugin-configs/vim-floaterm.vim
 source $HOME/.config/nvim/plugin-configs/undotree.vim
-source $HOME/.config/nvim/plugin-configs/theme.vim
 source $HOME/.config/nvim/plugin-configs/vim-easy-align.vim
 source $HOME/.config/nvim/plugin-configs/syntax.vim
 source $HOME/.config/nvim/plugin-configs/emmet.vim
