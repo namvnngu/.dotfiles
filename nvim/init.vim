@@ -9,6 +9,7 @@ source $HOME/.config/nvim/vim-plugins/plugins.vim
 
 " MAPPINGS
 source $HOME/.config/nvim/vim-config/key-mappings.vim
+source $HOME/.config/nvim/vim-config/navigation.vim
 
 " FUNCTIONS
 source $HOME/.config/nvim/vim-config/functions.vim

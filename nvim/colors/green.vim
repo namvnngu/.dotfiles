@@ -103,3 +103,8 @@ hi Type         ctermfg=2
 hi Underlined   cterm=underline      ctermfg=5
 hi Ignore       ctermfg=darkgrey
 hi Error        cterm=bold           ctermfg=7         ctermbg=1l
+
+" html
+hi htmlTagName  ctermfg=00ff00
+hi htmlTag      ctermfg=00ff00
+hi htmlEndTag   ctermfg=00ff00
