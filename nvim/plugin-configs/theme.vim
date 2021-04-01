@@ -5,4 +5,4 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! Normal ctermbg=NONE guibg=NONE
 " let g:gruvbox_contrast_dark='hard'
 " autocmd vimenter * ++nested colorscheme gruvbox
-colorscheme green
+" colorscheme green
