@@ -57,38 +57,9 @@ ccp()
 
 # Vim mode
 set -o vi
-set show-mode-in-prompt on
-set vi-ins-mode-string "++ "
-set vi-cmd-mode-string ": "
-
-export RPROMPT="%{$fg[blue]%}[INSERT]%{$reset_color%}"
-echo -ne '\e[5 q'
-
-function zle-keymap-select () {
-    # Only supported in these terminals
-    if [ "$TERM" = "xterm-256color" ] || [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ]; then
-        if [ $KEYMAP = vicmd ]; then
-            # Command mode
-            export RPROMPT="%{$fg[green]%}[NORMAL]%{$reset_color%}"
-
-            # Set block cursor
-            echo -ne '\e[1 q'
-        else
-            # Insert mode
-            export RPROMPT="%{$fg[blue]%}[INSERT]%{$reset_color%}"
-
-            # Set beam cursor
-            echo -ne '\e[5 q'
-        fi
-    fi
-
-    if typeset -f prompt_pure_update_vim_prompt_widget > /dev/null; then
-        # Refresh prompt and call Pure super function
-        prompt_pure_update_vim_prompt_widget
-    fi
-}
-# Bind the callback
-zle -N zle-keymap-select
 
 # Reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
+
+# Alias
+alias py3=/usr/local/Cellar/python@3.8/3.8.8_1/bin/python3.8
