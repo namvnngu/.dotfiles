@@ -35,5 +35,4 @@ set shortmess+=c
 set colorcolumn=80
 set scrolloff=8
 set signcolumn=yes
-highlight ColorColumn ctermbg=0 guibg=#2c2d27
 filetype plugin indent on
