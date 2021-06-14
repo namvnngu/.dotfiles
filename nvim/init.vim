@@ -18,7 +18,6 @@ source $HOME/.config/nvim/vim-config/functions.vim
 source $HOME/.config/nvim/vim-config/cursor.vim
 source $HOME/.config/nvim/vim-config/compile-n-run.vim
 
-
 """""""""""""""""""
 " PLUGIN SETTINGS "
 """""""""""""""""""
@@ -33,3 +32,4 @@ source $HOME/.config/nvim/plugin-configs/nerdtree.vim
 source $HOME/.config/nvim/plugin-configs/nerdcommenter.vim
 source $HOME/.config/nvim/plugin-configs/coccoc.vim
 source $HOME/.config/nvim/plugin-configs/startify.vim
+source $HOME/.config/nvim/plugin-configs/rainbow.vim

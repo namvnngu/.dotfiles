@@ -18,7 +18,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Dev icons
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 
 " Insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
@@ -52,6 +52,13 @@ Plug 'junegunn/vim-easy-align'
 
 " Startify: File Explorer
 Plug 'mhinz/vim-startify'
+
+" Rainbow
+Plug 'luochen1990/rainbow'
+
+" A solid language pack for Vim.
+set nocompatible
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
