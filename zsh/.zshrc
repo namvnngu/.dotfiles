@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+# $PATH
 export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/Cellar/llvm/10.0.0_1/bin
@@ -60,6 +60,3 @@ set -o vi
 
 # Reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
-
-# Alias
-alias py3=/usr/local/Cellar/python@3.8/3.8.8_1/bin/python3.8
