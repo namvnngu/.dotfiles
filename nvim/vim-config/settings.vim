@@ -5,8 +5,7 @@ set number
 set exrc
 set autoread
 set backspace=indent,eol,start
-" set guifont=FiraCode\ Nerd\ Font\ Medium\ 11
-set guifont=Hack\ Nerd\ Font\ Mono:h14
+set guifont=Fira\ Code:h12
 set relativenumber
 set hlsearch
 set encoding=UTF-8
