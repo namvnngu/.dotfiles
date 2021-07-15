@@ -2,6 +2,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-tsserver',
+  \ 'coc-clangd',
   \]
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
