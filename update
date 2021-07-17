@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+
+current_dir=`pwd`
+
+function delete_files() {
+  rm -rf $current_dir/$1/.* 2> /dev/null
+  rm -rf $current_dir/$1/**
+  echo "  - Deleted all files in the $1 folder"
+}
+
+function copy_files() {
+  local target=$1
+  shift
+  local files=("$@")
+
+  for file in "${files[@]}"; do
+    cp -R $HOME/$file $current_dir/$target
+    echo "  - Copied from $HOME/$file to $current_dir/$target"
+  done
+}
+
+# git
+git_folder="git"
+git_files=(".gitconfig" ".gitignore_global")
+
+echo "Updating git folder..."
+
+delete_files $git_folder
+copy_files  $git_folder ${git_files[@]}
+
+echo "Updated git folder"
+echo ""
+
+# nvim
+nvim_folder="nvim"
+nvim_files=(
+  ".config/nvim/coc-settings.json"
+  ".config/nvim/colors"
+  ".config/nvim/init.vim"
+  ".config/nvim/plugin-configs"
+  ".config/nvim/templates"
+  ".config/nvim/vim-config"
+  ".config/nvim/vim-plugins"
+)
+
+echo "Updating nvim folder..."
+
+delete_files $nvim_folder
+copy_files $nvim_folder ${nvim_files[@]}
+
+echo "Updated nvim folder"
+echo ""
+
+# starship
+starship_folder="starship"
+starship_files=(".config/starship.toml")
+
+echo "Updating starship folder..."
+
+delete_files $starship_folder
+copy_files $starship_folder ${starship_files[@]}
+
+echo "Updated starship folder"
+echo ""
+
+# tmux
+tmux_folder="tmux"
+tmux_files=(".tmux.conf" ".tmux")
+
+echo "Updating tmux folder..."
+
+delete_files $tmux_folder
+copy_files $tmux_folder ${tmux_files[@]}
+
+echo "Updated tmux folder"
+echo ""
+
+# zsh
+zsh_folder="zsh"
+zsh_files=(".zshrc")
+
+echo "Updating zsh folder..."
+
+delete_files $zsh_folder
+copy_files $zsh_folder ${zsh_files[@]}
+
+echo "Updated zsh folder"
+
+: '
+ignored_directories=("bin" ".git")
+root=`ls -a`
+directories=()
+current_dir=`pwd`
+
+# Functions
+function contain_element() {
+  local target=$1
+  shift  # Shift all arguments to the left (original $1 gets lost)
+  local arr=("$@") # Rebuild the array with rest of arguments
+
+  for i in "${arr[@]}"; do
+    if [[ $i == $target ]]; then
+      echo $i
+      return 1
+    fi
+  done
+
+  return 0
+}
+
+function delete_folder() {
+  rm -rf "$current_dir/$1"
+}
+
+# Find updated directories
+for i in $root; do
+  ignored_dir=`contain_element $i ${ignored_directories[@]}`
+
+  if [[ -d $i && ! $ignored_dir ]]; then
+    echo $i
+    directories+=($i)
+  fi
+done
+'
