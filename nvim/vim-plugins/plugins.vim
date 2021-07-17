@@ -60,6 +60,9 @@ Plug 'luochen1990/rainbow'
 set nocompatible
 Plug 'sheerun/vim-polyglot'
 
+" Markdown
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+
 call plug#end()
 
 " Automatically install missing plugins on startup
