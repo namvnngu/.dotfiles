@@ -3,6 +3,7 @@ let mapleader = " "
 set number
 " set term=screen-256color
 set exrc
+set termguicolors
 set autoread
 set backspace=indent,eol,start
 set guifont=Fira\ Code:h12

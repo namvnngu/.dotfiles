@@ -37,7 +37,7 @@ nvim_files=(
   ".config/nvim/coc-settings.json"
   ".config/nvim/colors"
   ".config/nvim/init.vim"
-  ".config/nvim/plugin-configs"
+  ".config/nvim/plugin"
   ".config/nvim/templates"
   ".config/nvim/vim-config"
   ".config/nvim/vim-plugins"
