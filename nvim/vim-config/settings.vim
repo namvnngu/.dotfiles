@@ -6,7 +6,7 @@ set exrc
 set termguicolors
 set autoread
 set backspace=indent,eol,start
-set guifont=Fira\ Code:h12
+set guifont=FiraCode\ Nerd\ Font:h12
 set relativenumber
 set hlsearch
 set encoding=UTF-8

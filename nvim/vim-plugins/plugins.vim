@@ -43,6 +43,7 @@ Plug 'mxw/vim-jsx'
 " Themes
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'tomasiser/vim-code-dark'
 
 " Use nvim/vim's builtin terminal in the floating/popup window
 Plug 'voldikss/vim-floaterm'
