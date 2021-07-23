@@ -34,13 +34,13 @@ echo ""
 # nvim
 nvim_folder="nvim"
 nvim_files=(
-  ".config/nvim/coc-settings.json"
   ".config/nvim/colors"
-  ".config/nvim/init.vim"
+  ".config/nvim/custom"
   ".config/nvim/plugin"
   ".config/nvim/templates"
-  ".config/nvim/vim-config"
-  ".config/nvim/vim-plugins"
+  ".config/nvim/plugins.vim"
+  ".config/nvim/init.vim"
+  ".config/nvim/general.vim"
 )
 
 echo "Updating nvim folder..."
