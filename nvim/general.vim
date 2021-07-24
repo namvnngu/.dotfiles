@@ -39,9 +39,7 @@ set updatetime=50
 set shortmess+=c
 set colorcolumn=80
 set scrolloff=8
-
-" set cursorline
-" highlight CursorLine cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey10
+set cursorline
 
 " Add asterisks in block comments
 set formatoptions+=r
