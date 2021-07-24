@@ -36,6 +36,7 @@ nvim_folder="nvim"
 nvim_files=(
   ".config/nvim/colors"
   ".config/nvim/custom"
+  ".config/nvim/lua"
   ".config/nvim/plugin"
   ".config/nvim/templates"
   ".config/nvim/plugins.vim"

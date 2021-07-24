@@ -12,5 +12,8 @@ let g:airline_theme = "palenight"
 let g:palenight_terminal_italics=1
 
 " Rose-pine
-colorscheme rose-pine-dark
-highlight ColorColumn ctermbg=0 guibg=#bfa3ab
+lua << EOF
+  vim.g.rose_pine_variant = 'moon'
+EOF
+colorscheme rose-pine
+highlight ColorColumn ctermbg=0 guibg=#656180

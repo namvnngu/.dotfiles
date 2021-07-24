@@ -19,6 +19,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Comment Toggler
   Plug 'scrooloose/nerdcommenter'
 
+  " Support Emmet for HTML & CSS
+  Plug 'mattn/emmet-vim'
+
   " Lean & mean status/tabline for vim that's light as air
   Plug 'vim-airline/vim-airline'
 
@@ -33,6 +36,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Vim Align
   Plug 'junegunn/vim-easy-align'
+
+  " Startify: File Explorer
+  Plug 'mhinz/vim-startify'
 
   " A solid language pack for Vim.
   set nocompatible
