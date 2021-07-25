@@ -52,6 +52,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hrsh7th/nvim-compe'
   Plug 'simrat39/symbols-outline.nvim'
+  Plug 'kabouzeid/nvim-lspinstall'
 
   " Neovim Tree shitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
