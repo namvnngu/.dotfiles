@@ -25,12 +25,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # syntax highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Compile and run cpp
-ccp()
-{
-    g++ -std=c++14 $1 -O2 -Wall -Wextra -Werror -pedantic -g -o $2 && ./$2 && echo
-}
-
 # Vim mode
 set -o vi
 
