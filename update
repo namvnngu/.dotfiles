@@ -39,6 +39,7 @@ nvim_files=(
   ".config/nvim/lua"
   ".config/nvim/plugin"
   ".config/nvim/templates"
+  ".config/nvim/coc-settings.json"
   ".config/nvim/plugins.vim"
   ".config/nvim/init.vim"
   ".config/nvim/general.vim"

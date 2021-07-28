@@ -1,4 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
+  " Intellisense engine for Vim8 & Neovim
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
   " A Git wrapper, Git commands
   Plug 'tpope/vim-fugitive'
 
