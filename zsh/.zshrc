@@ -12,6 +12,7 @@ export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports
 
 # Starship
 eval "$(starship init zsh)"
+#PROMPT='%F{cyan}%n%f %~'$'\n$ '
 
 # Z
 if command -v brew >/dev/null 2>&1; then
