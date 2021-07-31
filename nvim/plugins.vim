@@ -71,6 +71,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'sbdchd/neoformat'
 
   " Theme
+  Plug 'morhetz/gruvbox'
   Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
