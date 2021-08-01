@@ -1,5 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
-  " Intellisense engine for Vim8 & Neovim
+call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovim
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " A Git wrapper, Git commands
@@ -56,6 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/nvim-compe'
   Plug 'simrat39/symbols-outline.nvim'
   Plug 'kabouzeid/nvim-lspinstall'
+  Plug 'folke/lsp-colors.nvim'
 
   " Neovim Tree shitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
