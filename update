@@ -88,6 +88,17 @@ copy_files $zsh_folder ${zsh_files[@]}
 
 echo "Updated zsh folder"
 
+# alacritty
+alacritty_folder="alacritty"
+alacritty_files=(".config/alacritty/alacritty.yml")
+
+echo "Updating alacritty folder..."
+
+delete_files $alacritty_folder
+copy_files $alacritty_folder ${alacritty_files[@]}
+
+echo "Updated alacritty folder"
+
 : '
 ignored_directories=("bin" ".git")
 root=`ls -a`
