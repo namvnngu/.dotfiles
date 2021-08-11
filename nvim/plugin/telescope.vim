@@ -6,8 +6,9 @@ require('telescope').setup{
   defaults = {
     file_ignore_patterns = { "node_modules" },
     mappings = {
-      n = {
-        ["<esc>"] = actions.close
+      i = {
+        ["<C-x>"] = false,
+        ["<C-q>"] = actions.send_to_qflist,
       },
     },
   }
