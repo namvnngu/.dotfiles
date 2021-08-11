@@ -11,6 +11,17 @@ require('telescope').setup{
         ["<C-q>"] = actions.send_to_qflist,
       },
     },
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown"
+    },
+    git_files = {
+      theme = "dropdown"
+    },
+    grep_string = {
+      theme = "dropdown"
+    }
   }
 }
 require('telescope').load_extension('fzy_native')
