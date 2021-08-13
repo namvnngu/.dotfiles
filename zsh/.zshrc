@@ -8,8 +8,8 @@ export PATH=$PATH:$HOME/.fzf/bin
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
 
 # Starship
-#eval "$(starship init zsh)"
 PROMPT='%F{cyan}%n%f %~'$'\n$ '
+eval "$(starship init zsh)"
 
 # Z
 if command -v brew >/dev/null 2>&1; then
@@ -49,7 +49,3 @@ function movgif() {
   ffmpeg -i ${movie} -s ${dimensions} -vf "fps=10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
   gifsicle -O3 output.gif -o output.gif
 }
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -8,30 +8,28 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'mbbill/undotree'
 
   " Dev icons
-  Plug 'ryanoasis/vim-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'
 
   " A tree explorer
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'kyazdani42/nvim-tree.lua'
 
   " Insert or delete brackets, parens, quotes in pair
   Plug 'jiangmiao/auto-pairs'
 
   " Comment Toggler
-  Plug 'scrooloose/nerdcommenter'
+  Plug 'tpope/vim-commentary'
 
   " Support Emmet for HTML & CSS
   Plug 'mattn/emmet-vim'
 
-  " Lean & mean status/tabline for vim that's light as air
-  Plug 'vim-airline/vim-airline'
+  " Status line
+  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+
+  " Buffer/Tab line
+  Plug 'akinsho/nvim-bufferline.lua'
 
   " Preview colours in source code while editing
-  Plug 'ap/vim-css-color'
-
-  " tsx syntax
-  Plug 'ianks/vim-tsx'
+  Plug 'norcalli/nvim-colorizer.lua'
 
   " Use nvim/vim's builtin terminal in the floating/popup window
   Plug 'voldikss/vim-floaterm'
@@ -51,11 +49,15 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
 
   " LSP Plugins
   Plug 'neovim/nvim-lspconfig'
-  Plug 'glepnir/lspsaga.nvim'
   Plug 'hrsh7th/nvim-compe'
   Plug 'simrat39/symbols-outline.nvim'
   Plug 'kabouzeid/nvim-lspinstall'
   Plug 'folke/lsp-colors.nvim'
+  Plug 'RishabhRD/popfix'
+  Plug 'RishabhRD/nvim-lsputils'
+
+  " Trouble
+  Plug 'folke/trouble.nvim'
 
   " Neovim Tree shitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
