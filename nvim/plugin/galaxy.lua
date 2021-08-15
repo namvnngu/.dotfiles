@@ -147,9 +147,6 @@ gls.right[1] = {
            end
         end,
         highlight = {colors.brown_fg, colors.statusline_bg},
-        separator = separator_left,
-        separator_highlight = {colors.lightbg, colors.statusline_bg}
-
     }
 }
 
