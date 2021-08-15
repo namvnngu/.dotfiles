@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'mattn/emmet-vim'
 
   " Status line
-  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+  " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
   " Buffer/Tab line
   Plug 'akinsho/nvim-bufferline.lua'
