@@ -130,6 +130,27 @@ gls.left[10] = {
 -- Right Side
 
 gls.right[1] = {
+    lsp_status = {
+        provider = function()
+            local clients = vim.lsp.get_active_clients()
+            if next(clients) ~= nil then
+                local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+                for _, client in ipairs(clients) do
+                    local filetypes = client.config.filetypes
+                    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                        return "" .. " " .. " LSP "
+                    end
+                end
+                return ""
+            else
+                return ""
+           end
+        end,
+        highlight = {colors.brown_fg, colors.statusline_bg},
+    }
+}
+
+gls.right[2] = {
     GitIcon = {
         provider = function()
             return " "
@@ -141,7 +162,7 @@ gls.right[1] = {
     }
 }
 
-gls.right[2] = {
+gls.right[3] = {
     GitBranch = {
         provider = "GitBranch",
         condition = require("galaxyline.condition").check_git_workspace,
@@ -149,7 +170,7 @@ gls.right[2] = {
     }
 }
 
-gls.right[3] = {
+gls.right[4] = {
     viMode_icon = {
         provider = function()
             return " "
@@ -161,7 +182,7 @@ gls.right[3] = {
     }
 }
 
-gls.right[4] = {
+gls.right[5] = {
     ViMode = {
         provider = function()
             local alias = {
@@ -185,7 +206,7 @@ gls.right[4] = {
     }
 }
 
-gls.right[5] = {
+gls.right[6] = {
     some_icon = {
         provider = function()
             return ""
@@ -196,7 +217,7 @@ gls.right[5] = {
     }
 }
 
-gls.right[6] = {
+gls.right[7] = {
     line_percentage = {
         provider = function()
             local current_line = vim.fn.line(".")
@@ -212,7 +233,7 @@ gls.right[6] = {
         highlight = {colors.green, colors.statusline_bg},
     }
 }
-gls.right[7] = {
+gls.right[8] = {
     FileEncode = {
         provider = "FileEncode",
         highlight = {colors.yellow, colors.statusline_bg},
@@ -221,7 +242,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[9] = {
     offset_right = {
         provider = function()
             return "▋"
