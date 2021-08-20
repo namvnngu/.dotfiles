@@ -4,4 +4,5 @@ source $HOME/.config/nvim/custom/cursor.vim
 source $HOME/.config/nvim/custom/functions.vim
 source $HOME/.config/nvim/custom/mappings.vim
 source $HOME/.config/nvim/custom/execution.vim
+source $HOME/.config/nvim/custom/statusline.vim
 
