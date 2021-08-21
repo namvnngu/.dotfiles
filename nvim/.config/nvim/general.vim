@@ -35,7 +35,7 @@ set clipboard+=unnamedplus
 set showmatch
 set showmode
 set cmdheight=2
-set updatetime=50
+set updatetime=300
 set shortmess+=c
 set colorcolumn=80
 set scrolloff=8
