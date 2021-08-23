@@ -111,21 +111,21 @@ gls.left[8] = {
     }
 }
 
-gls.left[9] = {
-    DiagnosticError = {
-        provider = "DiagnosticError",
-        icon = " ",
-        highlight = {colors.red, colors.statusline_bg}
-    }
-}
+-- gls.left[9] = {
+--     DiagnosticError = {
+--         provider = "DiagnosticError",
+--         icon = " ",
+--         highlight = {colors.red, colors.statusline_bg}
+--     }
+-- }
 
-gls.left[10] = {
-    DiagnosticWarn = {
-        provider = "DiagnosticWarn",
-        icon = "   ",
-        highlight = {colors.yellow, colors.statusline_bg}
-    }
-}
+-- gls.left[10] = {
+--     DiagnosticWarn = {
+--         provider = "DiagnosticWarn",
+--         icon = "   ",
+--         highlight = {colors.yellow, colors.statusline_bg}
+--     }
+-- }
 
 -- Right Side
 
