@@ -29,9 +29,6 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " Buffer/Tab line
   Plug 'akinsho/nvim-bufferline.lua'
 
-  " Preview colours in source code while editing
-  Plug 'norcalli/nvim-colorizer.lua'
-
   " Use nvim/vim's builtin terminal in the floating/popup window
   Plug 'voldikss/vim-floaterm'
 
