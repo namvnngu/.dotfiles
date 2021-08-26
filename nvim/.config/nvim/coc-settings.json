@@ -7,5 +7,6 @@
     "javascript",
     "typescript"
   ],
-  "coc.preferences.colorSupport": true
+  "coc.preferences.colorSupport": true,
+  "suggest.autoTrigger": "none"
 }
