@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovim
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Adding color with colorizer & rainbow
+  Plug 'norcalli/nvim-colorizer.lua'
 
   " A Git wrapper, Git commands
   Plug 'tpope/vim-fugitive'
@@ -22,9 +23,6 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
 
   " Support Emmet for HTML & CSS
   Plug 'mattn/emmet-vim'
-
-  " Status line
-  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
   " Buffer/Tab line
   Plug 'akinsho/nvim-bufferline.lua'
@@ -73,6 +71,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " Theme
   Plug 'morhetz/gruvbox'
   Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'Pocco81/Catppuccino.nvim'
 
 call plug#end()
 

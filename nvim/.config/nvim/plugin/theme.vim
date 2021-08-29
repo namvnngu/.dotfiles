@@ -6,8 +6,11 @@ if (has("nvim"))
 endif
 
 " Gruvbox
-let g:gruvbox_contrast_dark='hard'
-autocmd vimenter * ++nested colorscheme gruvbox
+" let g:gruvbox_contrast_dark='hard'
+" autocmd vimenter * ++nested colorscheme gruvbox
+
+" Catppuccino
+colorscheme catppuccino
 
 " Palenight Colortheme
 "colorscheme palenight

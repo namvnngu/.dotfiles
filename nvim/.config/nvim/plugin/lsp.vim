@@ -1,4 +1,7 @@
 lua << EOF
+local lsp_install = require'lspinstall'
+local nvim_config = require'lspconfig'
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -29,14 +32,14 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>vn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>vll', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
-  -- if client.resolved_capabilities.document_formatting then
-  --   vim.api.nvim_exec([[
-  --     augroup Format
-  --       autocmd! * <buffer>
-  --       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-  --     augroup END
-  --   ]], false)
-  -- end
+  if client.resolved_capabilities.document_formatting then
+     vim.api.nvim_exec([[
+       augroup Format
+       autocmd! * <buffer>
+       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+       augroup END
+     ]], false)
+  end
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
@@ -74,13 +77,79 @@ local lua_settings = {
 
 -- Typescript language server
 local tsserver_filetypes = {
-  "typescript",
-  "typescriptreact",
-  "typescript.tsx",
   "javascript",
   "javascriptreact",
+  "javascript.jsx",
+  "typescript",
+  "typescript.tsx",
+  "typescriptreact"
 }
 
+-- Diagnosticls languager server
+local diagnostic_filetypes = {
+  'javascript',
+  'javascriptreact',
+  'json',
+  'typescript',
+  'typescriptreact',
+  'css',
+  'less',
+  'scss',
+  'markdown'
+}
+local diagnostic_init_options = {
+  linters = {
+    eslint = {
+      command = 'eslint_d',
+      rootPatterns = {".eslintrc.js", "package.json"},
+      debounce = 100,
+      args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+      sourceName = 'eslint_d',
+      parseJson = {
+        errorsRoot = '[0].messages',
+        line = 'line',
+        column = 'column',
+        endLine = 'endLine',
+        endColumn = 'endColumn',
+        message = '[eslint] ${message} [${ruleId}]',
+        security = 'severity'
+      },
+      securities = {
+        [2] = 'error',
+        [1] = 'warning'
+      }
+    },
+  },
+  filetypes = {
+    javascript = 'eslint',
+    javascriptreact = 'eslint',
+    typescript = 'eslint',
+    typescriptreact = 'eslint',
+  },
+  formatters = {
+    eslint_d = {
+      command = 'eslint_d',
+      args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+      rootPatterns = { '.git' },
+    },
+    prettier = {
+      command = 'prettier',
+      args = { '--stdin-filepath', '%filename' }
+    }
+  },
+  formatFiletypes = {
+    javascript = 'eslint_d',
+    javascriptreact = 'eslint_d',
+    typescript = 'eslint_d',
+    typescriptreact = 'eslint_d',
+    css = 'prettier',
+    json = 'prettier',
+    scss = 'prettier',
+    less = 'prettier',
+    json = 'prettier',
+    markdown = 'prettier',
+  }
+}
 
 -- config that activates keymaps and enables snippet support
 local function make_config()
@@ -96,10 +165,10 @@ end
 
 -- lsp-install
 local function setup_servers()
-  require'lspinstall'.setup()
+  lsp_install.setup()
 
   -- get all installed servers
-  local servers = require'lspinstall'.installed_servers()
+  local servers = lsp_install.installed_servers()
   -- ... and add manually installed servers
   -- table.insert(servers, "clangd")
 
@@ -113,16 +182,21 @@ local function setup_servers()
     if server == "tsserver" then
       config.filetypes = tsserver_filetypes
     end
+    if server == 'diagnosticls' then
+      config.filetypes = diagnostic_filetypes
+      config.init_options = diagnostic_init_options
+    end
 
-    require'lspconfig'[server].setup(config)
+    nvim_config[server].setup(config)
   end
 end
 
 setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
+lsp_install.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
+
 EOF
