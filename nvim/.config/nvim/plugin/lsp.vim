@@ -95,7 +95,8 @@ local diagnostic_filetypes = {
   'css',
   'less',
   'scss',
-  'markdown'
+  'markdown',
+  'html'
 }
 local diagnostic_init_options = {
   linters = {
@@ -148,6 +149,7 @@ local diagnostic_init_options = {
     less = 'prettier',
     json = 'prettier',
     markdown = 'prettier',
+    html = 'prettier'
   }
 }
 
