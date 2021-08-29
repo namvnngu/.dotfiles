@@ -77,12 +77,12 @@ local lua_settings = {
 
 -- Typescript language server
 local tsserver_filetypes = {
-  "javascript",
-  "javascriptreact",
-  "javascript.jsx",
-  "typescript",
-  "typescript.tsx",
-  "typescriptreact"
+  'javascript',
+  'javascriptreact',
+  'javascript.jsx',
+  'typescript',
+  'typescript.tsx',
+  'typescriptreact'
 }
 
 -- Diagnosticls languager server
