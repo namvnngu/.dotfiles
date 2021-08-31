@@ -10,7 +10,15 @@ endif
 " autocmd vimenter * ++nested colorscheme gruvbox
 
 " Catppuccino
-colorscheme catppuccino
+lua << EOF
+local catppuccino = require("catppuccino")
+catppuccino.setup({
+  colorscheme = "neon_latte",
+  transparency = true,
+})
+catppuccino.load()
+EOF
+
 
 " Palenight Colortheme
 "colorscheme palenight
