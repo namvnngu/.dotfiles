@@ -5,7 +5,7 @@ env:
 window:
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
-background_opacity: 0.9
+background_opacity: 0.95
 
 font:
   normal:
