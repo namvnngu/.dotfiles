@@ -10,7 +10,13 @@ background_opacity: 0.9
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Medium
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+  italic:
+    family: FiraCode Nerd Font
+    style: Italic
   size: 14
 
   # Better font rendering for mac
