@@ -95,6 +95,7 @@ local diagnostic_filetypes = {
   'css',
   'less',
   'scss',
+  'sass',
   'markdown',
   'html'
 }
@@ -146,6 +147,7 @@ local diagnostic_init_options = {
     css = 'prettier',
     json = 'prettier',
     scss = 'prettier',
+    sass = 'prettier',
     less = 'prettier',
     json = 'prettier',
     markdown = 'prettier',
