@@ -5,4 +5,5 @@ source $HOME/.config/nvim/custom/functions.vim
 source $HOME/.config/nvim/custom/mappings.vim
 source $HOME/.config/nvim/custom/execution.vim
 source $HOME/.config/nvim/custom/statusline.vim
+source $HOME/.config/nvim/custom/filetype.vim
 
