@@ -3,7 +3,7 @@ set number
 set termguicolors
 set autoread
 set backspace=indent,eol,start
-set guifont=FiraCode\ Nerd\ Font:h12
+set guifont=FiraCode\ Nerd\ Font:h13
 set relativenumber
 set encoding=UTF-8
 set spell spelllang=en_us
@@ -40,8 +40,10 @@ set shortmess+=c
 set colorcolumn=80
 set scrolloff=8
 set cursorline
-
-" Add asterisks in block comments
 set formatoptions+=r
 
 filetype plugin indent on
+
+" Neovide
+let g:neovide_cursor_vfx_mode = "railgun"
+let g:neovide_transparency=0.8
