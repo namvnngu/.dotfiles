@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-languages=`echo "cpp c typescript javascript nodejs react" | tr ' ' '\n'`
+languages=`echo "cpp c typescript javascript nodejs react command" | tr ' ' '\n'`
 core_utils=`echo "xargs find mv sed" | tr ' ' '\n'`
 
 selected=`printf "$languages\n$core_utils" | fzf`
