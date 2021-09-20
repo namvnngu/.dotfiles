@@ -68,6 +68,9 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " Prettier
   Plug 'sbdchd/neoformat'
 
+  " Todos
+  Plug 'folke/todo-comments.nvim'
+
   " Theme
   Plug 'morhetz/gruvbox'
   Plug 'drewtempelmeyer/palenight.vim'
