@@ -38,17 +38,5 @@ function timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# mov to gif
-function movgif() {
-  movie=$1
-  height=$(mdls -name kMDItemPixelHeight ${movie} | grep -o '[0-9]\+')
-  width=$(mdls -name kMDItemPixelWidth ${movie} | grep -o '[0-9]\+')
-  dimensions="${width}x${height}"
-
-  # ffmpeg -i ${movie} -s ${dimensions} -pix_fmt rgb8 -r 1 -f gif output.gif
-  ffmpeg -i ${movie} -s ${dimensions} -vf "fps=10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
-  gifsicle -O3 output.gif -o output.gif
-}
-
 # tmux
 tmux source-file ~/.tmux.conf
