@@ -10,15 +10,14 @@ endif
 " autocmd vimenter * ++nested colorscheme gruvbox
 
 " Catppuccino
-lua << EOF
-local catppuccino = require("catppuccino")
-catppuccino.setup({
-  colorscheme = "neon_latte",
-  transparency = true,
-})
-catppuccino.load()
-EOF
-
+" lua << EOF
+" local catppuccino = require("catppuccino")
+" catppuccino.setup({
+"   colorscheme = "neon_latte",
+"   transparency = true,
+" })
+" catppuccino.load()
+" EOF
 
 " Palenight Colortheme
 "colorscheme palenight
@@ -32,3 +31,29 @@ EOF
 "EOF
 "colorscheme rose-pine
 "highlight ColorColumn ctermbg=0 guibg=#656180
+
+" Nebulous
+lua << EOF
+require("nebulous").setup {
+  variant = "night",
+  disable = {
+    background = true,
+    endOfBuffer = false,
+  },
+  italic = {
+    comments   = false,
+    keywords   = true,
+    functions  = false,
+    variables  = true,
+  },
+  custom_colors = { -- this table can hold any group of colors with their respective values
+    LineNr = { fg = "#5BBBDA", bg = "NONE", style = "NONE" },
+    CursorLineNr = { fg = "#E1CD6C", bg = "NONE", style = "NONE" },
+
+    -- it is possible to specify only the element to be changed
+    TelescopePreviewBorder = { fg = "#A13413" },
+    LspDiagnosticsDefaultError = { bg = "#E11313" },
+    TSTagDelimiter = { style = "bold,italic" },
+  }
+}
+EOF

@@ -72,9 +72,10 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'folke/todo-comments.nvim'
 
   " Theme
-  Plug 'morhetz/gruvbox'
-  Plug 'drewtempelmeyer/palenight.vim'
-  Plug 'Pocco81/Catppuccino.nvim'
+  " Plug 'morhetz/gruvbox'
+  " Plug 'drewtempelmeyer/palenight.vim'
+  " Plug 'Pocco81/Catppuccino.nvim'
+  Plug 'Yagua/nebulous.nvim'
 
 call plug#end()
 
