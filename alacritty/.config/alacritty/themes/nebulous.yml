@@ -1,0 +1,33 @@
+colors:
+  # Nebulous
+  # Default colors
+  primary:
+    background: '#0b1015'
+    foreground: '#fdebc3'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#fdebc3'
+    cursor: '#150b26'
+
+  # Normal colors
+  normal:
+    black:   '#0b1015'
+    red:     '#FB467B'
+    green:   '#B8EE92'
+    yellow:  '#FFCC00'
+    blue:    '#0BA8E2'
+    magenta: '#F95CE6'
+    cyan:    '#80a0ff'
+    white:   '#CED5E5'
+
+  # Bright colors
+  bright:
+    black:   '#090825'
+    red:     '#FE5D8B'
+    green:   '#8CFE7C'
+    yellow:  '#FDB063'
+    blue:    '#47B5D8'
+    magenta: '#FB75EA'
+    cyan:    '#29CBA9'
+    white:   '#CED5E5'

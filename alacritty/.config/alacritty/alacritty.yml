@@ -32,10 +32,10 @@ selection:
 live_config_reload: true
 
 colors:
-  # neon_latte
+  # Nebulous
   # Default colors
   primary:
-    background: '#150b26'
+    background: '#0b1015'
     foreground: '#fdebc3'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
@@ -45,26 +45,22 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#393b44'
-    red:     '#cf4f6d'
-    green:   '#51ee72'
-    yellow:  '#ffe070'
-    blue:    '#96e2f0'
-    magenta: '#d97bf2'
-    cyan:    '#63cdcf'
-    white:   '#dfdfe0'
+    black:   '#0b1015'
+    red:     '#FB467B'
+    green:   '#B8EE92'
+    yellow:  '#FFCC00'
+    blue:    '#0BA8E2'
+    magenta: '#F95CE6'
+    cyan:    '#80a0ff'
+    white:   '#CED5E5'
 
   # Bright colors
   bright:
-    black:   '#7f8c98'
-    red:     '#e06c75'
-    green:   '#58cd8b'
-    yellow:  '#ffe37e'
-    blue:    '#84cee4'
-    magenta: '#b8a1e3'
-    cyan:    '#59f0ff'
-    white:   '#fdebc3'
-
-  indexed_colors:
-    - { index: 16, color: '#ffe37e' }
-    - { index: 17, color: '#e06c75' }
+    black:   '#090825'
+    red:     '#FE5D8B'
+    green:   '#8CFE7C'
+    yellow:  '#FDB063'
+    blue:    '#47B5D8'
+    magenta: '#FB75EA'
+    cyan:    '#29CBA9'
+    white:   '#CED5E5'
