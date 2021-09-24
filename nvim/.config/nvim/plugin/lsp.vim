@@ -32,14 +32,14 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>vn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>vll', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
-  if client.resolved_capabilities.document_formatting then
-     vim.api.nvim_exec([[
-       augroup Format
-       autocmd! * <buffer>
-       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-       augroup END
-     ]], false)
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.api.nvim_exec([[
+  --     augroup Format
+  --     autocmd! * <buffer>
+  --     autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+  --     augroup END
+  --   ]], false)
+  -- end
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
@@ -202,5 +202,17 @@ lsp_install.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
+
+-- icon
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    -- This sets the spacing and the prefix, obviously.
+    virtual_text = {
+      spacing = 4,
+      prefix = ''
+    }
+  }
+)
 
 EOF
