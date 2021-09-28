@@ -38,5 +38,10 @@ function timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+# git
+function my-branch() {
+  git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep -e $1
+}
+
 # tmux
 tmux source-file ~/.tmux.conf
