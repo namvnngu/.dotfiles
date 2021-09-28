@@ -1,8 +1,6 @@
 # $PATH
 export TERM="xterm-256color"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/.fzf/bin
-
+export PATH=$HOME/bin:/usr/local/bin:$PATH export PATH=$PATH:$HOME/.fzf/bin
 
 # Variables
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
@@ -40,7 +38,31 @@ function timezsh() {
 
 # git
 function my-branch() {
-  git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep -e $1
+  git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep -e $1 | grep -v "origin"
+}
+
+function d-branch() {
+  printf "\033c"
+  git branch
+  printf "Branch name: "
+  read branch
+
+  while [[ $branch != quit ]]; do
+    git branch -D $branch
+    success=$?
+    printf "\033c"
+
+    git branch
+    if [ $success -ne 0 ]; then
+      printf "\n  There is no $branch branch\n"
+    else
+      printf "\n 﫧Deleted $branch\n"
+    fi
+    printf "Branch name: "
+    read branch
+  done
+
+  printf "\n✨ Done...\n"
 }
 
 # tmux
