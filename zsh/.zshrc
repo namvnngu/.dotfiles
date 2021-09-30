@@ -1,6 +1,7 @@
 # $PATH
 export TERM="xterm-256color"
-export PATH=$HOME/bin:/usr/local/bin:$PATH export PATH=$PATH:$HOME/.fzf/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/.fzf/bin
 
 # Variables
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
