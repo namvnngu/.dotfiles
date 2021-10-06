@@ -37,34 +37,5 @@ function timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# git
-function my-branch() {
-  git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep -e $1 | grep -v "origin"
-}
-
-function d-branch() {
-  printf "\033c"
-  git branch
-  printf "Branch name: "
-  read branch
-
-  while [[ $branch != quit ]]; do
-    git branch -D $branch
-    success=$?
-    printf "\033c"
-
-    git branch
-    if [ $success -ne 0 ]; then
-      printf "\n  There is no $branch branch\n"
-    else
-      printf "\n 﫧Deleted $branch\n"
-    fi
-    printf "Branch name: "
-    read branch
-  done
-
-  printf "\n✨ Done...\n"
-}
-
 # tmux
 tmux source-file ~/.tmux.conf
