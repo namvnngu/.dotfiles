@@ -6,7 +6,8 @@ set backspace=indent,eol,start
 set guifont=FiraCode\ Nerd\ Font:h13
 set relativenumber
 set encoding=UTF-8
-set spell spelllang=en_us
+" set spell spelllang=en_us
+set nospell
 
 set hlsearch
 set incsearch
