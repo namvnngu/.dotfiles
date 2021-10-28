@@ -8,8 +8,8 @@ set relativenumber
 set encoding=UTF-8
 " set spell spelllang=en_us
 set nospell
-set linebreak
 set wrap
+set linebreak
 
 set hlsearch
 set incsearch
@@ -25,7 +25,6 @@ set shiftround
 set expandtab
 
 set signcolumn=yes
-set nowrap
 
 set nobackup nowritebackup
 set noswapfile
