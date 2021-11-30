@@ -116,7 +116,6 @@ local diagnostic_init_options = {
     scss = 'prettier',
     sass = 'prettier',
     less = 'prettier',
-    json = 'prettier',
     markdown = 'prettier',
     html = 'prettier'
   }
