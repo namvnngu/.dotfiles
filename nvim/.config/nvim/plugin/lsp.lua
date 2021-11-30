@@ -1,9 +1,9 @@
-local lsp_install = require'lspinstall'
+local lsp_installer = require'nvim-lsp-installer'
 local nvim_config = require'lspconfig'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+function common_on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -51,38 +51,6 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
 end
-
--- Lua language server
-local lua_settings = {
-  Lua = {
-    runtime = {
-      -- LuaJIT in the case of Neovim
-      version = 'LuaJIT',
-      path = vim.split(package.path, ';'),
-    },
-    diagnostics = {
-      -- Get the language server to recognize the `vim` global
-      globals = {'vim'},
-    },
-    workspace = {
-      -- Make the server aware of Neovim runtime files
-      library = {
-        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-      },
-    },
-  }
-}
-
--- Typescript language server
-local tsserver_filetypes = {
-  'javascript',
-  'javascriptreact',
-  'javascript.jsx',
-  'typescript',
-  'typescript.tsx',
-  'typescriptreact'
-}
 
 -- Diagnosticls languager server
 local diagnostic_filetypes = {
@@ -154,86 +122,22 @@ local diagnostic_init_options = {
   }
 }
 
--- config that activates keymaps and enables snippet support
-local function make_config()
-  -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  capabilities.textDocument.completion.completionItem.snippetSupport = true
-  return {
-    -- enable snippet support
-    capabilities = capabilities,
-    -- map buffer local keybindings when the language server attaches
-    on_attach = on_attach,
+lsp_installer.on_server_ready(function (server)
+  local opts = {
+    on_attach = common_on_attach,
   }
-end
 
--- lsp-install
-local function setup_servers()
-  lsp_install.setup()
-
-  -- get all installed servers
-  local servers = lsp_install.installed_servers()
-  -- ... and add manually installed servers
-  -- table.insert(servers, "clangd")
-
-  for _, server in pairs(servers) do
-    local config = make_config()
-
-    -- language specific config
-    if server == "lua" then
-      config.settings = lua_settings
+  if server.name == "eslint" then
+    opts.on_attach = function (client, bufnr)
+      -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
+      -- the resolved capabilities of the eslint server ourselves!
+      client.resolved_capabilities.document_formatting = true
+      common_on_attach(client, bufnr)
     end
-    if server == "tsserver" then
-      config.filetypes = tsserver_filetypes
-    end
-    if server == 'diagnosticls' then
-      config.filetypes = diagnostic_filetypes
-      config.init_options = diagnostic_init_options
-    end
-
-    nvim_config[server].setup(config)
+    opts.settings = {
+      format = { enable = true }, -- this will enable formatting
+    }
   end
-end
 
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-lsp_install.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
-
--- icon
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 4,
-      prefix = ''
-    }
-  }
-)
-
-local format_async = function(err, _, result, _, bufnr)
-    if err ~= nil or result == nil then return end
-    if not vim.api.nvim_buf_get_option(bufnr, "modified") then
-        local view = vim.fn.winsaveview()
-        vim.lsp.util.apply_text_edits(result, bufnr)
-        vim.fn.winrestview(view)
-        if bufnr == vim.api.nvim_get_current_buf() then
-            vim.api.nvim_command("noautocmd :update")
-        end
-    end
-end
-
-vim.lsp.handlers["textDocument/formatting"] = format_async
-
-_G.lsp_organize_imports = function()
-    local params = {
-        command = "_typescript.organizeImports",
-        arguments = {vim.api.nvim_buf_get_name(0)},
-        title = ""
-    }
-    vim.lsp.buf.execute_command(params)
-end
+  server:setup(opts)
+end)

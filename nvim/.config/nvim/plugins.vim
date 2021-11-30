@@ -46,7 +46,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " LSP Plugins
   Plug 'neovim/nvim-lspconfig'
   Plug 'simrat39/symbols-outline.nvim'
-  Plug 'kabouzeid/nvim-lspinstall'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'folke/lsp-colors.nvim'
   Plug 'RishabhRD/popfix'
   Plug 'RishabhRD/nvim-lsputils'
