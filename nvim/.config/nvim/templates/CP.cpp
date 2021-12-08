@@ -23,6 +23,7 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 template <typename T1, typename T2> inline void chmin(T1 &a, T2 b) {
