@@ -18,10 +18,11 @@ set wildmenu
 set path+=**
 set wildmode=longest,list,full
 
-set smartindent
-set tabstop=2 softtabstop=2
+" show existing tab with 2 spaces width
+set tabstop=2
+" when indenting with '>', use 2 spaces width
 set shiftwidth=2
-set shiftround
+" On pressing tab, insert 2 spaces
 set expandtab
 
 set signcolumn=yes
