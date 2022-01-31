@@ -41,3 +41,7 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 " Quicklist
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
+
+" Format on save
+autocmd BufWritePre * :Neoformat
+" autocmd FileType html autocmd BufWritePre <buffer> call HtmlBeautify()

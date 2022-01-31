@@ -31,14 +31,14 @@ function common_on_attach(client, bufnr)
   buf_set_keymap('n', '<leader>vn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>vll', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_exec([[
-      augroup Format
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-      augroup END
-    ]], false)
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.api.nvim_exec([[
+  --     augroup Format
+  --     autocmd! * <buffer>
+  --     autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+  --     augroup END
+  --   ]], false)
+  -- end
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
