@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovim
   " Adding color with colorizer & rainbow
   Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'luochen1990/rainbow'
 
   " A Git wrapper, Git commands
   Plug 'tpope/vim-fugitive'
@@ -77,10 +78,10 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'folke/todo-comments.nvim'
 
   " Theme
-  " Plug 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
   " Plug 'drewtempelmeyer/palenight.vim'
   " Plug 'Pocco81/Catppuccino.nvim'
-  Plug 'Yagua/nebulous.nvim'
+  " Plug 'Yagua/nebulous.nvim'
 
 call plug#end()
 

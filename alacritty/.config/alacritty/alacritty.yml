@@ -32,35 +32,32 @@ selection:
 live_config_reload: true
 
 colors:
-  # Nebulous
+  # Colors (Gruvbox dark)
   # Default colors
   primary:
-    background: '#0b1015'
-    foreground: '#CED5E5'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '#CED5E5'
-    cursor: '#ff8d03'
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    black:   '#828989'
-    red:     '#FB467B'
-    green:   '#B8EE92'
-    yellow:  '#FFCC00'
-    blue:    '#0BA8E2'
-    magenta: '#F95CE6'
-    cyan:    '#80a0ff'
-    white:   '#CED5E5'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
 
   # Bright colors
   bright:
-    black:   '#555555'
-    red:     '#FE5D8B'
-    green:   '#8CFE7C'
-    yellow:  '#FDB063'
-    blue:    '#47B5D8'
-    magenta: '#FB75EA'
-    cyan:    '#29CBA9'
-    white:   '#CED5E5'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'

@@ -6,8 +6,8 @@ if (has("nvim"))
 endif
 
 " Gruvbox
-" let g:gruvbox_contrast_dark='hard'
-" autocmd vimenter * ++nested colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Catppuccino
 " lua << EOF
@@ -33,27 +33,27 @@ endif
 "highlight ColorColumn ctermbg=0 guibg=#656180
 
 " Nebulous
-lua << EOF
-require("nebulous").setup {
-  variant = "night",
-  disable = {
-    background = true,
-    endOfBuffer = false,
-  },
-  italic = {
-    comments   = false,
-    keywords   = true,
-    functions  = false,
-    variables  = true,
-  },
-  custom_colors = { -- this table can hold any group of colors with their respective values
-    LineNr = { fg = "#5BBBDA", bg = "NONE", style = "NONE" },
-    CursorLineNr = { fg = "#E1CD6C", bg = "NONE", style = "NONE" },
+" lua << EOF
+" require("nebulous").setup {
+"   variant = "night",
+"   disable = {
+"     background = true,
+"     endOfBuffer = false,
+"   },
+"   italic = {
+"     comments   = false,
+"     keywords   = true,
+"     functions  = false,
+"     variables  = true,
+"   },
+"   custom_colors = { -- this table can hold any group of colors with their respective values
+"     LineNr = { fg = "#5BBBDA", bg = "NONE", style = "NONE" },
+"     CursorLineNr = { fg = "#E1CD6C", bg = "NONE", style = "NONE" },
 
-    -- it is possible to specify only the element to be changed
-    TelescopePreviewBorder = { fg = "#A13413" },
-    LspDiagnosticsDefaultError = { bg = "#E11313" },
-    TSTagDelimiter = { style = "bold,italic" },
-  }
-}
-EOF
+"     -- it is possible to specify only the element to be changed
+"     TelescopePreviewBorder = { fg = "#A13413" },
+"     LspDiagnosticsDefaultError = { bg = "#E11313" },
+"     TSTagDelimiter = { style = "bold,italic" },
+"   }
+" }
+" EOF
