@@ -27,6 +27,17 @@ function lnvm() {
   source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
 }
 
+printf "Load NVM? (y/n): "
+read answer
+
+if [[ "$answer" == "y" ]]; then
+  source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+  printf " ✨ NVM loaded...\n"
+else
+  printf " ✨ Thanks...\n"
+fi
+
+
 # Vim mode
 set -o vi
 
