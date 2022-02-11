@@ -23,7 +23,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-nvm
-alias loadnvm=source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+function lnvm() {
+  source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+}
 
 # Vim mode
 set -o vi
