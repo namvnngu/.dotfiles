@@ -23,7 +23,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-nvm
-source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+alias loadnvm=source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
 
 # Vim mode
 set -o vi
