@@ -8,3 +8,4 @@ let g:floaterm_width         = 1.0
 
 hi FloatermBorder guibg=none guifg=orange
 hi FloatermNC guibg=gray
+nnoremap <Leader>ftbo :hi FloatermBorder guibg=none guifg=orange<CR>
