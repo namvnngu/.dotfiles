@@ -1,17 +1,18 @@
-local lsp_installer = require'nvim-lsp-installer'
-local nvim_config = require'lspconfig'
+local lsp_installer = require 'nvim-lsp-installer'
+local nvim_config = require 'lspconfig'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 function common_on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', '<leader>vD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -52,10 +53,18 @@ function common_on_attach(client, bufnr)
   end
 end
 
-lsp_installer.on_server_ready(function (server)
+lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = common_on_attach,
+    settings = { enable = true },
   }
+
+  if server.name == "eslint" then
+    opts.on_attach = function(client, bufnr)
+      client.resolved_capabilities.document_formatting = true
+      common_on_attach(client, bufnr)
+    end
+  end
+
   server:setup(opts)
 end)
-
