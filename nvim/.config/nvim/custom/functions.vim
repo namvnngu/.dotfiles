@@ -15,14 +15,20 @@ augroup
 """""""""""
 " Templates
 """""""""""
-function Google()
-    :read $HOME/.config/nvim/templates/Google.cpp
+function CG()
+    :read $HOME/.config/nvim/templates/CG.cpp
 endfunction
-function CP()
-    :read $HOME/.config/nvim/templates/CP.cpp
+function CCP()
+    :read $HOME/.config/nvim/templates/CCP.cpp
+endfunction
+function PG()
+    :read $HOME/.config/nvim/templates/PG.py
+endfunction
+function PCP()
+    :read $HOME/.config/nvim/templates/PCP.py
 endfunction
 function Html()
-    :read $HOME/.config/nvim/templates/index.html
+    :read $HOME/.config/nvim/templates/HTML.html
 endfunction
 function Java()
     :read $HOME/.config/nvim/templates/Java.java
