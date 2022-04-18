@@ -23,19 +23,19 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-nvm
-function lnvm() {
-  source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
-}
+# function lnvm() {
+#   source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+# }
 
-printf "Load NVM? (y/n): "
-read answer
+# printf "Load NVM? (y/n): "
+# read answer
 
-if [[ "$answer" == "y" ]]; then
-  source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
-  printf " ✨ NVM loaded...\n"
-else
-  printf " ✨ Thanks...\n"
-fi
+# if [[ "$answer" == "y" ]]; then
+#   source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+#   printf " ✨ NVM loaded...\n"
+# else
+#   printf " ✨ Thanks...\n"
+# fi
 
 
 # Vim mode
@@ -54,4 +54,4 @@ function timezsh() {
 }
 
 # tmux
-tmux source-file ~/.tmux.conf
+# tmux source-file ~/.tmux.conf
