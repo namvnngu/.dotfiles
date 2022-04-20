@@ -1,5 +1,6 @@
 local lsp_installer = require 'nvim-lsp-installer'
-local nvim_config = require 'lspconfig'
+local coq = require "coq"
+-- local nvim_config = require 'lspconfig'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -56,7 +57,9 @@ end
 lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = common_on_attach,
-    settings = { enable = true },
+    settings = {
+      format = { enable = true },
+    },
   }
 
   if server.name == "eslint" then
@@ -73,5 +76,30 @@ lsp_installer.on_server_ready(function(server)
     end
   end
 
-  server:setup(opts)
+  if server.name == "sumneko_lua" then
+    opts.settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
+          -- Setup your lua path
+          path = vim.split(package.path, ';'),
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = { 'vim' },
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = {
+            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          },
+        },
+      }
+
+    }
+  end
+
+  server:setup(coq.lsp_ensure_capabilities(opts))
 end)
