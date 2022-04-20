@@ -1,0 +1,12 @@
+{
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "coc.preferences.colorSupport": true,
+  "suggest.autoTrigger": "none"
+}

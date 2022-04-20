@@ -1,0 +1,6 @@
+-- local catppuccino = require("catppuccino")
+-- catppuccino.setup({
+--     colorscheme = "neon_latte",
+--     transparency = true,
+-- })
+-- catppuccino.load()
