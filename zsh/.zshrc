@@ -1,10 +1,14 @@
 # $PATH
 export TERM="xterm-256color"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/bin:/usr/local/bin
 export PATH=$PATH:$HOME/.fzf/bin
+export PATH=$PATH:$HOME/.n/bin
 
 # Variables
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+# n: node version manager
+export N_PREFIX=$HOME/.n
 
 # Starship
 PROMPT='%F{cyan}%n%f %~'$'\n$ '
@@ -21,22 +25,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # syntax highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh-nvm
-# function lnvm() {
-#   source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
-# }
-
-# printf "Load NVM? (y/n): "
-# read answer
-
-# if [[ "$answer" == "y" ]]; then
-#   source ~/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
-#   printf " ✨ NVM loaded...\n"
-# else
-#   printf " ✨ Thanks...\n"
-# fi
-
 
 # Vim mode
 set -o vi
