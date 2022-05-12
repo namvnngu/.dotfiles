@@ -60,7 +60,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
 
   " Autocomplete
   Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-  Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+  " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
   Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
   " Trouble

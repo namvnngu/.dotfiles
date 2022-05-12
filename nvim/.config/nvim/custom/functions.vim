@@ -33,4 +33,7 @@ endfunction
 function Java()
     :read $HOME/.config/nvim/templates/Java.java
 endfunction
+function TS()
+    :read $HOME/.config/nvim/templates/TS.ts
+endfunction
 
