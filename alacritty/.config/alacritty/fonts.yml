@@ -1,0 +1,37 @@
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: "FiraCode Nerd Font"
+    #style: Regular
+
+  # Bold font face
+  bold:
+    family: "FiraCode Nerd Font"
+    #style: Bold
+
+  # Italic font face
+  italic:
+    family: "FiraCode Nerd Font"
+    #style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: "FiraCode Nerd Font"
+    #style: Bold Italic
+
+  # Point size
+  size: 14
+
+  # Better font rendering for mac
+  use_thin_strokes: true
+
+  # Offset
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  # Glyph offset
+  #glyph_offset:
+  #  x: 0
+  #  y: 0
