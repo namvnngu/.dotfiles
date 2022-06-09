@@ -11,9 +11,9 @@ if (empty($TMUX))
   endif
 endif
 
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_transparent_bg=1
-colorscheme gruvbox
+" let g:gruvbox_contrast_dark='hard'
+" let g:gruvbox_transparent_bg=1
+colorscheme panda
 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! Normal ctermbg=NONE guibg=NONE
