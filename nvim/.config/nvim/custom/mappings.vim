@@ -42,3 +42,8 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 
+" Avoid using arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
