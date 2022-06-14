@@ -38,7 +38,7 @@ set clipboard+=unnamedplus
 set showmatch
 set showmode
 set cmdheight=2
-set updatetime=300
+set updatetime=50
 set shortmess+=c
 set colorcolumn=80
 set scrolloff=8
@@ -47,6 +47,3 @@ set formatoptions+=r
 
 filetype plugin indent on
 
-" Neovide
-let g:neovide_cursor_vfx_mode = "railgun"
-let g:neovide_transparency=0.8
