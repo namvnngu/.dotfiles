@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'mattn/emmet-vim'
 
   " Buffer/Tab line
-  Plug 'akinsho/nvim-bufferline.lua'
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
   " Use nvim/vim's builtin terminal in the floating/popup window
   Plug 'voldikss/vim-floaterm'
