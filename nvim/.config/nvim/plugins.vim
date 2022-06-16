@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " A Git wrapper, Git commands
   Plug 'tpope/vim-fugitive'
   Plug 'tveskag/nvim-blame-line'
+  Plug 'ThePrimeagen/git-worktree.nvim'
 
   " The undo history visualizer for VIM
   Plug 'mbbill/undotree'
