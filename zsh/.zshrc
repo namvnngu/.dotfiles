@@ -1,6 +1,6 @@
 # $PATH
 export TERM="xterm-256color"
-export PATH=$PATH:$HOME/bin:/usr/local/bin
+export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.fzf/bin
 export PATH=$PATH:$HOME/.n/bin
 
