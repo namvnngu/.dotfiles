@@ -11,7 +11,7 @@ export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports
 export N_PREFIX=$HOME/.n
 
 # Starship
-PROMPT='%F{cyan}%n%f %~'$'\n$ '
+# PROMPT='%F{cyan}%n%f %~'$'\n$ '
 eval "$(starship init zsh)"
 
 # Z
