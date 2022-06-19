@@ -1,4 +1,4 @@
-let mapleader=","
+let mapleader=" "
 set number
 set termguicolors
 set autoread

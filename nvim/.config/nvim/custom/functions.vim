@@ -1,17 +1,3 @@
-""""""""""""""""""
-" Trim whitespace
-""""""""""""""""""
-fun! TrimWhiteSpace()
-  let l:save = winsaveview()
-  keeppatterns %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-
-augroup THE_TRIM
-  autocmd!
-  autocmd BufWritePre * :call TrimWhiteSpace()
-augroup
-
 """""""""""
 " Templates
 """""""""""

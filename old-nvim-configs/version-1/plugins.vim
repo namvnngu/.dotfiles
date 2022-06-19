@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " A Git wrapper, Git commands
   Plug 'tpope/vim-fugitive'
   Plug 'tveskag/nvim-blame-line'
+  Plug 'ThePrimeagen/git-worktree.nvim'
 
   " The undo history visualizer for VIM
   Plug 'mbbill/undotree'
@@ -26,7 +27,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'mattn/emmet-vim'
 
   " Buffer/Tab line
-  Plug 'akinsho/nvim-bufferline.lua'
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
   " Use nvim/vim's builtin terminal in the floating/popup window
   Plug 'voldikss/vim-floaterm'
@@ -78,6 +79,7 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
 
   " Theme
   Plug 'morhetz/gruvbox'
+  Plug 'markvincze/panda-vim'
   " Plug 'drewtempelmeyer/palenight.vim'
   " Plug 'Pocco81/Catppuccino.nvim'
   " Plug 'Yagua/nebulous.nvim'
