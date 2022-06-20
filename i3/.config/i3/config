@@ -57,11 +57,11 @@ bindsym $mod+t 					exec --no-startup-id ~/.config/i3/bin/i3term.sh -s
 bindsym $mod+Shift+f 			exec --no-startup-id thunar
 bindsym $mod+Shift+e 			exec --no-startup-id geany
 bindsym $mod+Shift+w 			exec --no-startup-id firefox
-bindsym $alt+Control+v 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e vim"
-bindsym $alt+Control+n 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e nvim"
-bindsym $alt+Control+r 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e ranger"
-bindsym $alt+Control+h 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e htop"
-bindsym $alt+Control+b 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e bashtop"
+bindsym $alt+Control+v 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e vim"
+bindsym $alt+Control+n 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e nvim"
+bindsym $alt+Control+r 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e ranger"
+bindsym $alt+Control+h 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e htop"
+bindsym $alt+Control+b 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e bashtop"
 
 # -- Rofi --
 bindsym $alt+F1 				exec --no-startup-id ~/.config/i3/rofi/bin/launcher
