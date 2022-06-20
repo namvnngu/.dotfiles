@@ -43,7 +43,7 @@ nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 
 " Avoid using arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+" noremap <Up> <NOP>
+" noremap <Down> <NOP>
+" noremap <Left> <NOP>
+" noremap <Right> <NOP>
