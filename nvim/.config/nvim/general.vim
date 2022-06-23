@@ -6,13 +6,17 @@ set backspace=indent,eol,start
 set guifont=FiraCode\ Nerd\ Font:h13
 set relativenumber
 set encoding=UTF-8
-" set spell spelllang=en_us
 set nospell
 set wrap
 set linebreak
+" set mouse=a
 
 set hlsearch
 set incsearch
+
+" Case insensitive
+" set ignorecase
+" set smartcase
 
 set wildmenu
 set path+=**
@@ -33,6 +37,7 @@ set hidden
 
 set noerrorbells
 set belloff=all
+set novisualbell
 
 set clipboard+=unnamedplus
 set showmatch
@@ -44,6 +49,11 @@ set colorcolumn=80
 set scrolloff=8
 set cursorline
 set formatoptions+=r
+
+set foldenable
+set foldmethod=manual
+
+set lazyredraw
 
 filetype plugin indent on
 

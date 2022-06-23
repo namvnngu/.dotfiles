@@ -6,7 +6,6 @@ telescope.setup {
     file_ignore_patterns = { "node_modules" },
     mappings = {
       i = {
-        ["<C-x>"] = false,
         ["<C-q>"] = actions.send_to_qflist,
       },
     },
