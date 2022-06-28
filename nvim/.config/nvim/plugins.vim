@@ -66,6 +66,10 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
 
+  " Snippet
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+
   " Trouble
   Plug 'folke/trouble.nvim'
 
