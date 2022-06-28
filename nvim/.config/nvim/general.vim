@@ -55,5 +55,6 @@ set foldmethod=manual
 
 set lazyredraw
 
-filetype plugin indent on
+set completeopt=menu,menuone,noselect
 
+filetype plugin indent on

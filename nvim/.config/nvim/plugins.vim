@@ -60,9 +60,11 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'RishabhRD/nvim-lsputils'
 
   " Autocomplete
-  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-  " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-  Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
 
   " Trouble
   Plug 'folke/trouble.nvim'
