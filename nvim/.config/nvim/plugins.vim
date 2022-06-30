@@ -35,9 +35,6 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " Vim Align
   Plug 'junegunn/vim-easy-align'
 
-  " Startify: File Explorer
-  Plug 'mhinz/vim-startify'
-
   " A solid language pack for Vim.
   set nocompatible
   Plug 'sheerun/vim-polyglot'
