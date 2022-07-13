@@ -25,7 +25,20 @@ return require('packer').startup(function(use)
   use('kyazdani42/nvim-tree.lua')
 
   -- Insert or delete brackets, parens, quotes in pair
-  use('jiangmiao/auto-pairs')
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- Add/change/delete surrounding delimiter pairs with ease
+  use({
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 
   -- Comment Toggler
   use {
@@ -63,6 +76,12 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use('nvim-telescope/telescope-fzy-native.nvim')
+
+  -- Use treesitter to auto close and auto rename html tag
+  use {
+    "nvim-ts-autotag",
+    config = function() require('nvim-ts-autotag').setup() end
+  }
 
   -- LSP Plugins
   use('neovim/nvim-lspconfig')

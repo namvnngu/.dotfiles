@@ -17,6 +17,9 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " A tree explorer
   Plug 'kyazdani42/nvim-tree.lua'
 
+  " Add/change/delete surrounding delimiter pairs with ease
+  Plug 'kylechui/nvim-surround'
+
   " Insert or delete brackets, parens, quotes in pair
   Plug 'jiangmiao/auto-pairs'
 
