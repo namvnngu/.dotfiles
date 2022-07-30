@@ -14,7 +14,7 @@ vim.opt.encoding = 'UTF-8'
 
 vim.opt.nospell = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.linebreak = true
 
 -- vim.opt.mouse = a

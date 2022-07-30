@@ -1,25 +1,29 @@
-# Panda
+# Colors (Tokyo Night: Storm variant)
+# Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
 colors:
+  # Default colors
   primary:
-    background: '#292A2B'
-    foreground: '#E6E6E6'
+    background: '0x24283b'
+    foreground: '0xa9b1d6'
 
+  # Normal colors
   normal:
-    black:   '#676b79'
-    red:     '#FF2C6D'
-    green:   '#19f9d8'
-    yellow:  '#FFB86C'
-    blue:    '#45A9F9'
-    magenta: '#FF75B5'
-    cyan:    '#67d3c2'
-    orange:  '#B084EB'
-    white:   '#E6E6E6'
+    black:   '0x32344a'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xad8ee6'
+    cyan:    '0x449dab'
+    white:   '0x9699a8'
+
+  # Bright colors
   bright:
-    black:   '#676b79'
-    red:     '#FF2C6D'
-    green:   '#19f9d8'
-    yellow:  '#ffcc95'
-    blue:    '#6FC1FF'
-    magenta: '#FF9AC1'
-    cyan:    '#67d3c2'
-    white:   '#ffffff'
+    black:   '0x444b6a'
+    red:     '0xff7a93'
+    green:   '0xb9f27c'
+    yellow:  '0xff9e64'
+    blue:    '0x7da6ff'
+    magenta: '0xbb9af7'
+    cyan:    '0x0db9d7'
+    white:   '0xacb0d0'

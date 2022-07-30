@@ -85,7 +85,8 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
 
   " Theme
   Plug 'morhetz/gruvbox'
-  Plug 'markvincze/panda-vim'
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  " Plug 'markvincze/panda-vim'
   " Plug 'drewtempelmeyer/palenight.vim'
   " Plug 'Pocco81/Catppuccino.nvim'
   " Plug 'Yagua/nebulous.nvim'
