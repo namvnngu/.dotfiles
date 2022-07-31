@@ -1,4 +1,4 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -7,10 +7,10 @@ vim.opt.termguicolors = true
 
 vim.opt.autoread = true
 
-vim.opt.backspace = 'indent,eol,start'
+vim.opt.backspace = "indent,eol,start"
 
-vim.opt.guifont = 'FiraCode Nerd Font:h13'
-vim.opt.encoding = 'UTF-8'
+vim.opt.guifont = "FiraCode Nerd Font:h13"
+vim.opt.encoding = "UTF-8"
 
 vim.opt.nospell = true
 
@@ -27,9 +27,9 @@ vim.opt.incsearch = true
 -- vim.opt.smartcase = true
 
 vim.opt.wildmenu = true
-vim.opt.wildmode = 'longest,list,full'
+vim.opt.wildmode = "longest,list,full"
 
-vim.opt.path:append('**')
+vim.opt.path:append("**")
 
 -- This setting tells Vim how many columns a tab should be made up of in the editor view,
 -- it takes care only of how tabs will be rendered and has no effect on the actual text.
@@ -43,7 +43,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = 80
 vim.opt.scrolloff = 8
 
@@ -54,10 +54,10 @@ vim.opt.undofile = true
 vim.opt.hidden = true
 
 vim.opt.noerrorbells = true
-vim.opt.belloff = 'all'
+vim.opt.belloff = "all"
 vim.opt.novisualbell = true
 
-vim.opt.clipboard:append('unnamedplus')
+vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.showmatch = true
 vim.opt.showmode = true
@@ -68,19 +68,19 @@ vim.opt.cmdheight = 2
 -- delays and poor user experience.
 vim.opt.updatetime = 50
 
--- Don't pass messages to |ins-completion-menu|.
-vim.opt.shortmess:append('c')
+-- Don"t pass messages to |ins-completion-menu|.
+vim.opt.shortmess:append("c")
 
 vim.opt.cursorline = true
 
-vim.opt.formatoptions:append('r')
-vim.opt.formatoptions:remove('o')
+vim.opt.formatoptions:append("r")
+vim.opt.formatoptions:remove("o")
 
 vim.opt.foldenable = true
-vim.opt.foldmethod = 'manual'
+vim.opt.foldmethod = "manual"
 
 vim.opt.lazyredraw = true
 
-vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = "menu,menuone,noselect"
 
-vim.cmd('filetype plugin indent on')
+vim.cmd("filetype plugin indent on")
