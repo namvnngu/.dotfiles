@@ -83,6 +83,9 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " Todos
   Plug 'folke/todo-comments.nvim'
 
+  " Search
+  Plug 'windwp/nvim-spectre'
+
   " Theme
   Plug 'morhetz/gruvbox'
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
