@@ -56,8 +56,6 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'simrat39/symbols-outline.nvim'
   Plug 'williamboman/nvim-lsp-installer'
   Plug 'folke/lsp-colors.nvim'
-  Plug 'RishabhRD/popfix'
-  Plug 'RishabhRD/nvim-lsputils'
 
   " Autocomplete
   Plug 'hrsh7th/cmp-nvim-lsp'

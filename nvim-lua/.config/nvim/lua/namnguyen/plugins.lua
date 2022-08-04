@@ -88,8 +88,6 @@ return require("packer").startup(function(use)
   use("simrat39/symbols-outline.nvim")
   use("williamboman/nvim-lsp-installer")
   use("folke/lsp-colors.nvim")
-  use("RishabhRD/popfix")
-  use("RishabhRD/nvim-lsputils")
 
   -- Autocomplete
   use("hrsh7th/cmp-nvim-lsp")
