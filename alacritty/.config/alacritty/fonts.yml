@@ -3,22 +3,22 @@ font:
   # Normal (roman) font face
   normal:
     family: "FiraCode Nerd Font"
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
     family: "FiraCode Nerd Font"
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
     family: "FiraCode Nerd Font"
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
   bold_italic:
     family: "FiraCode Nerd Font"
-    #style: Bold Italic
+    style: Bold Italic
 
   # Point size
   size: 12

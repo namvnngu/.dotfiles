@@ -121,7 +121,8 @@ return require("packer").startup(function(use)
 
   -- Theme
   use("morhetz/gruvbox")
-  use("markvincze/panda-vim")
+  use("folke/tokyonight.nvim")
+  -- use("markvincze/panda-vim")
   -- use("drewtempelmeyer/palenight.vim")
   -- use("Pocco81/Catppuccino.nvim")
   -- use("Yagua/nebulous.nvim")
