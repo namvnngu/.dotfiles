@@ -79,6 +79,7 @@ return require("packer").startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } }
     }
     use("nvim-telescope/telescope-fzy-native.nvim")
+    use('nvim-telescope/telescope-ui-select.nvim')
 
     -- Use treesitter to auto close and auto rename html tag
     use {

@@ -1,2 +1,3 @@
-*/**/plugged
-*/**/__pycache__
+**/plugged
+**/__pycache__
+**/packer_compiled.lua
