@@ -30,10 +30,10 @@ return require("packer").startup(function(use)
     }
 
     -- Insert or delete brackets, parens, quotes in pair
-    -- use {
-    --     "windwp/nvim-autopairs",
-    --     config = function() require("nvim-autopairs").setup({}) end
-    -- }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup({}) end
+    }
 
     -- Add/change/delete surrounding delimiter pairs with ease
     use({
