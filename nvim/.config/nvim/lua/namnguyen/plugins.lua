@@ -2,6 +2,9 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+
     -- Adding color with colorizer & rainbow
     use("norcalli/nvim-colorizer.lua")
     use("p00f/nvim-ts-rainbow")
