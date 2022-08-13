@@ -11,13 +11,14 @@ local function bind(op, outer_opts)
     end
 end
 
--- :nmap - Display normal mode maps
--- :imap - Display insert mode maps
--- :vmap - Display visual and select mode maps
--- :smap - Display select mode maps
--- :xmap - Display visual mode maps
--- :cmap - Display command-line mode maps
--- :omap - Display operator pending mode maps
+-- n  Normal mode map. Defined using ':nmap' or ':nnoremap'.
+-- i  Insert mode map. Defined using ':imap' or ':inoremap'.
+-- v  Visual and select mode map. Defined using ':vmap' or ':vnoremap'.
+-- x  Visual mode map. Defined using ':xmap' or ':xnoremap'.
+-- s  Select mode map. Defined using ':smap' or ':snoremap'.
+-- c  Command-line mode map. Defined using ':cmap' or ':cnoremap'.
+-- o  Operator pending mode map. Defined using ':omap' or ':onoremap'.
+-- t  Create a mapping that applies only in Terminal mode. Defined using ':tmap' or ':tnoremap'.
 
 M.map = bind("", { noremap = false })
 M.noremap = bind("")
@@ -42,5 +43,8 @@ M.cnoremap = bind("c")
 
 M.omap = bind("o", { noremap = false })
 M.onoremap = bind("o")
+
+M.tmap = bind("t", { noremap = false })
+M.tnoremap = bind("t")
 
 return M
