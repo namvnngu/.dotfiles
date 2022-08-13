@@ -24,3 +24,8 @@ augroup FAST_ESCAPE
     autocmd InsertEnter * set timeoutlen=0
     autocmd InsertLeave * set timeoutlen=1000
 augroup END
+
+augroup FOLDING
+    autocmd!
+    autocmd BufReadPost,FileReadPost * normal zR
+augroup END

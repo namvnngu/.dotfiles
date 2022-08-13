@@ -8,7 +8,7 @@ end
 return require("packer").startup(function(use)
   -- Adding color with colorizer & rainbow
   use("norcalli/nvim-colorizer.lua")
-  use("luochen1990/rainbow")
+  use("p00f/nvim-ts-rainbow")
 
   -- A Git wrapper, Git commands
   use("tpope/vim-fugitive")
@@ -22,21 +22,25 @@ return require("packer").startup(function(use)
   use("kyazdani42/nvim-web-devicons")
 
   -- A tree explorer
-  use("kyazdani42/nvim-tree.lua")
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week
+  }
 
   -- Insert or delete brackets, parens, quotes in pair
   use {
     "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    config = function() require("nvim-autopairs").setup({}) end
   }
 
   -- Add/change/delete surrounding delimiter pairs with ease
   use({
     "kylechui/nvim-surround",
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup({})
     end
   })
 
@@ -61,8 +65,8 @@ return require("packer").startup(function(use)
   use("junegunn/vim-easy-align")
 
   -- A solid language pack for syntax highlighting
-  vim.opt.nocompatible = true
-  use("sheerun/vim-polyglot")
+  -- vim.opt.nocompatible = true
+  -- use("sheerun/vim-polyglot")
 
   -- Markdown
   use({
@@ -101,7 +105,13 @@ return require("packer").startup(function(use)
   use("hrsh7th/vim-vsnip")
 
   -- Trouble
-  use("folke/trouble.nvim")
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup({})
+    end
+  }
 
   -- Neovim Tree shitter
   use("nvim-treesitter/nvim-treesitter", {
@@ -113,7 +123,13 @@ return require("packer").startup(function(use)
   use("sbdchd/neoformat")
 
   -- Todos
-  use("folke/todo-comments.nvim")
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup({})
+    end
+  }
 
   -- Search
   use('windwp/nvim-spectre')
