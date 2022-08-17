@@ -10,7 +10,7 @@ telescope.load_extension("fzy_native")
 telescope.load_extension("git_worktree")
 telescope.load_extension("ui-select")
 
-nnoremap("<Leader>fff", function() require("telescope.builtin").find_files() end)
+nnoremap("<leader>fff", function() require("telescope.builtin").find_files() end)
 nnoremap("<leader>fbb", function() require("telescope.builtin").buffers() end)
 nnoremap("<leader>fht", function() require("telescope.builtin").help_tags() end)
 nnoremap("<leader>frr", function() require("telescope.builtin").lsp_references() end)

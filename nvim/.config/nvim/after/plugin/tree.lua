@@ -7,3 +7,4 @@ require("nvim-tree").setup({
 local nnoremap = require("utils.keymap").nnoremap
 
 nnoremap("<C-n>", "<cmd>NvimTreeToggle<CR>")
+nnoremap("<leader>n", "<cmd>NvimTreeFindFileToggle<CR>")
