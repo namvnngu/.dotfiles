@@ -79,7 +79,7 @@ vim.opt.lazyredraw = true
 vim.opt.completeopt = "menu,menuone,noselect"
 
 -- Folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.cmd("filetype plugin indent on")
