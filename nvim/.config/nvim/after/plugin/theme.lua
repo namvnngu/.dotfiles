@@ -1,5 +1,6 @@
 vim.cmd([[
-  let g:gruvbox_contrast_dark='hard'
+  let g:gruvbox_contrast_dark='medium'
+  let g:gruvbox_contrast_light='hard'
   let g:gruvbox_transparent_bg=1
   colorscheme gruvbox
 
