@@ -15,10 +15,10 @@ local autoCommands = {
 
     -- In insert mode, no wait for each keystroke of the mapping
     -- before aborting it and carrying out the behaviour of the keys typed so far
-    fast_escape = {
-        { "InsertEnter", "*", "set timeoutlen=0" },
-        { "InsertLeave", "*", "set timeoutlen=1000" },
-    },
+    -- fast_escape = {
+    --     { "InsertEnter", "*", "set timeoutlen=0" },
+    --     { "InsertLeave", "*", "set timeoutlen=1000" },
+    -- },
 
     open_folds = {
         { "BufReadPost,FileReadPost", "*", "normal zR" }

@@ -1,7 +1,10 @@
 local nnoremap = require("utils.keymap").nnoremap
 local vnoremap = require("utils.keymap").vnoremap
 local noremap = require("utils.keymap").noremap
+local xnoremap = require("utils.keymap").xnoremap
+local inoremap = require("utils.keymap").inoremap
 local map = require("utils.keymap").map
+local nmap = require("utils.keymap").nmap
 
 nnoremap("<leader>h", "<cmd>wincmd h<CR>")
 nnoremap("<leader>j", "<cmd>wincmd j<CR>")
@@ -46,7 +49,18 @@ noremap("<leader>7", "7gt")
 noremap("<leader>8", "8gt")
 noremap("<leader>9", "9gt")
 
+-- Toggle spelling checker
 map("<F4>", "<cmd>setlocal spell! spelllang=en_us<CR>")
+
+-- Replace currently selected text with default register without yanking it
+xnoremap("<leader>p", "\"_dP")
+
+-- Delete without yanking
+nnoremap("<leader>d", "\"_d")
+vnoremap("<leader>d", "\"_d")
+
+-- This is going to get me cancelled
+inoremap("<C-c>", "<Esc>")
 
 -- Avoid using arrow keys
 -- noremap("<Up>", "<NOP>")
