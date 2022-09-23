@@ -2,7 +2,7 @@ vim.cmd([[
   let g:gruvbox_contrast_dark='medium'
   let g:gruvbox_contrast_light='medium'
   let g:gruvbox_transparent_bg=0
-  set background=light
+  " set background=light
   colorscheme gruvbox
 
   " let g:tokyonight_transparent=1

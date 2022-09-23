@@ -81,12 +81,6 @@ return require("packer").startup(function(use)
     use("nvim-telescope/telescope-fzy-native.nvim")
     use('nvim-telescope/telescope-ui-select.nvim')
 
-    -- Use treesitter to auto close and auto rename html tag
-    use {
-        "windwp/nvim-ts-autotag",
-        config = function() require("nvim-ts-autotag").setup() end
-    }
-
     -- LSP Plugins
     use("neovim/nvim-lspconfig")
     use("simrat39/symbols-outline.nvim")
@@ -113,11 +107,17 @@ return require("packer").startup(function(use)
         end
     }
 
-    -- Neovim Tree shitter
+    -- Neovim Treesitter
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
     use("nvim-treesitter/playground")
+    use 'nvim-treesitter/nvim-treesitter-context'
+    -- Use treesitter to auto close and auto rename html tag
+    use {
+        "windwp/nvim-ts-autotag",
+        config = function() require("nvim-ts-autotag").setup() end
+    }
 
     -- Prettier
     use("sbdchd/neoformat")
