@@ -29,6 +29,7 @@ vim.opt.wildmode = "longest,list,full"
 
 vim.opt.path:append("**")
 
+-- TAB SETTINGS: https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 -- This setting tells Vim how many columns a tab should be made up of in the editor view,
 -- it takes care only of how tabs will be rendered and has no effect on the actual text.
 vim.opt.tabstop = 4
@@ -38,7 +39,10 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 -- When you enter the tab character, it is automatically replaced with spaces.
 -- Insert the appropriate number of spaces when in insert mode.
-vim.opt.expandtab = true
+vim.opt.expandtab = false
+--- Setting this to a non-zero value other than tabstop will make the tab key (in insert mode)
+--- to insert a combination of spaces (and possibly tabs) to simulate tab stops at this width.
+vim.opt.softtabstop = 0
 
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
