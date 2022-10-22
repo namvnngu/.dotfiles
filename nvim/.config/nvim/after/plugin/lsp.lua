@@ -69,6 +69,13 @@ lsp_installer.on_server_ready(function(server)
 		end
 	end
 
+	if server.name == "tsserver" then
+		opts.on_attach = function(client, bufnr)
+			client.server_capabilities.documentFormattingProvider = false
+			common_on_attach(client, bufnr)
+		end
+	end
+
 	if server.name == "sumneko_lua" then
 		opts.settings = {
 			Lua = {
