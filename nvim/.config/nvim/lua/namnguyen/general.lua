@@ -82,6 +82,8 @@ vim.opt.lazyredraw = true
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
+vim.opt.showmode = false
+
 -- Folding
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
