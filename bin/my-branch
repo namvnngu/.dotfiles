@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep -e $1 | grep -v "origin"
