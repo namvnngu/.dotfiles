@@ -1,5 +1,5 @@
 local lsp_installer = require("nvim-lsp-installer")
--- local nvim_config = require "lspconfig"
+local nvim_lsp = require("lspconfig")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -74,6 +74,11 @@ lsp_installer.on_server_ready(function(server)
 			client.server_capabilities.documentFormattingProvider = false
 			common_on_attach(client, bufnr)
 		end
+		opts.root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")
+	end
+
+	if server.name == "denols" then
+		opts.root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")
 	end
 
 	if server.name == "sumneko_lua" then
