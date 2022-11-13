@@ -50,9 +50,9 @@ vim.opt.scrolloff = 8
 
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.hidden = true
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- vim.opt.undofile = true
-vim.opt.hidden = true
 
 vim.opt.belloff = "all"
 
@@ -71,12 +71,10 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append("c")
 
 vim.opt.cursorline = true
+-- vim.opt.cursorcolumn = true
 
 vim.opt.formatoptions:append("r")
 vim.opt.formatoptions:remove("o")
-
-vim.opt.foldenable = true
-vim.opt.foldmethod = "manual"
 
 vim.opt.lazyredraw = true
 
@@ -85,7 +83,12 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.showmode = false
 
 -- Folding
+vim.opt.foldenable = true
+vim.opt.foldmethod = "manual"
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+vim.opt.list = true
+vim.opt.listchars:append("tab:> ")
 
 vim.cmd("filetype plugin indent on")
