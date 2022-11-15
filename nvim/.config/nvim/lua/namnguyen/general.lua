@@ -88,7 +88,7 @@ vim.opt.foldmethod = "manual"
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
-vim.opt.list = true
-vim.opt.listchars:append("tab:> ")
+-- vim.opt.list = true
+-- vim.opt.listchars:append("tab:> ")
 
 vim.cmd("filetype plugin indent on")

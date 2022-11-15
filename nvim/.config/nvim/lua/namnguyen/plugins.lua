@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function(use)
 	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+	use "wbthomason/packer.nvim"
 
 	-- Adding color with colorizer & rainbow
 	use("norcalli/nvim-colorizer.lua")
@@ -22,11 +22,11 @@ return require("packer").startup(function(use)
 
 	-- A tree explorer
 	use {
-		'kyazdani42/nvim-tree.lua',
+		"kyazdani42/nvim-tree.lua",
 		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icons
+			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
-		tag = 'nightly' -- optional, updated every week
+		tag = "nightly" -- optional, updated every week
 	}
 
 	-- Insert or delete brackets, parens, quotes in pair
@@ -63,10 +63,6 @@ return require("packer").startup(function(use)
 	--- Vim Align
 	use("junegunn/vim-easy-align")
 
-	-- A solid language pack for syntax highlighting
-	-- vim.opt.nocompatible = true
-	-- use("sheerun/vim-polyglot")
-
 	-- Markdown
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
 		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
@@ -77,13 +73,13 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
 	use("nvim-telescope/telescope-fzy-native.nvim")
-	use('nvim-telescope/telescope-ui-select.nvim')
+	use("nvim-telescope/telescope-ui-select.nvim")
 
 	-- LSP Plugins
 	use("neovim/nvim-lspconfig")
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use("simrat39/symbols-outline.nvim")
-	use("williamboman/nvim-lsp-installer")
-	use("folke/lsp-colors.nvim")
 
 	-- Autocomplete
 	use("hrsh7th/cmp-nvim-lsp")
@@ -110,7 +106,7 @@ return require("packer").startup(function(use)
 		run = ":TSUpdate"
 	})
 	use("nvim-treesitter/playground")
-	use 'nvim-treesitter/nvim-treesitter-context'
+	use "nvim-treesitter/nvim-treesitter-context"
 	-- Use treesitter to auto close and auto rename html tag
 	use {
 		"windwp/nvim-ts-autotag",
@@ -125,26 +121,53 @@ return require("packer").startup(function(use)
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		config = function()
-			require("todo-comments").setup({})
+			require("todo-comments").setup()
 		end
 	}
 
 	-- Search
-	use('windwp/nvim-spectre')
+	use("windwp/nvim-spectre")
 
 	-- Status Bar
 	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
-			require('lualine').setup()
+			require("lualine").setup()
+		end
+	}
+
+	-- Project Management
+	use {
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup()
+		end
+	}
+
+	-- Faster Startup
+	use("lewis6991/impatient.nvim")
+
+	-- Indent Guides
+	use {
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("impatient")
+		end
+	}
+
+	-- Dashboard
+	use {
+		'goolord/alpha-nvim',
+		requires = { 'kyazdani42/nvim-web-devicons' },
+		config = function()
+			require 'alpha'.setup(require 'alpha.themes.startify'.config)
 		end
 	}
 
 	-- Theme
 	use("morhetz/gruvbox")
-	use({ 'projekt0n/github-nvim-theme' })
-	-- use("folke/tokyonight.nvim")
+	use({ "projekt0n/github-nvim-theme" })
 	-- use("folke/tokyonight.nvim")
 	-- use("markvincze/panda-vim")
 	-- use("drewtempelmeyer/palenight.vim")

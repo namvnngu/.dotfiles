@@ -1,36 +1,41 @@
-local lsp_installer = require("nvim-lsp-installer")
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 local nvim_lsp = require("lspconfig")
+local merge_tables = require("utils.table").merge_tables
+local nnoremap = require("utils.keymap").nnoremap
+
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local opts = { silent = true }
+nnoremap('<leader>vsd', vim.diagnostic.open_float, opts)
+nnoremap('<leader>vp', vim.diagnostic.goto_prev, opts)
+nnoremap('<leader>vn', vim.diagnostic.goto_next, opts)
+nnoremap('<leader>vll', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local function common_on_attach(client, bufnr)
-	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-	--Enable completion triggered by <c-x><c-o>
-	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+local common_on_attach = function(client, bufnr)
+	-- Enable completion triggered by <c-x><c-o>
+	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 	-- Mappings.
-	local opts = { noremap = true, silent = true }
-
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	buf_set_keymap("n", "<leader>vD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	buf_set_keymap("n", "<leader>vd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	buf_set_keymap("n", "<leader>vk", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	buf_set_keymap("n", "<leader>vi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	buf_set_keymap("n", "<leader>vsh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	buf_set_keymap("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-	buf_set_keymap("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
-	buf_set_keymap("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-	buf_set_keymap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-	buf_set_keymap("n", "<leader>vrn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "<leader>vca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	buf_set_keymap("n", "<leader>vrr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	buf_set_keymap("n", "<leader>vsd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	buf_set_keymap("n", "<leader>vp", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-	buf_set_keymap("n", "<leader>vn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-	buf_set_keymap("n", "<leader>vll", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+	local bufopts = { silent = true, buffer = bufnr }
+	nnoremap('<leader>vD', vim.lsp.buf.declaration, bufopts)
+	nnoremap('<leader>vd', vim.lsp.buf.definition, bufopts)
+	nnoremap('<leader>vk', vim.lsp.buf.hover, bufopts)
+	nnoremap('<leader>vi', vim.lsp.buf.implementation, bufopts)
+	nnoremap('<leader>vsh', vim.lsp.buf.signature_help, bufopts)
+	nnoremap('<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+	nnoremap('<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+	nnoremap('<leader>wl', function()
+		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	end, bufopts)
+	nnoremap('<leader>D', vim.lsp.buf.type_definition, bufopts)
+	nnoremap('<leader>vrn', vim.lsp.buf.rename, bufopts)
+	nnoremap('<leader>vca', vim.lsp.buf.code_action, bufopts)
+	nnoremap('<leader>vrr', vim.lsp.buf.references, bufopts)
+	nnoremap('<leader>vf', function() vim.lsp.buf.format { async = true } end, bufopts)
 
 	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_exec([[
@@ -53,61 +58,59 @@ local function common_on_attach(client, bufnr)
 	end
 end
 
-lsp_installer.on_server_ready(function(server)
-	local opts = {
-		on_attach = common_on_attach,
-		settings = {
-			format = { enable = true },
-		},
-		capabilities = require("cmp_nvim_lsp").default_capabilities()
-	}
+-- LSP Setups
+local common_opts = {
+	on_attach = common_on_attach,
+	settings = {
+		format = { enable = true },
+	},
+	capabilities = require("cmp_nvim_lsp").default_capabilities()
+}
 
-	if server.name == "eslint" then
-		opts.on_attach = function(client, bufnr)
-			client.server_capabilities.documentFormattingProvider = true
-			common_on_attach(client, bufnr)
-		end
+nvim_lsp.eslint.setup(merge_tables(common_opts, {
+	on_attach = function(client, bufnr)
+		client.server_capabilities.documentFormattingProvider = true
+		common_on_attach(client, bufnr)
 	end
+}))
 
-	if server.name == "tsserver" then
-		opts.on_attach = function(client, bufnr)
-			client.server_capabilities.documentFormattingProvider = false
-			common_on_attach(client, bufnr)
-		end
-		opts.root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")
-	end
+nvim_lsp.tsserver.setup(merge_tables(common_opts, {
+	on_attach = function(client, bufnr)
+		client.server_capabilities.documentformattingprovider = false
+		common_on_attach(client, bufnr)
+	end,
+	root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")
+}))
 
-	if server.name == "denols" then
-		opts.root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")
-	end
+nvim_lsp.denols.setup(merge_tables(common_opts, {
+	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")
+}))
 
-	if server.name == "sumneko_lua" then
-		opts.settings = {
-			Lua = {
-				runtime = {
-					-- Tell the language server which version of Lua you"re using (most likely LuaJIT in the case of Neovim)
-					version = "LuaJIT",
-					-- Setup your lua path
-					path = vim.split(package.path, ";"),
+nvim_lsp.sumneko_lua.setup(merge_tables(common_opts, {
+	settings = {
+		format = { enable = true },
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you"re using (most likely LuaJIT in the case of Neovim)
+				version = "LuaJIT",
+				-- Setup your lua path
+				path = vim.split(package.path, ";"),
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
 				},
-				diagnostics = {
-					-- Get the language server to recognize the `vim` global
-					globals = { "vim" },
-				},
-				workspace = {
-					-- Make the server aware of Neovim runtime files
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-					},
-				},
-			}
-
+			},
 		}
-	end
 
-	server:setup(opts)
-end)
+	}
+}))
 
 -- Automatically update diagnostics
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
