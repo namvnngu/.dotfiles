@@ -5,6 +5,29 @@ local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
 local nnoremap = require("utils.keymap").nnoremap
 
+
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local opts = { silent = true }
+nnoremap("<leader>vsd", vim.diagnostic.open_float, opts)
+nnoremap("<leader>vp", vim.diagnostic.goto_prev, opts)
+nnoremap("<leader>vn", vim.diagnostic.goto_next, opts)
+nnoremap("<leader>vll", vim.diagnostic.setloclist, opts)
+
+-- Automatically update diagnostics
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	underline = true,
+	update_in_insert = false,
+	virtual_text = { spacing = 4, prefix = "●" },
+	severity_sort = true,
+})
+
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
 -- Formating
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
@@ -16,13 +39,6 @@ local lsp_formatting = function(bufnr)
 end
 
 local lsp_formatting_au_group = vim.api.nvim_create_augroup("LspFormatting", {})
-
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { silent = true }
-nnoremap("<leader>vsd", vim.diagnostic.open_float, opts)
-nnoremap("<leader>vp", vim.diagnostic.goto_prev, opts)
-nnoremap("<leader>vn", vim.diagnostic.goto_next, opts)
-nnoremap("<leader>vll", vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -109,17 +125,4 @@ nvim_lsp.denols.setup(vim.tbl_extend("force", common_setup, {
 
 nvim_lsp.sumneko_lua.setup(common_setup)
 
--- Automatically update diagnostics
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	underline = true,
-	update_in_insert = false,
-	virtual_text = { spacing = 4, prefix = "●" },
-	severity_sort = true,
-})
-
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
