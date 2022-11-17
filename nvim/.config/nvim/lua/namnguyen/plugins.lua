@@ -80,6 +80,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("simrat39/symbols-outline.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Autocomplete
 	use("hrsh7th/cmp-nvim-lsp")
@@ -112,9 +113,6 @@ return require("packer").startup(function(use)
 		"windwp/nvim-ts-autotag",
 		config = function() require("nvim-ts-autotag").setup() end
 	}
-
-	-- Prettier
-	use("sbdchd/neoformat")
 
 	-- Todos
 	use {
