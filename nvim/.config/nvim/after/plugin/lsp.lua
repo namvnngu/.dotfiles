@@ -5,7 +5,6 @@ local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
 local nnoremap = require("utils.keymap").nnoremap
 
-
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { silent = true }
 nnoremap("<leader>vsd", vim.diagnostic.open_float, opts)
@@ -112,6 +111,8 @@ null_ls.setup(vim.tbl_extend("force", common_setup, {
 		null_ls.builtins.formatting.stylua,
 		-- Writing
 		null_ls.builtins.completion.spell,
+		-- Rust
+		null_ls.builtins.formatting.rustfmt,
 	},
 }))
 
@@ -125,4 +126,4 @@ nvim_lsp.denols.setup(vim.tbl_extend("force", common_setup, {
 
 nvim_lsp.sumneko_lua.setup(common_setup)
 
-
+nvim_lsp.rust_analyzer.setup(common_setup)
