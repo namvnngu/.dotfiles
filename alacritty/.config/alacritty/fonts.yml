@@ -23,9 +23,6 @@ font:
   # Point size
   size: 12
 
-  # Better font rendering for mac
-  use_thin_strokes: true
-
   # Offset
   #offset:
   #  x: 0
