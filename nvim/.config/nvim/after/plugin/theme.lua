@@ -14,8 +14,15 @@ vim.cmd([[
   hi! Normal ctermbg=NONE guibg=NONE
 ]])
 
-require("github-theme").setup({
-	theme_style = "dark_default",
-	transparent = true,
-	sidebars = { "qf", "vista_kind", "terminal", "packer" },
+-- require("github-theme").setup({
+-- 	theme_style = "dark_default",
+-- 	transparent = true,
+-- 	sidebars = { "qf", "vista_kind", "terminal", "packer" },
+-- })
+--
+
+vim.cmd.colorscheme("catppuccin")
+require("catppuccin").setup({
+	flavour = "mocha",
+	transparent_background = true,
 })
