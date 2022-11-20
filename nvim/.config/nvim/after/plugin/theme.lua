@@ -24,10 +24,10 @@ vim.cmd([[
 vim.cmd.colorscheme("catppuccin")
 require("catppuccin").setup({
 	flavour = "mocha",
-	transparent_background = true,
-	custom_highlights = function()
-		return {
-			CursorLine = { bg = "#424450" },
-		}
-	end,
+	-- transparent_background = true,
+	-- custom_highlights = function()
+	-- 	return {
+	-- 		CursorLine = { bg = "#424450" },
+	-- 	}
+	-- end,
 })
