@@ -109,11 +109,19 @@ null_ls.setup(vim.tbl_extend("force", common_setup, {
 		null_ls.builtins.formatting.eslint_d,
 		-- Lua
 		null_ls.builtins.formatting.stylua,
-		-- Writing
-		null_ls.builtins.diagnostics.cspell,
 		null_ls.builtins.code_actions.cspell,
 		-- Rust
 		null_ls.builtins.formatting.rustfmt,
+		-- Writing
+		null_ls.builtins.diagnostics.cspell.with({
+			diagnostic_config = {
+				virtual_text = false,
+				severity_sort = true,
+			},
+			diagnostics_postprocess = function(diagnostic)
+				diagnostic.severity = vim.diagnostic.severity["HINT"]
+			end,
+		}),
 	},
 }))
 
