@@ -110,7 +110,8 @@ null_ls.setup(vim.tbl_extend("force", common_setup, {
 		-- Lua
 		null_ls.builtins.formatting.stylua,
 		-- Writing
-		null_ls.builtins.completion.spell,
+		null_ls.builtins.diagnostics.cspell,
+		null_ls.builtins.code_actions.cspell,
 		-- Rust
 		null_ls.builtins.formatting.rustfmt,
 	},
