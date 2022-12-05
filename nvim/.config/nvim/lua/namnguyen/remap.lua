@@ -33,6 +33,8 @@ nnoremap("Y", "y$")
 -- Keeping it centered and stable
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
 
 -- Quicklist
 nnoremap("<C-k>", "<cmd>cnext<CR>")
@@ -53,11 +55,11 @@ noremap("<leader>9", "9gt")
 map("<F4>", "<cmd>setlocal spell! spelllang=en_us<CR>")
 
 -- Replace currently selected text with default register without yanking it
-xnoremap("<leader>p", "\"_dP")
+xnoremap("<leader>p", '"_dP')
 
 -- Delete without yanking
-nnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
+nnoremap("<leader>d", '"_d')
+vnoremap("<leader>d", '"_d')
 
 -- This is going to get me cancelled
 inoremap("<C-c>", "<Esc>")
