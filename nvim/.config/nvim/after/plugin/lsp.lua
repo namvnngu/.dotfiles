@@ -113,15 +113,16 @@ null_ls.setup(vim.tbl_extend("force", common_setup, {
 		-- Rust
 		null_ls.builtins.formatting.rustfmt,
 		-- Writing
-		null_ls.builtins.diagnostics.cspell.with({
-			diagnostic_config = {
-				virtual_text = false,
-				severity_sort = true,
-			},
-			diagnostics_postprocess = function(diagnostic)
-				diagnostic.severity = vim.diagnostic.severity["HINT"]
-			end,
-		}),
+		-- null_ls.builtins.diagnostics.cspell.with({
+		-- 	diagnostic_config = {
+		-- 		virtual_text = false,
+		-- 		severity_sort = true,
+		-- 	},
+		-- 	disabled_filetypes = { "NvimTree" },
+		-- 	diagnostics_postprocess = function(diagnostic)
+		-- 		diagnostic.severity = vim.diagnostic.severity["HINT"]
+		-- 	end,
+		-- }),
 	},
 }))
 
