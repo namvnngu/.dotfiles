@@ -4,6 +4,7 @@ require("mason-lspconfig").setup()
 local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
 local nnoremap = require("utils.keymap").nnoremap
+local merge = require("utils.table").merge
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { silent = true }
@@ -37,7 +38,8 @@ local lsp_formatting = function(bufnr)
 	})
 end
 
-local lsp_formatting_au_group = vim.api.nvim_create_augroup("LspFormatting", {})
+local lsp_formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+local lsp_highlight_augroup = vim.api.nvim_create_augroup("LspHighlight", { clear = true })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -45,7 +47,7 @@ local common_on_attach = function(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-	-- Mappings.
+	-- Mappings
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { silent = true, buffer = bufnr }
 	nnoremap("<leader>vD", vim.lsp.buf.declaration, bufopts)
@@ -66,11 +68,10 @@ local common_on_attach = function(client, bufnr)
 		lsp_formatting(bufnr)
 	end, bufopts)
 
-	-- if client.server_capabilities.documentFormattingProvider then
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_clear_autocmds({ group = lsp_formatting_au_group, buffer = bufnr })
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_clear_autocmds({ group = lsp_formatting_augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = lsp_formatting_au_group,
+			group = lsp_formatting_augroup,
 			buffer = bufnr,
 			callback = function()
 				lsp_formatting(bufnr)
@@ -79,16 +80,21 @@ local common_on_attach = function(client, bufnr)
 	end
 
 	if client.server_capabilities.documentHighlightProvider then
-		vim.api.nvim_exec(
-			[[
-			  augroup lsp_document_highlight
-			  autocmd! * <buffer>
-			  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-			  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-			  augroup END
-			]],
-			false
-		)
+		vim.api.nvim_clear_autocmds({ group = lsp_highlight_augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("CursorHold", {
+			group = lsp_highlight_augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.document_highlight()
+			end,
+		})
+		vim.api.nvim_create_autocmd("CursorMoved", {
+			group = lsp_highlight_augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.clear_references()
+			end,
+		})
 	end
 end
 
@@ -101,7 +107,7 @@ local common_setup = {
 	},
 }
 
-null_ls.setup(vim.tbl_extend("force", common_setup, {
+null_ls.setup(merge(common_setup, {
 	sources = {
 		-- Eslint
 		null_ls.builtins.diagnostics.eslint_d,
@@ -126,11 +132,11 @@ null_ls.setup(vim.tbl_extend("force", common_setup, {
 	},
 }))
 
-nvim_lsp.tsserver.setup(vim.tbl_extend("force", common_setup, {
+nvim_lsp.tsserver.setup(merge(common_setup, {
 	root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
 }))
 
-nvim_lsp.denols.setup(vim.tbl_extend("force", common_setup, {
+nvim_lsp.denols.setup(merge(common_setup, {
 	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 }))
 

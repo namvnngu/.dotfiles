@@ -1,24 +1,44 @@
-local create_augroups = require("utils.autocmd").create_augroups
+local trim_spaces_augroup = vim.api.nvim_create_augroup("TrimSpaces", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = trim_spaces_augroup,
+	pattern = "*",
+	callback = function()
+		local patterns = {
+			[[%s/\s\+$//e]],
+			[[%s/\%^\n\+//]],
+			[[%s/\(\n\n\)\n\+/\1/]],
+			[[%s/\($\n\s*\)\+\%$//]],
+		}
+		local save = vim.fn.winsaveview()
+		for _, v in pairs(patterns) do
+			vim.api.nvim_exec(string.format("keepjumps keeppatterns silent! %s", v), false)
+		end
+		vim.fn.winrestview(save)
+	end,
+})
 
-local auto_commands = {
-	trim_space = {
-		{ "BufWritePre", "*", ":lua require('utils.trim').trim_trailing_whitespace()" },
-	},
+local scss_to_sass_augroup = vim.api.nvim_create_augroup("ScssToSass", { clear = true })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	group = scss_to_sass_augroup,
+	pattern = "*.scss",
+	command = "set filetype=sass",
+})
 
-	map_sass_to_scss = {
-		{ "BufRead,BufNewFile", "*.scss", "set filetype=sass" },
-	},
-
-	-- In insert mode, no wait for each keystroke of the mapping
-	-- before aborting it and carrying out the behaviour of the keys typed so far
-	-- fast_escape = {
-	--     { "InsertEnter", "*", "set timeoutlen=0" },
-	--     { "InsertLeave", "*", "set timeoutlen=1000" },
-	-- },
-
-	open_folds = {
-		{ "BufReadPost,FileReadPost", "*", "normal zR" },
-	},
-}
-
-create_augroups(auto_commands)
+local open_folds_augroup = vim.api.nvim_create_augroup("OpenFolds", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost" }, {
+	group = open_folds_augroup,
+	pattern = "*",
+	command = "normal zR",
+})
+--
+-- local fast_escape_augroup = vim.api.nvim_create_augroup("FastEscape", { clear = true })
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	group = fast_escape_augroup,
+-- 	pattern = "*",
+-- 	command = "set timeoutlen=0",
+-- })
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	group = fast_escape_augroup,
+-- 	pattern = "*",
+-- 	command = "set timeoutlen=1000",
+-- })

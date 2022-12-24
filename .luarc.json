@@ -4,6 +4,7 @@
         "vim",
         "packer_bootstrap",
         "require",
-        "print"
+        "print",
+        "pairs"
     ]
 }
