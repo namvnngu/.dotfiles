@@ -12,8 +12,9 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.opt.encoding = "UTF-8"
 
+vim.opt.clipboard:append("unnamedplus")
+
 vim.opt.wrap = false
-vim.opt.linebreak = true
 
 -- vim.opt.mouse = a
 
@@ -56,10 +57,7 @@ vim.opt.hidden = true
 
 vim.opt.belloff = "all"
 
-vim.opt.clipboard:append("unnamedplus")
-
 vim.opt.showmatch = true
-vim.opt.showmode = true
 
 vim.opt.cmdheight = 2
 
@@ -73,7 +71,8 @@ vim.opt.shortmess:append("c")
 vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 
-vim.opt.formatoptions:append("r")
+-- Automatic newline continuation of comments
+vim.opt.formatoptions:remove("r")
 vim.opt.formatoptions:remove("o")
 
 vim.opt.lazyredraw = true
@@ -84,11 +83,8 @@ vim.opt.showmode = false
 
 -- Folding
 vim.opt.foldenable = true
-vim.opt.foldmethod = "manual"
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
--- vim.opt.list = true
--- vim.opt.listchars:append("tab:> ")
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldmethod = "manual"
 
 vim.cmd("filetype plugin indent on")

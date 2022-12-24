@@ -75,13 +75,14 @@ return require("packer").startup(function(use)
 		ft = { "markdown" },
 	})
 
-	-- Telescope
+	-- Navigation
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("nvim-telescope/telescope-fzy-native.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
+	use("theprimeagen/harpoon")
 
 	-- LSP Plugins
 	use("neovim/nvim-lspconfig")

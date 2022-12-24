@@ -1,28 +1,24 @@
 local create_augroups = require("utils.autocmd").create_augroups
 
-local autoCommands = {
-    trim_space = {
-        { "BufWritePre", "*", ":lua require('utils.trim').trim_trailing_whitespace()" },
-    },
+local auto_commands = {
+	trim_space = {
+		{ "BufWritePre", "*", ":lua require('utils.trim').trim_trailing_whitespace()" },
+	},
 
-    -- format_on_save = {
-    --   { "BufWritePre", "*", ":Neoformat" }
-    -- },
+	map_sass_to_scss = {
+		{ "BufRead,BufNewFile", "*.scss", "set filetype=sass" },
+	},
 
-    map_sass_to_scss = {
-        { "BufRead,BufNewFile", "*.scss", "set filetype=sass" }
-    },
+	-- In insert mode, no wait for each keystroke of the mapping
+	-- before aborting it and carrying out the behaviour of the keys typed so far
+	-- fast_escape = {
+	--     { "InsertEnter", "*", "set timeoutlen=0" },
+	--     { "InsertLeave", "*", "set timeoutlen=1000" },
+	-- },
 
-    -- In insert mode, no wait for each keystroke of the mapping
-    -- before aborting it and carrying out the behaviour of the keys typed so far
-    -- fast_escape = {
-    --     { "InsertEnter", "*", "set timeoutlen=0" },
-    --     { "InsertLeave", "*", "set timeoutlen=1000" },
-    -- },
-
-    open_folds = {
-        { "BufReadPost,FileReadPost", "*", "normal zR" }
-    }
+	-- open_folds = {
+	-- 	{ "BufReadPost,FileReadPost", "*", "normal zR" },
+	-- },
 }
 
-create_augroups(autoCommands)
+create_augroups(auto_commands)

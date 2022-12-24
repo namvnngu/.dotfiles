@@ -1,7 +1,6 @@
-require("namnguyen.general")
+require("namnguyen.opt")
 require("namnguyen.plugins")
 require("namnguyen.remap")
-require("namnguyen.cursor")
 require("namnguyen.execution")
 require("namnguyen.templates")
 require("namnguyen.autocmd")

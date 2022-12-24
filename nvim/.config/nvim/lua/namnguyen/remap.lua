@@ -4,7 +4,6 @@ local noremap = require("utils.keymap").noremap
 local xnoremap = require("utils.keymap").xnoremap
 local inoremap = require("utils.keymap").inoremap
 local map = require("utils.keymap").map
-local nmap = require("utils.keymap").nmap
 
 nnoremap("<leader>h", "<cmd>wincmd h<CR>")
 nnoremap("<leader>j", "<cmd>wincmd j<CR>")
@@ -31,14 +30,17 @@ vnoremap("K", "<cmd>m '<-2<CR>gv=gv")
 nnoremap("Y", "y$")
 
 -- Keeping it centered and stable
+nnoremap("J", "mzJ`z")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 
 -- Quicklist
-nnoremap("<C-k>", "<cmd>cnext<CR>")
-nnoremap("<C-j>", "<cmd>cprev<CR>")
+nnoremap("<C-k>", "<cmd>cnext<CR>zz")
+nnoremap("<C-j>", "<cmd>cprev<CR>zz")
+nnoremap("<leader>K", "<cmd>lnext<CR>zz")
+nnoremap("<leader>J", "<cmd>lprev<CR>zz")
 
 -- Keybindings for tab navigation with leader and number
 noremap("<leader>1", "1gt")
@@ -63,6 +65,12 @@ vnoremap("<leader>d", '"_d')
 
 -- This is going to get me cancelled
 inoremap("<C-c>", "<Esc>")
+
+-- Replace
+nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Make file executable
+noremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Avoid using arrow keys
 -- noremap("<Up>", "<NOP>")

@@ -62,8 +62,8 @@ local common_on_attach = function(client, bufnr)
 	nnoremap("<leader>vrn", vim.lsp.buf.rename, bufopts)
 	nnoremap("<leader>vca", vim.lsp.buf.code_action, bufopts)
 	nnoremap("<leader>vrr", vim.lsp.buf.references, bufopts)
-	nnoremap("<leader>vf", function()
-		vim.lsp.buf.format({ async = true })
+	nnoremap("<leader>f", function()
+		lsp_formatting(bufnr)
 	end, bufopts)
 
 	-- if client.server_capabilities.documentFormattingProvider then
@@ -81,12 +81,12 @@ local common_on_attach = function(client, bufnr)
 	if client.server_capabilities.documentHighlightProvider then
 		vim.api.nvim_exec(
 			[[
-		  augroup lsp_document_highlight
-		  autocmd! * <buffer>
-		  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-		  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-		  augroup END
-		]],
+			  augroup lsp_document_highlight
+			  autocmd! * <buffer>
+			  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+			  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+			  augroup END
+			]],
 			false
 		)
 	end
