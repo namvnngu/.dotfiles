@@ -1,0 +1,6 @@
+require("namnguyen.opt")
+require("namnguyen.plugins")
+require("namnguyen.remap")
+require("namnguyen.execution")
+require("namnguyen.templates")
+require("namnguyen.autocmd")
