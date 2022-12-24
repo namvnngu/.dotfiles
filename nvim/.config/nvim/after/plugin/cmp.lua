@@ -1,4 +1,7 @@
 local cmp = require("cmp")
+local merge = require("utils.table").merge
+
+vim.opt.completeopt = "menu,menuone,noselect"
 
 local kind_icons = {
 	Text = "",
@@ -39,8 +42,10 @@ cmp.setup({
 		end,
 	},
 	window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		documentation = merge(cmp.config.window.bordered(), {
+			max_height = 15,
+			max_width = 60,
+		}),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
@@ -64,18 +69,16 @@ cmp.setup({
 		end,
 	}),
 	formatting = {
-		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			-- Source
-			vim_item.menu = ({
+		format = function(entry, item)
+			item.kind = string.format("%s %s", kind_icons[item.kind], item.kind)
+			item.menu = ({
 				buffer = "[Buffer]",
 				nvim_lsp = "[LSP]",
 				luasnip = "[LuaSnip]",
 				nvim_lua = "[Lua]",
 				latex_symbols = "[LaTeX]",
 			})[entry.source.name]
-			return vim_item
+			return item
 		end,
 	},
 	sources = cmp.config.sources({

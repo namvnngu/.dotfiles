@@ -77,8 +77,6 @@ vim.opt.formatoptions:remove("o")
 
 vim.opt.lazyredraw = true
 
-vim.opt.completeopt = "menu,menuone,noselect"
-
 vim.opt.showmode = false
 
 -- Folding
