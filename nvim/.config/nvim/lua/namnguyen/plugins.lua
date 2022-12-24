@@ -101,6 +101,7 @@ return require("packer").startup(function(use)
 	-- Snippet
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
+	use("rafamadriz/friendly-snippets")
 
 	-- Trouble
 	use({
