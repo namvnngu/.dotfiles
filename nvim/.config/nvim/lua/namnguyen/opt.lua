@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -7,12 +7,12 @@ vim.opt.termguicolors = true
 
 vim.opt.autoread = true
 
-vim.opt.backspace = "indent,eol,start"
+vim.opt.backspace = 'indent,eol,start'
 
-vim.opt.guifont = "FiraCode Nerd Font:h13"
-vim.opt.encoding = "UTF-8"
+vim.opt.guifont = 'FiraCode Nerd Font:h13'
+vim.opt.encoding = 'UTF-8'
 
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append('unnamedplus')
 
 vim.opt.wrap = false
 
@@ -26,9 +26,9 @@ vim.opt.incsearch = true
 -- vim.opt.smartcase = true
 
 vim.opt.wildmenu = true
-vim.opt.wildmode = "longest,list,full"
+vim.opt.wildmode = 'longest,list,full'
 
-vim.opt.path:append("**")
+vim.opt.path:append('**')
 
 -- TAB SETTINGS: https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 -- This setting tells Vim how many columns a tab should be made up of in the editor view,
@@ -45,8 +45,8 @@ vim.opt.expandtab = false
 --- to insert a combination of spaces (and possibly tabs) to simulate tab stops at this width.
 vim.opt.softtabstop = 0
 
-vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn = "80"
+vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn = '80'
 vim.opt.scrolloff = 8
 
 vim.opt.swapfile = false
@@ -55,7 +55,7 @@ vim.opt.hidden = true
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- vim.opt.undofile = true
 
-vim.opt.belloff = "all"
+vim.opt.belloff = 'all'
 
 vim.opt.showmatch = true
 
@@ -66,14 +66,14 @@ vim.opt.cmdheight = 2
 vim.opt.updatetime = 50
 
 -- Don"t pass messages to |ins-completion-menu|.
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append('c')
 
 vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 
 -- Automatic newline continuation of comments
-vim.opt.formatoptions:remove("r")
-vim.opt.formatoptions:remove("o")
+vim.opt.formatoptions:remove('r')
+vim.opt.formatoptions:remove('o')
 
 vim.opt.lazyredraw = true
 
@@ -81,8 +81,8 @@ vim.opt.showmode = false
 
 -- Folding
 vim.opt.foldenable = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- vim.opt.foldmethod = "manual"
 
-vim.cmd("filetype plugin indent on")
+vim.cmd('filetype plugin indent on')

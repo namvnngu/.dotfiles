@@ -1,1 +1,1 @@
-require("namnguyen.config")
+require('namnguyen.config')
