@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+yarn eslint --fix $(git diff --name-only HEAD | xargs)
