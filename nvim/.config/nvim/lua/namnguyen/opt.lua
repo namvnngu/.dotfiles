@@ -33,11 +33,11 @@ vim.opt.path:append('**')
 -- TAB SETTINGS: https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 -- This setting tells Vim how many columns a tab should be made up of in the editor view,
 -- it takes care only of how tabs will be rendered and has no effect on the actual text.
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 -- This option to control how many columns text will be indented
 -- when using indent operations (such as <<, >> or <TAB>) in normal or visual mode;
 -- this also covers automatic C-style indentation.
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 -- When you enter the tab character, it is automatically replaced with spaces.
 -- Insert the appropriate number of spaces when in insert mode.
 vim.opt.expandtab = false
@@ -46,7 +46,8 @@ vim.opt.expandtab = false
 vim.opt.softtabstop = 0
 
 vim.opt.signcolumn = 'yes'
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '100'
+
 vim.opt.scrolloff = 8
 
 vim.opt.swapfile = false

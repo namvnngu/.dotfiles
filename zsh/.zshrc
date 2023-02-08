@@ -23,7 +23,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Vim mode
-set -o vi
+# set -o vi
 
 # Reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
