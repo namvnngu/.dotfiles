@@ -40,7 +40,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 -- When you enter the tab character, it is automatically replaced with spaces.
 -- Insert the appropriate number of spaces when in insert mode.
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 --- Setting this to a non-zero value other than tabstop will make the tab key (in insert mode)
 --- to insert a combination of spaces (and possibly tabs) to simulate tab stops at this width.
 vim.opt.softtabstop = 0
