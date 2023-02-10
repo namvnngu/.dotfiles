@@ -22,6 +22,8 @@ nnoremap('<leader>ay', '<cmd>%y+<CR>')
 nnoremap('<leader>bn', '<cmd>bnext<CR>')
 nnoremap('<leader>bp', '<cmd>bprevious<CR>')
 nnoremap('<leader>bd', '<cmd>bdelete<CR>')
+nnoremap('<leader>ba', '<cmd>bufdo bd<CR>')
+nnoremap('<leader>be', '<cmd>%bd|e#<CR>')
 
 vnoremap('J', "<cmd>m '>+1<CR>gv=gv")
 vnoremap('K', "<cmd>m '<-2<CR>gv=gv")
