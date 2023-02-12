@@ -23,13 +23,22 @@
 -- })
 --
 
-vim.cmd.colorscheme('catppuccin')
-require('catppuccin').setup({
-  flavour = 'mocha',
-  -- transparent_background = true,
-  -- custom_highlights = function()
-  -- 	return {
-  -- 		CursorLine = { bg = "#424450" },
-  -- 	}
-  -- end,
-})
+-- vim.cmd.colorscheme('catppuccin')
+-- require('catppuccin').setup({
+-- flavour = 'mocha',
+-- No need to uncomment transparent_background and custom_highlights
+-- transparent_background = true,
+-- custom_highlights = function()
+-- 	return {
+-- 		CursorLine = { bg = "#424450" },
+-- 	}
+-- end,
+-- })
+
+vim.cmd([[
+  set background=dark
+  let g:everforest_background = 'medium'
+  let g:everforest_better_performance = 1
+  let g:everforest_disable_italic_comment = 1
+  colorscheme everforest
+]])

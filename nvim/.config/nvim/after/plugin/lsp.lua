@@ -140,6 +140,6 @@ nvim_lsp.denols.setup(merge(common_setup, {
   root_dir = nvim_lsp.util.root_pattern('deno.json', 'deno.jsonc'),
 }))
 
-nvim_lsp.sumneko_lua.setup(common_setup)
+nvim_lsp.lua_ls.setup(common_setup)
 
 nvim_lsp.rust_analyzer.setup(common_setup)
