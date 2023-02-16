@@ -6,7 +6,7 @@ telescope.setup({
     file_ignore_patterns = { 'node_modules' },
   },
 })
-telescope.load_extension('fzy_native')
+telescope.load_extension('fzf')
 telescope.load_extension('git_worktree')
 telescope.load_extension('ui-select')
 telescope.load_extension('projects')
