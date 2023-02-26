@@ -50,8 +50,9 @@ nnoremap('<leader>flg', function()
   require('telescope.builtin').live_grep()
 end)
 nnoremap('<leader>fgs', function()
-  local query = vim.fn.input('Grep For > ')
-  local root_dir = require('utils').trim_string(vim.fn.input('Root Dir > '))
+  local trim = require('utils.string').trim
+  local query = trim(vim.fn.input('Grep For > '))
+  local root_dir = trim(vim.fn.input('Root Dir > '))
   require('telescope.builtin').grep_string({
     cwd = #root_dir ~= 0 and root_dir or require('telescope.utils').buffer_dir(),
     search = query,
