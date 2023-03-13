@@ -1,5 +1,13 @@
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'lua_ls',
+    'rust_analyzer',
+    'tsserver',
+    'denols',
+  },
+  automatic_installation = true,
+})
 
 local nvim_lsp = require('lspconfig')
 local null_ls = require('null-ls')
