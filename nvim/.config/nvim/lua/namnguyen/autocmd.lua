@@ -30,15 +30,3 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'FileReadPost' }, {
   pattern = '*',
   command = 'normal zR',
 })
---
--- local fast_escape_augroup = vim.api.nvim_create_augroup("FastEscape", { clear = true })
--- vim.api.nvim_create_autocmd("InsertEnter", {
--- 	group = fast_escape_augroup,
--- 	pattern = "*",
--- 	command = "set timeoutlen=0",
--- })
--- vim.api.nvim_create_autocmd("InsertLeave", {
--- 	group = fast_escape_augroup,
--- 	pattern = "*",
--- 	command = "set timeoutlen=1000",
--- })

@@ -1,4 +1,4 @@
-require('namnguyen.opt')
+require('namnguyen.options')
 require('namnguyen.plugins')
 require('namnguyen.remap')
 require('namnguyen.execution')

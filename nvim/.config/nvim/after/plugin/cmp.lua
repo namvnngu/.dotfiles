@@ -1,8 +1,6 @@
 local cmp = require('cmp')
 local merge = require('utils.table').merge
 
-vim.opt.completeopt = 'menu,menuone,noselect'
-
 local kind_icons = {
   Text = '',
   Method = '',

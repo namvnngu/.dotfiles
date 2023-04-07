@@ -6,5 +6,8 @@
         "require",
         "print",
         "pairs"
+    ],
+    "diagnostics.disable": [
+        "undefined-field"
     ]
 }
