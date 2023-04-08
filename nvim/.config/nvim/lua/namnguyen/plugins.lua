@@ -5,9 +5,8 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
-  -- Adding color with colorizer & rainbow
+  -- Adding color with colorizer
   use('norcalli/nvim-colorizer.lua')
-  use('p00f/nvim-ts-rainbow')
 
   -- A Git wrapper, Git commands
   use('tpope/vim-fugitive')
@@ -173,6 +172,12 @@ return require('packer').startup(function(use)
     config = function()
       require('alpha').setup(require('alpha.themes.startify').config)
     end,
+  })
+
+  -- Folding
+  use({
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
   })
 
   -- Theme

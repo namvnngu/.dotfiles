@@ -1,12 +1,11 @@
 local nnoremap = require('utils.keymap').nnoremap
 
--- [[
--- config: dictionary
---  - augroup_name (string): The name of the group
---  - filetype_pattern (string): The pattern of file type
---  - desc (string): The description of auto command
---  - execution_command (string): The commend to execuate code
--- ]]
+---Create auto command to execute code based on file type
+---@param config table
+--- - augroup_name (string): The name of the group
+--- - filetype_pattern (string): The pattern of file type
+--- - desc (string): The description of auto command
+--- - execution_command (string): The commend to execuate code
 local function create_code_execution_autocmd(config)
   local group_id = vim.api.nvim_create_augroup(config.augroup_name, { clear = true })
   vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {

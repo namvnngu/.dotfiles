@@ -28,5 +28,5 @@ local open_folds_augroup = vim.api.nvim_create_augroup('OpenFolds', { clear = tr
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'FileReadPost' }, {
   group = open_folds_augroup,
   pattern = '*',
-  command = 'normal zR',
+  callback = require('ufo').openAllFolds,
 })
