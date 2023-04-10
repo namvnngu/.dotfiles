@@ -39,6 +39,8 @@ require('nvim-treesitter.configs').setup({
     'html',
     'scss',
     'css',
+    'rust',
+    'go',
   },
 })
 

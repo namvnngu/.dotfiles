@@ -1,10 +1,11 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'lua_ls',
-    'rust_analyzer',
-    'tsserver',
+    'gopls',
     'denols',
+    'lua_ls',
+    'tsserver',
+    'rust_analyzer',
   },
   automatic_installation = true,
 })
@@ -151,3 +152,5 @@ nvim_lsp.denols.setup(merge(common_setup, {
 nvim_lsp.lua_ls.setup(common_setup)
 
 nvim_lsp.rust_analyzer.setup(common_setup)
+
+nvim_lsp.gopls.setup(common_setup)
