@@ -49,6 +49,7 @@ end
 
 local lsp_formatting_augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
 local lsp_highlight_augroup = vim.api.nvim_create_augroup('LspHighlight', { clear = true })
+local lsp_codelens_augroup = vim.api.nvim_create_augroup('LspCodelens', { clear = true })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -77,6 +78,7 @@ local common_on_attach = function(client, bufnr)
     lsp_formatting(bufnr)
   end, bufopts)
 
+  -- Format
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_clear_autocmds({ group = lsp_formatting_augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd('BufWritePre', {
@@ -88,6 +90,7 @@ local common_on_attach = function(client, bufnr)
     })
   end
 
+  -- Highlight
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_clear_autocmds({ group = lsp_highlight_augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd('CursorHold', {
@@ -105,6 +108,20 @@ local common_on_attach = function(client, bufnr)
       end,
     })
   end
+
+  -- Codelens
+  if client.server_capabilities.codeLensProvider then
+    vim.api.nvim_clear_autocmds({ group = lsp_codelens_augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI', 'InsertLeave' }, {
+      group = lsp_codelens_augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.codelens.refresh()
+      end,
+    })
+  end
+
+  nnoremap('<leader>vclr', vim.lsp.codelens.run, bufopts)
 end
 
 -- LSP Setups
