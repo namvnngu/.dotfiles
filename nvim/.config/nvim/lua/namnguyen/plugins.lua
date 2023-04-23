@@ -56,10 +56,20 @@ return require('packer').startup(function(use)
   use('mattn/emmet-vim')
 
   -- Buffer/Tab line
-  use({ 'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons' })
+  use({
+    'akinsho/bufferline.nvim',
+    tag = 'v2.*',
+    requires = 'kyazdani42/nvim-web-devicons',
+  })
 
-  -- Use nvim/vim"s builtin terminal in the floating/popup window
-  use('voldikss/vim-floaterm')
+  -- Terminal
+  use({
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+    config = function()
+      require('toggleterm').setup()
+    end,
+  })
 
   --- Vim Align
   use('junegunn/vim-easy-align')
