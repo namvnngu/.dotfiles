@@ -2,13 +2,13 @@
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
--- vim.cmd([[
---   set background=light
---   let g:gruvbox_contrast_dark='medium'
---   let g:gruvbox_contrast_light='medium'
---   let g:gruvbox_transparent_bg=0
---   colorscheme gruvbox
--- ]])
+vim.cmd([[
+  set background=dark
+  let g:gruvbox_contrast_dark='medium'
+  let g:gruvbox_contrast_light='medium'
+  let g:gruvbox_transparent_bg=0
+  colorscheme gruvbox
+]])
 
 -- vim.cmd([[
 --   let g:tokyonight_transparent=1
@@ -35,10 +35,10 @@
 -- end,
 -- })
 
-vim.cmd([[
-  set background=dark
-  let g:everforest_background = 'medium'
-  let g:everforest_better_performance = 1
-  let g:everforest_disable_italic_comment = 1
-  colorscheme everforest
-]])
+-- vim.cmd([[
+--   set background=dark
+--   let g:everforest_background = 'medium'
+--   let g:everforest_better_performance = 1
+--   let g:everforest_disable_italic_comment = 1
+--   colorscheme everforest
+-- ]])

@@ -194,9 +194,9 @@ return require('packer').startup(function(use)
   })
 
   -- Theme
-  use('sainnhe/everforest')
+  use('morhetz/gruvbox')
+  -- use('sainnhe/everforest')
   -- use({ 'catppuccin/nvim', as = 'catppuccin' })
-  -- use("morhetz/gruvbox")
   -- use({ "projekt0n/github-nvim-theme" })
   -- use("folke/tokyonight.nvim")
   -- use("markvincze/panda-vim")
