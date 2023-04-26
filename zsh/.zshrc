@@ -10,12 +10,6 @@ export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports
 # PROMPT='%F{cyan}%n%f %~'$'\n$ '
 eval "$(starship init zsh)"
 
-# Z
-if command -v brew >/dev/null 2>&1; then
-	# Load rupa's z if installed
-	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
-fi
-
 # auto-completions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
