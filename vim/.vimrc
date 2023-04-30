@@ -127,7 +127,7 @@ noremap <silent> <leader>x :!chmod +x %<CR>
 " AUTOCOMMANDS "
 """"""""""""""""
 autocmd VimEnter * hi! Normal ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi! EndOfBuffer ctermfg=black ctermbg=black
+autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
