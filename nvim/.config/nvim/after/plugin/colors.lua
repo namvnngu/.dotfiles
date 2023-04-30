@@ -3,11 +3,12 @@
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 vim.cmd([[
-  set background=dark
+  colorscheme gruvbox
+  " set background=dark
   let g:gruvbox_contrast_dark='medium'
   let g:gruvbox_contrast_light='medium'
-  let g:gruvbox_transparent_bg=0
-  colorscheme gruvbox
+  let g:gruvbox_transparent_bg=1
+  autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 ]])
 
 -- vim.cmd([[

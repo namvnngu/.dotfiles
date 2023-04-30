@@ -1,6 +1,10 @@
-" OPTIONS
+"""""""""""
+" OPTIONS "
+"""""""""""
 syntax on
+
 filetype plugin indent on
+
 let mapleader = " "
 
 set viewoptions-=curdir
@@ -44,8 +48,12 @@ set incsearch
 set colorcolumn=80
 set noswapfile
 set nobackup
+set fillchars+=eob:\ ,
 
-" MAPPINGS
+""""""""""""
+" MAPPINGS "
+""""""""""""
+
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>')
 nnoremap <leader>k :wincmd k<CR>')
@@ -114,3 +122,16 @@ nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " Make file executable
 noremap <silent> <leader>x :!chmod +x %<CR>
+
+""""""""""""""""
+" AUTOCOMMANDS "
+""""""""""""""""
+autocmd VimEnter * hi! Normal ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi! EndOfBuffer ctermfg=black ctermbg=black
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+autocmd BufWritePre * call TrimWhitespace()
