@@ -44,13 +44,14 @@ cmp.setup({
       max_height = 15,
       max_width = 60,
     }),
+    completion = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -73,6 +74,7 @@ cmp.setup({
         buffer = '[Buffer]',
         nvim_lsp = '[LSP]',
         luasnip = '[LuaSnip]',
+        vsnip = '[VSnip]',
         nvim_lua = '[Lua]',
         latex_symbols = '[LaTeX]',
       })[entry.source.name]
@@ -99,15 +101,15 @@ cmp.setup.filetype('gitcommit', {
   }),
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won"t work anymore).
-cmp.setup.cmdline('/', {
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' },
   },
 })
 
--- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({

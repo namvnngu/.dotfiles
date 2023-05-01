@@ -13,26 +13,25 @@ return require('packer').startup(function(use)
   use('tveskag/nvim-blame-line')
   use('ThePrimeagen/git-worktree.nvim')
 
-  -- The undo history visualizer for VIM
+  -- The undo history visualizer
   use('mbbill/undotree')
 
   -- Dev icons
-  use('kyazdani42/nvim-web-devicons')
+  use('nvim-tree/nvim-web-devicons')
 
   -- A tree explorer
   use({
-    'kyazdani42/nvim-tree.lua',
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      'nvim-tree/nvim-web-devicons', -- optional
     },
-    tag = 'nightly', -- optional, updated every week
   })
 
   -- Insert or delete brackets, parens, quotes in pair
   use({
     'windwp/nvim-autopairs',
     config = function()
-      require('nvim-autopairs').setup({})
+      require('nvim-autopairs').setup()
     end,
   })
 
@@ -40,7 +39,7 @@ return require('packer').startup(function(use)
   use({
     'kylechui/nvim-surround',
     config = function()
-      require('nvim-surround').setup({})
+      require('nvim-surround').setup()
     end,
   })
 
@@ -58,8 +57,8 @@ return require('packer').startup(function(use)
   -- Buffer/Tab line
   use({
     'akinsho/bufferline.nvim',
-    tag = 'v2.*',
-    requires = 'kyazdani42/nvim-web-devicons',
+    tag = '*',
+    requires = 'nvim-tree/nvim-web-devicons',
   })
 
   -- Terminal
@@ -89,16 +88,24 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } },
   })
-  use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use({
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+  })
   use('nvim-telescope/telescope-ui-select.nvim')
   use('theprimeagen/harpoon')
 
   -- LSP Plugins
   use('neovim/nvim-lspconfig')
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
   use('simrat39/symbols-outline.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
+
+  -- Manage LSP servers, DAP servers, linters, and formatters
+  use({
+    'williamboman/mason.nvim',
+    run = ':MasonUpdate', -- :MasonUpdate updates registry contents
+  })
+  use('williamboman/mason-lspconfig.nvim')
 
   -- Autocomplete
   use('hrsh7th/cmp-nvim-lsp')
@@ -115,9 +122,9 @@ return require('packer').startup(function(use)
   -- Trouble
   use({
     'folke/trouble.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('trouble').setup({})
+      require('trouble').setup()
     end,
   })
 
@@ -153,7 +160,7 @@ return require('packer').startup(function(use)
   -- Status Bar
   use({
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
       require('lualine').setup()
     end,
@@ -163,25 +170,27 @@ return require('packer').startup(function(use)
   use({
     'ahmedkhalf/project.nvim',
     config = function()
-      require('project_nvim').setup()
+      require('project_nvim').setup({
+        manual_mode = true,
+      })
     end,
   })
 
   -- Faster Startup
-  use('lewis6991/impatient.nvim')
-
-  -- Indent Guides
   use({
-    'lukas-reineke/indent-blankline.nvim',
+    'lewis6991/impatient.nvim',
     config = function()
       require('impatient')
     end,
   })
 
+  -- Indent Guides
+  use('lukas-reineke/indent-blankline.nvim')
+
   -- Dashboard
   use({
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    requires = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('alpha').setup(require('alpha.themes.startify').config)
     end,
