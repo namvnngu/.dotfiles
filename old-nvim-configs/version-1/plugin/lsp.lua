@@ -3,7 +3,7 @@ local lsp_installer = require('nvim-lsp-installer')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-function common_on_attach(client, bufnr)
+local common_on_attach = function(client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
