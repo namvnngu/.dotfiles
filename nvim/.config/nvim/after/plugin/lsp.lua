@@ -47,6 +47,7 @@ local lsp_formatting = function(bufnr)
   })
 end
 
+-- Autocommand groups
 local lsp_formatting_augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
 local lsp_highlight_augroup = vim.api.nvim_create_augroup('LspHighlight', { clear = true })
 local lsp_codelens_augroup = vim.api.nvim_create_augroup('LspCodelens', { clear = true })
