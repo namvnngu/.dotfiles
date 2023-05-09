@@ -2,6 +2,7 @@
 export TERM="xterm-256color"
 export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.fzf/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # Variables
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
