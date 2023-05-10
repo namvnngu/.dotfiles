@@ -10,18 +10,18 @@ env:
 
 ## Terminal window settings
 window:
-  # Spread additional padding evenly around the terminal content.
+  ## Spread additional padding evenly around the terminal content.
   dynamic_padding: true
 
   decorations: full
   startup_mode: Windowed
   dynamic_title: true
 
-  # scrolling
+  ## Scrolling
   history: 10000
   multiplier: 3
 
-  # Background opacity
+  ## Background opacity
   opacity: 0.9
 
 ## Cursor setting
@@ -36,8 +36,11 @@ cursor:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
-  # When set to `true`, selected text will be copied to the primary clipboard.
+  ## When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: true
 
-# Live config reload (changes require restart)
+## Live config reload (changes require restart)
 live_config_reload: true
+
+key_bindings:
+  - { key: Space, mods: Command|Shift, mode: ~Search, action: ToggleViMode }
