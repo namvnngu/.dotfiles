@@ -32,6 +32,14 @@ function timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+# z
+export _Z_DATA=~/.z/.z
+if [ ! -f ~/.z/z.sh ]; then
+  git clone --depth 1 https://github.com/rupa/z.git .z
+  chmod +x ~/.z/z.sh
+fi
+source ~/.z/z.sh
+
 # tmux
 # tmux source-file ~/.tmux.conf
 
