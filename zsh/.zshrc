@@ -18,7 +18,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Vim mode
-set -o vi
+# set -o vi
 
 # Reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
@@ -33,12 +33,16 @@ function timezsh() {
 }
 
 # z
-export _Z_DATA=~/.z/.z
-if [ ! -f ~/.z/z.sh ]; then
-  git clone --depth 1 https://github.com/rupa/z.git .z
-  chmod +x ~/.z/z.sh
+Z_FOLDER=~/.z.sh
+Z_FILE=$Z_FOLDER/z.sh
+Z_DATAFILE=$Z_FOLDER/.z
+
+if [ ! -f $Z_FILE ]; then
+  git clone --depth 1 https://github.com/rupa/z.git $Z_FOLDER
+  chmod +x $Z_FILE
 fi
-source ~/.z/z.sh
+export _Z_DATA=$Z_DATAFILE
+source $Z_FILE
 
 # tmux
 # tmux source-file ~/.tmux.conf
