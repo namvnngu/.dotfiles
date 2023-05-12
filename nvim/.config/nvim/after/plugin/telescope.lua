@@ -5,14 +5,23 @@ telescope.setup({
   defaults = {
     file_ignore_patterns = { 'node_modules' },
   },
+  pickers = {
+    find_files = {
+      hidden = true,
+      no_ignore = true,
+    },
+  },
 })
 telescope.load_extension('fzf')
 telescope.load_extension('git_worktree')
 telescope.load_extension('ui-select')
 telescope.load_extension('projects')
 
-nnoremap('<leader>fff', function()
+nnoremap('<C-p>', function()
   require('telescope.builtin').find_files()
+end)
+nnoremap('<leader>fg', function()
+  require('telescope.builtin').git_files()
 end)
 nnoremap('<leader>fbb', function()
   require('telescope.builtin').buffers()
@@ -41,9 +50,6 @@ nnoremap('<leader>fcc', function()
 end)
 nnoremap('<leader>fstt', function()
   require('telescope.builtin').git_status()
-end)
-nnoremap('<C-p>', function()
-  require('telescope.builtin').git_files()
 end)
 
 nnoremap('<leader>flg', function()
