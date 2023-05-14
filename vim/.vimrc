@@ -123,11 +123,20 @@ nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 " Make file executable
 noremap <silent> <leader>x :!chmod +x %<CR>
 
+"""""""""
+" THEME "
+"""""""""
+autocmd Vimenter * ++nested colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_light='medium'
+let g:gruvbox_transparent_bg=1
+autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
-autocmd VimEnter * hi! Normal ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
