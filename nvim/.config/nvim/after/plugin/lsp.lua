@@ -2,6 +2,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'gopls',
+    'cssls',
     'denols',
     'lua_ls',
     'tsserver',
@@ -149,7 +150,7 @@ null_ls.setup(merge(common_setup, {
 
     -- Prettier
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = { 'html', 'json', 'yaml', 'toml', 'markdown' },
+      filetypes = { 'html', 'scss', 'css', 'json', 'yaml', 'toml', 'markdown' },
     }),
 
     -- Writing
@@ -182,3 +183,5 @@ nvim_lsp.rust_analyzer.setup(common_setup)
 nvim_lsp.gopls.setup(common_setup)
 
 nvim_lsp.svelte.setup(common_setup)
+
+nvim_lsp.cssls.setup(common_setup)
