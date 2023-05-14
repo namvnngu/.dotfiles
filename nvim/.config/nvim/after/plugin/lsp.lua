@@ -140,12 +140,20 @@ null_ls.setup(merge(common_setup, {
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.code_actions.eslint_d,
     null_ls.builtins.formatting.eslint_d,
+
     -- Lua
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.code_actions.cspell,
+
     -- Rust
     null_ls.builtins.formatting.rustfmt,
+
+    -- Prettier
+    null_ls.builtins.formatting.prettierd.with({
+      filetypes = { 'html', 'json', 'yaml', 'toml', 'markdown' },
+    }),
+
     -- Writing
+    null_ls.builtins.code_actions.cspell,
     -- null_ls.builtins.diagnostics.cspell.with({
     -- 	diagnostic_config = {
     -- 		virtual_text = false,
@@ -172,3 +180,5 @@ nvim_lsp.lua_ls.setup(common_setup)
 nvim_lsp.rust_analyzer.setup(common_setup)
 
 nvim_lsp.gopls.setup(common_setup)
+
+nvim_lsp.svelte.setup(common_setup)
