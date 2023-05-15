@@ -6,15 +6,13 @@ require('mason-lspconfig').setup({
     'denols',
     'lua_ls',
     'tsserver',
+    'clangd',
     'rust_analyzer',
   },
   automatic_installation = true,
 })
 
-local nvim_lsp = require('lspconfig')
-local null_ls = require('null-ls')
 local nnoremap = require('utils.keymap').nnoremap
-local merge = require('utils.table').merge
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { silent = true }
@@ -38,7 +36,7 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
--- Formating
+-- Formatting
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
     filter = function(client)
@@ -127,6 +125,10 @@ local common_on_attach = function(client, bufnr)
 end
 
 -- LSP Setups
+local nvim_lsp = require('lspconfig')
+local null_ls = require('null-ls')
+local merge = require('utils.table').merge
+
 local common_setup = {
   on_attach = common_on_attach,
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
@@ -153,17 +155,20 @@ null_ls.setup(merge(common_setup, {
       filetypes = { 'html', 'scss', 'css', 'json', 'yaml', 'toml', 'markdown' },
     }),
 
-    -- Writing
+    -- C/C++
+    null_ls.builtins.formatting.clang_format,
+
+    -- Spelling
     null_ls.builtins.code_actions.cspell,
     -- null_ls.builtins.diagnostics.cspell.with({
-    -- 	diagnostic_config = {
-    -- 		virtual_text = false,
-    -- 		severity_sort = true,
-    -- 	},
-    -- 	disabled_filetypes = { "NvimTree" },
-    -- 	diagnostics_postprocess = function(diagnostic)
-    -- 		diagnostic.severity = vim.diagnostic.severity["HINT"]
-    -- 	end,
+    --   diagnostic_config = {
+    --     virtual_text = false,
+    --     severity_sort = true,
+    --   },
+    --   disabled_filetypes = { 'NvimTree' },
+    --   diagnostics_postprocess = function(diagnostic)
+    --     diagnostic.severity = vim.diagnostic.severity['HINT']
+    --   end,
     -- }),
   },
 }))
@@ -185,3 +190,5 @@ nvim_lsp.gopls.setup(common_setup)
 nvim_lsp.svelte.setup(common_setup)
 
 nvim_lsp.cssls.setup(common_setup)
+
+nvim_lsp.clangd.setup(common_setup)
