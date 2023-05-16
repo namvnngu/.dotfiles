@@ -21,21 +21,6 @@ nnoremap('<leader>vp', vim.diagnostic.goto_prev, opts)
 nnoremap('<leader>vn', vim.diagnostic.goto_next, opts)
 nnoremap('<leader>vll', vim.diagnostic.setloclist, opts)
 
--- Automatically update diagnostics
-local signs = { Error = ' ', Warn = ' ', Hint = '󰋗 ', Info = ' ' }
-
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  underline = true,
-  update_in_insert = false,
-  virtual_text = { spacing = 4, prefix = '●' },
-  severity_sort = true,
-})
-
-for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-end
-
 -- Formatting
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
