@@ -134,7 +134,12 @@ null_ls.setup(merge(common_setup, {
     }),
 
     -- C/C++
-    null_ls.builtins.formatting.clang_format,
+    null_ls.builtins.formatting.clang_format.with({
+      disabled_filetypes = { 'cs' },
+    }),
+
+    -- C#
+    null_ls.builtins.formatting.csharpier,
 
     -- Go
     null_ls.builtins.formatting.goimports,
@@ -173,3 +178,5 @@ nvim_lsp.svelte.setup(common_setup)
 nvim_lsp.cssls.setup(common_setup)
 
 nvim_lsp.clangd.setup(common_setup)
+
+nvim_lsp.csharp_ls.setup(common_setup)
