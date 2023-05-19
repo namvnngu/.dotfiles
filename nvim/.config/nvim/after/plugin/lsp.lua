@@ -34,7 +34,6 @@ end
 -- Autocommand groups
 local lsp_formatting_augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
 local lsp_highlight_augroup = vim.api.nvim_create_augroup('LspHighlight', { clear = true })
--- local lsp_codelens_augroup = vim.api.nvim_create_augroup('LspCodelens', { clear = true })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -50,21 +49,19 @@ local common_on_attach = function(client, bufnr)
   nnoremap('<leader>vk', vim.lsp.buf.hover, bufopts)
   nnoremap('<leader>vi', vim.lsp.buf.implementation, bufopts)
   nnoremap('<leader>vsh', vim.lsp.buf.signature_help, bufopts)
+  nnoremap('<leader>D', vim.lsp.buf.type_definition, bufopts)
+  nnoremap('<leader>vrn', vim.lsp.buf.rename, bufopts)
+  nnoremap('<leader>vca', vim.lsp.buf.code_action, bufopts)
+  nnoremap('<leader>vrr', vim.lsp.buf.references, bufopts)
+  nnoremap('<leader>vcl', vim.lsp.codelens.run, bufopts)
+  nnoremap('<leader>vcr', vim.lsp.codelens.refresh, bufopts)
   nnoremap('<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   nnoremap('<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   nnoremap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  nnoremap('<leader>D', vim.lsp.buf.type_definition, bufopts)
-  nnoremap('<leader>vrn', vim.lsp.buf.rename, bufopts)
-  nnoremap('<leader>vca', vim.lsp.buf.code_action, bufopts)
-  nnoremap('<leader>vrr', vim.lsp.buf.references, bufopts)
   nnoremap('<leader>f', function()
     lsp_formatting(bufnr)
-  end, bufopts)
-  nnoremap('<leader>vcl', function()
-    vim.lsp.codelens.refresh()
-    vim.lsp.codelens.run()
   end, bufopts)
 
   -- Format
@@ -85,30 +82,14 @@ local common_on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd('CursorHold', {
       group = lsp_highlight_augroup,
       buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.document_highlight()
-      end,
+      callback = vim.lsp.buf.document_highlight,
     })
     vim.api.nvim_create_autocmd('CursorMoved', {
       group = lsp_highlight_augroup,
       buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.clear_references()
-      end,
+      callback = vim.lsp.buf.clear_references,
     })
   end
-
-  -- Codelens
-  -- if client.server_capabilities.codeLensProvider then
-  --   vim.api.nvim_clear_autocmds({ group = lsp_codelens_augroup, buffer = bufnr })
-  --   vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI', 'InsertLeave' }, {
-  --     group = lsp_codelens_augroup,
-  --     buffer = bufnr,
-  --     callback = function()
-  --       vim.lsp.codelens.refresh()
-  --     end,
-  --   })
-  -- end
 end
 
 -- LSP Setups
