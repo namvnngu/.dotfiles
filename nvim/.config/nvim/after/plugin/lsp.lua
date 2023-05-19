@@ -153,6 +153,9 @@ null_ls.setup(merge(common_setup, {
     -- C/C++
     null_ls.builtins.formatting.clang_format,
 
+    -- Go
+    null_ls.builtins.formatting.goimports,
+
     -- Spelling
     null_ls.builtins.code_actions.cspell,
     -- null_ls.builtins.diagnostics.cspell.with({
