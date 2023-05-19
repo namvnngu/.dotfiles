@@ -147,7 +147,7 @@ null_ls.setup(merge(common_setup, {
 
     -- Prettier
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = { 'html', 'scss', 'css', 'json', 'yaml', 'toml', 'markdown' },
+      filetypes = { 'html', 'scss', 'sass', 'css', 'json', 'yaml', 'toml', 'markdown' },
     }),
 
     -- C/C++
