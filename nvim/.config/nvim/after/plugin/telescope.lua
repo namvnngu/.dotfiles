@@ -1,4 +1,6 @@
 local telescope = require('telescope')
+local telescope_builtin = require('telescope.builtin')
+local telescope_extensions = require('telescope').extensions
 local nnoremap = require('utils.keymap').nnoremap
 
 telescope.setup({
@@ -17,65 +19,36 @@ telescope.load_extension('fzf')
 telescope.load_extension('git_worktree')
 telescope.load_extension('projects')
 
-nnoremap('<leader>ff', function()
-  require('telescope.builtin').find_files()
-end)
-nnoremap('<C-p>', function()
-  require('telescope.builtin').git_files()
-end)
-nnoremap('<leader>fbb', function()
-  require('telescope.builtin').buffers()
-end)
-nnoremap('<leader>fht', function()
-  require('telescope.builtin').help_tags()
-end)
-nnoremap('<leader>frr', function()
-  require('telescope.builtin').lsp_references()
-end)
-nnoremap('<leader>fdd', function()
-  require('telescope.builtin').lsp_definitions()
-end)
-nnoremap('<leader>ftd', function()
-  require('telescope.builtin').lsp_type_definitions()
-end)
-nnoremap('<leader>fim', function()
-  require('telescope.builtin').lsp_implementations()
-end)
-nnoremap('<leader>fda', function()
-  require('telescope.builtin').diagnostics()
-end)
+nnoremap('<C-p>', telescope_builtin.git_files)
+nnoremap('<leader>ff', telescope_builtin.find_files)
 
-nnoremap('<leader>fcc', function()
-  require('telescope.builtin').git_bcommits()
-end)
-nnoremap('<leader>fstt', function()
-  require('telescope.builtin').git_status()
-end)
+nnoremap('<leader>fbf', telescope_builtin.buffers)
+nnoremap('<leader>fht', telescope_builtin.help_tags)
 
-nnoremap('<leader>flg', function()
-  require('telescope.builtin').live_grep()
+nnoremap('<leader>frr', telescope_builtin.lsp_references)
+nnoremap('<leader>fdd', telescope_builtin.lsp_definitions)
+nnoremap('<leader>ftd', telescope_builtin.lsp_type_definitions)
+nnoremap('<leader>fim', telescope_builtin.lsp_implementations)
+nnoremap('<leader>fda', telescope_builtin.diagnostics)
+
+nnoremap('<leader>fst', telescope_builtin.git_status)
+
+nnoremap('<leader>flg', telescope_builtin.live_grep)
+nnoremap('<leader>fgw', function()
+  telescope_builtin.grep_string({ search = vim.fn.expand('<cword>') })
 end)
 nnoremap('<leader>fgs', function()
   local trim = require('utils.string').trim
   local query = trim(vim.fn.input('Grep For > '))
   local root_dir = trim(vim.fn.input('Root Dir > '))
-  require('telescope.builtin').grep_string({
+  telescope_builtin.grep_string({
     cwd = #root_dir ~= 0 and root_dir or require('telescope.utils').buffer_dir(),
     search = query,
     use_regex = true,
   })
 end)
-nnoremap('<leader>fgw', function()
-  require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })
-end)
 
-nnoremap('<leader>fgt', function()
-  require('telescope').extensions.git_worktree.git_worktrees()
-end)
-nnoremap('<leader>fcgt', function()
-  require('telescope').extensions.git_worktree.create_git_worktree()
-end)
+nnoremap('<leader>fgt', telescope_extensions.git_worktree.git_worktrees)
+nnoremap('<leader>fcgt', telescope_extensions.git_worktree.create_git_worktree)
 
-nnoremap('<leader>fpm', function()
-  require('telescope').extensions.projects.projects()
-end)
+nnoremap('<leader>fpm', telescope_extensions.projects.projects)
