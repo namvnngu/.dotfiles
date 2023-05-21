@@ -200,6 +200,9 @@ return require('packer').startup(function(use)
     requires = 'kevinhwang91/promise-async',
   })
 
+  -- Split explorer
+  use('stevearc/oil.nvim')
+
   -- Theme
   use('morhetz/gruvbox')
   -- use('sainnhe/everforest')
