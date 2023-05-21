@@ -4,6 +4,7 @@ local nnoremap = require('utils.keymap').nnoremap
 telescope.setup({
   defaults = {
     file_ignore_patterns = { 'node_modules' },
+    preview = false,
   },
   pickers = {
     find_files = {
@@ -14,7 +15,6 @@ telescope.setup({
 })
 telescope.load_extension('fzf')
 telescope.load_extension('git_worktree')
-telescope.load_extension('ui-select')
 telescope.load_extension('projects')
 
 nnoremap('<leader>ff', function()

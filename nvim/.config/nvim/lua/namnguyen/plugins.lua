@@ -5,6 +5,9 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
+  -- UI
+  use('stevearc/dressing.nvim')
+
   -- Adding color with colorizer
   use('norcalli/nvim-colorizer.lua')
 
@@ -92,7 +95,6 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
   })
-  use('nvim-telescope/telescope-ui-select.nvim')
   use('theprimeagen/harpoon')
 
   -- LSP Plugins
