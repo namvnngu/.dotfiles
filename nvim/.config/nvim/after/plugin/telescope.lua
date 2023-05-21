@@ -17,7 +17,8 @@ telescope.setup({
 })
 telescope.load_extension('fzf')
 telescope.load_extension('git_worktree')
-telescope.load_extension('projects')
+telescope.load_extension('project')
+telescope.load_extension('file_browser')
 
 nnoremap('<C-p>', telescope_builtin.git_files)
 nnoremap('<leader>ff', telescope_builtin.find_files)
@@ -51,4 +52,12 @@ end)
 nnoremap('<leader>fgt', telescope_extensions.git_worktree.git_worktrees)
 nnoremap('<leader>fcgt', telescope_extensions.git_worktree.create_git_worktree)
 
-nnoremap('<leader>fpm', telescope_extensions.projects.projects)
+nnoremap('<leader>fpm', telescope_extensions.project.project)
+
+nnoremap('<leader>fb', telescope_extensions.file_browser.file_browser)
+nnoremap('<C-n>', function()
+  telescope_extensions.file_browser.file_browser({
+    path = vim.fn.expand('%:p:h'),
+    select_buffer = true,
+  })
+end)

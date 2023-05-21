@@ -22,14 +22,6 @@ return require('packer').startup(function(use)
   -- Dev icons
   use('nvim-tree/nvim-web-devicons')
 
-  -- A tree explorer
-  use({
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-  })
-
   -- Insert or delete brackets, parens, quotes in pair
   use({
     'windwp/nvim-autopairs',
@@ -94,6 +86,20 @@ return require('packer').startup(function(use)
   use({
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
+  })
+  use({
+    'nvim-telescope/telescope-file-browser.nvim',
+    requires = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+  })
+  use({
+    'nvim-telescope/telescope-project.nvim',
+    requires = {
+      'nvim-telescope/telescope-file-browser.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
   })
   use('theprimeagen/harpoon')
 
@@ -165,16 +171,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
       require('lualine').setup()
-    end,
-  })
-
-  -- Project Management
-  use({
-    'ahmedkhalf/project.nvim',
-    config = function()
-      require('project_nvim').setup({
-        manual_mode = true,
-      })
     end,
   })
 
