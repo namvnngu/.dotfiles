@@ -14,6 +14,11 @@ telescope.setup({
       no_ignore = true,
     },
   },
+  extensions = {
+    file_browser = {
+      hidden = true,
+    },
+  },
 })
 telescope.load_extension('fzf')
 telescope.load_extension('git_worktree')
