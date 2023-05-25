@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+GREEN='\033[0;32m'
+
+selected=$(ls -d */ | fzf -m)
+
+stow $selected
+
+selected_array=($selected)
+for i in "${selected_array[@]}"
+do
+  :
+  printf "✅ $i stowed!\n"
+done
