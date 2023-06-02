@@ -1,7 +1,7 @@
 os:
-  editCommand: 'nvim'
+  editCommand: "nvim"
 gui:
-  splitDiff: 'always'
+  splitDiff: "always"
   theme:
     selectedLineBgColor:
       - reverse
