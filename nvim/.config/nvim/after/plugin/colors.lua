@@ -1,14 +1,9 @@
--- Transparent background
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
 -- vim.cmd([[
---   colorscheme gruvbox
---   " set background=dark
+--   set background=dark
 --   let g:gruvbox_contrast_dark='medium'
 --   let g:gruvbox_contrast_light='medium'
 --   let g:gruvbox_transparent_bg=1
---   autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+--   colorscheme gruvbox
 -- ]])
 
 -- vim.cmd([[
@@ -17,34 +12,42 @@
 --   colorscheme tokyonight
 -- ]])
 
--- require("github-theme").setup({
--- 	theme_style = "dark_default",
--- 	transparent = true,
--- 	sidebars = { "qf", "vista_kind", "terminal", "packer" },
+-- require('github-theme').setup({
+--   theme_style = 'dark_default',
+--   transparent = true,
+--   sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
 -- })
---
 
--- vim.cmd.colorscheme('catppuccin')
 -- require('catppuccin').setup({
--- flavour = 'mocha',
--- No need to uncomment transparent_background and custom_highlights
--- transparent_background = true,
--- custom_highlights = function()
--- 	return {
--- 		CursorLine = { bg = "#424450" },
--- 	}
--- end,
+--   flavour = 'mocha',
+--   transparent_background = true,
+--   no_italic = true,
 -- })
+-- vim.cmd.colorscheme('catppuccin')
 
 -- vim.cmd([[
 --   set background=dark
 --   let g:everforest_background = 'medium'
 --   let g:everforest_better_performance = 1
 --   let g:everforest_disable_italic_comment = 1
---   colorscheme everforest
 -- ]])
+-- vim.cmd.colorscheme('everforest')
 
-vim.cmd([[
-  colorscheme monotone
-  autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-]])
+vim.o.background = 'dark'
+require('rose-pine').setup({
+  variant = 'moon',
+  disable_background = true,
+  disable_float_background = true,
+  disable_italics = true,
+})
+vim.cmd.colorscheme('rose-pine')
+
+-- vim.cmd.colorscheme('monotone')
+
+-- Transparent background
+-- vim.cmd([[
+--   autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+--   autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
+-- ]])
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
