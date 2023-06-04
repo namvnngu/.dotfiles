@@ -9,8 +9,16 @@ export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.fzf/bin
 
 # go
+uname_out="$(uname -s)"
+case "${uname_out}" in
+    Linux*)
+      export GOROOT=/usr/local/go
+      ;;
+    Darwin*)
+      ;;
+esac
+
 export GOPATH=$HOME/.go
-export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 ###############################################################################
