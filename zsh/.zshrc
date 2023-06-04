@@ -1,6 +1,11 @@
-# $PATH
-export TERM="xterm-256color"
+###############################################################################
+#                                 Paths                                       #
+###############################################################################
+
+# my custom bins
 export PATH=$PATH:$HOME/dotfiles/bin
+
+# fzf
 export PATH=$PATH:$HOME/.fzf/bin
 
 # go
@@ -8,12 +13,28 @@ export GOPATH=$HOME/.go
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-# variables
-export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+###############################################################################
+#                               Settings                                      #
+###############################################################################
 
-# starship
-# PROMPT='%F{cyan}%n%f %~'$'\n$ '
-eval "$(starship init zsh)"
+# colors
+export TERM="xterm-256color"
+
+# zsh history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+# vim mode
+# set -o vi
+
+# reduce latency when pressing <Esc>
+export KEYTIMEOUT=1
+
+###############################################################################
+#                                Plugins                                      #
+###############################################################################
 
 # auto suggestions
 ZSH_AUTO_SUGGESTIONS_FOLDER=~/.zsh/zsh-autosuggestions
@@ -43,20 +64,29 @@ fi
 export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
 
-# vim mode
-# set -o vi
+# prompt
+# PROMPT='%F{cyan}%n%f %~'$'\n$ '
+eval "$(starship init zsh)"
 
-# reduce latency when pressing <Esc>
-export KEYTIMEOUT=1
+###############################################################################
+#                               Tools                                         #
+###############################################################################
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# n: node version manager
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# Docker variables
+export DOCKER_FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+###############################################################################
+#                              Utilities                                      #
+###############################################################################
 
 # zsh time
 function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
-
-# n: node version manager
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
