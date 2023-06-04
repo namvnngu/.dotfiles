@@ -4,7 +4,9 @@ export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.fzf/bin
 
 # go
-export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$HOME/.go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # variables
 export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
