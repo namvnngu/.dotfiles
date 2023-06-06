@@ -31,10 +31,6 @@ local lsp_formatting = function(bufnr)
   })
 end
 
--- Autocommand groups
-local lsp_formatting_augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
-local lsp_highlight_augroup = vim.api.nvim_create_augroup('LspHighlight', { clear = true })
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local common_on_attach = function(client, bufnr)
@@ -64,19 +60,21 @@ local common_on_attach = function(client, bufnr)
     lsp_formatting(bufnr)
   end, bufopts)
 
-  -- Format
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_clear_autocmds({ group = lsp_formatting_augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      group = lsp_formatting_augroup,
-      buffer = bufnr,
-      callback = function()
-        lsp_formatting(bufnr)
-      end,
-    })
-  end
+  -- Format on save
+  -- local lsp_formatting_augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
+  -- if client.server_capabilities.documentFormattingProvider then
+  --   vim.api.nvim_clear_autocmds({ group = lsp_formatting_augroup, buffer = bufnr })
+  --   vim.api.nvim_create_autocmd('BufWritePre', {
+  --     group = lsp_formatting_augroup,
+  --     buffer = bufnr,
+  --     callback = function()
+  --       lsp_formatting(bufnr)
+  --     end,
+  --   })
+  -- end
 
   -- Highlight
+  local lsp_highlight_augroup = vim.api.nvim_create_augroup('LspHighlight', { clear = true })
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_clear_autocmds({ group = lsp_highlight_augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd('CursorHold', {
@@ -109,7 +107,7 @@ null_ls.setup(merge(common_setup, {
   sources = {
     -- Eslint
     null_ls.builtins.code_actions.eslint_d,
-    -- null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.diagnostics.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({
