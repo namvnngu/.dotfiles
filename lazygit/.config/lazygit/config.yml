@@ -1,5 +1,5 @@
 os:
-  editCommand: "nvim"
+  editPreset: "nvim"
 gui:
   splitDiff: "always"
   theme:

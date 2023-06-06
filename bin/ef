@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-eslint_d --fix $(git diff --name-only HEAD | xargs)
+eslint_d --fix $(git diff --name-only --cached HEAD | xargs)
