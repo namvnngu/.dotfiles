@@ -1,3 +1,35 @@
 #!/usr/bin/env bash
 
-eslint_d --fix $(git diff --name-only --cached HEAD | xargs)
+if [[ $* == *-h* ]]; then
+  # Display Help
+  echo "Fix and format git files based on the eslint config"
+  echo
+  echo "Syntax: ef [-s|-h]"
+  echo "Options:"
+  echo "      -s     Only git staged files"
+  echo "      -h     Print this help and exit"
+  echo
+
+  exit 0
+fi
+
+staged=""
+if [[ $* == *-s* ]]; then
+  staged="--cached"
+fi
+
+formatted_files=$(git diff --name-only $staged HEAD)
+
+if [[ -n $formatted_files ]]; then
+  eslint_d --fix $(echo $formatted_files | xargs)
+
+  echo "List of files formatted":
+  formated_file_array=($formatted_files)
+  for file in "${formated_file_array[@]}"
+  do
+    :
+    echo "  ✅ $file"
+  done
+else
+  echo "There are no changed files to be formatted"
+fi
