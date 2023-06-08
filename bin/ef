@@ -18,7 +18,7 @@ if [[ $* == *-s* ]]; then
   staged="--cached"
 fi
 
-formatted_files=$(git diff --name-only $staged HEAD)
+formatted_files=$(git diff --name-only $staged HEAD | grep -E "((ts|js)x?)$")
 
 if [[ -n $formatted_files ]]; then
   eslint_d --fix $(echo $formatted_files | xargs)
