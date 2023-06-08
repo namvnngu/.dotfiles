@@ -23,13 +23,15 @@ formatted_files=$(git diff --name-only $staged HEAD)
 if [[ -n $formatted_files ]]; then
   eslint_d --fix $(echo $formatted_files | xargs)
 
-  echo "List of files formatted":
-  formated_file_array=($formatted_files)
-  for file in "${formated_file_array[@]}"
-  do
-    :
-    echo "  ✅ $file"
-  done
+  if [ $? -eq 0 ]; then
+    echo "List of files formatted":
+    formated_file_array=($formatted_files)
+    for file in "${formated_file_array[@]}"
+    do
+      :
+      echo "  ✅ $file"
+    done
+  fi
 else
   echo "There are no changed files to be formatted"
 fi
