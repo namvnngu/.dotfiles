@@ -16,10 +16,10 @@ local nnoremap = require('utils.keymap').nnoremap
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { silent = true }
-nnoremap('<leader>vsd', vim.diagnostic.open_float, opts)
-nnoremap('<leader>vp', vim.diagnostic.goto_prev, opts)
-nnoremap('<leader>vn', vim.diagnostic.goto_next, opts)
-nnoremap('<leader>vll', vim.diagnostic.setloclist, opts)
+nnoremap('<space>do', vim.diagnostic.open_float, opts)
+nnoremap('<space>dp', vim.diagnostic.goto_prev, opts)
+nnoremap('<space>dn', vim.diagnostic.goto_next, opts)
+nnoremap('<space>ds', vim.diagnostic.setloclist, opts)
 
 -- Formatting
 local lsp_formatting = function(bufnr)
