@@ -137,6 +137,7 @@ let g:disable_bg=1
 let g:disable_float_bg=1
 colorscheme rosepine
 
+autocmd VimEnter * hi Comment cterm=NONE
 " autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 " autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
 
