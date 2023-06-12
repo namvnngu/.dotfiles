@@ -49,5 +49,5 @@ vim.cmd([[
 --   autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 --   autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
 -- ]])
--- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', ctermbg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', ctermbg = 'none' })

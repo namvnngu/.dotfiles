@@ -218,8 +218,8 @@ return require('packer').startup(function(use)
 
   -- Theme
   use('morhetz/gruvbox')
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use({ 'catppuccin/nvim', as = 'catppuccin' })
+  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
+  -- use({ 'catppuccin/nvim', as = 'catppuccin' })
   -- use('Lokaltog/vim-monotone')
   -- use('sainnhe/everforest')
   -- use('projekt0n/github-nvim-theme')
