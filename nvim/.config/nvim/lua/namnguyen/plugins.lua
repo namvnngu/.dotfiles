@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 
   -- A Git wrapper, Git commands
   use('tpope/vim-fugitive')
-  use('tveskag/nvim-blame-line')
+  use('f-person/git-blame.nvim')
   use('ThePrimeagen/git-worktree.nvim')
 
   -- The undo history visualizer
@@ -145,11 +145,21 @@ return require('packer').startup(function(use)
   })
   use('nvim-treesitter/playground')
   use('nvim-treesitter/nvim-treesitter-context')
-  -- Use treesitter to auto close and auto rename html tag
+  -- use treesitter to auto close and auto rename html tag
   use({
     'windwp/nvim-ts-autotag',
     config = function()
       require('nvim-ts-autotag').setup()
+    end,
+  })
+  -- split/join blocks of code
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter' },
+    config = function()
+      require('treesj').setup({
+        use_default_keymaps = false,
+      })
     end,
   })
 
@@ -199,6 +209,9 @@ return require('packer').startup(function(use)
     'kevinhwang91/nvim-ufo',
     requires = 'kevinhwang91/promise-async',
   })
+
+  -- Quickfix
+  use({ 'kevinhwang91/nvim-bqf', ft = 'qf' })
 
   -- Split explorer
   use('stevearc/oil.nvim')
