@@ -1,10 +1,10 @@
--- vim.cmd([[
---   set background=dark
---   let g:gruvbox_contrast_dark='medium'
---   let g:gruvbox_contrast_light='medium'
---   let g:gruvbox_transparent_bg=1
---   colorscheme gruvbox
--- ]])
+vim.cmd([[
+  set background=dark
+  let g:gruvbox_contrast_dark='medium'
+  let g:gruvbox_contrast_light='medium'
+  let g:gruvbox_transparent_bg=1
+  colorscheme gruvbox
+]])
 
 -- vim.cmd([[
 --   let g:tokyonight_transparent=1
@@ -33,14 +33,14 @@
 -- ]])
 -- vim.cmd.colorscheme('everforest')
 
-vim.o.background = 'dark'
-require('rose-pine').setup({
-  variant = 'moon',
-  disable_background = true,
-  disable_float_background = true,
-  disable_italics = true,
-})
-vim.cmd.colorscheme('rose-pine')
+-- vim.o.background = 'dark'
+-- require('rose-pine').setup({
+--   variant = 'moon',
+--   disable_background = true,
+--   disable_float_background = true,
+--   disable_italics = true,
+-- })
+-- vim.cmd.colorscheme('rose-pine')
 
 -- vim.cmd.colorscheme('monotone')
 
