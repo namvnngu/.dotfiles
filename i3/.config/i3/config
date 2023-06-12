@@ -163,6 +163,9 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 }
 bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
+# Lock screen
+bindsym Control+$mod+l exec "i3lock -c 000000"
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
