@@ -39,7 +39,20 @@ create_code_execution_autocmd({
   desc = 'Execute C++ code',
   execution_command = 'g++ -std=c++14 '
     .. vim.fn.expand('%')
-    .. ' -O2 -Wall -Wextra -Werror -pedantic -g -o '
+    .. ' -O2 -Wall -Wextra -Werror -pedantic -o '
+    .. vim.fn.expand('%:t:r')
+    .. '.out && ./'
+    .. vim.fn.expand('%:t:r')
+    .. '.out',
+})
+
+create_code_execution_autocmd({
+  augroup_name = 'c_execution',
+  filetype_pattern = '*.c',
+  desc = 'Execute C code',
+  execution_command = 'gcc -std=c11 '
+    .. vim.fn.expand('%')
+    .. ' -O2 -Wall -Wextra -Werror -pedantic -o '
     .. vim.fn.expand('%:t:r')
     .. '.out && ./'
     .. vim.fn.expand('%:t:r')
