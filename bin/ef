@@ -14,6 +14,9 @@ if [[ $* == *-h* ]]; then
   exit 0
 fi
 
+# Find files based on flags
+echo "🔎 Finding files..."
+
 if [[ $* == *-s* ]]; then
   files=$(git diff --name-only --diff-filter=d --cached HEAD)
 elif [[ $* == *-t* ]]; then
@@ -24,13 +27,18 @@ else
   files=$(echo "${tracked_files} ${untracked_files}" | tr " " "\n")
 fi
 
+# Filter files
+echo "🧹 Filtering ts, js, tsx and jsx files..."
+
 filtered_files=$(echo "$files" | grep -E "((ts|js)x?)$")
 
+# Format filtered files
 if [[ -n $filtered_files ]]; then
+  echo "🎨 Formatting files..."
   eslint_d --fix $filtered_files
 
   if [ $? -eq 0 ]; then
-    echo "List of files formatted":
+    echo "📃 List of files formatted":
     filtered_files_array=($filtered_files)
     for file in "${filtered_files_array[@]}"
     do
