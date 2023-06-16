@@ -13,6 +13,7 @@ set backspace+=nostop
 set breakindent
 set clipboard=unnamed
 set completeopt=menu,menuone,noselect
+set complete+=kspell
 set copyindent
 set expandtab
 set fileencoding=utf-8
