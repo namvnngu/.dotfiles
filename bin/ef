@@ -47,5 +47,5 @@ if [[ -n $filtered_files ]]; then
     done
   fi
 else
-  echo "There are no changed files to be formatted"
+  echo "😞 There are no changed files to be formatted"
 fi
