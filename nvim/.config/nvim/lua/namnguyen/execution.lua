@@ -1,5 +1,4 @@
 local nnoremap = require('utils.keymap').nnoremap
-local Terminal = require('toggleterm.terminal').Terminal
 
 ---Create auto command to execute code based on file type
 ---@param config table
@@ -14,14 +13,7 @@ local function create_code_execution_autocmd(config)
     group = group_id,
     desc = config.desc,
     callback = function()
-      nnoremap('<leader>pp', function()
-        local term = Terminal:new({
-          cmd = config.execution_command,
-          hidden = true,
-          close_on_exit = false,
-        })
-        term:toggle()
-      end)
+      nnoremap('<leader>pp', ':term' .. ' ' .. config.execution_command .. '<CR>')
     end,
   })
 end
@@ -30,52 +22,40 @@ create_code_execution_autocmd({
   augroup_name = 'python_execution',
   filetype_pattern = '*.py',
   desc = 'Execute Python code',
-  execution_command = 'python3 ' .. vim.fn.expand('%'),
+  execution_command = 'python3 %',
 })
 
 create_code_execution_autocmd({
   augroup_name = 'cpp_execution',
   filetype_pattern = '*.cpp',
   desc = 'Execute C++ code',
-  execution_command = 'g++ -std=c++14 '
-    .. vim.fn.expand('%')
-    .. ' -O2 -Wall -Wextra -Werror -pedantic -o '
-    .. vim.fn.expand('%:t:r')
-    .. '.out && ./'
-    .. vim.fn.expand('%:t:r')
-    .. '.out',
+  execution_command = 'g++ -std=c++14 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out',
 })
 
 create_code_execution_autocmd({
   augroup_name = 'c_execution',
   filetype_pattern = '*.c',
   desc = 'Execute C code',
-  execution_command = 'gcc -std=c11 '
-    .. vim.fn.expand('%')
-    .. ' -O2 -Wall -Wextra -Werror -pedantic -o '
-    .. vim.fn.expand('%:t:r')
-    .. '.out && ./'
-    .. vim.fn.expand('%:t:r')
-    .. '.out',
+  execution_command = 'gcc -std=c11 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out',
 })
 
 create_code_execution_autocmd({
   augroup_name = 'java_execution',
   filetype_pattern = '*.java',
   desc = 'Execute Java code',
-  execution_command = 'javac ' .. vim.fn.expand('%:t') .. ' && java -enableassertions ' .. vim.fn.expand('%:t:r'),
+  execution_command = 'javac %:t && java -enableassertions %:t:r',
 })
 
 create_code_execution_autocmd({
   augroup_name = 'cs_execution',
   filetype_pattern = '*.cs',
   desc = 'Execute C# code',
-  execution_command = 'dotnet run --project ' .. vim.fn.expand('%:p:h'),
+  execution_command = 'dotnet run --project %:p:h',
 })
 
 create_code_execution_autocmd({
   augroup_name = 'ts_js_execution',
   filetype_pattern = { '*.ts', '*.js' },
   desc = 'Execute Typescipt or Javascript code',
-  execution_command = 'esno ' .. vim.fn.expand('%'),
+  execution_command = 'npx tsx %',
 })

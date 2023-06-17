@@ -56,15 +56,6 @@ return require('packer').startup(function(use)
     requires = 'nvim-tree/nvim-web-devicons',
   })
 
-  -- Terminal
-  use({
-    'akinsho/toggleterm.nvim',
-    tag = '*',
-    config = function()
-      require('toggleterm').setup()
-    end,
-  })
-
   --- Vim Align
   use('junegunn/vim-easy-align')
 
