@@ -10,6 +10,7 @@ fi
 if [[ $* == *-h* ]]; then
   # Display Help
   echo "Fix and format git files based on the eslint config."
+  echo "By default, format tracked and untracked files."
   echo
   echo "Syntax: ef [-s|-t|-h]"
   echo "Options:"
