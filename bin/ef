@@ -11,7 +11,7 @@ if [[ $* == *-h* ]]; then
   # Display Help
   echo "Fix and format git files based on the eslint config."
   echo
-  echo "Syntax: ef [-s|-h]"
+  echo "Syntax: ef [-s|-t|-h]"
   echo "Options:"
   echo "      -s     Only git staged files"
   echo "      -t     Only git tracked files"
