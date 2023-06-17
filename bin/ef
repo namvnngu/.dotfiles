@@ -10,12 +10,13 @@ fi
 if [[ $* == *-h* ]]; then
   # Display Help
   echo "Fix and format git files based on the eslint config."
-  echo "By default, format tracked and untracked files."
+  echo "By default, format both tracked and untracked files."
   echo
-  echo "Syntax: ef [-s|-t|-h]"
+  echo "Syntax: ef [-s|-t|-u|-h]"
   echo "Options:"
   echo "      -s     Only git staged files"
   echo "      -t     Only git tracked files"
+  echo "      -u     Only git untracked files"
   echo "      -h     Print this help and exit"
   echo
 
@@ -29,6 +30,8 @@ if [[ $* == *-s* ]]; then
   files=$(git diff --name-only --diff-filter=d --cached HEAD)
 elif [[ $* == *-t* ]]; then
   files=$(git diff --name-only --diff-filter=d HEAD)
+elif [[ $* == *-u* ]]; then
+  files=$(git ls-files . --exclude-standard --others)
 else
   tracked_files=$(git diff --name-only --diff-filter=d HEAD)
   untracked_files=$(git ls-files . --exclude-standard --others)
