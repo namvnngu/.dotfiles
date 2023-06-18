@@ -79,7 +79,7 @@ nnoremap <Left> :vertical resize -2<CR>
 
 nnoremap <leader>qq :q<CR>
 
-nnoremap <leader>ay :%y+<CR>
+nnoremap <leader>ya :%y+<CR>
 
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
