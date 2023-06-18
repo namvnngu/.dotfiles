@@ -11,7 +11,7 @@ set viewoptions-=curdir
 set backspace+=nostop
 
 set breakindent
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set completeopt=menu,menuone,noselect
 set complete+=kspell
 set copyindent
@@ -80,6 +80,7 @@ nnoremap <Left> :vertical resize -2<CR>
 nnoremap <leader>qq :q<CR>
 
 nnoremap <leader>ya :%y+<CR>
+vnoremap y :y+<CR>
 
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
