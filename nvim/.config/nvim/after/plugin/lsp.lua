@@ -77,7 +77,7 @@ local common_on_attach = function(client, bufnr)
   local lsp_highlight_augroup = vim.api.nvim_create_augroup('LspHighlight', { clear = true })
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_clear_autocmds({ group = lsp_highlight_augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd('CursorHold', {
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = lsp_highlight_augroup,
       buffer = bufnr,
       callback = vim.lsp.buf.document_highlight,
@@ -89,6 +89,36 @@ local common_on_attach = function(client, bufnr)
     })
   end
 end
+
+--- List all capabilities of the server associated with the current buffer
+vim.api.nvim_create_user_command('LspCapabilities', function()
+  local curBuf = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_active_clients({ bufnr = curBuf })
+
+  for _, client in pairs(clients) do
+    if client.name ~= 'null-ls' then
+      local capabilities = {}
+      for capability_name, is_active in pairs(client.server_capabilities) do
+        if is_active and capability_name:find('Provider') then
+          table.insert(capabilities, '- ' .. capability_name)
+        end
+      end
+
+      table.sort(capabilities)
+
+      local msg = '# ' .. client.name .. '\n' .. table.concat(capabilities, '\n')
+      vim.notify(msg, vim.log.levels.TRACE)
+    end
+  end
+end, {})
+
+-- Enhancement for documentHighlightProvider
+local doc_hl_styles = { gruvbox = { bg = '#504945', bold = true } }
+local curr_color_scheme = vim.g.colors_name
+local doc_hl_style = doc_hl_styles[curr_color_scheme]
+vim.api.nvim_set_hl(0, 'LspReferenceRead', doc_hl_style)
+vim.api.nvim_set_hl(0, 'LspReferenceText', doc_hl_style)
+vim.api.nvim_set_hl(0, 'LspReferenceWrite', doc_hl_style)
 
 -- LSP Setups
 local nvim_lsp = require('lspconfig')
@@ -165,6 +195,14 @@ nvim_lsp.denols.setup(merge(common_setup, {
   root_dir = nvim_lsp.util.root_pattern('deno.json', 'deno.jsonc'),
 }))
 
+-- Workaround for "warning: multiple different client offset_encodings detected
+-- for buffer, this is not supported yet".
+--
+-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428#issuecomment-997226723
+nvim_lsp.clangd.setup(merge(common_setup, {
+  capabilities = { offsetEncoding = { 'utf-16' } },
+}))
+
 nvim_lsp.lua_ls.setup(common_setup)
 
 nvim_lsp.rust_analyzer.setup(common_setup)
@@ -174,7 +212,5 @@ nvim_lsp.gopls.setup(common_setup)
 nvim_lsp.svelte.setup(common_setup)
 
 nvim_lsp.cssls.setup(common_setup)
-
-nvim_lsp.clangd.setup(common_setup)
 
 nvim_lsp.csharp_ls.setup(common_setup)

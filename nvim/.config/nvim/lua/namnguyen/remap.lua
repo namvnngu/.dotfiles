@@ -74,6 +74,15 @@ nnoremap('<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- Make file executable
 noremap('<leader>x', ':!chmod +x %<CR>', { silent = true })
 
+-- Open URL in browser
+noremap('gx', function()
+  if vim.fn.has('macunix') == 1 then
+    vim.cmd('!open <cWORD>')
+  else
+    vim.cmd('!xdg-open <cWORD>')
+  end
+end, { silent = true })
+
 -- Avoid using arrow keys
 -- noremap("<Up>", "<NOP>")
 -- noremap("<Down>", "<NOP>")
