@@ -19,6 +19,11 @@ nnoremap('<Left>', ':vertical resize -2<CR>')
 nnoremap('<leader>qq', ':q<CR>')
 
 nnoremap('<leader>ya', ':%y+<CR>')
+nnoremap('<leader>y', '"+y')
+vnoremap('<leader>y', '"+y')
+-- Yank til the end
+nnoremap('<leader>Y', '"+y$')
+nnoremap('Y', 'y$')
 
 nnoremap('<leader>bn', ':bnext<CR>')
 nnoremap('<leader>bp', ':bprevious<CR>')
@@ -28,9 +33,6 @@ nnoremap('<leader>be', ':%bd|e#<CR>')
 
 vnoremap('J', ":m '>+1<CR>gv=gv")
 vnoremap('K', ":m '<-2<CR>gv=gv")
-
--- Yank til the end
-nnoremap('Y', 'y$')
 
 -- Keeping it centered and stable
 nnoremap('J', 'mzJ`z')

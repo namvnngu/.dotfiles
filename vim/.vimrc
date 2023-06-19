@@ -11,7 +11,7 @@ set viewoptions-=curdir
 set backspace+=nostop
 
 set breakindent
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 set completeopt=menu,menuone,noselect
 set complete+=kspell
 set copyindent
@@ -39,7 +39,7 @@ set tabstop=2
 set termguicolors
 set timeoutlen=500
 set noundofile
-set updatetime=300
+set updatetime=50
 set virtualedit=block
 set nowrap
 set nowritebackup
@@ -80,7 +80,11 @@ nnoremap <Left> :vertical resize -2<CR>
 nnoremap <leader>qq :q<CR>
 
 nnoremap <leader>ya :%y+<CR>
-vnoremap y :y+<CR>
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+" Yank til the end
+nnoremap <leader>Y "+y$
+nnoremap Y y$
 
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
@@ -90,9 +94,6 @@ nnoremap <leader>be :%bd\|e#<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-
-" Yank til the end
-nnoremap Y y$
 
 " Keeping it centered and stable
 nnoremap J mzJ`z
