@@ -144,19 +144,19 @@ tnoremap <Esc> <C-\><C-n>
 """""""""
 " THEME "
 """""""""
-set background=dark
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
-let g:gruvbox_transparent_bg=1
-colorscheme gruvbox
-
 " set background=dark
-" let g:disable_bg=1
-" let g:disable_float_bg=1
-" colorscheme rosepine
+" let g:gruvbox_contrast_dark='medium'
+" let g:gruvbox_contrast_light='medium'
+" let g:gruvbox_transparent_bg=1
+" colorscheme gruvbox
 
-autocmd VimEnter * hi Comment cterm=NONE
-autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+set background=dark
+let g:disable_bg=1
+let g:disable_float_bg=1
+colorscheme rosepine
+
+" autocmd VimEnter * hi Comment cterm=NONE
+" autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 " autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
 
 """"""""""""""""
