@@ -11,7 +11,7 @@ set viewoptions-=curdir
 set backspace+=nostop
 
 set breakindent
-" set clipboard+=unnamedplus
+set clipboard+=unnamedplus
 set completeopt=menu,menuone,noselect
 set complete+=kspell
 set copyindent

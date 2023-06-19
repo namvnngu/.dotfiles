@@ -1,16 +1,20 @@
-vim.cmd([[
-  set background=dark
-  let g:gruvbox_contrast_dark='medium'
-  let g:gruvbox_contrast_light='medium'
-  let g:gruvbox_transparent_bg=1
-  colorscheme gruvbox
-]])
-
 -- vim.cmd([[
---   let g:tokyonight_transparent=1
---   let g:tokyonight_transparent_sidebar=1
---   colorscheme tokyonight
+--   set background=dark
+--   let g:gruvbox_contrast_dark='medium'
+--   let g:gruvbox_contrast_light='medium'
+--   let g:gruvbox_transparent_bg=1
+--   colorscheme gruvbox
 -- ]])
+
+require('tokyonight').setup({
+  style = 'moon',
+  transparent = true,
+  styles = {
+    comments = { italic = false },
+    keywords = { italic = false },
+  },
+})
+vim.cmd.colorscheme('tokyonight')
 
 -- require('github-theme').setup({
 --   theme_style = 'dark_default',
@@ -49,5 +53,5 @@ vim.cmd([[
 --   autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 --   autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
 -- ]])
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', ctermbg = 'none' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', ctermbg = 'none' })
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', ctermbg = 'none' })
+-- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', ctermbg = 'none' })

@@ -112,13 +112,9 @@ vim.api.nvim_create_user_command('LspCapabilities', function()
   end
 end, {})
 
--- Enhancement for documentHighlightProvider
-local doc_hl_styles = { gruvbox = { bg = '#504945', bold = true } }
-local curr_color_scheme = vim.g.colors_name
-local doc_hl_style = doc_hl_styles[curr_color_scheme]
-vim.api.nvim_set_hl(0, 'LspReferenceRead', doc_hl_style)
-vim.api.nvim_set_hl(0, 'LspReferenceText', doc_hl_style)
-vim.api.nvim_set_hl(0, 'LspReferenceWrite', doc_hl_style)
+-- I'm not sure why calling colorscheme in other files does not make document
+-- highlighting work, so calling it again here is a workaround
+vim.cmd.colorscheme('tokyonight')
 
 -- LSP Setups
 local nvim_lsp = require('lspconfig')

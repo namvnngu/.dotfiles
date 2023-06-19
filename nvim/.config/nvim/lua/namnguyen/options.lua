@@ -12,7 +12,7 @@ vim.cmd('filetype plugin indent on')
 local options = {
   opt = {
     breakindent = true, -- enable or disable to wrap indent to match line start
-    -- clipboard = 'unnamedplus', -- connection to the system clipboard
+    clipboard = 'unnamedplus', -- connection to the system clipboard
     cmdheight = 2, -- command line height
     completeopt = { 'menu', 'menuone', 'noselect' }, -- options for insert mode completion
     copyindent = true, -- enable or disable to copy the previous indentation on autoindenting
