@@ -1,6 +1,10 @@
+os="$(uname -s)"
+
 ###############################################################################
 #                                 Paths                                       #
 ###############################################################################
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # my custom bins
 export PATH=$PATH:$HOME/dotfiles/bin
@@ -9,8 +13,7 @@ export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.fzf/bin
 
 # go
-uname_out="$(uname -s)"
-case "${uname_out}" in
+case "${os}" in
     Linux*)
       export GOROOT=/usr/local/go
       ;;
