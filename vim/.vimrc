@@ -137,6 +137,9 @@ nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 " Make file executable
 noremap <silent> <leader>x :!chmod +x %<CR>
 
+" Exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
 """""""""
 " THEME "
 """""""""

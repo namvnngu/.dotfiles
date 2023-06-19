@@ -3,6 +3,7 @@ local vnoremap = require('utils.keymap').vnoremap
 local noremap = require('utils.keymap').noremap
 local xnoremap = require('utils.keymap').xnoremap
 local inoremap = require('utils.keymap').inoremap
+local tnoremap = require('utils.keymap').tnoremap
 local map = require('utils.keymap').map
 
 nnoremap('<leader>h', ':wincmd h<CR>')
@@ -82,6 +83,9 @@ noremap('gx', function()
     vim.cmd('!xdg-open <cWORD>')
   end
 end, { silent = true })
+
+-- Exit terminal mode
+tnoremap('<Esc>', [[<C-\><C-n>]])
 
 -- Avoid using arrow keys
 -- noremap("<Up>", "<NOP>")
