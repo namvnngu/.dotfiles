@@ -56,7 +56,7 @@ local common_on_attach = function(client, bufnr)
   nnoremap('<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  nnoremap('F', function()
+  nnoremap('<space>F', function()
     lsp_formatting(bufnr)
   end, bufopts)
 
