@@ -28,7 +28,7 @@ telescope.load_extension('file_browser')
 nnoremap('<C-p>', telescope_builtin.git_files)
 nnoremap('<leader>ff', telescope_builtin.find_files)
 
-nnoremap('<leader>fbf', telescope_builtin.buffers)
+nnoremap('<leader>fbb', telescope_builtin.buffers)
 nnoremap('<leader>fht', telescope_builtin.help_tags)
 
 nnoremap('<leader>frr', telescope_builtin.lsp_references)
@@ -59,7 +59,7 @@ nnoremap('<leader>fcgt', telescope_extensions.git_worktree.create_git_worktree)
 
 nnoremap('<leader>fpm', telescope_extensions.project.project)
 
-nnoremap('<leader>fb', telescope_extensions.file_browser.file_browser)
+nnoremap('<leader>fbf', telescope_extensions.file_browser.file_browser)
 nnoremap('<C-n>', function()
   telescope_extensions.file_browser.file_browser({
     path = vim.fn.expand('%:p:h'),
