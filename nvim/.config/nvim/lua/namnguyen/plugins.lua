@@ -98,6 +98,12 @@ return require('packer').startup(function(use)
   use('neovim/nvim-lspconfig')
   use('simrat39/symbols-outline.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
+  use({
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end,
+  })
 
   -- Manage LSP servers, DAP servers, linters, and formatters
   use({
@@ -172,14 +178,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
       require('lualine').setup()
-    end,
-  })
-
-  -- Faster Startup
-  use({
-    'lewis6991/impatient.nvim',
-    config = function()
-      require('impatient')
     end,
   })
 

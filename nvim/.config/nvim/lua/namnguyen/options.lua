@@ -1,3 +1,5 @@
+vim.loader.enable() -- improve startup time
+
 vim.opt.viewoptions:remove('curdir') -- disable saving current directory with views
 vim.opt.shortmess:append({ s = true, I = true }) -- disable startup message
 vim.opt.backspace:append({ 'nostop' }) -- don't stop backspace at insert
