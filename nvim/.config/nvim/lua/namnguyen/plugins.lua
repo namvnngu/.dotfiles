@@ -30,14 +30,6 @@ return require('packer').startup(function(use)
     end,
   })
 
-  -- Add/change/delete surrounding delimiter pairs with ease
-  use({
-    'kylechui/nvim-surround',
-    config = function()
-      require('nvim-surround').setup()
-    end,
-  })
-
   -- Comment Toggler
   use({
     'numToStr/Comment.nvim',
@@ -142,21 +134,11 @@ return require('packer').startup(function(use)
   })
   use('nvim-treesitter/playground')
   use('nvim-treesitter/nvim-treesitter-context')
-  -- use treesitter to auto close and auto rename html tag
+  -- Use treesitter to auto close and auto rename html tag
   use({
     'windwp/nvim-ts-autotag',
     config = function()
       require('nvim-ts-autotag').setup()
-    end,
-  })
-  -- split/join blocks of code
-  use({
-    'Wansmer/treesj',
-    requires = { 'nvim-treesitter' },
-    config = function()
-      require('treesj').setup({
-        use_default_keymaps = false,
-      })
     end,
   })
 
@@ -172,26 +154,8 @@ return require('packer').startup(function(use)
   -- Search
   use('windwp/nvim-spectre')
 
-  -- Status Bar
-  use({
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-    config = function()
-      require('lualine').setup()
-    end,
-  })
-
   -- Indent Guides
   use('lukas-reineke/indent-blankline.nvim')
-
-  -- Dashboard
-  use({
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('alpha').setup(require('alpha.themes.startify').config)
-    end,
-  })
 
   -- Folding
   use({
@@ -207,7 +171,7 @@ return require('packer').startup(function(use)
 
   -- Theme
   use('folke/tokyonight.nvim')
-  use('morhetz/gruvbox')
+  -- use('morhetz/gruvbox')
   -- use({ 'rose-pine/neovim', as = 'rose-pine' })
   -- use({ 'catppuccin/nvim', as = 'catppuccin' })
   -- use('Lokaltog/vim-monotone')
