@@ -1,15 +1,10 @@
-vim.loader.enable() -- improve startup time
-
 vim.opt.viewoptions:remove('curdir') -- disable saving current directory with views
-vim.opt.shortmess:append({ s = true, I = true }) -- disable startup message
 vim.opt.backspace:append({ 'nostop' }) -- don't stop backspace at insert
 vim.opt.complete:append("kspell") -- use locale dictionary when "setlocal spell" is enabled
 
 if vim.fn.has('nvim-0.9') == 1 then
   vim.opt.diffopt:append('linematch:60') -- enable linematch diff algorithm
 end
-
-vim.cmd('filetype plugin indent on')
 
 local options = {
   opt = {
@@ -75,3 +70,8 @@ for scope, table in pairs(options) do
     vim[scope][setting] = value
   end
 end
+
+vim.cmd('intro')
+vim.cmd('filetype plugin indent on')
+
+vim.loader.enable() -- improve startup time
