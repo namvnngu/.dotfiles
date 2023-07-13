@@ -1,4 +1,5 @@
 vim.opt.viewoptions:remove('curdir') -- disable saving current directory with views
+vim.opt.shortmess:append("I") -- disable intro message
 vim.opt.backspace:append({ 'nostop' }) -- don't stop backspace at insert
 vim.opt.complete:append("kspell") -- use locale dictionary when "setlocal spell" is enabled
 
