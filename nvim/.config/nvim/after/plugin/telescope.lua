@@ -25,7 +25,7 @@ telescope.load_extension('git_worktree')
 telescope.load_extension('project')
 telescope.load_extension('file_browser')
 
-nnoremap('<C-\\>', telescope_builtin.git_files)
+nnoremap('<C-p>', telescope_builtin.git_files)
 nnoremap('<leader>ff', telescope_builtin.find_files)
 
 nnoremap('<leader>fbb', telescope_builtin.buffers)

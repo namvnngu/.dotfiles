@@ -146,18 +146,8 @@ return require('packer').startup(function(use)
   use('stevearc/oil.nvim')
 
   -- Mini
-  use({
-    'echasnovski/mini.starter',
-    config = function()
-      require('mini.starter').setup()
-    end,
-  })
-  use({
-    'echasnovski/mini.comment',
-    config = function()
-      require('mini.comment').setup()
-    end,
-  })
+  use('echasnovski/mini.starter')
+  use('echasnovski/mini.comment')
 
   -- Theme
   use('folke/tokyonight.nvim')
