@@ -153,6 +153,14 @@ return require('packer').startup(function(use)
   -- Split explorer
   use('stevearc/oil.nvim')
 
+  -- Dashboard
+  use({
+    'echasnovski/mini.starter',
+    config = function()
+      require('mini.starter').setup()
+    end,
+  })
+
   -- Theme
   use('folke/tokyonight.nvim')
   -- use('morhetz/gruvbox')
