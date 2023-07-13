@@ -71,7 +71,6 @@ for scope, table in pairs(options) do
   end
 end
 
-vim.cmd('intro')
 vim.cmd('filetype plugin indent on')
 
 vim.loader.enable() -- improve startup time
