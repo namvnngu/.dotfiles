@@ -19,7 +19,8 @@ local opts = { silent = true }
 nnoremap('<space>do', vim.diagnostic.open_float, opts)
 nnoremap('<space>dp', vim.diagnostic.goto_prev, opts)
 nnoremap('<space>dn', vim.diagnostic.goto_next, opts)
-nnoremap('<space>ds', vim.diagnostic.setloclist, opts)
+nnoremap('<space>dl', vim.diagnostic.setloclist, opts)
+nnoremap('<space>dq', vim.diagnostic.setqflist, opts)
 
 -- Formatting
 local lsp_formatting = function(bufnr)
@@ -44,7 +45,7 @@ local common_on_attach = function(client, bufnr)
   nnoremap('gd', vim.lsp.buf.definition, bufopts)
   nnoremap('K', vim.lsp.buf.hover, bufopts)
   nnoremap('gi', vim.lsp.buf.implementation, bufopts)
-  nnoremap('<space>K', vim.lsp.buf.signature_help, bufopts)
+  nnoremap('gK', vim.lsp.buf.signature_help, bufopts)
   nnoremap('<space>D', vim.lsp.buf.type_definition, bufopts)
   nnoremap('<space>rn', vim.lsp.buf.rename, bufopts)
   nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts)

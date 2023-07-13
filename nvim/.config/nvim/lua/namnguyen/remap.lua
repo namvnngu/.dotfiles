@@ -41,9 +41,11 @@ nnoremap('N', 'Nzzzv')
 nnoremap('<C-d>', '<C-d>zz')
 nnoremap('<C-u>', '<C-u>zz')
 
--- Quicklist
+-- Quickfix list
 nnoremap('<C-k>', ':cnext<CR>zz')
 nnoremap('<C-j>', ':cprev<CR>zz')
+
+-- Location list
 nnoremap('<leader>K', ':lnext<CR>zz')
 nnoremap('<leader>J', ':lprev<CR>zz')
 
