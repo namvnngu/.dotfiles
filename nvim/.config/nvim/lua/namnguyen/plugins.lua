@@ -22,14 +22,6 @@ return require('packer').startup(function(use)
   -- Dev icons
   use('nvim-tree/nvim-web-devicons')
 
-  -- Insert or delete brackets, parens, quotes in pair
-  use({
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup()
-    end,
-  })
-
   -- Comment Toggler
   use({
     'numToStr/Comment.nvim',
@@ -92,6 +84,7 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use({
     'j-hui/fidget.nvim',
+    tag = 'legacy',
     config = function()
       require('fidget').setup()
     end,
@@ -115,15 +108,6 @@ return require('packer').startup(function(use)
   use('hrsh7th/cmp-vsnip')
   use('hrsh7th/vim-vsnip')
   use('rafamadriz/friendly-snippets')
-
-  -- Trouble
-  use({
-    'folke/trouble.nvim',
-    requires = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require('trouble').setup()
-    end,
-  })
 
   -- Neovim Treesitter
   use('nvim-treesitter/nvim-treesitter', {
