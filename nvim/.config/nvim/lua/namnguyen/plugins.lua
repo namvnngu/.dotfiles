@@ -22,14 +22,6 @@ return require('packer').startup(function(use)
   -- Dev icons
   use('nvim-tree/nvim-web-devicons')
 
-  -- Comment Toggler
-  use({
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end,
-  })
-
   -- Support Emmet for HTML & CSS
   use('mattn/emmet-vim')
 
@@ -153,11 +145,17 @@ return require('packer').startup(function(use)
   -- Split explorer
   use('stevearc/oil.nvim')
 
-  -- Dashboard
+  -- Mini
   use({
     'echasnovski/mini.starter',
     config = function()
       require('mini.starter').setup()
+    end,
+  })
+  use({
+    'echasnovski/mini.comment',
+    config = function()
+      require('mini.comment').setup()
     end,
   })
 
