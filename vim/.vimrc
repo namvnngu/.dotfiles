@@ -20,7 +20,7 @@ set fileencoding=utf-8
 set history=100
 set ignorecase
 set infercase
-set laststatus=3
+set laststatus=2
 set linebreak
 set number
 set preserveindent
@@ -50,6 +50,8 @@ set colorcolumn=80
 set noswapfile
 set nobackup
 set fillchars+=eob:\ ,
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 
 """"""""""
 " CURSOR "
