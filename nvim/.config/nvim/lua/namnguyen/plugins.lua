@@ -150,7 +150,8 @@ return require('packer').startup(function(use)
   use('echasnovski/mini.comment')
 
   -- Theme
-  use('folke/tokyonight.nvim')
+  use('EdenEast/nightfox.nvim')
+  -- use('folke/tokyonight.nvim')
   -- use('morhetz/gruvbox')
   -- use({ 'rose-pine/neovim', as = 'rose-pine' })
   -- use({ 'catppuccin/nvim', as = 'catppuccin' })

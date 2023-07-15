@@ -115,7 +115,7 @@ end, {})
 
 -- I'm not sure why calling colorscheme in other files does not make document
 -- highlighting work, so calling it again here is a workaround
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('nightfox')
 
 -- LSP Setups
 local nvim_lsp = require('lspconfig')

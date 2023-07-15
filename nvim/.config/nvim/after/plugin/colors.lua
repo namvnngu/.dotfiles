@@ -6,15 +6,15 @@
 --   colorscheme gruvbox
 -- ]])
 
-require('tokyonight').setup({
-  style = 'moon',
-  transparent = true,
-  styles = {
-    comments = { italic = false },
-    keywords = { italic = false },
-  },
-})
-vim.cmd.colorscheme('tokyonight')
+-- require('tokyonight').setup({
+--   style = 'moon',
+--   transparent = true,
+--   styles = {
+--     comments = { italic = false },
+--     keywords = { italic = false },
+--   },
+-- })
+-- vim.cmd.colorscheme('tokyonight')
 
 -- require('github-theme').setup({
 --   theme_style = 'dark_default',
@@ -45,6 +45,13 @@ vim.cmd.colorscheme('tokyonight')
 --   disable_italics = true,
 -- })
 -- vim.cmd.colorscheme('rose-pine')
+
+require('nightfox').setup({
+  options = {
+    transparent = true
+  }
+})
+vim.cmd.colorscheme('nightfox')
 
 -- vim.cmd.colorscheme('monotone')
 
