@@ -8,9 +8,6 @@ return require('packer').startup(function(use)
   -- UI
   use('stevearc/dressing.nvim')
 
-  -- Adding color with colorizer
-  use('norcalli/nvim-colorizer.lua')
-
   -- A Git wrapper, Git commands
   use('tpope/vim-fugitive')
   use('f-person/git-blame.nvim')
