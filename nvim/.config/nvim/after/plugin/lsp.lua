@@ -1,30 +1,3 @@
---- List all capabilities of the server associated with the current buffer
-vim.api.nvim_create_user_command('LspCapabilities', function()
-  local curBuf = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_active_clients({ bufnr = curBuf })
-
-  for _, client in pairs(clients) do
-    if client.name ~= 'null-ls' then
-      local capabilities = {}
-      for capability_name, is_active in pairs(client.server_capabilities) do
-        if is_active and capability_name:find('Provider') then
-          table.insert(capabilities, '- ' .. capability_name)
-        end
-      end
-
-      table.sort(capabilities)
-
-      local msg = '# ' .. client.name .. '\n' .. table.concat(capabilities, '\n')
-      vim.notify(msg, vim.log.levels.TRACE)
-    end
-  end
-end, {})
-
--- I'm not sure why calling colorscheme in other files does not make document
--- highlighting work, so calling it again here is a workaround
-vim.cmd.colorscheme('nightfox')
-
--- LSP Setups
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
@@ -126,6 +99,7 @@ local common_on_attach = function(client, bufnr)
 end
 
 local common_setup = {
+  on_attach = common_on_attach,
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
   settings = {
     format = { enable = true },
@@ -134,7 +108,6 @@ local common_setup = {
 
 local null_ls = require('null-ls')
 null_ls.setup(merge(common_setup, {
-  on_attach = common_on_attach,
   sources = {
     -- Eslint
     null_ls.builtins.code_actions.eslint_d,
@@ -188,14 +161,14 @@ null_ls.setup(merge(common_setup, {
   },
 }))
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    local bufnr = ev.buf
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    common_on_attach(client, bufnr)
-  end,
-})
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+--   callback = function(ev)
+--     local bufnr = ev.buf
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     common_on_attach(client, bufnr)
+--   end,
+-- })
 
 local installed_servers = require('mason-lspconfig').get_installed_servers()
 for _, server in ipairs(installed_servers) do
@@ -212,8 +185,11 @@ lspconfig.denols.setup(merge(common_setup, {
 
 -- Workaround for "warning: multiple different client offset_encodings detected
 -- for buffer, this is not supported yet".
---
 -- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428#issuecomment-997226723
 lspconfig.clangd.setup(merge(common_setup, {
   capabilities = { offsetEncoding = { 'utf-16' } },
 }))
+
+-- I'm not sure why calling colorscheme in other files does not make
+-- document highlighting work, so calling it again here is a workaround.
+vim.cmd.colorscheme('nightfox')
