@@ -1,12 +1,3 @@
-vim.opt.viewoptions:remove('curdir') -- disable saving current directory with views
-vim.opt.shortmess:append("I") -- disable intro message
-vim.opt.backspace:append({ 'nostop' }) -- don't stop backspace at insert
-vim.opt.complete:append("kspell") -- use locale dictionary when "setlocal spell" is enabled
-
-if vim.fn.has('nvim-0.9') == 1 then
-  vim.opt.diffopt:append('linematch:60') -- enable linematch diff algorithm
-end
-
 local options = {
   opt = {
     breakindent = true, -- enable or disable to wrap indent to match line start
@@ -57,6 +48,16 @@ local options = {
     colorcolumn = '80', -- set position of the color column
     swapfile = false, -- enable or disable to use swap file for the current buffer
     backup = false, -- enable or disable to make a backup file before overwriting a file
+    viewoptions = vim.opt.viewoptions:remove('curdir'), -- disable saving current directory with views
+    shortmess = vim.opt.shortmess:append('I'), -- disable intro message
+    backspace = vim.opt.backspace:append({ 'nostop' }), -- don't stop backspace at insert
+    complete = vim.opt.complete:append('kspell'), -- use locale dictionary when "setlocal spell" is enabled
+    -- Enable linematch diff algorithm.
+    -- In the git diff case, the difference are more granular, which means that
+    -- when it comes to 'diffget' and 'diffput' operations, the conflict is
+    -- no longer treated as a single block, but instead lines stacked on top of
+    -- each other.
+    -- diffopt = vim.fn.has('nvim-0.9') == 1 and vim.opt.diffopt:append('linematch:60') or vim.opt.diffopt,
   },
   g = {
     mapleader = ' ', -- set leader key
