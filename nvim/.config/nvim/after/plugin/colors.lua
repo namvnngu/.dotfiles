@@ -1,10 +1,14 @@
--- vim.cmd([[
---   set background=dark
---   let g:gruvbox_contrast_dark='medium'
---   let g:gruvbox_contrast_light='medium'
---   let g:gruvbox_transparent_bg=1
---   colorscheme gruvbox
--- ]])
+vim.o.background = 'dark'
+require('gruvbox').setup({
+  italic = {
+    strings = false,
+    comments = false,
+    operators = false,
+    folds = false,
+  },
+  transparent_mode = true,
+})
+vim.cmd.colorscheme('gruvbox')
 
 -- require('tokyonight').setup({
 --   style = 'moon',
@@ -46,12 +50,12 @@
 -- })
 -- vim.cmd.colorscheme('rose-pine')
 
-require('nightfox').setup({
-  options = {
-    transparent = true
-  }
-})
-vim.cmd.colorscheme('nightfox')
+-- require('nightfox').setup({
+--   options = {
+--     transparent = true
+--   }
+-- })
+-- vim.cmd.colorscheme('nightfox')
 
 -- vim.cmd.colorscheme('monotone')
 
