@@ -192,4 +192,4 @@ lspconfig.clangd.setup(merge(common_setup, {
 
 -- I'm not sure why calling colorscheme in other files does not make
 -- document highlighting work, so calling it again here is a workaround.
-vim.cmd.colorscheme('gruvbox')
+vim.cmd.colorscheme('rose-pine')

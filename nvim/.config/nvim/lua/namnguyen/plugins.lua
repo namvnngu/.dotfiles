@@ -146,10 +146,10 @@ return require('packer').startup(function(use)
   use('echasnovski/mini.comment')
 
   -- Theme
-  use('ellisonleao/gruvbox.nvim')
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
+  -- use('ellisonleao/gruvbox.nvim')
   -- use('EdenEast/nightfox.nvim')
   -- use('folke/tokyonight.nvim')
-  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
   -- use({ 'catppuccin/nvim', as = 'catppuccin' })
   -- use('Lokaltog/vim-monotone')
   -- use('sainnhe/everforest')

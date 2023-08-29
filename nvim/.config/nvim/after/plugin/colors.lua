@@ -1,14 +1,14 @@
-vim.o.background = 'dark'
-require('gruvbox').setup({
-  italic = {
-    strings = false,
-    comments = false,
-    operators = false,
-    folds = false,
-  },
-  transparent_mode = true,
-})
-vim.cmd.colorscheme('gruvbox')
+-- vim.o.background = 'dark'
+-- require('gruvbox').setup({
+--   italic = {
+--     strings = false,
+--     comments = false,
+--     operators = false,
+--     folds = false,
+--   },
+--   transparent_mode = true,
+-- })
+-- vim.cmd.colorscheme('gruvbox')
 
 -- require('tokyonight').setup({
 --   style = 'moon',
@@ -41,14 +41,14 @@ vim.cmd.colorscheme('gruvbox')
 -- ]])
 -- vim.cmd.colorscheme('everforest')
 
--- vim.o.background = 'dark'
--- require('rose-pine').setup({
---   variant = 'moon',
---   disable_background = true,
---   disable_float_background = true,
---   disable_italics = true,
--- })
--- vim.cmd.colorscheme('rose-pine')
+vim.o.background = 'dark'
+require('rose-pine').setup({
+  variant = 'moon',
+  disable_background = true,
+  disable_float_background = true,
+  disable_italics = true,
+})
+vim.cmd.colorscheme('rose-pine')
 
 -- require('nightfox').setup({
 --   options = {
