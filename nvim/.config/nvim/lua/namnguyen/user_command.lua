@@ -19,3 +19,45 @@ vim.api.nvim_create_user_command('LspCapabilities', function()
     end
   end
 end, {})
+
+vim.api.nvim_create_user_command('Template', function(opts)
+  local template_name = opts.args
+
+  if template_name == 'cg' then
+    vim.cmd('read $HOME/.config/nvim/templates/CG.cpp')
+  elseif template_name == 'ccp' then
+    vim.cmd('read $HOME/.config/nvim/templates/CCP.cpp')
+  elseif template_name == 'pg' then
+    vim.cmd('read $HOME/.config/nvim/templates/PG.py')
+  elseif template_name == 'pcp' then
+    vim.cmd('read $HOME/.config/nvim/templates/PCP.py')
+  elseif template_name == 'html' then
+    vim.cmd('read $HOME/.config/nvim/templates/HTML.html')
+  elseif template_name == 'java' then
+    vim.cmd('read $HOME/.config/nvim/templates/Java.java')
+  elseif template_name == 'ts' then
+    vim.cmd('read $HOME/.config/nvim/templates/TS.ts')
+  else
+    print('No template!')
+  end
+end, { nargs = 1, desc = 'Load a template' })
+
+vim.api.nvim_create_user_command('Exe', function()
+  local extension = vim.fn.expand('%:e')
+
+  if extension == 'py' then
+    vim.cmd('term cd %:h && python3 %')
+  elseif extension == 'cpp' then
+    vim.cmd('term cd %:h && g++ -std=c++14 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out')
+  elseif extension == 'c' then
+    vim.cmd('term cd %:h && gcc -std=c11 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out')
+  elseif extension == 'java' then
+    vim.cmd('term cd %:h && javac %:t && java -enableassertions %:t:r')
+  elseif extension == 'cs' then
+    vim.cmd('term cd %:h && dotnet run --project %:p:h')
+  elseif extension == 'ts' or extension == 'js' then
+    vim.cmd('term cd %:h && npx tsx %')
+  else
+    vim.notify('No execution for ' .. extension .. ' yet!', vim.log.levels.WARN)
+  end
+end, { desc = 'Execute code based on filetype' })

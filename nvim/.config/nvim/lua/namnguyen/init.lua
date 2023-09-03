@@ -1,7 +1,5 @@
 require('namnguyen.options')
 require('namnguyen.plugins')
 require('namnguyen.remap')
-require('namnguyen.execution')
-require('namnguyen.templates')
 require('namnguyen.autocmd')
 require('namnguyen.user_command')
