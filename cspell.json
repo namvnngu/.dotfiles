@@ -1,0 +1,19 @@
+{
+  "language": "en",
+  "version": "0.2",
+  "words": [
+    "nnoremap",
+    "lspconfig",
+    "keymap",
+    "omnifunc",
+    "bufnr",
+    "deno",
+    "gopls",
+    "cssls",
+    "denols",
+    "clangd",
+    "setloclist",
+    "setqflist"
+  ],
+  "flagWords": []
+}

@@ -148,16 +148,16 @@ null_ls.setup(merge(common_setup, {
 
     -- Spelling
     null_ls.builtins.code_actions.cspell,
-    -- null_ls.builtins.diagnostics.cspell.with({
-    --   diagnostic_config = {
-    --     virtual_text = false,
-    --     severity_sort = true,
-    --   },
-    --   disabled_filetypes = { 'NvimTree' },
-    --   diagnostics_postprocess = function(diagnostic)
-    --     diagnostic.severity = vim.diagnostic.severity['HINT']
-    --   end,
-    -- }),
+    null_ls.builtins.diagnostics.cspell.with({
+      diagnostic_config = {
+        virtual_text = false,
+        severity_sort = true,
+      },
+      disabled_filetypes = { 'NvimTree' },
+      diagnostics_postprocess = function(diagnostic)
+        diagnostic.severity = vim.diagnostic.severity['HINT']
+      end,
+    }),
   },
 }))
 
