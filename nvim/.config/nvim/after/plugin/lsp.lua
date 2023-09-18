@@ -18,11 +18,11 @@ local merge = require('utils.table').merge
 local nnoremap = require('utils.keymap').nnoremap
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-nnoremap('<space>do', vim.diagnostic.open_float)
-nnoremap('<space>dp', vim.diagnostic.goto_prev)
-nnoremap('<space>dn', vim.diagnostic.goto_next)
-nnoremap('<space>dl', vim.diagnostic.setloclist)
-nnoremap('<space>dq', vim.diagnostic.setqflist)
+nnoremap('<leader>do', vim.diagnostic.open_float)
+nnoremap('<leader>dp', vim.diagnostic.goto_prev)
+nnoremap('<leader>dn', vim.diagnostic.goto_next)
+nnoremap('<leader>dl', vim.diagnostic.setloclist)
+nnoremap('<leader>dq', vim.diagnostic.setqflist)
 
 local common_on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
@@ -41,18 +41,18 @@ local common_on_attach = function(client, bufnr)
   nnoremap('K', vim.lsp.buf.hover, opts)
   nnoremap('gi', vim.lsp.buf.implementation, opts)
   nnoremap('gK', vim.lsp.buf.signature_help, opts)
-  nnoremap('<space>D', vim.lsp.buf.type_definition, opts)
-  nnoremap('<space>rn', vim.lsp.buf.rename, opts)
-  nnoremap('<space>ca', vim.lsp.buf.code_action, opts)
+  nnoremap('<leader>D', vim.lsp.buf.type_definition, opts)
+  nnoremap('<leader>rn', vim.lsp.buf.rename, opts)
+  nnoremap('<leader>ca', vim.lsp.buf.code_action, opts)
   nnoremap('gr', vim.lsp.buf.references, opts)
-  nnoremap('<space>cl', vim.lsp.codelens.run, opts)
-  nnoremap('<space>cr', vim.lsp.codelens.refresh, opts)
-  nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-  nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-  nnoremap('<space>wl', function()
+  nnoremap('<leader>cl', vim.lsp.codelens.run, opts)
+  nnoremap('<leader>cr', vim.lsp.codelens.refresh, opts)
+  nnoremap('<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+  nnoremap('<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+  nnoremap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts)
-  nnoremap('<space>F', function()
+  nnoremap('<leader>F', function()
     vim.lsp.buf.format({
       async = true,
       bufnr = bufnr,
