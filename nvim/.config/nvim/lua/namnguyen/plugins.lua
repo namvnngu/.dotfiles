@@ -122,12 +122,6 @@ return require('packer').startup(function(use)
   -- Indent Guides
   use('lukas-reineke/indent-blankline.nvim')
 
-  -- Folding
-  use({
-    'kevinhwang91/nvim-ufo',
-    requires = 'kevinhwang91/promise-async',
-  })
-
   -- Split explorer
   use('stevearc/oil.nvim')
 

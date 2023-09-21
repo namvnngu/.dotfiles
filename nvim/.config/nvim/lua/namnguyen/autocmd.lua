@@ -23,10 +23,3 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   pattern = '*.scss',
   command = 'set filetype=sass',
 })
-
-local open_folds_augroup = vim.api.nvim_create_augroup('OpenFolds', { clear = true })
-vim.api.nvim_create_autocmd({ 'BufReadPost', 'FileReadPost' }, {
-  group = open_folds_augroup,
-  pattern = '*',
-  callback = require('ufo').openAllFolds,
-})

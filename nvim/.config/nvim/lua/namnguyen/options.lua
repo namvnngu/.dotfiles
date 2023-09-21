@@ -9,10 +9,11 @@ local options = {
     expandtab = true, -- enable or disable the use of space in tab
     fileencoding = 'utf-8', -- file content encoding for the buffer
     fillchars = { eob = ' ' }, -- disable `~` on nonexistent lines
-    foldenable = true, -- enable or disable fold for nvim-ufo
-    foldlevel = 99, -- set high foldlevel for nvim-ufo
+    foldenable = true, -- enable or disable folding
+    foldlevel = 99, -- set high foldlevel
     foldlevelstart = 99, -- start with all code unfolded
     foldcolumn = vim.fn.has('nvim-0.9') == 1 and '1' or nil, -- show foldcolumn in nvim 0.9
+    foldmethod = 'indent', -- define the kind of folding used for the current window
     history = 100, -- number of commands to remember in a history table
     ignorecase = true, -- enable or disable case insensitive searching
     infercase = true, -- enable or disable to infer cases in keyword completion

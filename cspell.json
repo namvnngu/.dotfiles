@@ -1,7 +1,4 @@
 {
-  "version": "0.2",
-  "language": "en",
-  "flagWords": [],
   "words": [
     "nnoremap",
     "lspconfig",
@@ -37,6 +34,10 @@
     "bufferline",
     "blankline",
     "treesitter",
-    "undotree"
-  ]
+    "undotree",
+    "winrestview"
+  ],
+  "language": "en",
+  "version": "0.2",
+  "flagWords": []
 }
