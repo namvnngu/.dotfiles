@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
-  -- UI
+  -- UI Enhancement
   use('stevearc/dressing.nvim')
 
   -- A Git wrapper, Git commands
@@ -21,13 +21,6 @@ return require('packer').startup(function(use)
 
   -- Support Emmet for HTML & CSS
   use('mattn/emmet-vim')
-
-  -- Buffer/Tab line
-  use({
-    'akinsho/bufferline.nvim',
-    tag = '*',
-    requires = 'nvim-tree/nvim-web-devicons',
-  })
 
   --- Vim Align
   use('junegunn/vim-easy-align')
@@ -134,9 +127,6 @@ return require('packer').startup(function(use)
     'kevinhwang91/nvim-ufo',
     requires = 'kevinhwang91/promise-async',
   })
-
-  -- Quickfix
-  use({ 'kevinhwang91/nvim-bqf', ft = 'qf' })
 
   -- Split explorer
   use('stevearc/oil.nvim')

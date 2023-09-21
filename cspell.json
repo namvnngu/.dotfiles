@@ -1,4 +1,6 @@
 {
+  "version": "0.2",
+  "language": "en",
   "flagWords": [],
   "words": [
     "nnoremap",
@@ -31,8 +33,10 @@
     "jsonls",
     "augroup",
     "autocmds",
-    "goimports"
-  ],
-  "language": "en",
-  "version": "0.2"
+    "goimports",
+    "bufferline",
+    "blankline",
+    "treesitter",
+    "undotree"
+  ]
 }
