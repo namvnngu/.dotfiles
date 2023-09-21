@@ -3,10 +3,11 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'gopls',
     'cssls',
+    'jsonls',
     'denols',
     'lua_ls',
-    'tsserver',
     'clangd',
+    'tsserver',
     'rust_analyzer',
   },
   automatic_installation = true,
@@ -14,7 +15,7 @@ require('mason-lspconfig').setup({
 
 local lspconfig = require('lspconfig')
 
-local merge = require('utils.table').merge
+local table_merge = require('utils.table').merge
 local nnoremap = require('utils.keymap').nnoremap
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -106,8 +107,28 @@ local common_setup = {
   },
 }
 
+local installed_servers = require('mason-lspconfig').get_installed_servers()
+for _, server in ipairs(installed_servers) do
+  lspconfig[server].setup(common_setup)
+end
+
+lspconfig.tsserver.setup(table_merge(common_setup, {
+  root_dir = lspconfig.util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json'),
+}))
+
+lspconfig.denols.setup(table_merge(common_setup, {
+  root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
+}))
+
+-- Workaround for "warning: multiple different client offset_encodings detected
+-- for buffer, this is not supported yet".
+-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428#issuecomment-997226723
+lspconfig.clangd.setup(table_merge(common_setup, {
+  capabilities = { offsetEncoding = { 'utf-16' } },
+}))
+
 local null_ls = require('null-ls')
-null_ls.setup(merge(common_setup, {
+null_ls.setup(table_merge(common_setup, {
   sources = {
     -- Eslint
     null_ls.builtins.code_actions.eslint_d,
@@ -161,6 +182,10 @@ null_ls.setup(merge(common_setup, {
   },
 }))
 
+-- I'm not sure why calling colorscheme in other files does not make
+-- document highlighting work, so calling it again here is a workaround.
+vim.cmd.colorscheme('rose-pine')
+
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 --   callback = function(ev)
@@ -169,27 +194,3 @@ null_ls.setup(merge(common_setup, {
 --     common_on_attach(client, bufnr)
 --   end,
 -- })
-
-local installed_servers = require('mason-lspconfig').get_installed_servers()
-for _, server in ipairs(installed_servers) do
-  lspconfig[server].setup(common_setup)
-end
-
-lspconfig.tsserver.setup(merge(common_setup, {
-  root_dir = lspconfig.util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json'),
-}))
-
-lspconfig.denols.setup(merge(common_setup, {
-  root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
-}))
-
--- Workaround for "warning: multiple different client offset_encodings detected
--- for buffer, this is not supported yet".
--- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428#issuecomment-997226723
-lspconfig.clangd.setup(merge(common_setup, {
-  capabilities = { offsetEncoding = { 'utf-16' } },
-}))
-
--- I'm not sure why calling colorscheme in other files does not make
--- document highlighting work, so calling it again here is a workaround.
-vim.cmd.colorscheme('rose-pine')
