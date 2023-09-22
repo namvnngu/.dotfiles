@@ -1,7 +1,10 @@
 local M = {}
 
-M.merge = function(a, b)
-  return vim.tbl_deep_extend('force', {}, a, b)
+---Merges map entries of `source` into `target`.
+---@param source table<any, any>
+---@param target table<any, any>
+function M.merge(source, target)
+  return vim.tbl_deep_extend('force', {}, source, target)
 end
 
 return M

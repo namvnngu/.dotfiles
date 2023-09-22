@@ -1,6 +1,6 @@
 local M = {}
 
-M.trim = function(arg)
+function M.trim(arg)
   return string.gsub(arg, '%s+', '')
 end
 

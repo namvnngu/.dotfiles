@@ -1,3 +1,6 @@
+local file = require('utils.file')
+local git = require('utils.git')
+
 --- List all capabilities of the server associated with the current buffer
 vim.api.nvim_create_user_command('LspCapabilities', function()
   local curBuf = vim.api.nvim_get_current_buf()
@@ -43,7 +46,7 @@ vim.api.nvim_create_user_command('Template', function(opts)
 end, { nargs = 1, desc = 'Load a template' })
 
 vim.api.nvim_create_user_command('Exe', function()
-  local extension = vim.fn.expand('%:e')
+  local extension = file.get_file_ext()
 
   if extension == 'py' then
     vim.cmd('term cd %:h && python3 %')
@@ -61,3 +64,11 @@ vim.api.nvim_create_user_command('Exe', function()
     vim.notify('No execution for ' .. extension .. ' yet!', vim.log.levels.WARN)
   end
 end, { desc = 'Execute code based on filetype' })
+
+vim.api.nvim_create_user_command('OpenGitCommitURL', function()
+  local filetype = file.get_filetype()
+
+  if filetype == 'fugitiveblame' then
+    git.open_commit_in_browser(vim.fn.expand('<cword>'))
+  end
+end, { desc = 'Open Git commit URL' })

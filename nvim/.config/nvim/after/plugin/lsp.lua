@@ -15,7 +15,7 @@ require('mason-lspconfig').setup({
 
 local lspconfig = require('lspconfig')
 
-local table_merge = require('utils.table').merge
+local tbl = require('utils.table')
 local nnoremap = require('utils.keymap').nnoremap
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -112,23 +112,23 @@ for _, server in ipairs(installed_servers) do
   lspconfig[server].setup(common_setup)
 end
 
-lspconfig.tsserver.setup(table_merge(common_setup, {
+lspconfig.tsserver.setup(tbl.merge(common_setup, {
   root_dir = lspconfig.util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json'),
 }))
 
-lspconfig.denols.setup(table_merge(common_setup, {
+lspconfig.denols.setup(tbl.merge(common_setup, {
   root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
 }))
 
 -- Workaround for "warning: multiple different client offset_encodings detected
 -- for buffer, this is not supported yet".
 -- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428#issuecomment-997226723
-lspconfig.clangd.setup(table_merge(common_setup, {
+lspconfig.clangd.setup(tbl.merge(common_setup, {
   capabilities = { offsetEncoding = { 'utf-16' } },
 }))
 
 local null_ls = require('null-ls')
-null_ls.setup(table_merge(common_setup, {
+null_ls.setup(tbl.merge(common_setup, {
   sources = {
     -- Eslint
     null_ls.builtins.code_actions.eslint_d,

@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
 
   -- A Git wrapper, Git commands
   use('tpope/vim-fugitive')
-  use('f-person/git-blame.nvim')
   use('ThePrimeagen/git-worktree.nvim')
 
   -- The undo history visualizer
