@@ -1,5 +1,5 @@
 local M = {}
-local command = require('utils.command')
+local shell = require('utils.shell')
 local file = require('utils.file')
 local launch_url = require('utils.url').launch
 
@@ -10,7 +10,7 @@ function M.is_current_file_ignored(callback)
     return true
   end
 
-  command.start_job('git check-ignore ' .. vim.fn.shellescape(filepath), {
+  shell.start_job('git check-ignore ' .. vim.fn.shellescape(filepath), {
     on_exit = function(code)
       callback(code ~= 1)
     end,
@@ -111,7 +111,7 @@ function M.get_current_branch(callback)
     return
   end
 
-  command.start_job('git branch --show-current', {
+  shell.start_job('git branch --show-current', {
     on_stdout = function(url)
       if url and url[1] then
         callback(url[1])
@@ -171,7 +171,7 @@ function M.get_remote_url(callback)
     return
   end
 
-  command.start_job('git config --get remote.origin.url', {
+  shell.start_job('git config --get remote.origin.url', {
     on_stdout = function(url)
       if url and url[1] then
         callback(url[1])
@@ -188,7 +188,7 @@ function M.get_repo_root(callback)
     return
   end
 
-  command.start_job('git rev-parse --show-toplevel', {
+  shell.start_job('git rev-parse --show-toplevel', {
     on_stdout = function(data)
       callback(data[1])
     end,

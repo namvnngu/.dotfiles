@@ -1,4 +1,4 @@
-local command = require('utils.command')
+local shell = require('utils.shell')
 local M = {}
 
 ---Keeping it outside the function improves performance by not
@@ -13,15 +13,15 @@ function M.launch(url)
   if not open_url then
     if package.config:sub(1, 1) == '\\' then
       open_url = function(_url)
-        command.start_job(string.format('rundll32 url.dll,FileProtocolHandler "%s"', _url))
+        shell.start_job(string.format('rundll32 url.dll,FileProtocolHandler "%s"', _url))
       end
     elseif (io.popen('uname -s'):read('*a')):match('Darwin') then
       open_url = function(_url)
-        command.start_job(string.format('open "%s"', _url))
+        shell.start_job(string.format('open "%s"', _url))
       end
     else
       open_url = function(_url)
-        command.start_job(string.format('xdg-open "%s"', _url))
+        shell.start_job(string.format('xdg-open "%s"', _url))
       end
     end
   end
