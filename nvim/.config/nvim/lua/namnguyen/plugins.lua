@@ -5,9 +5,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
-  -- UI Enhancement
-  use('stevearc/dressing.nvim')
-
   -- A Git wrapper, Git commands
   use('tpope/vim-fugitive')
   use('ThePrimeagen/git-worktree.nvim')
@@ -40,20 +37,6 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
   })
-  use({
-    'nvim-telescope/telescope-file-browser.nvim',
-    requires = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-  })
-  use({
-    'nvim-telescope/telescope-project.nvim',
-    requires = {
-      'nvim-telescope/telescope-file-browser.nvim',
-      'nvim-telescope/telescope.nvim',
-    },
-  })
   use('theprimeagen/harpoon')
 
   -- LSP Plugins
@@ -62,6 +45,7 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use({
     'j-hui/fidget.nvim',
+    tag = 'legacy',
     config = function()
       require('fidget').setup()
     end,
@@ -95,7 +79,6 @@ return require('packer').startup(function(use)
   })
   use('nvim-treesitter/playground')
   use('nvim-treesitter/nvim-treesitter-context')
-  -- Use treesitter to auto close and auto rename html tag
   use({
     'windwp/nvim-ts-autotag',
     config = function()
