@@ -1,5 +1,6 @@
 local file = require('utils.file')
 local git = require('utils.git')
+local shell = require('utils.shell')
 
 --- List all capabilities of the server associated with the current buffer
 vim.api.nvim_create_user_command('LspCapabilities', function()
@@ -49,17 +50,17 @@ vim.api.nvim_create_user_command('Exe', function()
   local extension = file.get_file_ext()
 
   if extension == 'py' then
-    vim.cmd('term cd %:h && python3 %')
+    vim.cmd('term ' .. shell.generate_cd_cmd('python3 %'))
   elseif extension == 'cpp' then
-    vim.cmd('term cd %:h && g++ -std=c++14 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out')
+    vim.cmd('term ' .. shell.generate_cd_cmd('g++ -std=c++14 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out'))
   elseif extension == 'c' then
-    vim.cmd('term cd %:h && gcc -std=c11 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out')
+    vim.cmd('term ' .. shell.generate_cd_cmd('gcc -std=c11 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out'))
   elseif extension == 'java' then
-    vim.cmd('term cd %:h && javac %:t && java -enableassertions %:t:r')
+    vim.cmd('term ' .. shell.generate_cd_cmd('javac %:t && java -enableassertions %:t:r'))
   elseif extension == 'cs' then
-    vim.cmd('term cd %:h && dotnet run --project %:p:h')
+    vim.cmd('term ' .. shell.generate_cd_cmd('dotnet run --project %:p:h'))
   elseif extension == 'ts' or extension == 'js' then
-    vim.cmd('term cd %:h && npx tsx %')
+    vim.cmd('term ' .. shell.generate_cd_cmd('&& npx tsx %'))
   else
     vim.notify('No execution for ' .. extension .. ' yet!', vim.log.levels.WARN)
   end
