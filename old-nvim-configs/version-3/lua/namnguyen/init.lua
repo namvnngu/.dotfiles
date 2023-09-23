@@ -1,5 +1,0 @@
-require('namnguyen.options')
-require('namnguyen.plugins')
-require('namnguyen.remap')
-require('namnguyen.autocmd')
-require('namnguyen.user_command')
