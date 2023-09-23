@@ -15,9 +15,6 @@ return require('packer').startup(function(use)
   -- The undo history visualizer
   use('mbbill/undotree')
 
-  -- Dev icons
-  use('nvim-tree/nvim-web-devicons')
-
   -- Support Emmet for HTML & CSS
   use('mattn/emmet-vim')
 
