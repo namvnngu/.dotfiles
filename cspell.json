@@ -43,8 +43,9 @@
     "gruvbox",
     "tokyonight",
     "catppuccin",
-    "worktree"
+    "worktree",
+    "neovim"
   ],
-  "language": "en",
-  "version": "0.2"
+  "version": "0.2",
+  "language": "en"
 }

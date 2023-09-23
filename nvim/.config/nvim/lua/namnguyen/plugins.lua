@@ -1,6 +1,5 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd([[packadd packer.nvim]])
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
@@ -117,8 +116,4 @@ return require('packer').startup(function(use)
   -- use('EdenEast/nightfox.nvim')
   -- use('folke/tokyonight.nvim')
   -- use({ 'catppuccin/nvim', as = 'catppuccin' })
-  -- use('Lokaltog/vim-monotone')
-  -- use('markvincze/panda-vim')
-  -- use('drewtempelmeyer/palenight.vim')
-  -- use('Yagua/nebulous.nvim')
 end)
