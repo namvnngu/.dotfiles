@@ -1,6 +1,5 @@
 {
-  "language": "en",
-  "version": "0.2",
+  "flagWords": [],
   "words": [
     "nnoremap",
     "lspconfig",
@@ -40,7 +39,12 @@
     "winrestview",
     "shellescape",
     "setreg",
-    "cword"
+    "cword",
+    "gruvbox",
+    "tokyonight",
+    "catppuccin",
+    "worktree"
   ],
-  "flagWords": []
+  "language": "en",
+  "version": "0.2"
 }

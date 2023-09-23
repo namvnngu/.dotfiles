@@ -9,6 +9,9 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use('ThePrimeagen/git-worktree.nvim')
 
+  -- UI Enhancement
+  use('stevearc/dressing.nvim')
+
   -- The undo history visualizer
   use('mbbill/undotree')
 
@@ -115,8 +118,6 @@ return require('packer').startup(function(use)
   -- use('folke/tokyonight.nvim')
   -- use({ 'catppuccin/nvim', as = 'catppuccin' })
   -- use('Lokaltog/vim-monotone')
-  -- use('sainnhe/everforest')
-  -- use('projekt0n/github-nvim-theme')
   -- use('markvincze/panda-vim')
   -- use('drewtempelmeyer/palenight.vim')
   -- use('Yagua/nebulous.nvim')
