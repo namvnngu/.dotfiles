@@ -82,6 +82,10 @@ noremap('<leader>x', ':!chmod +x %<CR>', { silent = true })
 -- Exit terminal mode
 tnoremap('<Esc>', [[<C-\><C-n>]])
 
+-- Better indenting
+vnoremap("<", "<gv")
+vnoremap(">", ">gv")
+
 -- Avoid using arrow keys
 -- noremap("<Up>", "<NOP>")
 -- noremap("<Down>", "<NOP>")
