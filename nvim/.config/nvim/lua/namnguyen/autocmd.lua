@@ -1,6 +1,9 @@
-local trim_spaces_augroup = vim.api.nvim_create_augroup('TrimSpaces', { clear = true })
+local function augroup(name)
+  return vim.api.nvim_create_augroup('namnguyen' .. name, { clear = true })
+end
+
 vim.api.nvim_create_autocmd('BufWritePre', {
-  group = trim_spaces_augroup,
+  group = augroup('TrimSpaces'),
   pattern = '*',
   callback = function()
     local patterns = {
@@ -17,9 +20,26 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
-local scss_to_sass_augroup = vim.api.nvim_create_augroup('ScssToSass', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-  group = scss_to_sass_augroup,
+  group = augroup('ScssToSass'),
   pattern = '*.scss',
   command = 'set filetype=sass',
+})
+
+-- Resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = augroup("resize_splits"),
+  callback = function()
+    local current_tab = vim.fn.tabpagenr()
+    vim.cmd("tabdo wincmd =")
+    vim.cmd("tabnext " .. current_tab)
+  end,
+})
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup("highlight_yank"),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
