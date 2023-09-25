@@ -1,79 +1,81 @@
-local options = {
-  opt = {
-    breakindent = true, -- enable or disable to wrap indent to match line start
-    clipboard = 'unnamedplus', -- connection to the system clipboard
-    cmdheight = 1, -- command line height
-    completeopt = { 'menu', 'menuone', 'noselect' }, -- options for insert mode completion
-    copyindent = true, -- enable or disable to copy the previous indentation on autoindenting
-    cursorline = true, -- enable or disable to highlight the text line of the cursor
-    expandtab = true, -- enable or disable the use of space in tab
-    fileencoding = 'utf-8', -- file content encoding for the buffer
-    fillchars = { eob = ' ' }, -- disable `~` on nonexistent lines
-    foldenable = true, -- enable or disable folding
-    foldlevel = 99, -- set high foldlevel
-    foldlevelstart = 99, -- start with all code unfolded
-    foldcolumn = vim.fn.has('nvim-0.9') == 1 and '1' or nil, -- show foldcolumn in nvim 0.9
-    foldmethod = 'indent', -- define the kind of folding used for the current window
-    history = 100, -- number of commands to remember in a history table
-    ignorecase = true, -- enable or disable case insensitive searching
-    infercase = true, -- enable or disable to infer cases in keyword completion
-    laststatus = 3, -- global status line
-    linebreak = true, -- enable or disable to wrap lines at 'breakat'
-    mouse = 'a', -- enable or disable mouse support
-    number = true, -- enable or disable to show line number
-    preserveindent = true, -- enable or disable preserve indent structure as much as possible
-    pumheight = 100, -- height of the pop up menu
-    relativenumber = true, -- enable or disable to show relative numberline
-    scrolloff = 8, -- number of lines to keep above and below the cursor
-    shiftwidth = 2, -- number of space inserted for indentation
-    showmode = true, -- enable or disable to show modes in command line
-    showtabline = 0, -- enable or disable to display tab line (top bar)
-    sidescrolloff = 8, -- number of columns to keep at the sides of the cursor
-    signcolumn = 'yes', -- always show the sign column
-    smartcase = true, -- enable or disable case sensitive searching
-    smartindent = true, -- enable or disable smarter autoindentation
-    splitbelow = true, -- enable or disable to split a new window below the current one
-    splitkeep = vim.fn.has('nvim-0.9') == 1 and 'screen' or nil, -- maintain code view when splitting
-    splitright = true, -- enable or disable to split a new window at the right of the current one
-    tabstop = 2, -- number of space in a tab
-    termguicolors = true, -- enable or disable 24-bit RGB color in the TUI
-    timeoutlen = 500, -- shorten key timeout length a little bit
-    undofile = false, -- enable or disable persistent undo
-    updatetime = 50, -- length of time to wait before triggering the plugin
-    virtualedit = 'block', -- allow going past end of line in visual block mode
-    wrap = false, -- enable or disable wrapping of lines longer than the width of window
-    writebackup = false, -- enable or disable making a backup before overwriting a file
-    autoread = true, -- enable or disable re-read file if it has been changed outside of neovim
-    hlsearch = true, -- enable or disable highlight on searching
-    incsearch = true, -- enable or disable to show where the pattern as keyword is typed
-    colorcolumn = '80', -- set position of the color column
-    swapfile = false, -- enable or disable to use swap file for the current buffer
-    backup = false, -- enable or disable to make a backup file before overwriting a file
-    viewoptions = vim.opt.viewoptions:remove('curdir'), -- disable saving current directory with views
-    shortmess = vim.opt.shortmess:append('I'), -- disable intro message
-    backspace = vim.opt.backspace:append({ 'nostop' }), -- don't stop backspace at insert
-    complete = vim.opt.complete:append('kspell'), -- use locale dictionary when "setlocal spell" is enabled
-    -- Enable linematch diff algorithm.
-    -- In the git diff case, the difference are more granular, which means that
-    -- when it comes to 'diffget' and 'diffput' operations, the conflict is
-    -- no longer treated as a single block, but instead lines stacked on top of
-    -- each other.
-    -- diffopt = vim.fn.has('nvim-0.9') == 1 and vim.opt.diffopt:append('linematch:60') or vim.opt.diffopt,
-  },
-  g = {
-    mapleader = ' ', -- set leader key
-    loaded_netrw = 1, -- disable netrw at the very start for nvim-tree
-    loaded_netrwPlugin = 1, -- disable netrw at the very start for nvim-tree
-  },
-  t = { bufs = vim.api.nvim_list_bufs() }, -- initialize buffers for the current tab
-}
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 
-for scope, table in pairs(options) do
-  for setting, value in pairs(table) do
-    vim[scope][setting] = value
-  end
+vim.opt.autoread = true -- enable re-reading file if it has been changed outside of neovim
+vim.opt.backspace = vim.opt.backspace:append({ 'nostop' }) -- don't stop backspace at insert
+vim.opt.backup = false -- disable making a backup file before overwriting a file
+vim.opt.breakindent = true -- enable wrapping indent to match line start
+vim.opt.clipboard = 'unnamedplus' -- sync with system clipboard
+vim.opt.cmdheight = 1 -- command line height
+vim.opt.colorcolumn = '80' -- set position of the color column
+vim.opt.complete = vim.opt.complete:append('kspell') -- use locale dictionary when "setlocal spell" is enabled
+vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
+vim.opt.copyindent = true -- enable copying the previous indentation on autoindenting
+vim.opt.cursorline = true -- enable highlighting the text line of the cursor
+vim.opt.expandtab = true -- enable the use of space in tab
+vim.opt.fileencoding = 'utf-8' -- file content encoding for the buffer
+vim.opt.fillchars = { eob = ' ' } -- disable `~` on nonexistent lines
+vim.opt.foldcolumn = vim.fn.has('nvim-0.9') == 1 and '1' or nil -- show foldcolumn in nvim 0.9
+vim.opt.foldenable = true -- enable folding
+vim.opt.foldlevel = 99 -- set high foldlevel
+vim.opt.foldlevelstart = 99 -- start with all code unfolded
+vim.opt.foldmethod = 'indent' -- define the kind of folding used for the current window
+vim.opt.grepformat = '%f:%l:%c:%m'
+vim.opt.grepprg = 'rg --vimgrep'
+vim.opt.history = 100 -- number of commands to remember in a history table
+vim.opt.hlsearch = true -- enable highlight on searching
+vim.opt.ignorecase = true -- enable case insensitive searching
+vim.opt.inccommand = 'nosplit' -- preview incremental substitute
+vim.opt.incsearch = true -- enable showing where the pattern as keyword is typed
+vim.opt.infercase = true -- enable inferring cases in keyword completion
+vim.opt.laststatus = 3 -- global status line
+vim.opt.linebreak = true -- enable wrapping lines at 'breakat'
+vim.opt.list = true -- show some invisible characters
+vim.opt.mouse = 'a' -- enable mouse support
+vim.opt.number = true -- print line number
+vim.opt.preserveindent = true -- enable preserving indent structure as much as possible
+vim.opt.pumblend = 10 -- popup blend
+vim.opt.pumheight = 100 -- maximum number of entries in a popup
+vim.opt.relativenumber = true -- relative line numbers
+vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
+vim.opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize' }
+vim.opt.shiftround = true -- round indent
+vim.opt.shiftwidth = 2 -- number of space inserted for indentation
+vim.opt.shortmess:append({ W = true, I = true, c = true })
+vim.opt.showmode = true -- enable showing modes in command line
+vim.opt.showtabline = 0 -- disable tab line (top bar)
+vim.opt.sidescrolloff = 8 -- number of columns to keep at the sides of the cursor
+vim.opt.signcolumn = 'yes' -- always show the signcolumn, otherwise it would shift the text each time
+vim.opt.smartcase = true -- don't ignore case with capitals
+vim.opt.smartindent = true -- insert indents automatically
+vim.opt.splitbelow = true -- put new windows below current
+vim.opt.splitright = true -- put new windows right of current
+vim.opt.swapfile = false -- disable using swap file for the current buffer
+vim.opt.tabstop = 2 -- number of space in a tab
+vim.opt.termguicolors = true -- enable 24-bit RGB color in the TUI
+vim.opt.timeoutlen = 300
+vim.opt.undofile = false -- disable persistent undo
+vim.opt.undolevels = 10000
+vim.opt.updatetime = 200 -- save swap file and trigger CursorHold
+vim.opt.virtualedit = 'block' -- allow going past end of line in visual block mode
+vim.opt.wildmode = 'longest:full,full' -- command-line completion mode
+vim.opt.winminwidth = 5 -- minimum window width
+vim.opt.wrap = false -- disable wrapping of lines longer than the width of window
+vim.opt.writebackup = false -- disable making a backup before overwriting a file
+
+if vim.fn.has('nvim-0.9.0') == 1 then
+  vim.opt.splitkeep = 'screen' -- maintain code view when splitting
+  vim.opt.shortmess:append({ C = true })
 end
 
 vim.cmd('filetype plugin indent on')
 
 vim.loader.enable() -- improve startup time
+
+-- Enable linematch diff algorithm.
+-- In the git diff case, the difference are more granular, which means that
+-- when it comes to 'diffget' and 'diffput' operations, the conflict is
+-- no longer treated as a single block, but instead lines stacked on top of
+-- each other.
+-- vim.opt.diffopt = vim.fn.has('nvim-0.9') == 1 and vim.opt.diffopt:append('linematch:60') or vim.opt.diffopt,
