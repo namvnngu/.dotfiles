@@ -2,7 +2,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 vim.opt.autoread = true -- enable re-reading file if it has been changed outside of neovim
-vim.opt.backspace = vim.opt.backspace:append({ 'nostop' }) -- don't stop backspace at insert
 vim.opt.backup = false -- disable making a backup file before overwriting a file
 vim.opt.breakindent = true -- enable wrapping indent to match line start
 vim.opt.clipboard = 'unnamedplus' -- sync with system clipboard
