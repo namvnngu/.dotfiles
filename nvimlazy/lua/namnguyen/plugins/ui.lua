@@ -15,7 +15,7 @@ return {
   },
 
   {
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.starter",
     version = false,
     opts = {
       items = {
