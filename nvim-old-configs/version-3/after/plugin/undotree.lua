@@ -1,3 +1,3 @@
-local nnoremap = require('utils.keymap').nnoremap
+local nnoremap = require("utils.keymap").nnoremap
 
-nnoremap('<F2>', '<cmd>UndotreeToggle<CR>')
+nnoremap("<F2>", "<cmd>UndotreeToggle<CR>")

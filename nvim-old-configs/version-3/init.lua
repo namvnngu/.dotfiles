@@ -1,1 +1,1 @@
-require('namnguyen')
+require("namnguyen")

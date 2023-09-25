@@ -1,6 +1,6 @@
 local theme_setups = {
-  ['rose-pine'] = {
-    variant = 'moon',
+  ["rose-pine"] = {
+    variant = "moon",
     disable_background = true,
     disable_float_background = true,
     disable_italics = true,
@@ -15,7 +15,7 @@ local theme_setups = {
     transparent_mode = true,
   },
   tokyonight = {
-    style = 'moon',
+    style = "moon",
     transparent = true,
     styles = {
       comments = { italic = false },
@@ -23,7 +23,7 @@ local theme_setups = {
     },
   },
   catppuccin = {
-    flavour = 'mocha',
+    flavour = "mocha",
     transparent_background = true,
     no_italic = true,
   },
@@ -34,8 +34,8 @@ local theme_setups = {
   },
 }
 
-local theme = 'rose-pine'
+local theme = "rose-pine"
 
-vim.o.background = 'dark'
+vim.o.background = "dark"
 require(theme).setup(theme_setups[theme])
 vim.cmd.colorscheme(theme)

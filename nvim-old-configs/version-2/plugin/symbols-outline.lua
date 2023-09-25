@@ -10,4 +10,4 @@ local opts = {
   show_guides = true,
 }
 
-require('symbols-outline').setup(opts)
+require("symbols-outline").setup(opts)

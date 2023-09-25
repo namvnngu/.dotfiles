@@ -1,4 +1,4 @@
-require('symbols-outline').setup({
+require("symbols-outline").setup({
   -- whether to highlight the currently hovered symbol
   -- disable if your cpu usage is higher than you want it
   -- or you just hate the highlight

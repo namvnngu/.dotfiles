@@ -28,7 +28,7 @@ function M.start_job(cmd, opts)
 
   if opts.input then
     vim.fn.chansend(id, opts.input)
-    vim.fn.chanclose(id, 'stdin')
+    vim.fn.chanclose(id, "stdin")
   end
 
   return id
@@ -38,7 +38,10 @@ end
 ---@param command string
 ---@return string
 function M.generate_cd_cmd(command)
-  return 'cd ' .. vim.fn.shellescape(vim.fn.expand('%:p:h')) .. ' && ' .. command
+  return "cd "
+    .. vim.fn.shellescape(vim.fn.expand("%:p:h"))
+    .. " && "
+    .. command
 end
 
 return M

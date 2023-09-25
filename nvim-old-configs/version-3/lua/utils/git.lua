@@ -1,16 +1,16 @@
 local M = {}
-local shell = require('utils.shell')
-local file = require('utils.file')
-local launch_url = require('utils.url').launch
+local shell = require("utils.shell")
+local file = require("utils.file")
+local launch_url = require("utils.url").launch
 
 ---@param callback fun(is_ignored: boolean)
 function M.is_current_file_ignored(callback)
   local filepath = vim.api.nvim_buf_get_name(0)
-  if filepath == '' then
+  if filepath == "" then
     return true
   end
 
-  shell.start_job('git check-ignore ' .. vim.fn.shellescape(filepath), {
+  shell.start_job("git check-ignore " .. vim.fn.shellescape(filepath), {
     on_exit = function(code)
       callback(code ~= 1)
     end,
@@ -21,46 +21,46 @@ end
 ---@param remote_url string
 ---@return string
 function M.generate_commit_path(sha, remote_url)
-  local domain = string.match(remote_url, '.*git%@(.*)%:.*')
-    or string.match(remote_url, 'https%:%/%/.*%@(.*)%/.*')
-    or string.match(remote_url, 'https%:%/%/(.*)%/.*')
+  local domain = string.match(remote_url, ".*git%@(.*)%:.*")
+    or string.match(remote_url, "https%:%/%/.*%@(.*)%/.*")
+    or string.match(remote_url, "https%:%/%/(.*)%/.*")
 
-  if domain and domain:lower() == 'bitbucket.org' then
-    return '/commits/' .. sha
+  if domain and domain:lower() == "bitbucket.org" then
+    return "/commits/" .. sha
   end
 
-  return '/commit/' .. sha
+  return "/commit/" .. sha
 end
 
 ---@param remote_url string
 ---@return string
 function M.generate_repo_url(remote_url)
-  local domain, path = string.match(remote_url, '.*git%@(.*)%:(.*)%.git')
+  local domain, path = string.match(remote_url, ".*git%@(.*)%:(.*)%.git")
   if domain and path then
-    return 'https://' .. domain .. '/' .. path
+    return "https://" .. domain .. "/" .. path
   end
 
-  local url = string.match(remote_url, '.*git%@(.*)%.git')
+  local url = string.match(remote_url, ".*git%@(.*)%.git")
   if url then
-    return 'https://' .. url
+    return "https://" .. url
   end
 
-  local https_url = string.match(remote_url, '(https%:%/%/.*)%.git')
+  local https_url = string.match(remote_url, "(https%:%/%/.*)%.git")
   if https_url then
     return https_url
   end
 
-  domain, path = string.match(remote_url, '.*git%@(.*)%:(.*)')
+  domain, path = string.match(remote_url, ".*git%@(.*)%:(.*)")
   if domain and path then
-    return 'https://' .. domain .. '/' .. path
+    return "https://" .. domain .. "/" .. path
   end
 
-  url = string.match(remote_url, '.*git%@(.*)')
+  url = string.match(remote_url, ".*git%@(.*)")
   if url then
-    return 'https://' .. url
+    return "https://" .. url
   end
 
-  https_url = string.match(remote_url, '(https%:%/%/.*)')
+  https_url = string.match(remote_url, "(https%:%/%/.*)")
   if https_url then
     return https_url
   end
@@ -76,22 +76,22 @@ end
 ---@return string
 function M.generate_file_url(remote_url, shaOrBranch, filepath, line1, line2)
   local repo_url = M.generate_repo_url(remote_url)
-  local isSrcHut = repo_url:find('git.sr.ht')
+  local isSrcHut = repo_url:find("git.sr.ht")
 
-  local file_path = '/blob/' .. shaOrBranch .. '/' .. filepath
+  local file_path = "/blob/" .. shaOrBranch .. "/" .. filepath
   if isSrcHut then
-    file_path = '/tree/' .. shaOrBranch .. '/' .. filepath
+    file_path = "/tree/" .. shaOrBranch .. "/" .. filepath
   end
 
   if line1 == nil then
     return repo_url .. file_path
   elseif line2 == nil or line1 == line2 then
-    return repo_url .. file_path .. '#L' .. line1
+    return repo_url .. file_path .. "#L" .. line1
   else
     if isSrcHut then
-      return repo_url .. file_path .. '#L' .. line1 .. '-' .. line2
+      return repo_url .. file_path .. "#L" .. line1 .. "-" .. line2
     end
-    return repo_url .. file_path .. '#L' .. line1 .. '-L' .. line2
+    return repo_url .. file_path .. "#L" .. line1 .. "-L" .. line2
   end
 end
 
@@ -111,12 +111,12 @@ function M.get_current_branch(callback)
     return
   end
 
-  shell.start_job('git branch --show-current', {
+  shell.start_job("git branch --show-current", {
     on_stdout = function(url)
       if url and url[1] then
         callback(url[1])
       else
-        callback('')
+        callback("")
       end
     end,
   })
@@ -134,13 +134,20 @@ function M.get_file_url(filepath, sha, line1, line2, callback)
     if sha == nil then
       M.get_current_branch(function(branch)
         M.get_remote_url(function(remote_url)
-          local url = M.generate_file_url(remote_url, branch, relative_filepath, line1, line2)
+          local url = M.generate_file_url(
+            remote_url,
+            branch,
+            relative_filepath,
+            line1,
+            line2
+          )
           callback(url)
         end)
       end)
     else
       M.get_remote_url(function(remote_url)
-        local url = M.generate_file_url(remote_url, sha, relative_filepath, line1, line2)
+        local url =
+          M.generate_file_url(remote_url, sha, relative_filepath, line1, line2)
         callback(url)
       end)
     end
@@ -171,12 +178,12 @@ function M.get_remote_url(callback)
     return
   end
 
-  shell.start_job('git config --get remote.origin.url', {
+  shell.start_job("git config --get remote.origin.url", {
     on_stdout = function(url)
       if url and url[1] then
         callback(url[1])
       else
-        callback('')
+        callback("")
       end
     end,
   })
@@ -188,7 +195,7 @@ function M.get_repo_root(callback)
     return
   end
 
-  shell.start_job('git rev-parse --show-toplevel', {
+  shell.start_job("git rev-parse --show-toplevel", {
     on_stdout = function(data)
       callback(data[1])
     end,

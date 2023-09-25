@@ -1,10 +1,10 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup('namnguyen' .. name, { clear = true })
+  return vim.api.nvim_create_augroup("namnguyen" .. name, { clear = true })
 end
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = augroup('TrimSpaces'),
-  pattern = '*',
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = augroup("TrimSpaces"),
+  pattern = "*",
   callback = function()
     local patterns = {
       [[%s/\s\+$//e]],
@@ -14,16 +14,19 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     }
     local save = vim.fn.winsaveview()
     for _, v in pairs(patterns) do
-      vim.api.nvim_exec(string.format('keepjumps keeppatterns silent! %s', v), false)
+      vim.api.nvim_exec(
+        string.format("keepjumps keeppatterns silent! %s", v),
+        false
+      )
     end
     vim.fn.winrestview(save)
   end,
 })
 
-vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-  group = augroup('ScssToSass'),
-  pattern = '*.scss',
-  command = 'set filetype=sass',
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = augroup("ScssToSass"),
+  pattern = "*.scss",
+  command = "set filetype=sass",
 })
 
 -- Resize splits if window got resized

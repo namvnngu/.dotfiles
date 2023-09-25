@@ -4,10 +4,10 @@ local M = {}
 ---@return string|nil
 function M.get_filepath()
   local filepath = vim.api.nvim_buf_get_name(0)
-  if filepath == '' then
+  if filepath == "" then
     return nil
   end
-  if filepath:match('^term://') then
+  if filepath:match("^term://") then
     return nil
   end
   return filepath
@@ -23,8 +23,8 @@ end
 ---@param s string
 ---@return number
 function M.get_tabs_len_in_string(s)
-  local _, tab_count = s:gsub('\t', '')
-  return tab_count, vim.api.nvim_buf_get_option(0, 'tabstop')
+  local _, tab_count = s:gsub("\t", "")
+  return tab_count, vim.api.nvim_buf_get_option(0, "tabstop")
 end
 
 ---Get the length of the current line
@@ -38,7 +38,7 @@ end
 ---Get the extension of the current file
 ---@return string
 function M.get_file_ext()
-  return vim.fn.expand('%:e')
+  return vim.fn.expand("%:e")
 end
 
 ---Get the filetype of the current file
