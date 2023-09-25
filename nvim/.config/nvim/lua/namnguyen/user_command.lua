@@ -45,7 +45,7 @@ vim.api.nvim_create_user_command("Template", function(opts)
   elseif template_name == "ts" then
     vim.cmd("read $HOME/.config/nvim/templates/TS.ts")
   else
-    print("No template!")
+    vim.notify("No template for " .. template_name .. "!", vim.log.levels.WARN)
   end
 end, { nargs = 1, desc = "Load a template" })
 
