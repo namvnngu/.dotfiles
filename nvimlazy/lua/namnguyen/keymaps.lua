@@ -8,62 +8,22 @@
 -- t  Create a mapping that applies only in Terminal mode. Defined using ':tmap' or ':tnoremap'.
 
 -- Move to window
-vim.keymap.set(
-  "n",
-  "<leader>h",
-  "<C-w>h",
-  { desc = "Go to left window", remap = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>j",
-  "<C-w>j",
-  { desc = "Go to lower window", remap = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>k",
-  "<C-w>k",
-  { desc = "Go to upper window", remap = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>l",
-  "<C-w>l",
-  { desc = "Go to right window", remap = true }
-)
+vim.keymap.set("n", "<leader>h", "<C-w>h", { remap = true })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { remap = true })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { remap = true })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { remap = true })
 
 -- Resize window
-vim.keymap.set(
-  "n",
-  "<Up>",
-  "<cmd>resize +2<cr>",
-  { desc = "Increase window height" }
-)
-vim.keymap.set(
-  "n",
-  "<Down>",
-  "<cmd>resize -2<cr>",
-  { desc = "Decrease window height" }
-)
-vim.keymap.set(
-  "n",
-  "<Left>",
-  "<cmd>vertical resize -2<cr>",
-  { desc = "Decrease window width" }
-)
-vim.keymap.set(
-  "n",
-  "<Right>",
-  "<cmd>vertical resize +2<cr>",
-  { desc = "Increase window width" }
-)
+vim.keymap.set("n", "<Up>", "<cmd>resize +2<cr>")
+vim.keymap.set("n", "<Down>", "<cmd>resize -2<cr>")
+vim.keymap.set("n", "<Left>", "<cmd>vertical resize -2<cr>")
+vim.keymap.set("n", "<Right>", "<cmd>vertical resize +2<cr>")
 
 -- Yanking
 vim.keymap.set("n", "<leader>ya", "<cmd>%y+<cr>")
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>Y", '"+y$', { desc = "Yank til the end" })
+vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("n", "Y", "y$")
 
 -- Buffers
