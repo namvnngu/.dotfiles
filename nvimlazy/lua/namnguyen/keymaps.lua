@@ -53,9 +53,6 @@ vim.keymap.set(
   { desc = "Escape and clear hlsearch" }
 )
 
--- New file
-vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
-
 -- Keeping it centered and stable
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")

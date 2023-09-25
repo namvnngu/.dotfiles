@@ -48,9 +48,6 @@ vnoremap("K", ":m '<-2<cr>gv=gv")
 nnoremap("<esc>", "<cmd>noh<cr><esc>")
 inoremap("<esc>", "<cmd>noh<cr><esc>")
 
--- New file
-nnoremap("<leader>fn", "<cmd>enew<cr>")
-
 -- Keeping it centered and stable
 nnoremap("J", "mzJ`z")
 nnoremap("n", "nzzzv")

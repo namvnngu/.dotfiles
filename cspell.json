@@ -58,9 +58,10 @@
     "inoremap",
     "noremap",
     "xnoremap",
-    "winsaveview"
+    "winsaveview",
+    "parsername"
   ],
+  "flagWords": [],
   "version": "0.2",
-  "language": "en",
-  "flagWords": []
+  "language": "en"
 }
