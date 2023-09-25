@@ -1,5 +1,4 @@
 {
-  "flagWords": [],
   "words": [
     "nnoremap",
     "lspconfig",
@@ -44,8 +43,17 @@
     "tokyonight",
     "catppuccin",
     "worktree",
-    "neovim"
+    "neovim",
+    "namnguyen",
+    "keymaps",
+    "lazypath",
+    "stdpath",
+    "matchit",
+    "matchparen",
+    "netrw",
+    "tohtml"
   ],
   "version": "0.2",
-  "language": "en"
+  "language": "en",
+  "flagWords": []
 }
