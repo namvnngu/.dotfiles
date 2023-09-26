@@ -9,7 +9,7 @@ vim.opt.cmdheight = 1 -- command line height
 vim.opt.colorcolumn = "80" -- set position of the color column
 vim.opt.complete = vim.opt.complete:append("kspell") -- use locale dictionary when "setlocal spell" is enabled
 vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
+vim.opt.confirm = false -- confirm to save changes before exiting modified buffer
 vim.opt.copyindent = true -- enable copying the previous indentation on autoindenting
 vim.opt.cursorline = true -- enable highlighting the text line of the cursor
 vim.opt.expandtab = true -- enable the use of space in tab
@@ -41,7 +41,7 @@ vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.opt.shiftround = true -- round indent
 vim.opt.shiftwidth = 2 -- number of space inserted for indentation
-vim.opt.shortmess:append({ W = true, I = true, c = true })
+vim.opt.shortmess:append({ W = true, I = false, c = true })
 vim.opt.showmode = true -- enable showing modes in command line
 vim.opt.showtabline = 0 -- disable tab line (top bar)
 vim.opt.sidescrolloff = 8 -- number of columns to keep at the sides of the cursor
