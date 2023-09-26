@@ -8,6 +8,9 @@ return require("packer").startup(function(use)
   use("tpope/vim-fugitive")
   use("ThePrimeagen/git-worktree.nvim")
 
+  -- UI Enhancement
+  use("stevearc/dressing.nvim")
+
   -- The undo history visualizer
   use("mbbill/undotree")
 
@@ -69,6 +72,23 @@ return require("packer").startup(function(use)
   use("hrsh7th/vim-vsnip")
   use("rafamadriz/friendly-snippets")
 
+  -- Neovim Treesitter
+  use("nvim-treesitter/nvim-treesitter", {
+    run = function()
+      local ts_update =
+        require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  })
+  use("nvim-treesitter/playground")
+  use("nvim-treesitter/nvim-treesitter-context")
+  use({
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  })
+
   -- Todos
   use({
     "folke/todo-comments.nvim",
@@ -81,13 +101,18 @@ return require("packer").startup(function(use)
   -- Search
   use("windwp/nvim-spectre")
 
+  -- Indent Guides
+  use("lukas-reineke/indent-blankline.nvim")
+
   -- Split explorer
   use("stevearc/oil.nvim")
 
   -- Mini
+  use("echasnovski/mini.starter")
   use("echasnovski/mini.comment")
 
   -- Theme
+  use({ "rose-pine/neovim", as = "rose-pine" })
   -- use('ellisonleao/gruvbox.nvim')
   -- use('EdenEast/nightfox.nvim')
   -- use('folke/tokyonight.nvim')

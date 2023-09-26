@@ -1,7 +1,7 @@
 local nnoremap = require("utils.keymap").nnoremap
 local vnoremap = require("utils.keymap").vnoremap
 
-nnoremap("<leader>S", function()
+nnoremap("<C-s>", function()
   require("spectre").open()
 end)
 
