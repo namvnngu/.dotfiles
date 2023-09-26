@@ -17,21 +17,28 @@ return {
   {
     "echasnovski/mini.starter",
     version = false,
-    opts = {
-      items = {
-        {
-          action = "Telescope git_files",
-          name = "Git Files",
-          section = "Browsing",
-        },
-        { action = "Oil", name = "Explorer", section = "Browsing" },
-        {
-          action = "Telescope file_browser",
-          name = "File Browser",
-          section = "Browsing",
-        },
-        require("mini.starter").sections.recent_files(5, true),
-      },
+    dependencies = {
+      "stevearc/oil.nvim",
+      "nvim-telescope/telescope.nvim",
     },
+    opts = function(_, opts)
+      local starter = require('mini.starter')
+      return vim.tbl_deep_extend("force", opts or {}, {
+        items = {
+          {
+            action = "Telescope git_files",
+            name = "Git Files",
+            section = "Browsing",
+          },
+          { action = "Oil", name = "Explorer", section = "Browsing" },
+          {
+            action = "Telescope file_browser",
+            name = "File Browser",
+            section = "Browsing",
+          },
+          starter.sections.recent_files(5, true),
+        },
+      })
+    end
   },
 }

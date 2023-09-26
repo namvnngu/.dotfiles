@@ -1,7 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    -- event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -139,7 +139,13 @@ return {
     end,
   },
 
-  { "echasnovski/mini.comment", lazy = true },
+  {
+    "echasnovski/mini.comment",
+    version = false,
+    config = function(_, opts)
+      require("mini.comment").setup(opts)
+    end,
+  },
 
   -- Support Emmet for HTML & CSS
   {

@@ -57,19 +57,19 @@ return {
       -- git
       {
         "<C-p>",
-        require("telescope.builtin").git_files,
+        "<cmd>Telescope git_files<cr>",
         mode = "n",
         desc = "Fuzzy search through the output of git ls-files command, respects .gitignore",
       },
       {
         "<leader>fgs",
-        require("telescope.builtin").git_status,
+        "<cmd>Telescope git_status<cr>",
         mode = "n",
         desc = "Lists current changes per file with diff preview and add action",
       },
       {
         "<leader>fgb",
-        require("telescope.builtin").git_branches,
+        "<cmd>Telescope git_branches<cr>",
         mode = "n",
         desc = "Lists all branches with log preview",
       },
@@ -77,21 +77,23 @@ return {
       -- files
       {
         "<leader>ff",
-        require("telescope.builtin").find_files,
+        "<cmd>Telescope find_files<cr>",
         mode = "n",
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
         "<leader>flg",
-        require("telescope.builtin").live_grep,
+        "<cmd>Telescope live_grep<cr>",
         mode = "n",
         desc = "Searches for a string in your current working directory and get results live as you type, respects .gitignore.",
       },
       {
         "<leader>fgw",
-        require("telescope.builtin").grep_string({
-          search = vim.fn.expand("<cword>"),
-        }),
+        function()
+          require("telescope.builtin").grep_string({
+            search = vim.fn.expand("<cword>"),
+          })
+        end,
         mode = "n",
         desc = "Searches for the string under your cursor",
       },
@@ -114,7 +116,7 @@ return {
       -- vim
       {
         "<leader>fbb",
-        require("telescope.builtin").buffers,
+        "<cmd>Telescope buffers<cr>",
         mode = "n",
         desc = "Lists open buffers in current neovim instance",
       },
@@ -122,19 +124,19 @@ return {
       -- lsp
       {
         "<leader>fgr",
-        require("telescope.builtin").lsp_references,
+        "<cmd>Telescope lsp_references<cr>",
         mode = "n",
         desc = "Lists LSP references for word under the cursor",
       },
       {
         "<leader>fgd",
-        require("telescope.builtin").lsp_definitions,
+        "<cmd>Telescope lsp_definitions<cr>",
         mode = "n",
         desc = "Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope",
       },
       {
         "<leader>fdo",
-        require("telescope.builtin").diagnostics,
+        "<cmd>Telescope diagnostics<cr>",
         mode = "n",
         desc = "Lists Diagnostics for all open buffers or a specific buffer. Use option bufnr=0 for current buffer.",
       },
@@ -154,13 +156,17 @@ return {
     keys = {
       {
         "<leader>a",
-        require("harpoon.mark").add_file,
+        function()
+          require("harpoon.mark").add_file()
+        end,
         mode = "n",
         desc = "Adds file to the harpoon bookmark",
       },
       {
         "<leader>`",
-        require("harpoon.ui").toggle_quick_menu,
+        function()
+          require("harpoon.ui").toggle_quick_menu()
+        end,
         mode = "n",
         remap = true,
         desc = "Toggles harpoon bookmark",
@@ -193,7 +199,7 @@ return {
     keys = {
       {
         "-",
-        require("oil").open,
+        "<cmd>Oil<cr>",
         mode = "n",
         desc = "Opens parent directory",
       },
