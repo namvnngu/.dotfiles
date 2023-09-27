@@ -4,7 +4,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "jose-elias-alvarez/null-ls.nvim",
     },
@@ -220,7 +219,18 @@ return {
     end,
   },
 
-  { "williamboman/mason.nvim" },
+  {
+    "williamboman/mason.nvim",
+    cmd = "Mason",
+    build = ":MasonUpdate",
+    opts = {
+      ensure_installed = {
+        "eslint_d",
+        "stylua",
+        "cspell",
+      },
+    },
+  },
 
   -- A tree like view for symbols
   { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },

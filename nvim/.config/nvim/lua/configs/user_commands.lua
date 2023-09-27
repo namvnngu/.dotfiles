@@ -50,7 +50,7 @@ vim.api.nvim_create_user_command("Template", function(opts)
 end, { nargs = 1, desc = "Load a template" })
 
 -- stylua: ignore
-vim.api.nvim_create_user_command("Exe", function()
+vim.api.nvim_create_user_command("Run", function()
   local extension = file.get_file_ext()
 
   if extension == "py" then
