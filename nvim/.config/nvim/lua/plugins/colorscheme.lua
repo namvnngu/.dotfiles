@@ -18,7 +18,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
+    lazy = true,
     opts = {
       flavour = "mocha",
       transparent_background = true,
@@ -27,6 +27,33 @@ return {
     config = function(_, opts)
       require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin")
+    end,
+  },
+
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    opts = {
+      commentStyle = { italic = false },
+      keywordStyle = { italic = false },
+      transparent = true,
+      theme = "wave",
+    },
+    config = function(_, opts)
+      require("kanagawa").setup(opts)
+      vim.cmd.colorscheme("kanagawa")
+    end,
+  },
+
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+    opts = {
+      options = { transparent = true },
+    },
+    config = function(_, opts)
+      require("nightfox").setup(opts)
+      vim.cmd.colorscheme("carbonfox")
     end,
   },
 }

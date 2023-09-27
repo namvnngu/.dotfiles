@@ -15,7 +15,7 @@ vim.opt.cursorline = true -- enable highlighting the text line of the cursor
 vim.opt.expandtab = true -- enable the use of space in tab
 vim.opt.fileencoding = "utf-8" -- file content encoding for the buffer
 vim.opt.fillchars = { eob = " " } -- disable `~` on nonexistent lines
-vim.opt.foldcolumn = vim.fn.has("nvim-0.9") == 1 and "1" or nil -- show foldcolumn in nvim 0.9
+vim.opt.foldcolumn = "0" -- disable the fold column
 vim.opt.foldenable = true -- enable folding
 vim.opt.foldlevel = 99 -- set high foldlevel
 vim.opt.foldlevelstart = 99 -- start with all code unfolded
@@ -70,7 +70,7 @@ end
 
 vim.cmd("filetype plugin indent on")
 
-vim.loader.enable() -- improve startup time
+vim.o.background = "dark"
 
 -- Enable linematch diff algorithm.
 -- In the git diff case, the difference are more granular, which means that

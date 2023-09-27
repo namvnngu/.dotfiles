@@ -1,3 +1,5 @@
 import:
-  - ~/.config/alacritty/colorschemes/Catppuccin_Mocha.yml
   # - ~/.config/alacritty/colorschemes/Rose_Pine.yml
+  # - ~/.config/alacritty/colorschemes/Catppuccin_Mocha.yml
+  - ~/.config/alacritty/colorschemes/Kanagawa.yml
+  # - ~/.config/alacritty/colorschemes/Carbonfox.yml
