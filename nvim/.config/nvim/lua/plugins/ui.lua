@@ -1,8 +1,5 @@
 return {
-  {
-    "stevearc/dressing.nvim",
-    lazy = true,
-  },
+  { "stevearc/dressing.nvim", event = "LspAttach" },
 
   {
     "lukas-reineke/indent-blankline.nvim",

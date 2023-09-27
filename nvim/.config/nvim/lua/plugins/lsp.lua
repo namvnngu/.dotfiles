@@ -1,7 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "williamboman/mason.nvim",
@@ -223,7 +223,7 @@ return {
   { "williamboman/mason.nvim" },
 
   -- A tree like view for symbols
-  { "simrat39/symbols-outline.nvim", lazy = true },
+  { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
   -- Lsp progress
   { "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" },
