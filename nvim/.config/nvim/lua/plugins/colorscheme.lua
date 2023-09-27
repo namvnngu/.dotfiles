@@ -2,8 +2,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    lazy = true,
     opts = {
       variant = "moon",
       disable_background = true,
@@ -11,8 +10,23 @@ return {
       disable_italics = true,
     },
     config = function(_, opts)
-      require('rose-pine').setup(opts)
-      vim.cmd.colorscheme('rose-pine')
+      require("rose-pine").setup(opts)
+      vim.cmd.colorscheme("rose-pine")
+    end,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+      transparent_background = true,
+      no_italic = true,
+    },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
