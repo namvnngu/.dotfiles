@@ -237,4 +237,7 @@ return {
 
   -- Lsp progress
   { "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" },
+
+  -- Lsp completion
+  { "hrsh7th/cmp-nvim-lsp", event = "LspAttach" },
 }

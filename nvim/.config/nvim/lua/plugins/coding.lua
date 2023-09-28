@@ -1,19 +1,12 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    -- event = "InsertEnter",
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-
-      -- Snippet
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip",
-      "rafamadriz/friendly-snippets",
     },
-    opts = function(_, opts)
+    config = function()
       local cmp = require("cmp")
       local kind_icons = {
         Text = "",
@@ -43,34 +36,7 @@ return {
         TypeParameter = "",
       }
 
-      -- Set configuration for specific filetype.
-      cmp.setup.filetype("gitcommit", {
-        sources = cmp.config.sources({
-          { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-        }, {
-          { name = "buffer" },
-        }),
-      })
-
-      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline({ "/", "?" }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
-      })
-
-      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = "path" },
-        }, {
-          { name = "cmdline" },
-        }),
-      })
-
-      return vim.tbl_deep_extend("force", opts or {}, {
+      cmp.setup({
         snippet = {
           -- REQUIRED - you must specify a snippet engine
           expand = function(args)
@@ -136,8 +102,40 @@ return {
           { name = "buffer" },
         }),
       })
+
+      -- Set configuration for specific filetype.
+      cmp.setup.filetype("gitcommit", {
+        sources = cmp.config.sources({
+          { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+        }, {
+          { name = "buffer" },
+        }),
+      })
+
+      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+
+      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+      })
     end,
   },
+
+  -- Snippets for cmp
+  { "hrsh7th/cmp-vsnip", event = { "BufReadPost", "BufNewFile" } },
+  { "hrsh7th/vim-vsnip", event = { "BufReadPost", "BufNewFile" } },
+  { "rafamadriz/friendly-snippets", event = { "BufReadPost", "BufNewFile" } },
 
   {
     "echasnovski/mini.comment",
