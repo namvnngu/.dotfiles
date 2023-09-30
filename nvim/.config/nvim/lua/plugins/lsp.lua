@@ -241,7 +241,14 @@ return {
   { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
   -- Lsp progress
-  { "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" },
+  {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    event = "LspAttach",
+    config = function()
+      require("fidget").setup()
+    end,
+  },
 
   -- Lsp completion
   { "hrsh7th/cmp-nvim-lsp", event = "LspAttach" },
