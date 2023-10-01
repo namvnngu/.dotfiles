@@ -84,46 +84,29 @@ return {
             end,
           })
         end, opts)
+      end
 
-        -- Format on save
-        -- local lsp_formatting_augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
-        -- if client.server_capabilities.documentFormattingProvider then
-        --   vim.api.nvim_clear_autocmds({ group = lsp_formatting_augroup, buffer = bufnr })
-        --   vim.api.nvim_create_autocmd('BufWritePre', {
-        --     group = lsp_formatting_augroup,
-        --     buffer = bufnr,
-        --     callback = function()
-        --       vim.lsp.buf.format({
-        --         async = true,
-        --         bufnr = bufnr,
-        --         filter = function(formatting_client)
-        --           return formatting_client.name == 'null-ls'
-        --         end,
-        --       })
-        --     end,
-        --   })
-        -- end
-
-        -- Highlight
+      -- Highlight on hover
+      require("utils.lsp").on_attach(function(client, buffer)
         local lsp_highlight_augroup =
           vim.api.nvim_create_augroup("LspHighlight", { clear = true })
         if client.server_capabilities.documentHighlightProvider then
           vim.api.nvim_clear_autocmds({
             group = lsp_highlight_augroup,
-            buffer = bufnr,
+            buffer = buffer,
           })
           vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             group = lsp_highlight_augroup,
-            buffer = bufnr,
+            buffer = buffer,
             callback = vim.lsp.buf.document_highlight,
           })
           vim.api.nvim_create_autocmd("CursorMoved", {
             group = lsp_highlight_augroup,
-            buffer = bufnr,
+            buffer = buffer,
             callback = vim.lsp.buf.clear_references,
           })
         end
-      end
+      end)
 
       local common_setup = {
         on_attach = common_on_attach,
