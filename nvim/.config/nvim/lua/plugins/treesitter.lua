@@ -4,6 +4,7 @@ return {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSUpdateSync" },
+    main = "nvim-treesitter.configs",
     opts = {
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
@@ -37,26 +38,8 @@ return {
         enable = true,
       },
 
-      ensure_installed = {
-        "tsx",
-        "typescript",
-        "javascript",
-        "json",
-        "html",
-        "scss",
-        "css",
-        "rust",
-        "go",
-      },
+      ensure_installed = {},
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      local parser_config =
-        require("nvim-treesitter.parsers").get_parser_configs()
-      parser_config.tsx.filetype_to_parsername =
-        { "javascript", "typescript.tsx", "javascriptreact" }
-    end,
   },
 
   { "nvim-treesitter/playground", lazy = true },
