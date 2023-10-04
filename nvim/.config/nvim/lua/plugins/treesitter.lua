@@ -40,7 +40,10 @@ return {
     },
   },
 
-  { "nvim-treesitter/playground", lazy = true },
-  { "nvim-treesitter/nvim-treesitter-context", lazy = true },
-  { "windwp/nvim-ts-autotag", lazy = true },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = { "BufReadPost", "BufNewFile" },
+  },
+  { "windwp/nvim-ts-autotag", event = { "BufReadPost", "BufNewFile" } },
+  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
 }
