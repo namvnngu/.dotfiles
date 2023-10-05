@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
   -- LSP Plugins
   use("neovim/nvim-lspconfig")
   use("simrat39/symbols-outline.nvim")
-  use("jose-elias-alvarez/null-ls.nvim")
+  use("nvimtools/none-ls.nvim")
   use({
     "j-hui/fidget.nvim",
     tag = "legacy",
