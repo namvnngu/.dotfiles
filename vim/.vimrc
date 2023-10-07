@@ -186,6 +186,10 @@ autocmd VimEnter * hi Comment cterm=NONE
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
 
+" Highlight spelling errors
+autocmd VimEnter * hi SpellBad ctermbg=red
+" autocmd VimEnter * hi SpellBad cterm=underline
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
