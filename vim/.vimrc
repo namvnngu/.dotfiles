@@ -7,50 +7,63 @@ filetype plugin indent on
 
 let mapleader = " "
 
-set viewoptions-=curdir
+set autoread
 set backspace+=nostop
-
 set breakindent
 set clipboard+=unnamedplus,unnamed
-set completeopt=menu,menuone,noselect
+set cmdheight=1
+set colorcolumn=80
 set complete+=kspell
+set completeopt=menu,menuone,noselect
 set copyindent
+set cursorline
 set expandtab
 set fileencoding=utf-8
+set fillchars+=eob:\ ,
+set foldcolumn=0
+set foldenable
+set foldlevel=99
+set foldlevelstart=99
+set foldmethod=indent
+set grepformat=%f:%l:%c:%m
+set grepprg=rg\ --vimgrep
 set history=100
+set hlsearch
 set ignorecase
+set incsearch
 set infercase
 set laststatus=2
 set linebreak
+set nobackup
+set noswapfile
+set noundofile
+set nowrap
+set nowritebackup
 set number
 set preserveindent
 set pumheight=100
 set relativenumber
 set scrolloff=8
+set shiftround
 set shiftwidth=2
-set showtabline=2
+set showmode
+set showtabline=0
 set sidescrolloff=8
 set signcolumn=yes
 set smartcase
 set smartindent
 set splitbelow
 set splitright
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set tabstop=2
 set termguicolors
 set timeoutlen=500
-set noundofile
+set undolevels=10000
 set updatetime=50
+set viewoptions-=curdir
 set virtualedit=block
-set nowrap
-set nowritebackup
-set autoread
-set hlsearch
-set incsearch
-set colorcolumn=80
-set noswapfile
-set nobackup
-set fillchars+=eob:\ ,
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set wildmode=longest:full,full
+set winminwidth=5
 
 """"""""""
 " CURSOR "
