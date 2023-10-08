@@ -9,7 +9,10 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" },
+    { import = "plugins.coding" },
+    { import = "plugins.editor" },
     { import = "plugins.lang" },
+    { import = "plugins.ui" },
   },
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?

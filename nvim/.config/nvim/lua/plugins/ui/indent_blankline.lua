@@ -1,6 +1,4 @@
 return {
-  { "stevearc/dressing.nvim", event = "LspAttach" },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
