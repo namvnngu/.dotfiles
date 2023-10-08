@@ -1,5 +1,5 @@
 {
-  "flagWords": [],
+  "language": "en",
   "words": [
     "nnoremap",
     "lspconfig",
@@ -61,8 +61,9 @@
     "xnoremap",
     "winsaveview",
     "parsername",
-    "cmdline"
+    "cmdline",
+    "deepcopy"
   ],
-  "language": "en",
-  "version": "0.2"
+  "version": "0.2",
+  "flagWords": []
 }
