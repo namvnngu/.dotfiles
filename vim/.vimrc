@@ -168,6 +168,9 @@ nnoremap <silent> <leader>x :!chmod +x %<cr>
 " Exit terminal mode
 tnoremap <Esc> <C-\><C-n>
 
+" Split explorer
+nnoremap - :Ex<cr>
+
 """""""""
 " THEME "
 """""""""
