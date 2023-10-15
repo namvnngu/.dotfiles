@@ -5,7 +5,7 @@ return {
     keys = {
       {
         "lma",
-        "<cmd>Lazy load mini.align<cr>",
+        "<cmd>Lazy load mini.align | echo 'mini.align loaded'<cr>",
         mode = "n",
         desc = "Load mini.align plugin",
       },
