@@ -166,9 +166,11 @@ end
 
 ---@param sha string
 function M.open_commit_in_browser(sha)
-  M.get_remote_url(function(remote_url)
-    local commit_url = M.generate_commit_url(sha, remote_url)
-    launch_url(commit_url)
+  M.get_long_sha_from_short(sha, function(long_sha)
+    M.get_remote_url(function(remote_url)
+      local commit_url = M.generate_commit_url(long_sha, remote_url)
+      launch_url(commit_url)
+    end)
   end)
 end
 
@@ -196,6 +198,16 @@ function M.get_repo_root(callback)
   end
 
   shell.start_job("git rev-parse --show-toplevel", {
+    on_stdout = function(data)
+      callback(data[1])
+    end,
+  })
+end
+
+---@param short_sha string
+---@param callback fun(long_sha: string)
+function M.get_long_sha_from_short(short_sha, callback)
+  shell.start_job("git rev-parse " .. short_sha, {
     on_stdout = function(data)
       callback(data[1])
     end,
