@@ -1,21 +1,17 @@
 return {
   {
-    "junegunn/vim-easy-align",
+    "echasnovski/mini.align",
+    version = false,
     keys = {
       {
-        "ga",
-        "<Plug>(EasyAlign)",
-        mode = "x",
-        remap = true,
-        desc = "Starts interactive EasyAlign in visual mode (e.g. vipga)",
-      },
-      {
-        "ga",
-        "<Plug>(EasyAlign)",
+        "lma",
+        "<cmd>Lazy load mini.align<cr>",
         mode = "n",
-        remap = true,
-        desc = "Starts interactive EasyAlign for a motion/text object (e.g. gaip)",
+        desc = "Load mini.align plugin",
       },
     },
+    config = function(_, opts)
+      require("mini.align").setup(opts)
+    end,
   },
 }
