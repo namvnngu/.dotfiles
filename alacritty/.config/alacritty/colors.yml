@@ -5,3 +5,4 @@ import:
   # - ~/.config/alacritty/colorschemes/Kanagawa.yml
   # - ~/.config/alacritty/colorschemes/Carbonfox.yml
   - ~/.config/alacritty/colorschemes/Dayfox.yml
+  # - ~/.config/alacritty/colorschemes/TokyoNight_day.yml

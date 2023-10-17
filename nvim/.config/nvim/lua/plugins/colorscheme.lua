@@ -2,10 +2,8 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = true,
-    opts = {
-      -- variant = "moon", -- dark mode
-      variant = "dawn", -- light mode
+    lazy = true, opts = { variant = "dawn",
+      dark_variant = "moon",
       disable_background = true,
       disable_float_background = true,
       disable_italics = true,
@@ -55,13 +53,30 @@ return {
     },
     config = function(_, opts)
       require("nightfox").setup(opts)
+      if vim.o.background == "dark" then
+        vim.cmd.colorscheme("carbonfox")
+      else
+        vim.cmd.colorscheme("dayfox")
+        vim.cmd("highlight @tag.attribute gui=NONE cterm=NONE")
+      end
+    end,
+  },
 
-      -- dark mode
-      -- vim.cmd.colorscheme("carbonfox")
-
-      -- light mode
-      vim.cmd.colorscheme("dayfox")
-      vim.cmd("highlight @tag.attribute gui=NONE cterm=NONE")
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = {
+      style = "storm",
+      light_style = "day",
+      transparent = true,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+      },
+    },
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+      vim.cmd.colorscheme("tokyonight")
     end,
   },
 }
