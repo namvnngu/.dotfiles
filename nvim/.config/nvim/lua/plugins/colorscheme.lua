@@ -4,7 +4,8 @@ return {
     name = "rose-pine",
     lazy = true,
     opts = {
-      variant = "moon",
+      -- variant = "moon", -- dark mode
+      variant = "dawn", -- light mode
       disable_background = true,
       disable_float_background = true,
       disable_italics = true,
@@ -32,8 +33,7 @@ return {
 
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     opts = {
       commentStyle = { italic = false },
       keywordStyle = { italic = false },
@@ -48,13 +48,20 @@ return {
 
   {
     "EdenEast/nightfox.nvim",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     opts = {
       options = { transparent = true },
     },
     config = function(_, opts)
       require("nightfox").setup(opts)
-      vim.cmd.colorscheme("carbonfox")
+
+      -- dark mode
+      -- vim.cmd.colorscheme("carbonfox")
+
+      -- light mode
+      vim.cmd.colorscheme("dayfox")
+      vim.cmd("highlight @tag.attribute gui=NONE cterm=NONE")
     end,
   },
 }

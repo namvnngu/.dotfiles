@@ -180,10 +180,10 @@ nnoremap - :Ex<cr>
 " let g:gruvbox_transparent_bg=1
 " colorscheme gruvbox
 
-set background=dark
 let g:disable_bg=1
 let g:disable_float_bg=1
-colorscheme rosepine
+set background=light
+colorscheme rosepine_dawn
 
 autocmd VimEnter * hi Comment cterm=NONE
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
