@@ -62,6 +62,7 @@ set undolevels=10000
 set updatetime=50
 set viewoptions-=curdir
 set virtualedit=block
+set wildmenu
 set wildmode=longest:full,full
 set winminwidth=5
 
@@ -174,23 +175,16 @@ nnoremap - :Ex<cr>
 """""""""
 " THEME "
 """""""""
-" set background=dark
-" let g:gruvbox_contrast_dark='medium'
-" let g:gruvbox_contrast_light='medium'
-" let g:gruvbox_transparent_bg=1
-" colorscheme gruvbox
-
-let g:disable_bg=1
-let g:disable_float_bg=1
 set background=light
-colorscheme rosepine_dawn
+colorscheme retrobox
 
 autocmd VimEnter * hi Comment cterm=NONE
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
 
 " Highlight spelling errors
-autocmd VimEnter * hi SpellBad ctermbg=red
+" autocmd VimEnter * hi SpellBad ctermbg=red guibg=red
 " autocmd VimEnter * hi SpellBad cterm=underline
 
 """"""""""""""""
