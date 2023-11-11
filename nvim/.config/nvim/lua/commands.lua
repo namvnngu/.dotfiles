@@ -64,7 +64,7 @@ vim.api.nvim_create_user_command("Run", function()
   elseif extension == "cs" then
     vim.cmd("term " .. shell.generate_cd_cmd("dotnet run --project %:p:h"))
   elseif extension == "ts" or extension == "js" then
-    vim.cmd("term " .. shell.generate_cd_cmd("&& npx tsx %"))
+    vim.cmd("term " .. shell.generate_cd_cmd("npx tsx %:t"))
   else
     vim.notify("No execution for " .. extension .. " yet!", vim.log.levels.WARN)
   end
