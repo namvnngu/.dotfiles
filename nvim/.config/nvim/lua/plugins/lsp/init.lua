@@ -73,7 +73,7 @@ return {
   {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = { "mason.nvim" },
+    dependencies = { "williamboman/mason.nvim" },
   },
 
   -- Lsp progress
