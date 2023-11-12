@@ -42,8 +42,8 @@ vim.api.nvim_create_user_command("Template", function(opts)
     vim.cmd("read $HOME/.config/nvim/templates/HTML.html")
   elseif template_name == "java" then
     vim.cmd("read $HOME/.config/nvim/templates/Java.java")
-  elseif template_name == "ts" then
-    vim.cmd("read $HOME/.config/nvim/templates/TS.ts")
+  elseif template_name == "js" then
+    vim.cmd("read $HOME/.config/nvim/templates/JS.js")
   else
     vim.notify("No template for " .. template_name .. "!", vim.log.levels.WARN)
   end
