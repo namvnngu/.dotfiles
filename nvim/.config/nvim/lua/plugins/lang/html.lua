@@ -1,14 +1,5 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "html" })
-      end
-    end,
-  },
-
-  {
     "nvimtools/none-ls.nvim",
     optional = true,
     opts = function(_, opts)
@@ -16,7 +7,7 @@ return {
       opts.sources = opts.sources or {}
       vim.list_extend(opts.sources, {
         nls.builtins.formatting.prettierd.with({
-          filetypes = { "html" },
+          filetypes = { "css" },
         }),
       })
     end,

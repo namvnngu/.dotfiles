@@ -42,12 +42,10 @@ return {
         has_cmp and cmp_nvim_lsp.default_capabilities() or {},
         opts.capabilities or {}
       )
-
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
         }, opts.servers[server] or {})
-
         require("lspconfig")[server].setup(server_opts)
       end
 
@@ -77,9 +75,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = { "mason.nvim" },
   },
-
-  -- A tree like view for symbols
-  { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
   -- Lsp progress
   {
