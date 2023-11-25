@@ -1,5 +1,26 @@
 return {
   {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        svelte = {
+          ---@diagnostic disable-next-line: unused-local
+          on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePost", {
+              pattern = { "*.js", "*.ts" },
+              callback = function(ctx)
+                if client.name == "svelte" then
+                  client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+                end
+              end,
+            })
+          end,
+        },
+      },
+    },
+  },
+
+  {
     "nvimtools/none-ls.nvim",
     optional = true,
     opts = function(_, opts)
