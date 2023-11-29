@@ -180,7 +180,10 @@ colorscheme retrobox
 
 autocmd VimEnter * hi Comment cterm=NONE
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi! NonText ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
 
 " Highlight spelling errors

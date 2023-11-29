@@ -1,3 +1,11 @@
+local function set_transparent_bg()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
+  vim.api.nvim_set_hl(0, "NonText", { bg = "none", ctermbg = "none" })
+  vim.api.nvim_set_hl(0, "NormalNC", { bg = "none", ctermbg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", ctermbg = "none" })
+  vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none", ctermbg = "none" })
+end
+
 return {
   -- {
   --   "EdenEast/nightfox.nvim",
@@ -92,7 +100,7 @@ return {
     priority = 1000,
     opts = {
       options = {
-        transparent = false,
+        transparent = true,
       },
     },
     config = function(_, opts)
@@ -102,6 +110,7 @@ return {
       else
         vim.cmd.colorscheme("github_light")
       end
+      set_transparent_bg()
     end,
   },
 }
