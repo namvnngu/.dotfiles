@@ -76,8 +76,7 @@ export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
 
 # prompt
-# PROMPT='%F{cyan}%n%f %~'$'\n$ '
-eval "$(starship init zsh)"
+PROMPT='%F{cyan}%n%f %~'$'\n$ '
 
 ###############################################################################
 #                               Tools                                         #
