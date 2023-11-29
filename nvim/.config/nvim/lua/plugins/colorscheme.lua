@@ -1,21 +1,21 @@
 return {
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      options = { transparent = true },
-    },
-    config = function(_, opts)
-      require("nightfox").setup(opts)
-      if vim.o.background == "dark" then
-        vim.cmd.colorscheme("carbonfox")
-      else
-        vim.cmd.colorscheme("dayfox")
-        vim.cmd("highlight @tag.attribute gui=NONE cterm=NONE")
-      end
-    end,
-  },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     options = { transparent = true },
+  --   },
+  --   config = function(_, opts)
+  --     require("nightfox").setup(opts)
+  --     if vim.o.background == "dark" then
+  --       vim.cmd.colorscheme("carbonfox")
+  --     else
+  --       vim.cmd.colorscheme("dayfox")
+  --       vim.cmd("highlight @tag.attribute gui=NONE cterm=NONE")
+  --     end
+  --   end,
+  -- },
 
   -- {
   --   "rose-pine/neovim",
@@ -85,4 +85,23 @@ return {
   --     vim.cmd.colorscheme("tokyonight")
   --   end,
   -- },
+
+  {
+    "projekt0n/github-nvim-theme",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      options = {
+        transparent = false,
+      },
+    },
+    config = function(_, opts)
+      require("github-theme").setup(opts)
+      if vim.o.background == "dark" then
+        vim.cmd.colorscheme("github_dark")
+      else
+        vim.cmd.colorscheme("github_light")
+      end
+    end,
+  },
 }
