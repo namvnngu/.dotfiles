@@ -1,3 +1,4 @@
 import:
+  - ~/.config/alacritty/fonts/Default.yml
   # - ~/.config/alacritty/fonts/FiraCodeNerdFont.yml
-  - ~/.config/alacritty/fonts/BigBlueTermPlusNerdFontMono.yml
+  # - ~/.config/alacritty/fonts/BigBlueTermPlusNerdFontMono.yml
