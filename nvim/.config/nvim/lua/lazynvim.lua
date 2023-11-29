@@ -19,7 +19,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "nightfox" } },
+  install = { colorscheme = {} },
   checker = { enabled = false }, -- automatically check for plugin updates
   change_detection = { enabled = false }, -- automatically check for config file changes and reload the ui
   performance = {
@@ -34,6 +34,32 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
+      },
+    },
+  },
+  ui = {
+    icons = {
+      cmd = "▶",
+      config = "▣",
+      event = "▚",
+      ft = "▛",
+      init = "▓",
+      import = "▼",
+      keys = "▩",
+      lazy = "¶",
+      loaded = "✔",
+      not_loaded = "✘",
+      plugin = "✧",
+      runtime = "✈",
+      require = "◑",
+      source = "▲",
+      start = "☆",
+      task = "✔ ",
+      list = {
+        "●",
+        "➜",
+        "★",
+        "‒",
       },
     },
   },

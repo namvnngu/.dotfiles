@@ -8,33 +8,6 @@ return {
     },
     config = function()
       local cmp = require("cmp")
-      local kind_icons = {
-        Text = "",
-        Method = "",
-        Function = "󰊕",
-        Constructor = "",
-        Field = "",
-        Variable = "",
-        Class = "",
-        Interface = "",
-        Module = "",
-        Property = "",
-        Unit = "",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "",
-        Event = "",
-        Operator = "",
-        TypeParameter = "",
-      }
 
       cmp.setup({
         snippet = {
@@ -78,20 +51,6 @@ return {
             end
           end,
         }),
-        formatting = {
-          format = function(entry, item)
-            item.kind = string.format("%s %s", kind_icons[item.kind], item.kind)
-            item.menu = ({
-              buffer = "[Buffer]",
-              nvim_lsp = "[LSP]",
-              luasnip = "[LuaSnip]",
-              vsnip = "[VSnip]",
-              nvim_lua = "[Lua]",
-              latex_symbols = "[LaTeX]",
-            })[entry.source.name]
-            return item
-          end,
-        },
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "vsnip" }, -- For vsnip users.
