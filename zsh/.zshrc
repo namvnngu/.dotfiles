@@ -28,9 +28,6 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #                               Settings                                      #
 ###############################################################################
 
-# colors
-export TERM="xterm-256color"
-
 # zsh history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
