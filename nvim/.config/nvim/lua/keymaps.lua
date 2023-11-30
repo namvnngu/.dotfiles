@@ -61,12 +61,12 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Quickfix list
-vim.keymap.set("n", "<C-k>", ":cnext<cr>zz")
-vim.keymap.set("n", "<C-j>", ":cprev<cr>zz")
+vim.keymap.set("n", "<C-j>", ":cnext<cr>zz")
+vim.keymap.set("n", "<C-k>", ":cprev<cr>zz")
 
 -- Location list
-vim.keymap.set("n", "<leader>K", ":lnext<cr>zz")
-vim.keymap.set("n", "<leader>J", ":lprev<cr>zz")
+vim.keymap.set("n", "<leader>J", ":lnext<cr>zz")
+vim.keymap.set("n", "<leader>K", ":lprev<cr>zz")
 
 -- Keybindings for tab navigation with leader and number
 vim.keymap.set("n", "<leader>1", "1gt")

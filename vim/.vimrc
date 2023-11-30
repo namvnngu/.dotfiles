@@ -129,12 +129,12 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
 " Quickfix list
-nnoremap <C-k> :cnext<cr>zz
-nnoremap <C-j> :cprev<cr>zz
+nnoremap <C-j> :cnext<cr>zz
+nnoremap <C-k> :cprev<cr>zz
 
 " Location list
-nnoremap <leader>K :lnext<cr>zz
-nnoremap <leader>J :lprev<cr>zz
+nnoremap <leader>J :lnext<cr>zz
+nnoremap <leader>K :lprev<cr>zz
 
 " Keybindings for tab navigation with leader and number
 nnoremap <leader>1 1gt
