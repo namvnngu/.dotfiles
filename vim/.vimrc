@@ -176,7 +176,7 @@ nnoremap - :Ex<cr>
 " THEME "
 """""""""
 set background=light
-colorscheme retrobox
+" colorscheme retrobox
 
 autocmd VimEnter * hi Comment cterm=NONE
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
@@ -185,6 +185,8 @@ autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi CursorLine cterm=NONE ctermfg=NONE
+autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 
 " Highlight spelling errors
 " autocmd VimEnter * hi SpellBad ctermbg=red guibg=red
