@@ -72,7 +72,7 @@ end
 
 vim.cmd("filetype plugin indent on")
 
-vim.o.background = "light"
+vim.opt.background = "light"
 
 -- Enable linematch diff algorithm.
 -- In the git diff case, the difference are more granular, which means that

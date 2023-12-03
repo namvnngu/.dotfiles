@@ -21,7 +21,7 @@ set cursorline
 set expandtab
 set fileencoding=utf-8
 set fillchars+=eob:\ ,
-set foldcolumn=0
+set foldcolumn=1
 set foldenable
 set foldlevel=99
 set foldlevelstart=99
@@ -186,6 +186,7 @@ autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi CursorLine cterm=NONE ctermfg=NONE
 autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 

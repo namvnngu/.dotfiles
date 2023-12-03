@@ -1,10 +1,14 @@
-local function set_transparent_bg()
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
-  vim.api.nvim_set_hl(0, "NonText", { bg = "none", ctermbg = "none" })
-  vim.api.nvim_set_hl(0, "NormalNC", { bg = "none", ctermbg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", ctermbg = "none" })
-  vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none", ctermbg = "none" })
-end
+-- Customize default theme
+  vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE", ctermbg = "NONE" })
+  vim.api.nvim_set_hl(0, "FoldColumn", { bg = "NONE", ctermbg = "NONE" })
+
+-- local function set_transparent_bg()
+--   vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
+--   vim.api.nvim_set_hl(0, "NonText", { bg = "NONE", ctermbg = "NONE" })
+--   vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE", ctermbg = "NONE" })
+--   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", ctermbg = "NONE" })
+--   vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE", ctermbg = "NONE" })
+-- end
 
 return {
   -- {
@@ -94,23 +98,23 @@ return {
   --   end,
   -- },
 
-  {
-    "projekt0n/github-nvim-theme",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      options = {
-        transparent = true,
-      },
-    },
-    config = function(_, opts)
-      require("github-theme").setup(opts)
-      if vim.o.background == "dark" then
-        vim.cmd.colorscheme("github_dark")
-      else
-        vim.cmd.colorscheme("github_light")
-      end
-      set_transparent_bg()
-    end,
-  },
+  -- {
+  --   "projekt0n/github-nvim-theme",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     options = {
+  --       transparent = true,
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     require("github-theme").setup(opts)
+  --     if vim.o.background == "dark" then
+  --       vim.cmd.colorscheme("github_dark")
+  --     else
+  --       vim.cmd.colorscheme("github_light")
+  --     end
+  --     set_transparent_bg()
+  --   end,
+  -- },
 }
