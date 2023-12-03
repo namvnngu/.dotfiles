@@ -8,9 +8,10 @@ return {
         "<C-s>",
         function()
           require("spectre").open()
+          require("spectre").resume_last_search()
         end,
         mode = "n",
-        desc = "Search and replace in files",
+        desc = "Open and repeat last search",
       },
       {
         "<leader>sw",
