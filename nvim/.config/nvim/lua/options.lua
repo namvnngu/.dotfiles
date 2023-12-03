@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.opt.autoindent = true
 vim.opt.autoread = true -- enable re-reading file if it has been changed outside of neovim
 vim.opt.backup = false -- disable making a backup file before overwriting a file
 vim.opt.breakindent = true -- enable wrapping indent to match line start

@@ -7,6 +7,7 @@ filetype plugin indent on
 
 let mapleader = " "
 
+set autoindent
 set autoread
 set backspace+=nostop
 set breakindent
