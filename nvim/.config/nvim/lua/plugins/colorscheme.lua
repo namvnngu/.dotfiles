@@ -1,6 +1,6 @@
 -- Customize default theme
-  vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE", ctermbg = "NONE" })
-  vim.api.nvim_set_hl(0, "FoldColumn", { bg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = "NONE", ctermbg = "NONE" })
 
 -- local function set_transparent_bg()
 --   vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
