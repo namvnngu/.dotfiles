@@ -37,7 +37,7 @@ end
 ---Pre-append `cd` command that changes the directory that contains the current buffer/file
 ---@param command string
 ---@return string
-function M.generate_cd_cmd(command)
+function M.prepend_cd(command)
   return "cd "
     .. vim.fn.shellescape(vim.fn.expand("%:p:h"))
     .. " && "
