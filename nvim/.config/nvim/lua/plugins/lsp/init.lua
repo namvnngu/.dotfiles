@@ -80,6 +80,11 @@ return {
   {
     "j-hui/fidget.nvim",
     event = "LspAttach",
-    opts = {},
+    opts = {
+      progress = {
+        -- Temp fix: stopped working with tsserver
+        ignore_empty_message = false,
+      },
+    },
   },
 }
