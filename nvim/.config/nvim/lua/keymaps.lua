@@ -46,12 +46,7 @@ vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Clear search with <esc>
-vim.keymap.set(
-  "n",
-  "<esc>",
-  ":noh<cr>",
-  { desc = "Escape and clear hlsearch" }
-)
+vim.keymap.set("n", "<esc>", ":noh<cr>", { desc = "Escape and clear hlsearch" })
 
 -- Keeping it centered and stable
 vim.keymap.set("n", "J", "mzJ`z")
@@ -109,6 +104,28 @@ vim.keymap.set("n", "<leader>x", ":!chmod +x %<cr>", { silent = true })
 
 -- Exit terminal mode
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
+
+-- Open URL
+-- Reference: https://github.com/vim/vim/issues/4738#issuecomment-856925080
+if package.config:sub(1, 1) == "\\" then
+  require("utils.log").log(
+    "I don't use Windows, so I don't know which command to open URL in terminal"
+  )
+elseif vim.fn.has("macunix") then
+  vim.keymap.set(
+    "n",
+    "gx",
+    ":execute 'silent! !open ' . shellescape(expand('<cWORD>'), 1)<cr>",
+    { silent = true }
+  )
+else
+  vim.keymap.set(
+    "n",
+    "gx",
+    ":execute 'silent! !xdg-open ' . shellescape(expand('<cWORD>'), 1)<cr>",
+    { silent = true }
+  )
+end
 
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")

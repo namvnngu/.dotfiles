@@ -7,7 +7,7 @@ function __LINE__()
   return debug.getinfo(3, "l").currentline
 end
 function __FUNC__()
-  return debug.getinfo(3, "n").name
+  return debug.getinfo(3, "n").name or "global"
 end
 
 ---Dump information about the passed value
@@ -32,9 +32,9 @@ end
 function M.log(text)
   print(
     string.format(
-      "[%s][%s-%s] %s",
-      os.clock(),
-      __FUNC__(),
+      "[%s(s)][%s:%s] %s",
+      os.time(),
+      __FILE__(),
       __LINE__(),
       dump(text)
     )
