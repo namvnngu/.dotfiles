@@ -15,7 +15,7 @@ set clipboard+=unnamedplus,unnamed
 set cmdheight=1
 set colorcolumn=80
 set complete+=kspell
-set completeopt=menu,menuone,noselect
+set completeopt=menu,menuone,noselect,noinsert
 set copyindent
 set cursorline
 set expandtab
@@ -41,6 +41,7 @@ set noundofile
 set nowrap
 set nowritebackup
 set number
+set omnifunc=syntaxcomplete#Complete
 set preserveindent
 set pumheight=100
 set relativenumber
@@ -172,6 +173,30 @@ tnoremap <Esc> <C-\><C-n>
 
 " Split explorer
 nnoremap - :Ex<cr>
+
+" Minimalist-Tab Complete
+inoremap <expr> <Tab> TabComplete()
+fun! TabComplete()
+	if getline('.')[col('.') - 2] =~ '\K' || pumvisible()
+	  return "\<C-N>"
+	else
+	  return "\<Tab>"
+	endif
+endfun
+
+" Minimalist-Autocomplete
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+autocmd InsertCharPre * call AutoComplete()
+fun! AutoComplete()
+	if v:char =~ '\K'
+	    \ && getline('.')[col('.') - 4] !~ '\K'
+	    \ && getline('.')[col('.') - 3] =~ '\K'
+	    \ && getline('.')[col('.') - 2] =~ '\K'
+	    \ && getline('.')[col('.') - 1] !~ '\K'
+
+	  call feedkeys("\<C-N>", 'n')
+	end
+endfun
 
 """""""""
 " THEME "
