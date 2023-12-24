@@ -76,7 +76,7 @@ return {
     dependencies = { "williamboman/mason.nvim" },
   },
 
-  -- Lsp progress
+  -- LSP progress
   {
     "j-hui/fidget.nvim",
     event = "LspAttach",
