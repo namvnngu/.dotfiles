@@ -6,7 +6,7 @@ set $mod Mod4
 set $alt Mod1
 
 #==== FONTS ====
-font pango:BigBlueTerm437 Nerd Font 8
+font pango:Ubuntu Mono 100
 
 #==== WINDOW ====
 
