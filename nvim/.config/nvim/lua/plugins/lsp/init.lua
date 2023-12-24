@@ -28,6 +28,7 @@ return {
       require("utils.lsp").on_attach(function(client, buffer)
         require("plugins.lsp.keymaps").on_attach(client, buffer)
         require("plugins.lsp.highlight_on_hover").on_attach(client, buffer)
+        require("plugins.lsp.omnifunc").on_attach(client, buffer)
 
         if opts.inlay_hints.enabled then
           require("plugins.lsp.inlay_hint").on_attach(client, buffer)
