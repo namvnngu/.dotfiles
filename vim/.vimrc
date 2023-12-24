@@ -20,7 +20,6 @@ set copyindent
 set cursorline
 set expandtab
 set fileencoding=utf-8
-set fillchars+=eob:\ ,
 set foldcolumn=1
 set foldenable
 set foldlevel=99

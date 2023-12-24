@@ -15,7 +15,6 @@ vim.opt.copyindent = true -- enable copying the previous indentation on autoinde
 vim.opt.cursorline = true -- enable highlighting the text line of the cursor
 vim.opt.expandtab = true -- enable the use of space in tab
 vim.opt.fileencoding = "utf-8" -- file content encoding for the buffer
-vim.opt.fillchars = { eob = " " } -- disable `~` on nonexistent lines
 vim.opt.foldcolumn = "1" -- disable the fold column
 vim.opt.foldenable = false -- disable folding at startup or switching between buffers
 vim.opt.foldlevel = 99 -- set high foldlevel
