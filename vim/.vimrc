@@ -24,7 +24,7 @@ set foldcolumn=1
 set foldenable
 set foldlevel=99
 set foldlevelstart=99
-set foldmethod=indent
+set foldmethod=manual
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
 set history=100
