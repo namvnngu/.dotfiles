@@ -5,21 +5,21 @@ return {
       -- git
       {
         "<C-p>",
-        "<cmd>FzfLua git_files debug=true<cr>",
+        "<cmd>FzfLua git_files<cr>",
         mode = "n",
         desc = "Search files via `git ls-files`",
       },
       -- files
       {
         "<leader>ff",
-        "<cmd>FzfLua files debug=true<cr>",
+        "<cmd>FzfLua files<cr>",
         mode = "n",
         desc = "Search files via `find` or `fd` on a path",
       },
       -- search
       {
         "<leader>fs",
-        "<cmd>FzfLua live_grep_glob debug=true<cr>",
+        "<cmd>FzfLua live_grep_glob<cr>",
         mode = "n",
         desc = "live_grep with rg --glob support",
       },
