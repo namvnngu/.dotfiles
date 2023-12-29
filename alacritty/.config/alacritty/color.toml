@@ -1,1 +1,15 @@
-import = ["~/.config/alacritty/colorschemes/Github_Light.toml"]
+import = [
+  # Light
+  # "~/.config/alacritty/colorschemes/Catppuccin_Latte.toml",
+  # "~/.config/alacritty/colorschemes/Rose_Pine_Dawn.toml",
+  # "~/.config/alacritty/colorschemes/TokyoNight_day.toml",
+  # "~/.config/alacritty/colorschemes/Dayfox.toml",
+  "~/.config/alacritty/colorschemes/Github_Light.toml",
+
+  # Dark
+  # "~/.config/alacritty/colorschemes/Rose_Pine.toml",
+  # "~/.config/alacritty/colorschemes/Catppuccin_Mocha.toml",
+  # "~/.config/alacritty/colorschemes/Kanagawa.toml",
+  # "~/.config/alacritty/colorschemes/Carbonfox.toml",
+  # "~/.config/alacritty/colorschemes/Github_Dark.toml"
+]
