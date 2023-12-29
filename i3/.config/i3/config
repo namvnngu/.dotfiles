@@ -151,8 +151,8 @@ bindsym $mod+Shift+r restart
 
 # Create Log out, Reboot, Poweroff bindings
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
-  bindsym $mod+r exec systemctl reboot
   bindsym $mod+l exit
+  bindsym $mod+r exec systemctl reboot
   bindsym $mod+p exec systemctl poweroff
 
   # Back to normal: Enter or Escape
