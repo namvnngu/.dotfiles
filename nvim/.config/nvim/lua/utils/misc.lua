@@ -1,11 +1,5 @@
 local M = {}
 
----Copy to clipboard
----@param text string
-function M.to_clipboard(text)
-  vim.fn.setreg("+", text)
-end
-
 ---Operate shallow copy
 ---@generic T
 ---@param original T

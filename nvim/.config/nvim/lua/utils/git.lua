@@ -1,7 +1,6 @@
 local M = {}
-local shell = require("utils.shell")
 local file = require("utils.file")
-local launch_url = require("utils.url").launch
+local system = require("utils.system")
 
 ---@param callback fun(is_ignored: boolean)
 function M.is_current_file_ignored(callback)
@@ -10,7 +9,7 @@ function M.is_current_file_ignored(callback)
     return true
   end
 
-  shell.start_job("git check-ignore " .. vim.fn.shellescape(filepath), {
+  system.run_cmd("git check-ignore " .. vim.fn.shellescape(filepath), {
     on_exit = function(code)
       callback(code ~= 1)
     end,
@@ -111,7 +110,7 @@ function M.get_current_branch(callback)
     return
   end
 
-  shell.start_job("git branch --show-current", {
+  system.run_cmd("git branch --show-current", {
     on_stdout = function(url)
       if url and url[1] then
         callback(url[1])
@@ -160,7 +159,7 @@ end
 ---@param line2 number?
 function M.open_file_in_browser(filepath, sha, line1, line2)
   M.get_file_url(filepath, sha, line1, line2, function(url)
-    launch_url(url)
+    system.launch_url(url)
   end)
 end
 
@@ -169,7 +168,7 @@ function M.open_commit_in_browser(sha)
   M.get_long_sha_from_short(sha, function(long_sha)
     M.get_remote_url(function(remote_url)
       local commit_url = M.generate_commit_url(long_sha, remote_url)
-      launch_url(commit_url)
+      system.launch_url(commit_url)
     end)
   end)
 end
@@ -180,7 +179,7 @@ function M.get_remote_url(callback)
     return
   end
 
-  shell.start_job("git config --get remote.origin.url", {
+  system.run_cmd("git config --get remote.origin.url", {
     on_stdout = function(url)
       if url and url[1] then
         callback(url[1])
@@ -197,7 +196,7 @@ function M.get_repo_root(callback)
     return
   end
 
-  shell.start_job("git rev-parse --show-toplevel", {
+  system.run_cmd("git rev-parse --show-toplevel", {
     on_stdout = function(data)
       callback(data[1])
     end,
@@ -207,7 +206,7 @@ end
 ---@param short_sha string
 ---@param callback fun(long_sha: string)
 function M.get_long_sha_from_short(short_sha, callback)
-  shell.start_job("git rev-parse " .. short_sha, {
+  system.run_cmd("git rev-parse " .. short_sha, {
     on_stdout = function(data)
       callback(data[1])
     end,

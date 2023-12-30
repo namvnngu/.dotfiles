@@ -107,25 +107,9 @@ vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
 
 -- Open URL
 -- Reference: https://github.com/vim/vim/issues/4738#issuecomment-856925080
-if package.config:sub(1, 1) == "\\" then
-  require("utils.log").log(
-    "I don't use Windows, so I don't know which command to open URL in terminal"
-  )
-elseif vim.fn.has("macunix") then
-  vim.keymap.set(
-    "n",
-    "gx",
-    ":execute 'silent! !open ' . shellescape(expand('<cWORD>'), 1)<cr>",
-    { silent = true }
-  )
-else
-  vim.keymap.set(
-    "n",
-    "gx",
-    ":execute 'silent! !xdg-open ' . shellescape(expand('<cWORD>'), 1)<cr>",
-    { silent = true }
-  )
-end
+vim.keymap.set("n", "gx", function()
+  require("utils.sytem").launch_url(vim.fn.shellescape(vim.fn.expand("<cWORD>"), 1))
+end)
 
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")
