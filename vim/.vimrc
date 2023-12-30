@@ -1,3 +1,11 @@
+if !exists("g:os")
+  if has("win64") || has("win32") || has("win16")
+    let g:os = "Windows"
+  else
+    let g:os = substitute(system('uname'), '\n', '', '')
+  endif
+endif
+
 """""""""""
 " OPTIONS "
 """""""""""
@@ -200,8 +208,12 @@ endfun
 """""""""
 " THEME "
 """""""""
-set background=light
-" colorscheme retrobox
+
+if g:os == "Darwin"
+  set background=light
+elseif g:os == "Linux"
+  set background=dark
+endif
 
 autocmd VimEnter * hi Comment cterm=NONE
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
