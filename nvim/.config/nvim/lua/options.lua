@@ -72,7 +72,12 @@ end
 
 vim.cmd("filetype plugin indent on")
 
-vim.opt.background = "light"
+local system = require("utils.system")
+if system.get_os_name() == "Darwin" then
+  vim.opt.background = "light"
+else
+  vim.opt.background = "dark"
+end
 
 -- Enable linematch diff algorithm.
 -- In the git diff case, the difference are more granular, which means that
