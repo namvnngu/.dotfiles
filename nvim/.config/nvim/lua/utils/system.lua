@@ -51,15 +51,15 @@ function M.launch_url(url)
     local os_name = M.get_os_name()
     if os_name == "Windows" then
       open_url = function(launched_url)
-        M.run_cmd(string.format("start %s", launched_url))
+        M.run_cmd(string.format("start '%s'", launched_url))
       end
     elseif os_name == "Darwin" then
       open_url = function(launched_url)
-        M.run_cmd(string.format("open %s", launched_url))
+        M.run_cmd(string.format("open '%s'", launched_url))
       end
     elseif os_name == "Linux" then
       open_url = function(launched_url)
-        M.run_cmd(string.format("xdg-open %s", launched_url))
+        M.run_cmd(string.format("xdg-open '%s'", launched_url))
       end
     end
   end
