@@ -4,7 +4,7 @@ local M = {}
 ---@generic T
 ---@param original T
 ---@return T
-function M.shallow(original)
+function M.shallow_copy(original)
   local orig_type = type(original)
   local copy
   if orig_type == "table" then
