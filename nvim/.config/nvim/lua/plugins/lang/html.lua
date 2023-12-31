@@ -7,7 +7,7 @@ return {
       opts.sources = opts.sources or {}
       vim.list_extend(opts.sources, {
         nls.builtins.formatting.prettierd.with({
-          filetypes = { "css" },
+          filetypes = { "html" },
         }),
       })
     end,
