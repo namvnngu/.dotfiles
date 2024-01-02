@@ -23,6 +23,13 @@ return {
         mode = "n",
         desc = "live_grep with rg --glob support",
       },
+      -- misc
+      {
+        "<leader>fr",
+        "<cmd>FzfLua resume<cr>",
+        mode = "n",
+        desc = "live_grep with rg --glob support",
+      },
     },
     opts = {
       winopts = {
