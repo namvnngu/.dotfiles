@@ -1,4 +1,4 @@
-os="$(uname -s)"
+os=$(uname -s)
 
 ###############################################################################
 #                                 Paths                                       #
@@ -13,7 +13,7 @@ export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.fzf/bin
 
 # go
-case "${os}" in
+case $os in
     Linux*)
       export GOROOT=/usr/local/go
       ;;
