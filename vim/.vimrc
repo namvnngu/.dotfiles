@@ -205,6 +205,16 @@ fun! AutoComplete()
 	end
 endfun
 
+""""""""""""""""
+" AUTOCOMMANDS "
+""""""""""""""""
+autocmd BufWritePre * call TrimWhitespace()
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
 """""""""
 " THEME "
 """""""""
@@ -229,14 +239,3 @@ autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 " Highlight spelling errors
 " autocmd VimEnter * hi SpellBad ctermbg=red guibg=red
 " autocmd VimEnter * hi SpellBad cterm=underline
-
-""""""""""""""""
-" AUTOCOMMANDS "
-""""""""""""""""
-
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-autocmd BufWritePre * call TrimWhitespace()
