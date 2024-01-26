@@ -41,7 +41,6 @@ vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.opt.shiftround = true -- round indent
 vim.opt.shiftwidth = 2 -- number of space inserted for indentation
-vim.opt.shortmess:append({ W = true, I = false, c = true })
 vim.opt.showmode = true -- enable showing modes in command line
 vim.opt.showtabline = 0 -- disable tab line (top bar)
 vim.opt.sidescrolloff = 8 -- number of columns to keep at the sides of the cursor
@@ -66,7 +65,6 @@ vim.opt.writebackup = false -- disable making a backup before overwriting a file
 
 if vim.fn.has("nvim-0.9.0") == 1 then
   vim.opt.splitkeep = "screen" -- maintain code view when splitting
-  vim.opt.shortmess:append({ C = true })
 end
 
 vim.cmd("filetype plugin indent on")
