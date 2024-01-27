@@ -8,19 +8,11 @@ return {
       { "folke/neodev.nvim", opts = {} },
     },
     opts = {
-      -- options for vim.diagnostic.config()
-      diagnostics = {
-        underline = true,
-        update_in_insert = false,
-        severity_sort = true,
-      },
       inlay_hints = {
         enabled = false,
       },
       -- global capabilities
       capabilities = {},
-      -- options for vim.lsp.buf.format
-      format = {},
       -- lsp server settings
       servers = {},
     },
@@ -48,7 +40,6 @@ return {
         require("lspconfig")[server].setup(server_opts)
       end
 
-      require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "tsserver" },
         automatic_installation = true,
