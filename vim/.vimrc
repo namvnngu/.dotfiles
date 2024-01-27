@@ -22,7 +22,6 @@ set breakindent
 set clipboard+=unnamedplus,unnamed
 set cmdheight=1
 set colorcolumn=80
-set complete+=kspell
 set completeopt=menu,menuone,noselect,noinsert
 set copyindent
 set cursorline
@@ -73,6 +72,7 @@ set viewoptions-=curdir
 set virtualedit=block
 set wildmenu
 set wildmode=longest:full,full
+set wildoptions=pum,tagfile
 set winminwidth=5
 
 """"""""""

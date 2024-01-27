@@ -8,8 +8,7 @@ vim.opt.breakindent = true -- enable wrapping indent to match line start
 vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
 vim.opt.cmdheight = 1 -- command line height
 vim.opt.colorcolumn = "80" -- set position of the color column
-vim.opt.complete = vim.opt.complete:append("kspell") -- use locale dictionary when "setlocal spell" is enabled
-vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.confirm = false -- confirm to save changes before exiting modified buffer
 vim.opt.copyindent = true -- enable copying the previous indentation on autoindenting
 vim.opt.cursorline = true -- enable highlighting the text line of the cursor
@@ -58,15 +57,12 @@ vim.opt.undofile = false -- disable persistent undo
 vim.opt.undolevels = 10000
 vim.opt.updatetime = 500 -- save swap file and trigger CursorHold
 vim.opt.virtualedit = "block" -- allow going past end of line in visual block mode
+vim.opt.wildmenu = true -- command-line completion menu
 vim.opt.wildmode = "longest:full,full" -- command-line completion mode
+vim.opt.wildoptions = "pum,tagfile" -- how a list of suggestions is shown
 vim.opt.winminwidth = 5 -- minimum window width
 vim.opt.wrap = false -- disable wrapping of lines longer than the width of window
 vim.opt.writebackup = false -- disable making a backup before overwriting a file
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.splitkeep = "screen" -- maintain code view when splitting
-end
-
 vim.cmd("filetype plugin indent on")
 
 local system = require("utils.system")
