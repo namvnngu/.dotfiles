@@ -1,7 +1,7 @@
 local function augroup(name)
   return vim.api.nvim_create_augroup("namnguyen" .. name, { clear = true })
 end
-
+-- Trim spaces
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("TrimSpaces"),
   pattern = "*",
@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
+  group = augroup("HighlightYank"),
   callback = function()
     vim.highlight.on_yank()
   end,
