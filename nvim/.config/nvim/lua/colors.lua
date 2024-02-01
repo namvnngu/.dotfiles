@@ -1,4 +1,10 @@
 -- Customize default theme
+local system = require("utils.system")
+if system.get_os_name() == "Darwin" then
+  vim.opt.background = "light"
+else
+  vim.opt.background = "dark"
+end
 
 -- Transparent Column
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE", ctermbg = "NONE" })

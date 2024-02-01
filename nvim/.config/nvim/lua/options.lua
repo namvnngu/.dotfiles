@@ -63,14 +63,8 @@ vim.opt.wildoptions = "pum,tagfile" -- how a list of suggestions is shown
 vim.opt.winminwidth = 5 -- minimum window width
 vim.opt.wrap = false -- disable wrapping of lines longer than the width of window
 vim.opt.writebackup = false -- disable making a backup before overwriting a file
-vim.cmd("filetype plugin indent on")
 
-local system = require("utils.system")
-if system.get_os_name() == "Darwin" then
-  vim.opt.background = "light"
-else
-  vim.opt.background = "dark"
-end
+vim.cmd("filetype plugin indent on")
 
 -- Enable linematch diff algorithm.
 -- In the git diff case, the difference are more granular, which means that
