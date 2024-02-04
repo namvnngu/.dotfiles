@@ -73,7 +73,7 @@ export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
 
 # prompt
-PROMPT='%F{blue}%n%f %~'$'\n$ '
+PROMPT='%F{cyan}%n%f %~'$'\n$ '
 
 ###############################################################################
 #                               Tools                                         #
