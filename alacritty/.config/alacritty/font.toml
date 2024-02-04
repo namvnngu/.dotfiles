@@ -1,1 +1,2 @@
-import = ["~/.config/alacritty/fonts/Default.toml"]
+[font]
+size = 14

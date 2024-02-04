@@ -73,7 +73,7 @@ export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
 
 # prompt
-PROMPT='%F{cyan}%n%f %~'$'\n$ '
+PROMPT='%F{blue}%n%f %~'$'\n$ '
 
 ###############################################################################
 #                               Tools                                         #
@@ -96,4 +96,15 @@ export DOCKER_FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{
 function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+function colors() {
+  STYLE="38;5"
+  for COLOR in {0..255}
+  do
+    TAG="\033[${STYLE};${COLOR}m"
+    STR="${STYLE};${COLOR}"
+    echo -ne "${TAG}${STR}"
+    echo
+  done
 }

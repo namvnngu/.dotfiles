@@ -205,22 +205,22 @@ endfun
 " THEME "
 """""""""
 
-if g:os == "Darwin"
-  set background=light
-elseif g:os == "Linux"
-  set background=dark
-endif
+set background=dark
+let g:disable_bg = 1
+colorscheme rosepine
 
-autocmd VimEnter * hi Comment cterm=NONE
-autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi CursorLine cterm=NONE ctermfg=NONE
-autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
+autocmd VimEnter * hi Comment gui=NONE cterm=NONE
+
+" autocmd VimEnter * hi Comment cterm=NONE
+" autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi CursorLine cterm=NONE ctermfg=NONE
+" autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 
 " Highlight spelling errors
 " autocmd VimEnter * hi SpellBad ctermbg=red guibg=red
