@@ -22,6 +22,7 @@ vim.opt.foldlevelstart = 99 -- start with all code unfolded
 vim.opt.foldmethod = "manual" -- define the kind of folding used for the current window
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
+vim.opt.guicursor = "" -- keep cursor block in insert mode
 vim.opt.history = 100 -- number of commands to remember in a history table
 vim.opt.hlsearch = true -- enable highlight on searching
 vim.opt.ignorecase = true -- enable case insensitive searching
@@ -64,7 +65,6 @@ vim.opt.wildoptions = "pum,tagfile" -- how a list of suggestions is shown
 vim.opt.winminwidth = 5 -- minimum window width
 vim.opt.wrap = false -- disable wrapping of lines longer than the width of window
 vim.opt.writebackup = false -- disable making a backup before overwriting a file
-
 vim.cmd("filetype plugin indent on")
 
 -- Enable linematch diff algorithm.
