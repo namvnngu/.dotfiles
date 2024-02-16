@@ -207,7 +207,7 @@ endfun
 
 set background=dark
 let g:disable_bg = 1
-colorscheme rosepine
+colorscheme rosepine_moon
 
 autocmd VimEnter * hi Comment gui=NONE cterm=NONE
 
