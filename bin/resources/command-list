@@ -1,1 +1,2 @@
 ip address on mac: ipconfig getpacket en0
+prune origin branches: git remote prune origin
