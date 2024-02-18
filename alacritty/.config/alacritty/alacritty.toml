@@ -25,5 +25,5 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 decorations     = "full"
 dynamic_padding = true
 dynamic_title   = true
-opacity         = 0.9
+opacity         = 1
 startup_mode    = "Windowed"

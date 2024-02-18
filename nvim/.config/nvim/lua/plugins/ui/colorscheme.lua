@@ -1,20 +1,13 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "jesseleite/nvim-noirbuddy",
+    dependencies = {
+      { "tjdevries/colorbuddy.nvim", branch = "dev" },
+    },
     lazy = false,
     priority = 1000,
     opts = {
-      dark_variant = "moon",
-      styles = {
-        bold = true,
-        italic = false,
-        transparency = true,
-      },
+      -- All of your `setup(opts)` will go here
     },
-    config = function(_, opts)
-      require("rose-pine").setup(opts)
-      vim.cmd("colorscheme rose-pine")
-    end,
   },
 }
