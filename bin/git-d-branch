@@ -36,9 +36,9 @@ while [[ $branch != quit ]]; do
 
   get-branch
   if [ $success -ne 0 ]; then
-    printf "\n   ${YELLOW} There is no $branch branch\n"
+    printf "\n   ${YELLOW} There is no $branch branch\n"
   else
-    printf "\n   ${YELLOW} Deleted $branch\n"
+    printf "\n   ${YELLOW} Deleted $branch\n"
   fi
 
 printf "\n  ${BLUE}Enter the number: "
