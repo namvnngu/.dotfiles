@@ -4,3 +4,4 @@ rename git branch given old name: git branch -m <oldname> <newname>
 rename current git branch: git branch -m <newname>
 delete git remote branch: git push origin --delete <oldname>
 push the local branch and reset git upstream branch: git push origin -u <newname>
+list all git remote tags: git ls-remote --tags origin
