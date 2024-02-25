@@ -71,7 +71,7 @@ vim.api.nvim_create_user_command("Run", function()
 end, { desc = "Execute code based on filetype" })
 
 vim.api.nvim_create_user_command("OpenGitCommitURL", function()
-  local filetype = file.get_filetype()
+  local filetype = vim.bo.filetype
 
   if filetype == "fugitiveblame" then
     git.open_commit_in_browser(vim.fn.expand("<cword>"))

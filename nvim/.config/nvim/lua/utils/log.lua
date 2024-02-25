@@ -10,7 +10,7 @@ function __FUNC__()
   return debug.getinfo(3, "n").name or "global"
 end
 
----Dump information about the passed value
+-- Dump information about the passed value
 ---@param o any
 local function dump(o)
   if type(o) == "table" then
@@ -27,7 +27,7 @@ local function dump(o)
   end
 end
 
----Log with time, function call and line of code
+-- Log with time, function call and line of code
 ---@param text string
 function M.info(text)
   print(
