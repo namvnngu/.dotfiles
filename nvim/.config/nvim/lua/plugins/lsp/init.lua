@@ -57,6 +57,7 @@ return {
   {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
+    commit = "bb680d752cec37949faca7a1f509e2fe67ab418a",
     dependencies = { "williamboman/mason.nvim" },
   },
 
