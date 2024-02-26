@@ -41,7 +41,7 @@ return {
       end
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver" },
+        ensure_installed = { "typos_lsp", "lua_ls", "tsserver", "eslint" },
         automatic_installation = true,
         handlers = { setup },
       })
@@ -52,16 +52,6 @@ return {
         setup(server)
       end
     end,
-  },
-
-  {
-    "nvimtools/none-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    commit = "bb680d752cec37949faca7a1f509e2fe67ab418a",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "williamboman/mason.nvim",
-    },
   },
 
   -- LSP progress

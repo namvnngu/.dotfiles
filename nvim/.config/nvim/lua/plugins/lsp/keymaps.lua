@@ -24,15 +24,6 @@ function M.on_attach(_, buffer)
   vim.keymap.set("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts)
-  vim.keymap.set("n", "<leader>F", function()
-    vim.lsp.buf.format({
-      async = true,
-      bufnr = buffer,
-      filter = function(formatting_client)
-        return formatting_client.name == "null-ls"
-      end,
-    })
-  end, opts)
 end
 
-return M;
+return M
