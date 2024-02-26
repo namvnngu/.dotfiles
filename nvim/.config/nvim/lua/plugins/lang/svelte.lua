@@ -1,11 +1,3 @@
-local eslint_config_files = {
-  ".eslintrc.js",
-  ".eslintrc.cjs",
-  ".eslintrc.yaml",
-  ".eslintrc.yml",
-  ".eslintrc.json",
-}
-
 return {
   {
     "neovim/nvim-lspconfig",
@@ -22,16 +14,6 @@ return {
             })
           end,
         },
-      },
-    },
-  },
-
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        svelte = { "eslint_d" },
       },
     },
   },
