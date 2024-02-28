@@ -79,5 +79,5 @@ vim.api.nvim_create_user_command("OpenGitCommitURL", function()
 end, { desc = "Open Git commit URL" })
 
 vim.api.nvim_create_user_command("Lgit", function()
-  vim.cmd("vsplit | term lazygit")
+  vim.cmd("vsplit | vertical resize +200 | term lazygit")
 end, { desc = "Open lazygit in vertical split" })
