@@ -21,7 +21,7 @@ return {
           end
         end,
         mode = "n",
-        desc = "Add file to the bookmark list",
+        desc = "Toggle bookmark",
       },
       {
         "<leader>`",
@@ -29,7 +29,7 @@ return {
           require("grapple").toggle_tags()
         end,
         mode = "n",
-        desc = "Toggle bookmark",
+        desc = "Toggle bookmark menu",
       },
     },
     opts = {
