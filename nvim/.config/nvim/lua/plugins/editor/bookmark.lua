@@ -5,7 +5,20 @@ return {
       {
         "<leader>a",
         function()
-          require("grapple").toggle()
+          local grapple = require("grapple")
+          grapple.toggle()
+
+          local filepath = require("utils.file").get_filepath()
+          if filepath == nil then
+            return
+          end
+
+          local notify = require("utils.notify")
+          if grapple.exists({ path = filepath }) then
+            notify.info("Added bookmark: " .. filepath)
+          else
+            notify.info("Removed bookmark: " .. filepath)
+          end
         end,
         mode = "n",
         desc = "Add file to the bookmark list",

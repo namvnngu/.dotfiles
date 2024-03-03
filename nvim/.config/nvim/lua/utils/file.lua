@@ -13,6 +13,13 @@ function M.get_filepath()
   return filepath
 end
 
+-- Get the current filename
+---@return string|nil
+function M.get_filename()
+  local filepath = M.get_filepath()
+  return filepath and vim.fn.fnamemodify(filepath, ":t")
+end
+
 -- Get the current line number
 ---@return number
 function M.get_line_number()
