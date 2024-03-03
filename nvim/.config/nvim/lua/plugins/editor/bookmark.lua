@@ -1,21 +1,27 @@
 return {
   {
-    "otavioschwanck/arrow.nvim",
+    "cbochs/grapple.nvim",
     keys = {
       {
-        "<leader>`",
-        ":echo 'arrow.nvim'",
+        "<leader>a",
+        function()
+          require("grapple").toggle()
+        end,
         mode = "n",
-        remap = true,
-        desc = "Show bookmark menu",
+        desc = "Add file to the bookmark list",
+      },
+      {
+        "<leader>`",
+        function()
+          require("grapple").toggle_tags()
+        end,
+        mode = "n",
+        desc = "Toggle bookmark",
       },
     },
     opts = {
-      show_icons = false,
-      always_show_path = true,
-      separate_by_branch = true,
-      separate_save_and_remove = true,
-      leader_key = "<leader>`",
+      icons = false,
+      scope = "git_branch",
     },
   },
 }
