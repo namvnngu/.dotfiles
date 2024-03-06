@@ -205,7 +205,7 @@ endfun
 " THEME "
 """""""""
 
-set background=dark
+set background=light
 " let g:disable_bg = 1
 " colorscheme rosepine_moon
 colorscheme quiet
