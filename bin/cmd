@@ -1,14 +1,26 @@
 #!/usr/bin/env bash
 
+RESOURCES_DIR="$HOME/dotfiles/bin/resources"
+REQUESTED_CMD_PATH_FILE="$RESOURCES_DIR/cmd-$1"
+
+if [[ $* == *-ls* || $* == *ls* ]]; then
+  categories=$(find $RESOURCES_DIR -maxdepth 1 -name "cmd*" | sed 's/^.*cmd-//')
+  echo $categories
+  exit 0
+fi
+
 if [[ $# -eq 0 ]] ; then
-  files=$(find ~/dotfiles/bin/resources -maxdepth 1 -name "command-list*")
+  files=$(find $RESOURCES_DIR -maxdepth 1 -name "cmd*")
   selected=$(cat $files | fzf)
+elif [[ -e $REQUESTED_CMD_PATH_FILE ]]; then
+  selected=$(cat $REQUESTED_CMD_PATH_FILE | fzf)
 else
-  selected=$(cat ~/dotfiles/bin/resources/command-list-$1 | fzf)
+  echo "$REQUESTED_CMD_PATH_FILE: No such file"
+  exit 1
 fi
 
 if [[ -z $selected ]]; then
-  exit 0
+  exit 1
 fi
 
 selected_cmd=$(echo $selected | sed 's/^.*: //')
@@ -31,7 +43,7 @@ function copy() {
 
 if [[ $selected_cmd == *"<"* ]]; then
   copy
-  exit 1
+  exit 0
 fi
 
 while true; do
@@ -40,13 +52,13 @@ while true; do
 
   if [[ $query == c* ]]; then
     copy
-    exit 1
+    exit 0
   elif [[ $query == e* ]]; then
     echo "Execute: $selected_cmd"
     echo "----------------------"
     eval $selected_cmd
 
-    exit 1
+    exit 0
   else
     echo "You should choose copy (c) or execute (e)"
   fi
