@@ -13,7 +13,7 @@ blame "extreme" with range: git blame -w -C -C -C -L <line-start>,<line-end> <pa
 blame "extreme" with block: git blame -w -C -C -C -L :'<block-beginning>' <path/to/file>
 filters logs with the specific keyword added or deleted in a file: git log -S <keyworkd> -p
 check steps you have run or messed up: git reflog
-diff uncommit files against HEAD: git diff HEAD </path/to/file>
-word diff uncommited files against HEAD: git diff --word-diff HEAD </path/to/file>
-diff unstaged files against the lastest commit: git diff </path/to/file>
-word diff unstaged against agaist the lastest commit: git diff --word-diff </path/to/file>
+diff changes against HEAD: git diff HEAD </path/to/file>
+word diff changes against HEAD: git diff --word-diff HEAD </path/to/file>
+diff unstaged changes against the lastest commit: git diff </path/to/file>
+word diff unstaged changes agaist the lastest commit: git diff --word-diff </path/to/file>
