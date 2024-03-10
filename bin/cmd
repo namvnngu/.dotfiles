@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 
-selected=$(cat ~/dotfiles/bin/resources/command-list | fzf)
+if [[ $# -eq 0 ]] ; then
+  files=$(find ~/dotfiles/bin/resources -maxdepth 1 -name "command-list*")
+  selected=$(cat $files | fzf)
+else
+  selected=$(cat ~/dotfiles/bin/resources/command-list-$1 | fzf)
+fi
+
 if [[ -z $selected ]]; then
   exit 0
 fi
+
 selected_cmd=$(echo $selected | sed 's/^.*: //')
 
-read -p "copy (c) or execute (e): " query
-query=$(echo $query | tr '[:upper:]' '[:lower:]')
+###############################################################################
 
-if [[ $query == *c* ]]; then
-  echo "copied to clipboard: $selected_cmd"
+function copy() {
+  echo "Copied to clipboard: $selected_cmd"
+
   os=$(uname -s)
   case $os in
     Darwin*)
@@ -20,8 +27,27 @@ if [[ $query == *c* ]]; then
       echo $selected_cmd | xclip -selection clipboard
       ;;
   esac
-elif [[ $query == *e* ]]; then
-  echo "execute: $selected_cmd"
-  echo "----------------------"
-  eval $selected_cmd
+}
+
+if [[ $selected_cmd == *"<"* ]]; then
+  copy
+  exit 1
 fi
+
+while true; do
+  read -p "copy (c) or execute (e)? " query
+  query=$(echo $query | tr '[:upper:]' '[:lower:]')
+
+  if [[ $query == c* ]]; then
+    copy
+    exit 1
+  elif [[ $query == e* ]]; then
+    echo "Execute: $selected_cmd"
+    echo "----------------------"
+    eval $selected_cmd
+
+    exit 1
+  else
+    echo "You should choose copy (c) or execute (e)"
+  fi
+done
