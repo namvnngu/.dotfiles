@@ -81,3 +81,14 @@ end, { desc = "Open Git commit URL" })
 vim.api.nvim_create_user_command("Lgit", function()
   vim.cmd("vsplit | vertical resize +200 | term lazygit")
 end, { desc = "Open lazygit in vertical split" })
+
+vim.api.nvim_create_user_command("BlameExtreme", function(args)
+  vim.cmd(
+    "vsplit | vertical resize +200 | term git blame -w -C -C -C -L "
+      .. args.line1
+      .. ","
+      .. args.line2
+      .. " "
+      .. require("utils.file").get_filepath()
+  )
+end, { desc = "Extreme git blame", range = true })
