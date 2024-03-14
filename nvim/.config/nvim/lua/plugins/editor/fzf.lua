@@ -28,7 +28,7 @@ return {
         "<leader>fr",
         "<cmd>FzfLua resume<cr>",
         mode = "n",
-        desc = "live_grep with rg --glob support",
+        desc = "Resume last command/query",
       },
     },
     opts = {
