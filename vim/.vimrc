@@ -191,6 +191,9 @@ fun! TabComplete()
 	endif
 endfun
 
+" Copy the current file's path
+nnoremap yp :exec setreg('+', expand("%:p"))<cr>
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
