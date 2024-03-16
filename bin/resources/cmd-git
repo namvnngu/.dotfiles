@@ -8,9 +8,7 @@ search commits with one-line log format: git log --all --oneline | grep <search>
 search commits with full log format: git log -g --grep=<search>
 unset upstream: git branch --unset-upstream && git remote prune origin
 blame "little" with range: git blame -w -L <line-start>,<line-end> <path/to/file>
-blame "little" with block: git blame -w -L :'<block-beginning>' <path/to/file>
 blame "extreme" with range: git blame -w -C -C -C -L <line-start>,<line-end> <path/to/file>
-blame "extreme" with block: git blame -w -C -C -C -L :'<block-beginning>' <path/to/file>
 filters logs with the specific keyword added or deleted in a file: git log -S <keyworkd> -p
 check steps you have run or messed up: git reflog
 diff changes against HEAD: git diff HEAD </path/to/file>
