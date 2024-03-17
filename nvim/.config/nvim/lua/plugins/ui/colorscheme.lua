@@ -6,10 +6,10 @@ return {
     priority = 1000,
     opts = {
       dark_variant = "moon",
+      dim_inactive_windows = true,
       styles = {
         bold = true,
         italic = false,
-        transparency = true,
       },
     },
     config = function(_, opts)
