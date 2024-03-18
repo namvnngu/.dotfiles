@@ -1,0 +1,1 @@
+new session with a name: tmux new-session -s <name>
