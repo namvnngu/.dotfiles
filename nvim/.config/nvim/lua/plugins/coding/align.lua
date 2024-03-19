@@ -9,8 +9,8 @@ return {
     "echasnovski/mini.align",
     lazy = true,
     version = false,
-    config = function(_, opts)
-      require("mini.align").setup(opts)
+    config = function()
+      require("mini.align").setup()
     end,
   },
 }
