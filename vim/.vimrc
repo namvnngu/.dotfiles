@@ -39,6 +39,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set infercase
+set iskeyword+=-
 set laststatus=2
 set linebreak
 set nobackup
