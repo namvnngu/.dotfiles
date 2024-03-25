@@ -15,3 +15,4 @@ diff changes against HEAD: git diff HEAD </path/to/file>
 word diff changes against HEAD: git diff --word-diff HEAD </path/to/file>
 diff unstaged changes against the lastest commit: git diff </path/to/file>
 word diff unstaged changes agaist the lastest commit: git diff --word-diff </path/to/file>
+discard unstaged changes: git checkout -- .
