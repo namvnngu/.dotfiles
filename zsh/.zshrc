@@ -9,6 +9,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # my custom bins
 export PATH=$PATH:$HOME/dotfiles/bin
 
+alias tmuxs=tmux-sessionizer
+alias tmuxc=tmux-cht
+
 # fzf
 export PATH=$PATH:$HOME/.fzf/bin
 
