@@ -16,6 +16,8 @@
   auto = false
   strategy = incremental
 	repo = /Users/namnguyen/dotfiles
+[fetch]
+	writeCommitGraph = true
 [alias]
   lg            = lg1
   lg1           = lg1-specific --all
