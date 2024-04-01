@@ -210,9 +210,8 @@ endfun
 """""""""
 
 set background=light
-" let g:disable_bg = 1
-" colorscheme rosepine_moon
-colorscheme quiet
+colorscheme rosepine_dawn
+" colorscheme quiet
 
 autocmd VimEnter * hi Comment gui=NONE cterm=NONE
 
