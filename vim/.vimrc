@@ -210,7 +210,6 @@ endfun
 """""""""
 
 set background=light
-let g:disable_bg = 1
 colorscheme rosepine_dawn
 " colorscheme quiet
 
