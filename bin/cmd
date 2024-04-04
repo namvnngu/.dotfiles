@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-RESOURCES_DIR="$HOME/dotfiles/bin/resources"
-REQUESTED_CMD_PATH_FILE="$RESOURCES_DIR/cmd-$1"
+resources_dir="$HOME/dotfiles/bin/resources"
+requested_cmd_path_file="$resources_dir/cmd-$1"
 
 if [[ $* == *ls* ]]; then
-  categories=$(find $RESOURCES_DIR -maxdepth 1 -name "cmd*" | sed 's/^.*cmd-//')
+  categories=$(find $resources_dir -maxdepth 1 -name "cmd*" | sed 's/^.*cmd-//')
   echo $categories
   exit 0
 fi
@@ -12,12 +12,12 @@ fi
 ###############################################################################
 
 if [[ $# -eq 0 ]] ; then
-  files=$(find $RESOURCES_DIR -maxdepth 1 -name "cmd*")
+  files=$(find $resources_dir -maxdepth 1 -name "cmd*")
   selected=$(cat $files | fzf)
-elif [[ -e $REQUESTED_CMD_PATH_FILE ]]; then
-  selected=$(cat $REQUESTED_CMD_PATH_FILE | fzf)
+elif [[ -e $requested_cmd_path_file ]]; then
+  selected=$(cat $requested_cmd_path_file | fzf)
 else
-  echo "$REQUESTED_CMD_PATH_FILE: No such file"
+  echo "$requested_cmd_path_file: No such file"
   exit 1
 fi
 
