@@ -3,7 +3,7 @@
 RESOURCES_DIR="$HOME/dotfiles/bin/resources"
 REQUESTED_CMD_PATH_FILE="$RESOURCES_DIR/cmd-$1"
 
-if [[ $* == *-ls* || $* == *ls* ]]; then
+if [[ $* == *ls* ]]; then
   categories=$(find $RESOURCES_DIR -maxdepth 1 -name "cmd*" | sed 's/^.*cmd-//')
   echo $categories
   exit 0
