@@ -1,0 +1,4 @@
+brew count formula: brew list --formula | xargs -n1 -P8 -I {} | wc -l
+brew count cask: brew list --cask | xargs -n1 -P8 -I {} | wc -l
+brew clean up all: brew cleanup --prune=all
+brew remove unused depenecies: brew autoremove

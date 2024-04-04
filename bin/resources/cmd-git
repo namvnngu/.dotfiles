@@ -1,18 +1,18 @@
-prune origin branches: git remote prune origin
-rename branch given old name: git branch -m <oldname> <newname>
-rename current branch: git branch -m <newname>
-delete remote branch: git push origin --delete <oldname>
-push the local branch and reset upstream branch: git push origin -u <newname>
-list all remote tags: git ls-remote --tags origin
-search commits with one-line log format: git log --all --oneline | grep <search>
-search commits with full log format: git log -g --grep=<search>
-unset upstream: git branch --unset-upstream && git remote prune origin
-blame "little" with range: git blame -w -L <line-start>,<line-end> <path/to/file>
-blame "extreme" with range: git blame -w -C -C -C -L <line-start>,<line-end> <path/to/file>
-filters logs with the specific keyword added or deleted in a file: git log -S <keyworkd> -p
-check steps you have run or messed up: git reflog
-diff changes against HEAD: git diff HEAD </path/to/file>
-word diff changes against HEAD: git diff --word-diff HEAD </path/to/file>
-diff unstaged changes against the lastest commit: git diff </path/to/file>
-word diff unstaged changes agaist the lastest commit: git diff --word-diff </path/to/file>
-discard unstaged changes: git checkout -- .
+git prune origin branches: git remote prune origin
+git rename branch given old name: git branch -m <oldname> <newname>
+git rename current branch: git branch -m <newname>
+git delete remote branch: git push origin --delete <oldname>
+git push the local branch and reset upstream branch: git push origin -u <newname>
+git list all remote tags: git ls-remote --tags origin
+git search commits with one-line log format: git log --all --oneline | grep <search>
+git search commits with full log format: git log -g --grep=<search>
+git unset upstream: git branch --unset-upstream && git remote prune origin
+git blame "little" with range: git blame -w -L <line-start>,<line-end> <path/to/file>
+git blame "extreme" with range: git blame -w -C -C -C -L <line-start>,<line-end> <path/to/file>
+git filters logs with the specific keyword added or deleted in a file: git log -S <keyworkd> -p
+git check steps you have run or messed up: git reflog
+git diff changes against HEAD: git diff HEAD </path/to/file>
+git word diff changes against HEAD: git diff --word-diff HEAD </path/to/file>
+git diff unstaged changes against the lastest commit: git diff </path/to/file>
+git word diff unstaged changes agaist the lastest commit: git diff --word-diff </path/to/file>
+git discard unstaged changes: git checkout -- .
