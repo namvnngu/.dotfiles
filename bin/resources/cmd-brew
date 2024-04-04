@@ -2,3 +2,4 @@ brew count formula: brew list --formula | xargs -n1 -P8 -I {} | wc -l
 brew count cask: brew list --cask | xargs -n1 -P8 -I {} | wc -l
 brew clean up all: brew cleanup --prune=all
 brew remove unused depenecies: brew autoremove
+brew get package size: brew info <package> | egrep --color '\d*\.\d*(KB|MB|GB)'
