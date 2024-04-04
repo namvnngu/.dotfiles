@@ -1,6 +1,7 @@
 local file = require("utils.file")
 local git = require("utils.git")
 local system = require("utils.system")
+local notify = require("utils.notify")
 
 --- List all capabilities of the server associated with the current buffer
 vim.api.nvim_create_user_command("LspCapabilities", function()
@@ -22,7 +23,7 @@ vim.api.nvim_create_user_command("LspCapabilities", function()
         .. client.name
         .. "\n"
         .. table.concat(capabilities, "\n")
-      vim.notify(msg, vim.log.levels.TRACE)
+      notify.trace(msg)
     end
   end
 end, {})
@@ -45,7 +46,7 @@ vim.api.nvim_create_user_command("Template", function(opts)
   elseif template_name == "js" then
     vim.cmd("read $HOME/.config/nvim/templates/JS.js")
   else
-    vim.notify("No template for " .. template_name .. "!", vim.log.levels.WARN)
+    notify.warn("No template for " .. template_name .. "!")
   end
 end, { nargs = 1, desc = "Load a template" })
 
@@ -65,10 +66,23 @@ vim.api.nvim_create_user_command("Run", function()
     vim.cmd("term " .. system.prepend_cd_to_cmd("dotnet run --project %:p:h"))
   elseif extension == "ts" or extension == "js" then
     vim.cmd("term " .. system.prepend_cd_to_cmd("npx tsx %:t"))
+  elseif extension == "hurl" then
+    vim.cmd("term " .. system.prepend_cd_to_cmd("hurl %:t | jq"))
   else
-    vim.notify("No execution for " .. extension .. " yet!", vim.log.levels.WARN)
+    notify.warn("No execution for " .. extension .. " yet!")
   end
-end, { desc = "Execute code based on filetype" })
+end, { desc = "Execute code based on file extension" })
+
+-- stylua: ignore
+vim.api.nvim_create_user_command("Test", function()
+  local extension = file.get_file_ext()
+
+  if extension == "hurl" then
+    vim.cmd("term " .. system.prepend_cd_to_cmd("hurl --test %:t"))
+  else
+    notify.warn("No execution for " .. extension .. " yet!")
+  end
+end, { desc = "Run test code based on file extension" })
 
 vim.api.nvim_create_user_command("OpenGitCommitURL", function()
   local filetype = vim.bo.filetype
