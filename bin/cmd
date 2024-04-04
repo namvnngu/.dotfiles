@@ -9,6 +9,8 @@ if [[ $* == *ls* ]]; then
   exit 0
 fi
 
+###############################################################################
+
 if [[ $# -eq 0 ]] ; then
   files=$(find $RESOURCES_DIR -maxdepth 1 -name "cmd*")
   selected=$(cat $files | fzf)
@@ -24,34 +26,39 @@ if [[ -z $selected ]]; then
 fi
 
 selected_cmd=$(echo $selected | sed 's/^.*: //')
+echo "Selected command: $selected_cmd"
 
 ###############################################################################
 
-function copy() {
-  echo "Copied to clipboard: $selected_cmd"
-
-  os=$(uname -s)
-  case $os in
-    Darwin*)
-      echo $selected_cmd | pbcopy
-      ;;
-    Linux*)
-      echo $selected_cmd | xclip -selection clipboard
-      ;;
-  esac
-}
-
-if [[ $selected_cmd == *"<"* ]]; then
-  copy
-  exit 0
+placeholders=$(echo $selected_cmd | grep -oE '<(\w|-)+>')
+if [[ -n "$placeholders" ]]; then
+  echo "----------------------"
+  for phd in $placeholders; do
+    read -p "$phd: " phd_value
+    selected_cmd=$(echo $selected_cmd | sed "s/$phd/$phd_value/")
+    echo "Command: $selected_cmd"
+  done
+  echo "----------------------"
 fi
+
+###############################################################################
 
 while true; do
   read -p "copy (c) or execute (e)? " query
   query=$(echo $query | tr '[:upper:]' '[:lower:]')
 
   if [[ $query == c* ]]; then
-    copy
+    echo "Copied to clipboard: $selected_cmd"
+
+    os=$(uname -s)
+    case $os in
+      Darwin*)
+        echo $selected_cmd | pbcopy
+        ;;
+      Linux*)
+        echo $selected_cmd | xclip -selection clipboard
+        ;;
+    esac
     exit 0
   elif [[ $query == e* ]]; then
     echo "Execute: $selected_cmd"
