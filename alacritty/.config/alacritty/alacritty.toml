@@ -14,8 +14,8 @@ shape    = "Block"
 
 [keyboard]
 bindings = [
-  { key = "H",  mods = "Alt", chars = "\u001BB" },
-  { key = "L", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
 ]
 
 [selection]
