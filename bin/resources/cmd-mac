@@ -1,0 +1,1 @@
+list all available ios simulators: xcrun simctl list devices --json | jq -r '.devices[] | .[] | .name'
