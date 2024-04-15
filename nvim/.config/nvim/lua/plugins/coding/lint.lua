@@ -8,12 +8,11 @@ return {
         -- Use the "*" filetype to run linters on all filetypes.
         ["*"] = {},
       },
+      -- Override linter options, or add custom linters.
       linters = {},
     },
     config = function(_, opts)
       local lint = require("lint")
-
-      lint.linters_by_ft = opts.linters_by_ft
 
       for name, linter in pairs(opts.linters) do
         if type(linter) == "table" and type(lint.linters[name]) == "table" then
@@ -24,6 +23,8 @@ return {
           lint.linters[name] = linter
         end
       end
+
+      lint.linters_by_ft = opts.linters_by_ft
 
       local function run_lint()
         local names = lint._resolve_linter_by_ft(vim.bo.filetype)
