@@ -4,8 +4,7 @@ resources_dir="$HOME/dotfiles/bin/resources"
 requested_cmd_path_file="$resources_dir/cmd-$1"
 
 if [[ $* == *ls* ]]; then
-  categories=$(find $resources_dir -maxdepth 1 -name "cmd*" | sed 's/^.*cmd-//')
-  echo $categories
+  find $resources_dir -maxdepth 1 -name "cmd*" | sed 's/^.*cmd-//' | git column --mode=column --padding=5
   exit 0
 fi
 
