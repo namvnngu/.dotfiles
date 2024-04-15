@@ -1,1 +1,2 @@
 list all available ios simulators: xcrun simctl list devices --json | jq -r '.devices[] | .[] | .name'
+ip address on mac: ipconfig getpacket en0
