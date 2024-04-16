@@ -1,20 +1,11 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "junegunn/seoul256.vim",
     lazy = false,
     priority = 1000,
-    opts = {
-      dark_variant = "moon",
-      dim_inactive_windows = true,
-      styles = {
-        bold = true,
-        italic = false,
-      },
-    },
-    config = function(_, opts)
-      require("rose-pine").setup(opts)
-      vim.cmd("colorscheme rose-pine")
+    config = function()
+      vim.g.seoul256_background = 256
+      vim.cmd("colorscheme seoul256-light")
     end,
   },
 }
