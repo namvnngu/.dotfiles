@@ -56,12 +56,12 @@ fi
 source $ZSH_AUTO_SUGGESTIONS_FILE
 
 # syntax highlighting
-ZSH_SYNTAX_HIGHLIGHTING_FOLDER=~/.zsh/zsh-syntax-highlighting
-ZSH_SYNTAX_HIGHLIGHTING_FILE=$ZSH_SYNTAX_HIGHLIGHTING_FOLDER/zsh-syntax-highlighting.zsh
-if [ ! -f $ZSH_SYNTAX_HIGHLIGHTING_FILE ]; then
-  git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_SYNTAX_HIGHLIGHTING_FOLDER
-fi
-source $ZSH_SYNTAX_HIGHLIGHTING_FILE
+# ZSH_SYNTAX_HIGHLIGHTING_FOLDER=~/.zsh/zsh-syntax-highlighting
+# ZSH_SYNTAX_HIGHLIGHTING_FILE=$ZSH_SYNTAX_HIGHLIGHTING_FOLDER/zsh-syntax-highlighting.zsh
+# if [ ! -f $ZSH_SYNTAX_HIGHLIGHTING_FILE ]; then
+#   git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_SYNTAX_HIGHLIGHTING_FOLDER
+# fi
+# source $ZSH_SYNTAX_HIGHLIGHTING_FILE
 
 # z
 Z_FOLDER=~/.zsh/z
