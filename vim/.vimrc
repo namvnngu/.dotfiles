@@ -179,6 +179,12 @@ nnoremap <silent> <leader>x :!chmod +x %<cr>
 " Exit terminal mode
 tnoremap <Esc> <C-\><C-n>
 
+" Copy the current file's path
+nnoremap yp :exec setreg('+', expand("%:p"))<cr>
+
+" Folding
+nnoremap z{ vi}zf
+
 " Split explorer
 nnoremap - :Ex<cr>
 
@@ -191,9 +197,6 @@ fun! TabComplete()
 	  return "\<Tab>"
 	endif
 endfun
-
-" Copy the current file's path
-nnoremap yp :exec setreg('+', expand("%:p"))<cr>
 
 """"""""""""""""
 " AUTOCOMMANDS "
