@@ -1,7 +1,7 @@
 local M = {}
 
-function M.on_attach(_, buffer)
-  local opts = { buffer = buffer }
+function M.on_attach(_, bufnr)
+  local opts = { buffer = bufnr }
 
   vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, opts)
   vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)

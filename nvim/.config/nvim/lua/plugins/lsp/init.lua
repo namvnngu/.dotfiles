@@ -18,13 +18,13 @@ return {
       servers = {},
     },
     config = function(_, opts)
-      require("utils.lsp").on_attach(function(client, buffer)
-        require("plugins.lsp.keymaps").on_attach(client, buffer)
-        require("plugins.lsp.hover").on_attach(client, buffer)
-        require("plugins.lsp.omnifunc").on_attach(client, buffer)
+      require("utils.lsp").on_attach(function(client, bufnr)
+        require("plugins.lsp.keymaps").on_attach(client, bufnr)
+        require("plugins.lsp.hover").on_attach(client, bufnr)
+        require("plugins.lsp.omnifunc").on_attach(client, bufnr)
 
         if opts.inlay_hints.enabled then
-          require("plugins.lsp.inlayhint").on_attach(client, buffer)
+          require("plugins.lsp.inlayhint").on_attach(client, bufnr)
         end
       end)
 
