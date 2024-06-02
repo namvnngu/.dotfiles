@@ -6,7 +6,6 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      { "folke/neodev.nvim", opts = {} },
     },
     opts = {
       inlay_hints = {
