@@ -14,11 +14,7 @@ return {
     ft = "lua",
     opts = {
       library = {
-        -- Library items can be absolute paths
-        -- "~/projects/my-awesome-lib",
-        -- Or relative, which means they will be resolved as a plugin
-        -- When relative, you can also provide a path to the library in the plugin dir
-        "luvit-meta/library",
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
       },
     },
   },
