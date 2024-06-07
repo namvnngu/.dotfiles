@@ -102,3 +102,20 @@ vim.api.nvim_create_user_command("BlameExtreme", function(args)
       .. require("utils.file").get_filepath()
   )
 end, { desc = "Extreme git blame", range = true })
+
+vim.api.nvim_create_user_command("Calc", function()
+  vim.ui.input({ prompt = "Calculator: " }, function(input)
+    local calc = load("return " .. (input or ""))()
+    if calc then
+      local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+      vim.api.nvim_buf_set_text(
+        0,
+        row - 1,
+        col,
+        row - 1,
+        col,
+        { tostring(calc) }
+      )
+    end
+  end)
+end, { desc = "Calculator" })
