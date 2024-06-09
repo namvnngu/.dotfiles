@@ -3,11 +3,11 @@ foreground = "#000000"
 background = "#E0E2E9"
 
 [colors.normal]
-black      = "#000000"
+black      = "#FFFFFF"
 red        = "#CC0000"
 green      = "#00CC00"
 yellow     = "#CCCC00"
 blue       = "#0000CC"
 magenta    = "#CC00CC"
 cyan       = "#00CCCC"
-white      = "#FFFFFF"
+white      = "#000000"
