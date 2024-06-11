@@ -29,7 +29,6 @@ vim.opt.ignorecase = true -- enable case insensitive searching
 vim.opt.inccommand = "nosplit" -- preview incremental substitute
 vim.opt.incsearch = true -- enable showing where the pattern as keyword is typed
 vim.opt.infercase = true -- enable inferring cases in keyword completion
-vim.opt.iskeyword:append("-")
 vim.opt.laststatus = 3 -- global status line
 vim.opt.linebreak = true -- enable wrapping lines at 'breakat'
 vim.opt.list = false -- show some invisible characters
