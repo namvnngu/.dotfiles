@@ -8,8 +8,6 @@
 [rerere]
   enabled    = true
   autoUpdate = true
-[column]
-  ui = auto
 [branch]
   sort = -committerdate
 [maintenance]
