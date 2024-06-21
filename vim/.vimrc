@@ -2,7 +2,7 @@ if !exists("g:os")
   if has("win64") || has("win32") || has("win16")
     let g:os = "Windows"
   else
-    let g:os = substitute(system('uname'), '\n', '', '')
+    let g:os = substitute(system("uname"), "\n", "", "")
   endif
 endif
 
@@ -167,7 +167,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 " This is going to get me cancelled
-inoremap <C-c> <Esc>
+inoremap <C-c> <esc>
 
 " Replace
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
@@ -176,26 +176,16 @@ nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <silent> <leader>x :!chmod +x %<cr>
 
 " Exit terminal mode
-tnoremap <Esc> <C-\><C-n>
+tnoremap <esc> <C-\><C-n>
 
 " Copy the current file's path
-nnoremap yp :exec setreg('+', expand("%:p"))<cr>
+nnoremap yp :exec setreg("+", expand("%:p"))<cr>
 
 " Folding
 nnoremap z{ vi}zf
 
 " Split explorer
 nnoremap - :Ex<cr>
-
-" Tab Complete
-inoremap <expr> <Tab> TabComplete()
-fun! TabComplete()
-	if getline('.')[col('.') - 2] =~ '\K' || pumvisible()
-	  return "\<C-N>"
-	else
-	  return "\<Tab>"
-	endif
-endfun
 
 """"""""""""""""
 " AUTOCOMMANDS "
@@ -212,13 +202,8 @@ endfun
 """""""""
 
 set background=light
-" colorscheme rosepine_dawn
-" colorscheme quiet
-" let g:seoul256_background = 256
-" colorscheme seoul256-light
 
 autocmd VimEnter * hi Comment gui=NONE cterm=NONE
-
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
@@ -232,3 +217,25 @@ autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 " Highlight spelling errors
 " autocmd VimEnter * hi SpellBad ctermbg=red guibg=red
 " autocmd VimEnter * hi SpellBad cterm=underline
+
+"""""""""""
+" PLUGINS "
+"""""""""""
+
+let PLUGIN_DIR = "~/.vim/pack/plugins/start"
+if !isdirectory(PLUGIN_DIR)
+  call system("mkdir -p " . PLUGIN_DIR)
+endif
+
+" fzf
+let FZF_PLUGIN_DIR = PLUGIN_DIR . "/fzf.vim"
+
+if !isdirectory(FZF_PLUGIN_DIR)
+  call system("git clone --depth 1 https://github.com/junegunn/fzf.vim " . FZF_PLUGIN_DIR)
+endif
+
+set runtimepath^=~/.fzf
+
+nnoremap <C-p> :GFiles<cr>
+nnoremap <leader>ff :Files<cr>
+autocmd! FileType fzf tnoremap <buffer> <esc> <C-c>
