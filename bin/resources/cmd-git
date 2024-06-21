@@ -17,3 +17,5 @@ git diff unstaged changes against the lastest commit: git diff <path-to-file>
 git word diff unstaged changes agaist the lastest commit: git diff --word-diff <path-to-file>
 git discard all unstaged changes: git checkout -- .
 git discard unstaged changes on a specific file: git checkout -- <path-to-file>
+git list all files in a commit: git show --pretty="" --name-only <commit>
+git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
