@@ -191,11 +191,11 @@ nnoremap - :Ex<cr>
 " AUTOCOMMANDS "
 """"""""""""""""
 autocmd BufWritePre * call TrimWhitespace()
-fun! TrimWhitespace()
+function TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
-endfun
+endfunction
 
 """""""""
 " THEME "
@@ -221,11 +221,7 @@ autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 """""""""""
 " PLUGINS "
 """""""""""
-
 let PLUGIN_DIR = "~/.vim/pack/plugins/start"
-if !isdirectory(PLUGIN_DIR)
-  call system("mkdir -p " . PLUGIN_DIR)
-endif
 
 " fzf
 let FZF_PLUGIN_DIR = PLUGIN_DIR . "/fzf.vim"
@@ -239,3 +235,10 @@ set runtimepath^=~/.fzf
 nnoremap <C-p> :GFiles<cr>
 nnoremap <leader>ff :Files<cr>
 autocmd! FileType fzf tnoremap <buffer> <esc> <C-c>
+
+" git
+let GIT_PLUGIN_DIR = PLUGIN_DIR . "/vim-fugitive"
+
+if !isdirectory(GIT_PLUGIN_DIR)
+  call system("git clone --depth 1 https://github.com/tpope/vim-fugitive " . GIT_PLUGIN_DIR)
+endif
