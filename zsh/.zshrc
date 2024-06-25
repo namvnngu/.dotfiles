@@ -11,6 +11,7 @@ export PATH=$PATH:$HOME/dotfiles/bin
 
 alias tmuxs=tmux-sessionizer
 alias tmuxc=tmux-cht
+alias vimo="vim -c 'syntax off'"
 
 # fzf
 export PATH=$PATH:$HOME/.fzf/bin
