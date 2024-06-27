@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+branches=()
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RESET='\033[0m'
+
+function get-branch() {
+  branches=()
+  while IFS= read -r line; do
+      branches+=( "$line" )
+  done < <( git branch )
+
+  length=${#branches[@]}
+  for (( i=0; i<${length}; i++ ));
+  do
+    if [[ -n "$i" ]]; then
+      branches[$i]=${branches[$i]:2}
+      echo -e "  ${RED}$i: ${GREEN}${branches[$i]}"
+    fi
+  done
+}
+
+printf "\n"
+get-branch
+printf "\n  ${BLUE}Enter the number: "
+read number
+
+if (( $number < ${#branches[@]} )); then
+  branch=${branches[$number]}
+  printf "${RESET}"
+  git checkout $branch
+else
+  printf "  ${RED}The given number is out of limit\n"
+fi
