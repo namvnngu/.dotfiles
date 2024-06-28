@@ -6,7 +6,7 @@ local notify = require("utils.notify")
 --- List all capabilities of the server associated with the current buffer
 vim.api.nvim_create_user_command("LspCapabilities", function()
   local curBuf = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_active_clients({ bufnr = curBuf })
+  local clients = vim.lsp.get_clients({ bufnr = curBuf })
 
   for _, client in pairs(clients) do
     if client.name ~= "null-ls" then
@@ -119,3 +119,11 @@ vim.api.nvim_create_user_command("Calc", function()
     end
   end)
 end, { desc = "Calculator" })
+
+vim.api.nvim_create_user_command("Grepf", function(opts)
+  local keyword = opts.args
+  vim.cmd("grep " .. keyword .. " %:h/**/*")
+end, {
+  nargs = 1,
+  desc = "Grep keyword within the folder containing the current file",
+})
