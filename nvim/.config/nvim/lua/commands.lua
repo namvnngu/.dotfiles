@@ -122,7 +122,7 @@ end, { desc = "Calculator" })
 
 vim.api.nvim_create_user_command("Grepf", function(opts)
   local keyword = opts.args
-  vim.cmd("grep " .. keyword .. " %:h/**/*")
+  vim.cmd("grep " .. keyword .. " -g %:h/**/*")
 end, {
   nargs = 1,
   desc = "Grep keyword within the folder containing the current file",
