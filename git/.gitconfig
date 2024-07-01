@@ -18,4 +18,4 @@
 [alias]
   graph    = log --all --decorate --oneline --graph
   cbranch  = rev-parse --abbrev-ref HEAD
-  conflict = diff --name-only --diff-filter=U
+  conflict = diff --name-only --diff-filter=U --relative
