@@ -14,39 +14,39 @@ vim.keymap.set("n", "<leader>k", "<C-w>k", { remap = true })
 vim.keymap.set("n", "<leader>l", "<C-w>l", { remap = true })
 
 -- Resize window
-vim.keymap.set("n", "<Up>", ":resize +2<cr>")
-vim.keymap.set("n", "<Down>", ":resize -2<cr>")
-vim.keymap.set("n", "<Left>", ":vertical resize -2<cr>")
-vim.keymap.set("n", "<Right>", ":vertical resize +2<cr>")
+vim.keymap.set("n", "<Up>", ":resize +2<CR>")
+vim.keymap.set("n", "<Down>", ":resize -2<CR>")
+vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>")
 
 -- Yanking
-vim.keymap.set("n", "<leader>ya", ":%y+<cr>")
+vim.keymap.set("n", "<leader>ya", ":%y+<CR>")
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("n", "Y", "y$")
 
 -- Buffers
-vim.keymap.set("n", "<leader>bn", ":bnext<cr>")
-vim.keymap.set("n", "<leader>bp", ":bprevious<cr>")
-vim.keymap.set("n", "<leader>bd", ":bdelete<cr>")
-vim.keymap.set("n", "<leader>ba", ":bufdo bd<cr>")
-vim.keymap.set("n", "<leader>be", ":%bd|e#<cr>")
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
+vim.keymap.set("n", "<leader>ba", ":bufdo bd<CR>")
+vim.keymap.set("n", "<leader>be", ":%bd|e#<CR>")
 
 -- Better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Move lines
-vim.keymap.set("n", "<leader>md", ":m .+1<cr>==", { desc = "Move down" })
-vim.keymap.set("n", "<leader>mu", ":m .-2<cr>==", { desc = "Move up" })
-vim.keymap.set("i", "<A-j>", "<esc>:m .+1<cr>==gi", { desc = "Move down" })
-vim.keymap.set("i", "<A-k>", "<esc>:m .-2<cr>==gi", { desc = "Move up" })
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+vim.keymap.set("n", "<leader>md", ":m .+1<CR>==", { desc = "Move down" })
+vim.keymap.set("n", "<leader>mu", ":m .-2<CR>==", { desc = "Move up" })
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "Move down" })
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move up" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up" })
 
--- Clear search with <esc>
-vim.keymap.set("n", "<esc>", ":noh<cr>", { desc = "Escape and clear hlsearch" })
+-- Clear search with <Esc>
+vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Escape and clear hlsearch" })
 
 -- Keeping it centered and stable
 vim.keymap.set("n", "J", "mzJ`z")
@@ -56,12 +56,12 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Quickfix list
-vim.keymap.set("n", "<C-j>", ":cnext<cr>zz")
-vim.keymap.set("n", "<C-k>", ":cprev<cr>zz")
+vim.keymap.set("n", "<C-j>", ":cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", ":cprev<CR>zz")
 
 -- Location list
-vim.keymap.set("n", "<leader>J", ":lnext<cr>zz")
-vim.keymap.set("n", "<leader>K", ":lprev<cr>zz")
+vim.keymap.set("n", "<leader>J", ":lnext<CR>zz")
+vim.keymap.set("n", "<leader>K", ":lprev<CR>zz")
 
 -- Keybindings for tab navigation with leader and number
 vim.keymap.set("n", "<leader>1", "1gt")
@@ -78,7 +78,7 @@ vim.keymap.set("n", "<leader>9", "9gt")
 vim.keymap.set(
   "",
   "<F4>",
-  ":setlocal spell! spelllang=en_us<cr>",
+  ":setlocal spell! spelllang=en_us<CR>",
   { remap = true }
 )
 
@@ -90,7 +90,7 @@ vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
 -- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Replace
 vim.keymap.set(
@@ -100,10 +100,10 @@ vim.keymap.set(
 )
 
 -- Make file executable
-vim.keymap.set("n", "<leader>x", ":!chmod +x %<cr>", { silent = true })
+vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 
 -- Exit terminal mode
-vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 
 -- Copy the current file's path
 vim.keymap.set("n", "yp", function()

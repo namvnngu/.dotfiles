@@ -92,43 +92,43 @@ set ttyfast
 """"""""""""
 
 " Move to window
-nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd j<cr>
-nnoremap <leader>k :wincmd k<cr>
-nnoremap <leader>l :wincmd l<cr>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " Resize window
-nnoremap <Up> :resize +2<cr>
-nnoremap <Down> :resize -2<cr>
-nnoremap <Left> :vertical resize -2<cr>
-nnoremap <Right> :vertical resize +2<cr>
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize -2<CR>
+nnoremap <Right> :vertical resize +2<CR>
 
 " Yanking
-nnoremap <leader>ya :%y+<cr>
+nnoremap <leader>ya :%y+<CR>
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y "+y$
 nnoremap Y y$
 
 " Buffers
-nnoremap <leader>bn :bnext<cr>
-nnoremap <leader>bp :bprevious<cr>
-nnoremap <leader>bd :bdelete<cr>
-nnoremap <leader>ba :bufdo bd<cr>
-nnoremap <leader>be :%bd\|e#<cr>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>ba :bufdo bd<CR>
+nnoremap <leader>be :%bd\|e#<CR>
 
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
 
 "  Move lines
-nnoremap <leader>md :m .+1<cr>==
-nnoremap <leader>mu :m .-2<cr>==
-vnoremap J :m '>+1<cr>gv=gv
-vnoremap K :m '<-2<cr>gv=gv
+nnoremap <leader>md :m .+1<CR>==
+nnoremap <leader>mu :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
-" Clear search with <esc>
-nnoremap <esc> :noh<cr>
+" Clear search with <Esc>
+nnoremap <Esc> :noh<CR>
 
 " Keeping it centered and stable
 nnoremap J mzJ`z
@@ -138,12 +138,12 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
 " Quickfix list
-nnoremap <C-j> :cnext<cr>zz
-nnoremap <C-k> :cprev<cr>zz
+nnoremap <C-j> :cnext<CR>zz
+nnoremap <C-k> :cprev<CR>zz
 
 " Location list
-nnoremap <leader>J :lnext<cr>zz
-nnoremap <leader>K :lprev<cr>zz
+nnoremap <leader>J :lnext<CR>zz
+nnoremap <leader>K :lprev<CR>zz
 
 " Keybindings for tab navigation with leader and number
 nnoremap <leader>1 1gt
@@ -157,7 +157,7 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 
 " Toggle spelling checker
-map <F4> :setlocal spell! spelllang=en_us<cr>
+map <F4> :setlocal spell! spelllang=en_us<CR>
 
 " Replace currently selected text with default register without yanking it
 xnoremap <leader>p "_dP
@@ -167,25 +167,25 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 " This is going to get me cancelled
-inoremap <C-c> <esc>
+inoremap <C-c> <Esc>
 
 " Replace
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " Make file executable
-nnoremap <silent> <leader>x :!chmod +x %<cr>
+nnoremap <silent> <leader>x :!chmod +x %<CR>
 
 " Exit terminal mode
-tnoremap <esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 " Copy the current file's path
-nnoremap yp :exec setreg("+", expand("%:p"))<cr>
+nnoremap yp :exec setreg("+", expand("%:p"))<CR>
 
 " Folding
 nnoremap z{ vi}zf
 
 " Split explorer
-nnoremap - :Ex<cr>
+nnoremap - :Ex<CR>
 
 """"""""""""""""
 " AUTOCOMMANDS "
@@ -232,9 +232,9 @@ endif
 
 set runtimepath^=~/.fzf
 
-nnoremap <C-p> :GFiles<cr>
-nnoremap <leader>ff :Files<cr>
-autocmd! FileType fzf tnoremap <buffer> <esc> <C-c>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>ff :Files<CR>
+autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
 " git
 let GIT_PLUGIN_DIR = PLUGIN_DIR . "/vim-fugitive"

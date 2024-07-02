@@ -5,28 +5,28 @@ return {
       -- git
       {
         "<C-p>",
-        "<cmd>FzfLua git_files<cr>",
+        "<cmd>FzfLua git_files<CR>",
         mode = "n",
         desc = "Search files via `git ls-files`",
       },
       -- files
       {
         "<leader>ff",
-        "<cmd>FzfLua files<cr>",
+        "<cmd>FzfLua files<CR>",
         mode = "n",
         desc = "Search files via `find` or `fd` on a path",
       },
       -- search
       {
         "<leader>fs",
-        "<cmd>FzfLua live_grep_glob<cr>",
+        "<cmd>FzfLua live_grep_glob<CR>",
         mode = "n",
         desc = "live_grep with rg --glob support",
       },
       -- misc
       {
         "<leader>fr",
-        "<cmd>FzfLua resume<cr>",
+        "<cmd>FzfLua resume<CR>",
         mode = "n",
         desc = "Resume last command/query",
       },
