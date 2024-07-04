@@ -9,12 +9,18 @@ return {
         mode = "n",
         desc = "Search files via `git ls-files`",
       },
-      -- files
+      -- buffers and files
       {
         "<leader>ff",
         "<cmd>FzfLua files<CR>",
         mode = "n",
         desc = "Search files via `find` or `fd` on a path",
+      },
+      {
+        "<leader>fb",
+        "<cmd>FzfLua buffers<CR>",
+        mode = "n",
+        desc = "Open buffers",
       },
       -- search
       {
