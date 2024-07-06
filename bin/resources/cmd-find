@@ -1,0 +1,2 @@
+find all directories recursively given name: find <starting-dir> -type d -name "<name>" -print
+find all directories recursively given name and exec a command on them: find <starting-dir> -type d -name "<name>" | xargs <cmd>

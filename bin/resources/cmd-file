@@ -1,5 +1,2 @@
-download a file given URL with custom output filename: curl -o <output-name> -L <url>
-download a file given URL with remote filename: curl -O -J -L <url>
 get the size of directories/files in the current path: du -sh -- *
 get the size of directory/file given path: du -sh <path>
-extract tar.gz file: tar -xf <path-to-file>
