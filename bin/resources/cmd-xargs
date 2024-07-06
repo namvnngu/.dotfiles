@@ -1,0 +1,5 @@
+use every line of input all at once: xargs <cmd>
+use one line of input at a time: xargs -n1 <cmd>
+specify a placeholder to control where to put the line of input in the command (one line of input at a time): xargs -I<placeholder> <cmd>
+run multiple commands with placeholder in parallel: xargs -I<placeholder> -P<num-commands-at-once> <cmd>
+run multiple commands with placeholder in parallel in a shell: xargs -I<placeholder> -P<num-commands-at-once> sh -c "<cmd>"
