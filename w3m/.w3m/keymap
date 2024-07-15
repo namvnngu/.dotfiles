@@ -1,0 +1,17 @@
+# History
+keymap L   NEXT    # Go forward in history
+keymap H   PREV    # Go back in history
+keymap C-h HISTORY # Show history
+
+# Tab
+keymap T  TAB_MENU                           # Tab menu
+keymap J  NEXT_TAB                           # Change focus to left tab
+keymap K  PREV_TAB                           # Change focus to right tab
+keymap x  CLOSE_TAB                          # Close current tab
+keymap o  GOTO                               # Open a URL in the current tab
+keymap og GOTO https://www.google.com/en     # Open Google search in the current tab
+keymap O  TAB_GOTO                           # Open a URL in a new tab
+keymap Og TAB_GOTO https://www.google.com/en # Open Google search in a new tab
+
+# Exit
+keymap :q EXIT # Quit w3m without confirmation

@@ -1,4 +1,15 @@
-**/plugged
+# python
 **/__pycache__
-**/packer_compiled.lua
+
+# lazygit
 state.yml
+
+# vim
+**/plugged
+
+# neovim
+**/packer_compiled.lua
+
+# w3m
+w3m/.w3m/**/*
+!w3m/.w3m/keymap
