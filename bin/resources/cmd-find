@@ -1,2 +1,3 @@
-find all directories: find <starting-dir> -type d -name "<name>" -print
-find all directories and exec a command on them (use null byte (-print0 and -0) as a separator): find <starting-dir> -type d -name "<name>" -print0 | xargs -0 <cmd>
+find all directories: find <dir-path> -type d -name "<name>" -print
+find all directories and exec a command on them (use null byte (-print0 and -0) as a separator): find <dir-path> -type d -name "<name>" -print0 | xargs -0 <cmd>
+find and delete empty directories: find <dir-path> -type d -empty -delete
