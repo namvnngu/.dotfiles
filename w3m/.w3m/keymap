@@ -7,9 +7,9 @@ keymap T  TAB_MENU                           # Tab menu
 keymap tp NEXT_TAB                           # Change focus to left tab
 keymap tn PREV_TAB                           # Change focus to right tab
 keymap tx CLOSE_TAB                          # Close current tab
-keymap to GOTO                               # Open a URL in the current tab
+keymap to GOTO
 keymap tg GOTO https://www.google.com/en     # Open Google search in the current tab
-keymap tO TAB_GOTO                           # Open a URL in a new tab
+keymap tO TAB_GOTO
 keymap tG TAB_GOTO https://www.google.com/en # Open Google search in a new tab
 
 # URL
