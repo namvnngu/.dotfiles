@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+resources_dir="$HOME/dotfiles/bin/resources"
+requested_scat_path_file="$resources_dir/scat-$1"
+
+if [[ $* == *ls* ]]; then
+  find $resources_dir -maxdepth 1 -name "scat*" | sed 's/^.*scat-//' | git column --mode=column --padding=5
+  exit 0
+fi
+
+###############################################################################
+
+if [[ $# -eq 0 ]] ; then
+  files=$(find $resources_dir -maxdepth 1 -name "scat*")
+  selected=$(cat $files | fzf)
+elif [[ -e $requested_scat_path_file ]]; then
+  selected=$(cat $requested_scat_path_file | fzf)
+else
+  echo "$requested_scat_path_file: No such file"
+  exit 1
+fi
+
+if [[ -z $selected ]]; then
+  exit 1
+fi
+
+selected=$(echo $selected | sed 's/ : .*$//')
+echo "Selection: $selected"
+
+###############################################################################
+
+os=$(uname -s)
+case $os in
+  Darwin*)
+    echo -n $selected | pbcopy
+    ;;
+  Linux*)
+    echo -n $selected | xclip -selection clipboard
+    ;;
+esac
+
+echo "Copied to clipboard: $selected"
