@@ -50,10 +50,10 @@ while true; do
     os=$(uname -s)
     case $os in
       Darwin*)
-        echo $selected_cmd | pbcopy
+        echo -n $selected_cmd | pbcopy
         ;;
       Linux*)
-        echo $selected_cmd | xclip -selection clipboard
+        echo -n $selected_cmd | xclip -selection clipboard
         ;;
     esac
 
