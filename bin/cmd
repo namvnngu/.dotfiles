@@ -47,8 +47,6 @@ while true; do
   query=$(echo $query | tr '[:upper:]' '[:lower:]')
 
   if [[ $query == c* ]]; then
-    echo "Copied to clipboard: $selected_cmd"
-
     os=$(uname -s)
     case $os in
       Darwin*)
@@ -58,9 +56,12 @@ while true; do
         echo $selected_cmd | xclip -selection clipboard
         ;;
     esac
+
+    echo "Copied to clipboard: $selected_cmd"
+
     exit 0
   elif [[ $query == e* ]]; then
-    echo "Execute: $selected_cmd"
+    echo "Executing: $selected_cmd"
     echo "----------------------"
     eval $selected_cmd
 
