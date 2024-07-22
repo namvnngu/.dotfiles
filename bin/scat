@@ -25,7 +25,6 @@ if [[ -z $selected ]]; then
 fi
 
 selected=$(echo $selected | sed 's/ : .*$//')
-echo "Selection: $selected"
 
 ###############################################################################
 
