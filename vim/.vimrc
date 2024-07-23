@@ -221,6 +221,8 @@ autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 """""""""""
 " PLUGINS "
 """""""""""
+command PluginClean call system("rm -rf ~/.vim") | echo "Removed all plugins"
+
 let PLUGIN_DIR = "~/.vim/pack/plugins/start"
 
 " fzf
@@ -230,7 +232,7 @@ if !isdirectory(FZF_PLUGIN_DIR)
   call system("git clone --depth 1 https://github.com/junegunn/fzf.vim " . FZF_PLUGIN_DIR)
 endif
 
-set runtimepath^=~/.fzf
+set runtimepath+=~/.fzf
 
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>ff :Files<CR>
