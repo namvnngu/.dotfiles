@@ -9,6 +9,7 @@ endif
 """""""""""
 " OPTIONS "
 """""""""""
+
 syntax on
 
 filetype plugin indent on
@@ -187,13 +188,20 @@ nnoremap z{ vi}zf
 " Split explorer
 nnoremap - :Ex<CR>
 
+" Switch between C source and header file
+nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
-autocmd BufWritePre * call TrimWhitespace()
-function TrimWhitespace()
+
+autocmd BufWritePre * call s:trim_white_space()
+function s:trim_white_space()
     let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
+    keepjumps keeppatterns silent! %s/\s\+$//e
+    keepjumps keeppatterns silent! %s/\%^\n\+//
+    keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
+    keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
     call winrestview(l:save)
 endfunction
 
@@ -221,26 +229,27 @@ autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
 """""""""""
 " PLUGINS "
 """""""""""
+
+" plugin utils
+
+let s:PLUGIN_DIR = "~/.vim/pack/plugins/start"
+
 command PluginClean call system("rm -rf ~/.vim") | echo "Removed all plugins"
 
-let PLUGIN_DIR = "~/.vim/pack/plugins/start"
+function s:download_plugin(plugin_source_url, plugin_name)
+  let PLUGIN_DEST_DIR = s:PLUGIN_DIR . "/" . a:plugin_name
 
-" fzf
-let FZF_PLUGIN_DIR = PLUGIN_DIR . "/fzf.vim"
+  if !isdirectory(PLUGIN_DEST_DIR)
+    call system("git clone --depth 1 " . a:plugin_source_url . " " . PLUGIN_DEST_DIR)
+  endif
+endfunction
 
-if !isdirectory(FZF_PLUGIN_DIR)
-  call system("git clone --depth 1 https://github.com/junegunn/fzf.vim " . FZF_PLUGIN_DIR)
-endif
+" plugins
 
+call s:download_plugin("https://github.com/junegunn/fzf.vim", "fzf.vim")
 set runtimepath+=~/.fzf
-
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>ff :Files<CR>
 autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
-" git
-let GIT_PLUGIN_DIR = PLUGIN_DIR . "/vim-fugitive"
-
-if !isdirectory(GIT_PLUGIN_DIR)
-  call system("git clone --depth 1 https://github.com/tpope/vim-fugitive " . GIT_PLUGIN_DIR)
-endif
+call s:download_plugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
