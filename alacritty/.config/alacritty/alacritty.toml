@@ -1,6 +1,6 @@
 import = [
-  "~/.config/alacritty/colorschemes/neovim-light.toml",
-  "~/.config/alacritty/fonts/JetBrainsMonoNerdFont.toml"
+  "~/.config/alacritty/fonts/Monaco.toml",
+  "~/.config/alacritty/colorschemes/neovim-light.toml"
 ]
 live_config_reload = true
 
