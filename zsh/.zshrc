@@ -74,7 +74,7 @@ export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
 
 # prompt
-PROMPT='%n %F{#FF0088}%~%f'$'\n$ '
+PROMPT='%n %~'$'\n$ '
 
 ###############################################################################
 #                               Tools                                         #
