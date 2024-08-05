@@ -63,17 +63,6 @@ vim.keymap.set("n", "<C-k>", ":cprev<CR>zz")
 vim.keymap.set("n", "<leader>J", ":lnext<CR>zz")
 vim.keymap.set("n", "<leader>K", ":lprev<CR>zz")
 
--- Keybindings for tab navigation with leader and number
-vim.keymap.set("n", "<leader>1", "1gt")
-vim.keymap.set("n", "<leader>2", "2gt")
-vim.keymap.set("n", "<leader>3", "3gt")
-vim.keymap.set("n", "<leader>4", "4gt")
-vim.keymap.set("n", "<leader>5", "5gt")
-vim.keymap.set("n", "<leader>6", "6gt")
-vim.keymap.set("n", "<leader>7", "7gt")
-vim.keymap.set("n", "<leader>8", "8gt")
-vim.keymap.set("n", "<leader>9", "9gt")
-
 -- Toggle spelling checker
 vim.keymap.set(
   "",
@@ -114,9 +103,6 @@ vim.keymap.set("n", "yp", function()
   require("utils.system").to_clipboard(filepath)
   require("utils.notify").info("Copied to clipboard: " .. filepath)
 end)
-
--- Folding
-vim.keymap.set("n", "z{", "vi}zf")
 
 -- Open URL
 -- Reference: https://github.com/vim/vim/issues/4738#issuecomment-856925080

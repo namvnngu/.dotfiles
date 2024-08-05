@@ -76,18 +76,6 @@ set wildmode=longest:full,full
 set wildoptions=pum,tagfile
 set winminwidth=5
 
-""""""""""
-" CURSOR "
-""""""""""
-
-" let &t_SI.="\e[5 q" "SI = INSERT mode
-" let &t_SR.="\e[4 q" "SR = REPLACE mode
-" let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-
-set ttimeout
-set ttimeoutlen=1
-set ttyfast
-
 """"""""""""
 " MAPPINGS "
 """"""""""""
@@ -146,17 +134,6 @@ nnoremap <C-k> :cprev<CR>zz
 nnoremap <leader>J :lnext<CR>zz
 nnoremap <leader>K :lprev<CR>zz
 
-" Keybindings for tab navigation with leader and number
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-
 " Toggle spelling checker
 map <F4> :setlocal spell! spelllang=en_us<CR>
 
@@ -181,9 +158,6 @@ tnoremap <Esc> <C-\><C-n>
 
 " Copy the current file's path
 nnoremap yp :exec setreg("+", expand("%:p"))<CR>
-
-" Folding
-nnoremap z{ vi}zf
 
 " Split explorer
 nnoremap - :Ex<CR>
