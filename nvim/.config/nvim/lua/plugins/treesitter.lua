@@ -6,8 +6,15 @@ return {
     cmd = { "TSUpdateSync" },
     main = "nvim-treesitter.configs",
     opts = {
-      -- A list of parser names, or "all" (the five listed parsers should always be installed)
-      ensure_installed = {},
+      -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+      ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "markdown",
+        "markdown_inline",
+      },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
@@ -20,10 +27,18 @@ return {
       ignore_install = {},
 
       highlight = {
-        enable = true,
+        enable = false,
 
         disable = function(_, bufnr)
-          return vim.api.nvim_buf_line_count(bufnr) >= 1000
+          local MAX_LINE = 1000
+          if vim.api.nvim_buf_line_count(bufnr) >= MAX_LINE then
+            return true
+          end
+
+          local MAX_FILESIZE = 100 * 1024 -- 100 KB
+          local ok, stats =
+            pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(bufnr))
+          return ok and stats and stats.size > MAX_FILESIZE
         end,
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

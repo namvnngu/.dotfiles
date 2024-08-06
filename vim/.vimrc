@@ -10,7 +10,7 @@ endif
 " OPTIONS "
 """""""""""
 
-syntax on
+syntax off
 
 filetype plugin indent on
 

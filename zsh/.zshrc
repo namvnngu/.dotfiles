@@ -11,7 +11,6 @@ export PATH=$PATH:$HOME/dotfiles/bin
 
 alias tmuxs=tmux-sessionizer
 alias tmuxc=tmux-cht
-alias vi="vim -c 'syntax off'"
 
 # go
 case $os in
