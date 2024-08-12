@@ -165,6 +165,9 @@ nnoremap - :Ex<CR>
 " Switch between C source and header file
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
+" Fix the indentation of an entire file
+nnoremap <leader>F gg=G''
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
