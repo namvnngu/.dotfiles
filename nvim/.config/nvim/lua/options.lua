@@ -51,7 +51,6 @@ vim.opt.smartindent = true -- insert indents automatically
 vim.opt.splitbelow = true -- put new windows below current
 vim.opt.splitright = true -- put new windows right of current
 vim.opt.swapfile = false -- disable using swap file for the current buffer
-vim.opt.syntax = "ON"
 vim.opt.tabstop = 2 -- number of space in a tab
 vim.opt.termguicolors = true -- enable 24-bit RGB color in the TUI
 vim.opt.timeoutlen = 500 -- time in milliseconds to wait for a mapped sequence to complete
@@ -65,6 +64,8 @@ vim.opt.wildoptions = "pum,tagfile" -- how a list of suggestions is shown
 vim.opt.winminwidth = 5 -- minimum window width
 vim.opt.wrap = false -- disable wrapping of lines longer than the width of window
 vim.opt.writebackup = false -- disable making a backup before overwriting a file
+
+vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 
 -- Enable linematch diff algorithm.

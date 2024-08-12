@@ -10,7 +10,7 @@ endif
 " OPTIONS "
 """""""""""
 
-syntax off
+syntax on
 
 filetype plugin indent on
 
@@ -184,21 +184,20 @@ endfunction
 """""""""
 
 set background=light
+colorscheme quiet
 
-autocmd VimEnter * hi Comment gui=NONE cterm=NONE
+autocmd VimEnter * hi Comment guifg=#8c8c8c
+
+" Transparent Column
+autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
+
+" Transparent Background
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
-" autocmd VimEnter * hi CursorLine cterm=NONE ctermfg=NONE
-autocmd VimEnter * hi CursorLineNr cterm=NONE ctermfg=NONE
-
-" Highlight spelling errors
-" autocmd VimEnter * hi SpellBad ctermbg=red guibg=red
-" autocmd VimEnter * hi SpellBad cterm=underline
 
 """""""""""
 " PLUGINS "
