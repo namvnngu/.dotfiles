@@ -160,7 +160,7 @@ null_ls.setup(tbl.merge(common_setup, {
     null_ls.builtins.formatting.rustfmt,
 
     -- Prettier
-    null_ls.builtins.formatting.prettierd.with({
+    null_ls.builtins.formatting.prettier.with({
       filetypes = {
         "html",
         "scss",

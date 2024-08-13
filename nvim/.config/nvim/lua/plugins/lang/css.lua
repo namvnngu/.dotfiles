@@ -14,7 +14,7 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        css = { "prettierd" },
+        css = { "prettier" },
       },
     },
   },
