@@ -1,3 +1,7 @@
+"""""""""
+" UTILS "
+"""""""""
+
 if !exists("g:os")
   if has("win64") || has("win32") || has("win16")
     let g:os = "Windows"
@@ -5,6 +9,10 @@ if !exists("g:os")
     let g:os = substitute(system("uname"), "\n", "", "")
   endif
 endif
+
+function s:count_directories_in_path(path)
+  return len(filter(globpath(a:path, '*', 0, 1), 'isdirectory(v:val)'))
+endfunction
 
 """""""""""
 " OPTIONS "
@@ -210,7 +218,8 @@ autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 let s:PLUGIN_DIR = "~/.vim/pack/plugins/start"
 
-command PluginClean call system("rm -rf ~/.vim") | echo "Removed all plugins"
+command PluginClean call system("rm -rf " . s:PLUGIN_DIR) | echo "Removed all plugins"
+command PluginCount echo "Plugin count: " . s:count_directories_in_path(s:PLUGIN_DIR)
 
 function s:install_plugin(plugin_source_url, plugin_name)
   let l:plugin_dest_dir = expand(s:PLUGIN_DIR . "/" . a:plugin_name)
