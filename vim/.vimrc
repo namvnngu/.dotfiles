@@ -231,8 +231,11 @@ autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 call s:download_plugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
 
 call s:download_plugin("https://github.com/lervag/wiki.vim", "wiki.vim")
-let g:wiki_root = '~/wiki'
-if !isdirectory(g:wiki_root)
-  call system("mkdir " . wiki_root)
+let s:wiki_root_path_env = getenv("WIKI_ROOT_PATH")
+if !empty(s:wiki_root_path_env)
+  let g:wiki_root = s:wiki_root_path_env
+  if !isdirectory(g:wiki_root)
+    call system("mkdir " . g:wiki_root)
+  endif
+  nnoremap <leader>wx <plug>(wiki-pages)
 endif
-nnoremap <leader>wx <plug>(wiki-pages)
