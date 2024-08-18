@@ -80,6 +80,11 @@ PROMPT='%n %~'$'\n$ '
 ###############################################################################
 
 # fzf
+FZF_FOLDER=~/.fzf
+if [ ! -d $FZF_FOLDER ]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git $FZF_FOLDER
+  ~/.fzf/install
+fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # n: node version manager
