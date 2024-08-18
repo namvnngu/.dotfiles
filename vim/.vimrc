@@ -174,12 +174,12 @@ nnoremap <leader>F gg=G''
 
 autocmd BufWritePre * call s:trim_white_space()
 function s:trim_white_space()
-    let l:save = winsaveview()
-    keepjumps keeppatterns silent! %s/\s\+$//e
-    keepjumps keeppatterns silent! %s/\%^\n\+//
-    keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
-    keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
-    call winrestview(l:save)
+  let l:save = winsaveview()
+  keepjumps keeppatterns silent! %s/\s\+$//e
+  keepjumps keeppatterns silent! %s/\%^\n\+//
+  keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
+  keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
+  call winrestview(l:save)
 endfunction
 
 """""""""
@@ -212,27 +212,30 @@ let s:PLUGIN_DIR = "~/.vim/pack/plugins/start"
 
 command PluginClean call system("rm -rf ~/.vim") | echo "Removed all plugins"
 
-function s:download_plugin(plugin_source_url, plugin_name)
-  let PLUGIN_DEST_DIR = s:PLUGIN_DIR . "/" . a:plugin_name
+function s:install_plugin(plugin_source_url, plugin_name)
+  let l:plugin_dest_dir = expand(s:PLUGIN_DIR . "/" . a:plugin_name)
 
-  if !isdirectory(PLUGIN_DEST_DIR)
-    call system("git clone --depth 1 " . a:plugin_source_url . " " . PLUGIN_DEST_DIR)
+  if !isdirectory(l:plugin_dest_dir)
+    echo "Installing " . a:plugin_name . "..."
+    call system("git clone --depth 1 " . a:plugin_source_url . " " . l:plugin_dest_dir)
+    echo "Installed " . a:plugin_name . "!"
+    echo " "
   endif
 endfunction
 
 " plugins
 
-call s:download_plugin("https://github.com/junegunn/fzf.vim", "fzf.vim")
+call s:install_plugin("https://github.com/junegunn/fzf.vim", "fzf.vim")
 set runtimepath+=~/.fzf
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>ff :Files<CR>
 autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
-call s:download_plugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
+call s:install_plugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
 
-call s:download_plugin("https://github.com/lervag/wiki.vim", "wiki.vim")
+call s:install_plugin("https://github.com/lervag/wiki.vim", "wiki.vim")
 let s:wiki_root_path_env = getenv("WIKI_ROOT_PATH")
-let g:wiki_root = empty(s:wiki_root_path_env) ? "~/wiki" : s:wiki_root_path_env
+let g:wiki_root = expand(empty(s:wiki_root_path_env) ? "~/wiki" : s:wiki_root_path_env)
 if !isdirectory(g:wiki_root)
   call system("mkdir " . g:wiki_root)
 endif
