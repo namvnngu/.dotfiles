@@ -1,5 +1,5 @@
 {
-  "conform.nvim": { "branch": "master", "commit": "42b53fcb83fd8d597e1a1dc08f6db72de58f4f46" },
+  "conform.nvim": { "branch": "master", "commit": "6047101486f6c0ae44b444424c0e45ed8053c840" },
   "dressing.nvim": { "branch": "master", "commit": "c5775a888adbc50652cb370073fcfec963eca93e" },
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
   "fzf-lua": { "branch": "main", "commit": "30fa904d5a614051c943a87aa15e14d69aa0138f" },
@@ -13,10 +13,11 @@
   "mini.align": { "branch": "main", "commit": "b54d88b16bfac62ca6b3d699566135639a3ca4fa" },
   "mini.comment": { "branch": "main", "commit": "03c13e37318bdb18481311c0ac1adc9ed731caf1" },
   "nvim-lint": { "branch": "master", "commit": "debabca63c0905b59ce596a55a8e33eafdf66342" },
-  "nvim-lspconfig": { "branch": "master", "commit": "d4814330b207a4e05ba9515e453b0e87f20357ec" },
-  "nvim-treesitter": { "branch": "master", "commit": "1e860567fbc19f117a03c0d2c46dcc01325c1b8b" },
+  "nvim-lspconfig": { "branch": "master", "commit": "43200fb3a820ed1b6c526e0eb0f3e6e6edd9fd64" },
+  "nvim-treesitter": { "branch": "master", "commit": "cfd2095e66e49ea0dfbef6b41be2efd0ba6cc4ee" },
   "oil.nvim": { "branch": "master", "commit": "a632c898fbe0e363ef89b9577f1a7714ab67d682" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
+  "vim-colors-off": { "branch": "main", "commit": "2879dc5d358a4856873ca708399b34a436a0f3ec" },
   "vim-fugitive": { "branch": "master", "commit": "0444df68cd1cdabc7453d6bd84099458327e5513" },
   "w3m.vim": { "branch": "master", "commit": "228a852b188f1a62ecea55fa48b0ec892fa6bad7" },
   "wiki.vim": { "branch": "master", "commit": "c4793b1a21e0b0cb8c412d3327d779e951de6aa5" }

@@ -195,20 +195,18 @@ endfunction
 """""""""
 
 set background=light
-colorscheme quiet
 
-autocmd VimEnter * hi Comment guifg=#8c8c8c
-
+" colorscheme quiet
+" autocmd VimEnter * hi Comment guifg=#8c8c8c
 " Transparent Column
-autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
-
+" autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi FoldColumn ctermbg=NONE guibg=NONE
 " Transparent Background
-autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
-autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi NonText ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 """""""""""
 " PLUGINS "
@@ -233,6 +231,11 @@ function s:install_plugin(plugin_source_url, plugin_name)
 endfunction
 
 " Plugins
+
+""
+call s:install_plugin("https://github.com/pbrisbin/vim-colors-off", "vim-colors-off")
+colorscheme off
+autocmd VimEnter * hi Comment guifg=#696969 gui=NONE ctermfg=250
 
 ""
 call s:install_plugin("https://github.com/junegunn/fzf.vim", "fzf.vim")
