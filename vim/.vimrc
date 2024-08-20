@@ -214,7 +214,7 @@ autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 " PLUGINS "
 """""""""""
 
-" plugin utils
+" Plugin Utils
 
 let s:PLUGIN_DIR = "~/.vim/pack/plugins/start"
 
@@ -232,20 +232,48 @@ function s:install_plugin(plugin_source_url, plugin_name)
   endif
 endfunction
 
-" plugins
+" Plugins
 
+""
 call s:install_plugin("https://github.com/junegunn/fzf.vim", "fzf.vim")
+
 set runtimepath+=~/.fzf
+
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>ff :Files<CR>
 autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
+""
 call s:install_plugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
 
+""
 call s:install_plugin("https://github.com/lervag/wiki.vim", "wiki.vim")
+
 let s:wiki_root_path_env = getenv("WIKI_ROOT_PATH")
 let g:wiki_root = expand(empty(s:wiki_root_path_env) ? "~/wiki" : s:wiki_root_path_env)
+
 if !isdirectory(g:wiki_root)
   call system("mkdir " . g:wiki_root)
 endif
+
 nnoremap <leader>wx <plug>(wiki-pages)
+
+function s:Wjp()
+  if &filetype == "markdown"
+    echo "Jo"
+    :WikiJournalPrev
+  else
+    echo "Wjp is not available outside of markdown files"
+  endif
+endfunction
+command Wjp call s:Wjp()
+
+function s:Wjn()
+  if &filetype == "markdown"
+    echo "Jo"
+    :WikiJournalNext
+  else
+    echo "Wjn is not available outside of markdown files"
+  endif
+endfunction
+command Wjn call s:Wjn()
