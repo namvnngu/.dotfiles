@@ -260,7 +260,6 @@ nnoremap <leader>wx <plug>(wiki-pages)
 
 function s:Wjp()
   if &filetype == "markdown"
-    echo "Jo"
     :WikiJournalPrev
   else
     echo "Wjp is not available outside of markdown files"
@@ -270,7 +269,6 @@ command Wjp call s:Wjp()
 
 function s:Wjn()
   if &filetype == "markdown"
-    echo "Jo"
     :WikiJournalNext
   else
     echo "Wjn is not available outside of markdown files"
