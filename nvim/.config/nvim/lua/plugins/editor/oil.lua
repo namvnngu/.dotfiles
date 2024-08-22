@@ -1,5 +1,4 @@
 return {
-  -- Split explorer
   {
     "stevearc/oil.nvim",
     opts = {
@@ -10,7 +9,7 @@ return {
     keys = {
       {
         "-",
-        "<cmd>Oil<CR>",
+        "<Cmd>Oil<CR>",
         mode = "n",
         desc = "Opens parent directory",
       },

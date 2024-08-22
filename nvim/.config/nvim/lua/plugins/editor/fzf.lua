@@ -5,34 +5,34 @@ return {
       -- git
       {
         "<C-p>",
-        "<cmd>FzfLua git_files<CR>",
+        "<Cmd>FzfLua git_files<CR>",
         mode = "n",
         desc = "Search files via `git ls-files`",
       },
       -- buffers and files
       {
         "<leader>ff",
-        "<cmd>FzfLua files<CR>",
+        "<Cmd>FzfLua files<CR>",
         mode = "n",
         desc = "Search files via `find` or `fd` on a path",
       },
       {
         "<leader>fb",
-        "<cmd>FzfLua buffers<CR>",
+        "<Cmd>FzfLua buffers<CR>",
         mode = "n",
         desc = "Open buffers",
       },
       -- search
       {
         "<leader>fs",
-        "<cmd>FzfLua live_grep_glob<CR>",
+        "<Cmd>FzfLua live_grep_glob<CR>",
         mode = "n",
         desc = "live_grep with rg --glob support",
       },
       -- misc
       {
         "<leader>fr",
-        "<cmd>FzfLua resume<CR>",
+        "<Cmd>FzfLua resume<CR>",
         mode = "n",
         desc = "Resume last command/query",
       },
