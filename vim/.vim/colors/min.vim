@@ -20,18 +20,17 @@ let g:colors_name = "min"
 
 " Utilities
 
-"" Source: https://github.com/noahfrederick/vim-hemisu
-function! s:h(group, style)
+"" Reference: https://github.com/noahfrederick/vim-hemisu/blob/master/colors/hemisu.vim#L90C1-L99C12
+function! s:highlight(group, style)
+  let l:style = a:style[&background]
   execute "highlight" a:group
-        \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
-        \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
-        \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
-        \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
-        \ "ctermfg=" (has_key(a:style, "fg")    ? a:style.fg.cterm : "NONE")
-        \ "ctermbg=" (has_key(a:style, "bg")    ? a:style.bg.cterm : "NONE")
-        \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
+        \ "guifg="   (has_key(l:style, "fg")    ? l:style.fg.gui   : "NONE")
+        \ "guibg="   (has_key(l:style, "bg")    ? l:style.bg.gui   : "NONE")
+        \ "guisp="   (has_key(l:style, "sp")    ? l:style.sp.gui   : "NONE")
+        \ "gui="     (has_key(l:style, "gui")   ? l:style.gui      : "NONE")
+        \ "ctermfg=" (has_key(l:style, "fg")    ? l:style.fg.cterm : "NONE")
+        \ "ctermbg=" (has_key(l:style, "bg")    ? l:style.bg.cterm : "NONE")
+        \ "cterm="   (has_key(l:style, "cterm") ? l:style.cterm    : "NONE")
 endfunction
 
-" UI highlights
-
-" General syntax highlights
+" Built-in highlights
