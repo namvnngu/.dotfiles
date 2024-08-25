@@ -14,8 +14,8 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        javascript = { "prettier" },
-        javascriptreact = { "prettier" },
+        javascript = { "biome", "prettier", stop_after_first = true },
+        javascriptreact = { "biome", "prettier", stop_after_first = true },
       },
     },
   },

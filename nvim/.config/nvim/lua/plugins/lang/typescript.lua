@@ -45,8 +45,8 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
+        typescript = { "biome", "prettier", stop_after_first = true },
+        typescriptreact = { "biome", "prettier", stop_after_first = true },
       },
     },
   },
