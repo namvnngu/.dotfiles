@@ -35,9 +35,8 @@ let s:blue    = { "gui": "#0000ff", "cterm": "12" }
 let s:fuchsia = { "gui": "#ff00ff", "cterm": "13" }
 let s:aqua    = { "gui": "#00ffff", "cterm": "14" }
 let s:white   = { "gui": "#ffffff", "cterm": "15" }
-let s:grey66  = { "gui": "#a8a8a8", "cterm": "248" }
 
-" Utilitixs
+" Utilities
 
 "" Reference: https://github.com/noahfrederick/vim-hemisu/blob/master/colors/hemisu.vim#L90C1-L99C12
 function! s:highlight(group, style)
@@ -60,6 +59,11 @@ call s:highlight("Normal", {
       \ })
 
 " Builtin syntax groups, see *group-name*
+
+call s:highlight("Comment", {
+      \ "light": { "fg": s:grey },
+      \ "dark" : { "fg": s:grey },
+      \ })
 
 call s:highlight("Constant", {
       \ "light": { "fg": s:black },
