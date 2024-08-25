@@ -1,4 +1,4 @@
-" A minimal colorscheme for Vim by Nam.
+" A minimal colorscheme for Vim by Nam
 "
 " Name:        min.vim
 " Description: A minimal colorscheme with mainly black and white
@@ -8,6 +8,7 @@
 "
 
 " Initial setup
+
 highlight clear
 
 if exists("syntax on")
@@ -51,8 +52,20 @@ function! s:highlight(group, style)
         \ "cterm="   (has_key(l:variant, "cterm") ? l:variant.cterm    : "NONE")
 endfunction
 
-" Built-in highlights
+" Builtin highlighting groups, see *highlight-groups*
+
 call s:highlight("Normal", {
       \ "light": { "fg": s:black, "bg": s:white },
       \ "dark" : { "fg": s:white, "bg": s:black },
+      \ })
+
+" Builtin syntax groups, see *group-name*
+
+call s:highlight("Constant", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+call s:highlight("String", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
       \ })
