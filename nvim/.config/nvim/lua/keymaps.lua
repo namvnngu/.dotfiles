@@ -104,14 +104,6 @@ vim.keymap.set("n", "yp", function()
   require("utils.notify").info("Copied to clipboard: " .. filepath)
 end)
 
--- Open URL
--- Reference: https://github.com/vim/vim/issues/4738#issuecomment-856925080
-vim.keymap.set("n", "gx", function()
-  require("utils.system").launch_url(
-    vim.fn.shellescape(vim.fn.expand("<cWORD>"), 1)
-  )
-end)
-
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")
 -- vim.keymap.set("", "<Down>", "<NOP>")
