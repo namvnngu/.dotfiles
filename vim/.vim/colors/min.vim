@@ -7,6 +7,7 @@
 " Github:      https://github.com/namvnngu
 "
 
+" Initial setup
 highlight clear
 
 if exists("syntax on")
@@ -31,6 +32,6 @@ function! s:h(group, style)
         \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-" UI Highlights
+" UI highlights
 
-" General Syntax Highlights
+" General syntax highlights
