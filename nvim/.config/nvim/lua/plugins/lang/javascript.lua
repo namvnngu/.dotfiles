@@ -14,8 +14,20 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        javascript = { "biome", "prettier", stop_after_first = true },
-        javascriptreact = { "biome", "prettier", stop_after_first = true },
+        javascript = function(bufnr)
+          if require("conform").get_formatter_info("biome", bufnr).available then
+            return { "biome" }
+          else
+            return { "prettier" }
+          end
+        end,
+        javascriptreact = function(bufnr)
+          if require("conform").get_formatter_info("biome", bufnr).available then
+            return { "biome" }
+          else
+            return { "prettier" }
+          end
+        end,
       },
     },
   },

@@ -45,8 +45,20 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        typescript = { "biome", "prettier", stop_after_first = true },
-        typescriptreact = { "biome", "prettier", stop_after_first = true },
+        typescript = function(bufnr)
+          if require("conform").get_formatter_info("biome", bufnr).available then
+            return { "biome" }
+          else
+            return { "prettier" }
+          end
+        end,
+        typescriptreact = function(bufnr)
+          if require("conform").get_formatter_info("biome", bufnr).available then
+            return { "biome" }
+          else
+            return { "prettier" }
+          end
+        end,
       },
     },
   },
