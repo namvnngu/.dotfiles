@@ -21,21 +21,39 @@ let g:colors_name = "min"
 
 let s:black   = { "gui": "#000000", "cterm": "0" }
 let s:maroon  = { "gui": "#800000", "cterm": "1" }
-let s:green   = { "gui": "#008000", "cterm": "2" }
 let s:olive   = { "gui": "#808000", "cterm": "3" }
-let s:navy    = { "gui": "#000080", "cterm": "4" }
-let s:purple  = { "gui": "#800080", "cterm": "5" }
-let s:teal    = { "gui": "#008080", "cterm": "6" }
 let s:silver  = { "gui": "#c0c0c0", "cterm": "7" }
 let s:grey    = { "gui": "#808080", "cterm": "8" }
 let s:red     = { "gui": "#ff0000", "cterm": "9" }
 let s:lime    = { "gui": "#00ff00", "cterm": "10" }
 let s:yellow  = { "gui": "#ffff00", "cterm": "11" }
-let s:blue    = { "gui": "#0000ff", "cterm": "12" }
-let s:fuchsia = { "gui": "#ff00ff", "cterm": "13" }
 let s:aqua    = { "gui": "#00ffff", "cterm": "14" }
 let s:white   = { "gui": "#ffffff", "cterm": "15" }
-let s:grey30  = { "gui": "#4e4e4e", "cterm": "239" }
+
+let s:grey232 = { "gui": "#080808", "cterm": "232" }
+let s:grey233 = { "gui": "#121212", "cterm": "233" }
+let s:grey234 = { "gui": "#1c1c1c", "cterm": "234" }
+let s:grey235 = { "gui": "#262626", "cterm": "235" }
+let s:grey236 = { "gui": "#303030", "cterm": "236" }
+let s:grey237 = { "gui": "#3a3a3a", "cterm": "237" }
+let s:grey238 = { "gui": "#444444", "cterm": "238" }
+let s:grey239 = { "gui": "#4e4e4e", "cterm": "239" }
+let s:grey240 = { "gui": "#585858", "cterm": "240" }
+let s:grey241 = { "gui": "#606060", "cterm": "241" }
+let s:grey242 = { "gui": "#666666", "cterm": "242" }
+let s:grey243 = { "gui": "#767676", "cterm": "243" }
+let s:grey244 = { "gui": "#808080", "cterm": "244" }
+let s:grey245 = { "gui": "#8a8a8a", "cterm": "245" }
+let s:grey246 = { "gui": "#949494", "cterm": "246" }
+let s:grey247 = { "gui": "#9e9e9e", "cterm": "247" }
+let s:grey248 = { "gui": "#a8a8a8", "cterm": "248" }
+let s:grey249 = { "gui": "#b2b2b2", "cterm": "249" }
+let s:grey250 = { "gui": "#bcbcbc", "cterm": "250" }
+let s:grey251 = { "gui": "#c6c6c6", "cterm": "251" }
+let s:grey252 = { "gui": "#d0d0d0", "cterm": "252" }
+let s:grey253 = { "gui": "#dadada", "cterm": "253" }
+let s:grey254 = { "gui": "#e4e4e4", "cterm": "254" }
+let s:grey255 = { "gui": "#eeeeee", "cterm": "255" }
 
 " Utilities
 
@@ -79,12 +97,12 @@ highlight! link CursorIM Cursor
 
 call s:highlight("CursorColumn", {
       \ "light": { "bg": s:silver },
-      \ "dark" : { "bg": s:grey30 },
+      \ "dark" : { "bg": s:grey239 },
       \ })
 
 call s:highlight("CursorLine", {
       \ "light": { "bg": s:silver },
-      \ "dark" : { "bg": s:grey30 },
+      \ "dark" : { "bg": s:grey239 },
       \ })
 
 call s:highlight("Directory", {
