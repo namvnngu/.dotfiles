@@ -73,7 +73,7 @@ endfunction
 " Builtin highlighting groups, see *highlight-groups*
 
 call s:highlight("ColorColumn", {
-      \ "light": { "bg": s:silver },
+      \ "light": { "bg": s:grey253 },
       \ "dark" : { "bg": s:silver },
       \ })
 
@@ -96,12 +96,12 @@ highlight! link lCursor Cursor
 highlight! link CursorIM Cursor
 
 call s:highlight("CursorColumn", {
-      \ "light": { "bg": s:silver },
+      \ "light": { "bg": s:grey254 },
       \ "dark" : { "bg": s:grey239 },
       \ })
 
 call s:highlight("CursorLine", {
-      \ "light": { "bg": s:silver },
+      \ "light": { "bg": s:grey254 },
       \ "dark" : { "bg": s:grey239 },
       \ })
 
@@ -115,7 +115,7 @@ call s:highlight("DiffAdd", {
       \ "dark" : { "fg": s:black, "bg": s:lime },
       \ })
 call s:highlight("DiffChange", {
-      \ "light": { "fg": s:white, "bg": s:olive },
+      \ "light": { "fg": s:black, "bg": s:grey250 },
       \ "dark" : { "fg": s:white, "bg": s:olive },
       \ })
 call s:highlight("DiffDelete", {
@@ -333,7 +333,7 @@ call s:highlight("WinBarNC", {
 " Builtin syntax groups, see *group-name*
 
 call s:highlight("Comment", {
-      \ "light": { "fg": s:grey },
+      \ "light": { "fg": s:grey246 },
       \ "dark" : { "fg": s:grey },
       \ })
 
@@ -347,59 +347,41 @@ highlight! link Number    Constant
 highlight! link Boolean   Constant
 highlight! link Float     Constant
 
-call s:highlight("Identifier", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
-highlight! link Function Identifier
+highlight! link Identifier Constant
+highlight! link Function   Constant
 
-call s:highlight("Statement", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
-highlight! link Conditional Statement
-highlight! link Repeat      Statement
-highlight! link Label       Statement
-highlight! link Operator    Statement
-highlight! link Keyword     Statement
-highlight! link Exception   Statement
+highlight! link Statement   Constant
+highlight! link Conditional Constant
+highlight! link Repeat      Constant
+highlight! link Label       Constant
+highlight! link Operator    Constant
+highlight! link Keyword     Constant
+highlight! link Exception   Constant
 
-call s:highlight("PreProc", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
-highlight! link Include   PreProc
-highlight! link Define    PreProc
-highlight! link Macro     PreProc
-highlight! link PreCondit PreProc
+highlight! link PreProc   Constant
+highlight! link Include   Constant
+highlight! link Define    Constant
+highlight! link Macro     Constant
+highlight! link PreCondit Constant
 
-call s:highlight("Type", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
-highlight! link StorageClass Type
-highlight! link Structure    Type
-highlight! link Typedef      Type
+highlight! link Type         Constant
+highlight! link StorageClass Constant
+highlight! link Structure    Constant
+highlight! link Typedef      Constant
 
-call s:highlight("Special", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
-highlight! link SpecialChar    Special
-highlight! link Tag            Special
-highlight! link Delimiter      Special
-highlight! link SpecialComment Special
-highlight! link Debug          Special
+highlight! link Special        Constant
+highlight! link SpecialChar    Constant
+highlight! link Tag            Constant
+highlight! link Delimiter      Constant
+highlight! link SpecialComment Constant
+highlight! link Debug          Constant
 
 call s:highlight("Underlined", {
       \ "light": { "fg": s:black, "gui": "underline" },
       \ "dark" : { "fg": s:white, "gui": "underline" },
       \ })
 
-call s:highlight("Ignore", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+highlight! link Ignore Constant
 
 call s:highlight("Error", {
       \ "light": { "fg": s:maroon },
