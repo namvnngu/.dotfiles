@@ -39,7 +39,6 @@ vim.opt.pumblend = 10                  -- popup blend
 vim.opt.pumheight = 100                -- maximum number of entries in a popup
 vim.opt.relativenumber = true          -- relative line numbers
 vim.opt.scrolloff = 8                  -- number of lines to keep above and below the cursor
-vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.opt.shiftround = true              -- round indent
 vim.opt.shiftwidth = 2                 -- number of space inserted for indentation
 vim.opt.showmode = true                -- enable showing modes in command line

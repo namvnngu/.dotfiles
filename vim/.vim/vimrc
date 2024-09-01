@@ -50,6 +50,7 @@ set incsearch
 set infercase
 set laststatus=2
 set linebreak
+set modelines=5
 set nobackup
 set noswapfile
 set noundofile
@@ -83,7 +84,6 @@ set wildmenu
 set wildmode=longest:full,full
 set wildoptions=pum,tagfile
 set winminwidth=5
-
 """"""""""""
 " MAPPINGS "
 """"""""""""
