@@ -70,6 +70,82 @@ function! s:highlight(group, style)
         \ "cterm="   (has_key(l:variant, "gui") ? l:variant.gui      : "NONE")
 endfunction
 
+" Builtin syntax groups, see *group-name*
+
+call s:highlight("Comment", {
+      \ "light": { "fg": s:grey246 },
+      \ "dark" : { "fg": s:grey },
+      \ })
+
+call s:highlight("Constant", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+highlight! link String    Constant
+highlight! link Character Constant
+highlight! link Number    Constant
+highlight! link Boolean   Constant
+highlight! link Float     Constant
+
+highlight! link Identifier Constant
+highlight! link Function   Constant
+
+highlight! link Statement   Constant
+highlight! link Conditional Constant
+highlight! link Repeat      Constant
+highlight! link Label       Constant
+highlight! link Operator    Constant
+highlight! link Keyword     Constant
+highlight! link Exception   Constant
+
+highlight! link PreProc   Constant
+highlight! link Include   Constant
+highlight! link Define    Constant
+highlight! link Macro     Constant
+highlight! link PreCondit Constant
+
+highlight! link Type         Constant
+highlight! link StorageClass Constant
+highlight! link Structure    Constant
+highlight! link Typedef      Constant
+
+highlight! link Special        Constant
+highlight! link SpecialChar    Constant
+highlight! link Tag            Constant
+highlight! link Delimiter      Constant
+highlight! link SpecialComment Constant
+highlight! link Debug          Constant
+
+call s:highlight("Underlined", {
+      \ "light": { "fg": s:black, "gui": "underline" },
+      \ "dark" : { "fg": s:white, "gui": "underline" },
+      \ })
+
+highlight! link Ignore Constant
+
+call s:highlight("Error", {
+      \ "light": { "fg": s:maroon },
+      \ "dark" : { "fg": s:maroon },
+      \ })
+
+call s:highlight("Todo", {
+      \ "light": { "fg": s:black, "gui": "bold" },
+      \ "dark" : { "fg": s:white, "gui": "bold" },
+      \ })
+
+call s:highlight("Added", {
+      \ "light": { "fg": s:black, "bg": s:lime },
+      \ "dark" : { "fg": s:black, "bg": s:lime },
+      \ })
+call s:highlight("Changed", {
+      \ "light": { "fg": s:black, "bg": s:aqua },
+      \ "dark" : { "fg": s:black, "bg": s:aqua },
+      \ })
+call s:highlight("Removed", {
+      \ "light": { "fg": s:white, "bg": s:red },
+      \ "dark" : { "fg": s:white, "bg": s:red },
+      \ })
+
 " Builtin highlighting groups, see *highlight-groups*
 
 call s:highlight("ColorColumn", {
@@ -110,22 +186,16 @@ call s:highlight("Directory", {
       \ "dark" : { "fg": s:white },
       \ })
 
-call s:highlight("DiffAdd", {
-      \ "light": { "fg": s:black, "bg": s:lime },
-      \ "dark" : { "fg": s:black, "bg": s:lime },
-      \ })
+highlight! link DiffAdd Added
+
 call s:highlight("DiffChange", {
       \ "light": { "fg": s:black, "bg": s:grey250 },
       \ "dark" : { "fg": s:white, "bg": s:olive },
       \ })
-call s:highlight("DiffDelete", {
-      \ "light": { "fg": s:white, "bg": s:red },
-      \ "dark" : { "fg": s:white, "bg": s:red },
-      \ })
-call s:highlight("DiffText", {
-      \ "light": { "fg": s:black, "bg": s:aqua },
-      \ "dark" : { "fg": s:black, "bg": s:aqua },
-      \ })
+
+highlight! link DiffDelete Removed
+
+highlight! link DiffText Changed
 
 call s:highlight("EndOfBuffer", {
       \ "light": { "fg": s:silver },
@@ -328,80 +398,4 @@ call s:highlight("WinBar", {
 call s:highlight("WinBarNC", {
       \ "light": { "fg": s:silver },
       \ "dark" : { "fg": s:silver },
-      \ })
-
-" Builtin syntax groups, see *group-name*
-
-call s:highlight("Comment", {
-      \ "light": { "fg": s:grey246 },
-      \ "dark" : { "fg": s:grey },
-      \ })
-
-call s:highlight("Constant", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
-highlight! link String    Constant
-highlight! link Character Constant
-highlight! link Number    Constant
-highlight! link Boolean   Constant
-highlight! link Float     Constant
-
-highlight! link Identifier Constant
-highlight! link Function   Constant
-
-highlight! link Statement   Constant
-highlight! link Conditional Constant
-highlight! link Repeat      Constant
-highlight! link Label       Constant
-highlight! link Operator    Constant
-highlight! link Keyword     Constant
-highlight! link Exception   Constant
-
-highlight! link PreProc   Constant
-highlight! link Include   Constant
-highlight! link Define    Constant
-highlight! link Macro     Constant
-highlight! link PreCondit Constant
-
-highlight! link Type         Constant
-highlight! link StorageClass Constant
-highlight! link Structure    Constant
-highlight! link Typedef      Constant
-
-highlight! link Special        Constant
-highlight! link SpecialChar    Constant
-highlight! link Tag            Constant
-highlight! link Delimiter      Constant
-highlight! link SpecialComment Constant
-highlight! link Debug          Constant
-
-call s:highlight("Underlined", {
-      \ "light": { "fg": s:black, "gui": "underline" },
-      \ "dark" : { "fg": s:white, "gui": "underline" },
-      \ })
-
-highlight! link Ignore Constant
-
-call s:highlight("Error", {
-      \ "light": { "fg": s:maroon },
-      \ "dark" : { "fg": s:maroon },
-      \ })
-
-call s:highlight("Todo", {
-      \ "light": { "fg": s:black, "gui": "bold" },
-      \ "dark" : { "fg": s:white, "gui": "bold" },
-      \ })
-
-call s:highlight("Added", {
-      \ "light": { "fg": s:black, "bg": s:lime },
-      \ "dark" : { "fg": s:black, "bg": s:lime },
-      \ })
-call s:highlight("Changed", {
-      \ "light": { "fg": s:black, "bg": s:aqua },
-      \ "dark" : { "fg": s:black, "bg": s:aqua },
-      \ })
-call s:highlight("Removed", {
-      \ "light": { "fg": s:white, "bg": s:red },
-      \ "dark" : { "fg": s:white, "bg": s:red },
       \ })
