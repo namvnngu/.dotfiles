@@ -35,6 +35,7 @@ let s:blue    = { "gui": "#0000ff", "cterm": "12" }
 let s:fuchsia = { "gui": "#ff00ff", "cterm": "13" }
 let s:aqua    = { "gui": "#00ffff", "cterm": "14" }
 let s:white   = { "gui": "#ffffff", "cterm": "15" }
+let s:grey30  = { "gui": "#4e4e4e", "cterm": "239" }
 
 " Utilities
 
@@ -53,9 +54,262 @@ endfunction
 
 " Builtin highlighting groups, see *highlight-groups*
 
+call s:highlight("ColorColumn", {
+      \ "light": { "bg": s:silver },
+      \ "dark" : { "bg": s:silver },
+      \ })
+
+call s:highlight("Conceal", {
+      \ "light": { "fg": s:grey },
+      \ "dark" : { "fg": s:grey },
+      \ })
+
+call s:highlight("CurSearch", {
+      \ "light": { "fg": s:white, "bg": s:olive },
+      \ "dark" : { "fg": s:white, "bg": s:olive },
+      \ })
+
+call s:highlight("Cursor", {
+      \ "light": { "fg": s:white, "bg": s:black },
+      \ "dark" : { "fg": s:black, "bg": s:white },
+      \ })
+highlight! link lCursor Cursor
+
+highlight! link CursorIM Cursor
+
+call s:highlight("CursorColumn", {
+      \ "light": { "bg": s:silver },
+      \ "dark" : { "bg": s:grey30 },
+      \ })
+
+call s:highlight("CursorLine", {
+      \ "light": { "bg": s:silver },
+      \ "dark" : { "bg": s:grey30 },
+      \ })
+
+call s:highlight("Directory", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("DiffAdd", {
+      \ "light": { "fg": s:black, "bg": s:lime },
+      \ "dark" : { "fg": s:black, "bg": s:lime },
+      \ })
+call s:highlight("DiffChange", {
+      \ "light": { "fg": s:white, "bg": s:olive },
+      \ "dark" : { "fg": s:white, "bg": s:olive },
+      \ })
+call s:highlight("DiffDelete", {
+      \ "light": { "fg": s:white, "bg": s:red },
+      \ "dark" : { "fg": s:white, "bg": s:red },
+      \ })
+call s:highlight("DiffText", {
+      \ "light": { "fg": s:black, "bg": s:aqua },
+      \ "dark" : { "fg": s:black, "bg": s:aqua },
+      \ })
+
+call s:highlight("EndOfBuffer", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
+      \ })
+
+highlight! link TermCursor Cursor
+
+call s:highlight("TermCursorNC", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("ErrorMsg", {
+      \ "light": { "fg": s:maroon },
+      \ "dark" : { "fg": s:maroon },
+      \ })
+
+call s:highlight("WinSeparator", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("Folded", {
+      \ "light": { "fg": s:grey, "bg": s:silver },
+      \ "dark" : { "fg": s:grey, "bg": s:silver },
+      \ })
+
+call s:highlight("FoldColumn", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
+      \ })
+
+highlight! link SignColumn FoldColumn
+
+call s:highlight("IncSearch", {
+      \ "light": { "fg": s:black, "bg": s:olive },
+      \ "dark" : { "fg": s:black, "bg": s:olive },
+      \ })
+
+call s:highlight("Substitute", {
+      \ "light": { "fg": s:black, "bg": s:yellow },
+      \ "dark" : { "fg": s:black, "bg": s:yellow },
+      \ })
+
+call s:highlight("LineNr", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
+      \ })
+highlight! link LineNrAbove LineNr
+highlight! link LineNrBelow LineNr
+
+call s:highlight("CursorLineNr", {
+      \ "light": { "fg": s:black, "gui": "bold" },
+      \ "dark" : { "fg": s:white, "gui": "bold" },
+      \ })
+
+call s:highlight("CursorLineFold", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
+      \ })
+highlight! link CursorLineSign CursorLineFold
+
+call s:highlight("MatchParen", {
+      \ "light": { "fg": s:black, "bg": s:grey },
+      \ "dark" : { "fg": s:white, "bg": s:grey },
+      \ })
+
+call s:highlight("ModeMsg", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("MsgArea", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("MsgSeparator", {
+      \ "light": { "fg": s:grey, "bg": s:black },
+      \ "dark" : { "fg": s:grey, "bg": s:white },
+      \ })
+
+call s:highlight("MoreMsg", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("NonText", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
+      \ })
+
 call s:highlight("Normal", {
       \ "light": { "fg": s:black, "bg": s:white },
       \ "dark" : { "fg": s:white, "bg": s:black },
+      \ })
+
+highlight! link NormalFloat Normal
+
+highlight! link FloatBorder Normal
+
+highlight! link FloatTitle Normal
+
+highlight! link FloatFooter Normal
+
+highlight! link NormalNC Normal
+
+call s:highlight("Pmenu", {
+      \ "light": { "fg": s:black, "bg": s:silver },
+      \ "dark" : { "fg": s:black, "bg": s:silver },
+      \ })
+
+call s:highlight("PmenuSel", {
+      \ "light": { "fg": s:black, "bg": s:grey },
+      \ "dark" : { "fg": s:black, "bg": s:grey },
+      \ })
+
+call s:highlight("Question", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("QuickFixLine", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("Search", {
+      \ "light": { "fg": s:black, "bg": s:yellow },
+      \ "dark" : { "fg": s:black, "bg": s:yellow },
+      \ })
+
+call s:highlight("SnippetTabstop", {
+      \ "light": { "fg": s:black, "bg": s:grey },
+      \ "dark" : { "fg": s:black, "bg": s:grey },
+      \ })
+
+call s:highlight("SpecialKey", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
+      \ })
+
+call s:highlight("SpellBad", {
+      \ "light": { "fg": s:black, "gui": "underline" },
+      \ "dark" : { "fg": s:white, "gui": "underline" },
+      \ })
+
+highlight! link SpellCap SpellBad
+
+highlight! link SpellLocal SpellBad
+
+highlight! link SpellRare SpellBad
+
+call s:highlight("StatusLine", {
+      \ "light": { "fg": s:white, "bg": s:black },
+      \ "dark" : { "fg": s:black, "bg": s:white },
+      \ })
+
+call s:highlight("StatusLineNC", {
+      \ "light": { "fg": s:black, "bg": s:silver },
+      \ "dark" : { "fg": s:black, "bg": s:silver },
+      \ })
+
+call s:highlight("TabLine", {
+      \ "light": { "fg": s:black, "bg": s:silver },
+      \ "dark" : { "fg": s:black, "bg": s:silver },
+      \ })
+
+call s:highlight("TabLineSel", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("Title", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("Visual", {
+      \ "light": { "fg": s:black, "bg": s:silver },
+      \ "dark" : { "fg": s:black, "bg": s:silver },
+      \ })
+
+call s:highlight("WarningMsg", {
+      \ "light": { "fg": s:olive },
+      \ "dark" : { "fg": s:olive },
+      \ })
+
+call s:highlight("Whitespace", {
+      \ "light": { "fg": s:grey },
+      \ "dark" : { "fg": s:grey },
+      \ })
+
+call s:highlight("WinBar", {
+      \ "light": { "fg": s:grey },
+      \ "dark" : { "fg": s:grey },
+      \ })
+
+call s:highlight("WinBarNC", {
+      \ "light": { "fg": s:silver },
+      \ "dark" : { "fg": s:silver },
       \ })
 
 " Builtin syntax groups, see *group-name*
@@ -76,8 +330,8 @@ highlight! link Boolean   Constant
 highlight! link Float     Constant
 
 call s:highlight("Identifier", {
-      \ "light": { "fg": s:black, "gui": "bold" },
-      \ "dark" : { "fg": s:white, "gui": "bold" },
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
       \ })
 highlight! link Function Identifier
 
@@ -130,8 +384,8 @@ call s:highlight("Ignore", {
       \ })
 
 call s:highlight("Error", {
-      \ "light": { "fg": s:white, "bg": s:maroon },
-      \ "dark" : { "fg": s:white, "bg": s:maroon },
+      \ "light": { "fg": s:maroon },
+      \ "dark" : { "fg": s:maroon },
       \ })
 
 call s:highlight("Todo", {
