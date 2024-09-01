@@ -42,13 +42,13 @@ let s:white   = { "gui": "#ffffff", "cterm": "15" }
 function! s:highlight(group, style)
   let l:variant = a:style[&background]
   execute "highlight" a:group
-        \ "guifg="   (has_key(l:variant, "fg")    ? l:variant.fg.gui   : "NONE")
-        \ "guibg="   (has_key(l:variant, "bg")    ? l:variant.bg.gui   : "NONE")
-        \ "guisp="   (has_key(l:variant, "sp")    ? l:variant.sp.gui   : "NONE")
-        \ "gui="     (has_key(l:variant, "gui")   ? l:variant.gui      : "NONE")
-        \ "ctermfg=" (has_key(l:variant, "fg")    ? l:variant.fg.cterm : "NONE")
-        \ "ctermbg=" (has_key(l:variant, "bg")    ? l:variant.bg.cterm : "NONE")
-        \ "cterm="   (has_key(l:variant, "cterm") ? l:variant.cterm    : "NONE")
+        \ "guifg="   (has_key(l:variant, "fg")  ? l:variant.fg.gui   : "NONE")
+        \ "guibg="   (has_key(l:variant, "bg")  ? l:variant.bg.gui   : "NONE")
+        \ "guisp="   (has_key(l:variant, "sp")  ? l:variant.sp.gui   : "NONE")
+        \ "gui="     (has_key(l:variant, "gui") ? l:variant.gui      : "NONE")
+        \ "ctermfg=" (has_key(l:variant, "fg")  ? l:variant.fg.cterm : "NONE")
+        \ "ctermbg=" (has_key(l:variant, "bg")  ? l:variant.bg.cterm : "NONE")
+        \ "cterm="   (has_key(l:variant, "gui") ? l:variant.gui      : "NONE")
 endfunction
 
 " Builtin highlighting groups, see *highlight-groups*
@@ -69,7 +69,85 @@ call s:highlight("Constant", {
       \ "light": { "fg": s:black },
       \ "dark" : { "fg": s:white },
       \ })
-call s:highlight("String", {
+highlight! link String    Constant
+highlight! link Character Constant
+highlight! link Number    Constant
+highlight! link Boolean   Constant
+highlight! link Float     Constant
+
+call s:highlight("Identifier", {
+      \ "light": { "fg": s:black, "gui": "bold" },
+      \ "dark" : { "fg": s:white, "gui": "bold" },
+      \ })
+highlight! link Function Identifier
+
+call s:highlight("Statement", {
       \ "light": { "fg": s:black },
       \ "dark" : { "fg": s:white },
+      \ })
+highlight! link Conditional Statement
+highlight! link Repeat      Statement
+highlight! link Label       Statement
+highlight! link Operator    Statement
+highlight! link Keyword     Statement
+highlight! link Exception   Statement
+
+call s:highlight("PreProc", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+highlight! link Include   PreProc
+highlight! link Define    PreProc
+highlight! link Macro     PreProc
+highlight! link PreCondit PreProc
+
+call s:highlight("Type", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+highlight! link StorageClass Type
+highlight! link Structure    Type
+highlight! link Typedef      Type
+
+call s:highlight("Special", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+highlight! link SpecialChar    Special
+highlight! link Tag            Special
+highlight! link Delimiter      Special
+highlight! link SpecialComment Special
+highlight! link Debug          Special
+
+call s:highlight("Underlined", {
+      \ "light": { "fg": s:black, "gui": "underline" },
+      \ "dark" : { "fg": s:white, "gui": "underline" },
+      \ })
+
+call s:highlight("Ignore", {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ })
+
+call s:highlight("Error", {
+      \ "light": { "fg": s:white, "bg": s:maroon },
+      \ "dark" : { "fg": s:white, "bg": s:maroon },
+      \ })
+
+call s:highlight("Todo", {
+      \ "light": { "fg": s:black, "gui": "bold" },
+      \ "dark" : { "fg": s:white, "gui": "bold" },
+      \ })
+
+call s:highlight("Added", {
+      \ "light": { "fg": s:black, "bg": s:lime },
+      \ "dark" : { "fg": s:black, "bg": s:lime },
+      \ })
+call s:highlight("Changed", {
+      \ "light": { "fg": s:black, "bg": s:aqua },
+      \ "dark" : { "fg": s:black, "bg": s:aqua },
+      \ })
+call s:highlight("Removed", {
+      \ "light": { "fg": s:white, "bg": s:red },
+      \ "dark" : { "fg": s:white, "bg": s:red },
       \ })
