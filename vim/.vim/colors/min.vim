@@ -2,7 +2,7 @@
 "
 " Name:        min.vim
 " Description: A minimal colorscheme with mainly black and white
-" Version:     0.0.1
+" Version:     0.0.1-beta
 " Maintainer:  Nam Nguyen (Viet Nam Nguyen)
 " Github:      https://github.com/namvnngu
 "
