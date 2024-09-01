@@ -180,6 +180,10 @@ nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " Fix the indentation of an entire file
 nnoremap <leader>F gg=G''
 
+" Set undo points when deleting text in insert mode
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""

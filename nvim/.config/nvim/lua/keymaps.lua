@@ -95,14 +95,7 @@ vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 
 -- Copy the current file's path
-vim.keymap.set("n", "yp", function()
-  local filepath = require("utils.file").get_filepath()
-  if not filepath then
-    return
-  end
-  require("utils.system").to_clipboard(filepath)
-  require("utils.notify").info("Copied to clipboard: " .. filepath)
-end)
+vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
 
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")
