@@ -66,6 +66,7 @@ vim.opt.writebackup = false            -- disable making a backup before overwri
 
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
+vim.cmd("colorscheme min")
 
 -- Enable linematch diff algorithm.
 -- In the git diff case, the difference are more granular, which means that
