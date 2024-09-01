@@ -1,29 +1,69 @@
 local M = {}
 
-function M.on_attach(_, bufnr)
-  local opts = { buffer = bufnr }
+function M.on_attach()
+  -- See *lsp-defaults*
+  -- NOTE: Inspect require("vim._defaults") to check if the below mappings are
+  -- included in the stable Neovim. If yes, then remove the below mappings.
 
-  vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, opts)
-  vim.keymap.set("n", "<leader>dq", vim.diagnostic.setqflist, opts)
-  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
-  vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, opts)
-  vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-  vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-  vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, opts)
-  vim.keymap.set("n", "<leader>cr", vim.lsp.codelens.refresh, opts)
-  vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-  vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-  vim.keymap.set("n", "<leader>wl", function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, opts)
+  --- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/_defaults.lua#L154
+  ---
+  --- Default maps for LSP functions.
+  ---
+  --- These are mapped unconditionally to avoid different behavior depending on whether an LSP
+  --- client is attached. If no client is attached, or if a server does not support a capability, an
+  --- error message is displayed rather than exhibiting different behavior.
+  ---
+  --- See |grr|, |grn|, |gra|, |i_CTRL-S|.
+  do
+    vim.keymap.set("n", "grn", function()
+      vim.lsp.buf.rename()
+    end, { desc = "vim.lsp.buf.rename()" })
+
+    vim.keymap.set({ "n", "x" }, "gra", function()
+      vim.lsp.buf.code_action()
+    end, { desc = "vim.lsp.buf.code_action()" })
+
+    vim.keymap.set("n", "grr", function()
+      vim.lsp.buf.references()
+    end, { desc = "vim.lsp.buf.references()" })
+
+    vim.keymap.set("i", "<C-S>", function()
+      vim.lsp.buf.signature_help()
+    end, { desc = "vim.lsp.buf.signature_help()" })
+  end
+
+  --- Map [d and ]d to move to the previous/next diagnostic. Map <C-W>d to open a floating window
+  --- for the diagnostic under the cursor.
+  ---
+  --- See |[d-default|, |]d-default|, and |CTRL-W_d-default|.
+  do
+    vim.keymap.set("n", "]d", function()
+      vim.diagnostic.jump({ count = vim.v.count1 })
+    end, { desc = "Jump to the next diagnostic in the current buffer" })
+
+    vim.keymap.set("n", "[d", function()
+      vim.diagnostic.jump({ count = -vim.v.count1 })
+    end, { desc = "Jump to the previous diagnostic in the current buffer" })
+
+    vim.keymap.set("n", "]D", function()
+      vim.diagnostic.jump({ count = math.huge, wrap = false })
+    end, { desc = "Jump to the last diagnostic in the current buffer" })
+
+    vim.keymap.set("n", "[D", function()
+      vim.diagnostic.jump({ count = -math.huge, wrap = false })
+    end, { desc = "Jump to the first diagnostic in the current buffer" })
+
+    vim.keymap.set("n", "<C-W>d", function()
+      vim.diagnostic.open_float()
+    end, { desc = "Show diagnostics under the cursor" })
+
+    vim.keymap.set(
+      "n",
+      "<C-W><C-D>",
+      "<C-W>d",
+      { remap = true, desc = "Show diagnostics under the cursor" }
+    )
+  end
 end
 
 return M
