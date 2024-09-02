@@ -12,7 +12,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 unfocused_hollow = false
 
 [cursor.style]
-blinking = "On"
+blinking = "Never"
 shape    = "Block"
 
 [keyboard]
