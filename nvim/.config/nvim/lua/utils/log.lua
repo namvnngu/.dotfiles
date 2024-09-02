@@ -29,7 +29,7 @@ end
 
 -- Log with time, function call and line of code
 ---@param text string
-function M.info(text)
+function M.run(text)
   print(
     string.format(
       "[%s(s)][%s:%s] %s",
