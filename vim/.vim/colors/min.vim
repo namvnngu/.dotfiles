@@ -70,17 +70,68 @@ function! s:highlight(group, style)
         \ "cterm="   (has_key(l:variant, "gui") ? l:variant.gui      : "NONE")
 endfunction
 
-" Builtin syntax groups, see *group-name*
+let s:normal_fg = {
+      \ "light": { "fg": s:black },
+      \ "dark" : { "fg": s:white },
+      \ }
+let s:normal_fg_underline = {
+      \ "light": { "fg": s:black, "gui": "underline" },
+      \ "dark" : { "fg": s:white, "gui": "underline" },
+      \ }
+let s:normal_fg_bold = {
+      \ "light": { "fg": s:black, "gui": "bold" },
+      \ "dark" : { "fg": s:white, "gui": "bold" },
+      \ }
+
+let s:error_fg = {
+      \ "light": { "fg": s:grey234 },
+      \ "dark" : { "fg": s:grey234 },
+      \ }
+let s:error_fg_underline = {
+      \ "light": { "fg": s:grey234, "gui": "underline" },
+      \ "dark" : { "fg": s:grey234, "gui": "underline" },
+      \ }
+let s:warn_fg = {
+      \ "light": { "fg": s:grey237 },
+      \ "dark" : { "fg": s:grey237 },
+      \ }
+let s:warn_fg_underline = {
+      \ "light": { "fg": s:grey237, "gui": "underline" },
+      \ "dark" : { "fg": s:grey237, "gui": "underline" },
+      \ }
+let s:info_fg = {
+      \ "light": { "fg": s:grey241 },
+      \ "dark" : { "fg": s:grey241 },
+      \ }
+let s:info_fg_underline = {
+      \ "light": { "fg": s:grey241, "gui": "underline" },
+      \ "dark" : { "fg": s:grey241, "gui": "underline" },
+      \ }
+let s:hint_fg = {
+      \ "light": { "fg": s:grey244 },
+      \ "dark" : { "fg": s:grey244 },
+      \ }
+let s:hint_fg_underline = {
+      \ "light": { "fg": s:grey244, "gui": "underline" },
+      \ "dark" : { "fg": s:grey244, "gui": "underline" },
+      \ }
+let s:ok_fg = {
+      \ "light": { "fg": s:grey247 },
+      \ "dark" : { "fg": s:grey247 },
+      \ }
+let s:ok_fg_underline = {
+      \ "light": { "fg": s:grey247, "gui": "underline" },
+      \ "dark" : { "fg": s:grey247, "gui": "underline" },
+      \ }
+
+" Builtin syntax group names, see *group-name*
 
 call s:highlight("Comment", {
       \ "light": { "fg": s:grey246 },
       \ "dark" : { "fg": s:grey },
       \ })
 
-call s:highlight("Constant", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("Constant", s:normal_fg)
 highlight! link String    Constant
 highlight! link Character Constant
 highlight! link Number    Constant
@@ -116,22 +167,13 @@ highlight! link Delimiter      Constant
 highlight! link SpecialComment Constant
 highlight! link Debug          Constant
 
-call s:highlight("Underlined", {
-      \ "light": { "fg": s:black, "gui": "underline" },
-      \ "dark" : { "fg": s:white, "gui": "underline" },
-      \ })
+call s:highlight("Underlined", s:normal_fg_underline)
 
 highlight! link Ignore Constant
 
-call s:highlight("Error", {
-      \ "light": { "fg": s:maroon },
-      \ "dark" : { "fg": s:maroon },
-      \ })
+call s:highlight("Error", s:error_fg)
 
-call s:highlight("Todo", {
-      \ "light": { "fg": s:black, "gui": "bold" },
-      \ "dark" : { "fg": s:white, "gui": "bold" },
-      \ })
+call s:highlight("Todo", s:normal_fg_bold)
 
 call s:highlight("Added", {
       \ "light": { "fg": s:black, "bg": s:lime },
@@ -146,7 +188,7 @@ call s:highlight("Removed", {
       \ "dark" : { "fg": s:white, "bg": s:red },
       \ })
 
-" Builtin highlighting groups, see *highlight-groups*
+" Builtin highlight groups, see *highlight-groups*
 
 call s:highlight("ColorColumn", {
       \ "light": { "bg": s:grey253 },
@@ -159,8 +201,8 @@ call s:highlight("Conceal", {
       \ })
 
 call s:highlight("CurSearch", {
-      \ "light": { "fg": s:white, "bg": s:olive },
-      \ "dark" : { "fg": s:white, "bg": s:olive },
+      \ "light": { "fg": s:black, "bg": s:grey250 },
+      \ "dark" : { "fg": s:white, "bg": s:grey250 },
       \ })
 
 call s:highlight("Cursor", {
@@ -209,10 +251,7 @@ call s:highlight("TermCursorNC", {
       \ "dark" : { "fg": s:white },
       \ })
 
-call s:highlight("ErrorMsg", {
-      \ "light": { "fg": s:maroon },
-      \ "dark" : { "fg": s:maroon },
-      \ })
+call s:highlight("ErrorMsg", s:error_fg)
 
 call s:highlight("WinSeparator", {
       \ "light": { "fg": s:black },
@@ -232,13 +271,13 @@ call s:highlight("FoldColumn", {
 highlight! link SignColumn FoldColumn
 
 call s:highlight("IncSearch", {
-      \ "light": { "fg": s:black, "bg": s:olive },
-      \ "dark" : { "fg": s:black, "bg": s:olive },
+      \ "light": { "fg": s:white, "bg": s:grey232 },
+      \ "dark" : { "fg": s:black, "bg": s:grey255 },
       \ })
 
 call s:highlight("Substitute", {
-      \ "light": { "fg": s:black, "bg": s:yellow },
-      \ "dark" : { "fg": s:black, "bg": s:yellow },
+      \ "light": { "fg": s:white, "bg": s:grey240 },
+      \ "dark" : { "fg": s:white, "bg": s:grey240 },
       \ })
 
 call s:highlight("LineNr", {
@@ -325,8 +364,8 @@ call s:highlight("QuickFixLine", {
       \ })
 
 call s:highlight("Search", {
-      \ "light": { "fg": s:black, "bg": s:yellow },
-      \ "dark" : { "fg": s:black, "bg": s:yellow },
+      \ "light": { "fg": s:white, "bg": s:grey240 },
+      \ "dark" : { "fg": s:white, "bg": s:grey240 },
       \ })
 
 call s:highlight("SnippetTabstop", {
@@ -376,14 +415,11 @@ call s:highlight("Title", {
       \ })
 
 call s:highlight("Visual", {
-      \ "light": { "fg": s:black, "bg": s:silver },
-      \ "dark" : { "fg": s:black, "bg": s:silver },
+      \ "light": { "bg": s:grey254 },
+      \ "dark" : { "bg": s:grey239 },
       \ })
 
-call s:highlight("WarningMsg", {
-      \ "light": { "fg": s:olive },
-      \ "dark" : { "fg": s:olive },
-      \ })
+call s:highlight("WarningMsg", s:warn_fg)
 
 call s:highlight("Whitespace", {
       \ "light": { "fg": s:grey },
@@ -398,4 +434,21 @@ call s:highlight("WinBar", {
 call s:highlight("WinBarNC", {
       \ "light": { "fg": s:silver },
       \ "dark" : { "fg": s:silver },
+      \ })
+
+" LSP diagnostic highlights, see *diagnostic-highlights*
+
+call s:highlight("DiagnosticError", s:error_fg)
+call s:highlight("DiagnosticWarn", s:warn_fg)
+call s:highlight("DiagnosticInfo", s:info_fg)
+call s:highlight("DiagnosticHint", s:hint_fg)
+call s:highlight("DiagnosticOk", s:ok_fg)
+call s:highlight("DiagnosticUnderlineError", s:error_fg_underline)
+call s:highlight("DiagnosticUnderlineWarn", s:warn_fg_underline)
+call s:highlight("DiagnosticUnderlineInfo", s:info_fg_underline)
+call s:highlight("DiagnosticUnderlineHint", s:hint_fg_underline)
+call s:highlight("DiagnosticUnderlineOk", s:ok_fg_underline)
+call s:highlight("DiagnosticDeprecated", {
+      \ "light": { "fg": s:grey244, "gui": "strikethrough" },
+      \ "dark" : { "fg": s:grey244, "gui": "strikethrough" },
       \ })

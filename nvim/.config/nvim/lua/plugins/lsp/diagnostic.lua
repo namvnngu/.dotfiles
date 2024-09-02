@@ -1,10 +1,10 @@
 local M = {}
 
 local SEVERITY_LABELS = {
+  [vim.diagnostic.severity.ERROR] = "E",
+  [vim.diagnostic.severity.WARN] = "W",
   [vim.diagnostic.severity.INFO] = "I",
   [vim.diagnostic.severity.HINT] = "H",
-  [vim.diagnostic.severity.WARN] = "W",
-  [vim.diagnostic.severity.ERROR] = "E",
 }
 
 --- @param diagnostic vim.Diagnostic The diagnostic
