@@ -1,6 +1,6 @@
 local M = {}
 
----@param on_attach fun(client:vim.lsp.Client, buffer)
+---@param on_attach fun(client:vim.lsp.Client, bufnr)
 ---@param name? string
 function M.on_attach(on_attach, name)
   return vim.api.nvim_create_autocmd("LspAttach", {

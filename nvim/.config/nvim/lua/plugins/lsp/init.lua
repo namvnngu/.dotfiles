@@ -17,8 +17,10 @@ return {
     },
     config = function(_, opts)
       require("utils.lsp").on_attach(function(client, bufnr)
-        require("plugins.lsp.keymaps").on_attach(client, bufnr)
+        require("plugins.lsp.keymaps").on_attach()
+        require("plugins.lsp.diagnostic").on_attach()
         require("plugins.lsp.hover").on_attach(client, bufnr)
+        require("plugins.lsp.tagfunc").on_attach(client, bufnr)
         require("plugins.lsp.omnifunc").on_attach(client, bufnr)
 
         if opts.inlay_hints.enabled then
