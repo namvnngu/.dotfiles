@@ -200,6 +200,7 @@ call s:highlight("Conceal", {
       \ "dark" : { "fg": s:grey },
       \ })
 
+" CurSearch happens after hitting <CR> and highlights the matched one below the cursor
 call s:highlight("CurSearch", {
       \ "light": { "fg": s:black, "bg": s:grey250 },
       \ "dark" : { "fg": s:white, "bg": s:grey250 },
@@ -270,6 +271,7 @@ call s:highlight("FoldColumn", {
 
 highlight! link SignColumn FoldColumn
 
+" IncSearch happens before hitting <CR> and highlights the matched one below the cursor
 call s:highlight("IncSearch", {
       \ "light": { "fg": s:white, "bg": s:grey232 },
       \ "dark" : { "fg": s:black, "bg": s:grey255 },
@@ -363,6 +365,7 @@ call s:highlight("QuickFixLine", {
       \ "dark" : { "fg": s:white },
       \ })
 
+" Search happens after hitting <CR> and highlights all matched ones
 call s:highlight("Search", {
       \ "light": { "fg": s:white, "bg": s:grey240 },
       \ "dark" : { "fg": s:white, "bg": s:grey240 },
