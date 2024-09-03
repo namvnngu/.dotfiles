@@ -245,21 +245,3 @@ if !isdirectory(g:wiki_root)
 endif
 
 nnoremap <leader>wx <plug>(wiki-pages)
-
-function s:Wjp()
-  if &filetype == "markdown"
-    :WikiJournalPrev
-  else
-    echo "Wjp is not available outside of markdown files"
-  endif
-endfunction
-command Wjp call s:Wjp()
-
-function s:Wjn()
-  if &filetype == "markdown"
-    :WikiJournalNext
-  else
-    echo "Wjn is not available outside of markdown files"
-  endif
-endfunction
-command Wjn call s:Wjn()
