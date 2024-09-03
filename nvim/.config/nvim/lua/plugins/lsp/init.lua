@@ -26,7 +26,7 @@ return {
                   1, -- Deprecated
                 },
               },
-              insertReplaceSupport = true,
+              insertReplaceSupport = false,
               resolveSupport = {
                 properties = {
                   "documentation",
