@@ -10,9 +10,59 @@ return {
       inlay_hints = {
         enabled = false,
       },
-      -- global capabilities
-      capabilities = {},
-      -- lsp server settings
+      -- Global capabilities
+      capabilities = {
+        textDocument = {
+          -- Reference: https://github.com/hrsh7th/cmp-nvim-lsp/blob/main/lua/cmp_nvim_lsp/init.lua#L42
+          completion = {
+            dynamicRegistration = false,
+            completionItem = {
+              snippetSupport = true,
+              commitCharactersSupport = true,
+              deprecatedSupport = true,
+              preselectSupport = true,
+              tagSupport = {
+                valueSet = {
+                  1, -- Deprecated
+                },
+              },
+              insertReplaceSupport = true,
+              resolveSupport = {
+                properties = {
+                  "documentation",
+                  "detail",
+                  "additionalTextEdits",
+                  "sortText",
+                  "filterText",
+                  "insertText",
+                  "textEdit",
+                  "insertTextFormat",
+                  "insertTextMode",
+                },
+              },
+              insertTextModeSupport = {
+                valueSet = {
+                  1, -- asIs
+                  2, -- adjustIndentation
+                },
+              },
+              labelDetailsSupport = true,
+            },
+            contextSupport = true,
+            insertTextMode = 1,
+            completionList = {
+              itemDefaults = {
+                "commitCharacters",
+                "editRange",
+                "insertTextFormat",
+                "insertTextMode",
+                "data",
+              },
+            },
+          },
+        },
+      },
+      -- LSP server settings
       servers = {},
     },
     config = function(_, opts)
@@ -55,7 +105,6 @@ return {
     end,
   },
 
-  -- LSP progress
   {
     "j-hui/fidget.nvim",
     event = "LspAttach",
