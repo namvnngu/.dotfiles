@@ -224,10 +224,7 @@ call s:highlight("CursorLine", {
       \ "dark" : { "bg": s:grey239 },
       \ })
 
-call s:highlight("Directory", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("Directory", s:normal_fg)
 
 highlight! link DiffAdd Added
 
@@ -247,20 +244,14 @@ call s:highlight("EndOfBuffer", {
 
 highlight! link TermCursor Cursor
 
-call s:highlight("TermCursorNC", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("TermCursorNC", s:normal_fg)
 
 call s:highlight("ErrorMsg", s:error_fg)
 
-call s:highlight("WinSeparator", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("WinSeparator", s:normal_fg)
 
 call s:highlight("Folded", {
-      \ "light": { "fg": s:grey, "bg": s:silver },
+      \ "light": { "fg": s:grey242, "bg": s:grey254 },
       \ "dark" : { "fg": s:grey, "bg": s:silver },
       \ })
 
@@ -305,25 +296,16 @@ call s:highlight("MatchParen", {
       \ "dark" : { "fg": s:white, "bg": s:grey },
       \ })
 
-call s:highlight("ModeMsg", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("ModeMsg", s:normal_fg)
 
-call s:highlight("MsgArea", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("MsgArea", s:normal_fg)
 
 call s:highlight("MsgSeparator", {
       \ "light": { "fg": s:grey, "bg": s:black },
       \ "dark" : { "fg": s:grey, "bg": s:white },
       \ })
 
-call s:highlight("MoreMsg", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("MoreMsg", s:normal_fg)
 
 call s:highlight("NonText", {
       \ "light": { "fg": s:silver },
@@ -337,11 +319,11 @@ call s:highlight("Normal", {
 
 highlight! link NormalFloat Normal
 
-highlight! link FloatBorder Normal
+call s:highlight("FloatBorder", s:normal_fg)
 
-highlight! link FloatTitle Normal
+call s:highlight("FloatTitle", s:normal_fg)
 
-highlight! link FloatFooter Normal
+call s:highlight("FloatFooter", s:normal_fg)
 
 highlight! link NormalNC Normal
 
@@ -355,15 +337,9 @@ call s:highlight("PmenuSel", {
       \ "dark" : { "fg": s:black, "bg": s:grey },
       \ })
 
-call s:highlight("Question", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("Question", s:normal_fg)
 
-call s:highlight("QuickFixLine", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("QuickFixLine", s:normal_fg)
 
 " Search happens after hitting <CR> and highlights all matched ones
 call s:highlight("Search", {
@@ -407,15 +383,9 @@ call s:highlight("TabLine", {
       \ "dark" : { "fg": s:black, "bg": s:silver },
       \ })
 
-call s:highlight("TabLineSel", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("TabLineSel", s:normal_fg)
 
-call s:highlight("Title", {
-      \ "light": { "fg": s:black },
-      \ "dark" : { "fg": s:white },
-      \ })
+call s:highlight("Title", s:normal_fg)
 
 call s:highlight("Visual", {
       \ "light": { "bg": s:grey254 },
