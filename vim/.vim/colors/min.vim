@@ -20,13 +20,10 @@ let g:colors_name = "min"
 " Colors
 
 let s:black   = { "gui": "#000000", "cterm": "0" }
-let s:maroon  = { "gui": "#800000", "cterm": "1" }
-let s:olive   = { "gui": "#808000", "cterm": "3" }
 let s:silver  = { "gui": "#c0c0c0", "cterm": "7" }
 let s:grey    = { "gui": "#808080", "cterm": "8" }
 let s:red     = { "gui": "#ff0000", "cterm": "9" }
 let s:lime    = { "gui": "#00ff00", "cterm": "10" }
-let s:yellow  = { "gui": "#ffff00", "cterm": "11" }
 let s:aqua    = { "gui": "#00ffff", "cterm": "14" }
 let s:white   = { "gui": "#ffffff", "cterm": "15" }
 
@@ -132,33 +129,33 @@ call s:highlight("Comment", {
       \ })
 
 call s:highlight("Constant", s:normal_fg)
-highlight! link String    Constant
-highlight! link Character Constant
-highlight! link Number    Constant
-highlight! link Boolean   Constant
-highlight! link Float     Constant
+highlight! link String         Constant
+highlight! link Character      Constant
+highlight! link Number         Constant
+highlight! link Boolean        Constant
+highlight! link Float          Constant
 
-highlight! link Identifier Constant
-highlight! link Function   Constant
+highlight! link Identifier     Constant
+highlight! link Function       Constant
 
-highlight! link Statement   Constant
-highlight! link Conditional Constant
-highlight! link Repeat      Constant
-highlight! link Label       Constant
-highlight! link Operator    Constant
-highlight! link Keyword     Constant
-highlight! link Exception   Constant
+highlight! link Statement      Constant
+highlight! link Conditional    Constant
+highlight! link Repeat         Constant
+highlight! link Label          Constant
+highlight! link Operator       Constant
+highlight! link Keyword        Constant
+highlight! link Exception      Constant
 
-highlight! link PreProc   Constant
-highlight! link Include   Constant
-highlight! link Define    Constant
-highlight! link Macro     Constant
-highlight! link PreCondit Constant
+highlight! link PreProc        Constant
+highlight! link Include        Constant
+highlight! link Define         Constant
+highlight! link Macro          Constant
+highlight! link PreCondit      Constant
 
-highlight! link Type         Constant
-highlight! link StorageClass Constant
-highlight! link Structure    Constant
-highlight! link Typedef      Constant
+highlight! link Type           Constant
+highlight! link StorageClass   Constant
+highlight! link Structure      Constant
+highlight! link Typedef        Constant
 
 highlight! link Special        Constant
 highlight! link SpecialChar    Constant
@@ -167,9 +164,9 @@ highlight! link Delimiter      Constant
 highlight! link SpecialComment Constant
 highlight! link Debug          Constant
 
-call s:highlight("Underlined", s:normal_fg_underline)
+highlight! link Ignore         Constant
 
-highlight! link Ignore Constant
+call s:highlight("Underlined", s:normal_fg_underline)
 
 call s:highlight("Error", s:error_fg)
 
@@ -230,7 +227,7 @@ highlight! link DiffAdd Added
 
 call s:highlight("DiffChange", {
       \ "light": { "fg": s:black, "bg": s:grey250 },
-      \ "dark" : { "fg": s:white, "bg": s:olive },
+      \ "dark" : { "fg": s:white, "bg": s:grey250 },
       \ })
 
 highlight! link DiffDelete Removed
@@ -321,9 +318,9 @@ highlight! link NormalFloat Normal
 
 call s:highlight("FloatBorder", s:normal_fg)
 
-call s:highlight("FloatTitle", s:normal_fg)
+highlight! link FloatTitle FloatBorder
 
-call s:highlight("FloatFooter", s:normal_fg)
+highlight! link FloatFooter FloatBorder
 
 highlight! link NormalNC Normal
 
@@ -357,10 +354,7 @@ call s:highlight("SpecialKey", {
       \ "dark" : { "fg": s:silver },
       \ })
 
-call s:highlight("SpellBad", {
-      \ "light": { "fg": s:black, "gui": "underline" },
-      \ "dark" : { "fg": s:white, "gui": "underline" },
-      \ })
+call s:highlight("SpellBad", s:normal_fg_underline)
 
 highlight! link SpellCap SpellBad
 
