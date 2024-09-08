@@ -1,5 +1,4 @@
 local M = {}
-local file = require("utils.file")
 local system = require("utils.system")
 
 ---@param callback fun(is_ignored: boolean)
@@ -106,7 +105,8 @@ end
 
 ---@param callback fun(branch_name: string)
 function M.get_current_branch(callback)
-  if not file.get_filepath() then
+  local filepath = vim.api.nvim_buf_get_name(0)
+  if not filepath then
     return
   end
 
@@ -175,7 +175,8 @@ end
 
 ---@param callback fun(url: string)
 function M.get_remote_url(callback)
-  if not file.get_filepath() then
+  local filepath = vim.api.nvim_buf_get_name(0)
+  if not filepath then
     return
   end
 
@@ -192,7 +193,8 @@ end
 
 ---@param callback fun(repo_root: string)
 function M.get_repo_root(callback)
-  if not file.get_filepath() then
+  local filepath = vim.api.nvim_buf_get_name(0)
+  if not filepath then
     return
   end
 

@@ -1,13 +1,13 @@
 local M = {}
 
----@class StartJobOptions
+---@class StartJobOpts
 ---@field on_stdout? fun(data: string[])
 ---@field on_exit? fun(code: number)
 ---@field input? string
 
 ---Run a shell command
 ---@param cmd string
----@param opts? StartJobOptions
+---@param opts? StartJobOpts
 ---@return number 'the job id'
 function M.start_job(cmd, opts)
   opts = opts or {}

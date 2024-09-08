@@ -2,7 +2,7 @@ local M = {}
 
 ---@return string 'Linux, Darwin or Windows'
 function M.get_os_name()
-  return vim.loop.os_uname().sysname
+  return vim.uv.os_uname().sysname
 end
 
 ---@class StartJobOptions
@@ -65,19 +65,6 @@ function M.launch_url(url)
   end
 
   open_url(url)
-end
-
--- Pre-append `cd` command that changes the directory that contains the current buffer/file
----@param cmd string
----@return string
-function M.prepend_cd_to_cmd(cmd)
-  return "cd " .. vim.fn.shellescape(vim.fn.expand("%:p:h")) .. " && " .. cmd
-end
-
--- Copy to clipboard
----@param text string
-function M.to_clipboard(text)
-  vim.fn.setreg("+", text)
 end
 
 return M

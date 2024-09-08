@@ -25,7 +25,7 @@ end
 ---@param callback fun(...)
 ---@return fun(...)
 function M.debounce(callback, delay_in_ms)
-  local timer = vim.loop.new_timer()
+  local timer = vim.uv.new_timer()
   return function(...)
     local argv = { ... }
     timer:start(delay_in_ms, 0, function()

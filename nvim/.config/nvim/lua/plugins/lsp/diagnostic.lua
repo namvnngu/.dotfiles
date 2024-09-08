@@ -13,7 +13,7 @@ local function format_diagnostic_message(diagnostic)
   local severity_label = SEVERITY_LABELS[diagnostic.severity]
 
   if not severity_label then
-    require("utils.log").run(
+    require("utils.notify").warn(
       string.format("Unknown diagnostic severity, %s.", diagnostic.severity)
     )
   end
