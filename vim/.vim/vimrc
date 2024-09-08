@@ -86,7 +86,19 @@ set wildmode=longest:full,full
 set wildoptions=pum,tagfile
 set winminwidth=5
 
-colorscheme min
+""""""""""
+" COLORS "
+""""""""""
+
+colorscheme quiet
+
+if &background == "light"
+  highlight Comment guifg=#949494             ctermfg=246
+  highlight Normal  guifg=black   guibg=white ctermfg=black ctermbg=white
+else
+  highlight Comment guifg=#585858             ctermfg=240
+  highlight Normal  guifg=white   guibg=black ctermfg=white ctermbg=black
+endif
 
 """"""""""""
 " MAPPINGS "
