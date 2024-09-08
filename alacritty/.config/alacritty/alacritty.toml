@@ -1,6 +1,6 @@
 import = [
   "~/.config/alacritty/fonts/default.toml",
-  "~/.config/alacritty/colorschemes/min-light.toml"
+  "~/.config/alacritty/colorschemes/github-light-default.toml"
 ]
 live_config_reload = true
 
