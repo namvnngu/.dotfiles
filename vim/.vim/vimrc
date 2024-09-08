@@ -95,9 +95,11 @@ colorscheme quiet
 if &background == "light"
   highlight Comment guifg=#949494             ctermfg=246
   highlight Normal  guifg=black   guibg=white ctermfg=black ctermbg=white
+  highlight! link NormalFloat Normal
 else
   highlight Comment guifg=#585858             ctermfg=240
   highlight Normal  guifg=white   guibg=black ctermfg=white ctermbg=black
+  highlight! link NormalFloat Normal
 endif
 
 """"""""""""
