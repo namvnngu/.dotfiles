@@ -43,7 +43,7 @@ return {
       end
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "typos_lsp", "lua_ls", "tsserver", "eslint" },
+        ensure_installed = { "typos_lsp", "lua_ls", "ts_ls", "eslint" },
         automatic_installation = true,
         handlers = { setup },
       })

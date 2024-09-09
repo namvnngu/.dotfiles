@@ -151,7 +151,7 @@ lsp_installer.on_server_ready(function(server)
     end
   end
 
-  if server.name == "tsserver" then
+  if server.name == "ts_ls" then
     opts.on_attach = function(client, bufnr)
       client.resolved_capabilities.document_formatting = false
       common_on_attach(client, bufnr)

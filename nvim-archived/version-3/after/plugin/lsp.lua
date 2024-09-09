@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
     "denols",
     "lua_ls",
     "clangd",
-    "tsserver",
+    "ts_ls",
     "rust_analyzer",
   },
   automatic_installation = true,
@@ -116,7 +116,7 @@ for _, server in ipairs(installed_servers) do
   lspconfig[server].setup(common_setup)
 end
 
-lspconfig.tsserver.setup(tbl.merge(common_setup, {
+lspconfig.ts_ls.setup(tbl.merge(common_setup, {
   root_dir = lspconfig.util.root_pattern(
     "package.json",
     "tsconfig.json",
