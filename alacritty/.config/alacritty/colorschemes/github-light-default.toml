@@ -5,7 +5,7 @@ foreground = "#000000"
 
 # Normal colors
 [colors.normal]
-black   = "#d0d0d0"
+black   = "#ffffff"
 red     = "#cf222e"
 green   = "#116329"
 yellow  = "#4d2d00"
@@ -23,7 +23,7 @@ yellow  = "#633c01"
 blue    = "#218bff"
 magenta = "#a475f9"
 cyan    = "#3192aa"
-white   = "#8c959f"
+white   = "#ffffff"
 
 [[colors.indexed_colors]]
 index = 16
