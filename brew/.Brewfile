@@ -16,7 +16,6 @@ brew "ripgrep"
 brew "stow"
 brew "tmux"
 brew "tree"
-brew "w3m"
 brew "wget"
 
 cask "alacritty"
