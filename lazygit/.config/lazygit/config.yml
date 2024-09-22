@@ -1,9 +1,0 @@
-os:
-  editPreset: "nvim"
-gui:
-  splitDiff: "always"
-  theme:
-    selectedLineBgColor:
-      - reverse
-    selectedRangeBgColor:
-      - reverse
