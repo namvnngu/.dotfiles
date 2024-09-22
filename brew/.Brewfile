@@ -1,7 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-
+tap "homebrew/services"
 brew "cmake"
 brew "ctags"
 brew "dotnet"
@@ -17,7 +17,7 @@ brew "stow"
 brew "tmux"
 brew "tree"
 brew "wget"
-
+brew "xmake"
 cask "alacritty"
 cask "aldente"
 cask "appcleaner"
