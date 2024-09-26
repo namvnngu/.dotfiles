@@ -91,9 +91,6 @@ vim.keymap.set(
 -- Make file executable
 vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 
--- Exit terminal mode
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
-
 -- Copy the current file's path
 vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
 
