@@ -13,9 +13,10 @@ git filters logs with the specific keyword added or deleted in a file: git log -
 git check steps you have run or messed up: git reflog
 git diff changes against HEAD: git diff HEAD <path-to-file>
 git word diff changes against HEAD: git diff --word-diff HEAD <path-to-file>
-git diff unstaged changes against the lastest commit: git diff <path-to-file>
-git word diff unstaged changes agaist the lastest commit: git diff --word-diff <path-to-file>
+git diff unstaged changes against the latest commit: git diff <path-to-file>
+git word diff unstaged changes against the latest commit: git diff --word-diff <path-to-file>
 git discard all unstaged changes: git checkout -- .
 git discard unstaged changes on a specific file: git checkout -- <path-to-file>
 git list all files in a commit: git show --pretty="" --name-only <commit>
 git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
+git go back n commit(s) from HEAD: git reset --<mode> HEAD~<n>
