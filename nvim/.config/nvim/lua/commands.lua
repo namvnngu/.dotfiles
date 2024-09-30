@@ -3,8 +3,7 @@ local notify = require("utils.notify")
 
 --- List all capabilities of the server associated with the current buffer
 vim.api.nvim_create_user_command("LspCapabilities", function()
-  local curBuf = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_clients({ bufnr = curBuf })
+  local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
 
   for _, client in pairs(clients) do
     if client.name ~= "null-ls" then
