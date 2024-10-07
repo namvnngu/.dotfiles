@@ -213,6 +213,10 @@ endfunction
 " PLUGINS "
 """""""""""
 
+" Disable built-in plugins
+let g:loaded_matchit = 0
+let g:loaded_matchparen = 0
+
 " Plugin Utils
 
 let s:PLUGIN_DIR = "~/.vim/pack/plugins/start"
