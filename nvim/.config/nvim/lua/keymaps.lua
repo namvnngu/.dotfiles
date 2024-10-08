@@ -78,14 +78,14 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
--- This is going to get me cancelled
+-- Cancel
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Replace
 vim.keymap.set(
   "n",
   "<leader>s",
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
+  [[:%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>]]
 )
 
 -- Make file executable
@@ -93,6 +93,9 @@ vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 
 -- Copy the current file's path
 vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
+
+-- Switch editing file
+vim.keymap.set("n", "<leader>e", ":e <C-R>%")
 
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")
