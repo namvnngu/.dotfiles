@@ -241,12 +241,9 @@ endfunction
 " Plugins
 
 ""
-call s:install_plugin("https://github.com/junegunn/fzf.vim", "fzf.vim")
-
 set runtimepath+=~/.fzf
 
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>ff :Files<CR>
+nnoremap <C-p> :FZF<CR>
 autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
 ""
