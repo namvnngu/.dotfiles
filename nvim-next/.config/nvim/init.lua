@@ -1,2 +1,5 @@
-require("core")
-require("plugins")
+require("options")
+require("keymaps")
+require("autocmds")
+require("commands")
+require("color")
