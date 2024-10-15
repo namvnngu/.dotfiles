@@ -1,7 +1,7 @@
 local M = {}
 local system = require("utils.system")
 
----@param callback fun(is_ignored: boolean)
+--- @param callback fun(is_ignored: boolean)
 function M.is_current_file_ignored(callback)
   local filepath = vim.api.nvim_buf_get_name(0)
   if filepath == "" then
@@ -15,9 +15,9 @@ function M.is_current_file_ignored(callback)
   })
 end
 
----@param sha string
----@param remote_url string
----@return string
+--- @param sha string
+--- @param remote_url string
+--- @return string
 function M.generate_commit_path(sha, remote_url)
   local domain = string.match(remote_url, ".*git%@(.*)%:.*")
     or string.match(remote_url, "https%:%/%/.*%@(.*)%/.*")
@@ -30,8 +30,8 @@ function M.generate_commit_path(sha, remote_url)
   return "/commit/" .. sha
 end
 
----@param remote_url string
----@return string
+--- @param remote_url string
+--- @return string
 function M.generate_repo_url(remote_url)
   local domain, path = string.match(remote_url, ".*git%@(.*)%:(.*)%.git")
   if domain and path then
@@ -66,12 +66,12 @@ function M.generate_repo_url(remote_url)
   return remote_url
 end
 
----@param remote_url string
----@param shaOrBranch string
----@param filepath string
----@param line1 number?
----@param line2 number?
----@return string
+--- @param remote_url string
+--- @param shaOrBranch string
+--- @param filepath string
+--- @param line1 number?
+--- @param line2 number?
+--- @return string
 function M.generate_file_url(remote_url, shaOrBranch, filepath, line1, line2)
   local repo_url = M.generate_repo_url(remote_url)
   local isSrcHut = repo_url:find("git.sr.ht")
@@ -93,9 +93,9 @@ function M.generate_file_url(remote_url, shaOrBranch, filepath, line1, line2)
   end
 end
 
----@param sha string
----@param remote_url string
----@return string
+--- @param sha string
+--- @param remote_url string
+--- @return string
 function M.generate_commit_url(sha, remote_url)
   local commit_path = M.generate_commit_path(sha, remote_url)
 
@@ -103,7 +103,7 @@ function M.generate_commit_url(sha, remote_url)
   return repo_url .. commit_path
 end
 
----@param callback fun(branch_name: string)
+--- @param callback fun(branch_name: string)
 function M.get_current_branch(callback)
   local filepath = vim.api.nvim_buf_get_name(0)
   if not filepath then
@@ -121,11 +121,11 @@ function M.get_current_branch(callback)
   })
 end
 
----@param filepath string
----@param sha string?
----@param line1 number?
----@param line2 number?
----@param callback fun(url: string)
+--- @param filepath string
+--- @param sha string?
+--- @param line1 number?
+--- @param line2 number?
+--- @param callback fun(url: string)
 function M.get_file_url(filepath, sha, line1, line2, callback)
   M.get_repo_root(function(root)
     local relative_filepath = string.sub(filepath, #root + 2)
@@ -153,17 +153,17 @@ function M.get_file_url(filepath, sha, line1, line2, callback)
   end)
 end
 
----@param filepath string
----@param sha string?
----@param line1 number?
----@param line2 number?
+--- @param filepath string
+--- @param sha string?
+--- @param line1 number?
+--- @param line2 number?
 function M.open_file_in_browser(filepath, sha, line1, line2)
   M.get_file_url(filepath, sha, line1, line2, function(url)
     system.launch_url(url)
   end)
 end
 
----@param sha string
+--- @param sha string
 function M.open_commit_in_browser(sha)
   M.get_long_sha_from_short(sha, function(long_sha)
     M.get_remote_url(function(remote_url)
@@ -173,7 +173,7 @@ function M.open_commit_in_browser(sha)
   end)
 end
 
----@param callback fun(url: string)
+--- @param callback fun(url: string)
 function M.get_remote_url(callback)
   local filepath = vim.api.nvim_buf_get_name(0)
   if not filepath then
@@ -191,7 +191,7 @@ function M.get_remote_url(callback)
   })
 end
 
----@param callback fun(repo_root: string)
+--- @param callback fun(repo_root: string)
 function M.get_repo_root(callback)
   local filepath = vim.api.nvim_buf_get_name(0)
   if not filepath then
@@ -205,8 +205,8 @@ function M.get_repo_root(callback)
   })
 end
 
----@param short_sha string
----@param callback fun(long_sha: string)
+--- @param short_sha string
+--- @param callback fun(long_sha: string)
 function M.get_long_sha_from_short(short_sha, callback)
   system.run_cmd("git rev-parse " .. short_sha, {
     on_stdout = function(data)

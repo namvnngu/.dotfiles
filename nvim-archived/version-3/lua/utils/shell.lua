@@ -1,19 +1,20 @@
 local M = {}
 
----@class StartJobOpts
----@field on_stdout? fun(data: string[])
----@field on_exit? fun(code: number)
----@field input? string
+--- @class StartJobOpts
+--- @field on_stdout? fun(data: string[])
+--- @field on_exit? fun(code: number)
+--- @field input? string
 
----Run a shell command
----@param cmd string
----@param opts? StartJobOpts
----@return number 'the job id'
+--- Run a shell command
+---
+--- @param cmd string
+--- @param opts? StartJobOpts
+--- @return number 'the job id'
 function M.start_job(cmd, opts)
   opts = opts or {}
   local id = vim.fn.jobstart(cmd, {
     stdout_buffered = true,
-    ---@param data string[]
+    --- @param data string[]
     on_stdout = function(_, data, _)
       if data and opts.on_stdout then
         opts.on_stdout(data)
@@ -34,9 +35,10 @@ function M.start_job(cmd, opts)
   return id
 end
 
----Pre-append `cd` command that changes the directory that contains the current buffer/file
----@param command string
----@return string
+--- Pre-append `cd` command that changes the directory that contains the current buffer/file
+---
+--- @param command string
+--- @return string
 function M.prepend_cd(command)
   return "cd "
     .. vim.fn.shellescape(vim.fn.expand("%:p:h"))

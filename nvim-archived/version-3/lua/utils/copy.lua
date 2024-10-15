@@ -1,15 +1,17 @@
 local M = {}
 
----Copy to clipboard
----@param text string
+--- Copy to clipboard
+---
+--- @param text string
 function M.to_clipboard(text)
   vim.fn.setreg("+", text)
 end
 
----Operate shallow copy
----@generic T
----@param original T
----@return T
+--- Operate shallow copy
+---
+--- @generic T
+--- @param original T
+--- @return T
 function M.shallow(original)
   local orig_type = type(original)
   local copy

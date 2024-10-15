@@ -1,24 +1,25 @@
 local M = {}
 
----@return string 'Linux, Darwin or Windows'
+--- @return string 'Linux, Darwin or Windows'
 function M.get_os_name()
   return vim.uv.os_uname().sysname
 end
 
----@class StartJobOptions
----@field on_stdout? fun(data: string[])
----@field on_exit? fun(code: number)
----@field input? string
+--- @class StartJobOptions
+--- @field on_stdout? fun(data: string[])
+--- @field on_exit? fun(code: number)
+--- @field input? string
 ---
----Run a shell command
----@param cmd string
----@param opts? StartJobOptions
----@return number 'the job id'
+--- Run a shell command
+---
+--- @param cmd string
+--- @param opts? StartJobOptions
+--- @return number 'the job id'
 function M.run_cmd(cmd, opts)
   opts = opts or {}
   local id = vim.fn.jobstart(cmd, {
     stdout_buffered = true,
-    ---@param data string[]
+    --- @param data string[]
     on_stdout = function(_, data, _)
       if data and opts.on_stdout then
         opts.on_stdout(data)
@@ -39,13 +40,16 @@ function M.run_cmd(cmd, opts)
   return id
 end
 
--- Keeping it outside the function improves performance
--- by not finding the OS every time.
----@type fun(url: string)
+--- Keeping it outside the function improves performance
+--- by not finding the OS every time.
+---
+--- @type fun(url: string)
 local open_url
--- Attempts to open a given URL in the system default browser, regardless of the OS.
--- Reference: https://stackoverflow.com/a/18864453/9714875
----@param url string
+
+--- Attempts to open a given URL in the system default browser, regardless of the OS.
+--- Reference: https://stackoverflow.com/a/18864453/9714875
+---
+--- @param url string
 function M.launch_url(url)
   if not open_url then
     local os_name = M.get_os_name()

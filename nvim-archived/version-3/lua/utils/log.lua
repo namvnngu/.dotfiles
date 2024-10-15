@@ -10,8 +10,9 @@ function __FUNC__()
   return debug.getinfo(3, "n").name
 end
 
----Dump information about the passed value
----@param o any
+--- Dump information about the passed value
+---
+--- @param o any
 local function dump(o)
   if type(o) == "table" then
     local s = "{ "
@@ -27,8 +28,9 @@ local function dump(o)
   end
 end
 
----Log with time, function call and line of code
----@param text string
+--- Log with time, function call and line of code
+---
+--- @param text string
 function M.log(text)
   print(
     string.format(

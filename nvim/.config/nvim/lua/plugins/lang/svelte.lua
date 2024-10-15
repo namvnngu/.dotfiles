@@ -4,7 +4,7 @@ return {
     opts = {
       servers = {
         svelte = {
-          ---@diagnostic disable-next-line: unused-local
+          --- @diagnostic disable-next-line: unused-local
           on_attach = function(client, bufnr)
             vim.api.nvim_create_autocmd("BufWritePost", {
               pattern = { "*.js", "*.ts" },

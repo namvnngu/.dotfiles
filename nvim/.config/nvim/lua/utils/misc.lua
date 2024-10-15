@@ -1,9 +1,10 @@
 local M = {}
 
--- Operate shallow copy
----@generic T
----@param original T
----@return T
+--- Operate shallow copy
+---
+--- @generic T
+--- @param original T
+--- @return T
 function M.shallow_copy(original)
   local orig_type = type(original)
   local copy
@@ -18,12 +19,13 @@ function M.shallow_copy(original)
   return copy
 end
 
--- Create a debounced function that delays the given function
--- until after the stated wait time in milliseconds has passed
--- since the last time this debounced function was called.
----@param delay_in_ms number
----@param callback fun(...)
----@return fun(...)
+--- Create a debounced function that delays the given function
+--- until after the stated wait time in milliseconds has passed
+--- since the last time this debounced function was called.
+---
+--- @param delay_in_ms number
+--- @param callback fun(...)
+--- @return fun(...)
 function M.debounce(callback, delay_in_ms)
   local timer = vim.uv.new_timer()
   return function(...)
