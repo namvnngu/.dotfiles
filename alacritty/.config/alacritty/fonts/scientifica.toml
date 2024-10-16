@@ -1,6 +1,0 @@
-[font]
-size = 16
-normal = { family = "scientifica", style = "Medium" }
-bold = { family = "scientifica", style = "Bold" }
-italic = { family = "scientifica", style = "Bold" }
-bold_italic = { family = "scientifica", style = "Bold" }
