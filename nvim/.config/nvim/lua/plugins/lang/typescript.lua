@@ -27,14 +27,22 @@ return {
     opts = {
       formatters_by_ft = {
         typescript = function(bufnr)
-          return vim.fs.root(bufnr, { "biome.json", "biome.jsonc" })
-              and { "biome" }
-            or { "prettier" }
+          if vim.fs.root(bufnr, { "biome.json", "biome.jsonc" }) then
+            return { "biome" }
+          end
+          if vim.fs.root(bufnr, { "deno.json", "deno.jsonc" }) then
+            return {}
+          end
+          return { "prettier" }
         end,
         typescriptreact = function(bufnr)
-          return vim.fs.root(bufnr, { "biome.json", "biome.jsonc" })
-              and { "biome" }
-            or { "prettier" }
+          if vim.fs.root(bufnr, { "biome.json", "biome.jsonc" }) then
+            return { "biome" }
+          end
+          if vim.fs.root(bufnr, { "deno.json", "deno.jsonc" }) then
+            return {}
+          end
+          return { "prettier" }
         end,
       },
     },
