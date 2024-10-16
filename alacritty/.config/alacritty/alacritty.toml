@@ -1,6 +1,6 @@
 import = [
-  "~/.config/alacritty/fonts/scientifica.toml",
-  "~/.config/alacritty/colorschemes/atom-one-light.toml"
+  "~/.config/alacritty/colorschemes/atom-one-light.toml",
+  "~/.config/alacritty/fonts/jet-brains-mono-nerd-font.toml"
 ]
 live_config_reload = true
 
