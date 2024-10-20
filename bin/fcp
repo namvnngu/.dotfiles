@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
+# Search and copy something
+
 resources_dir="$HOME/dotfiles/bin/resources"
-requested_scat_path_file="$resources_dir/scat-$1"
+requested_scat_path_file="$resources_dir/fcp-$1"
 
 if [[ $* == *ls* ]]; then
-  find $resources_dir -maxdepth 1 -name "scat*" | sed 's/^.*scat-//' | git column --mode=column --padding=5
+  find $resources_dir -maxdepth 1 -name "fcp*" | sed 's/^.*fcp-//' | git column --mode=column --padding=5
   exit 0
 fi
 
 ###############################################################################
 
 if [[ $# -eq 0 ]] ; then
-  files=$(find $resources_dir -maxdepth 1 -name "scat*")
+  files=$(find $resources_dir -maxdepth 1 -name "fcp*")
   selected=$(cat $files | fzf)
 elif [[ -e $requested_scat_path_file ]]; then
   selected=$(cat $requested_scat_path_file | fzf)

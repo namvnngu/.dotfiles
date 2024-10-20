@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Find and copy/execute a command
+
 resources_dir="$HOME/dotfiles/bin/resources"
 requested_cmd_path_file="$resources_dir/cmd-$1"
 

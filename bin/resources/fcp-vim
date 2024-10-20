@@ -1,5 +1,5 @@
 :!cmd : execute shell command, and display output
-:r !cmd : execute shell command, and insert ouput below cursor
+:r !cmd : execute shell command, and insert output below cursor
 :w !cmd : send current buffer as stdin to shell command, and execute it
 :.!cmd : execute shell command, and replace current line with command output
 :%!cmd : execute shell command, and replace entire buffer with command output
