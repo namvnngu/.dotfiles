@@ -46,3 +46,29 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- Big file
+local BIGFILE_SIZE_IN_BYTE = 1024 * 1024 * 1.5 -- 1.5 MB
+vim.filetype.add({
+  pattern = {
+    [".*"] = {
+      function(path, buf)
+        return vim.bo[buf]
+            and vim.bo[buf].filetype ~= "bigfile"
+            and path
+            and vim.fn.getfsize(path) > BIGFILE_SIZE_IN_BYTE
+            and "bigfile"
+          or nil
+      end,
+    },
+  },
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = augroup("bigfile"),
+  pattern = "bigfile",
+  callback = function(ev)
+    vim.schedule(function()
+      vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ""
+    end)
+  end,
+})
