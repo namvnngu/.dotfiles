@@ -3,7 +3,7 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.autoindent = true
 vim.opt.autoread = true                -- enable re-reading file if it has been changed outside of neovim
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.backup = false                 -- disable making a backup file before overwriting a file
 vim.opt.breakindent = true             -- enable wrapping indent to match line start
 vim.opt.clipboard = "unnamedplus"      -- sync with system clipboard

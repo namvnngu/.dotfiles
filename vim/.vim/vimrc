@@ -26,7 +26,7 @@ let mapleader = " "
 
 set autoindent
 set autoread
-set background=dark
+set background=light
 set backspace+=nostop
 set breakindent
 set clipboard+=unnamedplus,unnamed
