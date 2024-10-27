@@ -1,5 +1,4 @@
 return {
-  -- The undo history visualizer
   {
     "mbbill/undotree",
     keys = {

@@ -1,14 +1,8 @@
-vim.api.nvim_create_user_command(
-  "Lma",
-  "Lazy load mini.align | echo 'mini.align loaded'",
-  { desc = "Load mini.align plugin" }
-)
-
 return {
   {
     "echasnovski/mini.align",
-    lazy = true,
     version = false,
+    event = { "BufWritePost", "BufReadPost", "InsertLeave" },
     config = function()
       require("mini.align").setup()
     end,
