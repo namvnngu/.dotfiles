@@ -27,7 +27,6 @@ require("lazy").setup({
     { import = "plugins.coding" },
     { import = "plugins.editor" },
     { import = "plugins.lang" },
-    { import = "plugins.ui" },
   },
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?
