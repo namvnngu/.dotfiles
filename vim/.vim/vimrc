@@ -247,3 +247,6 @@ call s:install_plugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
 set runtimepath+=~/.fzf
 nnoremap <C-p> :FZF<CR>
 autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
+
+"
+call s:install_plugin("https://github.com/tpope/vim-eunuch", "vim-eunuch")
