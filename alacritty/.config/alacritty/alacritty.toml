@@ -1,3 +1,4 @@
+[general]
 import = [
   "~/.config/alacritty/colorschemes/one-light.toml",
   "~/.config/alacritty/fonts/jet-brains-mono-nerd-font.toml"
