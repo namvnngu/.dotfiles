@@ -20,3 +20,4 @@ git discard unstaged changes on a specific file: git checkout -- <path-to-file>
 git list all files in a commit: git show --pretty="" --name-only <commit>
 git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
 git go back n commit(s) from HEAD: git reset --<mode> HEAD~<n>
+git delete ignored folders and files: git clean -fdX
