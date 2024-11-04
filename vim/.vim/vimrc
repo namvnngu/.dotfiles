@@ -185,6 +185,9 @@ nnoremap yp :exec setreg("+", expand("%:p"))<CR>
 " Switch editing file
 nnoremap <leader>e :e <C-R>%
 
+" Open a file name under cursor in a new vertical split
+nnoremap <leader>gf :vertical wincmd f<CR>
+
 " Split explorer
 nnoremap - :Ex<CR>
 

@@ -97,6 +97,9 @@ vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
 -- Switch editing file
 vim.keymap.set("n", "<leader>e", ":e <C-R>%")
 
+-- Open a file name under cursor in a new vertical split
+vim.keymap.set("n", "<leader>gf", ":vertical wincmd f<CR>")
+
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")
 -- vim.keymap.set("", "<Down>", "<NOP>")
