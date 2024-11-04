@@ -1,1 +1,4 @@
-tmux new session with a name: tmux new-session -s <name>
+tmux new session with a name and the current directory: tmux new-session -s <name>
+tmux new session with a name and a start directory: tmux new-session -s <name> -c <start-directory>
+tmux attach session with a target name: tmux attach-session -t <name>
+tmux attach the first active session: tmux attach-session
