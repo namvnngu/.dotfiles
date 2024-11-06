@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Big file
+-- Reference: https://github.com/folke/snacks.nvim/blob/main/lua/snacks/bigfile.lua
 local BIGFILE_SIZE_IN_BYTE = 1024 * 1024 * 1.5 -- 1.5 MB
 vim.filetype.add({
   pattern = {
@@ -67,8 +68,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("bigfile"),
   pattern = "bigfile",
   callback = function(ev)
-    vim.schedule(function()
-      vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ""
+    vim.api.nvim_buf_call(ev.buf, function()
+      vim.schedule(function()
+        vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ""
+      end)
     end)
   end,
 })
