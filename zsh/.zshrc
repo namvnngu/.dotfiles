@@ -40,6 +40,9 @@ setopt appendhistory
 # reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
 
+# prompt
+PROMPT='%n %~'$'\n$ '
+
 ###############################################################################
 #                                Plugins                                      #
 ###############################################################################
@@ -71,9 +74,6 @@ if [ ! -f $Z_FILE ]; then
 fi
 export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
-
-# prompt
-PROMPT='%n %~'$'\n$ '
 
 ###############################################################################
 #                               Tools                                         #
