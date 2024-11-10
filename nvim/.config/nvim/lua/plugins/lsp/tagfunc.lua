@@ -1,7 +1,9 @@
 local M = {}
 
 function M.on_attach(client, bufnr)
-  if client.supports_method("textDocument/definition") then
+  local ms = vim.lsp.protocol.Methods
+
+  if client.supports_method(ms.textDocument_definition) then
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
   end
 end
