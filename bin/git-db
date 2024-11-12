@@ -28,7 +28,7 @@ function get-branch() {
   done
 }
 
-printf "\033c"
+printf "\n"
 get-branch
 printf "\n  ${RESET}Enter the number (q for quit): "
 read number
@@ -42,8 +42,8 @@ while : ; do
 
   git branch -D $branch
   success=$?
-  printf "\033c"
 
+  printf "\n-------------------------------------------\n\n"
   get-branch
   if [[ -z $number ]]; then
     printf "\n   ${RED}Input required\n"

@@ -11,9 +11,9 @@ NO_COLOR='\033[0m'
 
 width1=5
 width2=6
-width3=46
+width3=55
 width4=20
-width5=20
+width5=10
 
 # Function to count commits
 count_commits() {
@@ -28,10 +28,10 @@ count_commits() {
 # Main script
 main_branch=$(git rev-parse HEAD)
 
-printf "${GREEN}%-${width1}s ${RED}%-${width2}s ${BLUE}%-${width3}s ${GRAY}%-${width4}s ${NO_COLOR}%-${width5}s\n" "Ahead" "Behind" "Branch" "Last Commit"  " "
+printf "${GREEN}%-${width1}s ${RED}%-${width2}s ${BLUE}%-${width3}s ${GRAY}%-${width4}s ${NO_COLOR}%-${width5}s\n" "Ahead" "Behind" "Branch" "Last Commit"  "Description"
 
 # Separator line for clarity
-printf "${GREEN}%-${width1}s ${RED}%-${width2}s ${BLUE}%-${width3}s ${GRAY}%-${width4}s ${NO_COLOR}%-${width5}s\n" "-----" "------" "----------------------------------------------" "---------------" " "
+printf "${GREEN}%-${width1}s ${RED}%-${width2}s ${BLUE}%-${width3}s ${GRAY}%-${width4}s ${NO_COLOR}%-${width5}s\n" "-----" "------" "------------------------------------------------------" "--------------------" "-----------"
 
 format_string="%(objectname:short)@%(refname:short)@%(committerdate:relative)"
 IFS=$'\n'
