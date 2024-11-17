@@ -1,7 +1,7 @@
 os=$(uname -s)
 
 ###############################################################################
-#                                 Paths                                       #
+# Paths                                                                       #
 ###############################################################################
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -25,7 +25,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 ###############################################################################
-#                               Settings                                      #
+# Settings                                                                    #
 ###############################################################################
 
 # zsh history
@@ -44,7 +44,7 @@ export KEYTIMEOUT=1
 PROMPT='%n %~'$'\n$ '
 
 ###############################################################################
-#                                Plugins                                      #
+# Plugins                                                                     #
 ###############################################################################
 
 # auto suggestions
@@ -76,7 +76,7 @@ export _Z_DATA=$Z_DATAFILE
 source $Z_FILE
 
 ###############################################################################
-#                               Tools                                         #
+# Tools                                                                       #
 ###############################################################################
 
 # fzf
@@ -94,10 +94,10 @@ export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_P
 export DOCKER_FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
 
 ###############################################################################
-#                              Utilities                                      #
+# Utilities                                                                   #
 ###############################################################################
 
-# zsh time
+# zsh startup time
 function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
