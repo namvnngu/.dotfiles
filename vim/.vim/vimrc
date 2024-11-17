@@ -87,25 +87,9 @@ set wildmode=longest:full,full
 set wildoptions=pum,tagfile
 set winminwidth=5
 
-""""""""""
-" COLORS "
-""""""""""
-
-colorscheme quiet
-
-if &background == "light"
-  highlight Comment guifg=#949494             ctermfg=246
-  highlight Normal  guifg=#212427 guibg=white ctermfg=black ctermbg=white
-  highlight! link NormalFloat Normal
-else
-  highlight Comment guifg=#585858             ctermfg=240
-  highlight Normal  guifg=white   guibg=black ctermfg=white ctermbg=black
-  highlight! link NormalFloat Normal
-endif
-
-""""""""""""
-" MAPPINGS "
-""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS                                                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Move to window
 nnoremap <leader>h :wincmd h<CR>
@@ -202,9 +186,9 @@ nnoremap <leader>F gg=G''
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-""""""""""""""""
-" AUTOCOMMANDS "
-""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AUTOCOMMANDS                                                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 autocmd BufWritePre * call s:trim_white_space()
 function s:trim_white_space()
@@ -216,15 +200,31 @@ function s:trim_white_space()
   call winrestview(l:save)
 endfunction
 
-"""""""""""
-" PLUGINS "
-"""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLORS                                                                      "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+colorscheme quiet
+
+if &background == "light"
+  highlight Comment guifg=#949494             ctermfg=246
+  highlight Normal  guifg=#212427 guibg=white ctermfg=black ctermbg=white
+  highlight! link NormalFloat Normal
+else
+  highlight Comment guifg=#585858             ctermfg=240
+  highlight Normal  guifg=white   guibg=black ctermfg=white ctermbg=black
+  highlight! link NormalFloat Normal
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS                                                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disable built-in plugins
 let g:loaded_matchit = 0
 let g:loaded_matchparen = 0
 
-" Plugin Utils
+" Plugin utils
 
 let s:PLUGIN_DIR = "~/.vim/pack/plugins/start"
 
