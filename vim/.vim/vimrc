@@ -238,13 +238,12 @@ endfunction
 "endif
 
 call s:install_plugin("https://github.com/rose-pine/vim", "rose-pine")
-highlight Comment guifg=#949494             ctermfg=246
 if &background == "light"
   colorscheme rosepine_dawn
-  hi Comment guifg=#9893a5 guibg=NONE gui=NONE cterm=NONE
+  highlight Comment guifg=#9893a5 guibg=NONE gui=NONE cterm=NONE
 else
   colorscheme rosepine_moon
-  hi Comment guifg=#6e6a86 guibg=NONE gui=NONE cterm=NONE
+  highlight Comment guifg=#6e6a86 guibg=NONE gui=NONE cterm=NONE
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
