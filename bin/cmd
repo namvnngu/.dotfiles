@@ -64,8 +64,8 @@ while true; do
     exit 0
   elif [[ $query == e* ]]; then
     echo "Executing: $selected_cmd"
-    echo "----------------------"
     eval $selected_cmd
+    echo "Done!"
 
     exit 0
   else
