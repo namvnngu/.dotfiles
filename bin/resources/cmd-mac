@@ -1,3 +1,3 @@
-list all available ios simulators: xcrun simctl list devices --json | jq -r '.devices[] | .[] | .name'
-list all connected devices: xcrun xctrace list devices
-ip address on mac: ipconfig getpacket en0
+mac list all available ios simulators: xcrun simctl list devices --json | jq -r '.devices[] | .[] | .name'
+mac list all connected devices: xcrun xctrace list devices
+mac ip address: ipconfig getpacket en0
