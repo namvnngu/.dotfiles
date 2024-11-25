@@ -53,17 +53,12 @@ source $Z_DIR/z.sh
 # TOOLS                                                                       #
 ###############################################################################
 
-# mise
+# polyglot tool version manager
 MISE_DIR=$HOME/.mise
-MISE_BIN_DIR=$MISE_DIR/bin
-export PATH=$PATH:$MISE_BIN_DIR
 export MISE_CONFIG_DIR=$MISE_DIR/config
 export MISE_CACHE_DIR=$MISE_DIR/cache
 export MISE_STATE_DIR=$MISE_DIR/state
 export MISE_DATA_DIR=$MISE_DIR/data
-if [[ ! -d $MISE_DIR ]]; then
-  curl https://mise.run | MISE_INSTALL_PATH=$MISE_BIN_DIR/mise sh
-fi
 eval "$(mise activate zsh)"
 
 # fzf
