@@ -4,8 +4,6 @@ os=$(uname -s)
 # SETTINGS                                                                    #
 ###############################################################################
 
-export XDG_CONFIG_HOME=$HOME/.config
-
 # history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
