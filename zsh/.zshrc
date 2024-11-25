@@ -78,17 +78,6 @@ if [[ -f $HOME/.fzf.zsh ]]; then
   source $HOME/.fzf.zsh
 fi
 
-# golang
-case $os in
-    Linux*)
-      export GOROOT=/usr/local/go
-      ;;
-    Darwin*)
-      ;;
-esac
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
 # my own
 export PATH=$PATH:$HOME/dotfiles/bin
 
