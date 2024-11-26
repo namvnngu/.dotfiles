@@ -19,10 +19,6 @@ export KEYTIMEOUT=1
 # prompt
 PROMPT='%n %~'$'\n$ '
 
-# aliases
-alias tmuxs=tmux-sessionizer
-alias tmuxc=tmux-cht
-
 ###############################################################################
 # PLUGINS                                                                     #
 ###############################################################################
@@ -60,6 +56,8 @@ export MISE_CACHE_DIR=$MISE_DIR/cache
 export MISE_STATE_DIR=$MISE_DIR/state
 export MISE_DATA_DIR=$MISE_DIR/data
 eval "$(mise activate zsh)"
+alias mx="mise exec"
+alias mr="mise run"
 
 # fzf
 FZF_DIR=$HOME/.fzf
@@ -70,6 +68,10 @@ fi
 if [[ -f $HOME/.fzf.zsh ]]; then
   source $HOME/.fzf.zsh
 fi
+
+# tmux
+alias tmuxs=tmux-sessionizer
+alias tmuxc=tmux-cht
 
 # my own
 export PATH=$PATH:$HOME/dotfiles/bin
