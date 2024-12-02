@@ -28,36 +28,28 @@ function get-branch() {
   done
 }
 
-printf "\n"
-get-branch
-printf "\n  ${RESET}Enter the number (q for quit): "
-read number
-
-branch=${branches[$number]}
-
 while : ; do
+
+  printf "\n${RESET}-------------------------------------------\n\n"
+  get-branch
+  printf "\n${RESET}Enter the number (q for quit): "
+  read number
   if [[ $number == "q" ]]; then
     break
+  elif [[ -z $number ]]; then
+    printf "\n${RED}Input required\n"
+    continue
+  elif (( $number < 0 || $number >= ${#branches[@]} )); then
+    printf "\n${RED}The given number is out of limit\n"
+    continue
   fi
 
+  branch=${branches[$number]}
   git branch -D $branch
   success=$?
-
-  printf "\n-------------------------------------------\n\n"
-  get-branch
-  if [[ -z $number ]]; then
-    printf "\n   ${RED}Input required\n"
-  elif (( $number >= ${#branches[@]} )); then
-    printf "\n   ${RED}The given number is out of limit\n"
-  elif [[ $success -ne 0 ]]; then
-    printf "\n   ${RED}Cannot delete $branch since it is being checked out\n"
+  if [[ $success -ne 0 ]]; then
+    printf "\n${RED}Cannot delete $branch since it is being checked out\n"
   else
-    printf "\n   ${GREEN}Deleted $branch\n"
+    printf "\n${GREEN}Deleted $branch\n"
   fi
-
-  printf "\n  ${RESET}Enter the number (q for quit): "
-  read number
-  branch=${branches[$number]}
 done
-
-printf "  ✨ ${RESET}Done\n"
