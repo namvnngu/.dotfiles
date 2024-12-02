@@ -2,23 +2,25 @@
 
 # Search and copy something
 
-resources_dir="$HOME/dotfiles/bin/resources"
-requested_scat_path_file="$resources_dir/fcp-$1"
+resources_dir_path="$HOME/dotfiles/bin/resources"
 
-if [[ $* == *ls* ]]; then
-  find $resources_dir -maxdepth 1 -name "fcp*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
+if [[ $1 == "ls" ]]; then
+  find $resources_dir_path -maxdepth 1 -name "fcp*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
   exit 0
 fi
 
 ###############################################################################
 
+fcp_file_path="$resources_dir_path/fcp-$1"
+
+# Fuzzy search
 if [[ $# -eq 0 ]] ; then
-  files=$(find $resources_dir -maxdepth 1 -name "fcp*")
+  files=$(find $resources_dir_path -maxdepth 1 -name "fcp*")
   selected=$(cat $files | fzf)
-elif [[ -e $requested_scat_path_file ]]; then
-  selected=$(cat $requested_scat_path_file | fzf)
+elif [[ -e $fcp_file_path ]]; then
+  selected=$(cat $fcp_file_path | fzf)
 else
-  echo "$requested_scat_path_file: No such file"
+  echo "$fcp_file_path: No such file"
   exit 1
 fi
 
@@ -28,8 +30,7 @@ fi
 
 selected=$(echo $selected | sed "s/: .*$//")
 
-###############################################################################
-
+# Copy
 os=$(uname -s)
 case $os in
   Darwin*)
@@ -39,5 +40,4 @@ case $os in
     echo -n $selected | xclip -selection clipboard
     ;;
 esac
-
 echo "Copied to clipboard: $selected"

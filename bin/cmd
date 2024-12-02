@@ -2,23 +2,25 @@
 
 # Find and copy/execute a command
 
-resources_dir="$HOME/dotfiles/bin/resources"
-requested_cmd_path_file="$resources_dir/cmd-$1"
+resources_dir_path="$HOME/dotfiles/bin/resources"
 
-if [[ $* == *ls* ]]; then
-  find $resources_dir -maxdepth 1 -name "cmd*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
+if [[ $1 == "ls" ]]; then
+  find $resources_dir_path -maxdepth 1 -name "cmd*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
   exit 0
 fi
 
 ###############################################################################
 
+cmd_file_path="$resources_dir_path/cmd-$1"
+
+# Fuzzy search
 if [[ $# -eq 0 ]] ; then
-  files=$(find $resources_dir -maxdepth 1 -name "cmd*")
+  files=$(find $resources_dir_path -maxdepth 1 -name "cmd*")
   selected=$(cat $files | fzf)
-elif [[ -e $requested_cmd_path_file ]]; then
-  selected=$(cat $requested_cmd_path_file | fzf)
+elif [[ -e $cmd_file_path ]]; then
+  selected=$(cat $cmd_file_path | fzf)
 else
-  echo "$requested_cmd_path_file: No such file"
+  echo "$cmd_file_path: No such file"
   exit 1
 fi
 
@@ -29,8 +31,7 @@ fi
 selected_cmd=$(echo $selected | sed "s/^.*: //")
 echo "Selected command: $selected_cmd"
 
-###############################################################################
-
+# Fill up placeholders
 placeholders=$(echo $selected_cmd | grep -oE "<(\w|-)+>")
 if [[ -n "$placeholders" ]]; then
   echo "----------------------"
@@ -42,8 +43,7 @@ if [[ -n "$placeholders" ]]; then
   echo "----------------------"
 fi
 
-###############################################################################
-
+# Perform action on command
 while true; do
   read -p "copy (c) or execute (e)? " query
   query=$(echo $query | tr "[:upper:]" "[:lower:]")
