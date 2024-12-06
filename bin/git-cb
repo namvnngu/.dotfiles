@@ -23,14 +23,14 @@ function get-branch() {
   do
     if [[ -n "$i" ]]; then
       branches[$i]=${branches[$i]:2}
-      echo -e "  ${PURPLE}$i: ${RESET}${branches[$i]}"
+      echo -e "${PURPLE}$i: ${RESET}${branches[$i]}"
     fi
   done
 }
 
 printf "\n"
 get-branch
-printf "\n  ${RESET}Enter the number: "
+printf "\n${RESET}Enter the number: "
 read number
 
 if (( $number < ${#branches[@]} )); then
@@ -38,5 +38,5 @@ if (( $number < ${#branches[@]} )); then
   printf "${RESET}"
   git checkout $branch
 else
-  printf "  ${RED}The given number is out of limit\n"
+  printf "${RED}The given number is out of limit\n"
 fi

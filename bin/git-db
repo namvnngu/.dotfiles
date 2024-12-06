@@ -23,7 +23,7 @@ function get-branch() {
   do
     if [[ -n "$i" ]]; then
       branches[$i]=${branches[$i]:2}
-      echo -e "  ${PURPLE}$i: ${RESET}${branches[$i]}"
+      echo -e "${PURPLE}$i: ${RESET}${branches[$i]}"
     fi
   done
 }
