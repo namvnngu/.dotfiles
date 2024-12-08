@@ -1,6 +1,6 @@
 [general]
 import = [
-  "~/.config/alacritty/colorschemes/rose-pine-dawn.toml",
+  "~/.config/alacritty/colorschemes/one-light.toml",
   "~/.config/alacritty/fonts/jet-brains-mono-nerd-font.toml"
 ]
 live_config_reload = true
