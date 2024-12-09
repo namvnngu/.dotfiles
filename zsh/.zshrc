@@ -31,11 +31,11 @@ fi
 source $ZSH_AUTO_SUGGESTIONS_DIR/zsh-autosuggestions.zsh
 
 # syntax highlighting
-ZSH_SYNTAX_HIGHLIGHTING_DIR=$HOME/.zsh/zsh-syntax-highlighting
-if [[ ! -d $ZSH_SYNTAX_HIGHLIGHTING_DIR ]]; then
-  git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_SYNTAX_HIGHLIGHTING_DIR
-fi
-source $ZSH_SYNTAX_HIGHLIGHTING_DIR/zsh-syntax-highlighting.zsh
+# ZSH_SYNTAX_HIGHLIGHTING_DIR=$HOME/.zsh/zsh-syntax-highlighting
+# if [[ ! -d $ZSH_SYNTAX_HIGHLIGHTING_DIR ]]; then
+#   git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_SYNTAX_HIGHLIGHTING_DIR
+# fi
+# source $ZSH_SYNTAX_HIGHLIGHTING_DIR/zsh-syntax-highlighting.zsh
 
 # jump around
 Z_DIR=$HOME/.zsh/z
