@@ -73,6 +73,12 @@ fi
 alias tmuxs=tmux-sessionizer
 alias tmuxc=tmux-cht
 
+# nvim
+alias nvimn="nvim -u NONE"
+
+# vim
+alias vimn="vim -u NONE"
+
 # my own
 export PATH=$PATH:$HOME/dotfiles/bin
 
