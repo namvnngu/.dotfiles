@@ -21,3 +21,13 @@ git list all files in a commit: git show --pretty="" --name-only <commit>
 git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
 git go back n commit(s) from HEAD: git reset --<mode> HEAD~<n>
 git delete ignored folders and files: git clean -fdX
+git conflict diff: git diff --name-only --diff-filter=U --relative
+git view the current branch: git branch --show-current
+git view the current branch (old): git rev-parse --abbrev-ref HEAD
+git view the current branch (old, expensive): git branch | grep -E '^\* ' | sed 's/^\* //g'
+git log all, decorate and oneline: git log --all --decorate --oneline
+git log decorate and oneline: log --decorate --oneline
+git log all, decorate and oneline in graph: git log --all --decorate --oneline --graph
+git log decorate and oneline in graph: git log --decorate --oneline --graph
+git push the upushed, local branch to remote: git push --set-upstream origin "$(git branch --show-current)"
+git pull the current branch: git pull origin "$(git branch --show-current)"

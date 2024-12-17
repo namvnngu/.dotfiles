@@ -15,10 +15,3 @@
   strategy = incremental
 [fetch]
   writeCommitGraph = true
-[alias]
-  logg     = log --decorate --oneline --graph
-  logga    = log --all --decorate --oneline --graph
-  logol    = log --decorate --oneline
-  logola   = log --all --decorate --oneline
-  cbranch  = rev-parse --abbrev-ref HEAD
-  conflict = diff --name-only --diff-filter=U --relative
