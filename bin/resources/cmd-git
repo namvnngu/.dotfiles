@@ -31,3 +31,14 @@ git log all, decorate and oneline in graph: git log --all --decorate --oneline -
 git log decorate and oneline in graph: git log --decorate --oneline --graph
 git push the upushed, local branch to remote: git push --set-upstream origin "$(git branch --show-current)"
 git pull the current branch: git pull origin "$(git branch --show-current)"
+git switch branch: git switch <branch-name>
+git create and switch to a new branch: git switch -c <branch-name>
+git discard working directory changes: git restore <path-to-file>
+git unstage changes from the index: git restore --staged <path-to-file>
+git enable automatic maintenance: git maintenance start
+git run cleanup tasks immediately: git maintenance run
+git include only the directories or files in the working directory: git sparse-checkout set <folders-or-files>
+git reconstruct the merge commit by replaying the recorded merge strategy and showing the exact changes it introduced: git log --remerge-diff
+git blame pointing to the original author instead of the formatting commit: git blame --ignore-rev commit-hash
+git add a new worktree for a specific branch: git worktree add <new-worktree-path> <branch-name>
+git remove a worktree: git worktree remove <worktree-path>
