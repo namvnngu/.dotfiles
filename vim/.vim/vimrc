@@ -156,12 +156,12 @@ nnoremap <Esc> :noh<CR>
 nnoremap J mzJ`z
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+nnoremap <C-D> <C-D>zz
+nnoremap <C-U> <C-U>zz
 
 " Quickfix list
-nnoremap <C-j> :cnext<CR>zz
-nnoremap <C-k> :cprev<CR>zz
+nnoremap <C-J> :cnext<CR>zz
+nnoremap <C-K> :cprev<CR>zz
 
 " Location list
 nnoremap <leader>J :lnext<CR>zz
@@ -178,7 +178,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 " Cancel
-inoremap <C-c> <Esc>
+inoremap <C-C> <Esc>
 
 " Replace
 nnoremap <leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
@@ -193,7 +193,7 @@ nnoremap yp :exec setreg("+", expand("%:p"))<CR>
 nnoremap <leader>e :e <C-R>%
 
 " Open a file name under cursor in a new vertical split
-nnoremap <leader>gf :vertical wincmd f<CR>
+nnoremap <leader><C-W>F :vertical wincmd F<CR>
 
 " Split explorer
 nnoremap - :Ex<CR>

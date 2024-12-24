@@ -8,10 +8,10 @@
 -- t  Create a mapping that applies only in Terminal mode. Defined using ':tmap' or ':tnoremap'.
 
 -- Move to window
-vim.keymap.set("n", "<leader>h", "<C-w>h", { remap = true })
-vim.keymap.set("n", "<leader>j", "<C-w>j", { remap = true })
-vim.keymap.set("n", "<leader>k", "<C-w>k", { remap = true })
-vim.keymap.set("n", "<leader>l", "<C-w>l", { remap = true })
+vim.keymap.set("n", "<leader>h", "<C-W>h", { remap = true })
+vim.keymap.set("n", "<leader>j", "<C-W>j", { remap = true })
+vim.keymap.set("n", "<leader>k", "<C-W>k", { remap = true })
+vim.keymap.set("n", "<leader>l", "<C-W>l", { remap = true })
 
 -- Resize window
 vim.keymap.set("n", "<Up>", ":resize +2<CR>")
@@ -52,12 +52,12 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Escape and clear hlsearch" })
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-D>", "<C-D>zz")
+vim.keymap.set("n", "<C-U>", "<C-U>zz")
 
 -- Quickfix list
-vim.keymap.set("n", "<C-j>", ":cnext<CR>zz")
-vim.keymap.set("n", "<C-k>", ":cprev<CR>zz")
+vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
+vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
 
 -- Location list
 vim.keymap.set("n", "<leader>J", ":lnext<CR>zz")
@@ -79,7 +79,7 @@ vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
 -- Cancel
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-C>", "<Esc>")
 
 -- Replace
 vim.keymap.set(
@@ -98,7 +98,7 @@ vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
 vim.keymap.set("n", "<leader>e", ":e <C-R>%")
 
 -- Open a file name under cursor in a new vertical split
-vim.keymap.set("n", "<leader>gf", ":vertical wincmd f<CR>")
+vim.keymap.set("n", "<leader><C-W>F", ":vertical wincmd F<CR>")
 
 -- Avoid using arrow keys
 -- vim.keymap.set("", "<Up>", "<NOP>")
