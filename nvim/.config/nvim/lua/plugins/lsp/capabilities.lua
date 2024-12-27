@@ -1,6 +1,9 @@
--- Reference: https://github.com/hrsh7th/cmp-nvim-lsp/blob/main/lua/cmp_nvim_lsp/init.lua#L42
-return {
-  capabilities = {
+return vim.tbl_deep_extend(
+  "force",
+  {},
+  vim.lsp.protocol.make_client_capabilities(),
+  -- Reference: https://github.com/hrsh7th/cmp-nvim-lsp/blob/main/lua/cmp_nvim_lsp/init.lua#L42
+  {
     textDocument = {
       completion = {
         dynamicRegistration = false,
@@ -18,14 +21,10 @@ return {
           resolveSupport = {
             properties = {
               "documentation",
-              "detail",
               "additionalTextEdits",
-              "sortText",
-              "filterText",
-              "insertText",
-              "textEdit",
               "insertTextFormat",
               "insertTextMode",
+              "command",
             },
           },
           insertTextModeSupport = {
@@ -49,5 +48,5 @@ return {
         },
       },
     },
-  },
-}
+  }
+)

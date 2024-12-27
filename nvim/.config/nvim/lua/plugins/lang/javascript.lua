@@ -1,5 +1,16 @@
 return {
   {
+    "neovim/nvim-lspconfig",
+    optional = true,
+    opts = {
+      servers = {
+        biome = {},
+        eslint = {},
+      },
+    },
+  },
+
+  {
     "stevearc/conform.nvim",
     optional = true,
     opts = {

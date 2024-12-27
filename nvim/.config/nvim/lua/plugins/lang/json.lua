@@ -1,5 +1,15 @@
 return {
   {
+    "neovim/nvim-lspconfig",
+    optional = true,
+    opts = {
+      servers = {
+        jsonls = {},
+      },
+    },
+  },
+
+  {
     "stevearc/conform.nvim",
     optional = true,
     opts = {

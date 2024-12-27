@@ -18,6 +18,8 @@ return {
             "jsconfig.json"
           ),
         },
+        biome = {},
+        eslint = {},
       },
     },
   },

@@ -1,6 +1,16 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    optional = true,
+    opts = {
+      servers = {
+        svelte = {},
+      },
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",
     opts = {
       servers = {
         svelte = {
