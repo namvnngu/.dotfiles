@@ -1,0 +1,17 @@
+cursor-style = block
+cursor-style-blink = false
+
+font-feature = -calt
+font-feature = -dlig
+font-feature = -liga
+font-style-bold-italic = false
+font-style-italic = false
+font-variation-bold = wght=800
+
+macos-titlebar-proxy-icon = hidden
+
+shell-integration-features = no-cursor
+
+theme = light:Builtin Light,dark:Builtin Dark
+
+title = " "
