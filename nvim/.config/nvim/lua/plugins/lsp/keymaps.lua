@@ -31,27 +31,6 @@ function M.on_attach()
       vim.lsp.buf.signature_help()
     end, { desc = "vim.lsp.buf.signature_help()" })
   end
-
-  do
-    vim.keymap.set("n", "]d", function()
-      vim.diagnostic.goto_next()
-    end, { desc = "Jump to the next diagnostic in the current buffer" })
-
-    vim.keymap.set("n", "[d", function()
-      vim.diagnostic.goto_prev()
-    end, { desc = "Jump to the previous diagnostic in the current buffer" })
-
-    vim.keymap.set("n", "<C-W>d", function()
-      vim.diagnostic.open_float()
-    end, { desc = "Show diagnostics under the cursor" })
-
-    vim.keymap.set(
-      "n",
-      "<C-W><C-D>",
-      "<C-W>d",
-      { remap = true, desc = "Show diagnostics under the cursor" }
-    )
-  end
 end
 
 return M
