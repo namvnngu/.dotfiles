@@ -4,7 +4,21 @@ return {
     optional = true,
     opts = {
       servers = {
-        lua_ls = {},
+        lua_ls = {
+          settings = {
+            Lua = {
+              runtime = {
+                version = "LuaJIT",
+              },
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.env.VIMRUNTIME,
+                },
+              },
+            },
+          },
+        },
       },
     },
   },
@@ -15,16 +29,6 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-      },
-    },
-  },
-
-  {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
   },
