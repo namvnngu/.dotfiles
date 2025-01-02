@@ -1,9 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.cmd("syntax on")
+vim.cmd("filetype plugin indent on")
+
 vim.opt.autoindent = true
 vim.opt.autoread = true                -- enable re-reading file if it has been changed outside of neovim
-vim.opt.background = "light"
 vim.opt.backup = false                 -- disable making a backup file before overwriting a file
 vim.opt.breakindent = true             -- enable wrapping indent to match line start
 vim.opt.clipboard = "unnamedplus"      -- sync with system clipboard
@@ -15,7 +17,7 @@ vim.opt.copyindent = true              -- enable copying the previous indentatio
 vim.opt.cursorline = true              -- enable highlighting the text line of the cursor
 vim.opt.expandtab = true               -- enable the use of space in tab
 vim.opt.fileencoding = "utf-8"         -- file content encoding for the buffer
-vim.opt.foldcolumn = "1"               -- display a fixed number of columns
+vim.opt.foldcolumn = "0"               -- display a fixed number of columns
 vim.opt.foldenable = true              -- disable folding at startup or switching between buffers
 vim.opt.foldlevel = 99                 -- set high foldlevel
 vim.opt.foldlevelstart = 99            -- start with all code unfolded
@@ -44,7 +46,7 @@ vim.opt.shiftwidth = 2                 -- number of space inserted for indentati
 vim.opt.showmode = true                -- enable showing modes in command line
 vim.opt.showtabline = 0                -- disable tab line (top bar)
 vim.opt.sidescrolloff = 8              -- number of columns to keep at the sides of the cursor
-vim.opt.signcolumn = "yes"             -- always show the signcolumn, otherwise it would shift the text each time
+vim.opt.signcolumn = "no"              -- always show the signcolumn, otherwise it would shift the text each time
 vim.opt.smartcase = true               -- don't ignore case with capitals
 vim.opt.smartindent = true             -- insert indents automatically
 vim.opt.smoothscroll = true
@@ -52,7 +54,7 @@ vim.opt.splitbelow = true              -- put new windows below current
 vim.opt.splitright = true              -- put new windows right of current
 vim.opt.swapfile = false               -- disable using swap file for the current buffer
 vim.opt.tabstop = 2                    -- number of space in a tab
-vim.opt.termguicolors = true           -- enable 24-bit RGB color in the TUI
+vim.opt.termguicolors = false          -- use "cterm" highlight attributes
 vim.opt.timeoutlen = 500               -- time in milliseconds to wait for a mapped sequence to complete
 vim.opt.undofile = false               -- disable persistent undo
 vim.opt.undolevels = 10000
@@ -64,9 +66,6 @@ vim.opt.wildoptions = "pum,tagfile"    -- how a list of suggestions is shown
 vim.opt.winminwidth = 5                -- minimum window width
 vim.opt.wrap = false                   -- disable wrapping of lines longer than the width of window
 vim.opt.writebackup = false            -- disable making a backup before overwriting a file
-
-vim.cmd("syntax on")
-vim.cmd("filetype plugin indent on")
 
 -- Enable linematch diff algorithm.
 -- In the git diff case, the difference are more granular, which means that
