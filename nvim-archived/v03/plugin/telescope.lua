@@ -1,14 +1,8 @@
 local telescope = require("telescope")
-local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
     file_ignore_patterns = { "node_modules" },
-    mappings = {
-      i = {
-        ["<C-q>"] = actions.send_to_qflist,
-      },
-    },
   },
 })
 telescope.load_extension("fzy_native")
@@ -53,8 +47,13 @@ vim.keymap.set("n", "<leader>flg", function()
   require("telescope.builtin").live_grep()
 end)
 vim.keymap.set("n", "<leader>fgs", function()
+  local query = vim.fn.input("Grep For > ")
+  local root_dir = require("utils").trim_string(vim.fn.input("Root Dir > "))
   require("telescope.builtin").grep_string({
-    search = vim.fn.input("Grep For > "),
+    cwd = #root_dir ~= 0 and root_dir
+      or require("telescope.utils").buffer_dir(),
+    search = query,
+    use_regex = true,
   })
 end)
 vim.keymap.set("n", "<leader>fgw", function()

@@ -1,1 +1,1 @@
-nnoremap <F2> :UndotreeToggle<CR>
+nnoremap <F3> :UndotreeToggle<cr>

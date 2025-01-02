@@ -25,7 +25,7 @@ nnoremap Y y$
 " Keeping it centered and stable
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap J mzJ`z
+" nnoremap J mzJ`z
 
 " Undo breakpoints
 inoremap , ,<c-g>u

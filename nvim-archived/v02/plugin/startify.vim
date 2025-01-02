@@ -18,7 +18,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
             \ { 'v': '~/.config/nvim/init.vim' },
             \ { 'z': '~/.zshrc' },
-            \ { 'f': '~/.config/fish/config.fish' },
+            \ { 'a': '~/.config/alacritty/alacritty.yml' },
             \ ]
 " let g:startify_files_number = 5
 let g:startify_session_autoload = 1

@@ -56,3 +56,4 @@ public class Main {
 		int n = s.nextInt();
 	}
 }
+

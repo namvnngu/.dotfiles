@@ -58,7 +58,3 @@ set lazyredraw
 set completeopt=menu,menuone,noselect
 
 filetype plugin indent on
-
-" Folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()

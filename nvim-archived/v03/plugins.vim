@@ -17,6 +17,9 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " A tree explorer
   Plug 'kyazdani42/nvim-tree.lua'
 
+  " Add/change/delete surrounding delimiter pairs with ease
+  Plug 'kylechui/nvim-surround'
+
   " Insert or delete brackets, parens, quotes in pair
   Plug 'jiangmiao/auto-pairs'
 
@@ -34,9 +37,6 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
 
   " Vim Align
   Plug 'junegunn/vim-easy-align'
-
-  " Startify: File Explorer
-  Plug 'mhinz/vim-startify'
 
   " A solid language pack for Vim.
   set nocompatible
@@ -56,8 +56,6 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   Plug 'simrat39/symbols-outline.nvim'
   Plug 'williamboman/nvim-lsp-installer'
   Plug 'folke/lsp-colors.nvim'
-  Plug 'RishabhRD/popfix'
-  Plug 'RishabhRD/nvim-lsputils'
 
   " Autocomplete
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -83,9 +81,13 @@ call plug#begin('~/.config/nvim/plugged') " Intellisense engine for Vim8 & Neovi
   " Todos
   Plug 'folke/todo-comments.nvim'
 
+  " Search
+  Plug 'windwp/nvim-spectre'
+
   " Theme
   Plug 'morhetz/gruvbox'
-  Plug 'markvincze/panda-vim'
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  " Plug 'markvincze/panda-vim'
   " Plug 'drewtempelmeyer/palenight.vim'
   " Plug 'Pocco81/Catppuccino.nvim'
   " Plug 'Yagua/nebulous.nvim'

@@ -55,13 +55,6 @@ cmp.setup({
         fallback()
       end
     end,
-    ["<S-TAB>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
   }),
   formatting = {
     format = function(entry, vim_item)
