@@ -228,12 +228,12 @@ endfunction
 
 colorscheme quiet
 if &background == "light"
-  highlight Comment guifg=#949494             ctermfg=246
-  highlight Normal  guifg=#212427 guibg=white ctermfg=black ctermbg=white
+  highlight Comment guifg=#949494               ctermfg=246
+  highlight Normal  guifg=#242424 guibg=#FFFFFF ctermfg=black ctermbg=white
   highlight! link NormalFloat Normal
 else
-  highlight Comment guifg=#585858             ctermfg=240
-  highlight Normal  guifg=white   guibg=black ctermfg=white ctermbg=black
+  highlight Comment guifg=#585858               ctermfg=240
+  highlight Normal  guifg=#F3F3F3 guibg=#121212 ctermfg=white ctermbg=black
   highlight! link NormalFloat Normal
 endif
 
