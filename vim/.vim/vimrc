@@ -64,13 +64,6 @@ set wildmode=longest:full,full
 set wildoptions=fuzzy,pum,tagfile
 set winminwidth=5
 
-let s:system_tags = globpath('~/.tags/*', '*', 0, 1)
-if len(s:system_tags) == 0
-  let &tags = './tags,tags'
-else
-  let &tags = './tags,tags,' .. join(s:system_tags, ',')
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS                                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -185,6 +178,23 @@ function s:TrimWhiteSpace()
   keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
   keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
   call winrestview(l:save)
+endfunction
+
+augroup lang_tags
+  autocmd!
+  autocmd BufEnter,BufNew * set tags='./tags,tags'
+augroup END
+augroup c_tags
+  autocmd!
+  autocmd BufEnter,BufNew *.c,*.h call s:SetTags('c')
+augroup END
+function s:SetTags(lang)
+  let l:files = globpath('~/.tags/' . a:lang, '*', 0, 1)
+  if len(l:files) == 0
+    let &tags = './tags,tags'
+  else
+    let &tags = './tags,tags,' . join(l:files, ',')
+  endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
