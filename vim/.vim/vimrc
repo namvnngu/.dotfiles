@@ -2,7 +2,7 @@
 " OPTIONS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = " "
+let mapleader = ' '
 
 syntax on
 filetype plugin indent on
@@ -63,6 +63,13 @@ set wildmenu
 set wildmode=longest:full,full
 set wildoptions=fuzzy,pum,tagfile
 set winminwidth=5
+
+let s:system_tags = globpath('~/.tags/*', '*', 0, 1)
+if len(s:system_tags) == 0
+  let &tags = './tags,tags'
+else
+  let &tags = './tags,tags,' .. join(s:system_tags, ',')
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS                                                                    "
@@ -142,7 +149,7 @@ nnoremap <leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 nnoremap <silent> <leader>x :!chmod +x %<CR>
 
 " Copy the current file's path
-nnoremap yp :exec setreg("+", expand("%:p"))<CR>
+nnoremap yp :exec setreg('+', expand('%:p'))<CR>
 
 " Switch editing file
 nnoremap <leader>e :e <C-R>%
@@ -186,32 +193,32 @@ endfunction
 
 " Plugin Manager
 
-let s:plugin_dir = "~/.vim/pack/plugins/start"
+let s:plugin_dir = '~/.vim/pack/plugins/start'
 
 function s:CountDirectories(path)
   return len(filter(globpath(a:path, '*', 0, 1), 'isdirectory(v:val)'))
 endfunction
 
 function s:InstallPlugin(plugin_source_url, plugin_name)
-  let l:plugin_dest_dir = expand(s:plugin_dir . "/" . a:plugin_name)
+  let l:plugin_dest_dir = expand(s:plugin_dir . '/' . a:plugin_name)
 
   if !isdirectory(l:plugin_dest_dir)
-    echo "Installing " . a:plugin_name . "..."
-    call system("git clone --depth 1 " . a:plugin_source_url . " " . l:plugin_dest_dir)
-    echo "Installed " . a:plugin_name . "!"
-    echo " "
+    echo 'Installing ' . a:plugin_name . '...'
+    call system('git clone --depth 1 ' . a:plugin_source_url . ' ' . l:plugin_dest_dir)
+    echo 'Installed ' . a:plugin_name . '!'
+    echo ' '
   endif
 endfunction
 
-command PlugClean call system("rm -rf " . s:plugin_dir) | echo "Removed all plugins"
-command PlugCount echo "Plugin count: " . s:CountDirectories(s:plugin_dir)
+command PlugClean call system('rm -rf ' . s:plugin_dir) | echo 'Removed all plugins'
+command PlugCount echo 'Plugin count: ' . s:CountDirectories(s:plugin_dir)
 
 " Plugins
 
-call s:InstallPlugin("https://github.com/tpope/vim-fugitive", "vim-fugitive")
+call s:InstallPlugin('https://github.com/tpope/vim-fugitive', 'vim-fugitive')
 
 set runtimepath+=~/.fzf
 nnoremap <C-p> :FZF<CR>
 autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
-call s:InstallPlugin("https://github.com/tpope/vim-eunuch", "vim-eunuch")
+call s:InstallPlugin('https://github.com/tpope/vim-eunuch', 'vim-eunuch')
