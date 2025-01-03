@@ -1,0 +1,4 @@
+ctags list all tags kinds of a language: ctags --list-kinds-full=<lang>
+ctags list tags kinds of a language with specified kinds: ctags --kinds-<kinds-lang>=<kinds> --list-kinds-full=<list-kind-lang>
+ctags recurse into directories and output tags file with specified kinds: ctags --kinds-<kinds-lang>=<kinds> -R <path>
+ctags recurse into directories and output tags file with default kinds: ctags -R <path>
