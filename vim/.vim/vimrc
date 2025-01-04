@@ -6,6 +6,7 @@ let mapleader = ' '
 
 syntax on
 filetype plugin indent on
+colorscheme wildcharm
 
 set autoindent
 set autoread
@@ -14,6 +15,7 @@ set clipboard+=unnamedplus,unnamed
 set colorcolumn=80
 set completeopt=menu,menuone,popup,noinsert,noselect
 set copyindent
+set cursorline
 set expandtab
 set foldlevel=99
 set foldlevelstart=99
@@ -55,7 +57,6 @@ set wildmenu
 set wildmode=longest:full,full
 set wildoptions=fuzzy,pum,tagfile
 set winminwidth=5
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS                                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

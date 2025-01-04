@@ -3,13 +3,14 @@ vim.g.maplocalleader = "\\"
 
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
-vim.cmd("colorscheme vim")
+vim.cmd("colorscheme wildcharm")
 
 vim.opt.breakindent = true
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.completeopt = "menu,menuone,popup,noselect,noinsert"
 vim.opt.copyindent = true
+vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
