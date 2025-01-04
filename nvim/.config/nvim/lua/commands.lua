@@ -99,3 +99,5 @@ end, {
   nargs = 1,
   desc = "Grep keyword within the folder containing the current file",
 })
+
+vim.api.nvim_create_user_command("Ctags", "!ctags -R .", { desc = "Run ctags" })
