@@ -12,16 +12,11 @@ set autoread
 set breakindent
 set clipboard+=unnamedplus,unnamed
 set colorcolumn=80
-set completeopt=menu
 set completeopt=menu,menuone,popup,noinsert,noselect
 set copyindent
 set expandtab
-set fileencoding=utf-8
-set foldcolumn=0
-set foldenable
 set foldlevel=99
 set foldlevelstart=99
-set foldmethod=manual
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
 set hlsearch
@@ -31,7 +26,6 @@ set infercase
 set laststatus=2
 set linebreak
 set nobackup
-set nocursorline
 set noswapfile
 set noundofile
 set nowrap
@@ -39,12 +33,10 @@ set nowritebackup
 set number
 set omnifunc=syntaxcomplete#Complete
 set preserveindent
-set pumheight=100
 set relativenumber
 set scrolloff=8
 set shiftround
 set shiftwidth=2
-set showmode
 set showtabline=0
 set sidescrolloff=8
 set signcolumn=no
