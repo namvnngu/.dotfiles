@@ -224,8 +224,8 @@ function s:InstallPlugin(plugin_source_url, plugin_name)
   endif
 endfunction
 
-command PlugClean call system('rm -rf ' . s:plugin_dir) | echo 'Removed all plugins'
-command PlugCount echo 'Plugin count: ' . s:CountDirectories(s:plugin_dir)
+command! PlugClean call system('rm -rf ' . s:plugin_dir) | echo 'Removed all plugins'
+command! PlugCount echo 'Plugin count: ' . s:CountDirectories(s:plugin_dir)
 
 " Plugins
 
@@ -233,6 +233,5 @@ call s:InstallPlugin('https://github.com/tpope/vim-fugitive', 'vim-fugitive')
 
 set runtimepath+=~/.fzf
 nnoremap <C-p> :FZF<CR>
-autocmd! FileType fzf tnoremap <buffer> <Esc> <C-c>
 
 call s:InstallPlugin('https://github.com/tpope/vim-eunuch', 'vim-eunuch')
