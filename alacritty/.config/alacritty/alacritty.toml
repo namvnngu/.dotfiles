@@ -1,20 +1,17 @@
 [general]
 import = [
-  "~/.config/alacritty/colorschemes/one-light.toml",
-  "~/.config/alacritty/fonts/default.toml",
+  "~/.config/alacritty/colorschemes/one_light.toml",
 ]
-live_config_reload = true
 
 [env]
 TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
-[cursor]
-unfocused_hollow = false
+[font]
+size = 13
 
 [cursor.style]
 blinking = "Never"
-shape    = "Block"
 
 [keyboard]
 bindings = [
@@ -22,12 +19,6 @@ bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
 ]
 
-[selection]
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-
 [window]
-decorations     = "full"
 dynamic_padding = true
-dynamic_title   = true
 opacity         = 0.999
-startup_mode    = "Windowed"
