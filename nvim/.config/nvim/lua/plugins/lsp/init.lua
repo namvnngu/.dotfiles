@@ -13,7 +13,6 @@ return {
             require("plugins.lsp.hover").on_attach(client, bufnr)
             require("plugins.lsp.tagfunc").on_attach(client, bufnr)
             require("plugins.lsp.omnifunc").on_attach(client, bufnr)
-            require("plugins.lsp.inlayhint").on_attach(client, bufnr)
           end,
         }, config or {}))
       end
