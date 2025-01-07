@@ -4,7 +4,7 @@
 
 let mapleader = ' '
 
-syntax on
+syntax off
 filetype plugin indent on
 colorscheme wildcharm
 
