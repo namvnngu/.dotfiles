@@ -24,11 +24,11 @@ PROMPT='%n %~'$'\n$ '
 ###############################################################################
 
 # auto suggestions
-ZSH_AUTO_SUGGESTIONS_DIR=$HOME/.zsh/zsh-autosuggestions
-if [[ ! -d $ZSH_AUTO_SUGGESTIONS_DIR ]]; then
-  git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_AUTO_SUGGESTIONS_DIR
-fi
-source $ZSH_AUTO_SUGGESTIONS_DIR/zsh-autosuggestions.zsh
+# ZSH_AUTO_SUGGESTIONS_DIR=$HOME/.zsh/zsh-autosuggestions
+# if [[ ! -d $ZSH_AUTO_SUGGESTIONS_DIR ]]; then
+#   git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_AUTO_SUGGESTIONS_DIR
+# fi
+# source $ZSH_AUTO_SUGGESTIONS_DIR/zsh-autosuggestions.zsh
 
 # syntax highlighting
 # ZSH_SYNTAX_HIGHLIGHTING_DIR=$HOME/.zsh/zsh-syntax-highlighting
@@ -38,12 +38,12 @@ source $ZSH_AUTO_SUGGESTIONS_DIR/zsh-autosuggestions.zsh
 # source $ZSH_SYNTAX_HIGHLIGHTING_DIR/zsh-syntax-highlighting.zsh
 
 # jump around
-Z_DIR=$HOME/.zsh/z
-if [[ ! -d $Z_DIR ]]; then
-  git clone --depth 1 https://github.com/rupa/z $Z_DIR
-fi
-export _Z_DATA=$Z_DIR/.z
-source $Z_DIR/z.sh
+# Z_DIR=$HOME/.zsh/z
+# if [[ ! -d $Z_DIR ]]; then
+#   git clone --depth 1 https://github.com/rupa/z $Z_DIR
+# fi
+# export _Z_DATA=$Z_DIR/.z
+# source $Z_DIR/z.sh
 
 ###############################################################################
 # TOOLS                                                                       #
