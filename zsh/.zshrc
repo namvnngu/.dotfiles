@@ -80,7 +80,8 @@ alias nvimn="nvim -u NONE"
 alias vimn="vim -u NONE"
 
 # my own
-export PATH=$PATH:$HOME/dotfiles/bin
+export DOTFILES_PATH=$HOME/.dotfiles
+export PATH=$PATH:$DOTFILES_PATH/bin
 
 # go
 export GOPATH=$HOME/.go

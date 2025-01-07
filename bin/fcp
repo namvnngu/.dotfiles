@@ -2,7 +2,7 @@
 
 # Search and copy something
 
-resources_dir_path="$HOME/dotfiles/bin/resources"
+resources_dir_path="$DOTFILES_PATH/bin/resources"
 
 if [[ $1 == "ls" ]]; then
   find $resources_dir_path -maxdepth 1 -name "fcp*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
