@@ -21,35 +21,37 @@ vim.api.nvim_create_user_command("LspCapabilities", function()
   end
 end, {})
 
--- stylua: ignore
-vim.api.nvim_create_user_command("Run", function()
+vim.api.nvim_create_user_command("QRun", function()
   local extension = vim.fn.expand("%:e")
 
   if extension == "py" then
-    vim.cmd("term python3 %")
+    vim.cmd("hor term python3 %:p")
   elseif extension == "cpp" then
-    vim.cmd("term cd %:p:h && g++ -std=c++14 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out")
+    vim.cmd("hor term cd %:p:h && c++ % -o out && ./out")
   elseif extension == "c" then
-    vim.cmd("term cd %:p:h && gcc -std=c11 % -O2 -Wall -Wextra -Werror -pedantic -g -o %:t:r.out && ./%:t:r.out")
+    vim.cmd("hor term cd %:p:h && cc % -o out && ./out")
   elseif extension == "java" then
-    vim.cmd("term javac %:t && java -enableassertions %:t:r")
+    vim.cmd("hor term javac %:p && java -enableassertions %:t:r")
   elseif extension == "cs" then
-    vim.cmd("term dotnet run --project %:p:h")
+    vim.cmd("hor term dotnet run --project %:p:h")
   elseif extension == "ts" or extension == "js" then
-    vim.cmd("term npx tsx %:t")
+    vim.cmd("hor term node %:p")
   elseif extension == "hurl" then
-    vim.cmd("term hurl %:t | jq")
+    vim.cmd("hor term hurl %:p | jq")
+  elseif extension == "" then
+    notify.warn("The file does not exist yet!")
   else
-    notify.warn("No execution for " .. extension .. " yet!")
+    notify.warn("No run command for " .. extension .. " yet!")
   end
 end, { desc = "Execute code based on file extension" })
 
--- stylua: ignore
 vim.api.nvim_create_user_command("Test", function()
   local extension = vim.fn.expand("%:e")
 
   if extension == "hurl" then
-    vim.cmd("term hurl --test %:t")
+    vim.cmd("hor term hurl --test %:t")
+  elseif extension == "" then
+    notify.warn("The file does not exist yet!")
   else
     notify.warn("No execution for " .. extension .. " yet!")
   end
