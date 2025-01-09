@@ -55,7 +55,7 @@ set updatetime=50
 set virtualedit=block
 set wildmenu
 set wildmode=longest:full,full
-set wildoptions=fuzzy,pum,tagfile
+set wildoptions=pum,tagfile
 set winminwidth=5
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS                                                                    "
