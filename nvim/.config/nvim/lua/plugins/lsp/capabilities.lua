@@ -17,7 +17,7 @@ return vim.tbl_deep_extend(
               1, -- Deprecated
             },
           },
-          insertReplaceSupport = true,
+          insertReplaceSupport = false, -- This has to be off to avoid nvim runtime error
           resolveSupport = {
             properties = {
               "documentation",
