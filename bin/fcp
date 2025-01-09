@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Search and copy something
+# Find and copy something
 
 resources_dir_path="$DOTFILES_PATH/bin/resources"
 
