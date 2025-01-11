@@ -7,17 +7,17 @@
 -- o  Operator pending mode map. Defined using ':omap' or ':onoremap'.
 -- t  Create a mapping that applies only in Terminal mode. Defined using ':tmap' or ':tnoremap'.
 
+-- Avoid using arrow keys
+vim.keymap.set("", "<Up>", "<NOP>")
+vim.keymap.set("", "<Down>", "<NOP>")
+vim.keymap.set("", "<Left>", "<NOP>")
+vim.keymap.set("", "<Right>", "<NOP>")
+
 -- Move to window
 vim.keymap.set("n", "<leader>h", "<C-W>h", { remap = true })
 vim.keymap.set("n", "<leader>j", "<C-W>j", { remap = true })
 vim.keymap.set("n", "<leader>k", "<C-W>k", { remap = true })
 vim.keymap.set("n", "<leader>l", "<C-W>l", { remap = true })
-
--- Resize window
-vim.keymap.set("n", "<Up>", ":resize +2<CR>")
-vim.keymap.set("n", "<Down>", ":resize -2<CR>")
-vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>")
 
 -- Yanking
 vim.keymap.set("n", "<leader>ya", ":%y+<CR>")
@@ -99,9 +99,3 @@ vim.keymap.set("n", "<leader>e", ":e <C-R>%")
 
 -- Open a file name under cursor in a new vertical split
 vim.keymap.set("n", "<leader><C-W>F", ":vertical wincmd F<CR>")
-
--- Avoid using arrow keys
--- vim.keymap.set("", "<Up>", "<NOP>")
--- vim.keymap.set("", "<Down>", "<NOP>")
--- vim.keymap.set("", "<Left>", "<NOP>")
--- vim.keymap.set("", "<Right>", "<NOP>")
