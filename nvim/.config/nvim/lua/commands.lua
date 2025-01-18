@@ -29,7 +29,7 @@ vim.api.nvim_create_user_command("QRun", function()
   elseif extension == "cpp" then
     vim.cmd("hor term cd %:p:h && c++ % -o out && ./out")
   elseif extension == "c" then
-    vim.cmd("hor term cd %:p:h && cc % -o out && ./out")
+    vim.cmd("hor term cd %:p:h && cc % -std=c99 -o out && ./out")
   elseif extension == "java" then
     vim.cmd("hor term javac %:p && java -enableassertions %:t:r")
   elseif extension == "cs" then
