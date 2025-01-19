@@ -66,7 +66,7 @@ vim.keymap.set("n", "<leader>K", ":lprev<CR>zz")
 -- Toggle spelling checker
 vim.keymap.set(
   "",
-  "<F4>",
+  "<F12>",
   ":setlocal spell! spelllang=en_us<CR>",
   { remap = true }
 )
