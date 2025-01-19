@@ -57,6 +57,7 @@ set wildmenu
 set wildmode=longest:full,full
 set wildoptions=pum,tagfile
 set winminwidth=5
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS                                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -116,7 +117,7 @@ nnoremap <leader>J :lnext<CR>zz
 nnoremap <leader>K :lprev<CR>zz
 
 " Toggle spelling checker
-map <F4> :setlocal spell! spelllang=en_us<CR>
+map <F12> :setlocal spell! spelllang=en_us<CR>
 
 " Replace currently selected text with default register without yanking it
 xnoremap <leader>p "_dP
