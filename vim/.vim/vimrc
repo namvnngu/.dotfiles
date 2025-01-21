@@ -145,7 +145,7 @@ nnoremap <leader>e :e <C-R>%
 nnoremap <leader><C-W>F :vertical wincmd F<CR>
 
 " Split explorer
-nnoremap - :Ex<CR>
+nnoremap - :vert term nnn -H %:h<CR>i
 
 " Switch between C source and header file
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
