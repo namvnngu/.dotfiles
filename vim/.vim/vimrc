@@ -41,7 +41,7 @@ set shiftround
 set shiftwidth=2
 set showtabline=0
 set sidescrolloff=8
-set signcolumn=no
+set signcolumn=yes
 set smartcase
 set smartindent
 set smoothscroll
@@ -138,14 +138,14 @@ nnoremap <silent> <leader>x :!chmod +x %<CR>
 " Copy the current file's path
 nnoremap yp :exec setreg('+', expand('%:p'))<CR>
 
-" Switch editing file
+" Switch file
 nnoremap <leader>e :e <C-R>%
 
 " Open a file name under cursor in a new vertical split
 nnoremap <leader><C-W>F :vertical wincmd F<CR>
 
-" Split explorer
-nnoremap - :vert term nnn -H %:h<CR>i
+" Exit terminal
+tnoremap <Esc> <C-\><C-n>:q!<CR>
 
 " Switch between C source and header file
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
@@ -156,6 +156,9 @@ nnoremap <leader>F gg=G''
 " Set undo points when deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
+
+" Open file manager
+nnoremap <expr> - ':vert term nnn -H ' . (@% == '' ? getcwd() : '%:h') . '<CR>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                               "

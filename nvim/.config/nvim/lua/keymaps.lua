@@ -94,8 +94,11 @@ vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 -- Copy the current file's path
 vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
 
--- Switch editing file
+-- Switch file
 vim.keymap.set("n", "<leader>e", ":e <C-R>%")
 
 -- Open a file name under cursor in a new vertical split
 vim.keymap.set("n", "<leader><C-W>F", ":vertical wincmd F<CR>")
+
+-- Exit terminal
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>:q!<CR>]])
