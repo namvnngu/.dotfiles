@@ -103,3 +103,11 @@ end, {
 })
 
 vim.api.nvim_create_user_command("Ctags", "!ctags -R .", { desc = "Run ctags" })
+
+vim.api.nvim_create_user_command("Cht", function(opts)
+  local query = opts.args
+  vim.cmd("sp | enew | .!curl -s \"cht.sh/" .. query .. "?T\"")
+end, {
+  nargs = 1,
+  desc = "Find cht.sh with query",
+})
