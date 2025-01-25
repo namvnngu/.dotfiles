@@ -4,6 +4,8 @@ os=$(uname -s)
 # SETTINGS                                                                    #
 ###############################################################################
 
+export NO_COLOR=1
+
 # history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
@@ -75,9 +77,12 @@ alias nvimn="nvim -u NONE"
 # vim
 alias vimn="vim -u NONE"
 
-# my own
-export DOTFILES_PATH=$HOME/.dotfiles
-export PATH=$PATH:$DOTFILES_PATH/bin
+# nnn
+alias nnn="nnn -deH"
 
 # go
 export GOPATH=$HOME/.go
+
+# my own
+export DOTFILES_PATH=$HOME/.dotfiles
+export PATH=$PATH:$DOTFILES_PATH/bin
