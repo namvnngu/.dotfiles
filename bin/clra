@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Print all colors
+
+STYLE="38;5"
+for COLOR in {0..255}
+do
+  TAG="\033[${STYLE};${COLOR}m"
+  STR="${STYLE};${COLOR}"
+  echo -ne "${TAG}${STR}"
+  echo
+done

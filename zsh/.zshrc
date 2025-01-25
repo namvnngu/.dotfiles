@@ -69,10 +69,6 @@ if [[ -f $HOME/.fzf.zsh ]]; then
   source $HOME/.fzf.zsh
 fi
 
-# tmux
-alias tmuxs=tmux-sessionizer
-alias tmuxc=tmux-cht
-
 # nvim
 alias nvimn="nvim -u NONE"
 
@@ -85,25 +81,3 @@ export PATH=$PATH:$DOTFILES_PATH/bin
 
 # go
 export GOPATH=$HOME/.go
-
-###############################################################################
-# UTILITIES                                                                   #
-###############################################################################
-
-# zsh startup time
-function timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
-
-# print terminal colors
-function colors() {
-  STYLE="38;5"
-  for COLOR in {0..255}
-  do
-    TAG="\033[${STYLE};${COLOR}m"
-    STR="${STYLE};${COLOR}"
-    echo -ne "${TAG}${STR}"
-    echo
-  done
-}

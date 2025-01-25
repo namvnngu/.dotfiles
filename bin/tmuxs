@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# tmux sessionizer
+# Author: ThePrimeagen
 # Source: https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
 
 if [[ $# -eq 1 ]]; then
