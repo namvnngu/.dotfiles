@@ -2,11 +2,22 @@
 
 # Print all colors
 
-STYLE="38;5"
-for COLOR in {0..255}
+output=''
+style='38;5'
+padding='        '
+
+for i in {0..256}
 do
-  TAG="\033[${STYLE};${COLOR}m"
-  STR="${STYLE};${COLOR}"
-  echo -ne "${TAG}${STR}"
-  echo
+  color="\033[${style};${i}m"
+  name="${style};${i}"
+  name="${name:0:${#padding}}${padding:0:$((${#padding} - ${#name}))}"
+  output="${output}${color}${name}"
+  if [[ $(( (i + 1) % 5 )) == 0 ]] ; then
+    output="${output}\n"
+  else
+    len=
+    output="${output}\t "
+  fi
 done
+
+echo -ne "${output}" | column
