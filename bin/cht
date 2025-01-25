@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-curl "cht.sh/$1?T"
+curl "cht.sh/$1?T" | vim -
