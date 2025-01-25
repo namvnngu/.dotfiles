@@ -157,9 +157,6 @@ nnoremap <leader>F gg=G''
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-" Open file manager
-nnoremap <expr> - ':vert term nnn -H ' . (@% == '' ? getcwd() : '%:h') . '<CR>'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -212,33 +209,37 @@ command! -nargs=1 Cht :sp | enew | .!curl -s "cht.sh/<args>?T"
 " PLUGINS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Plugin Manager
+let s:PLUG_ROOT = '~/.vim/pack/plugins/start'
+let s:PLUG_URLS = [
+      \ 'https://github.com/tpope/vim-fugitive',
+      \ 'https://github.com/junegunn/fzf',
+      \ 'https://github.com/mcchrish/nnn.vim',
+      \ ]
 
-let s:plugin_dir = '~/.vim/pack/plugins/start'
+command! Plugr call system('rm -rf ' . s:PLUG_ROOT) | echo 'Removed all plugins'
+command! Plugc echo 'Plugin count: ' . len(s:PLUG_URLS)
+command! Plugl for plug_url in s:PLUG_URLS |
+             \   echo fnamemodify(plug_url, ':t') . ': ' . plug_url |
+             \ endfor
 
-function s:CountDirectories(path)
-  return len(filter(globpath(a:path, '*', 0, 1), 'isdirectory(v:val)'))
-endfunction
-
-function s:InstallPlugin(plugin_source_url, plugin_name)
-  let l:plugin_dest_dir = expand(s:plugin_dir . '/' . a:plugin_name)
-
-  if !isdirectory(l:plugin_dest_dir)
-    echo 'Installing ' . a:plugin_name . '...'
-    call system('git clone --depth 1 ' . a:plugin_source_url . ' ' . l:plugin_dest_dir)
-    echo 'Installed ' . a:plugin_name . '!'
+for plug_url in s:PLUG_URLS
+  let s:plug_name = fnamemodify(plug_url, ':t')
+  let s:plug_dir = expand(s:PLUG_ROOT . '/' . s:plug_name)
+  if !isdirectory(s:plug_dir)
+    echo 'Installing ' . s:plug_name . '...'
+    call system('git clone --depth 1 ' . plug_url . ' ' . s:plug_dir)
+    echo 'Installed ' . s:plug_name . '!'
     echo ' '
   endif
-endfunction
+endfor
+unlet s:plug_name
+unlet s:plug_dir
 
-command! PlugClean call system('rm -rf ' . s:plugin_dir) | echo 'Removed all plugins'
-command! PlugCount echo 'Plugin count: ' . s:CountDirectories(s:plugin_dir)
-
-" Plugins
-
-call s:InstallPlugin('https://github.com/tpope/vim-fugitive', 'vim-fugitive')
-
-set runtimepath+=~/.fzf
+" fzf configs
 nnoremap <C-p> :FZF<CR>
 
-call s:InstallPlugin('https://github.com/tpope/vim-eunuch', 'vim-eunuch')
+" nnn configs
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+let g:nnn#set_default_mappings = 0
+nnoremap <expr> - ':NnnPicker ' . (@% == '' ? getcwd() : '%:p:h') . '<CR>'
