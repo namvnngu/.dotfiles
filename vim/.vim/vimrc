@@ -218,13 +218,14 @@ let s:PLUG_URLS = [
 
 command! Plugr call system('rm -rf ' . s:PLUG_ROOT) | echo 'Removed all plugins'
 command! Plugc echo 'Plugin count: ' . len(s:PLUG_URLS)
-command! Plugl for plug_url in s:PLUG_URLS |
-             \   echo fnamemodify(plug_url, ':t') . ': ' . plug_url |
-             \ endfor
+command! Plugl for plug_url in s:PLUG_URLS
+            \|   echo fnamemodify(plug_url, ':t') . ': ' . plug_url
+            \| endfor
 
 for plug_url in s:PLUG_URLS
   let s:plug_name = fnamemodify(plug_url, ':t')
   let s:plug_dir = expand(s:PLUG_ROOT . '/' . s:plug_name)
+
   if !isdirectory(s:plug_dir)
     echo 'Installing ' . s:plug_name . '...'
     call system('git clone --depth 1 ' . plug_url . ' ' . s:plug_dir)
