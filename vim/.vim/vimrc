@@ -235,10 +235,10 @@ endfor
 unlet s:plug_name
 unlet s:plug_dir
 
-" fzf configs
+" fzf
 nnoremap <C-p> :FZF<CR>
 
-" nnn configs
+" nnn
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 let g:nnn#command = 'nnn -deH'
