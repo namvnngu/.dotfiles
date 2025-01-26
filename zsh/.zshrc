@@ -19,7 +19,7 @@ export KEYTIMEOUT=1
 PROMPT='%n %~'$'\n$ '
 
 # polyglot tool version manager
-MISE_DIR=$HOME/.mise
+MISE_DIR=$HOME/.config/mise
 export MISE_CONFIG_DIR=$MISE_DIR/config
 export MISE_CACHE_DIR=$MISE_DIR/cache
 export MISE_STATE_DIR=$MISE_DIR/state
