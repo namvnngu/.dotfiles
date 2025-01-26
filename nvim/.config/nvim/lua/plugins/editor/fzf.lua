@@ -1,6 +1,6 @@
 return {
   {
-    dir = "~/.fzf",
+    "junegunn/fzf",
     keys = {
       {
         "<C-P>",
