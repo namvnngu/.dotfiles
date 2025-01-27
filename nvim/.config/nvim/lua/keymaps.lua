@@ -101,4 +101,4 @@ vim.keymap.set("n", "<leader>e", ":e <C-R>%")
 vim.keymap.set("n", "<leader><C-W>F", ":vertical wincmd F<CR>")
 
 -- Exit terminal
-vim.keymap.set("t", "<C-D>", [[<C-\><C-n>:q!<CR>]])
+vim.keymap.set("t", "<C-D>", [[<C-\><C-N>:q!<CR>]])

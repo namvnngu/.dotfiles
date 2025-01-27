@@ -144,7 +144,7 @@ nnoremap <leader>e :e <C-R>%
 nnoremap <leader><C-W>F :vertical wincmd F<CR>
 
 " Exit terminal
-tnoremap <C-D> <C-\><C-n>:q!<CR>
+tnoremap <C-D> <C-\><C-N>:q!<CR>
 
 " Switch between C source and header file
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
@@ -236,7 +236,7 @@ unlet s:plug_name
 unlet s:plug_dir
 
 " fzf
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-P> :FZF<CR>
 
 " nnn
 let g:loaded_netrw       = 1
