@@ -49,9 +49,8 @@ set splitbelow
 set splitright
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set tabstop=2
-set timeoutlen=500
+set ttimeout ttimeoutlen=50
 set undolevels=10000
-set updatetime=50
 set virtualedit=block
 set wildmenu
 set wildmode=longest:full,full
