@@ -6,7 +6,7 @@ return {
     config = function(_, opts)
       for server, config in pairs(opts.servers) do
         require("lspconfig")[server].setup(vim.tbl_deep_extend("force", {
-          capabilities = vim.deepcopy(require("plugins.lsp.capabilities")),
+          capabilities = require("plugins.lsp.capabilities"),
           on_init = function(client)
             require("plugins.lsp.semantic_tokens").on_init(client)
           end,
