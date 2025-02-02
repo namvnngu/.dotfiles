@@ -4,10 +4,9 @@ os=$(uname -s)
 export NO_COLOR=1
 
 # history
-HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+setopt SHARE_HISTORY
 
 # vim mode
 # set -o vi
