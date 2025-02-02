@@ -7,9 +7,3 @@ mise.local.toml
 
 # direnv
 .envrc
-
-# pixi
-.pixi
-*.egg-info
-pixi.lock
-pixi.toml
