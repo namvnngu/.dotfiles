@@ -1,4 +1,13 @@
+# get os
 os=$(uname -s)
+
+# add the path to $PATH if it is not already included.
+# source: https://superuser.com/a/39995
+pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
 
 # disable color if possible
 export NO_COLOR=1
@@ -33,11 +42,10 @@ alias nnn="nnn -AdeH"
 export GOPATH=$HOME/.go
 
 # pixi
-export PATH=$PATH:$HOME/.pixi/bin
+pathadd $HOME/.pixi/bin
 
 # direnv
 eval "$(direnv hook zsh)"
 
 # my own
-export DOTFILES_PATH=$HOME/.dotfiles
-export PATH=$PATH:$DOTFILES_PATH/bin
+pathadd $HOME/.dotfiles
