@@ -12,7 +12,7 @@ do
   name="${style};${i}"
   name="${name:0:${#padding}}${padding:0:$((${#padding} - ${#name}))}"
   output="${output}${color}${name}"
-  if [[ $(( (i + 1) % 5 )) == 0 ]] ; then
+  if [[ $(( (i + 1) % 5 )) == 0 ]]; then
     output="${output}\n"
   else
     len=

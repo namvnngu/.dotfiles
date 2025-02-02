@@ -14,7 +14,7 @@ fi
 fcp_file_path="$resources_dir_path/fcp-$1"
 
 # Fuzzy search
-if [[ $# -eq 0 ]] ; then
+if [[ $# -eq 0 ]]; then
   files=$(find $resources_dir_path -maxdepth 1 -name "fcp*")
   selected=$(cat $files | fzf)
 elif [[ -e $fcp_file_path ]]; then
