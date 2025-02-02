@@ -18,16 +18,6 @@ export KEYTIMEOUT=1
 # prompt
 PROMPT='%n %~'$'\n$ '
 
-# polyglot tool version manager
-MISE_DIR=$HOME/.config/mise
-export MISE_CONFIG_DIR=$MISE_DIR/config
-export MISE_CACHE_DIR=$MISE_DIR/cache
-export MISE_STATE_DIR=$MISE_DIR/state
-export MISE_DATA_DIR=$MISE_DIR/data
-eval "$(mise activate zsh)"
-alias mx="mise exec"
-alias mr="mise run"
-
 # fzf
 source <(fzf --zsh)
 
@@ -42,6 +32,12 @@ alias nnn="nnn -AdeH"
 
 # go
 export GOPATH=$HOME/.go
+
+# pixi
+export PATH=$PATH:$HOME/.pixi/bin
+
+# direnv
+eval "$(direnv hook zsh)"
 
 # my own
 export DOTFILES_PATH=$HOME/.dotfiles

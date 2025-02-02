@@ -1,3 +1,15 @@
-./**/*.DS_Store
+# MacOS
 .DS_Store
-*mise.toml
+
+# mise
+mise.toml
+mise.local.toml
+
+# direnv
+.envrc
+
+# pixi
+.pixi
+*.egg-info
+pixi.lock
+pixi.toml
