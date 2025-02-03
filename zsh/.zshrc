@@ -48,4 +48,4 @@ pathadd $HOME/.pixi/bin
 eval "$(direnv hook zsh)"
 
 # my own
-pathadd $HOME/.dotfiles
+pathadd $HOME/.dotfiles/bin
