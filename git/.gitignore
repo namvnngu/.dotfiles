@@ -1,9 +1,5 @@
 # MacOS
 .DS_Store
 
-# mise
-mise.toml
-mise.local.toml
-
 # direnv
 .envrc
