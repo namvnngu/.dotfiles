@@ -105,11 +105,6 @@ end
 
 --- @param callback fun(branch_name: string)
 function M.get_current_branch(callback)
-  local filepath = vim.api.nvim_buf_get_name(0)
-  if not filepath then
-    return
-  end
-
   system.run_cmd("git branch --show-current", {
     on_stdout = function(url)
       if url and url[1] then
@@ -175,11 +170,6 @@ end
 
 --- @param callback fun(url: string)
 function M.get_remote_url(callback)
-  local filepath = vim.api.nvim_buf_get_name(0)
-  if not filepath then
-    return
-  end
-
   system.run_cmd("git config --get remote.origin.url", {
     on_stdout = function(url)
       if url and url[1] then
@@ -193,11 +183,6 @@ end
 
 --- @param callback fun(repo_root: string)
 function M.get_repo_root(callback)
-  local filepath = vim.api.nvim_buf_get_name(0)
-  if not filepath then
-    return
-  end
-
   system.run_cmd("git rev-parse --show-toplevel", {
     on_stdout = function(data)
       callback(data[1])

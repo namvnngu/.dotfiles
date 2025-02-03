@@ -58,11 +58,7 @@ vim.api.nvim_create_user_command("Test", function()
 end, { desc = "Run test code based on file extension" })
 
 vim.api.nvim_create_user_command("OpenGitCommitURL", function()
-  local filetype = vim.bo.filetype
-
-  if filetype == "fugitiveblame" then
-    git.open_commit_in_browser(vim.fn.expand("<cword>"))
-  end
+  git.open_commit_in_browser(vim.fn.expand("<cword>"))
 end, { desc = "Open Git commit URL" })
 
 vim.api.nvim_create_user_command("BlameExtreme", function(args)
@@ -106,7 +102,7 @@ vim.api.nvim_create_user_command("Ctags", "!ctags -R .", { desc = "Run ctags" })
 
 vim.api.nvim_create_user_command("Cht", function(opts)
   local query = opts.args
-  vim.cmd("sp | enew | .!curl -s \"cht.sh/" .. query .. "?T\"")
+  vim.cmd('sp | enew | .!curl -s "cht.sh/' .. query .. '?T"')
 end, {
   nargs = 1,
   desc = "Find cht.sh with query",
