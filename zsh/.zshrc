@@ -45,4 +45,5 @@ export GOPATH=$HOME/.go
 pathadd $HOME/.pixi/bin
 
 # my own
+export DOTFILES_PATH=$HOME/.dotfiles
 pathadd $HOME/.dotfiles/bin
