@@ -44,8 +44,5 @@ export GOPATH=$HOME/.go
 # pixi
 pathadd $HOME/.pixi/bin
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # my own
 pathadd $HOME/.dotfiles/bin
