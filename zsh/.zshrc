@@ -33,8 +33,6 @@ alias nvimn="nvim -u NONE"
 alias vimn="vim -u NONE"
 
 # nnn
-export NNN_COLORS="0000"
-export NNN_FCOLORS="000000000000000000000000"
 alias nnn="nnn -AdeH"
 
 # go
