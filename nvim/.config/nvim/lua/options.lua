@@ -41,5 +41,4 @@ vim.opt.virtualedit = "block"
 vim.opt.wildmode = "longest:full,full"
 vim.opt.wildoptions = "pum,tagfile"
 vim.opt.winminwidth = 5
-vim.opt.wrap = false
 vim.opt.writebackup = false
