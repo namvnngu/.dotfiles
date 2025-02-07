@@ -30,6 +30,7 @@ set linebreak
 set nobackup
 set noswapfile
 set noundofile
+set nowrap
 set nowritebackup
 set number
 set omnifunc=syntaxcomplete#Complete
