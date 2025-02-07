@@ -189,9 +189,7 @@ augroup c_tags
 augroup END
 function s:SetTags(lang)
   let l:files = globpath('~/.tags/' . a:lang, '*', 0, 1)
-  if len(l:files) == 0
-    let &tags = './tags,tags'
-  else
+  if len(l:files) != 0
     let &tags = './tags,tags,' . join(l:files, ',')
   endif
 endfunction
