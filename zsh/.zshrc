@@ -12,7 +12,7 @@ pathadd() {
 # history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 
 # vim mode
 # set -o vi
