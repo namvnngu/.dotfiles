@@ -237,8 +237,6 @@ unlet s:plug_dir
 nnoremap <C-P> :FZF<CR>
 
 " nnn
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
 let g:nnn#command = 'nnn -AdeH'
 let g:nnn#set_default_mappings = 0
 nnoremap <expr> - ':NnnPicker ' . (@% == '' ? getcwd() : '%:p:h') . '<CR>'
