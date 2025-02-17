@@ -1,1 +1,8 @@
-
+-- Plugins Path: stdpath("data")/site/pack/plugins/start/*
+--
+-- Nvim Runtime's Startup:
+-- 1. dotfiles/init.lua
+-- 2. dotfiles/plugin/*
+-- 3. pack/start/*/plugin/*
+-- 4. pack/start/*/after/plugin/*
+-- 5. dotfiles/after/plugin/*
