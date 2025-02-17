@@ -168,9 +168,9 @@ ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>Date: %d %b
 
 augroup trim_white_space
   autocmd!
-  autocmd BufWritePre * call s:TrimWhiteSpace()
+  autocmd BufWritePre * call s:trim_white_space()
 augroup END
-function s:TrimWhiteSpace()
+function s:trim_white_space()
   let l:save = winsaveview()
   keepjumps keeppatterns silent! %s/\s\+$//e
   keepjumps keeppatterns silent! %s/\%^\n\+//
@@ -185,9 +185,9 @@ augroup lang_tags
 augroup END
 augroup c_tags
   autocmd!
-  autocmd BufEnter,BufNew *.c,*.h call s:SetTags('c')
+  autocmd BufEnter,BufNew *.c,*.h call s:set_tags('c')
 augroup END
-function s:SetTags(lang)
+function s:set_tags(lang)
   let l:files = globpath('~/.tags/' . a:lang, '*', 0, 1)
   if len(l:files) != 0
     let &tags = './tags,tags,' . join(l:files, ',')
@@ -213,25 +213,29 @@ let s:PLUG_URLS = [
       \ 'https://github.com/mcchrish/nnn.vim',
       \ ]
 
-command! Plugr call system('rm -rf ' . s:PLUG_ROOT) | echo 'Removed all plugins'
-command! Plugc echo 'Plugin count: ' . len(s:PLUG_URLS)
-command! Plugl for plug_url in s:PLUG_URLS
+function s:install_plugins()
+  for plug_url in s:PLUG_URLS
+    let l:plug_name = fnamemodify(plug_url, ':t')
+    let l:plug_dir = expand(s:PLUG_ROOT . '/' . l:plug_name)
+
+    if !isdirectory(l:plug_dir)
+      echo 'Installing ' . l:plug_name . '...'
+      call system('git clone --depth=1 --filter=blob:none ' . plug_url . ' ' . l:plug_dir)
+      echo 'Installed ' . l:plug_name . '!'
+      echo ' '
+    endif
+  endfor
+endfunction
+
+command! Pc echo 'Plugin count: ' . len(s:PLUG_URLS)
+command! Pu call system('rm -rf ' . s:PLUG_ROOT)
+         \| call s:install_plugins()
+         \| echo 'Updated all plugins. Restart Nvim to get latest updates.'
+command! Pl for plug_url in s:PLUG_URLS
             \|   echo fnamemodify(plug_url, ':t') . ': ' . plug_url
             \| endfor
 
-for plug_url in s:PLUG_URLS
-  let s:plug_name = fnamemodify(plug_url, ':t')
-  let s:plug_dir = expand(s:PLUG_ROOT . '/' . s:plug_name)
-
-  if !isdirectory(s:plug_dir)
-    echo 'Installing ' . s:plug_name . '...'
-    call system('git clone --depth 1 ' . plug_url . ' ' . s:plug_dir)
-    echo 'Installed ' . s:plug_name . '!'
-    echo ' '
-  endif
-endfor
-unlet s:plug_name
-unlet s:plug_dir
+call s:install_plugins()
 
 " fzf
 nnoremap <C-P> :FZF<CR>
