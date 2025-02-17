@@ -1,6 +1,1 @@
-require("options")
-require("keymaps")
-require("autocmds")
-require("commands")
-require("color")
-require("plugins")
+
