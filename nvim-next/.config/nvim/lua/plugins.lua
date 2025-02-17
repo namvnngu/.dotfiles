@@ -1,8 +1,8 @@
-local PLUG_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 local PLUG_URLS = {
   "https://github.com/junegunn/fzf",
   "https://github.com/stevearc/oil.nvim",
 }
+local PLUG_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 
 --- Install plugins given urls.
 ---
@@ -72,7 +72,7 @@ local function create_commands(plug_urls, plug_root)
     vim.api.nvim_echo({
       { message },
     }, true, {})
-  end, { desc = "Count plugins" })
+  end, { desc = "List plugins" })
 end
 
 --- Set up plugins.
