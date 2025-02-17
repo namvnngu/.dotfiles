@@ -66,7 +66,7 @@ local function create_commands(plug_urls, plug_root)
     for index, plug_url in pairs(plug_urls) do
       local plug_name = vim.fn.fnamemodify(plug_url, ":t")
       message =
-        string.format(message .. "%s. %s: %s\n", index, plug_name, plug_url)
+        string.format("%s%s. %s: %s\n", message, index, plug_name, plug_url)
     end
 
     vim.api.nvim_echo({
