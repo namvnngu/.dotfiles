@@ -1,4 +1,6 @@
 --- @class LspConfig : lspconfig.Config
+---@diagnostic disable-next-line: duplicate-doc-field
+--- @field cmd? string
 
 --- Install plugins given urls.
 ---
