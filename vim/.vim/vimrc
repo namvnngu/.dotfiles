@@ -189,7 +189,7 @@ function s:set_tags(lang)
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COMMANDS                                                                "
+" COMMANDS                                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 command! Ctags !ctags -R .
@@ -210,13 +210,12 @@ let s:PLUG_URLS = [
 function s:install_plugins()
   for plug_url in s:PLUG_URLS
     let l:plug_name = fnamemodify(plug_url, ':t')
-    let l:plug_dir = expand(s:PLUG_ROOT . '/' . l:plug_name)
+    let l:plug_path = expand(s:PLUG_ROOT . '/' . l:plug_name)
 
-    if !isdirectory(l:plug_dir)
+    if !isdirectory(l:plug_path)
       echo 'Installing ' . l:plug_name . '...'
-      call system('git clone --depth=1 --filter=blob:none ' . plug_url . ' ' . l:plug_dir)
+      call system('git clone --depth=1 --filter=blob:none ' . plug_url . ' ' . l:plug_path)
       echo 'Installed ' . l:plug_name . '!'
-      echo ' '
     endif
   endfor
 endfunction
