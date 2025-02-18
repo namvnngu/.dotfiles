@@ -2,6 +2,11 @@ local PLUG_URLS = {
   "https://github.com/junegunn/fzf",
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/tpope/vim-fugitive",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/stevearc/conform.nvim",
+  "https://github.com/williamboman/mason.nvim",
+  "https://github.com/j-hui/fidget.nvim",
+  "https://github.com/echasnovski/mini.align",
 }
 local PLUG_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 

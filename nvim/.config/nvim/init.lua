@@ -1,1 +1,6 @@
+require("options")
+require("keymaps")
+require("abbrevs")
+require("autocmds")
+require("commands")
 require("plugins")

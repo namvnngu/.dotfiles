@@ -1,10 +1,10 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("namnguyen" .. name, { clear = true })
 end
 
 -- Trim spaces
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = augroup("trim_spaces"),
+  group = augroup("TrimSpaces"),
   pattern = "*",
   callback = function()
     local patterns = {
@@ -26,14 +26,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Set scss filetype to sass
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  group = augroup("scss_to_sass"),
+  group = augroup("ScssToSass"),
   pattern = "*.scss",
   command = "set filetype=sass",
 })
 
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = augroup("resize_splits"),
+  group = augroup("ResizeSplits"),
   callback = function()
     local current_tab = vim.fn.tabpagenr()
     vim.cmd("tabdo wincmd =")
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
+  group = augroup("HighlightYank"),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -67,7 +67,7 @@ vim.filetype.add({
   },
 })
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = augroup("bigfile"),
+  group = augroup("Bigfile"),
   pattern = "bigfile",
   callback = function(ev)
     vim.api.nvim_buf_call(ev.buf, function()
