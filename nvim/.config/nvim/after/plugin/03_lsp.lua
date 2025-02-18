@@ -190,8 +190,6 @@ local function create_config(config)
   }, config or {})
 end
 
-require("fidget").setup({})
-
 if vim.fn.executable("lua-language-server") == 1 then
   require("lspconfig").lua_ls.setup(create_config({
     on_init = function(client)
@@ -230,7 +228,7 @@ if vim.fn.executable("lua-language-server") == 1 then
   }))
 end
 
-if vim.fn.executable("typo-lsp") == 1 then
+if vim.fn.executable("typos-lsp") == 1 then
   require("lspconfig").typos_lsp.setup(create_config({
     init_options = {
       diagnosticSeverity = "Hint",
