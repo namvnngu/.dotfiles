@@ -15,20 +15,18 @@ local PLUG_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 --- @param plug_urls string[] An array of plugin urls.
 --- @param plug_root string A root path where plugins will be installed.
 local function install(plug_urls, plug_root)
-  local installing_count = 0
+  local job_ids = {}
 
   for _, plug_url in pairs(plug_urls) do
     local plug_name = vim.fn.fnamemodify(plug_url, ":t")
     local plug_path = vim.fn.expand(plug_root .. "/" .. plug_name)
 
     if vim.fn.isdirectory(plug_path) == 0 then
-      installing_count = installing_count + 1
-
       vim.api.nvim_echo({
         { "Installing " .. plug_name .. "..." },
       }, true, {})
 
-      vim.fn.jobstart({
+      local job_id = vim.fn.jobstart({
         "git",
         "clone",
         "--depth=1",
@@ -37,8 +35,6 @@ local function install(plug_urls, plug_root)
         plug_path,
       }, {
         on_exit = function(_, exit_code, _)
-          installing_count = installing_count - 1
-
           if exit_code == 0 then
             vim.api.nvim_echo({
               { "Installed " .. plug_name .. "!" },
@@ -57,12 +53,12 @@ local function install(plug_urls, plug_root)
           end
         end,
       })
+
+      table.insert(job_ids, job_id)
     end
   end
 
-  while installing_count ~= 0 do
-    vim.wait(10)
-  end
+  vim.fn.jobwait(job_ids)
 end
 
 --- Create plugin commands.
@@ -71,7 +67,7 @@ end
 --- @param plug_root string A path where plugins will be installed.
 local function create_commands(plug_urls, plug_root)
   vim.api.nvim_create_user_command("Pu", function()
-    vim.fn.system("rm -rf " .. plug_root)
+    vim.fn.system({ "rm", "-rf", plug_root })
     install(plug_urls, plug_root)
 
     vim.api.nvim_echo({
