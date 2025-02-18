@@ -1,6 +1,1 @@
-require("options")
-require("keymaps")
-require("abbreviations")
-require("autocmds")
-require("commands")
-require("lazynvim")
+require("plugins")

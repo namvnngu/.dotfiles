@@ -1,6 +1,7 @@
 local PLUG_URLS = {
   "https://github.com/junegunn/fzf",
   "https://github.com/stevearc/oil.nvim",
+  "https://github.com/tpope/vim-fugitive",
 }
 local PLUG_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 
