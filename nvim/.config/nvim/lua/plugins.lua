@@ -46,10 +46,11 @@ local function install(plug_urls, plug_root)
           else
             vim.api.nvim_echo({
               {
-                "Failed to install "
-                  .. plug_name
-                  .. " with exit code "
-                  .. exit_code,
+                string.format(
+                  "Failed to install %s with exit code %s",
+                  plug_name,
+                  exit_code
+                ),
                 "ErrorMsg",
               },
             }, true, {})
