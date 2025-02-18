@@ -192,55 +192,76 @@ end
 
 require("fidget").setup({})
 
-require("lspconfig").lua_ls.setup(create_config({
-  on_init = function(client)
-    if client.workspace_folders then
-      local path = client.workspace_folders[1].name
-      if
-        path ~= vim.fn.stdpath("config")
-        and (
-          vim.uv.fs_stat(path .. "/.luarc.json")
-          or vim.uv.fs_stat(path .. "/.luarc.jsonc")
-        )
-      then
-        return
+if vim.fn.executable("lua-language-server") == 1 then
+  require("lspconfig").lua_ls.setup(create_config({
+    on_init = function(client)
+      if client.workspace_folders then
+        local path = client.workspace_folders[1].name
+        if
+          path ~= vim.fn.stdpath("config")
+          and (
+            vim.uv.fs_stat(path .. "/.luarc.json")
+            or vim.uv.fs_stat(path .. "/.luarc.jsonc")
+          )
+        then
+          return
+        end
       end
-    end
 
-    client.config.settings.Lua =
-      vim.tbl_deep_extend("force", client.config.settings.Lua, {
-        runtime = {
-          version = "LuaJIT",
-        },
-        workspace = {
-          checkThirdParty = false,
-          library = vim.list_extend(vim.api.nvim_get_runtime_file("", true), {
-            "${3rd}/luv/library",
-          }),
-        },
-      })
-  end,
-  settings = {
-    Lua = {},
-  },
-}))
+      client.config.settings.Lua =
+        vim.tbl_deep_extend("force", client.config.settings.Lua, {
+          runtime = {
+            version = "LuaJIT",
+          },
+          workspace = {
+            checkThirdParty = false,
+            library = vim.list_extend(
+              vim.api.nvim_get_runtime_file("", true),
+              {
+                "${3rd}/luv/library",
+              }
+            ),
+          },
+        })
+    end,
+    settings = {
+      Lua = {},
+    },
+  }))
+end
 
-require("lspconfig").typos_lsp.setup(create_config({
-  init_options = {
-    diagnosticSeverity = "Hint",
-  },
-}))
+if vim.fn.executable("typo-lsp") == 1 then
+  require("lspconfig").typos_lsp.setup(create_config({
+    init_options = {
+      diagnosticSeverity = "Hint",
+    },
+  }))
+end
 
-require("lspconfig").eslint.setup(create_config())
-require("lspconfig").biome.setup(create_config())
-require("lspconfig").ts_ls.setup(create_config({
-  single_file_support = true,
-  root_dir = require("lspconfig").util.root_pattern(
-    "package.json",
-    "tsconfig.json",
-    "jsconfig.json"
-  ),
-}))
-require("lspconfig").ts_ls.setup(create_config({
-  root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
-}))
+if vim.fn.executable("vscode-eslint-language-server") == 1 then
+  require("lspconfig").eslint.setup(create_config())
+end
+
+if vim.fn.executable("biome") == 1 then
+  require("lspconfig").biome.setup(create_config())
+end
+
+if vim.fn.executable("typescript-language-server") == 1 then
+  require("lspconfig").ts_ls.setup(create_config({
+    single_file_support = true,
+    root_dir = require("lspconfig").util.root_pattern(
+      "package.json",
+      "tsconfig.json",
+      "jsconfig.json"
+    ),
+  }))
+end
+
+if vim.fn.executable("deno") == 1 then
+  require("lspconfig").deno_ls.setup(create_config({
+    root_dir = require("lspconfig").util.root_pattern(
+      "deno.json",
+      "deno.jsonc"
+    ),
+  }))
+end
