@@ -1,6 +1,7 @@
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    c = { "clang_format" },
     typescript = function(bufnr)
       if vim.fs.root(bufnr, { "deno.json", "deno.jsonc" }) then
         return {}

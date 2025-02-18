@@ -190,6 +190,12 @@ local function create_config(config)
   }, config or {})
 end
 
+if vim.fn.executable("clangd") == 1 then
+  require("lspconfig").clangd.setup(create_config({
+    capabilities = { offsetEncoding = { "utf-16" } },
+  }))
+end
+
 if vim.fn.executable("lua-language-server") == 1 then
   require("lspconfig").lua_ls.setup(create_config({
     on_init = function(client)
@@ -230,9 +236,7 @@ end
 
 if vim.fn.executable("typos-lsp") == 1 then
   require("lspconfig").typos_lsp.setup(create_config({
-    init_options = {
-      diagnosticSeverity = "Hint",
-    },
+    init_options = { diagnosticSeverity = "Hint" },
   }))
 end
 
