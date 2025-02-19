@@ -34,40 +34,45 @@ vim.api.nvim_create_user_command("Calc", function()
 end, { desc = "Calculator" })
 
 vim.api.nvim_create_user_command("GOpenCommit", function()
-  local short_sha = vim.fn.expand("<cword>")
-
+  local sha = vim.fn.expand("<cword>")
   local remote_url =
     vim.trim(vim.fn.system({ "git", "config", "--get", "remote.origin.url" }))
 
-  local long_sha = vim.trim(vim.fn.system({ "git", "rev-parse", short_sha }))
-  local remote_domain = string.match(remote_url, ".*git%@(.*)%:.*")
-    or string.match(remote_url, "https%:%/%/.*%@(.*)%/.*")
-    or string.match(remote_url, "https%:%/%/(.*)%/.*")
-  local commit_path = remote_domain
-      and remote_domain:lower() == "bitbucket.org"
-      and "/commits/" .. long_sha
-    or "/commit/" .. long_sha
-
   local repo_url = ""
   local REMOTE_URL_PATTERNS = {
-    ".*git%@(.*)%:(.*)%.git",
-    ".*git%@(.*)%.git",
-    "(https%:%/%/.*)%.git",
-    ".*git%@(.*)%:(.*)",
-    ".*git%@(.*)",
-    "(https%:%/%/.*)",
+    ".*git@(.+):(.+)%.git",
+    ".*git@(.+)%.git",
+    "https://(.+)%.git",
+    ".*git@(.+):(.+)",
+    ".*git@(.+)",
+    "https://(.+)",
   }
   for _, pattern in pairs(REMOTE_URL_PATTERNS) do
-    local domain, path = string.match(remote_url, pattern)
-    path = (path and "/" .. path or "")
-    if domain and string.find(domain, "https") then
-      repo_url = domain .. path
-      break
-    elseif domain then
-      repo_url = "https://" .. domain .. path
+    local first, second = string.match(remote_url, pattern)
+    if first then
+      repo_url = "https://" .. first .. (second and "/" .. second or "")
       break
     end
   end
+
+  if repo_url == "" then
+    vim.api.nvim_echo({
+      {
+        string.format(
+          "Failed to open commit %s. The URL is %s.",
+          sha,
+          repo_url
+        ),
+        "ErrorMsg",
+      },
+    }, true, {})
+    return
+  end
+
+  local full_sha = vim.trim(vim.fn.system({ "git", "rev-parse", sha }))
+  local commit_path = string.find(repo_url:lower(), "bitbucket.org")
+      and "/commits/" .. full_sha
+    or "/commit/" .. full_sha
 
   local commit_url = repo_url .. commit_path
   local os = vim.uv.os_uname().sysname
