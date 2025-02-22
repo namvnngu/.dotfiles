@@ -6,50 +6,63 @@ let mapleader = ' '
 
 syntax off
 filetype plugin indent on
+set background=dark
 colorscheme wildcharm
 
 set autoindent
 set autoread
+set backspace=indent,eol,start
 set breakindent
 set clipboard+=unnamedplus,unnamed
 set colorcolumn=80
+set complete-=i
 set completeopt=menu,menuone,popup,noinsert,noselect
 set copyindent
 set cursorline
+set display+=lastline,truncate
 set expandtab
 set foldlevel=99
 set foldlevelstart=99
+set formatoptions+=j
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
+set history=10000
 set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
 set linebreak
 set nobackup
+set nolangremap
 set noswapfile
 set noundofile
 set nowrap
+set nrformats-=octal
 set number
 set omnifunc=syntaxcomplete#Complete
 set preserveindent
 set relativenumber
+set ruler
 set scrolloff=8
+set sessionoptions-=options
 set shiftround
 set shiftwidth=2
 set shortmess=ltToOCF
 set showtabline=0
-set sidescrolloff=8
+set sidescroll=1
+set sidescrolloff=2
 set signcolumn=yes
 set smartcase
 set smartindent
+set smarttab
 set smoothscroll
 set splitbelow
 set splitright
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set tabstop=2
 set ttimeout ttimeoutlen=50
 set undolevels=10000
+set viewoptions-=options
+set viminfo^=!
 set virtualedit=block
 set wildmenu
 set wildmode=longest:full,full
@@ -95,8 +108,8 @@ vnoremap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" Clear search with <Esc>
-nnoremap <Esc> :noh<CR>
+" Clear highlighting search
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 " Keeping it centered and stable
 nnoremap J mzJ`z
@@ -197,6 +210,9 @@ command! Ctags !ctags -R .
 
 command! -nargs=1 Cht :sp | enew | .!curl -s "cht.sh/<args>?T"
 
+command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
+      \ | diffthis | wincmd p | diffthis
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -223,11 +239,11 @@ endfunction
 
 command! Pc echo 'Plugin count: ' . len(s:PLUG_URLS)
 command! Pu call system('rm -rf ' . s:PLUG_ROOT)
-         \| call s:install_plugins()
-         \| echo 'Updated all plugins. Restart Vim to get latest updates.'
+      \| call s:install_plugins()
+      \| echo 'Updated all plugins. Restart Vim to get latest updates.'
 command! Pl for plug_url in s:PLUG_URLS
-         \|   echo fnamemodify(plug_url, ':t') . ': ' . plug_url
-         \| endfor
+      \|   echo fnamemodify(plug_url, ':t') . ': ' . plug_url
+      \| endfor
 
 call s:install_plugins()
 
@@ -238,6 +254,9 @@ nnoremap <C-P> :FZF<CR>
 let g:nnn#command = 'nnn -AdeH'
 let g:nnn#set_default_mappings = 0
 nnoremap <expr> - ':NnnPicker ' . (@% == '' ? getcwd() : '%:p:h') . '<CR>'
+
+" matchit.vim
+runtime! macros/matchit.vim
 
 " man
 runtime ftplugin/man.vim
