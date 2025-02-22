@@ -6,7 +6,6 @@ let mapleader = ' '
 
 syntax off
 filetype plugin indent on
-set background=dark
 colorscheme wildcharm
 
 set autoindent
