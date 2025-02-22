@@ -11,6 +11,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.completeopt = "menu,menuone,popup,noselect,noinsert"
 vim.opt.copyindent = true
 vim.opt.cursorline = true
+vim.opt.display:append("truncate")
 vim.opt.expandtab = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
@@ -26,7 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.showtabline = 0
-vim.opt.sidescrolloff = 8
+vim.opt.sidescrolloff = 2
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.smartindent = true

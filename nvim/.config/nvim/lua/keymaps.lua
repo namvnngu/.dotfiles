@@ -42,8 +42,13 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up" })
 
--- Clear search with <Esc>
-vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Escape and clear hlsearch" })
+--Clear highlighting search
+vim.keymap.set(
+  "n",
+  "<C-L>",
+  ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>",
+  { silent = true }
+)
 
 -- Keeping it centered and stable
 vim.keymap.set("n", "J", "mzJ`z")

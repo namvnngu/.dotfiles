@@ -100,3 +100,11 @@ vim.api.nvim_create_user_command("GBlameEx", function(args)
       .. filepath
   )
 end, { desc = "Git extreme blame", range = true })
+
+vim.api.nvim_create_user_command(
+  "DiffOrig",
+  "vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis",
+  {
+    desc = "View the same buffer in diff mode in one window and 'normal' in another window.",
+  }
+)
