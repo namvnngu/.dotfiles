@@ -1,7 +1,6 @@
 [general]
-import = [
-  "~/.config/alacritty/colorschemes/one_light.toml",
-]
+import             = ["~/.config/alacritty/colorschemes/one_light.toml"]
+live_config_reload = true
 
 [env]
 TERM = "xterm-256color"
@@ -22,3 +21,4 @@ bindings = [
 [window]
 dynamic_padding = true
 opacity         = 0.999
+option_as_alt   = "Both"
