@@ -4,7 +4,7 @@ end
 
 -- Trim spaces
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = augroup("TrimSpaces"),
+  group = augroup("trim_spaces"),
   pattern = "*",
   callback = function()
     local patterns = {
@@ -26,14 +26,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Set scss filetype to sass
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  group = augroup("ScssToSass"),
+  group = augroup("scss_to_sass"),
   pattern = "*.scss",
   command = "set filetype=sass",
 })
 
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = augroup("ResizeSplits"),
+  group = augroup("resize_splits"),
   callback = function()
     local current_tab = vim.fn.tabpagenr()
     vim.cmd("tabdo wincmd =")
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("HighlightYank"),
+  group = augroup("highlight_yank"),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -51,30 +51,57 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Big file
 -- Reference: https://github.com/folke/snacks.nvim/blob/main/lua/snacks/bigfile.lua
-local BIGFILE_SIZE_IN_BYTE = 1024 * 1024 * 1.5 -- 1.5 MB
+local BIGFILE_SIZE_IN_BYTE = 1.5 * 1024 * 1024 -- 1.5MB
+local BIGFILE_SIZE_LINE = 1000
+
 vim.filetype.add({
   pattern = {
     [".*"] = {
       function(path, buf)
-        return vim.bo[buf]
-            and vim.bo[buf].filetype ~= "bigfile"
-            and path
-            and vim.fn.getfsize(path) > BIGFILE_SIZE_IN_BYTE
-            and "bigfile"
-          or nil
+        if not path or not buf or vim.bo[buf].filetype == "bigfile" then
+          return
+        end
+        if path ~= vim.api.nvim_buf_get_name(buf) then
+          return
+        end
+        local size = vim.fn.getfsize(path)
+        if size <= 0 then
+          return
+        end
+        if size > BIGFILE_SIZE_IN_BYTE then
+          return "bigfile"
+        end
+        local lines = vim.api.nvim_buf_line_count(buf)
+        return (size - lines) / lines > BIGFILE_SIZE_LINE and "bigfile" or nil
       end,
     },
   },
 })
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = augroup("Bigfile"),
+  group = augroup("bigfile"),
   pattern = "bigfile",
   callback = function(ev)
     vim.api.nvim_buf_call(ev.buf, function()
-      vim.cmd("NoMatchParen")
+      if vim.fn.exists(":NoMatchParen") ~= 0 then
+        vim.cmd([[NoMatchParen]])
+      end
       vim.schedule(function()
-        vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ""
+        if vim.api.nvim_buf_is_valid(ev.buf) then
+          vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ""
+        end
       end)
     end)
+  end,
+})
+
+-- Stop treesitter
+vim.api.nvim_create_autocmd({ "BufRead" }, {
+  group = augroup("stop_treesitter"),
+  pattern = "*",
+  callback = function(ev)
+    if vim.api.nvim_buf_is_valid(ev.buf) then
+      vim.treesitter.stop(ev.buf)
+    end
   end,
 })
