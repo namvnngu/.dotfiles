@@ -108,7 +108,9 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Clear highlighting search
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')
+                        \ ? '<Bar>diffupdate'
+                        \ : ''<CR><CR><C-L>
 
 " Keeping it centered and stable
 nnoremap J mzJ`z
@@ -167,7 +169,9 @@ inoremap <C-W> <C-G>u<C-W>
 " ABBREVIATIONS                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>Date: %d %b %Y<CR>License: The Unlicense')
+ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
+                       \Date: %d %b %Y<CR>
+                       \License: The Unlicense')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS                                                                "
@@ -216,7 +220,7 @@ command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
 " PLUGINS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let s:PLUG_ROOT = '~/.vim/pack/plugins/start'
+let s:PLUG_ROOT = expand('~/.vim/pack/plugins/start')
 let s:PLUG_URLS = [
       \ 'https://github.com/tpope/vim-fugitive',
       \ 'https://github.com/junegunn/fzf',
@@ -224,16 +228,31 @@ let s:PLUG_URLS = [
       \ ]
 
 function s:install_plugins()
+  let l:install_plugs = ''
+  let l:installing_msg = ''
+  let l:installed_msg = ''
+
   for plug_url in s:PLUG_URLS
     let l:plug_name = fnamemodify(plug_url, ':t')
     let l:plug_path = expand(s:PLUG_ROOT . '/' . l:plug_name)
 
     if !isdirectory(l:plug_path)
-      echo 'Installing ' . l:plug_name . '...'
-      call system('git clone --depth=1 --filter=blob:none ' . plug_url . ' ' . l:plug_path)
-      echo 'Installed ' . l:plug_name . '!'
+      let l:install_plugs = l:install_plugs . '\n' . plug_url
+      let l:installing_msg = l:installing_msg . "\nInstalling " . l:plug_name . '...'
+      let l:installed_msg = l:installed_msg . "\nInstalled " . l:plug_name . '!'
     endif
   endfor
+
+  if !empty(l:install_plugs)
+    echo trim(l:installing_msg)
+
+    call system("echo -e '" . trim(l:install_plugs) . "' "
+             \. "| xargs -P8 -I{} sh -c 'plug_name=$(basename {}) && "
+             \. "git clone --depth=1 --filter=blob:none {} "
+             \. s:PLUG_ROOT . "/$plug_name'")
+
+    echo trim(l:installed_msg)
+  endif
 endfunction
 
 command! Pc echo 'Plugin count: ' . len(s:PLUG_URLS)
