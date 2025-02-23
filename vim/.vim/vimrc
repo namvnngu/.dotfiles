@@ -228,7 +228,7 @@ let s:PLUG_URLS = [
       \ ]
 
 function s:install_plugins()
-  let l:install_plugs = ''
+  let l:install_plug_urls = ''
   let l:installing_msg = ''
   let l:installed_msg = ''
 
@@ -237,16 +237,16 @@ function s:install_plugins()
     let l:plug_path = expand(s:PLUG_ROOT . '/' . l:plug_name)
 
     if !isdirectory(l:plug_path)
-      let l:install_plugs = l:install_plugs . '\n' . plug_url
+      let l:install_plug_urls = l:install_plug_urls . '\n' . plug_url
       let l:installing_msg = l:installing_msg . "\nInstalling " . l:plug_name . '...'
       let l:installed_msg = l:installed_msg . "\nInstalled " . l:plug_name . '!'
     endif
   endfor
 
-  if !empty(l:install_plugs)
+  if !empty(l:install_plug_urls)
     echo trim(l:installing_msg)
 
-    call system("echo -e '" . trim(l:install_plugs) . "' "
+    call system("echo -e '" . trim(l:install_plug_urls) . "' "
              \. "| xargs -P8 -I{} sh -c 'plug_name=$(basename {}) && "
              \. "git clone --depth=1 --filter=blob:none {} "
              \. s:PLUG_ROOT . "/$plug_name'")
