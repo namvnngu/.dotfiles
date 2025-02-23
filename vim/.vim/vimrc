@@ -247,9 +247,9 @@ function s:install_plugins()
     echo trim(l:installing_msg)
 
     call system("echo -e '" . trim(l:install_plug_urls) . "' "
-             \. "| xargs -P8 -I{} sh -c 'plug_name=$(basename {}) && "
-             \. "git clone --depth=1 --filter=blob:none {} "
-             \. s:PLUG_ROOT . "/$plug_name'")
+             \. "| xargs -P8 -I{} sh -c "
+             \. "'git clone --depth=1 --filter=blob:none {} "
+             \. s:PLUG_ROOT . "/$(basename {})'")
 
     echo trim(l:installed_msg)
   endif
