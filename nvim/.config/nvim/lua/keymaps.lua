@@ -50,8 +50,10 @@ vim.keymap.set(
   { silent = true }
 )
 
--- Keeping it centered and stable
+-- Set a new undo point before joining lines
 vim.keymap.set("n", "J", "mzJ`z")
+
+-- Keeping it centered and stable
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-D>", "<C-D>zz")

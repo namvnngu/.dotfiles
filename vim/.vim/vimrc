@@ -112,8 +112,10 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')
                         \ ? '<Bar>diffupdate'
                         \ : ''<CR><CR><C-L>
 
-" Keeping it centered and stable
+" Set a new undo point before joining lines
 nnoremap J mzJ`z
+
+" Keeping it centered and stable
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap <C-D> <C-D>zz
@@ -161,7 +163,7 @@ nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " Fix the indentation of an entire file
 nnoremap <leader>F gg=G''
 
-" Set undo points when deleting text in insert mode
+" Set a new undo point before deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
