@@ -267,3 +267,7 @@ if vim.fn.executable("deno") == 1 then
     ),
   }))
 end
+
+if vim.fn.executable("csharp-ls") == 1 then
+  require("lspconfig").csharp_ls.setup(create_config())
+end
