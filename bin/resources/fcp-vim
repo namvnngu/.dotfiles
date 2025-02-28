@@ -1,6 +1,6 @@
-:!cmd: execute shell command, and display output
-:r !cmd: execute shell command, and insert output below cursor
-:w !cmd: send current buffer as stdin to shell command, and execute it
-:.!cmd: execute shell command, and replace current line with command output
-:%!cmd: execute shell command, and replace entire buffer with command output
-:'<,'>!cmd: execute shell command, and replace selection with command output
+:!cmd: execute the shell command
+:r !cmd: execute the shell command, and insert the command output below the cursor
+:w !cmd: send the current buffer as stdin to the shell command, and execute the command
+:.!cmd: send the current line as stdin to the shell command, execute the command, and replace the current line with the command output
+:%!cmd: send the entire buffer as stdin to the shell command, execute the command, and replace the entire buffer with the command output
+:'<,'>!cmd: send the selection as stdin to the shell command, execute the command, and replace the selection with the command output
