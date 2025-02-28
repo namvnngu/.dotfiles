@@ -194,11 +194,11 @@ endfunction
 
 augroup lang_tags
   autocmd!
-  autocmd BufEnter,BufNew * set tags='./tags,tags'
+  autocmd BufReadPre * set tags=./tags,tags
 augroup END
 augroup c_tags
   autocmd!
-  autocmd BufEnter,BufNew *.c,*.h call s:set_tags('c')
+  autocmd BufReadPre *.c,*.h call s:set_tags('c')
 augroup END
 function s:set_tags(lang)
   let l:files = globpath('~/.tags/' . a:lang, '*', 0, 1)
@@ -227,6 +227,7 @@ let s:PLUG_URLS = [
       \ 'https://github.com/tpope/vim-fugitive',
       \ 'https://github.com/junegunn/fzf',
       \ 'https://github.com/mcchrish/nnn.vim',
+      \ 'https://github.com/ludovicchabant/vim-gutentags',
       \ ]
 
 function s:install_plugins()
