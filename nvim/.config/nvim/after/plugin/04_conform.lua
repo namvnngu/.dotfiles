@@ -29,6 +29,8 @@ require("conform").setup({
         or { "prettier" }
     end,
     cs = { "csharpier" },
+    html = { "prettier" },
+    css = { "prettier" },
   },
 })
 
