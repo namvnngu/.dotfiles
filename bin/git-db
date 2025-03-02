@@ -12,7 +12,7 @@ WHITE="\033[0;37m"
 RESET="\033[0m"
 CLEAR="\033c"
 
-function get-branch() {
+get-branch() {
   branches=()
   while IFS= read -r line; do
       branches+=( "$line" )
