@@ -41,6 +41,9 @@ export GOPATH=$HOME/.go
 # pixi
 pathadd $HOME/.pixi/bin
 
+# man page
+export MANPAGER='nvim +Man!'
+
 # my own
 export DOTFILES_PATH=$HOME/.dotfiles
 pathadd $HOME/.dotfiles/bin
