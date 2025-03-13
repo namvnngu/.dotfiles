@@ -271,3 +271,11 @@ end
 if vim.fn.executable("csharp-ls") == 1 then
   require("lspconfig").csharp_ls.setup(create_config())
 end
+
+if vim.fn.executable("vscode-css-language-server") == 1 then
+  require("lspconfig").cssls.setup(create_config())
+end
+
+if vim.fn.executable("vscode-html-language-server") == 1 then
+  require("lspconfig").html.setup(create_config())
+end
