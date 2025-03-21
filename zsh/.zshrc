@@ -27,13 +27,13 @@ PROMPT='%n %~'$'\n$ '
 source <(fzf --zsh)
 
 # nvim
-alias nvimn="nvim -u NONE"
+alias nvimn='nvim -u NONE'
 
 # vim
-alias vimn="vim -u NONE"
+alias vimn='vim -u NONE'
 
 # nnn
-alias nnn="nnn -AdeH"
+alias nnn='nnn -AdeH'
 
 # go
 export GOPATH=$HOME/.go
@@ -43,6 +43,9 @@ pathadd $HOME/.pixi/bin
 
 # man page
 export MANPAGER='nvim +Man!'
+
+# search and highlight
+alias hl="rg --passthru"
 
 # my own
 export DOTFILES_PATH=$HOME/.dotfiles
