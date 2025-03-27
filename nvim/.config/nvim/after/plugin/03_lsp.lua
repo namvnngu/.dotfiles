@@ -29,37 +29,6 @@ local function create_config(config)
       local ms = vim.lsp.protocol.Methods
 
       if client then
-        -- KEYMAPS
-        do
-          -- See :h lsp-defaults
-          -- NOTE: Inspect require("vim._defaults") to check if the below mappings are
-          -- included in the stable Neovim. If yes, then remove the below mappings.
-          -- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/_defaults.lua#L154
-          vim.keymap.set("n", "grn", function()
-            vim.lsp.buf.rename()
-          end, { desc = "vim.lsp.buf.rename()" })
-
-          vim.keymap.set({ "n", "x" }, "gra", function()
-            vim.lsp.buf.code_action()
-          end, { desc = "vim.lsp.buf.code_action()" })
-
-          vim.keymap.set("n", "grr", function()
-            vim.lsp.buf.references()
-          end, { desc = "vim.lsp.buf.references()" })
-
-          vim.keymap.set("n", "gri", function()
-            vim.lsp.buf.implementation()
-          end, { desc = "vim.lsp.buf.implementation()" })
-
-          vim.keymap.set("n", "gO", function()
-            vim.lsp.buf.document_symbol()
-          end, { desc = "vim.lsp.buf.document_symbol()" })
-
-          vim.keymap.set({ "i", "s" }, "<C-S>", function()
-            vim.lsp.buf.signature_help()
-          end, { desc = "vim.lsp.buf.signature_help()" })
-        end
-
         -- DIAGNOSTIC
         do
           local SEVERITY_LABELS = {
@@ -106,7 +75,7 @@ local function create_config(config)
             "LspClearDocumentHighlight",
             { clear = true }
           )
-          if client.supports_method(ms.textDocument_documentHighlight) then
+          if client:supports_method(ms.textDocument_documentHighlight) then
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               group = highlight_augroup,
               buffer = bufnr,
@@ -122,14 +91,14 @@ local function create_config(config)
 
         -- TAGFUNC
         do
-          if client.supports_method(ms.textDocument_definition) then
+          if client:supports_method(ms.textDocument_definition) then
             vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
           end
         end
 
         -- OMNIFUNC
         do
-          if client.supports_method(ms.textDocument_completion) then
+          if client:supports_method(ms.textDocument_completion) then
             vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
           end
         end
@@ -212,8 +181,12 @@ if vim.fn.executable("lua-language-server") == 1 then
         end
       end
 
-      client.config.settings.Lua =
-        vim.tbl_deep_extend("force", client.config.settings.Lua, {
+      local lua_settings = client.config.settings.Lua
+
+      client.config.settings.Lua = vim.tbl_deep_extend(
+        "force",
+        type(lua_settings) == "table" and lua_settings or {},
+        {
           runtime = {
             version = "LuaJIT",
           },
@@ -221,12 +194,11 @@ if vim.fn.executable("lua-language-server") == 1 then
             checkThirdParty = false,
             library = vim.list_extend(
               vim.api.nvim_get_runtime_file("", true),
-              {
-                "${3rd}/luv/library",
-              }
+              { "${3rd}/luv/library" }
             ),
           },
-        })
+        }
+      )
     end,
     settings = {
       Lua = {},
