@@ -102,6 +102,16 @@ local function create_config(config)
             vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
           end
         end
+
+        -- FOLDING
+        do
+          if client:supports_method(ms.textDocument_foldingRange) then
+            vim.o.foldmethod = "expr"
+
+            local win = vim.api.nvim_get_current_win()
+            vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+          end
+        end
       end
     end,
     capabilities = vim.tbl_deep_extend(
