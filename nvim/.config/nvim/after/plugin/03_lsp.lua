@@ -1,11 +1,7 @@
---- @class LspConfig : lspconfig.Config
----@diagnostic disable-next-line: duplicate-doc-field
---- @field cmd? string
-
 --- Install plugins given urls.
 ---
---- @param config LspConfig? The lsp config.
---- @return LspConfig (table) The merged lsp config.
+--- @param config vim.lsp.Config? The lsp config.
+--- @return vim.lsp.Config (table) The merged lsp config.
 local function create_config(config)
   return vim.tbl_deep_extend("force", {
     --- @type fun(client: vim.lsp.Client, initialize_result: lsp.InitializeResult)
