@@ -101,10 +101,13 @@ local function create_config(config)
 
         -- FOLDING
         do
-          if client:supports_method(ms.textDocument_foldingRange) then
-            local win = vim.api.nvim_get_current_win()
-            vim.wo[win][0].foldmethod = "expr"
-            vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+          local winid = vim.api.nvim_get_current_win()
+          if
+            not vim.wo[winid][0].diff
+            and client:supports_method(ms.textDocument_foldingRange)
+          then
+            vim.wo[winid][0].foldmethod = "expr"
+            vim.wo[winid][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
           end
         end
       end
