@@ -5,6 +5,13 @@ vim.cmd("syntax off")
 vim.cmd("filetype plugin indent on")
 vim.cmd("colorscheme wildcharm")
 
+if vim.env.TMUX then
+  vim.o.background = "light"
+  if vim.env.COLOR_THEME == "dark" then
+    vim.o.background = "dark"
+  end
+end
+
 vim.o.breakindent = true
 vim.o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.o.colorcolumn = "80"
@@ -36,6 +43,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.tabstop = 2
+vim.o.termguicolors = false
 vim.o.undolevels = 10000
 vim.o.virtualedit = "block"
 vim.o.wildmode = "longest:full,full"

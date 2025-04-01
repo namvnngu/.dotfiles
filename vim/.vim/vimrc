@@ -8,6 +8,13 @@ syntax off
 filetype plugin indent on
 colorscheme wildcharm
 
+if exists("$TMUX")
+  set background=light
+  if $COLOR_THEME == 'dark'
+    set background=dark
+  endif
+endif
+
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -34,6 +41,7 @@ set linebreak
 set nobackup
 set nolangremap
 set noswapfile
+set notermguicolors
 set noundofile
 set nowrap
 set nrformats-=octal

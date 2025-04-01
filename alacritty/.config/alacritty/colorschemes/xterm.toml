@@ -1,3 +1,6 @@
+[env]
+COLOR_THEME = "dark"
+
 # Source: https://github.com/alacritty/alacritty-theme/blob/master/themes/xterm.toml
 
 [colors.primary]

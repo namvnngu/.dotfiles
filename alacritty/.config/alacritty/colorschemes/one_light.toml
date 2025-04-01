@@ -1,3 +1,6 @@
+[env]
+COLOR_THEME = "light"
+
 # Source: https://github.com/alacritty/alacritty-theme/blob/master/themes/one_light.toml
 
 [colors.primary]
