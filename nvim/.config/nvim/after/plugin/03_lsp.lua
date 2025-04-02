@@ -1,21 +1,9 @@
 --- Install plugins given urls.
 ---
---- @param config vim.lsp.Config? The lsp config.
---- @return vim.lsp.Config (table) The merged lsp config.
+--- @param config vim.lsp.Config? The LSP config.
+--- @return vim.lsp.Config (table) The merged LSP config.
 local function create_config(config)
   return vim.tbl_deep_extend("force", {
-    --- @type fun(client: vim.lsp.Client, initialize_result: lsp.InitializeResult)
-    on_init = function(client, initialize_result)
-      if config and config.on_init then
-        config.on_init(client, initialize_result)
-      end
-
-      -- Disable default lsp highlights
-      client.server_capabilities.semanticTokensProvider = nil
-      for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-        vim.api.nvim_set_hl(0, group, {})
-      end
-    end,
     --- @type fun(client: vim.lsp.Client, bufnr: integer)
     on_attach = function(client, bufnr)
       if config and config.on_attach then
@@ -108,6 +96,15 @@ local function create_config(config)
           then
             vim.wo[winid][0].foldmethod = "expr"
             vim.wo[winid][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+          end
+        end
+
+        -- SEMANTIC TOKENS
+        do
+          -- Disable default LSP sematic highlights
+          client.server_capabilities.semanticTokensProvider = nil
+          for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+            vim.api.nvim_set_hl(0, group, {})
           end
         end
       end
