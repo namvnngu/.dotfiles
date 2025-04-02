@@ -22,11 +22,6 @@ local function get_plug_name(urlOrPath)
   return vim.fn.fnamemodify(urlOrPath, ":t")
 end
 
-local plug_name_by_url = vim.iter(PLUG_URLS):fold({}, function(acc, v)
-  acc[get_plug_name(v)] = v
-  return acc
-end)
-
 --- Installs plugins given urls.
 ---
 --- @param plug_urls string[] An array of plugin urls.
@@ -94,25 +89,28 @@ local function create_cmds(plug_urls, plug_root)
   end, { desc = "Update all plugins" })
 
   vim.api.nvim_create_user_command("Ps", function()
-    local actual_plug_names = vim.tbl_map(function(plug_path)
-      return get_plug_name(plug_path)
-    end, vim.fn.globpath(plug_root, "*", false, true))
-    local next_plug_names = vim.tbl_map(function(plug_url)
-      return get_plug_name(plug_url)
-    end, PLUG_URLS)
-    local next_plug_name_by_url = plug_name_by_url
+    local current_plug_path_by_name = vim
+      .iter(vim.fn.globpath(plug_root, "*", false, true))
+      :fold({}, function(tbl, plug_path)
+        tbl[get_plug_name(plug_path)] = plug_path
+        return tbl
+      end)
+    local next_plug_url_by_name = vim
+      .iter(plug_urls)
+      :fold({}, function(tbl, plug_url)
+        tbl[get_plug_name(plug_url)] = plug_url
+        return tbl
+      end)
 
-    local removed_plug_paths = {}
-    for _, plug_name in pairs(actual_plug_names) do
-      if not vim.list_contains(next_plug_names, plug_name) then
-        table.insert(
-          removed_plug_paths,
-          vim.fn.expand(("%s/%s"):format(plug_root, plug_name))
-        )
+    local removed_plug_path_by_name = {}
+    for plug_name, plug_path in pairs(current_plug_path_by_name) do
+      if not next_plug_url_by_name[plug_name] then
+        removed_plug_path_by_name[plug_name] = plug_path
       end
     end
-    if not vim.tbl_isempty(removed_plug_paths) then
-      local removed_plug_names = vim.tbl_map(get_plug_name, removed_plug_paths)
+    if not vim.tbl_isempty(removed_plug_path_by_name) then
+      local removed_plug_names = vim.tbl_keys(removed_plug_path_by_name)
+      local removed_plug_paths = vim.tbl_values(removed_plug_path_by_name)
       vim.api.nvim_echo({
         {
           ("Removing %s..."):format(
@@ -131,12 +129,9 @@ local function create_cmds(plug_urls, plug_root)
     end
 
     local added_plug_urls = {}
-    for _, plug_name in pairs(next_plug_names) do
-      if
-        not vim.list_contains(actual_plug_names, plug_name)
-        and next_plug_name_by_url[plug_name]
-      then
-        table.insert(added_plug_urls, next_plug_name_by_url[plug_name])
+    for plug_name, plug_url in pairs(next_plug_url_by_name) do
+      if not current_plug_path_by_name[plug_name] then
+        table.insert(added_plug_urls, plug_url)
       end
     end
     if not vim.tbl_isempty(added_plug_urls) then
@@ -144,9 +139,11 @@ local function create_cmds(plug_urls, plug_root)
     end
 
     if
-      not vim.tbl_isempty(removed_plug_paths)
-      or not vim.tbl_isempty(added_plug_urls)
+      vim.tbl_isempty(removed_plug_path_by_name)
+      and vim.tbl_isempty(added_plug_urls)
     then
+      vim.api.nvim_echo({ { "All plugins are already synced." } }, true, {})
+    else
       vim.api.nvim_echo({ { "Restart Nvim to get latest updates." } }, true, {})
     end
   end, { desc = "Sync plugins" })
@@ -167,5 +164,5 @@ local function create_cmds(plug_urls, plug_root)
   end, { desc = "List plugins" })
 end
 
-install_plugs(PLUG_URLS, PLUG_ROOT)
+-- install_plugs(PLUG_URLS, PLUG_ROOT)
 create_cmds(PLUG_URLS, PLUG_ROOT)
