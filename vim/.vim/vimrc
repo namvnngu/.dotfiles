@@ -268,11 +268,11 @@ endfunction
 
 command! Pc echo 'Plugin count: ' . len(s:PLUG_URLS)
 command! Pu call system('rm -rf ' . s:PLUG_ROOT)
-      \| call s:install_plugins()
-      \| echo 'Updated all plugins. Restart Vim to get latest updates.'
+        \|  call s:install_plugins()
+        \|  echo 'Updated all plugins. Restart Vim to get latest updates.'
 command! Pl for plug_url in s:PLUG_URLS
-      \|   echo fnamemodify(plug_url, ':t') . ': ' . plug_url
-      \| endfor
+        \|    echo fnamemodify(plug_url, ':t') . ': ' . plug_url
+        \|  endfor
 
 call s:install_plugins()
 
