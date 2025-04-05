@@ -1,3 +1,11 @@
+--- Displays a message in the Neovim command area by using `vim.api.nvim_echo`.
+---
+--- @param msg string The message to display.
+--- @param is_error? boolean If `true`, the message is treated as an error.
+local function echo(msg, is_error)
+  vim.api.nvim_echo({ { msg } }, true, { err = is_error })
+end
+
 vim.api.nvim_create_user_command("Grep", function(opts)
   local keyword = opts.args
   vim.cmd("grep " .. keyword .. " -g %:p:h/**/*")
@@ -56,16 +64,10 @@ vim.api.nvim_create_user_command("GOpenCommit", function()
   end
 
   if repo_url == "" then
-    vim.api.nvim_echo({
-      {
-        string.format(
-          "Failed to open commit %s. The URL is %s.",
-          sha,
-          repo_url
-        ),
-        "ErrorMsg",
-      },
-    }, true, {})
+    echo(
+      ("Failed to open commit %s. The URL is %s."):format(sha, repo_url),
+      true
+    )
     return
   end
 
@@ -83,9 +85,7 @@ vim.api.nvim_create_user_command("GOpenCommit", function()
     vim.fn.system("xdg-open " .. commit_url)
   else
     vim.fn.setreg("+", commit_url)
-    vim.api.nvim_echo({
-      { "Copied to clipboard: " .. commit_url },
-    }, true, {})
+    echo("Copied to clipboard: " .. commit_url)
   end
 end, { desc = "Open Git commit URL" })
 
