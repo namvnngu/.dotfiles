@@ -1,5 +1,5 @@
 [env]
-COLOR_THEME = "light"
+THEME_MODE = "light"
 
 # Source: https://github.com/alacritty/alacritty-theme/blob/master/themes/one_light.toml
 

@@ -1,5 +1,5 @@
 [env]
-COLOR_THEME = "dark"
+THEME_MODE = "dark"
 
 # Source: https://github.com/rose-pine/alacritty/blob/main/dist/rose-pine-dawn.toml
 

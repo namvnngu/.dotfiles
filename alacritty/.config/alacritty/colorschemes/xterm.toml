@@ -1,5 +1,5 @@
 [env]
-COLOR_THEME = "dark"
+THEME_MODE = "dark"
 
 # Source: https://github.com/alacritty/alacritty-theme/blob/master/themes/xterm.toml
 

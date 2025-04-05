@@ -10,7 +10,7 @@ colorscheme wildcharm
 
 if exists("$TMUX")
   set background=light
-  if $COLOR_THEME == 'dark'
+  if $THEME_MODE == 'dark'
     set background=dark
   endif
 endif
