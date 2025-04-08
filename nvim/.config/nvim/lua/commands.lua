@@ -99,3 +99,9 @@ vim.api.nvim_create_user_command(
     desc = "View the same buffer in diff mode in one window and 'normal' in another window.",
   }
 )
+
+vim.api.nvim_create_user_command("Gg", function(opts)
+  local escaped = vim.uri_encode(opts.args)
+  local url = ("https://www.google.com/search?q=%s"):format(escaped)
+  vim.ui.open(url)
+end, { nargs = 1, desc = "Google" })
