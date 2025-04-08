@@ -77,16 +77,7 @@ vim.api.nvim_create_user_command("GOpenCommit", function()
     or "/commit/" .. full_sha
 
   local commit_url = repo_url .. commit_path
-  local os = vim.uv.os_uname().sysname
-
-  if os == "Darwin" then
-    vim.fn.system("open " .. commit_url)
-  elseif os == "Linux" then
-    vim.fn.system("xdg-open " .. commit_url)
-  else
-    vim.fn.setreg("+", commit_url)
-    echo("Copied to clipboard: " .. commit_url)
-  end
+  vim.ui.open(commit_url)
 end, { desc = "Open Git commit URL" })
 
 vim.api.nvim_create_user_command("GBlameEx", function(args)
