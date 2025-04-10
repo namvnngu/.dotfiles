@@ -27,13 +27,6 @@ vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("n", "Y", "y$")
 vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
 
--- Buffers
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
-vim.keymap.set("n", "<leader>ba", ":bufdo bd<CR>")
-vim.keymap.set("n", "<leader>be", ":%bd|e#<CR>")
-
 -- Better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")

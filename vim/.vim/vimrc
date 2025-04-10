@@ -100,13 +100,6 @@ nnoremap <leader>Y "+y$
 nnoremap Y y$
 nnoremap yp :exec setreg('+', expand('%:p'))<CR>
 
-" Buffers
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>ba :bufdo bd<CR>
-nnoremap <leader>be :%bd\|e#<CR>
-
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
