@@ -162,7 +162,7 @@ tnoremap <C-D> <C-\><C-N>:q!<CR>
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 " Fix the indentation of an entire file
-nnoremap <leader>F gg=G''
+nnoremap <leader>F mzgg=G`z
 
 " Set a new undo point before deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
