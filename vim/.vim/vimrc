@@ -175,6 +175,9 @@ nnoremap <leader>F gg=G''
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
+" File explorer
+nnoremap - :Ex<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,7 +237,6 @@ let s:PLUGIN_ROOT = expand('~/.vim/pack/plugins/start')
 let s:PLUGIN_URLS = [
       \ 'https://github.com/tpope/vim-fugitive',
       \ 'https://github.com/junegunn/fzf',
-      \ 'https://github.com/mcchrish/nnn.vim',
       \ 'https://github.com/ludovicchabant/vim-gutentags',
       \ ]
 
@@ -278,11 +280,6 @@ call s:install_plugins()
 
 " fzf
 nnoremap <C-P> :FZF<CR>
-
-" nnn
-let g:nnn#command = 'nnn -AdeH'
-let g:nnn#set_default_mappings = 0
-nnoremap <expr> - ':NnnPicker ' . (@% == '' ? getcwd() : '%:p:h') . '<CR>'
 
 " matchit.vim
 runtime! macros/matchit.vim

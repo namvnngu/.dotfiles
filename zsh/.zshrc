@@ -32,9 +32,6 @@ alias nvimn='nvim -u NONE'
 # vim
 alias vimn='vim -u NONE'
 
-# nnn
-alias nnn='nnn -AdeH'
-
 # go
 export GOPATH=$HOME/.go
 
