@@ -45,3 +45,5 @@ git remove a worktree: git worktree remove <worktree-path>
 git rebase to the root (initial) commit: git rebase -i --root
 git check out to a specific commit with some files out of the index, including created files: git checkout <commit-id> --no-overlay -- <path>
 git create a new branch with no history: git checkout --orphan <branch-name>
+git see who contributed most often to the specific folder: git log --format='%an' <folder-path> | sort | uniq -c | sort -rn | head
+git see who contributed most often to the specific folder since X time: git log --format='%an' --since='<since>' <folder-path> | sort | uniq -c | sort -rn | head
