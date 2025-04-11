@@ -116,11 +116,13 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')
 " Set a new undo point before joining lines
 nnoremap J mzJ`z
 
-" Keeping it centered and stable
+" Keep it centered and stable
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap <C-D> <C-D>zz
 nnoremap <C-U> <C-U>zz
+nnoremap <C-F> <C-F>zz
+nnoremap <C-B> <C-B>zz
 
 " Quickfix list
 nnoremap <C-J> :cnext<CR>zz

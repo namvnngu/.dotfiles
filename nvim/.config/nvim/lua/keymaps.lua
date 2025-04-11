@@ -46,11 +46,13 @@ vim.keymap.set(
 -- Set a new undo point before joining lines
 vim.keymap.set("n", "J", "mzJ`z")
 
--- Keeping it centered and stable
+-- Keep it centered and stable
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-D>", "<C-D>zz")
 vim.keymap.set("n", "<C-U>", "<C-U>zz")
+vim.keymap.set("n", "<C-F>", "<C-F>zz")
+vim.keymap.set("n", "<C-B>", "<C-B>zz")
 
 -- Quickfix list
 vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
