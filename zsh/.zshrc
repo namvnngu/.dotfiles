@@ -26,12 +26,6 @@ PROMPT='%n %~'$'\n$ '
 # fzf
 source <(fzf --zsh)
 
-# nvim
-alias nvimn='nvim -u NONE'
-
-# vim
-alias vimn='vim -u NONE'
-
 # go
 export GOPATH=$HOME/.go
 
