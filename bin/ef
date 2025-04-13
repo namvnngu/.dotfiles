@@ -51,9 +51,7 @@ if [[ -n $filtered_files ]]; then
   if [ $? -eq 0 ]; then
     echo "📃 List of files formatted":
     filtered_files_array=($filtered_files)
-    for file in "${filtered_files_array[@]}"
-    do
-      :
+    for file in "${filtered_files_array[@]}"; do
       echo "  ✅ $file"
     done
   fi
