@@ -10,7 +10,7 @@ if [[ -z "$start_dir" ]]; then
   exit 0
 fi
 
-session_name=$(basename "$start_dir")
+session_name=$(basename "$start_dir" | tr . _)
 
 if tmux has-session -t "$session_name" 2>/dev/null; then
   if [[ -z "$TMUX" ]]; then
