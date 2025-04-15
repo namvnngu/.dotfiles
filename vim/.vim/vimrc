@@ -213,6 +213,15 @@ function s:set_tags(lang)
   endif
 endfunction
 
+augroup format
+  autocmd!
+  autocmd BufReadPre * set formatprg=
+augroup END
+augroup format_c
+  autocmd!
+  autocmd BufReadPre *.c,*.h if executable('clang-format') | set formatprg=clang-format | endif
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COMMANDS                                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
