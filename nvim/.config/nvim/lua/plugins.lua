@@ -5,7 +5,6 @@ local PLUGIN_URLS = {
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/stevearc/conform.nvim",
-  "https://github.com/williamboman/mason.nvim",
 
   -- Optional
   "https://github.com/j-hui/fidget.nvim",
