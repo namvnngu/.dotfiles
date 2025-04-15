@@ -27,10 +27,10 @@ PROMPT='%n %~'$'\n$ '
 source <(fzf --zsh)
 
 # go
-export GOPATH=$HOME/.go
+export GOPATH="$HOME/.go"
 
 # pixi
-pathadd $HOME/.pixi/bin
+pathadd "$HOME/.pixi/bin"
 
 # man page
 export MANPAGER='nvim +Man!'
@@ -39,5 +39,5 @@ export MANPAGER='nvim +Man!'
 alias hl="rg --passthru"
 
 # my own
-export DOTFILES_PATH=$HOME/.dotfiles
-pathadd $HOME/.dotfiles/bin
+export DOTFILES_PATH="$HOME/.dotfiles"
+pathadd "$HOME/.dotfiles/bin"
