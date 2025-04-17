@@ -32,9 +32,6 @@ export GOPATH="$HOME/.go"
 # pixi
 pathadd "$HOME/.pixi/bin"
 
-# man page
-export MANPAGER='nvim +Man!'
-
 # search and highlight
 alias hl="rg --passthru"
 
