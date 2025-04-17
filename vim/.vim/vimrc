@@ -201,11 +201,11 @@ endfunction
 
 augroup lang_tags
   autocmd!
-  autocmd BufReadPre * set tags=./tags,tags
+  autocmd BufEnter * set tags=./tags,tags
 augroup END
 augroup c_tags
   autocmd!
-  autocmd BufReadPre *.c,*.h call s:set_tags('c')
+  autocmd BufEnter *.c,*.h call s:set_tags('c')
 augroup END
 function s:set_tags(lang)
   let l:files = globpath('~/.tags/' . a:lang, '*', 0, 1)
@@ -216,11 +216,11 @@ endfunction
 
 augroup format
   autocmd!
-  autocmd BufReadPre * set formatprg=
+  autocmd BufEnter * set formatprg=
 augroup END
 augroup format_c
   autocmd!
-  autocmd BufReadPre *.c,*.h if executable('clang-format') | set formatprg=clang-format | endif
+  autocmd BufEnter *.c,*.h if executable('clang-format') | set formatprg=clang-format | endif
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
