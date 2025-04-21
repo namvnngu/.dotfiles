@@ -293,6 +293,10 @@ if exists(':Man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man' && !has
   runtime ftplugin/man.vim
 endif
 
+" netrw
+let g:netrw_liststyle = 1
+let g:netrw_sizestyle = "H"
+
 " fzf
 nnoremap <C-P> :FZF<CR>
 
