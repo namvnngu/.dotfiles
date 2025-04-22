@@ -105,3 +105,9 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
     end
   end,
 })
+
+-- Bookmark the current location before jumping to the quickfix list
+vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
+  group = augroup("bookmark_before_quickfix_list"),
+  command = "norm mG"
+})
