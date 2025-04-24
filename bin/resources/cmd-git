@@ -26,7 +26,7 @@ git view the current branch: git branch --show-current
 git view the current branch (old): git rev-parse --abbrev-ref HEAD
 git view the current branch (old, expensive): git branch | grep -E '^\* ' | sed 's/^\* //g'
 git log all, decorate and oneline: git log --all --decorate --oneline
-git log decorate and oneline: log --decorate --oneline
+git log decorate and oneline: git log --decorate --oneline
 git log all, decorate and oneline in graph: git log --all --decorate --oneline --graph
 git log decorate and oneline in graph: git log --decorate --oneline --graph
 git push the upushed, local branch to remote: git push --set-upstream origin "$(git branch --show-current)"
