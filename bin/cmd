@@ -37,7 +37,7 @@ if [[ -n "$placeholders" ]]; then
   echo "----------------------"
   for phd in $placeholders; do
     read -p "$phd: " phd_value
-    selected_cmd=$(echo $selected_cmd | sed "s|$phd|$phd_value|")
+    selected_cmd=$(echo $selected_cmd | sed "s/$phd/$phd_value/g")
     echo "Command: $selected_cmd"
   done
   echo "----------------------"
