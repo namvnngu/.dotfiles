@@ -2,33 +2,34 @@
 
 # Find and copy/execute a command
 
-resources_dir_path="$DOTFILES_PATH/bin/resources"
+cmd_dir="$DOTFILES_PATH/bin/resources"
 
 if [[ "$1" == "ls" ]]; then
-  find "$resources_dir_path" -maxdepth 1 -name "cmd*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
+  find "$cmd_dir" -maxdepth 1 -name "cmd*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
   exit 0
 fi
 
 ###############################################################################
 
-cmd_file_path="$resources_dir_path/cmd-$1"
+category="$1"
+cmd_file="$cmd_dir/cmd-$category"
 
 # Fuzzy search
 if [[ $# -eq 0 ]]; then
-  files=$(find "$resources_dir_path" -maxdepth 1 -name "cmd-*")
-  selected=$(cat $files | fzf)
-elif [[ -e "$cmd_file_path" ]]; then
-  selected=$(cat "$cmd_file_path" | fzf)
+  files=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*")
+  selected_cmd_entry=$(cat $files | fzf)
+elif [[ -e "$cmd_file" ]]; then
+  selected_cmd_entry=$(cat "$cmd_file" | fzf)
 else
-  echo "$cmd_file_path: No such file"
+  echo "$cmd_file: No such file"
   exit 1
 fi
 
-if [[ -z "$selected" ]]; then
-  exit 1
+if [[ -z "$selected_cmd_entry" ]]; then
+  exit 0
 fi
 
-selected_cmd=$(echo "$selected" | sed "s/^.*: //")
+selected_cmd=$(echo "$selected_cmd_entry" | sed "s/^.*: //")
 echo "Selected command: $selected_cmd"
 
 # Fill in placeholders
