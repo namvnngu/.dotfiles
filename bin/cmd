@@ -15,7 +15,7 @@ cmd_file_path="$resources_dir_path/cmd-$1"
 
 # Fuzzy search
 if [[ $# -eq 0 ]]; then
-  files=$(find "$resources_dir_path" -maxdepth 1 -name "cmd*")
+  files=$(find "$resources_dir_path" -maxdepth 1 -name "cmd-*")
   selected=$(cat $files | fzf)
 elif [[ -e "$cmd_file_path" ]]; then
   selected=$(cat "$cmd_file_path" | fzf)
