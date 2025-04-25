@@ -1,43 +1,48 @@
 #!/usr/bin/env bash
 
-# Find and copy something
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Find and copy something
+# License: The Unlicense
+# Date created: October 21 2024
+# Date modified: April 25 2025
 
-resources_dir_path="$DOTFILES_PATH/bin/resources"
+fcp_dir="$DOTFILES_PATH/bin/resources"
 
 if [[ $1 == "ls" ]]; then
-  find $resources_dir_path -maxdepth 1 -name "fcp*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
+  find "$fcp_dir" -maxdepth 1 -name "fcp-*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
   exit 0
 fi
 
-###############################################################################
-
-fcp_file_path="$resources_dir_path/fcp-$1"
+category="$1"
+fcp_file="$fcp_dir/fcp-$category"
 
 # Fuzzy search
+
 if [[ $# -eq 0 ]]; then
-  files=$(find $resources_dir_path -maxdepth 1 -name "fcp*")
+  files=$(find "$fcp_dir" -maxdepth 1 -name "fcp-*")
   selected=$(cat $files | fzf)
-elif [[ -e $fcp_file_path ]]; then
-  selected=$(cat $fcp_file_path | fzf)
+elif [[ -e "$fcp_file" ]]; then
+  selected=$(cat "$fcp_file" | fzf)
 else
-  echo "$fcp_file_path: No such file"
+  echo "$fcp_file: No such file"
   exit 1
 fi
 
-if [[ -z $selected ]]; then
+if [[ -z "$selected" ]]; then
   exit 1
 fi
 
-selected=$(echo $selected | sed "s/: .*$//")
+selected=$(echo "$selected" | sed "s/: .*$//")
 
 # Copy
+
 os=$(uname -s)
 case $os in
   Darwin*)
-    echo -n $selected | pbcopy
+    echo -n "$selected" | pbcopy
     ;;
   Linux*)
-    echo -n $selected | xclip -selection clipboard
+    echo -n "$selected" | xclip -selection clipboard
     ;;
 esac
 echo "Copied to clipboard: $selected"

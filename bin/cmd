@@ -1,38 +1,42 @@
 #!/usr/bin/env bash
 
-# Find and copy/execute a command
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Find and copy/execute a command
+# License: The Unlicense
+# Date created: January 24 2024
+# Date modified: April 25 2025
 
 cmd_dir="$DOTFILES_PATH/bin/resources"
 
 if [[ "$1" == "ls" ]]; then
-  find "$cmd_dir" -maxdepth 1 -name "cmd*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
+  find "$cmd_dir" -maxdepth 1 -name "cmd-*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
   exit 0
 fi
-
-###############################################################################
 
 category="$1"
 cmd_file="$cmd_dir/cmd-$category"
 
 # Fuzzy search
+
 if [[ $# -eq 0 ]]; then
   files=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*")
-  selected_cmd_entry=$(cat $files | fzf)
+  selected_cmd=$(cat $files | fzf)
 elif [[ -e "$cmd_file" ]]; then
-  selected_cmd_entry=$(cat "$cmd_file" | fzf)
+  selected_cmd=$(cat "$cmd_file" | fzf)
 else
   echo "$cmd_file: No such file"
   exit 1
 fi
 
-if [[ -z "$selected_cmd_entry" ]]; then
+if [[ -z "$selected_cmd" ]]; then
   exit 0
 fi
 
-selected_cmd=$(echo "$selected_cmd_entry" | sed "s/^.*: //")
+selected_cmd=$(echo "$selected_cmd" | sed "s/^.*: //")
 echo "Selected command: $selected_cmd"
 
 # Fill in placeholders
+
 placeholders=$(echo "$selected_cmd" | grep -oE "<(\w|-)+>")
 if [[ -n "$placeholders" ]]; then
   echo "----------------------"
@@ -45,6 +49,7 @@ if [[ -n "$placeholders" ]]; then
 fi
 
 # Perform an action on command
+
 while true; do
   read -p "copy (c), execute (e) or quit (q)? " query
   query=$(echo "$query" | tr "[:upper:]" "[:lower:]")
