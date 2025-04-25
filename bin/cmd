@@ -43,7 +43,7 @@ if [[ -n "$placeholders" ]]; then
   echo "----------------------"
 fi
 
-# Perform action on command
+# Perform an action on command
 while true; do
   read -p "copy (c), execute (e) or quit (q)? " query
   query=$(echo "$query" | tr "[:upper:]" "[:lower:]")
