@@ -4,7 +4,7 @@
 # Description: Find and copy/execute a command
 # License: The Unlicense
 # Date created: January 24 2024
-# Date modified: April 25 2025
+# Date modified: April 27 2025
 
 cmd_dir="$DOTFILES_PATH/bin/resources"
 
@@ -51,12 +51,12 @@ fi
 # Perform an action on command
 
 while true; do
-  read -p "copy (c), execute (e) or quit (q)? " query
-  query=$(echo "$query" | tr "[:upper:]" "[:lower:]")
+  read -p "copy (c), execute (e) or quit (q)? " action
+  action=$(echo "$action" | tr "[:upper:]" "[:lower:]")
 
-  if [[ "$query" == c* ]]; then
+  if [[ "$action" == c* ]]; then
     os=$(uname -s)
-    case $os in
+    case "$os" in
       Darwin*)
         echo -n "$selected_cmd" | pbcopy
         ;;
@@ -66,11 +66,11 @@ while true; do
     esac
     echo "Copied to clipboard: $selected_cmd"
     exit 0
-  elif [[ "$query" == e* ]]; then
+  elif [[ "$action" == e* ]]; then
     echo "Executing: $selected_cmd"
     eval "$selected_cmd"
     exit 0
-  elif [[ "$query" == q* ]]; then
+  elif [[ "$action" == q* ]]; then
     exit 0
   else
     echo "You should choose copy (c), execute (e) or quit (q)"
