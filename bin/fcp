@@ -4,7 +4,7 @@
 # Description: Find and copy something
 # License: The Unlicense
 # Date created: October 21 2024
-# Date modified: April 25 2025
+# Date modified: April 27 2025
 
 fcp_dir="$DOTFILES_PATH/bin/resources"
 
@@ -37,7 +37,7 @@ selected=$(echo "$selected" | sed "s/: .*$//")
 # Copy
 
 os=$(uname -s)
-case $os in
+case "$os" in
   Darwin*)
     echo -n "$selected" | pbcopy
     ;;
