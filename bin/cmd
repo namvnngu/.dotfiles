@@ -20,30 +20,30 @@ cmd_file="$cmd_dir/cmd-$category"
 
 if [[ $# -eq 0 ]]; then
   files=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*")
-  selected_cmd=$(cat $files | fzf)
+  cmd=$(cat $files | fzf)
 elif [[ -e "$cmd_file" ]]; then
-  selected_cmd=$(cat "$cmd_file" | fzf)
+  cmd=$(cat "$cmd_file" | fzf)
 else
   echo "$cmd_file: No such file"
   exit 1
 fi
 
-if [[ -z "$selected_cmd" ]]; then
+if [[ -z "$cmd" ]]; then
   exit 0
 fi
 
-selected_cmd=$(echo "$selected_cmd" | sed "s/^.*: //")
-echo "Selected command: $selected_cmd"
+cmd=$(echo "$cmd" | sed "s/^.*: //")
+echo "Selected command: $cmd"
 
 # Fill in placeholders
 
-placeholders=$(echo "$selected_cmd" | grep -oE "<(\w|-)+>")
+placeholders=$(echo "$cmd" | grep -oE "<(\w|-)+>")
 if [[ -n "$placeholders" ]]; then
   echo "----------------------"
-  for phd in $placeholders; do
-    read -p "$phd: " phd_value
-    selected_cmd=$(echo "$selected_cmd" | sed "s/$phd/$phd_value/g")
-    echo "Command: $selected_cmd"
+  for k in $placeholders; do
+    read -p "$k: " v
+    cmd=$(echo "$cmd" | sed "s/$k/$v/g")
+    echo "Command: $cmd"
   done
   echo "----------------------"
 fi
@@ -58,17 +58,17 @@ while true; do
     os=$(uname -s)
     case "$os" in
       Darwin*)
-        echo -n "$selected_cmd" | pbcopy
+        echo -n "$cmd" | pbcopy
         ;;
       Linux*)
-        echo -n "$selected_cmd" | xclip -selection clipboard
+        echo -n "$cmd" | xclip -selection clipboard
         ;;
     esac
-    echo "Copied to clipboard: $selected_cmd"
+    echo "Copied to clipboard: $cmd"
     exit 0
   elif [[ "$action" == e* ]]; then
-    echo "Executing: $selected_cmd"
-    eval "$selected_cmd"
+    echo "Executing: $cmd"
+    eval "$cmd"
     exit 0
   elif [[ "$action" == q* ]]; then
     exit 0
