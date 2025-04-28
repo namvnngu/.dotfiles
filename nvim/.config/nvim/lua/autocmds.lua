@@ -1,5 +1,5 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("namnguyen" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = true })
 end
 
 -- Trim spaces
@@ -109,5 +109,12 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 -- Bookmark the current location before jumping to the quickfix list
 vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
   group = augroup("bookmark_before_quickfix_list"),
-  command = "norm mG"
+  command = "norm mG",
+})
+
+-- Set textwidth on markdown
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  group = augroup("markdown_textwidth"),
+  pattern = "*.md",
+  command = "setlocal textwidth=80",
 })

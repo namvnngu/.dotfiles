@@ -221,13 +221,14 @@ function s:set_tags(lang)
   endif
 endfunction
 
-augroup format
-  autocmd!
-  autocmd BufEnter * set formatprg=
-augroup END
 augroup format_c
   autocmd!
-  autocmd BufEnter *.c,*.h if executable('clang-format') | set formatprg=clang-format | endif
+  autocmd BufEnter *.c,*.h if executable('clang-format') | setlocal formatprg=clang-format | endif
+augroup END
+
+augroup md_tw
+  autocmd!
+  autocmd BufEnter *.md setlocal textwidth=80
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
