@@ -1,0 +1,9 @@
+[user]
+  name  = Nam Nguyen
+  email = nguyenvietnam2401@gmail.com
+
+[color]
+  ui = auto
+
+[commit]
+  template = ~/.config/git/template
