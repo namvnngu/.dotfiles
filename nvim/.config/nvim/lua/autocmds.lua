@@ -13,14 +13,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       [[%s/\(\n\n\)\n\+/\1/]],
       [[%s/\($\n\s*\)\+\%$//]],
     }
-    local save = vim.fn.winsaveview()
+    local view = vim.fn.winsaveview()
     for _, v in pairs(patterns) do
       vim.api.nvim_exec2(
         string.format("keepjumps keeppatterns silent! %s", v),
         { output = false }
       )
     end
-    vim.fn.winrestview(save)
+    vim.fn.winrestview(view)
   end,
 })
 
