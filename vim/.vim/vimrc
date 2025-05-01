@@ -163,9 +163,21 @@ tnoremap <C-D> <C-\><C-N>:q!<CR>
 " Switch between C source and header file
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
-" Fix the indentation of an entire file
-nnoremap <leader>F mzgggqG`z
-nnoremap <leader>f mzgg=G`z
+" Fix the indentation of the entire file
+function s:fix_indent()
+  let l:view = winsaveview()
+  keepjumps keeppatterns silent! norm gg=G
+  call winrestview(l:view)
+endfunction
+nnoremap <leader>f :call <SID>fix_indent()<CR>
+
+" Format the entire file
+function s:format()
+  let l:view = winsaveview()
+  keepjumps keeppatterns silent! norm gggqG
+  call winrestview(l:view)
+endfunction
+nnoremap <leader>F :call <SID>format()<CR>
 
 " Set a new undo point before deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
@@ -193,12 +205,12 @@ augroup trim_white_space
   autocmd BufWritePre * call s:trim_white_space()
 augroup END
 function s:trim_white_space()
-  let l:save = winsaveview()
+  let l:view = winsaveview()
   keepjumps keeppatterns silent! %s/\s\+$//e
   keepjumps keeppatterns silent! %s/\%^\n\+//
   keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
   keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
-  call winrestview(l:save)
+  call winrestview(l:view)
 endfunction
 
 augroup bookmark_before_quickfix_list
