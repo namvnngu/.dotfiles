@@ -60,12 +60,12 @@ set sidescroll=1
 set sidescrolloff=2
 set signcolumn=yes
 set smartcase
-set smartindent
 set smarttab
 set smoothscroll
+set softtabstop=2
 set splitbelow
 set splitright
-set tabstop=2
+set tabstop=4
 set ttimeout ttimeoutlen=50
 set undolevels=10000
 set viewoptions-=options
