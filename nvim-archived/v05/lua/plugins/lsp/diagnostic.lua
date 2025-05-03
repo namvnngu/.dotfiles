@@ -18,11 +18,7 @@ local function format_diagnostic_message(diagnostic)
     )
   end
 
-  return string.format(
-    "[%s] %s",
-    severity_label or "UNKNOWN",
-    diagnostic.message
-  )
+  return string.format("[%s] %s", severity_label or "UNKNOWN", diagnostic.message)
 end
 
 function M.on_attach()

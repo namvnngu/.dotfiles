@@ -1,7 +1,6 @@
 local M = {}
 
-local highlight_augroup =
-  vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
+local highlight_augroup = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
 local clear_highlight_augroup =
   vim.api.nvim_create_augroup("LspClearDocumentHighlight", { clear = true })
 

@@ -128,20 +128,13 @@ function M.get_file_url(filepath, sha, line1, line2, callback)
     if sha == nil then
       M.get_current_branch(function(branch)
         M.get_remote_url(function(remote_url)
-          local url = M.generate_file_url(
-            remote_url,
-            branch,
-            relative_filepath,
-            line1,
-            line2
-          )
+          local url = M.generate_file_url(remote_url, branch, relative_filepath, line1, line2)
           callback(url)
         end)
       end)
     else
       M.get_remote_url(function(remote_url)
-        local url =
-          M.generate_file_url(remote_url, sha, relative_filepath, line1, line2)
+        local url = M.generate_file_url(remote_url, sha, relative_filepath, line1, line2)
         callback(url)
       end)
     end

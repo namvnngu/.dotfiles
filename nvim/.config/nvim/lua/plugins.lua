@@ -59,10 +59,7 @@ local function install_plugs(plugin_urls, plugin_root)
           if exit_code == 0 then
             echo(("Installed %s!"):format(name))
           else
-            local err_msg = ("Failed to install %s with exit code %s"):format(
-              name,
-              exit_code
-            )
+            local err_msg = ("Failed to install %s with exit code %s"):format(name, exit_code)
             echo(err_msg, true)
           end
         end,

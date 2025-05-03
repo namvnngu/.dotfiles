@@ -18,10 +18,7 @@ vim.api.nvim_create_user_command("LspCapabilities", function()
 
       table.sort(capabilities)
 
-      local msg = "# "
-        .. client.name
-        .. "\n"
-        .. table.concat(capabilities, "\n")
+      local msg = "# " .. client.name .. "\n" .. table.concat(capabilities, "\n")
       vim.notify(msg, vim.log.levels.TRACE)
     end
   end

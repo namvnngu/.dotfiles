@@ -29,18 +29,11 @@ local function create_config(config)
 
             if not severity_label then
               require("utils.notify").warn(
-                string.format(
-                  "Unknown diagnostic severity, %s.",
-                  diagnostic.severity
-                )
+                string.format("Unknown diagnostic severity, %s.", diagnostic.severity)
               )
             end
 
-            return string.format(
-              "[%s] %s",
-              severity_label or "UNKNOWN",
-              diagnostic.message
-            )
+            return string.format("[%s] %s", severity_label or "UNKNOWN", diagnostic.message)
           end
 
           vim.diagnostic.config({
@@ -51,14 +44,10 @@ local function create_config(config)
 
         -- HOVER
         do
-          local highlight_augroup = vim.api.nvim_create_augroup(
-            "LspDocumentHighlight",
-            { clear = true }
-          )
-          local clear_highlight_augroup = vim.api.nvim_create_augroup(
-            "LspClearDocumentHighlight",
-            { clear = true }
-          )
+          local highlight_augroup =
+            vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
+          local clear_highlight_augroup =
+            vim.api.nvim_create_augroup("LspClearDocumentHighlight", { clear = true })
           if client:supports_method(ms.textDocument_documentHighlight) then
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               group = highlight_augroup,
@@ -90,10 +79,7 @@ local function create_config(config)
         -- FOLDING
         do
           local winid = vim.api.nvim_get_current_win()
-          if
-            not vim.wo[winid][0].diff
-            and client:supports_method(ms.textDocument_foldingRange)
-          then
+          if not vim.wo[winid][0].diff and client:supports_method(ms.textDocument_foldingRange) then
             vim.wo[winid][0].foldmethod = "expr"
             vim.wo[winid][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
           end
@@ -177,10 +163,7 @@ if vim.fn.executable("lua-language-server") == 1 then
         local path = client.workspace_folders[1].name
         if
           path ~= vim.fn.stdpath("config")
-          and (
-            vim.uv.fs_stat(path .. "/.luarc.json")
-            or vim.uv.fs_stat(path .. "/.luarc.jsonc")
-          )
+          and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
         then
           return
         end
@@ -188,10 +171,8 @@ if vim.fn.executable("lua-language-server") == 1 then
 
       local lua_settings = client.config.settings.Lua
 
-      client.config.settings.Lua = vim.tbl_deep_extend(
-        "force",
-        type(lua_settings) == "table" and lua_settings or {},
-        {
+      client.config.settings.Lua =
+        vim.tbl_deep_extend("force", type(lua_settings) == "table" and lua_settings or {}, {
           runtime = {
             version = "LuaJIT",
           },
@@ -202,8 +183,7 @@ if vim.fn.executable("lua-language-server") == 1 then
               { "${3rd}/luv/library" }
             ),
           },
-        }
-      )
+        })
     end,
     settings = {
       Lua = {},
@@ -238,10 +218,7 @@ end
 
 if vim.fn.executable("deno") == 1 then
   require("lspconfig").deno_ls.setup(create_config({
-    root_dir = require("lspconfig").util.root_pattern(
-      "deno.json",
-      "deno.jsonc"
-    ),
+    root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
   }))
 end
 

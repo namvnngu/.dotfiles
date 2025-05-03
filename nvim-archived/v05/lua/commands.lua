@@ -3,8 +3,7 @@ local notify = require("utils.notify")
 
 --- List all capabilities of the server associated with the current buffer
 vim.api.nvim_create_user_command("LspCapabilities", function()
-  local clients =
-    vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+  local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
 
   for _, client in pairs(clients) do
     local capabilities = {}
@@ -78,14 +77,7 @@ vim.api.nvim_create_user_command("Calc", function()
     local calc = load("return " .. (input or ""))()
     if calc then
       local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-      vim.api.nvim_buf_set_text(
-        0,
-        row - 1,
-        col,
-        row - 1,
-        col,
-        { tostring(calc) }
-      )
+      vim.api.nvim_buf_set_text(0, row - 1, col, row - 1, col, { tostring(calc) })
     end
   end)
 end, { desc = "Calculator" })

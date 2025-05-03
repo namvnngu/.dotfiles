@@ -83,8 +83,7 @@ local common_on_attach = function(client, bufnr)
   -- end
 
   -- Highlight
-  local lsp_highlight_augroup =
-    vim.api.nvim_create_augroup("LspHighlight", { clear = true })
+  local lsp_highlight_augroup = vim.api.nvim_create_augroup("LspHighlight", { clear = true })
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_clear_autocmds({
       group = lsp_highlight_augroup,
@@ -117,11 +116,7 @@ for _, server in ipairs(installed_servers) do
 end
 
 lspconfig.ts_ls.setup(tbl.merge(common_setup, {
-  root_dir = lspconfig.util.root_pattern(
-    "package.json",
-    "tsconfig.json",
-    "jsconfig.json"
-  ),
+  root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
 }))
 
 lspconfig.denols.setup(tbl.merge(common_setup, {

@@ -50,8 +50,7 @@ vim.keymap.set("n", "<leader>fgs", function()
   local query = vim.fn.input("Grep For > ")
   local root_dir = require("utils").trim_string(vim.fn.input("Root Dir > "))
   require("telescope.builtin").grep_string({
-    cwd = #root_dir ~= 0 and root_dir
-      or require("telescope.utils").buffer_dir(),
+    cwd = #root_dir ~= 0 and root_dir or require("telescope.utils").buffer_dir(),
     search = query,
     use_regex = true,
   })
