@@ -23,8 +23,8 @@ else
   export EDITOR='vi'
 fi
 
-# vim mode
-# set -o vi
+# emacs mode
+set -o emacs
 
 # reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
