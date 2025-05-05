@@ -238,3 +238,7 @@ end
 if vim.fn.executable("vscode-html-language-server") == 1 then
   require("lspconfig").html.setup(create_config())
 end
+
+if vim.fn.executable("zk") == 1 then
+  require("lspconfig").zk.setup(create_config())
+end

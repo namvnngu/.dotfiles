@@ -1,0 +1,43 @@
+[note]
+language = "en"
+filename = "{{slug title}}"
+
+[extra]
+author = "Nam"
+
+[group.journal]
+paths = ["journal"]
+
+[group.journal.note]
+filename = "{{format-date now}}"
+template = "journal.md"
+
+[format.markdown]
+link-format = "wiki"
+
+[tool]
+editor = "nvim"
+
+[filter]
+recents = "--sort created- --created-after 'last two weeks'"
+
+[alias]
+bl     = 'zk list --link-to "$@"'
+conf   = 'nvim "$HOME/.config/zk/config.toml"'
+daily  = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal"'
+ed     = 'zk edit --interactive "$@"'
+edl    = 'zk edit --limit 1 --sort modified- "$@"'
+hist   = 'zk list --format path --delimiter0 --quiet "$@" | xargs -t -0 git log --patch --'
+inline = 'zk list --quiet --format {{path}} --delimiter , "$@"'
+log    = 'zk list --quiet --format path --delimiter0 "$@" | xargs -0 git log --patch --'
+ls     = 'zk list --interactive "$@"'
+lucky  = 'zk list --quiet --format full --sort random --limit 1'
+n      = 'zk new "$@"'
+nt     = 'zk new --title "$*"'
+paths  = "zk list --quiet --format \"'{{path}}'\" --delimiter ' ' $@"
+recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
+wc     = "zk list --format '{{word-count}}\t{{path}}' --sort word-count $@"
+
+[lsp.completion]
+note-label = "{{path}}"
+note-filter-text = "{{path}}"
