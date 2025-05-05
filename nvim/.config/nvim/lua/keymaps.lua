@@ -89,3 +89,17 @@ vim.keymap.set("n", "<leader><C-W>F", ":vertical wincmd F<CR>")
 
 -- Exit terminal
 vim.keymap.set("t", "<C-D>", [[<C-\><C-N>:q!<CR>]])
+
+-- Fix the indentation of the entire file
+vim.keymap.set("n", "<leader>=", function()
+  local view = vim.fn.winsaveview()
+  vim.api.nvim_exec2("keepjumps keeppatterns silent! norm gg=G", { output = false })
+  vim.fn.winrestview(view)
+end)
+
+-- Format the entire file
+vim.keymap.set("n", "<leader>gq", function()
+  local view = vim.fn.winsaveview()
+  vim.api.nvim_exec2("keepjumps keeppatterns silent! norm gggqG", { output = false })
+  vim.fn.winrestview(view)
+end)

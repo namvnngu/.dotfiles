@@ -77,7 +77,7 @@ set wildoptions=pum,tagfile
 set winminwidth=5
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPPINGS                                                                    "
+" KEY MAPPINGS                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Avoid using arrow keys
@@ -104,7 +104,7 @@ nnoremap yp :exec setreg('+', expand('%:p'))<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-"  Move lines
+" Move lines
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -160,16 +160,13 @@ nnoremap <leader><C-W>F :vertical wincmd F<CR>
 " Exit terminal
 tnoremap <C-D> <C-\><C-N>:q!<CR>
 
-" Switch between C source and header file
-nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
-
 " Fix the indentation of the entire file
 function s:fix_indent()
   let l:view = winsaveview()
   keepjumps keeppatterns silent! norm gg=G
   call winrestview(l:view)
 endfunction
-nnoremap <leader>f :call <SID>fix_indent()<CR>
+nnoremap <leader>= :call <SID>fix_indent()<CR>
 
 " Format the entire file
 function s:format()
@@ -177,7 +174,7 @@ function s:format()
   keepjumps keeppatterns silent! norm gggqG
   call winrestview(l:view)
 endfunction
-nnoremap <leader>F :call <SID>format()<CR>
+nnoremap <leader>gq :call <SID>format()<CR>
 
 " Set a new undo point before deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
@@ -185,6 +182,9 @@ inoremap <C-W> <C-G>u<C-W>
 
 " File explorer
 nnoremap - :Ex<CR>
+
+" Switch between C source and header file
+nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                               "
