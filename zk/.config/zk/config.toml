@@ -1,5 +1,4 @@
 [note]
-language = "en"
 filename = "{{slug title}}"
 template = "default.md"
 
