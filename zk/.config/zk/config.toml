@@ -13,9 +13,6 @@ paths = ["journal"]
 filename = "{{format-date now}}"
 template = "journal.md"
 
-[format.markdown]
-link-format = "wiki"
-
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
 
