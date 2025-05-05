@@ -14,6 +14,15 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt INC_APPEND_HISTORY
 
+# default editor
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR='nvim'
+elif command -v vim >/dev/null 2>&1; then
+  export EDITOR='vim'
+else
+  export EDITOR='vi'
+fi
+
 # vim mode
 # set -o vi
 
@@ -33,7 +42,7 @@ export GOPATH="$HOME/.go"
 pathadd "$HOME/.pixi/bin"
 
 # search and highlight
-alias hl="rg --passthru"
+alias hl='rg --passthru'
 
 # my own
 export DOTFILES_PATH="$HOME/.dotfiles"
