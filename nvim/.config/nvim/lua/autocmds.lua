@@ -21,13 +21,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
--- Set scss filetype to sass
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  group = augroup("scss_to_sass"),
-  pattern = "*.scss",
-  command = "set filetype=sass",
-})
-
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),
@@ -107,11 +100,4 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
   group = augroup("bookmark_before_quickfix_list"),
   command = "norm mG",
-})
-
--- Set textwidth on markdown
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  group = augroup("markdown_textwidth"),
-  pattern = "*.md",
-  command = "setlocal textwidth=80",
 })

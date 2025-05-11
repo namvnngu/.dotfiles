@@ -12,6 +12,12 @@ if vim.env.TMUX then
   end
 end
 
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.smarttab = true
+vim.o.softtabstop = 2
+vim.o.tabstop = 4
+
 vim.o.breakindent = true
 vim.o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 vim.o.colorcolumn = "80"
@@ -19,7 +25,6 @@ vim.o.completeopt = "menu,menuone,popup,noselect,noinsert"
 vim.o.copyindent = true
 vim.o.cursorline = true
 vim.o.display = "lastline,truncate"
-vim.o.expandtab = true
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.grepformat = "%f:%l:%c:%m"
@@ -32,17 +37,14 @@ vim.o.preserveindent = true
 vim.o.relativenumber = true
 vim.o.scrolloff = 8
 vim.o.shiftround = true
-vim.o.shiftwidth = 2
 vim.o.showtabline = 0
 vim.o.sidescrolloff = 2
 vim.o.signcolumn = "yes"
 vim.o.smartcase = true
 vim.o.smoothscroll = true
-vim.o.softtabstop = 2
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
-vim.o.tabstop = 4
 vim.o.termguicolors = false
 vim.o.undolevels = 10000
 vim.o.virtualedit = "block"

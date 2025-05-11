@@ -15,6 +15,12 @@ if exists('$TMUX')
   endif
 endif
 
+set shiftwidth=2
+set expandtab
+set smarttab
+set softtabstop=2
+set tabstop=4
+
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -26,7 +32,6 @@ set completeopt=menu,menuone,popup,noinsert,noselect
 set copyindent
 set cursorline
 set display+=lastline,truncate
-set expandtab
 set foldlevel=99
 set foldlevelstart=99
 set formatoptions+=j
@@ -53,19 +58,15 @@ set ruler
 set scrolloff=8
 set sessionoptions-=options
 set shiftround
-set shiftwidth=2
 set shortmess=ltToOCF
 set showtabline=0
 set sidescroll=1
 set sidescrolloff=2
 set signcolumn=yes
 set smartcase
-set smarttab
 set smoothscroll
-set softtabstop=2
 set splitbelow
 set splitright
-set tabstop=4
 set ttimeout ttimeoutlen=50
 set undolevels=10000
 set viewoptions-=options
@@ -218,29 +219,20 @@ augroup bookmark_before_quickfix_list
   autocmd QuickFixCmdPost norm mG
 augroup END
 
-augroup lang_tags
+augroup tags
   autocmd!
-  autocmd BufEnter * set tags=./tags,tags
-augroup END
-augroup c_tags
-  autocmd!
-  autocmd BufEnter *.c,*.h call s:set_tags('c')
-augroup END
-function s:set_tags(lang)
-  let l:files = globpath('~/.tags/' . a:lang, '*', 0, 1)
-  if len(l:files) != 0
-    let &tags = './tags,tags,' . join(l:files, ',')
-  endif
-endfunction
-
-augroup format_c
-  autocmd!
-  autocmd BufEnter *.c,*.h if executable('clang-format') | setlocal formatprg=clang-format | endif
+  autocmd FileType *     set tags=./tags,tags
+  autocmd FileType c,cpp set tags=./tags,tags,~/.tags/c-system
 augroup END
 
-augroup md_tw
+augroup format
   autocmd!
-  autocmd BufEnter *.md setlocal textwidth=80
+  autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
+augroup END
+
+augroup textwidth
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=80
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
