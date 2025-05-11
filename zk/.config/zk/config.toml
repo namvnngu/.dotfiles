@@ -5,12 +5,15 @@ template = "default.md"
 [extra]
 author = "Nam"
 
-[group.journal]
-paths = ["journal"]
+[group.daily]
+paths = ["_daily"]
 
-[group.journal.note]
+[group.daily.note]
 filename = "{{format-date now}}"
-template = "journal.md"
+template = "daily.md"
+
+[format.markdown]
+link-format = "wiki"
 
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
