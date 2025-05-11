@@ -1,4 +1,4 @@
-# {{title}}
+# {{format-date now}}
 
 ## TODO
 
