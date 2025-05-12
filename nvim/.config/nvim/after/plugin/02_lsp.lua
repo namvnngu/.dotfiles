@@ -28,8 +28,10 @@ local function create_config(config)
             local severity_label = SEVERITY_LABELS[diagnostic.severity]
 
             if not severity_label then
-              require("utils.notify").warn(
-                string.format("Unknown diagnostic severity, %s.", diagnostic.severity)
+              vim.api.nvim_echo(
+                { { string.format("Unknown diagnostic severity, %s.", diagnostic.severity) } },
+                true,
+                { err = true }
               )
             end
 
