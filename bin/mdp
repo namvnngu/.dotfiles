@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+input_md="$1"
+output_dir="$HOME/Downloads"
+output_wiki="$output_dir/output.wiki"
+output_html="$output_dir/output.html"
+
+pandoc -s -f markdown  -t mediawiki -o "$output_wiki" "$input_md"
+pandoc -s -f mediawiki -t html5     -o "$output_html" "$output_wiki"
+
+rm -rf "$output_wiki"
+
+open "$output_html"

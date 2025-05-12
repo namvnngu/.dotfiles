@@ -103,3 +103,6 @@ vim.keymap.set("n", "<leader>gq", function()
   vim.api.nvim_exec2("keepjumps keeppatterns silent! norm gggqG", { output = false })
   vim.fn.winrestview(view)
 end)
+
+-- Preview markdown
+vim.keymap.set("n", "<leader>mp", ":!mdp '%'<CR>")
