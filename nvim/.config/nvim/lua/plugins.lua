@@ -8,7 +8,7 @@ local PLUGIN_URLS = {
 
   -- Optional
   "https://github.com/j-hui/fidget.nvim",
-  "https://github.com/echasnovski/mini.align",
+  "https://github.com/godlygeek/tabular",
   "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
 }
 local PLUGIN_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"

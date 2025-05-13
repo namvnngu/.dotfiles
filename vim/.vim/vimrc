@@ -37,6 +37,7 @@ set foldlevelstart=99
 set formatoptions+=j
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
+set hidden
 set history=10000
 set hlsearch
 set ignorecase
@@ -258,6 +259,7 @@ let s:PLUGIN_URLS = [
       \ 'https://github.com/tpope/vim-fugitive',
       \ 'https://github.com/junegunn/fzf',
       \ 'https://github.com/ludovicchabant/vim-gutentags',
+      \ 'https://github.com/godlygeek/tabular',
       \ ]
 
 function s:install_plugins()

@@ -5,7 +5,6 @@ end
 -- Trim spaces
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("trim_spaces"),
-  pattern = "*",
   callback = function()
     local patterns = {
       [[%s/\s\+$//e]],
@@ -88,7 +87,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- Stop treesitter
 vim.api.nvim_create_autocmd({ "BufRead" }, {
   group = augroup("stop_treesitter"),
-  pattern = "*",
   callback = function(ev)
     if vim.api.nvim_buf_is_valid(ev.buf) then
       vim.treesitter.stop(ev.buf)
