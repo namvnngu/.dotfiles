@@ -39,3 +39,13 @@ exposed = { biome = "biome" }
 channels = ["conda-forge"]
 dependencies = { lua-language-server = "*" }
 exposed = { lua-language-server = "lua-language-server" }
+
+[envs.jq]
+channels = ["conda-forge"]
+dependencies = { jq = "*" }
+exposed = { jq = "jq" }
+
+[envs.zk]
+channels = ["conda-forge"]
+dependencies = { zk = "*" }
+exposed = { zk = "zk" }
