@@ -218,25 +218,21 @@ function s:trim_white_space()
   call winrestview(l:view)
 endfunction
 
-augroup bookmark_before_quickfix_list
+augroup mark_postqf
   autocmd!
   autocmd QuickFixCmdPost norm mG
 augroup END
 
-augroup tags
+augroup c_ft
   autocmd!
-  autocmd FileType *     set tags=./tags,tags
-  autocmd FileType c,cpp set tags=./tags,tags,~/.tags/c-system
-augroup END
-
-augroup format
-  autocmd!
+  autocmd FileType c,cpp setlocal tags=./tags,tags,~/.tags/c-system
   autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
 augroup END
 
-augroup textwidth
+augroup markdown_ft
   autocmd!
   autocmd FileType markdown setlocal textwidth=80
+  autocmd FileType markdown setlocal wrap
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
