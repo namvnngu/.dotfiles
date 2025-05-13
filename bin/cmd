@@ -4,7 +4,7 @@
 # Description: Find and copy/execute a command
 # License: The Unlicense
 # Date created: January 24 2024
-# Date modified: April 27 2025
+# Date modified: May 13 2025
 
 cmd_dir="$DOTFILES_PATH/bin/resources"
 
@@ -20,7 +20,7 @@ cmd_file="$cmd_dir/cmd-$category"
 
 if [[ $# -eq 0 ]]; then
   files=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*")
-  cmd=$(cat $files | fzf)
+  cmd=$(cat "$files" | fzf)
 elif [[ -e "$cmd_file" ]]; then
   cmd=$(cat "$cmd_file" | fzf)
 else
@@ -32,7 +32,7 @@ if [[ -z "$cmd" ]]; then
   exit 0
 fi
 
-cmd=$(echo "$cmd" | sed "s/^.*: //")
+cmd=${cmd/#*: /}
 echo "Selected command: $cmd"
 
 # Fill in placeholders
@@ -41,8 +41,8 @@ placeholders=$(echo "$cmd" | grep -oE "<(\w|-)+>")
 if [[ -n "$placeholders" ]]; then
   echo "----------------------"
   for k in $placeholders; do
-    read -p "$k: " v
-    cmd=$(echo "$cmd" | sed "s/$k/$v/g")
+    read -r -p "$k: " v
+    cmd=${cmd//$k/$v}
     echo "Command: $cmd"
   done
   echo "----------------------"
@@ -51,7 +51,7 @@ fi
 # Perform an action on command
 
 while true; do
-  read -p "copy (c), execute (e) or quit (q)? " action
+  read -r -p "copy (c), execute (e) or quit (q)? " action
   action=$(echo "$action" | tr "[:upper:]" "[:lower:]")
 
   if [[ "$action" == c* ]]; then
