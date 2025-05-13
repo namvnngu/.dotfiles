@@ -1,0 +1,41 @@
+version = 1
+
+[envs.nodejs]
+channels = ["conda-forge"]
+dependencies = { nodejs = "*" }
+exposed = { corepack = "corepack", node = "node", npm = "npm", npx = "npx", pnpm = "pnpm" }
+
+[envs.typescript-language-server]
+channels = ["conda-forge"]
+dependencies = { typescript-language-server = "*" }
+exposed = { typescript-language-server = "typescript-language-server" }
+
+[envs.typos-lsp]
+channels = ["conda-forge"]
+dependencies = { typos-lsp = "*" }
+exposed = { typos-lsp = "typos-lsp" }
+
+[envs.stylua]
+channels = ["conda-forge"]
+dependencies = { stylua = "*" }
+exposed = { stylua = "stylua" }
+
+[envs.prettier]
+channels = ["conda-forge"]
+dependencies = { prettier = "*" }
+exposed = { prettier = "prettier" }
+
+[envs.clang-format]
+channels = ["conda-forge"]
+dependencies = { clang-format = "*" }
+exposed = { clang-format = "clang-format" }
+
+[envs.biome]
+channels = ["conda-forge"]
+dependencies = { biome = "*" }
+exposed = { biome = "biome" }
+
+[envs.lua-language-server]
+channels = ["conda-forge"]
+dependencies = { lua-language-server = "*" }
+exposed = { lua-language-server = "lua-language-server" }
