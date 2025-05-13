@@ -19,8 +19,8 @@ cmd_file="$cmd_dir/cmd-$category"
 # Fuzzy search
 
 if [[ $# -eq 0 ]]; then
-  files=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*")
-  cmd=$(cat "$files" | fzf)
+  cmds=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*" -exec cat {} '+')
+  cmd=$(echo "$cmds" | fzf)
 elif [[ -e "$cmd_file" ]]; then
   cmd=$(cat "$cmd_file" | fzf)
 else
