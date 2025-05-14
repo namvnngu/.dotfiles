@@ -4,7 +4,7 @@
 # Description: Find and copy/execute a command
 # License: The Unlicense
 # Date created: January 24 2024
-# Date modified: May 13 2025
+# Date modified: May 14 2025
 
 cmd_dir="$DOTFILES_PATH/bin/resources"
 
@@ -32,7 +32,9 @@ if [[ -z "$cmd" ]]; then
   exit 0
 fi
 
-cmd=${cmd/#*: /}
+cmd=$(echo "$cmd" | cut -d ':' -f 2-)
+cmd=${cmd/#[[:space:]]/}
+cmd=${cmd/%[[:space:]]/}
 echo "Selected command: $cmd"
 
 # Fill in placeholders
