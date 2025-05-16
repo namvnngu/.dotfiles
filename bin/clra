@@ -1,22 +1,15 @@
 #!/usr/bin/env bash
 
-# Print all colors
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Print 256 colors
+# License: The Unlicense
+# Date created: October 21, 2024
+# Date modified: May 16, 2025
 
 output=''
-style='38;5'
-padding='        '
 
-for i in {0..256}; do
-  color="\033[${style};${i}m"
-  name="${style};${i}"
-  name="${name:0:${#padding}}${padding:0:$((${#padding} - ${#name}))}"
-  output="${output}${color}${name}"
-  if [[ $(( (i + 1) % 5 )) == 0 ]]; then
-    output="${output}\n"
-  else
-    len=
-    output="${output}\t "
-  fi
+for i in {0..255}; do
+  output="${output}\033[38;5;${i}m${i}\n"
 done
 
-echo -ne "${output}" | column
+printf "${output}" | column
