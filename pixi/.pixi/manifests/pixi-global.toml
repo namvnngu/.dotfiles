@@ -49,3 +49,8 @@ exposed = { jq = "jq" }
 channels = ["conda-forge"]
 dependencies = { shellcheck = "*" }
 exposed = { shellcheck = "shellcheck" }
+
+[envs.go]
+channels = ["conda-forge"]
+dependencies = { go = "*" }
+exposed = { go = "go", gofmt = "gofmt" }
