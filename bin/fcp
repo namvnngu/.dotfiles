@@ -3,8 +3,8 @@
 # Author: Nam Nguyen <vnngucs@outlook.com>
 # Description: Find and copy something
 # License: The Unlicense
-# Date created: October 21 2024
-# Date modified: April 27 2025
+# Date created: July 22, 2024
+# Date modified: May 16, 2025
 
 fcp_dir="$DOTFILES_PATH/bin/resources"
 

@@ -3,8 +3,8 @@
 # Author: Nam Nguyen <vnngucs@outlook.com>
 # Description: Find and copy/execute a command
 # License: The Unlicense
-# Date created: January 24 2024
-# Date modified: May 14 2025
+# Date created: January 24, 2024
+# Date modified: May 16, 2025
 
 cmd_dir="$DOTFILES_PATH/bin/resources"
 
