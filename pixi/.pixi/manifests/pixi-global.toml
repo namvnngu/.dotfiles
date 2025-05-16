@@ -45,11 +45,6 @@ channels = ["conda-forge"]
 dependencies = { jq = "*" }
 exposed = { jq = "jq" }
 
-[envs.zk]
-channels = ["conda-forge"]
-dependencies = { zk = "*" }
-exposed = { zk = "zk" }
-
 [envs.shellcheck]
 channels = ["conda-forge"]
 dependencies = { shellcheck = "*" }
