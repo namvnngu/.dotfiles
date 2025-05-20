@@ -4,7 +4,7 @@
 
 let mapleader = ' '
 
-syntax on
+syntax off " Disabled by default to prevent vim from hanging on large files
 filetype plugin indent on
 colorscheme wildcharm
 

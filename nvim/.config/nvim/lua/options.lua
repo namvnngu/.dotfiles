@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.cmd("syntax on")
+vim.cmd("syntax off") -- Disabled by default to prevent nvim from hanging on large files
 vim.cmd("filetype plugin indent on")
 vim.cmd("colorscheme wildcharm")
 
