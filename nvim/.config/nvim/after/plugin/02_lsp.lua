@@ -6,10 +6,6 @@ local function create_config(config)
   return vim.tbl_deep_extend("force", {
     --- @type fun(client: vim.lsp.Client, bufnr: integer)
     on_attach = function(client, bufnr)
-      if config and config.on_attach then
-        config.on_attach(client, bufnr)
-      end
-
       local ms = vim.lsp.protocol.Methods
 
       if client then
@@ -178,21 +174,23 @@ if vim.fn.executable("lua-language-server") == 1 then
         end
       end
 
-      local lua_settings = client.config.settings.Lua
-
-      client.config.settings.Lua =
-        vim.tbl_deep_extend("force", type(lua_settings) == "table" and lua_settings or {}, {
-          runtime = {
-            version = "LuaJIT",
+      ---@diagnostic disable-next-line: param-type-mismatch
+      client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+        runtime = {
+          version = "LuaJIT",
+          path = {
+            "lua/?.lua",
+            "lua/?/init.lua",
           },
-          workspace = {
-            checkThirdParty = false,
-            library = vim.list_extend(
-              vim.api.nvim_get_runtime_file("", true),
-              { "${3rd}/luv/library" }
-            ),
-          },
-        })
+        },
+        workspace = {
+          checkThirdParty = false,
+          library = vim.list_extend(vim.api.nvim_get_runtime_file("", true), {
+            "${3rd}/luv/library",
+            "${3rd}/busted/library",
+          }),
+        },
+      })
     end,
     settings = {
       Lua = {},
@@ -250,4 +248,8 @@ end
 
 if vim.fn.executable("zk") == 1 then
   require("lspconfig").zk.setup(create_config())
+end
+
+if vim.fn.executable("tinymist") == 1 then
+  require("lspconfig").tinymist.setup(create_config())
 end

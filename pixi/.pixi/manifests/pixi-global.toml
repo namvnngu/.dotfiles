@@ -54,3 +54,13 @@ exposed = { shellcheck = "shellcheck" }
 channels = ["conda-forge"]
 dependencies = { go = "*" }
 exposed = { go = "go", gofmt = "gofmt" }
+
+[envs.typst]
+channels = ["conda-forge"]
+dependencies = { typst = "*" }
+exposed = { typst = "typst" }
+
+[envs.tinymist]
+channels = ["conda-forge"]
+dependencies = { tinymist = "*" }
+exposed = { tinymist = "tinymist" }
