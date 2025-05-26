@@ -10,6 +10,16 @@ channels = ["conda-forge"]
 dependencies = { typescript-language-server = "*" }
 exposed = { typescript-language-server = "typescript-language-server" }
 
+[envs.prettier]
+channels = ["conda-forge"]
+dependencies = { prettier = "*" }
+exposed = { prettier = "prettier" }
+
+[envs.biome]
+channels = ["conda-forge"]
+dependencies = { biome = "*" }
+exposed = { biome = "biome" }
+
 [envs.typos-lsp]
 channels = ["conda-forge"]
 dependencies = { typos-lsp = "*" }
@@ -20,20 +30,10 @@ channels = ["conda-forge"]
 dependencies = { stylua = "*" }
 exposed = { stylua = "stylua" }
 
-[envs.prettier]
-channels = ["conda-forge"]
-dependencies = { prettier = "*" }
-exposed = { prettier = "prettier" }
-
 [envs.clang-format]
 channels = ["conda-forge"]
 dependencies = { clang-format = "*" }
 exposed = { clang-format = "clang-format" }
-
-[envs.biome]
-channels = ["conda-forge"]
-dependencies = { biome = "*" }
-exposed = { biome = "biome" }
 
 [envs.lua-language-server]
 channels = ["conda-forge"]
@@ -54,6 +54,11 @@ exposed = { shellcheck = "shellcheck" }
 channels = ["conda-forge"]
 dependencies = { go = "*" }
 exposed = { go = "go", gofmt = "gofmt" }
+
+[envs.gopls]
+channels = ["conda-forge"]
+dependencies = { gopls = "*" }
+exposed = { gopls = "gopls" }
 
 [envs.typst]
 channels = ["conda-forge"]
