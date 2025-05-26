@@ -95,6 +95,13 @@ local function create_config(config)
             vim.api.nvim_set_hl(0, group, {})
           end
         end
+
+        -- INLINE COLORS
+        -- do
+        --   if client:supports_method(ms.textDocument_documentColor) then
+        --     vim.lsp.document_color.enable(true, bufnr)
+        --   end
+        -- end
       end
     end,
     capabilities = vim.tbl_deep_extend(
