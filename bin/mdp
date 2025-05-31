@@ -4,12 +4,7 @@ input_md="$1"
 input_dir=$(dirname "$input_md")
 input_filename=$(basename "$input_md")
 input_filename=${input_filename%.*}
-output_wiki="$input_dir/$input_filename.wiki"
-output_html="$HOME/Downloads/$input_filename.html"
+output_html="$input_dir/$input_filename.html"
 
-pandoc -s -f markdown  -t mediawiki -o "$output_wiki" "$input_md"
-pandoc -s -f mediawiki -t html5     -o "$output_html" "$output_wiki"
-
-rm -rf "$output_wiki"
-
+pandoc -s -f markdown -t html5 -o "$output_html" "$input_md"
 open "$output_html"
