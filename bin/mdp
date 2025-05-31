@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 input_md="$1"
-output_dir="$HOME/Downloads"
-output_wiki="$output_dir/output.wiki"
-output_html="$output_dir/output.html"
+input_dir=$(dirname "$input_md")
+input_filename=$(basename "$input_md")
+input_filename=${input_filename%.*}
+output_wiki="$input_dir/$input_filename.wiki"
+output_html="$HOME/Downloads/$input_filename.html"
 
 pandoc -s -f markdown  -t mediawiki -o "$output_wiki" "$input_md"
 pandoc -s -f mediawiki -t html5     -o "$output_html" "$output_wiki"
