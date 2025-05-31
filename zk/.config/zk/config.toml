@@ -13,7 +13,7 @@ filename = "{{format-date now}}"
 template = "daily.md"
 
 [format.markdown]
-link-format = "wiki"
+link-format = "markdown"
 
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
