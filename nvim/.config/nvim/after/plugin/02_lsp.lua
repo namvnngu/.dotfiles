@@ -246,10 +246,6 @@ if vim.fn.executable("vscode-html-language-server") == 1 then
   require("lspconfig").html.setup(create_config())
 end
 
-if vim.fn.executable("zk") == 1 then
-  require("lspconfig").zk.setup(create_config())
-end
-
 if vim.fn.executable("tinymist") == 1 then
   require("lspconfig").tinymist.setup(create_config())
 end
@@ -257,3 +253,7 @@ end
 if vim.fn.executable("gopls") == 1 then
   require("lspconfig").gopls.setup(create_config())
 end
+
+-- if vim.fn.executable("zk") == 1 then
+--   require("lspconfig").zk.setup(create_config())
+-- end
