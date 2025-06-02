@@ -44,6 +44,9 @@ pathadd "$HOME/.pixi/bin"
 # search and highlight
 alias hl='rg --passthru'
 
+# man
+export MANPAGER='nvim +Man!'
+
 # my own
 export DOTFILES_PATH="$HOME/.dotfiles"
 pathadd "$HOME/.dotfiles/bin"
