@@ -19,32 +19,32 @@ local function common_on_attach(client, bufnr)
   local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap("n", "<leader>vD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  buf_set_keymap("n", "<leader>vd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  buf_set_keymap("n", "<leader>vk", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "<leader>vi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  buf_set_keymap("n", "<leader>vsh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  buf_set_keymap("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-  buf_set_keymap("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vk", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vsh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  buf_set_keymap("n", "<Leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+  buf_set_keymap("n", "<Leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
   buf_set_keymap(
     "n",
-    "<leader>wl",
+    "<Leader>wl",
     "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
     opts
   )
-  buf_set_keymap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-  buf_set_keymap("n", "<leader>vrn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  buf_set_keymap("n", "<leader>vca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  buf_set_keymap("n", "<leader>vrr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  buf_set_keymap("n", "<Leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vrn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vrr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   buf_set_keymap(
     "n",
-    "<leader>vsd",
+    "<Leader>vsd",
     "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
     opts
   )
-  buf_set_keymap("n", "<leader>vp", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-  buf_set_keymap("n", "<leader>vn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-  buf_set_keymap("n", "<leader>vll", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vp", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+  buf_set_keymap("n", "<Leader>vll", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_exec(

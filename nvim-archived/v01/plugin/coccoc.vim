@@ -4,19 +4,19 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-clangd',
   \]
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
+vmap <Leader>f  <Plug>(coc-format-selected)
+nmap <Leader>f  <Plug>(coc-format-selected)
+nmap <Leader>gd <Plug>(coc-definition)
+nmap <Leader>gy <Plug>(coc-type-definition)
+nmap <Leader>gi <Plug>(coc-implementation)
+nmap <Leader>gr <Plug>(coc-references)
+nmap <Leader>rr <Plug>(coc-rename)
+nmap <Leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <Leader>g] <Plug>(coc-diagnostic-next)
+nmap <silent> <Leader>gp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <Leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <leader>cr :CocRestart
+nnoremap <Leader>cr :CocRestart
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')

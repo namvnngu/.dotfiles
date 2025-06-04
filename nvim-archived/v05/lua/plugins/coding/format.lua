@@ -5,7 +5,7 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     keys = {
       {
-        "<leader>F",
+        "<Leader>F",
         function()
           require("conform").format({ async = true, lsp_fallback = true })
         end,

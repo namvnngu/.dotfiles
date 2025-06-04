@@ -114,10 +114,10 @@ set winminwidth=5
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Move to window
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <Leader>h :wincmd h<CR>
+nnoremap <Leader>j :wincmd j<CR>
+nnoremap <Leader>k :wincmd k<CR>
+nnoremap <Leader>l :wincmd l<CR>
 
 " Resize window
 nnoremap <Up> :resize +2<CR>
@@ -126,26 +126,26 @@ nnoremap <Left> :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
 
 " Yanking
-nnoremap <leader>ya :%y+<CR>
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+y$
+nnoremap <Leader>ya :%y+<CR>
+nnoremap <Leader>y "+y
+vnoremap <Leader>y "+y
+nnoremap <Leader>Y "+y$
 nnoremap Y y$
 
 " Buffers
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>ba :bufdo bd<CR>
-nnoremap <leader>be :%bd\|e#<CR>
+nnoremap <Leader>bn :bnext<CR>
+nnoremap <Leader>bp :bprevious<CR>
+nnoremap <Leader>bd :bdelete<CR>
+nnoremap <Leader>ba :bufdo bd<CR>
+nnoremap <Leader>be :%bd\|e#<CR>
 
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
 
 "  Move lines
-nnoremap <leader>md :m .+1<CR>==
-nnoremap <leader>mu :m .-2<CR>==
+nnoremap <Leader>md :m .+1<CR>==
+nnoremap <Leader>mu :m .-2<CR>==
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -164,36 +164,36 @@ nnoremap <C-J> :cnext<CR>zz
 nnoremap <C-K> :cprev<CR>zz
 
 " Location list
-nnoremap <leader>J :lnext<CR>zz
-nnoremap <leader>K :lprev<CR>zz
+nnoremap <Leader>J :lnext<CR>zz
+nnoremap <Leader>K :lprev<CR>zz
 
 " Toggle spelling checker
 map <F4> :setlocal spell! spelllang=en_us<CR>
 
 " Replace currently selected text with default register without yanking it
-xnoremap <leader>p "_dP
+xnoremap <Leader>p "_dP
 
 " Delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
 
 " Cancel
 inoremap <C-C> <Esc>
 
 " Replace
-nnoremap <leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
+nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 
 " Make file executable
-nnoremap <silent> <leader>x :!chmod +x %<CR>
+nnoremap <silent> <Leader>x :!chmod +x %<CR>
 
 " Copy the current file's path
 nnoremap yp :exec setreg("+", expand("%:p"))<CR>
 
 " Switch editing file
-nnoremap <leader>e :e <C-R>%
+nnoremap <Leader>e :e <C-R>%
 
 " Open a file name under cursor in a new vertical split
-nnoremap <leader><C-W>F :vertical wincmd F<CR>
+nnoremap <Leader><C-W>F :vertical wincmd F<CR>
 
 " Split explorer
 nnoremap - :Ex<CR>
@@ -202,7 +202,7 @@ nnoremap - :Ex<CR>
 nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 " Fix the indentation of an entire file
-nnoremap <leader>F gg=G''
+nnoremap <Leader>F gg=G''
 
 " Set undo points when deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>

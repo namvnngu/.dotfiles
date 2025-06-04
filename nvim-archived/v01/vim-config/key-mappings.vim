@@ -1,12 +1,12 @@
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <Leader>h :wincmd h<CR>
+nnoremap <Leader>j :wincmd j<CR>
+nnoremap <Leader>k :wincmd k<CR>
+nnoremap <Leader>l :wincmd l<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
-nnoremap <leader>qq :q<CR>
+nnoremap <Leader>qq :q<CR>
 noremap <Leader>Y "*y
 noremap <Leader>P "*p
 noremap <Leader>y "+y

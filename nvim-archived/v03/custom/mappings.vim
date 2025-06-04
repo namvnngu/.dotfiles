@@ -1,12 +1,12 @@
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <Leader>h :wincmd h<CR>
+nnoremap <Leader>j :wincmd j<CR>
+nnoremap <Leader>k :wincmd k<CR>
+nnoremap <Leader>l :wincmd l<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR>
 nnoremap <Right> :vertical resize +2<CR>
 nnoremap <Left> :vertical resize -2<CR>
-nnoremap <leader>qq :q<CR>
+nnoremap <Leader>qq :q<CR>
 nnoremap <Leader>Y "*y
 nnoremap <Leader>P "*p
 nnoremap <Leader>y "+y
@@ -43,15 +43,15 @@ nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 
 "Keybindings for tab navigation with leader and number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
+noremap <Leader>1 1gt
+noremap <Leader>2 2gt
+noremap <Leader>3 3gt
+noremap <Leader>4 4gt
+noremap <Leader>5 5gt
+noremap <Leader>6 6gt
+noremap <Leader>7 7gt
+noremap <Leader>8 8gt
+noremap <Leader>9 9gt
 
 map <F4> :setlocal spell! spelllang=en_us<cr>
 

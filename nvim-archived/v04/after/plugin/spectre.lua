@@ -6,9 +6,9 @@ nnoremap("<C-s>", function()
 end)
 
 -- search current word
-nnoremap("<leader>sw", function()
+nnoremap("<Leader>sw", function()
   require("spectre").open_visual({ select_word = true })
 end)
-vnoremap("<leader>s", function()
+vnoremap("<Leader>s", function()
   require("spectre").open_visual()
 end)
