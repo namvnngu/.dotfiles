@@ -225,8 +225,9 @@ augroup END
 
 augroup c_ft
   autocmd!
-  autocmd FileType c,cpp setlocal tags=./tags,tags,~/.tags/c-system
-  autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
+  autocmd FileType c,cpp     setlocal tags=./tags,tags,~/.tags/c-system
+  autocmd FileType c,cpp     if executable('clang-format') | setlocal formatprg=clang-format | endif
+  autocmd BufEnter *.c,*.cpp command! Run :vs | term cc -o %:p:r % && %:p:r
 augroup END
 
 augroup markdown_ft
