@@ -39,48 +39,28 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Big file
--- Reference: https://github.com/folke/snacks.nvim/blob/main/lua/snacks/bigfile.lua
 local BIGFILE_SIZE_IN_BYTE = 1.5 * 1024 * 1024 -- 1.5MB
-local BIGFILE_SIZE_LINE = 1000
+local BIGFILE_SIZE_LINES = 10000
 
-vim.filetype.add({
-  pattern = {
-    [".*"] = {
-      function(path, buf)
-        if not path or not buf or vim.bo[buf].filetype == "bigfile" then
-          return
-        end
-        if path ~= vim.api.nvim_buf_get_name(buf) then
-          return
-        end
-        local size = vim.fn.getfsize(path)
-        if size <= 0 then
-          return
-        end
-        if size > BIGFILE_SIZE_IN_BYTE then
-          return "bigfile"
-        end
-        local lines = vim.api.nvim_buf_line_count(buf)
-        return (size - lines) / lines > BIGFILE_SIZE_LINE and "bigfile" or nil
-      end,
-    },
-  },
-})
-
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd({ "BufRead" }, {
   group = augroup("bigfile"),
-  pattern = "bigfile",
   callback = function(ev)
-    vim.api.nvim_buf_call(ev.buf, function()
-      if vim.fn.exists(":NoMatchParen") ~= 0 then
-        vim.cmd([[NoMatchParen]])
-      end
-      vim.schedule(function()
-        if vim.api.nvim_buf_is_valid(ev.buf) then
-          vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ""
-        end
-      end)
-    end)
+    local bufnr = ev.buf
+
+    local lines = vim.api.nvim_buf_line_count(bufnr)
+    if lines < BIGFILE_SIZE_LINES then
+      return
+    end
+
+    local path = vim.api.nvim_buf_get_name(bufnr)
+    local size = vim.fn.getfsize(path)
+    if size < BIGFILE_SIZE_IN_BYTE then
+      return
+    end
+
+    vim.cmd("NoMatchParen")
+    vim.cmd("syntax off")
+    vim.cmd("syntax clear")
   end,
 })
 
@@ -88,9 +68,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "BufRead" }, {
   group = augroup("stop_treesitter"),
   callback = function(ev)
-    if vim.api.nvim_buf_is_valid(ev.buf) then
-      vim.treesitter.stop(ev.buf)
-    end
+    vim.treesitter.stop(ev.buf)
   end,
 })
 
