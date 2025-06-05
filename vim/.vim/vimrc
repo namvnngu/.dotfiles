@@ -235,6 +235,11 @@ augroup markdown_ft
   autocmd FileType markdown setlocal textwidth=80 wrap
 augroup END
 
+augroup typst_ft
+  autocmd!
+  autocmd FileType typst setlocal textwidth=80 wrap
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COMMANDS                                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
