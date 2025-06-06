@@ -153,8 +153,8 @@ nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 " Make file executable
 nnoremap <silent> <Leader>x :!chmod +x %<CR>
 
-" Switch file
-nnoremap <Leader>e :e <C-R>%
+" Create or edit file
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
 " Open a file name under cursor in a new vertical split
 nnoremap <Leader><C-W>F :vertical wincmd F<CR>

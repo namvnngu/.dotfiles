@@ -81,8 +81,8 @@ vim.keymap.set("n", "<Leader>s", [[:%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><
 -- Make file executable
 vim.keymap.set("n", "<Leader>x", ":!chmod +x %<CR>", { silent = true })
 
--- Switch file
-vim.keymap.set("n", "<Leader>e", ":e <C-R>%")
+-- Create or edit file
+vim.keymap.set("n", "<Leader>e", ":e <C-R>=expand('%:p:h') . '/'<CR>")
 
 -- Open a file name under cursor in a new vertical split
 vim.keymap.set("n", "<Leader><C-W>F", ":vertical wincmd F<CR>")
