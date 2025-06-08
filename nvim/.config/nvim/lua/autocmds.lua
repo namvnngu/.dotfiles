@@ -44,8 +44,8 @@ local BIGFILE_SIZE_LINES = 10000
 
 vim.api.nvim_create_autocmd({ "BufRead" }, {
   group = augroup("bigfile"),
-  callback = function(ev)
-    local bufnr = ev.buf
+  callback = function(event)
+    local bufnr = event.buf
 
     local lines = vim.api.nvim_buf_line_count(bufnr)
     if lines < BIGFILE_SIZE_LINES then
@@ -67,8 +67,8 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 -- Stop treesitter
 vim.api.nvim_create_autocmd({ "BufRead" }, {
   group = augroup("stop_treesitter"),
-  callback = function(ev)
-    vim.treesitter.stop(ev.buf)
+  callback = function(event)
+    vim.treesitter.stop(event.buf)
   end,
 })
 
