@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*.c",
-  group = utils.augroup("c_runner"),
+  pattern = "*.cpp",
+  group = utils.augroup("cpp_runner"),
   command = "command! Run vs | term cc -o %:p:r % && %:p:r",
 })

@@ -35,35 +35,21 @@ vim.lsp.config("*", {
 
       -- HOVER
       do
-        local highlight_augroup =
-          vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
-        local clear_highlight_augroup =
-          vim.api.nvim_create_augroup("LspClearDocumentHighlight", { clear = true })
         if client:supports_method(ms.textDocument_documentHighlight) then
+          local hlgroup = utils.augroup("lsp_highlight_symbol", false)
+
+          vim.api.nvim_clear_autocmds({ buffer = bufnr, group = hlgroup })
+
           vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-            group = highlight_augroup,
+            group = hlgroup,
             buffer = bufnr,
             callback = vim.lsp.buf.document_highlight,
           })
-          vim.api.nvim_create_autocmd("CursorMoved", {
-            group = clear_highlight_augroup,
+          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+            group = hlgroup,
             buffer = bufnr,
             callback = vim.lsp.buf.clear_references,
           })
-        end
-      end
-
-      -- TAGFUNC
-      do
-        if client:supports_method(ms.textDocument_definition) then
-          vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
-        end
-      end
-
-      -- OMNIFUNC
-      do
-        if client:supports_method(ms.textDocument_completion) then
-          vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
         end
       end
 
@@ -84,6 +70,11 @@ vim.lsp.config("*", {
           vim.api.nvim_set_hl(0, group, {})
         end
       end
+
+      -- COMPLETION
+      -- do
+      --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+      -- end
 
       -- INLINE COLORS
       -- do

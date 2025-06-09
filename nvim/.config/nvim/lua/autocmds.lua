@@ -1,10 +1,8 @@
-local function augroup(name)
-  return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = true })
-end
+local utils = require("utils")
 
 -- Trim spaces
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = augroup("trim_spaces"),
+  group = utils.augroup("trim_spaces"),
   callback = function()
     local patterns = {
       [[%s/\s\+$//e]],
@@ -22,7 +20,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = augroup("resize_splits"),
+  group = utils.augroup("resize_splits"),
   callback = function()
     local current_tab = vim.fn.tabpagenr()
     vim.cmd("tabdo wincmd =")
@@ -32,7 +30,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
+  group = utils.augroup("highlight_yank"),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -43,7 +41,7 @@ local BIGFILE_SIZE_IN_BYTE = 1.5 * 1024 * 1024 -- 1.5MB
 local BIGFILE_SIZE_LINES = 10000
 
 vim.api.nvim_create_autocmd({ "BufRead" }, {
-  group = augroup("bigfile"),
+  group = utils.augroup("bigfile"),
   callback = function(event)
     local bufnr = event.buf
 
@@ -66,7 +64,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 
 -- Stop treesitter
 vim.api.nvim_create_autocmd({ "BufRead" }, {
-  group = augroup("stop_treesitter"),
+  group = utils.augroup("stop_treesitter"),
   callback = function(event)
     vim.treesitter.stop(event.buf)
   end,
@@ -74,6 +72,6 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 
 -- Bookmark the current location before jumping to the quickfix list
 vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
-  group = augroup("mark_postqf"),
+  group = utils.augroup("mark_postqf"),
   command = "norm mG",
 })
