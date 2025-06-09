@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 vim.lsp.config("*", {
   --- @type fun(client: vim.lsp.Client, bufnr: integer)
   on_attach = function(client, bufnr)
@@ -19,14 +21,10 @@ vim.lsp.config("*", {
           local severity_label = SEVERITY_LABELS[diagnostic.severity]
 
           if not severity_label then
-            vim.api.nvim_echo(
-              { { string.format("Unknown diagnostic severity, %s.", diagnostic.severity) } },
-              true,
-              { err = true }
-            )
+            utils.echom(("Unknown diagnostic severity, %s."):format(diagnostic.severity), true)
           end
 
-          return string.format("[%s] %s", severity_label or "UNKNOWN", diagnostic.message)
+          return ("[%s] %s"):format(severity_label or "UNKNOWN", diagnostic.message)
         end
 
         vim.diagnostic.config({
