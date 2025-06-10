@@ -1,36 +1,16 @@
 local utils = require("utils")
 
-vim.lsp.config("*", {
-  --- @type fun(client: vim.lsp.Client, bufnr: integer)
-  on_attach = function(client, bufnr)
-    local ms = vim.lsp.protocol.Methods
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local bufnr = args.buf --- @type number
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
 
     if client then
+      local ms = vim.lsp.protocol.Methods
+
       -- DIAGNOSTIC
       do
-        local SEVERITY_LABELS = {
-          [vim.diagnostic.severity.ERROR] = "E",
-          [vim.diagnostic.severity.WARN] = "W",
-          [vim.diagnostic.severity.INFO] = "I",
-          [vim.diagnostic.severity.HINT] = "H",
-        }
-
-        --- @param diagnostic vim.Diagnostic The diagnostic
-        --- @return string diagnostic_message A diagnostic message
-        local function format_diagnostic_message(diagnostic)
-          local severity_label = SEVERITY_LABELS[diagnostic.severity]
-
-          if not severity_label then
-            utils.echom(("Unknown diagnostic severity, %s."):format(diagnostic.severity), true)
-          end
-
-          return ("[%s] %s"):format(severity_label or "UNKNOWN", diagnostic.message)
-        end
-
-        vim.diagnostic.config({
-          float = { format = format_diagnostic_message },
-          virtual_text = { format = format_diagnostic_message },
-        })
+        vim.diagnostic.config({ virtual_text = true })
       end
 
       -- HOVER
@@ -84,13 +64,14 @@ vim.lsp.config("*", {
       -- end
     end
   end,
+})
+
+vim.lsp.config("*", {
   capabilities = vim.lsp.protocol.make_client_capabilities(),
 })
 
 if vim.fn.executable("clangd") == 1 then
-  vim.lsp.config("clangd", {
-    capabilities = { offsetEncoding = { "utf-16" } },
-  })
+  vim.lsp.config("clangd", { capabilities = { offsetEncoding = { "utf-16" } } })
   vim.lsp.enable("clangd")
 end
 
@@ -133,9 +114,7 @@ if vim.fn.executable("lua-language-server") == 1 then
 end
 
 if vim.fn.executable("typos-lsp") == 1 then
-  vim.lsp.config("typos_lsp", {
-    init_options = { diagnosticSeverity = "Hint" },
-  })
+  vim.lsp.config("typos_lsp", { init_options = { diagnosticSeverity = "Hint" } })
   vim.lsp.enable("typos_lsp")
 end
 
@@ -148,27 +127,16 @@ if vim.fn.executable("biome") == 1 then
 end
 
 if vim.fn.executable("typescript-language-server") == 1 then
-  vim.lsp.config("ts_ls", {
-    single_file_support = true,
-    root_dir = require("lspconfig").util.root_pattern(
-      "package.json",
-      "tsconfig.json",
-      "jsconfig.json"
-    ),
-  })
+  vim.lsp.config("ts_ls", { single_file_support = true })
   vim.lsp.enable("ts_ls")
 end
 
 if vim.fn.executable("deno") == 1 then
-  vim.lsp.config("deno_ls", {
-    root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
-  })
-  vim.lsp.enable("deno_ls")
+  vim.lsp.enable("denols")
 end
 
 if vim.fn.executable("csharp-ls") == 1 then
   vim.lsp.enable("csharp_ls")
-
   local status, csharpls_extended = pcall(require, "csharpls_extended")
   if status then
     csharpls_extended.buf_read_cmd_bind()
