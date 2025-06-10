@@ -9,58 +9,47 @@ vim.api.nvim_create_autocmd("LspAttach", {
       local ms = vim.lsp.protocol.Methods
 
       -- DIAGNOSTIC
-      do
-        vim.diagnostic.config({ virtual_text = true })
-      end
+      vim.diagnostic.config({ virtual_text = true })
 
       -- HOVER
-      do
-        if client:supports_method(ms.textDocument_documentHighlight) then
-          local hlgroup = utils.augroup("lsp_highlight_symbol", false)
+      if client:supports_method(ms.textDocument_documentHighlight) then
+        local hlgroup = utils.augroup("lsp_highlight_symbol", false)
 
-          vim.api.nvim_clear_autocmds({ buffer = bufnr, group = hlgroup })
+        vim.api.nvim_clear_autocmds({ buffer = bufnr, group = hlgroup })
 
-          vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-            group = hlgroup,
-            buffer = bufnr,
-            callback = vim.lsp.buf.document_highlight,
-          })
-          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-            group = hlgroup,
-            buffer = bufnr,
-            callback = vim.lsp.buf.clear_references,
-          })
-        end
+        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+          group = hlgroup,
+          buffer = bufnr,
+          callback = vim.lsp.buf.document_highlight,
+        })
+        vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+          group = hlgroup,
+          buffer = bufnr,
+          callback = vim.lsp.buf.clear_references,
+        })
       end
 
       -- FOLDING
-      do
-        local winid = vim.api.nvim_get_current_win()
-        if not vim.wo[winid][0].diff and client:supports_method(ms.textDocument_foldingRange) then
-          vim.wo[winid][0].foldmethod = "expr"
-          vim.wo[winid][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
-        end
+      local winid = vim.api.nvim_get_current_win()
+      if not vim.wo[winid][0].diff and client:supports_method(ms.textDocument_foldingRange) then
+        vim.wo[winid][0].foldmethod = "expr"
+        vim.wo[winid][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
       end
 
       -- SEMANTIC TOKENS
-      do
-        -- Disable default LSP semantic highlights
-        client.server_capabilities.semanticTokensProvider = nil
-        for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-          vim.api.nvim_set_hl(0, group, {})
-        end
+      client.server_capabilities.semanticTokensProvider = nil
+      for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        vim.api.nvim_set_hl(0, group, {})
       end
 
       -- COMPLETION
-      -- do
+      -- if client:supports_method(ms.textDocument_completion) then
       --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
       -- end
 
       -- INLINE COLORS
-      -- do
-      --   if client:supports_method(ms.textDocument_documentColor) then
-      --     vim.lsp.document_color.enable(true, bufnr)
-      --   end
+      -- if client:supports_method(ms.textDocument_documentColor) then
+      --   vim.lsp.document_color.enable(true, bufnr)
       -- end
     end
   end,
@@ -69,11 +58,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.config("*", {
   capabilities = vim.lsp.protocol.make_client_capabilities(),
 })
-
-if vim.fn.executable("clangd") == 1 then
-  vim.lsp.config("clangd", { capabilities = { offsetEncoding = { "utf-16" } } })
-  vim.lsp.enable("clangd")
-end
 
 if vim.fn.executable("lua-language-server") == 1 then
   vim.lsp.config("lua_ls", {
@@ -111,6 +95,11 @@ if vim.fn.executable("lua-language-server") == 1 then
     },
   })
   vim.lsp.enable("lua_ls")
+end
+
+if vim.fn.executable("clangd") == 1 then
+  vim.lsp.config("clangd", { capabilities = { offsetEncoding = { "utf-16" } } })
+  vim.lsp.enable("clangd")
 end
 
 if vim.fn.executable("typos-lsp") == 1 then
