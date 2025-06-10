@@ -47,3 +47,4 @@ git check out to a specific commit with some files out of the index, including c
 git create a new branch with no history: git checkout --orphan <branch-name>
 git see who contributed most often to the specific folder: git log --format='%an' <folder-path> | sort | uniq -c | sort -rn | head
 git see who contributed most often to the specific folder since X time: git log --format='%an' --since='<since>' <folder-path> | sort | uniq -c | sort -rn | head
+git view the first commit: git log --pretty=oneline --reverse | head -1
