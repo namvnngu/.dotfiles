@@ -148,7 +148,7 @@ local function create_commands(next_plugin_urls, plugin_root)
     local paths = vim.fn.globpath(plugin_root, "*", false, true)
     for index, path in pairs(paths) do
       local name = get_plugin_name(path)
-      utils.echo(("%s. %s"):format(index, name))
+      utils.echo(("%s. %s: %s"):format(index, name, path))
     end
   end, { desc = "List plugins" })
 end

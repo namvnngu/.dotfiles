@@ -295,8 +295,8 @@ command! Pc echo 'Plugin count: ' . len(s:PLUGIN_URLS)
 command! Pu call system('rm -rf ' . s:PLUGIN_ROOT)
         \|  call s:install_plugins()
         \|  echo 'Updated all plugins. Restart Vim to get latest updates.'
-command! Pl for url in s:PLUGIN_URLS
-        \|    echo fnamemodify(url, ':t') . ': ' . url
+command! Pl for path in globpath(s:PLUGIN_ROOT, "*", 0, 1)
+        \|    echo fnamemodify(path, ':t') . ': ' . path
         \|  endfor
 
 call s:install_plugins()
