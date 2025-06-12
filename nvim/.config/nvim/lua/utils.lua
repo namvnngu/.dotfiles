@@ -1,11 +1,12 @@
 local M = {}
 
---- Prints a message, and adds the message to `message-history`.
+--- Prints a message.
 ---
 --- @param msg string The message.
---- @param is_error? boolean If `true`, the message is treated as an error.
-function M.echom(msg, is_error)
-  vim.api.nvim_echo({ { msg } }, true, { err = is_error })
+--- @param err? boolean If `true`, the message is treated as an error.
+--- @param history? boolean Defaults to `true`. If `true`, add the message to `message-history`.
+function M.echo(msg, err, history)
+  vim.api.nvim_echo({ { msg } }, history or true, { err })
 end
 
 --- Creates an autocommand group `autocmd-groups`.

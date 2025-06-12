@@ -126,10 +126,7 @@ end
 
 if vim.fn.executable("csharp-ls") == 1 then
   vim.lsp.enable("csharp_ls")
-  local status, csharpls_extended = pcall(require, "csharpls_extended")
-  if status then
-    csharpls_extended.buf_read_cmd_bind()
-  end
+  require("csharpls_extended").buf_read_cmd_bind()
 end
 
 if vim.fn.executable("vscode-css-language-server") == 1 then

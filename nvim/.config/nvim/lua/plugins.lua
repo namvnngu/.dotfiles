@@ -39,7 +39,7 @@ local function install_plugs(plugin_urls, plugin_root)
     local path = vim.fn.expand(("%s/%s"):format(plugin_root, name))
 
     if vim.fn.isdirectory(path) == 0 then
-      utils.echom(("Installing %s..."):format(name))
+      utils.echo(("Installing %s..."):format(name))
 
       local job_id = vim.fn.jobstart({
         "git",
@@ -51,10 +51,10 @@ local function install_plugs(plugin_urls, plugin_root)
       }, {
         on_exit = function(_, exit_code, _)
           if exit_code == 0 then
-            utils.echom(("Installed %s!"):format(name))
+            utils.echo(("Installed %s!"):format(name))
           else
             local err_msg = ("Failed to install %s with exit code %s"):format(name, exit_code)
-            utils.echom(err_msg, true)
+            utils.echo(err_msg, true)
           end
         end,
       })
@@ -96,9 +96,9 @@ local function sync_plugins(next_plugin_urls, plugin_root)
   if not vim.tbl_isempty(removed_plugin_path_by_name) then
     local names = vim.tbl_keys(removed_plugin_path_by_name)
     local paths = vim.tbl_values(removed_plugin_path_by_name)
-    utils.echom(("Removing %s..."):format(vim.fn.join(names, "...\nRemoving ")))
+    utils.echo(("Removing %s..."):format(vim.fn.join(names, "...\nRemoving ")))
     vim.fn.system(vim.list_extend({ "rm", "-rf" }, paths))
-    utils.echom(("Removed %s!"):format(vim.fn.join(names, "!\nRemoved ")))
+    utils.echo(("Removed %s!"):format(vim.fn.join(names, "!\nRemoved ")))
   end
 
   local added_plugin_urls = {}
@@ -115,7 +115,7 @@ local function sync_plugins(next_plugin_urls, plugin_root)
     and vim.tbl_isempty(added_plugin_urls)
 
   if not no_changes then
-    utils.echom("Restart Nvim to get latest updates.")
+    utils.echo("Restart Nvim to get latest updates.")
   end
 
   return no_changes
@@ -129,26 +129,26 @@ local function create_commands(next_plugin_urls, plugin_root)
   vim.api.nvim_create_user_command("Pu", function()
     vim.fn.system({ "rm", "-rf", plugin_root })
     install_plugs(next_plugin_urls, plugin_root)
-    utils.echom("Updated all plugins. Restart Nvim to get latest updates.")
+    utils.echo("Updated all plugins. Restart Nvim to get latest updates.")
   end, { desc = "Update all plugins" })
 
   vim.api.nvim_create_user_command("Ps", function()
     local no_changes = sync_plugins(next_plugin_urls, plugin_root)
     if no_changes then
-      utils.echom("All plugins are already synced.")
+      utils.echo("All plugins are already synced.")
     end
   end, { desc = "Sync plugins" })
 
   vim.api.nvim_create_user_command("Pc", function()
     local paths = vim.fn.globpath(plugin_root, "*", false, true)
-    utils.echom("Plugin count: " .. vim.tbl_count(paths))
+    utils.echo("Plugin count: " .. vim.tbl_count(paths))
   end, { desc = "Count plugins" })
 
   vim.api.nvim_create_user_command("Pl", function()
     local paths = vim.fn.globpath(plugin_root, "*", false, true)
     for index, path in pairs(paths) do
       local name = get_plugin_name(path)
-      utils.echom(("%s. %s"):format(index, name))
+      utils.echo(("%s. %s"):format(index, name))
     end
   end, { desc = "List plugins" })
 end

@@ -50,7 +50,7 @@ vim.api.nvim_create_user_command("GOpenCommit", function()
   end
 
   if repo_url == "" then
-    utils.echom(("Failed to open commit %s. The URL is %s."):format(sha, repo_url), true)
+    utils.echo(("Failed to open commit %s. The URL is %s."):format(sha, repo_url), true)
     return
   end
 
