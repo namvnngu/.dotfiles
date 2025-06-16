@@ -23,14 +23,21 @@ else
   export EDITOR='vi'
 fi
 
-# emacs mode
-set -o emacs
-
 # reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
 
 # prompt
 PROMPT='%n %~'$'\n$ '
+
+# vi mode: https://unix.stackexchange.com/a/1019
+set -o vi
+function zle-line-init zle-keymap-select {
+  RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+  RPS2="$RPS1"
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # fzf
 source <(fzf --zsh)
