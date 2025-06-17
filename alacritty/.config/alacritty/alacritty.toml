@@ -1,5 +1,5 @@
 [general]
-import             = ["~/.config/alacritty/colorschemes/one_light.toml"]
+import             = ["~/.config/alacritty/colorschemes/xterm.toml"]
 live_config_reload = true
 
 [env]

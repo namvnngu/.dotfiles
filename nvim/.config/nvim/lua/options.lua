@@ -6,10 +6,7 @@ vim.cmd("filetype plugin indent on")
 vim.cmd("colorscheme wildcharm")
 
 if vim.env.TMUX then
-  vim.o.background = "light"
-  if vim.env.THEME_MODE == "dark" then
-    vim.o.background = "dark"
-  end
+  vim.o.background = vim.env.THEME_MODE
 end
 
 vim.o.shiftwidth = 2

@@ -9,10 +9,7 @@ filetype plugin indent on
 colorscheme wildcharm
 
 if exists('$TMUX')
-  set background=light
-  if $THEME_MODE == 'dark'
-    set background=dark
-  endif
+  let &background = $THEME_MODE
 endif
 
 set shiftwidth=2
