@@ -243,7 +243,9 @@ augroup END
 
 command! Ctags !ctags -R .
 
-command! -nargs=1 Cht :sp | enew | .!curl -s 'cht.sh/<args>?T'
+command! -nargs=1 Cht sp | enew | .!curl -s 'cht.sh/<args>?T'
+
+command! -nargs=1 Gg !gg <args>
 
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
       \ | diffthis | wincmd p | diffthis
