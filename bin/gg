@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Google anything
+# License: The Unlicense
+# Date created: June 18, 2025
+# Date modified: June 18, 2025
+
+escaped=$(printf '%s' "$*" | jq -sRr @uri)
+open "https://www.google.com/search?q=$escaped"
