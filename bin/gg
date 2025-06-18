@@ -7,4 +7,4 @@
 # Date modified: June 18, 2025
 
 escaped=$(printf '%s' "$*" | jq -sRr @uri)
-open "https://www.google.com/search?q=$escaped"
+opena "https://www.google.com/search?q=$escaped"
