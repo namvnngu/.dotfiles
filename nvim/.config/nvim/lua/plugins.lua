@@ -12,6 +12,8 @@ local PLUGIN_URLS = {
   "https://github.com/j-hui/fidget.nvim",
   "https://github.com/godlygeek/tabular",
   "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
+  "https://github.com/tpope/vim-dadbod",
+  "https://github.com/kristijanhusak/vim-dadbod-ui",
 }
 local PLUGIN_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 
