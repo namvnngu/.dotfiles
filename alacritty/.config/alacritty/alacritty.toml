@@ -1,17 +1,13 @@
 [general]
-import             = ["~/.config/alacritty/colorschemes/xterm.toml"]
 live_config_reload = true
+import = [
+  "~/.config/alacritty/fonts/fixedsys.toml",
+  "~/.config/alacritty/colorschemes/xterm.toml",
+]
 
 [env]
 TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1.0"
-
-[font]
-size = 13
-normal = { family = "JetBrains Mono", style = "Regular" }
-bold = { family = "JetBrains Mono", style = "Bold" }
-italic = { family = "JetBrains Mono", style = "Italic" }
-bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
 
 [cursor.style]
 blinking = "Never"
@@ -23,6 +19,6 @@ bindings = [
 ]
 
 [window]
+opacity = 0.999
+option_as_alt = "Both"
 dynamic_padding = true
-opacity         = 0.999
-option_as_alt   = "Both"
