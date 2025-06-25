@@ -247,8 +247,23 @@ command! -nargs=1 Cht sp | enew | .!curl -s 'cht.sh/<args>?T'
 
 command! -nargs=1 Gg !gg <args>
 
-command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
+command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
       \ | diffthis | wincmd p | diffthis
+
+command! SendQf call s:send_qf()
+function s:send_qf()
+  let l:list = []
+  for line in getline(0, '$')
+    let l:match = matchlist(line, '\v^(.+)\|(\d+) col (\d+)\| (.*)$')
+    if len(l:match) != 0 && l:match[1] != ''
+      call add(l:list, {'filename': l:match[1], 'lnum': l:match[2], 'col': l:match[3], 'text': l:match[4]})
+    endif
+  endfor
+
+  call setqflist(l:list, "r")
+  bdelete!
+  copen
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS                                                                     "

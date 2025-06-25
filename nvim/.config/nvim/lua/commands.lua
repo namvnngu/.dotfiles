@@ -87,3 +87,17 @@ vim.api.nvim_create_user_command("Gg", function(opts)
   local url = ("https://www.google.com/search?q=%s"):format(escaped)
   vim.ui.open(url)
 end, { nargs = 1, desc = "Google" })
+
+vim.api.nvim_create_user_command("SendQf", function()
+  local list = {}
+  for _, line in ipairs(vim.api.nvim_buf_get_lines(0, 0, -1, false)) do
+    local filename, lnum, col, text = line:match("^(.+)|(%d+) col (%d+)| (.+)$")
+    if filename and filename ~= "" then
+      table.insert(list, { filename = filename, lnum = lnum, col = col, text = text })
+    end
+  end
+
+  vim.fn.setqflist(list, "r")
+  vim.api.nvim_buf_delete(0, { force = true })
+  vim.cmd("copen")
+end, { desc = "Send the current buffer lines to the quickfix list" })
