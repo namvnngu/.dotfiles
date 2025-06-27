@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Duckduckgo anything
+# License: The Unlicense
+# Date created: June 27, 2025
+# Date modified: June 27, 2025
+
+escaped=$(printf '%s' "$*" | jq -sRr @uri)
+opena "https://www.duckduckgo.com/?q=$escaped"
