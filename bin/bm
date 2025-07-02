@@ -23,9 +23,10 @@
 #
 # Subcommand: a
 #
-# bm enters interactive mode and prompts to input category, title, and URL. Once
-# input values are provided, it adds a new bookmark to the bookmark file using
-# the format described above.
+# bm enters interactive mode and prompts to input category, title, and URL.
+# Once input values are provided, it adds a new bookmark to the bookmark file
+# using the format described above. The new bookmark is inserted in alphabetical
+# order (A–Z).
 #
 # ==============================================================================
 # OPEN A BOOKMARK
