@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: The URL bookmark manager (bm)
+# License: The Unlicense
+# Date created: July 02, 2025
+# Date modified: July 02, 2025
+
+# DESIGN COMMAND
+#
+# Command: bm
+#
+# ==============================================================================
+# BOOKMARK FILE
+#
+# Each line in the bookmark file represents a single bookmark. Each bookmark has
+# 3 fields: category, title, and URL. The fields separated by the '|' character.
+#
+#                              category|title|url
+#
+# ==============================================================================
+# ADD A BOOKMARK
+#
+# Subcommand: a
+#
+# bm enters interactive mode and prompts to input category, title, and URL. Once
+# input values are provided, it adds a new bookmark to the bookmark file using
+# the format described above.
+#
+# ==============================================================================
+# OPEN A BOOKMARK
+#
+# Subcommand: o
+#
+# All bookmarks from the file is displayed in the fzf selection view. After
+# a bookmark is selected, its URL will be extracted and opened in your default
+# browser.
+#
+# ==============================================================================
+# COPY A BOOKMARK
+#
+# Subcommand: c
+#
+# All bookmarks from the file is displayed in the fzf selection view. After
+# a bookmark is selected, its URL will be copied to clipboard.
+#
+# ==============================================================================
+# DELETE A BOOKMARK
+#
+# Subcommand: d
+#
+# All bookmarks from the file is displayed in the fzf selection view. After
+# a bookmark is selected, its URL will be removed from the bookmark file.
