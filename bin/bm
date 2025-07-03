@@ -22,33 +22,52 @@
 # ADD A BOOKMARK
 #
 # Subcommand: a
+# Options
+#   -c  Category
+#   -t  Title
+#   -u  URL
 #
-# bm enters interactive mode and prompts to input category, title, and URL.
-# Once input values are provided, it adds a new bookmark to the bookmark file
-# using the format described above. The new bookmark is inserted in alphabetical
-# order (A–Z).
+# If one of the options is not provided, bm enters interactive mode and prompts
+# to input the category, title, and/or URL. All options must be provided. In
+# both cases, once the option values are provided, bm adds a new bookmark to
+# the bookmark file using the format described above.The new bookmark is
+# inserted in alphabetical order (A–Z).
 #
 # ==============================================================================
 # OPEN A BOOKMARK
 #
 # Subcommand: o
+# Options
+#   -l Line number
 #
-# All bookmarks from the file is displayed in the fzf selection view. After
-# a bookmark is selected, its URL will be extracted and opened in your default
-# browser.
+# If no options are provided, bm enters interactive mode, and displays all
+# bookmarks from the file using the fzf view. If one of the options is
+# provided, bm attempts to find the matching bookmark, and exits if none is
+# found. In both cases, once a bookmark is selected or found, its URL will be
+# extracted and opened in your default browser.
 #
 # ==============================================================================
 # COPY A BOOKMARK
 #
 # Subcommand: c
+# Options
+#   -l Line number
 #
-# All bookmarks from the file is displayed in the fzf selection view. After
-# a bookmark is selected, its URL will be copied to clipboard.
+# If no options are provided, bm enters interactive mode, and displays all
+# bookmarks from the file using the fzf view. If one of the options is
+# provided, bm attempts to find the matching bookmark, and exits if none is
+# found. In both cases, once a bookmark is selected or found, its URL will be
+# copied to clipboard.
 #
 # ==============================================================================
 # DELETE A BOOKMARK
 #
 # Subcommand: d
+# Options
+#   -l Line number
 #
-# All bookmarks from the file is displayed in the fzf selection view. After
-# a bookmark is selected, its URL will be removed from the bookmark file.
+# If no options are provided, bm enters interactive mode, and displays all
+# bookmarks from the file using the fzf view. If one of the options is
+# provided, bm attempts to find the matching bookmark, and exits if none is
+# found. In both cases, once a bookmark is selected or found, its URL will be
+# removed from the bookmark file.
