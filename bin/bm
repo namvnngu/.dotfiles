@@ -21,7 +21,7 @@
 # ==============================================================================
 # ADD A BOOKMARK
 #
-# Subcommand: a
+# Subcommand: add
 # Options
 #   -c  Category
 #   -t  Title
@@ -36,7 +36,7 @@
 # ==============================================================================
 # OPEN A BOOKMARK
 #
-# Subcommand: o
+# Subcommand: open
 # Options
 #   -l Line number
 #
@@ -49,7 +49,7 @@
 # ==============================================================================
 # COPY A BOOKMARK
 #
-# Subcommand: c
+# Subcommand: cp
 # Options
 #   -l Line number
 #
@@ -60,9 +60,9 @@
 # copied to clipboard.
 #
 # ==============================================================================
-# DELETE A BOOKMARK
+# REMOVE A BOOKMARK
 #
-# Subcommand: d
+# Subcommand: rm
 # Options
 #   -l Line number
 #
@@ -71,3 +71,10 @@
 # provided, bm attempts to find the matching bookmark, and exits if none is
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # removed from the bookmark file.
+#
+# ==============================================================================
+# PRINT HTML OUTPUT
+#
+# Subcommand: out
+#
+# Print the bookmarks in HTML format.
