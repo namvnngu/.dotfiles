@@ -4,7 +4,8 @@
 # Description: The URL bookmark manager (bm)
 # License: The Unlicense
 # Date created: July 02, 2025
-# Date modified: July 02, 2025
+# Date modified: July 04, 2025
+# Template: https://github.com/xwmx/bash-boilerplate
 
 # DESIGN COMMAND
 #
@@ -78,3 +79,45 @@
 # Subcommand: out
 #
 # Print the bookmarks in HTML format.
+#
+# ==============================================================================
+# DISPLAY HELP
+#
+# Subcommand: help
+#
+# Print the usage information.
+
+# STRICT MODE
+
+set -o nounset
+set -o errexit
+set -o pipefail
+
+trap 'echo "Exit on line $LINENO. Exit code: $?" >&2' ERR
+set -o errtrace
+
+IFS=$'\n\t'
+
+# GLOBALS
+
+_self="$(basename "${0}")"
+_version="0.1.0"
+
+# UTILITIES FUNCTIONS
+
+_exit_1() {
+  {
+    printf "%s " "$(tput setaf 1)!$(tput sgr0)"
+    "${@}"
+  } 1>&2
+  exit 1
+}
+
+# CORE FUNCTIONS
+
+# MAIN
+
+_main() {
+}
+
+_main "$@"
