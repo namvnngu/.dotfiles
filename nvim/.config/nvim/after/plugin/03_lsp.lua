@@ -125,8 +125,10 @@ if vim.fn.executable("deno") == 1 then
 end
 
 if vim.fn.executable("csharp-ls") == 1 then
-  vim.lsp.enable("csharp_ls")
-  require("csharpls_extended").buf_read_cmd_bind()
+  local status, csharpls_extended = pcall(require, "csharpls_extended")
+  if status then
+    csharpls_extended.buf_read_cmd_bind()
+  end
 end
 
 if vim.fn.executable("vscode-css-language-server") == 1 then
