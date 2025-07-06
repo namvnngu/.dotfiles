@@ -4,7 +4,7 @@
 # Description: The URL bookmark manager (bm)
 # License: The Unlicense
 # Date created: July 02, 2025
-# Date modified: July 06, 2025
+# Date modified: July 07, 2025
 
 # DESIGN COMMAND
 #
@@ -110,22 +110,61 @@ _cmd="$(basename "${0}")"
 _version="0.1.0"
 
 _bm_file="${DOTFILES_PATH}/bookmark/bm.txt"
+_bm_separator="|"
 
 # UTILITIES FUNCTIONS
 
 _exit_1() {
-  printf "%s: %s\n" "$(tput setaf 1)Error$(tput sgr0)" "${*}" >&2
+  printf "%s: %s\n" "$(tput setaf 1)Error$(tput sgr0)" "$*" >&2
   exit 1
 }
 
 # CORE FUNCTIONS
 
 _add_bm() {
-  printf "TODO: add\n"
+  read -r -p "Category: " category
+  read -r -p "Title: " title
+  read -r -p "URL: " url
+
+  local bookmark="${category}${_bm_separator}${title}${_bm_separator}${url}"
+  local bookmarks=$(cat "${_bm_file}")
+  bookmarks="${bookmarks}\n${bookmark}"
+
+  printf "${bookmarks}" | sort > "${_bm_file}"
 }
 
 _out_bm() {
-  printf "TODO: out\n"
+  local out=""
+  local last_category=""
+
+  while IFS="${_bm_separator}" read -r __category __title __url; do
+    local category="${__category:-Unknown}"
+    local title="${__title:-${__url}}"
+    local url="${__url}"
+
+    if [[ -z "${url}" ]]; then
+      continue
+    fi
+
+    if [[ "${category}" != "${last_category}" ]]; then
+      if [[ -n "${last_category}" ]]; then
+        out="${out}  </ul>\n"
+        out="${out}</section>\n"
+      fi
+      out="${out}<section>\n"
+      out="${out}  <h2>${category}</h2>\n"
+      out="${out}  <ul>\n"
+
+      last_category="${category}"
+    fi
+
+    out="${out}    <li><a href=\"${url}\" target=\"_blank\">${title}</a></li>\n"
+  done <"${_bm_file}"
+
+  out="${out}  </ul>\n"
+  out="${out}</section>\n"
+
+  printf "${out}"
 }
 
 _view_bm() {
@@ -165,4 +204,4 @@ _main() {
   esac
 }
 
-_main "${@}"
+_main "$@"
