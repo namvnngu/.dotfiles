@@ -1,1 +1,19 @@
-
+Books|Awesome Books|https://github.com/learn-anything/books
+Books|Digitale Bibliothek Book|https://dokumen.pub
+Books|Free eBooks - Project Gutenberg|https://gutenberg.org
+Books|Freely available programming books|https://github.com/EbookFoundation/free-programming-books
+Books|Library Genesis|https://libgen.is
+Books|Open Library|https://openlibrary.org
+Books|PDF Books Library|https://pdfbooksworld.com
+English|Cambridge Dictionary|https://dictionary.cambridge.org
+English|Conditionals: if - Grammar - Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar/conditionals-if
+English|English Grammar Today on Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar
+English|IELTS Simon|https://ielts-simon.com
+English|Just The Word|https://just-the-word.com
+English|Lose The Very|https://losethevery.com
+English|OZDIC|https://ozdic.com
+English|Other, others, the other or another ? - Cambridge Grammar|https://dictionary.cambridge.org/grammar/british-grammar/other-others-the-other-or-another
+English|Oxford Learner's Dictionary|https://oxfordlearnersdictionaries.com
+English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-grammar/participle-clauses
+English|Tra Cau|https://tracau.vn
+English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
