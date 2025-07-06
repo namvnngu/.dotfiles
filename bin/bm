@@ -81,6 +81,13 @@
 # Print the bookmarks in HTML format.
 #
 # ==============================================================================
+# VIEW BOOKMARKS
+#
+# Subcommand: view
+#
+# Print the content of the bookmark file.
+#
+# ==============================================================================
 # DISPLAY HELP
 #
 # Subcommand: help
@@ -93,21 +100,23 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
-trap 'echo "Exit on line $LINENO. Exit code: $?" >&2' ERR
+trap 'echo "Error at line $LINENO. Exit code $?" >&2' ERR
 set -o errtrace
 
 IFS=$'\n\t'
 
 # GLOBALS
 
-_command="$(basename "${0}")"
+_cmd="$(basename "${0}")"
 _version="0.1.0"
+
+_bm_file="${DOTFILES_PATH}/bookmark/bm.txt"
 
 # UTILITIES FUNCTIONS
 
 _exit_1() {
   {
-    printf "%s " "$(tput setaf 1)!$(tput sgr0)"
+    printf "%s: " "$(tput setaf 1)error$(tput sgr0)"
     "${@}"
   } 1>&2
   exit 1
@@ -118,8 +127,8 @@ _exit_1() {
 # MAIN
 
 _main() {
-  local subcommand="${1:-}"
-  case "${subcommand}" in
+  local subcmd="${1:-help}"
+  case "${subcmd}" in
     add)
       printf "TODO: add\n"
       ;;
@@ -135,12 +144,16 @@ _main() {
     out)
       printf "TODO: out\n"
       ;;
-    help | -h | --help | '')
+    view)
+      cat "${_bm_file}"
+      ;;
+    help | --help | -h)
       printf "TODO: help\n"
       ;;
     *)
-      printf "${_command}: unknown subcommand '${subcommand}'\n"
-      printf "For more information, try '${_command} help' or '${_command} -h'\n"
+      _exit_1 \
+        printf "unknown subcommand '%s'\nFor more information, try '%s help' or '%s -h\n" \
+        "${subcmd}" "${_cmd}" "${_cmd}"
       ;;
   esac
 }
