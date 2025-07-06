@@ -100,7 +100,7 @@ IFS=$'\n\t'
 
 # GLOBALS
 
-_self="$(basename "${0}")"
+_command="$(basename "${0}")"
 _version="0.1.0"
 
 # UTILITIES FUNCTIONS
@@ -118,6 +118,31 @@ _exit_1() {
 # MAIN
 
 _main() {
+  local subcommand="${1:-}"
+  case "${subcommand}" in
+    add)
+      printf "TODO: add\n"
+      ;;
+    open)
+      printf "TODO: open\n"
+      ;;
+    cp)
+      printf "TODO: cp\n"
+      ;;
+    rm)
+      printf "TODO: rm\n"
+      ;;
+    out)
+      printf "TODO: out\n"
+      ;;
+    help | -h | --help | '')
+      printf "TODO: help\n"
+      ;;
+    *)
+      printf "${_command}: unknown subcommand '${subcommand}'\n"
+      printf "For more information, try '${_command} help' or '${_command} -h'\n"
+      ;;
+  esac
 }
 
 _main "$@"
