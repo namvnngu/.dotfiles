@@ -73,13 +73,6 @@
 # removed from the bookmark file.
 #
 # ==============================================================================
-# PRINT HTML OUTPUT
-#
-# Subcommand: out
-#
-# Print the bookmarks in HTML format.
-#
-# ==============================================================================
 # VIEW BOOKMARKS
 #
 # Subcommand: view
@@ -133,40 +126,6 @@ _add_bm() {
   printf "${bookmarks}" | sort > "${_bm_file}"
 }
 
-_out_bm() {
-  local out=""
-  local last_category=""
-
-  while IFS="${_bm_separator}" read -r __category __title __url; do
-    local category="${__category:-Unknown}"
-    local title="${__title:-${__url}}"
-    local url="${__url}"
-
-    if [[ -z "${url}" ]]; then
-      continue
-    fi
-
-    if [[ "${category}" != "${last_category}" ]]; then
-      if [[ -n "${last_category}" ]]; then
-        out="${out}  </ul>\n"
-        out="${out}</section>\n"
-      fi
-      out="${out}<section>\n"
-      out="${out}  <h2>${category}</h2>\n"
-      out="${out}  <ul>\n"
-
-      last_category="${category}"
-    fi
-
-    out="${out}    <li><a href=\"${url}\" target=\"_blank\">${title}</a></li>\n"
-  done <"${_bm_file}"
-
-  out="${out}  </ul>\n"
-  out="${out}</section>\n"
-
-  printf "${out}"
-}
-
 _view_bm() {
   cat "${_bm_file}"
 }
@@ -187,9 +146,6 @@ _main() {
       ;;
     rm)
       printf "TODO: rm\n"
-      ;;
-    out)
-      _out_bm
       ;;
     view)
       _view_bm
