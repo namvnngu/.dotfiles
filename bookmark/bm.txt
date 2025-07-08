@@ -17,3 +17,4 @@ English|Oxford Learner's Dictionary|https://oxfordlearnersdictionaries.com
 English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-grammar/participle-clauses
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
+Programming Language: Go|Practical Go Lessons|https://www.practical-go-lessons.com
