@@ -17,4 +17,6 @@ English|Oxford Learner's Dictionary|https://oxfordlearnersdictionaries.com
 English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-grammar/participle-clauses
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
+Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
 Programming Language: Go|Practical Go Lessons|https://www.practical-go-lessons.com
+Programming Language: Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
