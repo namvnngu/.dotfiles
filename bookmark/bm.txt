@@ -5,6 +5,23 @@ Books|Freely available programming books|https://github.com/EbookFoundation/free
 Books|Library Genesis|https://libgen.is
 Books|Open Library|https://openlibrary.org
 Books|PDF Books Library|https://pdfbooksworld.com
+Computer Graphics|Graphics Programming Compendium|https://graphicscompendium.com
+Computer Graphics|Learn OpenGL|https://learnopengl.com
+Computer Graphics|Scratchapixel|https://www.scratchapixel.com
+Computer Graphics|docs.GL|https://docs.gl
+Data Structures and Algorithms|Advent of Code|https://adventofcode.com
+Data Structures and Algorithms|Algorithms for Competitive Programming|https://cp-algorithms.com
+Data Structures and Algorithms|CSES|https://cses.fi
+Data Structures and Algorithms|Data Structures, Explained Simply|https://youtu.be/KwBuV7YZido
+Data Structures and Algorithms|Floyd's Cycle detection algorithm|https://cs.stackexchange.com/a/45540
+Data Structures and Algorithms|HashMaps & Dictionaries, Explained Simply|https://youtu.be/y11XNXi9dgs
+Data Structures and Algorithms|Hello Algo|https://www.hello-algo.com/en
+Data Structures and Algorithms|Nonzero-rule|https://en.m.wikipedia.org/wiki/Nonzero-rule
+Data Structures and Algorithms|Project Euler|https://projecteuler.net
+Data Structures and Algorithms|The Algorithms|https://github.com/TheAlgorithms
+Data Structures and Algorithms|The Arcane Algorithm Archive|https://www.algorithm-archive.org
+Data Structures and Algorithms|USFCA Data Structure and Algorithm Visualizations|https://www.cs.usfca.edu/~galles/visualization
+Data Structures and Algorithms|VisuAlgo|https://visualgo.net
 English|Cambridge Dictionary|https://dictionary.cambridge.org
 English|Conditionals: if - Grammar - Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar/conditionals-if
 English|English Grammar Today on Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar
@@ -18,5 +35,9 @@ English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-gr
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
+Game Development|Handmade Hero|https://guide.handmadehero.org
+Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
+Programming Language: Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
 Programming Language: Go|Practical Go Lessons|https://www.practical-go-lessons.com
 Programming Language: Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
+Programming Language: Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
