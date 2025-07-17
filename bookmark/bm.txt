@@ -1,4 +1,10 @@
+Australia|Certified copies of original documents|https://www.justice.vic.gov.au/certifiedcopies
+Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
+Biomedicine|National Center for Biotechnology Information|https://www.ncbi.nlm.nih.gov
+Biomedicine|PubMed Central|https://pmc.ncbi.nlm.nih.gov/
+Biomedicine|PubMed|https://pubmed.ncbi.nlm.nih.gov
 Books|Awesome Books|https://github.com/learn-anything/books
+Books|Build Your Own X From Scratch Books|https://build-your-own.org
 Books|Digitale Bibliothek Book|https://dokumen.pub
 Books|Free eBooks - Project Gutenberg|https://gutenberg.org
 Books|Freely available programming books|https://github.com/EbookFoundation/free-programming-books
@@ -36,8 +42,18 @@ English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
 Game Development|Handmade Hero|https://guide.handmadehero.org
+Go|Practical Go Lessons|https://www.practical-go-lessons.com
+Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
+Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Learn By Doing|Build your own X|https://github.com/codecrafters-io/build-your-own-x
+Learn By Doing|Project Based Learning|https://github.com/practical-tutorials/project-based-learning
 Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
-Programming Language: Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
-Programming Language: Go|Practical Go Lessons|https://www.practical-go-lessons.com
-Programming Language: Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
-Programming Language: Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Resume|How to make a resume: Step-by-step guide with examples|https://www.seek.com.au/career-advice/article/how-to-make-a-resume
+Resume|A Guide to Choosing the Right Resume Tense|https://www.indeed.com/career-advice/resumes-cover-letters/resume-tense
+Resume|Getting a Gig: A Guide|https://github.com/cassidoo/getting-a-gig
+Resume|How to write a resume in Australia: A step-by-step guide with examples|https://www.seek.com.au/career-advice/article/resume-cv
+Resume|Novoresume|https://novoresume.com
+Web Development|ARIA Authoring Practices Guide|https://www.w3.org/WAI/ARIA/apg
+Web Development|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
+Web Development|Open UI|https://open-ui.org
+Web Development|web.dev|https://web.dev
