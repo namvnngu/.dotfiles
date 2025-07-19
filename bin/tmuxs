@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Create or switch to a tmux session
+# License: The Unlicense
+# Date created: Jun 16, 2022
+# Date modified: July 19, 2025
+
 if [[ "$#" -eq "1" ]]; then
   start_dir="$1"
 else
-  start_dir=$(find "$DOTFILES_PATH" "$HOME/Documents" -mindepth 1 -maxdepth 4 -type d | fzf)
+  start_dir=$(find "$HOME/Documents" -mindepth 1 -maxdepth 4 -type d | fzf)
 fi
 
 if [[ -z "$start_dir" ]]; then
