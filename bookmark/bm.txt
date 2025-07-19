@@ -1,5 +1,4 @@
 Australia|Certified copies of original documents|https://www.justice.vic.gov.au/certifiedcopies
-Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
 Biomedicine|National Center for Biotechnology Information|https://www.ncbi.nlm.nih.gov
 Biomedicine|PubMed Central|https://pmc.ncbi.nlm.nih.gov/
 Biomedicine|PubMed|https://pubmed.ncbi.nlm.nih.gov
@@ -42,18 +41,28 @@ English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
 Game Development|Handmade Hero|https://guide.handmadehero.org
-Go|Practical Go Lessons|https://www.practical-go-lessons.com
-Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
-Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Job Interview|Stop saying these 9 things in your interview|https://www.seek.com.au/career-advice/article/want-to-stand-out-in-an-interview-stop-saying-these-9-words
+Job Resume|A Guide to Choosing the Right Resume Tense|https://www.indeed.com/career-advice/resumes-cover-letters/resume-tense
+Job Resume|Getting a Gig: A Guide|https://github.com/cassidoo/getting-a-gig
+Job Resume|How to make a resume: Step-by-step guide with examples|https://www.seek.com.au/career-advice/article/how-to-make-a-resume
+Job Resume|How to write a resume in Australia: A step-by-step guide with examples|https://www.seek.com.au/career-advice/article/resume-cv
+Job Resume|Novoresume|https://novoresume.com
 Learn By Doing|Build your own X|https://github.com/codecrafters-io/build-your-own-x
 Learn By Doing|Project Based Learning|https://github.com/practical-tutorials/project-based-learning
 Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
-Resume|How to make a resume: Step-by-step guide with examples|https://www.seek.com.au/career-advice/article/how-to-make-a-resume
-Resume|A Guide to Choosing the Right Resume Tense|https://www.indeed.com/career-advice/resumes-cover-letters/resume-tense
-Resume|Getting a Gig: A Guide|https://github.com/cassidoo/getting-a-gig
-Resume|How to write a resume in Australia: A step-by-step guide with examples|https://www.seek.com.au/career-advice/article/resume-cv
-Resume|Novoresume|https://novoresume.com
+Programming Language: Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
+Programming Language: Go|Practical Go Lessons|https://www.practical-go-lessons.com
+Programming Language: Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
+Programming Language: Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Programming Language: JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
+Programming Language: Rust|Master hexagonal architecture in Rust|https://www.howtocodeit.com/articles/master-hexagonal-architecture-rust
+Programming Language: TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
+Programming Language: TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
+Programming Language: TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
+Programming Language: TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
+Programming Language: TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
+Programming Language: TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
+Programming Language: TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
 Web Development|ARIA Authoring Practices Guide|https://www.w3.org/WAI/ARIA/apg
-Web Development|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
 Web Development|Open UI|https://open-ui.org
 Web Development|web.dev|https://web.dev
