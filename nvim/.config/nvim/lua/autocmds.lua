@@ -75,3 +75,9 @@ vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
   group = utils.augroup("mark_postqf"),
   command = "norm mG",
 })
+
+-- Create intermediate directories on edit
+vim.api.nvim_create_autocmd({ "BufNewFile" }, {
+  group = utils.augroup("mkdir_on_edit"),
+  command = "exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')",
+})

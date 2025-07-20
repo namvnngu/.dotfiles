@@ -220,6 +220,11 @@ augroup mark_postqf
   autocmd QuickFixCmdPost norm mG
 augroup END
 
+augroup mkdir_on_edit
+  autocmd!
+  autocmd BufNewFile * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')
+augroup END
+
 augroup c_ft
   autocmd!
   autocmd FileType c,cpp     setlocal tags=./tags,tags,~/.tags/c-system
