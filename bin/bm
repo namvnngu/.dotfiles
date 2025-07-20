@@ -4,7 +4,7 @@
 # Description: The URL bookmark manager (bm)
 # License: The Unlicense
 # Date created: July 02, 2025
-# Date modified: July 07, 2025
+# Date modified: July 20, 2025
 
 # DESIGN COMMAND
 #
@@ -126,6 +126,18 @@ _add_bm() {
   printf "${bookmarks}" | sort > "${_bm_file}"
 }
 
+_open_bm() {
+  local bm=$(fzf < "${_bm_file}")
+  local url=$(cut -d '|' -f 3 <<< "${bm}")
+  opena "${url}"
+}
+
+_copy_bm() {
+  local bm=$(fzf < "${_bm_file}")
+  local url=$(cut -d '|' -f 3 <<< "${bm}")
+  pbcopy <<< "${url}"
+}
+
 _view_bm() {
   cat "${_bm_file}"
 }
@@ -139,10 +151,10 @@ _main() {
       _add_bm
       ;;
     open)
-      printf "TODO: open\n"
+      _open_bm
       ;;
     cp)
-      printf "TODO: cp\n"
+      _copy_bm
       ;;
     rm)
       printf "TODO: rm\n"
