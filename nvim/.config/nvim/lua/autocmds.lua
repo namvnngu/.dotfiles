@@ -77,7 +77,15 @@ vim.api.nvim_create_autocmd({ "QuickFixCmdPost" }, {
 })
 
 -- Create intermediate directories on edit
--- vim.api.nvim_create_autocmd({ "BufNewFile" }, {
---   group = utils.augroup("mkdir_on_edit"),
---   command = "exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')",
--- })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = utils.augroup("mkdir_on_edit"),
+  callback = function()
+    local dir = vim.fn.expand("<afile>:p:h")
+    if vim.fn.isdirectory(dir) == 0 then
+      local input = vim.fn.input(("'%s' does not exist. Create? [y/N] "):format(dir))
+      if input:lower():match("^(y)?(ye)?(yes)?$") then
+        vim.fn.mkdir(dir, "p")
+      end
+    end
+  end,
+})

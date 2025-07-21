@@ -205,15 +205,16 @@ ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
 augroup trim_white_space
   autocmd!
   autocmd BufWritePre * call s:trim_white_space()
+
+  function s:trim_white_space()
+    let l:view = winsaveview()
+    keepjumps keeppatterns silent! %s/\s\+$//e
+    keepjumps keeppatterns silent! %s/\%^\n\+//
+    keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
+    keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
+    call winrestview(l:view)
+  endfunction
 augroup END
-function s:trim_white_space()
-  let l:view = winsaveview()
-  keepjumps keeppatterns silent! %s/\s\+$//e
-  keepjumps keeppatterns silent! %s/\%^\n\+//
-  keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
-  keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
-  call winrestview(l:view)
-endfunction
 
 augroup mark_postqf
   autocmd!
@@ -222,7 +223,14 @@ augroup END
 
 augroup mkdir_on_edit
   autocmd!
-  autocmd BufNewFile * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')
+  autocmd BufWritePre * call s:mkdir_on_edit(expand('<afile>:p:h'))
+
+  function! s:mkdir_on_edit(dir)
+    if !isdirectory(a:dir)
+          \ && input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$'
+      call mkdir(a:dir, 'p')
+    endif
+  endfunction
 augroup END
 
 augroup c_ft
@@ -267,7 +275,7 @@ function s:send_qf()
     endif
   endfor
 
-  call setqflist(l:list, "r")
+  call setqflist(l:list, 'r')
   bdelete!
   copen
 endfunction
