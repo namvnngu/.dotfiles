@@ -86,10 +86,10 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " Move to window
-nnoremap <Leader>h :wincmd h<CR>
-nnoremap <Leader>j :wincmd j<CR>
-nnoremap <Leader>k :wincmd k<CR>
-nnoremap <Leader>l :wincmd l<CR>
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>l <C-W>l
 
 " Yanking
 nnoremap <Leader>ya :%y+<CR>
