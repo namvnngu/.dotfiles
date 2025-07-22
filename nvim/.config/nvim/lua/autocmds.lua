@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = utils.augroup("mkdir_on_edit"),
   callback = function()
     local dir = vim.fn.expand("<afile>:p:h")
-    if vim.fn.isdirectory(dir) == 0 then
+    if vim.fn.isdirectory(dir) == 0 and dir:match("^/") then
       local input = vim.fn.input(("'%s' does not exist. Create? [y/N] "):format(dir))
       if input:lower():match("^(y)?(ye)?(yes)?$") then
         vim.fn.mkdir(dir, "p")
