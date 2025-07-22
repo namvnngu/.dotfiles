@@ -1,13 +1,8 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 vim.cmd("syntax off")
-vim.cmd("filetype plugin indent on")
 vim.cmd("colorscheme wildcharm")
+vim.cmd("filetype plugin indent on")
 
-if vim.env.TMUX then
-  vim.o.background = vim.env.THEME_MODE
-end
+vim.g.mapleader = " "
 
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
@@ -15,6 +10,7 @@ vim.o.smarttab = true
 vim.o.softtabstop = 2
 vim.o.tabstop = 4
 
+vim.o.background = vim.env.THEME_MODE
 vim.o.breakindent = true
 vim.o.clipboard = "unnamedplus"
 vim.o.colorcolumn = "80"

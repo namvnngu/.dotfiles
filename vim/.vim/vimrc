@@ -2,15 +2,12 @@
 " OPTIONS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = ' '
-
 syntax off
-filetype plugin indent on
 colorscheme wildcharm
+filetype plugin indent on
 
-if exists('$TMUX')
-  let &background = $THEME_MODE
-endif
+let mapleader = ' '
+let &background = $THEME_MODE
 
 set shiftwidth=2
 set expandtab
@@ -202,11 +199,11 @@ ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
 " AUTOCOMMANDS                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup trim_white_space
+augroup trim_spaces
   autocmd!
-  autocmd BufWritePre * call s:trim_white_space()
+  autocmd BufWritePre * call s:trim_spaces()
 
-  function s:trim_white_space()
+  function s:trim_spaces()
     let l:view = winsaveview()
     keepjumps keeppatterns silent! %s/\s\+$//e
     keepjumps keeppatterns silent! %s/\%^\n\+//
