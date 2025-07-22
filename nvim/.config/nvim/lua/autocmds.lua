@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 local BIGFILE_SIZE_IN_BYTE = 1.5 * 1024 * 1024 -- 1.5MB
 local BIGFILE_SIZE_LINES = 10000
 
-vim.api.nvim_create_autocmd({ "BufRead" }, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
   group = utils.augroup("bigfile"),
   callback = function(event)
     local bufnr = event.buf
@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 })
 
 -- Stop treesitter
-vim.api.nvim_create_autocmd({ "BufRead" }, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
   group = utils.augroup("stop_treesitter"),
   callback = function(event)
     vim.treesitter.stop(event.buf)
@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = utils.augroup("mkdir_on_edit"),
   callback = function()
     local dir = vim.fn.expand("<afile>:p:h")
-    if vim.fn.isdirectory(dir) == 0 and dir:match("^/") then
+    if dir:match("^/") and vim.fn.isdirectory(dir) == 0 then
       local input = vim.fn.input(("'%s' does not exist. Create? [y/N] "):format(dir))
       if input:lower():match("^(y)?(ye)?(yes)?$") then
         vim.fn.mkdir(dir, "p")
