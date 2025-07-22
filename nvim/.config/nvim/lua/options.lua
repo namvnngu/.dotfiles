@@ -16,7 +16,7 @@ vim.o.softtabstop = 2
 vim.o.tabstop = 4
 
 vim.o.breakindent = true
-vim.o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+vim.o.clipboard = "unnamedplus"
 vim.o.colorcolumn = "80"
 vim.o.completeopt = "menu,menuone,popup,noselect,noinsert"
 vim.o.copyindent = true
