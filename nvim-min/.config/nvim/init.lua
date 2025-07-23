@@ -20,8 +20,6 @@ vim.o.cursorline = true
 vim.o.guicursor = ""
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.splitbelow = true
-vim.o.splitright = true
 
 --------------------------------------------------------------------------------
 -- KEY MAPPINGS                                                               --

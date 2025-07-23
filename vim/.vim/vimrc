@@ -60,8 +60,6 @@ set sidescrolloff=2
 set signcolumn=yes
 set smartcase
 set smoothscroll
-set splitbelow
-set splitright
 set ttimeout ttimeoutlen=50
 set undolevels=10000
 set viewoptions-=options
