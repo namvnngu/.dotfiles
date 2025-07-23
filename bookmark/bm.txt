@@ -54,6 +54,7 @@ Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-go
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
+JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
 Job Email|7 Email Templates That'll Help You Say "No" (Without Having to Overthink It)|https://themuse.com/advice/7-email-templates-thatll-help-you-say-no-without-having-to-overthink-it
 Job Email|How to Follow Up on a Job Application (With Templates)|https://themuse.com/advice/how-to-follow-up-on-a-job-application-an-email-template
 Job Email|How to Reject a Job Offer Politely (Email Samples)|https://thebalancemoney.com/job-rejection-email-message-examples-2063004
@@ -96,7 +97,9 @@ TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/superm
 TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
 TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
+Vim/Neovim|Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
+Web Development|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
 Web Development|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
 Web Development|Open UI|https://open-ui.org
 Web Development|web.dev|https://web.dev
