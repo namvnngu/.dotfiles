@@ -19,13 +19,8 @@ vim.keymap.set("n", "<Leader>j", "<C-W>j", { remap = true })
 vim.keymap.set("n", "<Leader>k", "<C-W>k", { remap = true })
 vim.keymap.set("n", "<Leader>l", "<C-W>l", { remap = true })
 
--- Yanking
-vim.keymap.set("n", "<Leader>ya", ":%y+<CR>")
-vim.keymap.set("n", "<Leader>y", '"+y')
-vim.keymap.set("v", "<Leader>y", '"+y')
-vim.keymap.set("n", "<Leader>Y", '"+y$')
-vim.keymap.set("n", "Y", "y$")
-vim.keymap.set("n", "yp", ":exec setreg('+', expand('%:p'))<CR>")
+-- Yank the current file path
+vim.keymap.set("n", "yp", ":call setreg('+', expand('%:p'))<CR>")
 
 -- Better indenting
 vim.keymap.set("v", "<", "<gv")

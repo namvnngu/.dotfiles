@@ -86,13 +86,8 @@ nnoremap <Leader>j <C-W>j
 nnoremap <Leader>k <C-W>k
 nnoremap <Leader>l <C-W>l
 
-" Yanking
-nnoremap <Leader>ya :%y+<CR>
-nnoremap <Leader>y "+y
-vnoremap <Leader>y "+y
-nnoremap <Leader>Y "+y$
-nnoremap Y y$
-nnoremap yp :exec setreg('+', expand('%:p'))<CR>
+" Yank the current file path
+nnoremap yp :call setreg('+', expand('%:p'))<CR>
 
 " Better indenting
 vnoremap < <gv
