@@ -17,6 +17,7 @@ vim.o.background = vim.env.THEME_MODE
 vim.o.clipboard = "unnamedplus"
 vim.o.colorcolumn = "80"
 vim.o.cursorline = true
+vim.o.grepprg = "rg --vimgrep"
 vim.o.guicursor = ""
 vim.o.number = true
 vim.o.relativenumber = true

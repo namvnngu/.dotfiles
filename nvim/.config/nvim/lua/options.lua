@@ -20,6 +20,7 @@ vim.o.cursorline = true
 vim.o.display = "lastline,truncate"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
+vim.o.grepprg = "rg --vimgrep"
 vim.o.guicursor = ""
 vim.o.ignorecase = true
 vim.o.linebreak = true
