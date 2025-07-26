@@ -63,16 +63,13 @@ end
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("trim_spaces"),
   callback = function()
-    local patterns = {
-      [[%s/\s\+$//e]],
-      [[%s/\%^\n\+//]],
-      [[%s/\(\n\n\)\n\+/\1/]],
-      [[%s/\($\n\s*\)\+\%$//]],
-    }
     local view = vim.fn.winsaveview()
-    for _, v in pairs(patterns) do
-      vim.api.nvim_exec2(string.format("keepjumps keeppatterns silent! %s", v), { output = false })
-    end
+    vim.cmd([[
+      keepjumps keeppatterns silent! %s/\s\+$//e
+      keepjumps keeppatterns silent! %s/\%^\n\+//
+      keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
+      keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
+    ]])
     vim.fn.winrestview(view)
   end,
 })
