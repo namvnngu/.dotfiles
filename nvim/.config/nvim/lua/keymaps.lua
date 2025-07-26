@@ -30,14 +30,6 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up" })
 
---Clear highlighting search
-vim.keymap.set(
-  "n",
-  "<C-L>",
-  ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>",
-  { silent = true }
-)
-
 -- Set a new undo point before joining lines
 vim.keymap.set("n", "J", "mzJ`z")
 
@@ -49,19 +41,15 @@ vim.keymap.set("n", "<C-U>", "<C-U>zz")
 vim.keymap.set("n", "<C-F>", "<C-F>zz")
 vim.keymap.set("n", "<C-B>", "<C-B>zz")
 
--- Quickfix list
+-- Navigate quickfix list
 vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
 vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
-
--- Location list
-vim.keymap.set("n", "<Leader>J", ":lnext<CR>zz")
-vim.keymap.set("n", "<Leader>K", ":lprev<CR>zz")
 
 -- Toggle spelling checker
 vim.keymap.set("", "<F12>", ":setlocal spell! spelllang=en_us<CR>", { remap = true })
 
 -- Replace currently selected text with black hole register without yanking it
-vim.keymap.set("x", "<Leader>p", '"_dP')
+vim.keymap.set("v", "<Leader>p", '"_dP')
 
 -- Delete without yanking
 vim.keymap.set("n", "<Leader>d", '"_d')
@@ -78,9 +66,6 @@ vim.keymap.set("n", "<Leader>x", ":!chmod +x %<CR>", { silent = true })
 
 -- Create or edit file
 vim.keymap.set("n", "<Leader>e", ":e <C-R>=expand('%:p:h') . '/'<CR>")
-
--- Open a file name under cursor in a new vertical split
-vim.keymap.set("n", "<Leader><C-W>F", ":vertical wincmd F<CR>")
 
 -- Exit terminal
 vim.keymap.set("t", "<C-D>", [[<C-\><C-N>:q!<CR>]])

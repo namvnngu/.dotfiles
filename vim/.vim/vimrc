@@ -98,9 +98,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Clear highlighting search
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')
-                        \ ? '<Bar>diffupdate'
-                        \ : ''<CR><CR><C-L>
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 " Set a new undo point before joining lines
 nnoremap J mzJ`z
@@ -113,19 +111,15 @@ nnoremap <C-U> <C-U>zz
 nnoremap <C-F> <C-F>zz
 nnoremap <C-B> <C-B>zz
 
-" Quickfix list
+" Navigate quickfix list
 nnoremap <C-J> :cnext<CR>zz
 nnoremap <C-K> :cprev<CR>zz
-
-" Location list
-nnoremap <Leader>J :lnext<CR>zz
-nnoremap <Leader>K :lprev<CR>zz
 
 " Toggle spelling checker
 map <F12> :setlocal spell! spelllang=en_us<CR>
 
 " Replace currently selected text with black hole register without yanking it
-xnoremap <Leader>p "_dP
+vnoremap <Leader>p "_dP
 
 " Delete without yanking
 nnoremap <Leader>d "_d
@@ -142,9 +136,6 @@ nnoremap <silent> <Leader>x :!chmod +x %<CR>
 
 " Create or edit file
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
-
-" Open a file name under cursor in a new vertical split
-nnoremap <Leader><C-W>F :vertical wincmd F<CR>
 
 " Exit terminal
 tnoremap <C-D> <C-\><C-N>:q!<CR>
@@ -172,7 +163,7 @@ nnoremap <Leader>mp :!mdp '%'<CR>
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-" File explorer
+" Open file explorer
 nnoremap - :Ex<CR>
 
 " Switch between C source and header file

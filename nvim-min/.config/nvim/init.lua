@@ -32,8 +32,24 @@ vim.keymap.set("n", "<Leader>j", "<C-W>j", { remap = true })
 vim.keymap.set("n", "<Leader>k", "<C-W>k", { remap = true })
 vim.keymap.set("n", "<Leader>l", "<C-W>l", { remap = true })
 
+-- Yank the current file path
+vim.keymap.set("n", "yp", ":call setreg('+', expand('%:p'))<CR>")
+
+-- Navigate quickfix list
+vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
+vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
+
+-- Replace currently selected text with black hole register without yanking it
+vim.keymap.set("v", "<Leader>p", '"_dP')
+
+-- Replace word under cursor
+vim.keymap.set("n", "<Leader>s", [[:%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>]])
+
 -- Create or edit file
 vim.keymap.set("n", "<Leader>e", ":e <C-R>=expand('%:p:h') . '/'<CR>")
+
+-- Open file explorer
+vim.keymap.set("n", "-", ":Ex<CR>")
 
 --------------------------------------------------------------------------------
 -- ABBREVIATIONS                                                              --
