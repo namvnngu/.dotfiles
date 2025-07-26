@@ -19,7 +19,7 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set breakindent
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 set colorcolumn=80
 set complete-=i
 set completeopt=menu,menuone,popup,noinsert,noselect

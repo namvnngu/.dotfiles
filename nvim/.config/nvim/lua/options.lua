@@ -12,7 +12,7 @@ vim.o.tabstop = 4
 
 vim.o.background = vim.env.THEME_MODE
 vim.o.breakindent = true
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamed,unnamedplus"
 vim.o.colorcolumn = "80"
 vim.o.completeopt = "menu,menuone,popup,noselect,noinsert"
 vim.o.copyindent = true

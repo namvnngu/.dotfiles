@@ -14,7 +14,7 @@ vim.o.softtabstop = 2
 vim.o.tabstop = 4
 
 vim.o.background = vim.env.THEME_MODE
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamed,unnamedplus"
 vim.o.colorcolumn = "80"
 vim.o.cursorline = true
 vim.o.grepprg = "rg --vimgrep"
