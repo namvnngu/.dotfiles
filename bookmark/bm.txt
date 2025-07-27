@@ -1,4 +1,5 @@
 Australia|Certified copies of original documents|https://justice.vic.gov.au/certifiedcopies
+Australia|First home super saver scheme|https://ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/first-home-super-saver-scheme
 Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
 Bash|BashGuide|https://mywiki.wooledge.org
 Biomedicine|National Center for Biotechnology Information|https://ncbi.nlm.nih.gov
@@ -43,18 +44,35 @@ English|Oxford Learner's Dictionary|https://oxfordlearnersdictionaries.com
 English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-grammar/participle-clauses
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
+Finance|Contracts for difference (CFDs)|https://moneysmart.gov.au/investment-warnings/contracts-for-difference-cfds
+Finance|Income-based investing strategies|https://fool.com.au/investing-education/strategies/income
+Finance|Lazy Koala Investing|https://lazykoalainvesting.com
+Finance|Passive Investing Australia|https://passiveinvestingaustralia.com
+Fun|A collection of looks in text|https://looks.wtf
+Fun|DiceBear|https://dicebear.com
+Fun|PlayPhrase|https://playphrase.me
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
 Game Development|Handmade Hero|https://guide.handmadehero.org
 Game Development|flecs: A fast entity component system (ECS) for C & C++|https://github.com/SanderMertens/flecs
+Git|Get up to speed with partial clone and shallow clone|https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone
+Git|Pro Git|https://git-scm.com/book
 Go|100 Go Mistakes and How to Avoid Them|https://100go.co
 Go|Gist of Go: Concurrency|https://antonz.org/go-concurrency
+Go|Go Scheduler|https://nghiant3223.github.io/2025/04/15/go-scheduler.html
 Go|Practical Go Lessons|https://practical-go-lessons.com
 Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
 Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Go|You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_bleh
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
+JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
+JavaScript|JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
+JavaScript|What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
+Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
+Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
+Java|Virtual Threads|https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 Job Email|7 Email Templates That'll Help You Say "No" (Without Having to Overthink It)|https://themuse.com/advice/7-email-templates-thatll-help-you-say-no-without-having-to-overthink-it
 Job Email|How to Follow Up on a Job Application (With Templates)|https://themuse.com/advice/how-to-follow-up-on-a-job-application-an-email-template
 Job Email|How to Reject a Job Offer Politely (Email Samples)|https://thebalancemoney.com/job-rejection-email-message-examples-2063004
@@ -88,8 +106,16 @@ Learn By Doing|Build your own X|https://github.com/codecrafters-io/build-your-ow
 Learn By Doing|Challenging projects every programmer should try|https://austinhenley.com/blog/challengingprojects.html
 Learn By Doing|Project Based Learning|https://github.com/practical-tutorials/project-based-learning
 Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
+Operating System|Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
+Programming Language|Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
+Programming Language|Ranking Programming Languages by Energy Efficiency|https://haslab.github.io/SAFER/scp21.pdf
 Rust|A Game Boy Emulator|https://github.com/smparsons/retroboy
+Rust|Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
+Rust|Rust Embedded Drivers (RED)|https://red.implrust.com
+System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
+System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
+System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
 TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
@@ -97,9 +123,12 @@ TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/superm
 TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
 TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
+Vim/Neovim|Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
 Vim/Neovim|Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
 Web Development|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
 Web Development|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
+Web Development|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
+Web Development|Bulletproof React|https://github.com/alan2207/bulletproof-react
 Web Development|Open UI|https://open-ui.org
 Web Development|web.dev|https://web.dev
