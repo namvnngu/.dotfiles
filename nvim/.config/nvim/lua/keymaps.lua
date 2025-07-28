@@ -73,14 +73,14 @@ vim.keymap.set("t", "<C-D>", [[<C-\><C-N>:q!<CR>]])
 -- Fix the indentation of the entire file
 vim.keymap.set("n", "<Leader>=", function()
   local view = vim.fn.winsaveview()
-  vim.api.nvim_exec2("keepjumps keeppatterns silent! norm gg=G", { output = false })
+  vim.cmd("keepjumps keeppatterns silent! norm gg=G")
   vim.fn.winrestview(view)
 end)
 
 -- Format the entire file
 vim.keymap.set("n", "<Leader>gq", function()
   local view = vim.fn.winsaveview()
-  vim.api.nvim_exec2("keepjumps keeppatterns silent! norm gggqG", { output = false })
+  vim.cmd("keepjumps keeppatterns silent! norm gggqG")
   vim.fn.winrestview(view)
 end)
 
