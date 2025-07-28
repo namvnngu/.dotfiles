@@ -14,10 +14,11 @@ Book|Library Genesis|https://libgen.is
 Book|Open Library|https://openlibrary.org
 Book|PDF Books Library|https://pdfbooksworld.com
 Book|The Architecture of Open Source Applications|https://aosabook.org
+Computer Graphics|Computer Graphics from Scratch|https://gabrielgambetta.com/computer-graphics-from-scratch
+Computer Graphics|DOCS.GL|https://docs.gl
 Computer Graphics|Graphics Programming Compendium|https://graphicscompendium.com
 Computer Graphics|Learn OpenGL|https://learnopengl.com
 Computer Graphics|Scratchapixel|https://scratchapixel.com
-Computer Graphics|docs.GL|https://docs.gl
 Data Structures and Algorithms|Advent of Code|https://adventofcode.com
 Data Structures and Algorithms|Algorithms for Competitive Programming|https://cp-algorithms.com
 Data Structures and Algorithms|CSES|https://cses.fi
@@ -107,8 +108,9 @@ Learn By Doing|Challenging projects every programmer should try|https://austinhe
 Learn By Doing|Project Based Learning|https://github.com/practical-tutorials/project-based-learning
 Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
 Operating System|Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
-Programming Language|Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
-Programming Language|Ranking Programming Languages by Energy Efficiency|https://haslab.github.io/SAFER/scp21.pdf
+Programming|0DE5|https://0de5.net
+Programming|Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
+Programming|Ranking Programming Languages by Energy Efficiency|https://haslab.github.io/SAFER/scp21.pdf
 Rust|A Game Boy Emulator|https://github.com/smparsons/retroboy
 Rust|Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
