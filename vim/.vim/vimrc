@@ -22,7 +22,7 @@ set breakindent
 set clipboard=unnamed,unnamedplus
 set colorcolumn=80
 set complete-=i
-set completeopt=menu,menuone,popup,noinsert,noselect
+set completeopt=menu,menuone,popup,noselect
 set copyindent
 set cursorline
 set display+=lastline,truncate

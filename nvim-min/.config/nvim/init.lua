@@ -16,6 +16,7 @@ vim.o.tabstop = 4
 vim.o.background = vim.env.THEME_MODE
 vim.o.clipboard = "unnamed,unnamedplus"
 vim.o.colorcolumn = "80"
+vim.o.completeopt = "menu,menuone,popup,noselect"
 vim.o.cursorline = true
 vim.o.grepprg = "rg --vimgrep"
 vim.o.guicursor = ""
