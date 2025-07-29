@@ -118,6 +118,21 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- COMMANDS                                                                   --
 --------------------------------------------------------------------------------
 
+vim.api.nvim_create_user_command("Padd", function(opts)
+  local plugin_root_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
+
+  local plugin_url = opts.args
+  local plugin_name = vim.fn.fnamemodify(plugin_url, ":t")
+  local plugin_path = vim.fn.expand(("%s/%s"):format(plugin_root_path, plugin_name))
+
+  vim.print(("Installing %s..."):format(plugin_name))
+
+  vim.fn.system({ "rm", "-rf", plugin_path })
+  vim.fn.system({ "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path })
+
+  vim.print(("Installed %s!"):format(plugin_name))
+end, { nargs = 1, desc = "Install a plugin given a URL" })
+
 --------------------------------------------------------------------------------
 -- PLUGINS                                                                    --
 --------------------------------------------------------------------------------
