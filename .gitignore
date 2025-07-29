@@ -13,3 +13,6 @@ state.yml
 # w3m
 w3m/.w3m/**/*
 !w3m/.w3m/keymap
+
+# vim
+**/.vim/pack

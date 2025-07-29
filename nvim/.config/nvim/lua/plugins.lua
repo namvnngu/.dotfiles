@@ -10,7 +10,7 @@ local PLUGIN_URLS = {
 
   -- Optional
   "https://github.com/j-hui/fidget.nvim",
-  "https://github.com/godlygeek/tabular",
+  "https://github.com/tommcdo/vim-lion",
   "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
   "https://github.com/tpope/vim-dadbod",
   "https://github.com/kristijanhusak/vim-dadbod-ui",

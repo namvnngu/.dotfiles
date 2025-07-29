@@ -270,7 +270,7 @@ let s:PLUGIN_URLS = [
       \ 'https://github.com/tpope/vim-fugitive',
       \ 'https://github.com/junegunn/fzf',
       \ 'https://github.com/ludovicchabant/vim-gutentags',
-      \ 'https://github.com/godlygeek/tabular',
+      \ 'https://github.com/tommcdo/vim-lion',
       \ ]
 
 function s:install_plugins()
