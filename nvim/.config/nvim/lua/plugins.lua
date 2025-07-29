@@ -29,7 +29,7 @@ end
 ---
 --- @param plugin_urls string[] List of plugin URLs to be installed.
 --- @param plugin_root string The root directory where plugins are stored.
-local function install_plugs(plugin_urls, plugin_root)
+local function install_plugins(plugin_urls, plugin_root)
   if vim.tbl_isempty(plugin_urls) then
     return
   end
@@ -37,29 +37,27 @@ local function install_plugs(plugin_urls, plugin_root)
   local job_ids = {}
 
   for _, plugin_url in pairs(plugin_urls) do
-    local name = get_plugin_name(plugin_url)
-    local path = vim.fn.expand(("%s/%s"):format(plugin_root, name))
+    local plugin_name = get_plugin_name(plugin_url)
+    local plugin_path = vim.fn.expand(("%s/%s"):format(plugin_root, plugin_name))
 
-    if vim.fn.isdirectory(path) == 0 then
-      utils.echo(("Installing %s..."):format(name))
+    if vim.fn.isdirectory(plugin_path) == 0 then
+      utils.echo(("Installing %s..."):format(plugin_name))
 
-      local job_id = vim.fn.jobstart({
-        "git",
-        "clone",
-        "--depth=1",
-        "--filter=blob:none",
-        plugin_url,
-        path,
-      }, {
-        on_exit = function(_, exit_code, _)
-          if exit_code == 0 then
-            utils.echo(("Installed %s!"):format(name))
-          else
-            local err_msg = ("Failed to install %s with exit code %s"):format(name, exit_code)
-            utils.echo(err_msg, true)
-          end
-        end,
-      })
+      local job_id = vim.fn.jobstart(
+        { "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path },
+        {
+          on_exit = function(_, exit_code, _)
+            if exit_code == 0 then
+              utils.echo(("Installed %s!"):format(plugin_name))
+            else
+              utils.echo(
+                ("Failed to install %s with exit code %s"):format(plugin_name, exit_code),
+                true
+              )
+            end
+          end,
+        }
+      )
 
       table.insert(job_ids, job_id)
     end
@@ -90,9 +88,9 @@ local function sync_plugins(next_plugin_urls, plugin_root)
   local next_plugin_url_by_name = build_map(next_plugin_urls)
 
   local removed_plugin_path_by_name = {}
-  for name, path in pairs(current_plugin_path_by_name) do
-    if not next_plugin_url_by_name[name] then
-      removed_plugin_path_by_name[name] = path
+  for plugin_name, plugin_path in pairs(current_plugin_path_by_name) do
+    if not next_plugin_url_by_name[plugin_name] then
+      removed_plugin_path_by_name[plugin_name] = plugin_path
     end
   end
   if not vim.tbl_isempty(removed_plugin_path_by_name) then
@@ -104,13 +102,13 @@ local function sync_plugins(next_plugin_urls, plugin_root)
   end
 
   local added_plugin_urls = {}
-  for name, url in pairs(next_plugin_url_by_name) do
-    if not current_plugin_path_by_name[name] then
-      table.insert(added_plugin_urls, url)
+  for plugin_name, plugin_url in pairs(next_plugin_url_by_name) do
+    if not current_plugin_path_by_name[plugin_name] then
+      table.insert(added_plugin_urls, plugin_url)
     end
   end
   if not vim.tbl_isempty(added_plugin_urls) then
-    install_plugs(added_plugin_urls, plugin_root)
+    install_plugins(added_plugin_urls, plugin_root)
   end
 
   local no_changes = vim.tbl_isempty(removed_plugin_path_by_name)
@@ -130,7 +128,7 @@ end
 local function create_commands(next_plugin_urls, plugin_root)
   vim.api.nvim_create_user_command("Pu", function()
     vim.fn.system({ "rm", "-rf", plugin_root })
-    install_plugs(next_plugin_urls, plugin_root)
+    install_plugins(next_plugin_urls, plugin_root)
     utils.echo("Updated all plugins. Restart Nvim to get latest updates.")
   end, { desc = "Update all plugins" })
 
@@ -148,9 +146,9 @@ local function create_commands(next_plugin_urls, plugin_root)
 
   vim.api.nvim_create_user_command("Pl", function()
     local paths = vim.fn.globpath(plugin_root, "*", false, true)
-    for index, path in pairs(paths) do
-      local name = get_plugin_name(path)
-      utils.echo(("%s. %s: %s"):format(index, name, path))
+    for index, plugin_path in pairs(paths) do
+      local plugin_name = get_plugin_name(plugin_path)
+      utils.echo(("%s. %s: %s"):format(index, plugin_name, plugin_path))
     end
   end, { desc = "List plugins" })
 end

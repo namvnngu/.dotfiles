@@ -36,10 +36,10 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- Keep it centered and stable
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-D>", "<C-D>zz")
-vim.keymap.set("n", "<C-U>", "<C-U>zz")
-vim.keymap.set("n", "<C-F>", "<C-F>zz")
-vim.keymap.set("n", "<C-B>", "<C-B>zz")
+vim.keymap.set("n", "<C-D>", "<C-D>zzzv")
+vim.keymap.set("n", "<C-U>", "<C-U>zzzv")
+vim.keymap.set("n", "<C-F>", "<C-F>zzzv")
+vim.keymap.set("n", "<C-B>", "<C-B>zzzv")
 
 -- Navigate quickfix list
 vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")

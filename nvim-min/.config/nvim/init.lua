@@ -23,6 +23,7 @@ vim.o.guicursor = ""
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.swapfile = false
+vim.o.wrap = false
 
 --------------------------------------------------------------------------------
 -- KEY MAPPINGS                                                               --
@@ -36,6 +37,17 @@ vim.keymap.set("n", "<Leader>l", "<C-W>l", { remap = true })
 
 -- Yank the current file path
 vim.keymap.set("n", "yp", ":call setreg('+', expand('%:p'))<CR>")
+
+-- Set a new undo point before joining lines
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- Keep it centered and stable
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<C-D>", "<C-D>zzzv")
+vim.keymap.set("n", "<C-U>", "<C-U>zzzv")
+vim.keymap.set("n", "<C-F>", "<C-F>zzzv")
+vim.keymap.set("n", "<C-B>", "<C-B>zzzv")
 
 -- Navigate quickfix list
 vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")

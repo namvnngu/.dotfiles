@@ -106,10 +106,10 @@ nnoremap J mzJ`z
 " Keep it centered and stable
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap <C-D> <C-D>zz
-nnoremap <C-U> <C-U>zz
-nnoremap <C-F> <C-F>zz
-nnoremap <C-B> <C-B>zz
+nnoremap <C-D> <C-D>zzzv
+nnoremap <C-U> <C-U>zzzv
+nnoremap <C-F> <C-F>zzzv
+nnoremap <C-B> <C-B>zzzv
 
 " Navigate quickfix list
 nnoremap <C-J> :cnext<CR>zz
