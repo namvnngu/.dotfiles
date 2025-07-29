@@ -41,14 +41,6 @@ vim.keymap.set("n", "yp", ":call setreg('+', expand('%:p'))<CR>")
 -- Set a new undo point before joining lines
 vim.keymap.set("n", "J", "mzJ`z")
 
--- Keep it centered and stable
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-D>", "<C-D>zzzv")
-vim.keymap.set("n", "<C-U>", "<C-U>zzzv")
-vim.keymap.set("n", "<C-F>", "<C-F>zzzv")
-vim.keymap.set("n", "<C-B>", "<C-B>zzzv")
-
 -- Navigate quickfix list
 vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
 vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
@@ -61,6 +53,9 @@ vim.keymap.set("n", "<Leader>s", [[:%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><
 
 -- Create or edit file
 vim.keymap.set("n", "<Leader>e", ":e <C-R>=expand('%:p:h') . '/'<CR>")
+
+-- Set the current buffer to become scratch
+vim.keymap.set("n", "<Leader>bs", ":setlocal bt=nofile bh=wipe noswf<CR>")
 
 -- Open file explorer
 vim.keymap.set("n", "-", ":Ex<CR>")

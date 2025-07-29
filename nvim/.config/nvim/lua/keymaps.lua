@@ -33,13 +33,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up" })
 -- Set a new undo point before joining lines
 vim.keymap.set("n", "J", "mzJ`z")
 
--- Keep it centered and stable
+-- Keep searching centered and stable
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-D>", "<C-D>zzzv")
-vim.keymap.set("n", "<C-U>", "<C-U>zzzv")
-vim.keymap.set("n", "<C-F>", "<C-F>zzzv")
-vim.keymap.set("n", "<C-B>", "<C-B>zzzv")
 
 -- Navigate quickfix list
 vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
@@ -86,3 +82,6 @@ end)
 
 -- Preview markdown
 vim.keymap.set("n", "<Leader>mp", ":!mdp '%'<CR>")
+
+-- Set the current buffer to become scratch
+vim.keymap.set("n", "<Leader>bs", ":setlocal bt=nofile bh=wipe noswf<CR>")

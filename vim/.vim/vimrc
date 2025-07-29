@@ -103,13 +103,9 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 " Set a new undo point before joining lines
 nnoremap J mzJ`z
 
-" Keep it centered and stable
+" Keep searching centered and stable
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap <C-D> <C-D>zzzv
-nnoremap <C-U> <C-U>zzzv
-nnoremap <C-F> <C-F>zzzv
-nnoremap <C-B> <C-B>zzzv
 
 " Navigate quickfix list
 nnoremap <C-J> :cnext<CR>zz
@@ -158,6 +154,9 @@ nnoremap <Leader>gq :call <SID>format()<CR>
 
 " Preview markdown
 nnoremap <Leader>mp :!mdp '%'<CR>
+
+" Set the current buffer to become scratch
+nnoremap <Leader>bs :setlocal bt=nofile bh=wipe noswf<CR>
 
 " Set a new undo point before deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
