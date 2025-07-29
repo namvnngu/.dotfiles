@@ -1,13 +1,17 @@
 
 
-# feat: new feature for the user, not a new feature for build script
-# fix: bug fix for the user, not a fix to a build script
-# docs: changes to the documentation
-# style: changes that do not affect the meaning of the code (e.g. white-space, formatting, missing semi-colons, etc.)
-# refactor: a code change that neither fixes a bug nor adds a feature (e.g. renaming a variable)
-# perf: a code change that improves performance
-# test: adding missing tests or correcting existing tests
-# build: changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-# ci: changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-# chore: other changes that don't modify src or test files
-# git: git actions such as git merge
+# <type>(<scope>): <short summary>
+# 
+# <short summary> is in present tense, not capitalized and has no period at the end.
+# <scope> is optional.
+# <type> is
+#     feat:     a new feature
+#     fix:      a bug fix
+#     docs:     documentation changes
+#     style:    code style changes (e.g. whitespaces, formatting, missing semicolons)
+#     refactor: code changes that neither fix a bug nor add a feature (e.g. renaming a variable)
+#     test:     test changes that add missing tests or corrects existing tests
+#     ci:       changes that affect ci configuration files or pipelines
+#     build:    changes that affect the build system or external dependencies
+#     git:      git actions (e.g. git pull, git merge)
+
