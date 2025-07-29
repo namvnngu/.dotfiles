@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- Trim spaces
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = utils.augroup("trim_spaces"),
   callback = function()
     local view = vim.fn.winsaveview()
@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 
 -- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   group = utils.augroup("highlight_yank"),
   callback = function()
     vim.highlight.on_yank()

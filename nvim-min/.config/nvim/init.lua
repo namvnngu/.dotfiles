@@ -85,7 +85,7 @@ local function augroup(name, clear)
 end
 
 -- Trim spaces
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = augroup("trim_spaces"),
   callback = function()
     local view = vim.fn.winsaveview()
