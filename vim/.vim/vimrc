@@ -121,9 +121,6 @@ vnoremap <Leader>p "_dP
 nnoremap <Leader>d "_d
 vnoremap <Leader>d "_d
 
-" Cancel
-inoremap <C-C> <Esc>
-
 " Replace word under cursor
 nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 

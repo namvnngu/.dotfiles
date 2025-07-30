@@ -51,9 +51,6 @@ vim.keymap.set("v", "<Leader>p", '"_dP')
 vim.keymap.set("n", "<Leader>d", '"_d')
 vim.keymap.set("v", "<Leader>d", '"_d')
 
--- Cancel
-vim.keymap.set("i", "<C-C>", "<Esc>")
-
 -- Replace word under cursor
 vim.keymap.set("n", "<Leader>s", [[:%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>]])
 
