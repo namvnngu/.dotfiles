@@ -1,20 +1,5 @@
 local utils = require("utils")
 
--- Trim spaces
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = utils.augroup("trim_spaces"),
-  callback = function()
-    local view = vim.fn.winsaveview()
-    vim.cmd([[
-      keepjumps keeppatterns silent! %s/\s\+$//e
-      keepjumps keeppatterns silent! %s/\%^\n\+//
-      keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
-      keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
-    ]])
-    vim.fn.winrestview(view)
-  end,
-})
-
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = utils.augroup("resize_splits"),

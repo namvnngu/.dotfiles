@@ -179,20 +179,6 @@ ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
 " AUTOCOMMANDS                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup trim_spaces
-  autocmd!
-  autocmd BufWritePre * call s:trim_spaces()
-
-  function s:trim_spaces()
-    let l:view = winsaveview()
-    keepjumps keeppatterns silent! %s/\s\+$//e
-    keepjumps keeppatterns silent! %s/\%^\n\+//
-    keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
-    keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
-    call winrestview(l:view)
-  endfunction
-augroup END
-
 augroup mark_postqf
   autocmd!
   autocmd QuickFixCmdPost norm mG
