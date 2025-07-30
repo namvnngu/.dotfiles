@@ -84,21 +84,6 @@ local function augroup(name, clear)
   return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = clear or true })
 end
 
--- Trim spaces
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = augroup("trim_spaces"),
-  callback = function()
-    local view = vim.fn.winsaveview()
-    vim.cmd([[
-      keepjumps keeppatterns silent! %s/\s\+$//e
-      keepjumps keeppatterns silent! %s/\%^\n\+//
-      keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
-      keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
-    ]])
-    vim.fn.winrestview(view)
-  end,
-})
-
 -- Stop treesitter
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("stop_treesitter"),
@@ -125,7 +110,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- COMMANDS                                                                   --
 --------------------------------------------------------------------------------
 
-vim.api.nvim_create_user_command("Padd", function(opts)
+vim.api.nvim_create_user_command("Pa", function(opts)
   local plugin_root_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 
   local plugin_url = opts.args
