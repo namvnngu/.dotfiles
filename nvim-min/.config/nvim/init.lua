@@ -172,5 +172,6 @@ end, { desc = "Uninstall all plugins" })
 
 vim.cmd([[
   Pi https://github.com/tpope/vim-fugitive
+  Pi https://github.com/junegunn/fzf
   Pi https://github.com/tommcdo/vim-lion
 ]])
