@@ -110,21 +110,67 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- COMMANDS                                                                   --
 --------------------------------------------------------------------------------
 
-vim.api.nvim_create_user_command("Pa", function(opts)
-  local plugin_root_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
-
-  local plugin_url = opts.args
-  local plugin_name = vim.fn.fnamemodify(plugin_url, ":t")
-  local plugin_path = vim.fn.expand(("%s/%s"):format(plugin_root_path, plugin_name))
-
-  vim.print(("Installing %s..."):format(plugin_name))
-
-  vim.fn.system({ "rm", "-rf", plugin_path })
-  vim.fn.system({ "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path })
-
-  vim.print(("Installed %s!"):format(plugin_name))
-end, { nargs = 1, desc = "Install a plugin given a URL" })
-
 --------------------------------------------------------------------------------
 -- PLUGINS                                                                    --
 --------------------------------------------------------------------------------
+
+local plugin_root_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
+
+local function extract_plugin_name(plugin_url_or_path)
+  return vim.fn.fnamemodify(plugin_url_or_path, ":t")
+end
+
+local function create_plugin_path(plugin_name)
+  return vim.fn.expand(("%s/%s"):format(plugin_root_path, plugin_name))
+end
+
+vim.api.nvim_create_user_command("Pls", function()
+  local plugin_paths = vim.fn.globpath(plugin_root_path, "*", false, true)
+  for _, plugin_path in pairs(plugin_paths) do
+    vim.print(extract_plugin_name(plugin_path))
+  end
+end, { desc = "Uninstall all plugins" })
+
+vim.api.nvim_create_user_command("Pi", function(opts)
+  local force = opts.bang
+  local plugin_url = opts.args
+  local plugin_name = extract_plugin_name(plugin_url)
+  local plugin_path = create_plugin_path(plugin_name)
+
+  if force or vim.fn.isdirectory(plugin_path) == 0 then
+    vim.print(("Installing %s..."):format(plugin_name))
+    vim.fn.system({ "rm", "-rf", plugin_path })
+    vim.fn.system({ "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path })
+    vim.print(("Installed %s!"):format(plugin_name))
+  end
+end, { nargs = 1, bang = true, desc = "Install a plugin given a URL" })
+
+vim.api.nvim_create_user_command("Pu", function(opts)
+  local plugin_name = opts.args
+  local plugin_path = create_plugin_path(plugin_name)
+  if vim.fn.isdirectory(plugin_path) == 1 then
+    vim.fn.system({ "rm", "-rf", plugin_path })
+    vim.print(("Uninstalled %s!"):format(plugin_name))
+  end
+end, {
+  nargs = 1,
+  complete = function()
+    local plugin_paths = vim.fn.globpath(plugin_root_path, "*", false, true)
+    local plugin_names = {}
+    for _, plugin_path in pairs(plugin_paths) do
+      table.insert(plugin_names, extract_plugin_name(plugin_path))
+    end
+    return plugin_names
+  end,
+  desc = "Uninstall a plugin given suggested plugin names",
+})
+
+vim.api.nvim_create_user_command("Pua", function()
+  vim.fn.system({ "rm", "-rf", plugin_root_path })
+  vim.print("Uninstalled all plugins!")
+end, { desc = "Uninstall all plugins" })
+
+vim.cmd([[
+  Pi https://github.com/tpope/vim-fugitive
+  Pi https://github.com/tommcdo/vim-lion
+]])
