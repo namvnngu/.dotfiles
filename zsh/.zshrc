@@ -2,10 +2,9 @@
 os=$(uname -s)
 
 # add the path to $PATH if it is not already included.
-# source: https://superuser.com/a/39995
-pathadd() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="${PATH:+"$PATH:"}$1"
+add_path() {
+  if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="$1:${PATH:+"$PATH"}"
   fi
 }
 
@@ -29,6 +28,9 @@ export KEYTIMEOUT=1
 # prompt
 PROMPT='%n %~'$'\n$ '
 
+# pixi
+add_path "$HOME/.pixi/bin"
+
 # emacs mode
 set -o emacs
 
@@ -38,12 +40,9 @@ source <(fzf --zsh)
 # go
 export GOPATH="$HOME/.go"
 
-# pixi
-pathadd "$HOME/.pixi/bin"
-
 # search and highlight
 alias hl='rg --passthru'
 
 # my own
 export DOTFILES_PATH="$HOME/.dotfiles"
-pathadd "$HOME/.dotfiles/bin"
+add_path "$HOME/.dotfiles/bin"
