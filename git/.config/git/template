@@ -13,5 +13,4 @@
 #     test:     test changes that add missing tests or corrects existing tests
 #     ci:       changes that affect ci configuration files or pipelines
 #     build:    changes that affect the build system or external dependencies
-#     git:      git actions (e.g. git pull, git merge)
-
+#     other:    other changes that are listed above
