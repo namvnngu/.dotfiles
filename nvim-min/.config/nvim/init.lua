@@ -38,13 +38,6 @@ vim.keymap.set("n", "<Leader>l", "<C-W>l", { remap = true })
 -- Yank the current file path
 vim.keymap.set("n", "yp", ":call setreg('+', expand('%:p'))<CR>")
 
--- Set a new undo point before joining lines
-vim.keymap.set("n", "J", "mzJ`z")
-
--- Navigate quickfix list
-vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
-vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
-
 -- Replace currently selected text with black hole register without yanking it
 vim.keymap.set("v", "<Leader>p", '"_dP')
 
