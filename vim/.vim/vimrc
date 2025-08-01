@@ -155,11 +155,6 @@ ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
 " AUTOCOMMANDS                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup mark_postqf
-  autocmd!
-  autocmd QuickFixCmdPost norm mG
-augroup END
-
 augroup mkdir_on_edit
   autocmd!
   autocmd BufWritePre * call s:mkdir_on_edit(expand('<afile>:p:h'))

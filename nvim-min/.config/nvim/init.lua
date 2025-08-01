@@ -77,6 +77,14 @@ local function augroup(name, clear)
   return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = clear or true })
 end
 
+-- Highlight on yank
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  group = augroup("highlight_yank"),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- Stop treesitter
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("stop_treesitter"),
