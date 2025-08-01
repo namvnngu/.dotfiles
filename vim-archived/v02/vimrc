@@ -74,6 +74,12 @@ set winminwidth=5
 " KEY MAPPINGS                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Avoid using arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " Move to window
 nnoremap <Leader>h <C-W>h
 nnoremap <Leader>j <C-W>j
@@ -90,8 +96,19 @@ nnoremap Y y$
 vnoremap < <gv
 vnoremap > >gv
 
+" Move lines
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Clear highlighting search
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
+" Set a new undo point before joining lines
+nnoremap J mzJ`z
+
+" Keep searching centered and stable
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Navigate quickfix list
 nnoremap [q :cprev<CR>zz
@@ -103,6 +120,13 @@ map <F12> :setlocal spell! spelllang=en_us<CR>
 " Replace currently selected text with black hole register without yanking it
 vnoremap <Leader>p "_dP
 
+" Delete without yanking
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
+
+" Cancel
+inoremap <C-C> <Esc>
+
 " Replace word under cursor
 nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 
@@ -111,6 +135,9 @@ nnoremap <silent> <Leader>x :!chmod +x %<CR>
 
 " Create or edit file
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" Exit terminal
+tnoremap <C-D> <C-\><C-N>:q!<CR>
 
 " Fix the indentation of the entire file
 function s:fix_indent()
@@ -157,6 +184,25 @@ ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup mark_postqf
+  autocmd!
+  autocmd QuickFixCmdPost norm mG
+augroup END
+
+augroup trim_spaces
+  autocmd!
+  autocmd BufWritePre * call s:trim_spaces()
+
+  function s:trim_spaces()
+    let l:view = winsaveview()
+    keepjumps keeppatterns silent! %s/\s\+$//e
+    keepjumps keeppatterns silent! %s/\%^\n\+//
+    keepjumps keeppatterns silent! %s/\(\n\n\)\n\+/\1/
+    keepjumps keeppatterns silent! %s/\($\n\s*\)\+\%$//
+    call winrestview(l:view)
+  endfunction
+augroup END
 
 augroup mkdir_on_edit
   autocmd!
