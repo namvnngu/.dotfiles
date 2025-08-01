@@ -1,0 +1,10 @@
+Nvim Runtime's Startup:
+1. dotfiles/init.lua
+2. dotfiles/plugin/*
+3. pack/start/*/plugin/*
+4. pack/start/*/after/plugin/*
+5. dotfiles/after/plugin/*
+6. dotfiles/ftplugin/*
+7. pack/start/*/ftplugin/*
+8. pack/start/*/after/ftplugin/*
+9. dotfiles/after/ftplugin/*
