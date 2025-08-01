@@ -248,8 +248,8 @@ endfunction
 " PLUGINS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let s:PLUGIN_ROOT = expand('~/.vim/pack/plugins/start')
-let s:PLUGIN_URLS = [
+let s:plugin_root_path = expand('~/.vim/pack/plugins/start')
+let s:plugin_urls = [
       \ 'https://github.com/tpope/vim-fugitive',
       \ 'https://github.com/junegunn/fzf',
       \ 'https://github.com/ludovicchabant/vim-gutentags',
@@ -257,39 +257,39 @@ let s:PLUGIN_URLS = [
       \ ]
 
 function s:install_plugins()
-  let l:install_urls = ''
-  let l:installing_msg = ''
-  let l:installed_msg = ''
+  let l:install_plugin_urls = ''
+  let l:installing_plugin_msg = ''
+  let l:installed_plugin_msg = ''
 
-  for url in s:PLUGIN_URLS
-    let l:name = fnamemodify(url, ':t')
-    let l:path = expand(s:PLUGIN_ROOT . '/' . l:name)
+  for plugin_url in s:plugin_urls
+    let l:plugin_name = fnamemodify(plugin_url, ':t')
+    let l:plugin_path = expand(s:plugin_root_path . '/' . l:plugin_name)
 
-    if !isdirectory(l:path)
-      let l:install_urls = l:install_urls . '\n' . url
-      let l:installing_msg = l:installing_msg . "\nInstalling " . l:name . '...'
-      let l:installed_msg = l:installed_msg . "\nInstalled " . l:name . '!'
+    if !isdirectory(l:plugin_path)
+      let l:install_plugin_urls = l:install_plugin_urls . '\n' . plugin_url
+      let l:installing_plugin_msg = l:installing_plugin_msg . "\nInstalling " . l:plugin_name . '...'
+      let l:installed_plugin_msg = l:installed_plugin_msg . "\nInstalled " . l:plugin_name . '!'
     endif
   endfor
 
-  if !empty(l:install_urls)
-    echo trim(l:installing_msg)
+  if !empty(l:install_plugin_urls)
+    echo trim(l:installing_plugin_msg)
 
-    call system("echo -e '" . trim(l:install_urls) . "' "
+    call system("echo -e '" . trim(l:install_plugin_urls) . "' "
              \. "| xargs -P8 -I{} sh -c "
              \. "'git clone --depth=1 --filter=blob:none {} "
-             \. s:PLUGIN_ROOT . "/$(basename {})'")
+             \. s:plugin_root_path . "/$(basename {})'")
 
-    echo trim(l:installed_msg)
+    echo trim(l:installed_plugin_msg)
   endif
 endfunction
 
-command! Pc echo 'Plugin count: ' . len(s:PLUGIN_URLS)
-command! Pu call system('rm -rf ' . s:PLUGIN_ROOT)
+command! Pc echo 'Plugin count: ' . len(s:plugin_urls)
+command! Pu call system('rm -rf ' . s:plugin_root_path)
         \|  call s:install_plugins()
         \|  echo 'Updated all plugins. Restart Vim to get latest updates.'
-command! Pl for path in globpath(s:PLUGIN_ROOT, "*", 0, 1)
-        \|    echo fnamemodify(path, ':t') . ': ' . path
+command! Pl for plugin_path in globpath(s:plugin_root_path, "*", 0, 1)
+        \|    echo fnamemodify(plugin_path, ':t') . ': ' . plugin_path
         \|  endfor
 
 call s:install_plugins()

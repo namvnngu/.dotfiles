@@ -15,14 +15,14 @@ local PLUGIN_URLS = {
   "https://github.com/tpope/vim-dadbod",
   "https://github.com/kristijanhusak/vim-dadbod-ui",
 }
-local PLUGIN_ROOT = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
+local plugin_root_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
 
---- Gets the plugin name from a given URL or path.
+--- Extracts the plugin name from a given URL or path.
 ---
---- @param urlOrPath string The URL or file path of the plugin.
+--- @param plugin_url_or_path string The URL or file path of the plugin.
 --- @return string The plugin name.
-local function get_plugin_name(urlOrPath)
-  return vim.fn.fnamemodify(urlOrPath, ":t")
+local function extract_plugin_name(plugin_url_or_path)
+  return vim.fn.fnamemodify(plugin_url_or_path, ":t")
 end
 
 --- Installs a list of plugins given their URLS.
@@ -37,7 +37,7 @@ local function install_plugins(plugin_urls, plugin_root)
   local job_ids = {}
 
   for _, plugin_url in pairs(plugin_urls) do
-    local plugin_name = get_plugin_name(plugin_url)
+    local plugin_name = extract_plugin_name(plugin_url)
     local plugin_path = vim.fn.expand(("%s/%s"):format(plugin_root, plugin_name))
 
     if vim.fn.isdirectory(plugin_path) == 0 then
@@ -78,7 +78,7 @@ end
 local function sync_plugins(next_plugin_urls, plugin_root)
   local function build_map(list)
     return vim.iter(list):fold({}, function(acc, item)
-      acc[get_plugin_name(item)] = item
+      acc[extract_plugin_name(item)] = item
       return acc
     end)
   end
@@ -94,11 +94,11 @@ local function sync_plugins(next_plugin_urls, plugin_root)
     end
   end
   if not vim.tbl_isempty(removed_plugin_path_by_name) then
-    local names = vim.tbl_keys(removed_plugin_path_by_name)
-    local paths = vim.tbl_values(removed_plugin_path_by_name)
-    utils.echo(("Removing %s..."):format(vim.fn.join(names, "...\nRemoving ")))
-    vim.fn.system(vim.list_extend({ "rm", "-rf" }, paths))
-    utils.echo(("Removed %s!"):format(vim.fn.join(names, "!\nRemoved ")))
+    local plugin_names = vim.tbl_keys(removed_plugin_path_by_name)
+    local plugin_paths = vim.tbl_values(removed_plugin_path_by_name)
+    utils.echo(("Removing %s..."):format(vim.fn.join(plugin_names, "...\nRemoving ")))
+    vim.fn.system(vim.list_extend({ "rm", "-rf" }, plugin_paths))
+    utils.echo(("Removed %s!"):format(vim.fn.join(plugin_names, "!\nRemoved ")))
   end
 
   local added_plugin_urls = {}
@@ -140,18 +140,18 @@ local function create_commands(next_plugin_urls, plugin_root)
   end, { desc = "Sync plugins" })
 
   vim.api.nvim_create_user_command("Pc", function()
-    local paths = vim.fn.globpath(plugin_root, "*", false, true)
-    utils.echo("Plugin count: " .. vim.tbl_count(paths))
+    local plugin_paths = vim.fn.globpath(plugin_root, "*", false, true)
+    utils.echo("Plugin count: " .. vim.tbl_count(plugin_paths))
   end, { desc = "Count plugins" })
 
   vim.api.nvim_create_user_command("Pl", function()
-    local paths = vim.fn.globpath(plugin_root, "*", false, true)
-    for index, plugin_path in pairs(paths) do
-      local plugin_name = get_plugin_name(plugin_path)
+    local plugin_paths = vim.fn.globpath(plugin_root, "*", false, true)
+    for index, plugin_path in pairs(plugin_paths) do
+      local plugin_name = extract_plugin_name(plugin_path)
       utils.echo(("%s. %s: %s"):format(index, plugin_name, plugin_path))
     end
   end, { desc = "List plugins" })
 end
 
-sync_plugins(PLUGIN_URLS, PLUGIN_ROOT)
-create_commands(PLUGIN_URLS, PLUGIN_ROOT)
+sync_plugins(PLUGIN_URLS, plugin_root_path)
+create_commands(PLUGIN_URLS, plugin_root_path)
