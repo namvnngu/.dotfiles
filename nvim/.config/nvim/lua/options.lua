@@ -35,6 +35,7 @@ vim.o.signcolumn = "yes"
 vim.o.smartcase = true
 vim.o.smoothscroll = true
 vim.o.swapfile = false
+vim.o.termguicolors = false
 vim.o.undolevels = 10000
 vim.o.virtualedit = "block"
 vim.o.wildmode = "longest:full,full"
