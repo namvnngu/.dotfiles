@@ -22,6 +22,7 @@ vim.o.grepprg = "rg --vimgrep"
 vim.o.guicursor = ""
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.scrolloff = 8
 vim.o.swapfile = false
 vim.o.wrap = false
 
