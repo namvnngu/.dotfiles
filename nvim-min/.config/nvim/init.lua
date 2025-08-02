@@ -79,6 +79,12 @@ local function augroup(name, clear)
   return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = clear or true })
 end
 
+-- Resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = augroup("resize_splits"),
+  command = "wincmd =",
+})
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   group = augroup("highlight_yank"),

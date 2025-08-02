@@ -1,5 +1,11 @@
 local utils = require("utils")
 
+-- Resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = utils.augroup("resize_splits"),
+  command = "wincmd =",
+})
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   group = utils.augroup("highlight_yank"),
