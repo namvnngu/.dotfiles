@@ -20,6 +20,9 @@ set completeopt=menu,menuone,popup,noselect
 set cursorline
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
+set hlsearch
+set incsearch
+set laststatus=2
 set noswapfile
 set notermguicolors
 set nowrap
@@ -27,18 +30,77 @@ set number
 set relativenumber
 set ruler
 set scrolloff=8
+set wildmenu
+set wildoptions=pum,tagfile
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEY MAPPINGS                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Move to window
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>l <C-W>l
+
+" Yank the current file path
+nnoremap yp :call setreg('+', expand('%:p'))<CR>
+
+" Yank til the end
+nnoremap Y y$
+
+" Navigate quickfix list
+nnoremap [q :cprev<CR>zz
+nnoremap ]q :cnext<CR>zz
+
+" Replace currently selected text with black hole register without yanking it
+vnoremap <Leader>p "_dP
+
+" Replace word under cursor
+nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
+
+" Create or edit file
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" Set the current buffer to become scratch
+nnoremap <Leader>bs :setlocal bt=nofile bh=wipe noswf<CR>
+
+" Set a new undo point before deleting text in insert mode
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
+
+" Open file explorer
+nnoremap - :Ex<CR>
+
+" Switch between C source and header file
+nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+ia <expr> me:: strftime('Author: Nam Nguyen <vnngucs@outlook.com><CR>
+                       \Description:<CR>
+                       \License: The Unlicense<CR>
+                       \Date created: %B %d, %Y<CR>
+                       \Date modified: %B %d, %Y')
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup mkdir_on_edit
+  autocmd!
+  autocmd BufWritePre * call s:mkdir_on_edit(expand('<afile>:p:h'))
+
+  function! s:mkdir_on_edit(dir)
+    if a:dir =~ '^/'
+          \ && !isdirectory(a:dir)
+          \ && input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$'
+      call mkdir(a:dir, 'p')
+    endif
+  endfunction
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COMMANDS                                                                     "
@@ -48,3 +110,6 @@ set scrolloff=8
 " PLUGINS                                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" netrw
+let g:netrw_liststyle = 1
+let g:netrw_sizestyle = "H"
