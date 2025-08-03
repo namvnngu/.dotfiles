@@ -37,6 +37,7 @@ vim.o.swapfile = false
 vim.o.termguicolors = false
 vim.o.undolevels = 10000
 vim.o.virtualedit = "block"
+vim.o.wildmode = "longest:full"
 vim.o.wildoptions = "pum,tagfile"
 vim.o.winminwidth = 5
 vim.o.wrap = false
