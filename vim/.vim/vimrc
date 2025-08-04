@@ -4,6 +4,7 @@
 
 syntax off
 colorscheme wildcharm
+filetype plugin indent on
 
 let mapleader = ' '
 let &background = $THEME_MODE
@@ -49,6 +50,9 @@ nnoremap yp :call setreg('+', expand('%:p'))<CR>
 
 " Yank til the end
 nnoremap Y y$
+
+" Clear highlighting search
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 " Navigate quickfix list
 nnoremap [q :cprev<CR>zz
@@ -114,3 +118,6 @@ augroup END
 " netrw
 let g:netrw_liststyle = 1
 let g:netrw_sizestyle = "H"
+
+" man page
+runtime ftplugin/man.vim

@@ -15,4 +15,5 @@ w3m/.w3m/**/*
 !w3m/.w3m/keymap
 
 # vim
-**/.vim/pack
+vim/.vim/**/*
+!vim/.vim/vimrc
