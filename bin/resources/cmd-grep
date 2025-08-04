@@ -1,0 +1,1 @@
+grep show diff between two files: grep -xvFf <file-1> <file-2>
