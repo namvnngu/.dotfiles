@@ -111,8 +111,8 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Navigate quickfix list
-nnoremap [q :cprev<CR>zz
-nnoremap ]q :cnext<CR>zz
+nnoremap <C-K> :cprev<CR>zz
+nnoremap <C-J> :cnext<CR>zz
 
 " Toggle spelling checker
 map <F12> :setlocal spell! spelllang=en_us<CR>

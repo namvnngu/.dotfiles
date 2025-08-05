@@ -16,6 +16,10 @@ vim.keymap.set("n", "<Leader>l", "<C-W>l", { remap = true })
 -- Yank the current file path
 vim.keymap.set("n", "yp", ":call setreg('+', expand('%:p'))<CR>")
 
+-- Navigate quickfix list
+vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
+vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
+
 -- Better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")

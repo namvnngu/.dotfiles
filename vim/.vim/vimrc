@@ -55,8 +55,8 @@ nnoremap Y y$
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 " Navigate quickfix list
-nnoremap [q :cprev<CR>zz
-nnoremap ]q :cnext<CR>zz
+nnoremap <C-K> :cprev<CR>zz
+nnoremap <C-J> :cnext<CR>zz
 
 " Replace currently selected text with black hole register without yanking it
 vnoremap <Leader>p "_dP
