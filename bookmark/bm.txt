@@ -19,19 +19,19 @@ Computer Graphics|DOCS.GL|https://docs.gl
 Computer Graphics|Graphics Programming Compendium|https://graphicscompendium.com
 Computer Graphics|Learn OpenGL|https://learnopengl.com
 Computer Graphics|Scratchapixel|https://scratchapixel.com
-Data Structures and Algorithms|Advent of Code|https://adventofcode.com
-Data Structures and Algorithms|Algorithms for Competitive Programming|https://cp-algorithms.com
-Data Structures and Algorithms|CSES|https://cses.fi
-Data Structures and Algorithms|Data Structures, Explained Simply|https://youtu.be/KwBuV7YZido
-Data Structures and Algorithms|Floyd's Cycle detection algorithm|https://cs.stackexchange.com/a/45540
-Data Structures and Algorithms|HashMaps & Dictionaries, Explained Simply|https://youtu.be/y11XNXi9dgs
-Data Structures and Algorithms|Hello Algo|https://hello-algo.com/en
-Data Structures and Algorithms|Nonzero-rule|https://en.m.wikipedia.org/wiki/Nonzero-rule
-Data Structures and Algorithms|Project Euler|https://projecteuler.net
-Data Structures and Algorithms|The Algorithms|https://github.com/TheAlgorithms
-Data Structures and Algorithms|The Arcane Algorithm Archive|https://algorithm-archive.org
-Data Structures and Algorithms|USFCA Data Structure and Algorithm Visualizations|https://cs.usfca.edu/~galles/visualization
-Data Structures and Algorithms|VisuAlgo|https://visualgo.net
+Data Structure and Algorithm|Advent of Code|https://adventofcode.com
+Data Structure and Algorithm|Algorithms for Competitive Programming|https://cp-algorithms.com
+Data Structure and Algorithm|CSES|https://cses.fi
+Data Structure and Algorithm|Data Structures, Explained Simply|https://youtu.be/KwBuV7YZido
+Data Structure and Algorithm|Floyd's Cycle detection algorithm|https://cs.stackexchange.com/a/45540
+Data Structure and Algorithm|HashMaps & Dictionaries, Explained Simply|https://youtu.be/y11XNXi9dgs
+Data Structure and Algorithm|Hello Algo|https://hello-algo.com/en
+Data Structure and Algorithm|Nonzero-rule|https://en.m.wikipedia.org/wiki/Nonzero-rule
+Data Structure and Algorithm|Project Euler|https://projecteuler.net
+Data Structure and Algorithm|The Algorithms|https://github.com/TheAlgorithms
+Data Structure and Algorithm|The Arcane Algorithm Archive|https://algorithm-archive.org
+Data Structure and Algorithm|USFCA Data Structure and Algorithm Visualizations|https://cs.usfca.edu/~galles/visualization
+Data Structure and Algorithm|VisuAlgo|https://visualgo.net
 DevOps|Podman vs. Docker: Containerization Tools Comparison|https://spacelift.io/blog/podman-vs-docker
 English|Cambridge Dictionary|https://dictionary.cambridge.org
 English|Conditionals: if - Grammar - Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar/conditionals-if
@@ -70,6 +70,7 @@ JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
 JavaScript|JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
+JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
 JavaScript|What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
 Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
 Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
@@ -118,6 +119,7 @@ Rust|Rust Embedded Drivers (RED)|https://red.implrust.com
 System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
+Tool|Globster|https://globster.xyz
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
 TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
@@ -126,11 +128,13 @@ TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, w
 TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
 Vim/Neovim|Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
+Vim/Neovim|Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
 Vim/Neovim|Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
 Web Development|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
 Web Development|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
 Web Development|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
 Web Development|Bulletproof React|https://github.com/alan2207/bulletproof-react
+Web Development|Just fucking use HTML|https://justfuckingusehtml.com
 Web Development|Open UI|https://open-ui.org
 Web Development|web.dev|https://web.dev
