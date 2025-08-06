@@ -1,5 +1,17 @@
 local utils = require("utils")
 
+local start_lsp = vim.lsp.start
+---@diagnostic disable-next-line: duplicate-set-field
+vim.lsp.start = function(...)
+  local _, opts = unpack({ ... })
+  if opts and opts.bufnr then
+    if vim.b[opts.bufnr].fugitive_type then
+      return
+    end
+  end
+  start_lsp(...)
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local bufnr = args.buf --- @type number
