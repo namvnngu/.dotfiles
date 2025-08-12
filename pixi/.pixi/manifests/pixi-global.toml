@@ -69,3 +69,13 @@ exposed = { typst = "typst" }
 channels = ["conda-forge"]
 dependencies = { tinymist = "*" }
 exposed = { tinymist = "tinymist" }
+
+[envs.hurl]
+channels = ["conda-forge"]
+dependencies = { hurl = "*" }
+exposed = { hurl = "hurl", hurlfmt = "hurlfmt" }
+
+[envs.pkgconf]
+channels = ["conda-forge"]
+dependencies = { pkgconf = "*" }
+exposed = { pkgconf = "pkgconf", bomtool = "bomtool" }
