@@ -79,3 +79,8 @@ exposed = { hurl = "hurl", hurlfmt = "hurlfmt" }
 channels = ["conda-forge"]
 dependencies = { pkgconf = "*" }
 exposed = { pkgconf = "pkgconf", bomtool = "bomtool" }
+
+[envs.cmake]
+channels = ["conda-forge"]
+dependencies = { cmake = "*" }
+exposed = { ccmake = "ccmake", cmake = "cmake", cpack = "cpack", ctest = "ctest" }
