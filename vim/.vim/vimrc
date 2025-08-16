@@ -46,7 +46,7 @@ nnoremap <Leader>k <C-W>k
 nnoremap <Leader>l <C-W>l
 
 " Yank the current file path
-nnoremap yp :call setreg('+', expand('%:p'))<CR>
+nnoremap yp <Cmd>call setreg('+', expand('%:p'))<CR>
 
 " Yank til the end
 nnoremap Y y$
@@ -63,8 +63,8 @@ nnoremap <C-D> <C-D>zz
 nnoremap <C-U> <C-U>zz
 
 " Navigate quickfix list and keep it centered
-nnoremap <C-K> :cprev<CR>zz
-nnoremap <C-J> :cnext<CR>zz
+nnoremap <C-K> <Cmd>cprev<CR>zz
+nnoremap <C-J> <Cmd>cnext<CR>zz
 
 " Replace currently selected text with black hole register without yanking it
 vnoremap <Leader>p "_dP
@@ -75,18 +75,34 @@ nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 " Create or edit file
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
-" Set the current buffer to become scratch
-nnoremap <Leader>bs :setlocal bt=nofile bh=wipe noswf<CR>
+" Make the current buffer a scratch buffer
+nnoremap <Leader>bs <Cmd>setlocal bt=nofile bh=wipe noswf<CR>
 
 " Set a new undo point before deleting text in insert mode
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
 " Open file explorer
-nnoremap - :Ex<CR>
+nnoremap - <Cmd>Ex<CR>
 
 " Switch between C source and header file
-nnoremap <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+nnoremap <Leader>c <Cmd>e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+
+" Format the entire file
+function s:format()
+  let l:view = winsaveview()
+  keepjumps keeppatterns silent! norm gggqG
+  call winrestview(l:view)
+endfunction
+nnoremap <Leader>gq <Cmd>call <SID>format()<CR>
+
+" Fix the indentation of the entire file
+function s:indent()
+  let l:view = winsaveview()
+  keepjumps keeppatterns silent! norm gg=G
+  call winrestview(l:view)
+endfunction
+nnoremap <Leader>= <Cmd>call <SID>indent()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                                "
@@ -109,15 +125,35 @@ augroup mkdir_on_edit
   function! s:mkdir_on_edit(dir)
     if a:dir =~ '^/'
           \ && !isdirectory(a:dir)
-          \ && input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$'
+          \ && input("'" . a:dir . "' does not exist. Create? [y/N] ") =~? '^y\%[es]$'
       call mkdir(a:dir, 'p')
     endif
   endfunction
 augroup END
 
+augroup c_ft
+  autocmd!
+  autocmd FileType c,cpp     setlocal tags=./tags,tags,~/.tags/c-system
+  autocmd FileType c,cpp     if executable('clang-format') | setlocal formatprg=clang-format | endif
+  autocmd BufEnter *.c,*.cpp command! Run :vs | term cc -o %:p:r % && %:p:r
+augroup END
+
+augroup markdown_ft
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=80
+augroup END
+
+augroup typst_ft
+  autocmd!
+  autocmd FileType typst setlocal textwidth=80
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COMMANDS                                                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
+      \ | diffthis | wincmd p | diffthis
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS                                                                      "
