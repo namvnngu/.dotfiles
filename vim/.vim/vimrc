@@ -21,6 +21,7 @@ set completeopt=menu,menuone,popup,noselect
 set cursorline
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
+set hidden
 set hlsearch
 set incsearch
 set laststatus=2
