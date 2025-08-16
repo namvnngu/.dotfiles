@@ -54,7 +54,15 @@ nnoremap Y y$
 " Clear highlighting search
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
-" Navigate quickfix list
+" Keep searching centered
+nnoremap n nzz
+nnoremap N Nzz
+
+" Keep half-window scrolling centered
+nnoremap <C-D> <C-D>zz
+nnoremap <C-U> <C-U>zz
+
+" Navigate quickfix list and keep it centered
 nnoremap <C-K> :cprev<CR>zz
 nnoremap <C-J> :cnext<CR>zz
 
