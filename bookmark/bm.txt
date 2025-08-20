@@ -5,20 +5,21 @@ Bash|BashGuide|https://mywiki.wooledge.org
 Biomedicine|National Center for Biotechnology Information|https://ncbi.nlm.nih.gov
 Biomedicine|PubMed Central|https://pmc.ncbi.nlm.nih.gov
 Biomedicine|PubMed|https://pubmed.ncbi.nlm.nih.gov
-Book|Awesome Books|https://github.com/learn-anything/books
-Book|Build Your Own X From Scratch Books|https://build-your-own.org
-Book|Digitale Bibliothek Book|https://dokumen.pub
-Book|Free eBooks - Project Gutenberg|https://gutenberg.org
-Book|Freely available programming books|https://github.com/EbookFoundation/free-programming-books
-Book|Library Genesis|https://libgen.is
-Book|Open Library|https://openlibrary.org
-Book|PDF Books Library|https://pdfbooksworld.com
-Book|The Architecture of Open Source Applications|https://aosabook.org
+Books|Awesome Books|https://github.com/learn-anything/books
+Books|Build Your Own X From Scratch Books|https://build-your-own.org
+Books|Digitale Bibliothek Book|https://dokumen.pub
+Books|Free eBooks - Project Gutenberg|https://gutenberg.org
+Books|Freely available programming books|https://github.com/EbookFoundation/free-programming-books
+Books|Library Genesis|https://libgen.is
+Books|Open Library|https://openlibrary.org
+Books|PDF Books Library|https://pdfbooksworld.com
+Books|The Architecture of Open Source Applications|https://aosabook.org
 Computer Graphics|Computer Graphics from Scratch|https://gabrielgambetta.com/computer-graphics-from-scratch
-Computer Graphics|DOCS.GL|https://docs.gl
+Computer Graphics|docs.gl|https://docs.gl
 Computer Graphics|Graphics Programming Compendium|https://graphicscompendium.com
 Computer Graphics|Learn OpenGL|https://learnopengl.com
 Computer Graphics|Scratchapixel|https://scratchapixel.com
+C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
 Data Structure and Algorithm|Advent of Code|https://adventofcode.com
 Data Structure and Algorithm|Algorithms for Competitive Programming|https://cp-algorithms.com
 Data Structure and Algorithm|CSES|https://cses.fi
@@ -39,9 +40,9 @@ English|English Grammar Today on Cambridge Dictionary|https://dictionary.cambrid
 English|IELTS Simon|https://ielts-simon.com
 English|Just The Word|https://just-the-word.com
 English|Lose The Very|https://losethevery.com
-English|OZDIC|https://ozdic.com
 English|Other, others, the other or another ? - Cambridge Grammar|https://dictionary.cambridge.org/grammar/british-grammar/other-others-the-other-or-another
 English|Oxford Learner's Dictionary|https://oxfordlearnersdictionaries.com
+English|OZDIC|https://ozdic.com
 English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-grammar/participle-clauses
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
@@ -53,8 +54,8 @@ Fun|A collection of looks in text|https://looks.wtf
 Fun|DiceBear|https://dicebear.com
 Fun|PlayPhrase|https://playphrase.me
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
-Game Development|Handmade Hero|https://guide.handmadehero.org
 Game Development|flecs: A fast entity component system (ECS) for C & C++|https://github.com/SanderMertens/flecs
+Game Development|Handmade Hero|https://guide.handmadehero.org
 Git|Get up to speed with partial clone and shallow clone|https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone
 Git|Pro Git|https://git-scm.com/book
 Go|100 Go Mistakes and How to Avoid Them|https://100go.co
@@ -76,33 +77,33 @@ Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practica
 Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
 Java|Virtual Threads|https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 Job Email|7 Email Templates That'll Help You Say "No" (Without Having to Overthink It)|https://themuse.com/advice/7-email-templates-thatll-help-you-say-no-without-having-to-overthink-it
-Job Email|How to Follow Up on a Job Application (With Templates)|https://themuse.com/advice/how-to-follow-up-on-a-job-application-an-email-template
-Job Email|How to Reject a Job Offer Politely (Email Samples)|https://thebalancemoney.com/job-rejection-email-message-examples-2063004
 Job Email|How to decline a job offer: Email template|https://seek.com.au/career-advice/article/job-not-right-for-you-decline-it-with-this-template
+Job Email|How to Follow Up on a Job Application (With Templates)|https://themuse.com/advice/how-to-follow-up-on-a-job-application-an-email-template
 Job Email|How to reject a job offer by phone or email (with example emails)|https://michaelpage.com.au/advice/career-advice/career-progression/how-to-reject-a-job-offer
+Job Email|How to Reject a Job Offer Politely (Email Samples)|https://thebalancemoney.com/job-rejection-email-message-examples-2063004
 Job Email|How to write a follow-up email after a job interview: Templates and tips|https://seek.com.au/career-advice/article/how-to-follow-up-on-your-application-or-interview-with-email-templates
 Job Interview|A curated awesome list of lists of interview questions|https://github.com/DopplerHQ/awesome-interview-questions
 Job Interview|Curated coding interview preparation materials for busy software engineers|https://github.com/yangshun/tech-interview-handbook
+Job Interview|Developer Roadmaps|https://roadmap.sh
 Job Interview|How to Answer "Why Should We Hire You" in an Interview?|https://geeksforgeeks.org/blogs/interview-question-why-should-we-hire-you
 Job Interview|NeetCode|https://neetcode.io
 Job Interview|Stop saying these 9 things in your interview|https://seek.com.au/career-advice/article/want-to-stand-out-in-an-interview-stop-saying-these-9-words
 Job Interview|Tech Interview Handbook|https://techinterviewhandbook.org
 Job Interview|The 32 smartest questions to ask at the end of every job interview|https://businessinsider.com/questions-to-ask-in-a-job-interview-2016-1
 Job Interview|What Did You Like Most About Your Job?|https://nijobs.com/careeradvice/what-did-you-like-most-about-your-job
-Job Interview|roadmap.sh|https://roadmap.sh
 Job Resume|A Guide to Choosing the Right Resume Tense|https://indeed.com/career-advice/resumes-cover-letters/resume-tense
 Job Resume|Getting a Gig: A Guide|https://github.com/cassidoo/getting-a-gig
 Job Resume|How to make a resume: Step-by-step guide with examples|https://seek.com.au/career-advice/article/how-to-make-a-resume
 Job Resume|How to write a resume in Australia: A step-by-step guide with examples|https://seek.com.au/career-advice/article/resume-cv
 Job Resume|Novoresume|https://novoresume.com
-Job Site|Australian Companies with Visa Sponsorship|https://github.com/geshan/au-companies-providing-work-visa-sponsorship
-Job Site|Awesome Remote Job|https://github.com/lukasz-madon/awesome-remote-job
-Job Site|Forage|https://theforage.com
-Job Site|Indie Hackers|https://indiehackers.com
-Job Site|We Work Remotely|https://weworkremotely.com
-Job Site|Wellfound|https://wellfound.com
-Job Site|arc()|https://arc.dev
-Job Site|levels.fyi|https://levels.fyi
+Job Sites|arc()|https://arc.dev
+Job Sites|Australian Companies with Visa Sponsorship|https://github.com/geshan/au-companies-providing-work-visa-sponsorship
+Job Sites|Awesome Remote Job|https://github.com/lukasz-madon/awesome-remote-job
+Job Sites|Forage|https://theforage.com
+Job Sites|Indie Hackers|https://indiehackers.com
+Job Sites|levels.fyi|https://levels.fyi
+Job Sites|We Work Remotely|https://weworkremotely.com
+Job Sites|Wellfound|https://wellfound.com
 Learn By Doing|0DE5|https://0de5.net
 Learn By Doing|Build your own X|https://github.com/codecrafters-io/build-your-own-x
 Learn By Doing|Challenging projects every programmer should try|https://austinhenley.com/blog/challengingprojects.html
@@ -119,11 +120,13 @@ Rust|Rust Embedded Drivers (RED)|https://red.implrust.com
 System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
-Tool|Globster|https://globster.xyz
+Tools|D2: Declarative Diagramming|https://d2lang.com
+Tools|Globster|https://globster.xyz
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
 TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
 TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
+TypeScript|pkgroll: Zero-config package bundler for Node.js + TypeScript|https://github.com/privatenumber/pkgroll
 TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
 TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
@@ -131,10 +134,13 @@ Vim/Neovim|Load launch.json debug configs even for JS based languages|https://re
 Vim/Neovim|Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
 Vim/Neovim|Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
-Web Development|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
-Web Development|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
-Web Development|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
-Web Development|Bulletproof React|https://github.com/alan2207/bulletproof-react
-Web Development|Just fucking use HTML|https://justfuckingusehtml.com
-Web Development|Open UI|https://open-ui.org
-Web Development|web.dev|https://web.dev
+Web Front-End|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
+Web Front-End|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
+Web Front-End|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
+Web Front-End|Bulletproof React|https://github.com/alan2207/bulletproof-react
+Web Front-End|Just fucking use HTML|https://justfuckingusehtml.com
+Web Front-End|Legend State|https://legendapp.com/open-source/state
+Web Front-End|Local-first Software|https://lofi.so
+Web Front-End|Open UI|https://open-ui.org
+Web Front-End|RxDB|https://rxdb.info
+Web Front-End|web.dev|https://web.dev
