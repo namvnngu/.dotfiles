@@ -157,7 +157,6 @@ command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
 " PLUGINS                                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 " netrw
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
