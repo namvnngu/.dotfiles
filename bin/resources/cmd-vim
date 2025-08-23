@@ -1,0 +1,2 @@
+vim install a plugin given URL: git clone --depth=1 --filter=blob:none <url> "$HOME/.vim/pack/plugins/start/$(basename <url>)"
+vim uninstall a plugin given name: rm -rf $(find "$HOME/.vim/pack/plugins/start" -mindepth 1 -maxdepth 1 -type d | fzf)

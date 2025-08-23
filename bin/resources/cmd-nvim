@@ -1,0 +1,2 @@
+nvim install a plugin given URL: git clone --depth=1 --filter=blob:none <url> "$HOME/.local/share/nvim/site/pack/plugins/start/$(basename <url>)"
+nvim uninstall a plugin given name: rm -rf $(find "$HOME/.local/share/nvim/site/pack/plugins/start" -mindepth 1 -maxdepth 1 -type d | fzf)

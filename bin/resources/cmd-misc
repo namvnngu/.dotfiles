@@ -1,1 +1,1 @@
-dtrace debug processes of bash script: sudo dtrace -n 'proc:::exec-success /progenyof($target)/ { trace(curpsinfo->pr_psargs); }' -c <path-to-script>
+misc dtrace debug processes of bash script: sudo dtrace -n 'proc:::exec-success /progenyof($target)/ { trace(curpsinfo->pr_psargs); }' -c <path-to-script>
