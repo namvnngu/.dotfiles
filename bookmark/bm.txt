@@ -19,7 +19,9 @@ Computer Graphics|docs.gl|https://docs.gl
 Computer Graphics|Graphics Programming Compendium|https://graphicscompendium.com
 Computer Graphics|Learn OpenGL|https://learnopengl.com
 Computer Graphics|Scratchapixel|https://scratchapixel.com
+C|Awesome C|https://github.com/oz123/awesome-c
 C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
+C|Sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 Data Structure and Algorithm|Advent of Code|https://adventofcode.com
 Data Structure and Algorithm|Algorithms for Competitive Programming|https://cp-algorithms.com
 Data Structure and Algorithm|CSES|https://cses.fi
@@ -120,8 +122,10 @@ Rust|Rust Embedded Drivers (RED)|https://red.implrust.com
 System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
+Tools|ANSI Escape Codes|https://ansi.tools
 Tools|D2: Declarative Diagramming|https://d2lang.com
 Tools|Globster|https://globster.xyz
+Tools|Syncthing|https://syncthing.net
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
 TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts

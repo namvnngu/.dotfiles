@@ -4,7 +4,7 @@
 # Description: The URL bookmark manager (bm)
 # License: The Unlicense
 # Date created: July 02, 2025
-# Date modified: July 20, 2025
+# Date modified: August 24, 2025
 
 # DESIGN COMMAND
 #
@@ -123,7 +123,7 @@ _add_bm() {
   local bookmarks=$(cat "${_bm_file}")
   bookmarks="${bookmarks}\n${bookmark}"
 
-  printf "${bookmarks}" | sort > "${_bm_file}"
+  printf "${bookmarks}" | sort -f > "${_bm_file}"
 }
 
 _open_bm() {
