@@ -4,7 +4,7 @@
 # Description: Find and copy something
 # License: The Unlicense
 # Date created: July 22, 2024
-# Date modified: May 16, 2025
+# Date modified: August 23, 2025
 
 fcp_dir="$DOTFILES_PATH/bin/resources"
 
@@ -19,10 +19,10 @@ fcp_file="$fcp_dir/fcp-$category"
 # Fuzzy search
 
 if [[ $# -eq 0 ]]; then
-  files=$(find "$fcp_dir" -maxdepth 1 -name "fcp-*")
-  selected=$(cat $files | fzf)
+  files=$(find "$fcp_dir" -maxdepth 1 -name "fcp-*" -exec cat {} '+')
+  selected=$(echo "$files" | fzf)
 elif [[ -e "$fcp_file" ]]; then
-  selected=$(cat "$fcp_file" | fzf)
+  selected=$(fzf < "$fcp_file")
 else
   echo "$fcp_file: No such file"
   exit 1
@@ -32,7 +32,7 @@ if [[ -z "$selected" ]]; then
   exit 1
 fi
 
-selected=$(echo "$selected" | sed "s/: .*$//")
+selected=${selected/%: */}
 
 # Copy
 
