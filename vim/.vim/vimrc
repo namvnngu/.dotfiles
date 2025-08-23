@@ -83,9 +83,6 @@ nnoremap <Leader>bs <Cmd>setlocal bt=nofile bh=wipe noswf<CR>
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-" Open file explorer
-nnoremap - <Cmd>Ex<CR>
-
 " Switch between C source and header file
 nnoremap <Leader>c <Cmd>e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
@@ -160,9 +157,10 @@ command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
 " PLUGINS                                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
 " netrw
-let g:netrw_liststyle = 1
-let g:netrw_sizestyle = "H"
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 " man page
 runtime ftplugin/man.vim
