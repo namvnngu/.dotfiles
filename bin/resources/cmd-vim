@@ -1,4 +1,4 @@
-vim install a plugin given URL: git clone --depth=1 --filter=blob:none <url> "$HOME/.vim/pack/plugins/start/$(basename <url>)"
-vim intall plugins given a file of plugins list: xargs -n1 -P8 -I{} sh -c 'git clone --depth=1 --filter=blob:none {} "$HOME/.vim/pack/plugins/start/$(basename {})"' < <file-path>
+vim install a plugin given a URL: git clone --depth=1 --filter=blob:none <url> "$HOME/.vim/pack/plugins/start/$(basename <url>)"
+vim intall plugins given a file of plugin URLs: xargs -n1 -P8 -I{} sh -c 'git clone --depth=1 --filter=blob:none {} "$HOME/.vim/pack/plugins/start/$(basename {})"' < <file-path>
 vim uninstall a plugin: rm -rf $(find "$HOME/.vim/pack/plugins/start" -mindepth 1 -maxdepth 1 -type d | fzf)
 vim unsintall all plugins: rm -rf "$HOME/.vim/pack/"
