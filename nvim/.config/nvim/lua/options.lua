@@ -1,4 +1,4 @@
-vim.cmd("syntax on")
+vim.cmd("syntax off")
 vim.cmd("colorscheme wildcharm")
 vim.cmd("filetype plugin indent on")
 

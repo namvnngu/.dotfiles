@@ -2,7 +2,7 @@
 " OPTIONS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax on
+syntax off
 colorscheme wildcharm
 filetype plugin indent on
 
