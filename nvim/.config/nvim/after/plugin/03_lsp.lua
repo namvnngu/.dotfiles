@@ -122,6 +122,15 @@ end
 if vim.fn.executable("vscode-eslint-language-server") == 1 then
   vim.lsp.enable("eslint")
 end
+if vim.fn.executable("vscode-css-language-server") == 1 then
+  vim.lsp.enable("cssls")
+end
+if vim.fn.executable("vscode-html-language-server") == 1 then
+  vim.lsp.enable("html")
+end
+if vim.fn.executable("vscode-json-language-server") == 1 then
+  vim.lsp.enable("jsonls")
+end
 
 if vim.fn.executable("biome") == 1 then
   vim.lsp.enable("biome")
@@ -142,14 +151,6 @@ if vim.fn.executable("csharp-ls") == 1 then
   if status then
     csharpls_extended.buf_read_cmd_bind()
   end
-end
-
-if vim.fn.executable("vscode-css-language-server") == 1 then
-  vim.lsp.enable("cssls")
-end
-
-if vim.fn.executable("vscode-html-language-server") == 1 then
-  vim.lsp.enable("html")
 end
 
 if vim.fn.executable("tinymist") == 1 then
