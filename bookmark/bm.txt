@@ -23,6 +23,7 @@ C|Awesome C|https://github.com/oz123/awesome-c
 C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
 C|Sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 Data Structure and Algorithm|Advent of Code|https://adventofcode.com
+Data Structure and Algorithm|Algorithms 101|https://artofcode.org/algorithms-101
 Data Structure and Algorithm|Algorithms for Competitive Programming|https://cp-algorithms.com
 Data Structure and Algorithm|CSES|https://cses.fi
 Data Structure and Algorithm|Data Structures, Explained Simply|https://youtu.be/KwBuV7YZido
@@ -69,12 +70,15 @@ Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-go
 Go|You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_bleh
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
+JavaScript|Anime.js: JavaScript animation engine|https://animejs.com
 JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
 JavaScript|JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
+JavaScript|Secrets of the act(...) api|https://github.com/threepointone/react-act-examples/blob/master/sync.md
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
 JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
 JavaScript|What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
+JavaScript|You Don't Need Lodash Underscore|https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
 Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
 Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
 Java|Virtual Threads|https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
@@ -110,6 +114,7 @@ Learn By Doing|0DE5|https://0de5.net
 Learn By Doing|Build your own X|https://github.com/codecrafters-io/build-your-own-x
 Learn By Doing|Challenging projects every programmer should try|https://austinhenley.com/blog/challengingprojects.html
 Learn By Doing|Project Based Learning|https://github.com/practical-tutorials/project-based-learning
+Miscellaneous|Moonpig Gift Shop|https://moonpig.com
 Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
 Operating System|Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
 Programming|0DE5|https://0de5.net
@@ -127,12 +132,16 @@ Tools|D2: Declarative Diagramming|https://d2lang.com
 Tools|Globster|https://globster.xyz
 Tools|Syncthing|https://syncthing.net
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
+TypeScript|es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash|https://github.com/toss/es-toolkit
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
 TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
 TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
 TypeScript|pkgroll: Zero-config package bundler for Node.js + TypeScript|https://github.com/privatenumber/pkgroll
+TypeScript|radashi: The modern, community-first TypeScript toolkit with all of the fast, readable, and minimal utility functions|https://github.com/radashi-org/radashi
 TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
 TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
+TypeScript|tsdown: The elegant bundler for libraries powered by Rolldown|https://github.com/rolldown/tsdown
+TypeScript|tsup: The simplest and fastest way to bundle your TypeScript libraries|https://github.com/egoist/tsup
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
 Vim/Neovim|Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
 Vim/Neovim|Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
