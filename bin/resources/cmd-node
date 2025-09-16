@@ -1,0 +1,5 @@
+node expose the gc extension: node --expose-gc <file-path>
+node activate inspector on host:port and break at start of user script: node --inspect-brk <file-path>
+node use heap snapshots to detect Jest uncollected objects: node --inspect-brk ./node_modules/.bin/jest --runInBand
+node track Jest memory consumption in real-time: node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage
+node both track Jest memory consumption and use head snapshots to detect Jest uncollected objects: node --inspect-brk --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage
