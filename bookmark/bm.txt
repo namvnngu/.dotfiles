@@ -59,6 +59,7 @@ Fun|PlayPhrase|https://playphrase.me
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
 Game Development|flecs: A fast entity component system (ECS) for C & C++|https://github.com/SanderMertens/flecs
 Game Development|Handmade Hero|https://guide.handmadehero.org
+Git|Bring your monorepo down to size with sparse-checkout|https://github.blog/open-source/git/bring-your-monorepo-down-to-size-with-sparse-checkout
 Git|Get up to speed with partial clone and shallow clone|https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone
 Git|Pro Git|https://git-scm.com/book
 Go|100 Go Mistakes and How to Avoid Them|https://100go.co
@@ -70,10 +71,14 @@ Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-go
 Go|You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_bleh
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
+JavaScript|An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
 JavaScript|Anime.js: JavaScript animation engine|https://animejs.com
 JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
 JavaScript|JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
+JavaScript|Jest: Finding the cause of a memory leak in Jest tests|https://making.close.com/posts/finding-the-cause-of-a-memory-leak-in-jest
+JavaScript|Jest: Jest leaks memory from required modules with closures over imports|https://github.com/jestjs/jest/issues/6814
+JavaScript|Jest: Your Jest Tests are Leaking Memory|https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html
 JavaScript|Secrets of the act(...) api|https://github.com/threepointone/react-act-examples/blob/master/sync.md
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
 JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
