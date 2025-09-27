@@ -47,6 +47,8 @@ English|Other, others, the other or another ? - Cambridge Grammar|https://dictio
 English|Oxford Learner's Dictionary|https://oxfordlearnersdictionaries.com
 English|OZDIC|https://ozdic.com
 English|Participle Clauses|https://learnenglish.britishcouncil.org/grammar/c1-grammar/participle-clauses
+English|The definite article: 'the'|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/definite-article
+English|The indefinite article: 'a' and 'an'|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/indefinite-article
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
 Finance|Contracts for difference (CFDs)|https://moneysmart.gov.au/investment-warnings/contracts-for-difference-cfds
@@ -119,6 +121,7 @@ Learn By Doing|0DE5|https://0de5.net
 Learn By Doing|Build your own X|https://github.com/codecrafters-io/build-your-own-x
 Learn By Doing|Challenging projects every programmer should try|https://austinhenley.com/blog/challengingprojects.html
 Learn By Doing|Project Based Learning|https://github.com/practical-tutorials/project-based-learning
+Miscellaneous|Ambiphone|https://ambiph.one
 Miscellaneous|Moonpig Gift Shop|https://moonpig.com
 Network Programming|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
 Operating System|Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
