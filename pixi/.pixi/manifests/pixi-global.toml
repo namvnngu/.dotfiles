@@ -3,7 +3,7 @@ version = 1
 [envs.nodejs]
 channels = ["conda-forge"]
 dependencies = { nodejs = "*" }
-exposed = { corepack = "corepack", node = "node", npm = "npm", npx = "npx", pnpm = "pnpm" }
+exposed = { corepack = "corepack", node = "node", npm = "npm", npx = "npx", pnpm = "pnpm" , pnpx = "pnpx" }
 
 [envs.typescript-language-server]
 channels = ["conda-forge"]
