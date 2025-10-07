@@ -1,3 +1,4 @@
+Australia|Aussiecitizenshiptest.com|https://aussiecitizenshiptest.com
 Australia|Certified copies of original documents|https://justice.vic.gov.au/certifiedcopies
 Australia|First home super saver scheme|https://ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/first-home-super-saver-scheme
 Bash|Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
@@ -22,6 +23,7 @@ Computer Graphics|Scratchapixel|https://scratchapixel.com
 C|Awesome C|https://github.com/oz123/awesome-c
 C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
 C|Sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
+C|zpl: pushing the boundaries of simplicity|https://github.com/zpl-c
 Data Structure and Algorithm|Advent of Code|https://adventofcode.com
 Data Structure and Algorithm|Algorithms 101|https://artofcode.org/algorithms-101
 Data Structure and Algorithm|Algorithms for Competitive Programming|https://cp-algorithms.com
@@ -38,6 +40,7 @@ Data Structure and Algorithm|USFCA Data Structure and Algorithm Visualizations|h
 Data Structure and Algorithm|VisuAlgo|https://visualgo.net
 DevOps|Podman vs. Docker: Containerization Tools Comparison|https://spacelift.io/blog/podman-vs-docker
 English|Cambridge Dictionary|https://dictionary.cambridge.org
+English|Come|https://dictionary.cambridge.org/grammar/british-grammar/arrive
 English|Conditionals: if - Grammar - Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar/conditionals-if
 English|English Grammar Today on Cambridge Dictionary|https://dictionary.cambridge.org/grammar/british-grammar
 English|IELTS Simon|https://ielts-simon.com
@@ -51,6 +54,7 @@ English|The definite article: 'the'|https://learnenglish.britishcouncil.org/gram
 English|The indefinite article: 'a' and 'an'|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/indefinite-article
 English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
+English|Why is it "arrived in" and not "arrived to" or "arrived at" in the following sentence?|https://ell.stackexchange.com/a/168170
 Finance|Contracts for difference (CFDs)|https://moneysmart.gov.au/investment-warnings/contracts-for-difference-cfds
 Finance|Income-based investing strategies|https://fool.com.au/investing-education/strategies/income
 Finance|Lazy Koala Investing|https://lazykoalainvesting.com
@@ -138,6 +142,7 @@ System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-ar
 Tools|ANSI Escape Codes|https://ansi.tools
 Tools|D2: Declarative Diagramming|https://d2lang.com
 Tools|Globster|https://globster.xyz
+Tools|markmap|https://markmap.js.org
 Tools|Syncthing|https://syncthing.net
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
 TypeScript|es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash|https://github.com/toss/es-toolkit
