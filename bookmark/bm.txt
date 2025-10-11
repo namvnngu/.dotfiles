@@ -89,6 +89,7 @@ JavaScript|Secrets of the act(...) api|https://github.com/threepointone/react-ac
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
 JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
 JavaScript|What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
+JavaScript|Why I stopped using snapshot testing with Jest|https://medium.com/@tomgold_48918/why-i-stopped-using-snapshot-testing-with-jest-3279fe41ffb2
 JavaScript|You Don't Need Lodash Underscore|https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
 Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
 Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
@@ -145,7 +146,7 @@ Tools|Globster|https://globster.xyz
 Tools|markmap|https://markmap.js.org
 Tools|Syncthing|https://syncthing.net
 TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
-TypeScript|es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash|https://github.com/toss/es-toolkit
+TypeScript|es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97maller—a major upgrade to lodash|https://github.com/toss/es-toolkit
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
 TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
 TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
@@ -155,6 +156,7 @@ TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, w
 TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
 TypeScript|tsdown: The elegant bundler for libraries powered by Rolldown|https://github.com/rolldown/tsdown
 TypeScript|tsup: The simplest and fastest way to bundle your TypeScript libraries|https://github.com/egoist/tsup
+TypeScript|TypeScript project references|https://moonrepo.dev/docs/guides/javascript/typescript-project-refs
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
 Vim/Neovim|Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
 Vim/Neovim|Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
