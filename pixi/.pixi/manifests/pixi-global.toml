@@ -84,3 +84,13 @@ exposed = { pkgconf = "pkgconf", bomtool = "bomtool" }
 channels = ["conda-forge"]
 dependencies = { cmake = "*" }
 exposed = { ccmake = "ccmake", cmake = "cmake", cpack = "cpack", ctest = "ctest" }
+
+[envs.rattler-build]
+channels = ["conda-forge"]
+dependencies = { rattler-build = "*" }
+exposed = { rattler-build = "rattler-build" }
+
+[envs.vscode-langservers-extracted]
+channels = ["conda-forge", "~/.pixi/forges/nam-forge/artifacts"]
+dependencies = { vscode-langservers-extracted = "*" }
+exposed = { vscode-css-language-server = "vscode-css-language-server", vscode-eslint-language-server = "vscode-eslint-language-server", vscode-html-language-server = "vscode-html-language-server", vscode-json-language-server = "vscode-json-language-server", vscode-markdown-language-server = "vscode-markdown-language-server" }
