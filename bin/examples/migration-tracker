@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+if [[ -n "$(git status -s)" ]]; then
+  echo "Error: Commit changes before starting checking"
+  exit 1
+fi
+
+current_branch=$(git branch --show-current)
+
+git checkout master
+git pull origin master
+
+tests=$(find projects/common -name '*.spec.tsx' -or -name '*.spec.ts' | sort)
+tests_count=$(echo "${tests}" | wc -l)
+
+git checkout "${current_branch}"
+git pull origin master
+
+processed_tests=$(git diff --diff-filter=a --name-only master -- 'projects/common/*.spec.tsx' 'projects/common/*.spec.ts' | sort)
+processed_tests_count=$(echo "${processed_tests}" | wc -l)
+
+unprocessed_tests=$(grep -xvFf <(echo "${processed_tests}") <(echo "${tests}"))
+unprocessed_tests_count=0
+if [[ -n "${processed_tests}" ]]; then
+	unprocessed_tests_count=$(echo "${unprocessed_tests}" | wc -l)
+fi
+echo "${unprocessed_tests}" > test-unprocessed.txt
+
+echo "===================="
+echo "Total:      ${tests_count}"
+echo "Processed:  ${processed_tests_count}"
+echo "Unprocssed: ${unprocessed_tests_count}"
+if [[ "$((processed_tests_count + unprocessed_tests_count))" -eq "${tests_count}" ]]; then
+	echo "Result:         GOOD"
+else
+	echo "Result:          BAD"
+fi
