@@ -110,8 +110,8 @@ Job Email|How to reject a job offer by phone or email (with example emails)|http
 Job Email|How to Reject a Job Offer Politely (Email Samples)|https://thebalancemoney.com/job-rejection-email-message-examples-2063004
 Job Email|How to write a follow-up email after a job interview: Templates and tips|https://seek.com.au/career-advice/article/how-to-follow-up-on-your-application-or-interview-with-email-templates
 Job Interview|A curated awesome list of lists of interview questions|https://github.com/DopplerHQ/awesome-interview-questions
-Job Interview|Curated coding interview preparation materials for busy software engineers|https://github.com/yangshun/tech-interview-handbook
 Job Interview|Developer Roadmaps|https://roadmap.sh
+Job Interview|HiredInTech|https://hiredintech.com
 Job Interview|How to Answer "Why Should We Hire You" in an Interview?|https://geeksforgeeks.org/blogs/interview-question-why-should-we-hire-you
 Job Interview|NeetCode|https://neetcode.io
 Job Interview|Stop saying these 9 things in your interview|https://seek.com.au/career-advice/article/want-to-stand-out-in-an-interview-stop-saying-these-9-words
@@ -146,8 +146,10 @@ Rust|A Game Boy Emulator|https://github.com/smparsons/retroboy
 Rust|Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
 Rust|Rust Embedded Drivers (RED)|https://red.implrust.com
+Security|Web Security Basics|https://github.com/vasanthk/web-security-basics
 System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
+System Design|The System Design Primer|https://github.com/donnemartin/system-design-primer
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
 Tools|ANSI Escape Codes|https://ansi.tools
 Tools|D2: Declarative Diagramming|https://d2lang.com
@@ -177,6 +179,7 @@ Web Front-End|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
 Web Front-End|Bulletproof React|https://github.com/alan2207/bulletproof-react
 Web Front-End|Component testing|https://storybook.js.org/blog/component-testing
 Web Front-End|Fine-Grained Reactivity Fundamentals Series' Articles|https://dev.to/ryansolid/series/13735
+Web Front-End|How Web Works|https://github.com/vasanthk/how-web-works
 Web Front-End|Just fucking use HTML|https://justfuckingusehtml.com
 Web Front-End|Legend State|https://legendapp.com/open-source/state
 Web Front-End|Local-first Software|https://lofi.so
