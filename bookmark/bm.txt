@@ -20,6 +20,12 @@ Computer Graphics|docs.gl|https://docs.gl
 Computer Graphics|Graphics Programming Compendium|https://graphicscompendium.com
 Computer Graphics|Learn OpenGL|https://learnopengl.com
 Computer Graphics|Scratchapixel|https://scratchapixel.com
+Computer Graphics|Shadertoy|https://shadertoy.com
+Computer Graphics|The Book of Shaders Editor|http://editor.thebookofshaders.com
+Computer Graphics|The Book of Shaders|https://thebookofshaders.com
+CSS|Every Layout|https://every-layout.dev
+CSS|The Height Enigma|https://joshwcomeau.com/css/height-enigma
+CSS|Transitioning to Height Auto (Two Ways)|https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto
 C|Awesome C|https://github.com/oz123/awesome-c
 C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
 C|Sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
@@ -56,6 +62,7 @@ English|Tra Cau|https://tracau.vn
 English|Verbs in time clauses and 'if' clauses|https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/verbs-time-clauses-if-clauses
 English|Why is it "arrived in" and not "arrived to" or "arrived at" in the following sentence?|https://ell.stackexchange.com/a/168170
 Finance|Contracts for difference (CFDs)|https://moneysmart.gov.au/investment-warnings/contracts-for-difference-cfds
+Finance|Debit cards vs eftpos: what's the difference?|https://mobiletransaction.org/au/debit-cards-vs-eftpos
 Finance|Income-based investing strategies|https://fool.com.au/investing-education/strategies/income
 Finance|Lazy Koala Investing|https://lazykoalainvesting.com
 Finance|Passive Investing Australia|https://passiveinvestingaustralia.com
@@ -79,6 +86,8 @@ Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 JavaScript|An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
 JavaScript|Anime.js: JavaScript animation engine|https://animejs.com
+JavaScript|chokidar: Minimal and efficient cross-platform file watching library|
+JavaScript|chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
 JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
 JavaScript|JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
@@ -166,9 +175,12 @@ Web Front-End|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendl
 Web Front-End|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
 Web Front-End|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
 Web Front-End|Bulletproof React|https://github.com/alan2207/bulletproof-react
+Web Front-End|Component testing|https://storybook.js.org/blog/component-testing
+Web Front-End|Fine-Grained Reactivity Fundamentals Series' Articles|https://dev.to/ryansolid/series/13735
 Web Front-End|Just fucking use HTML|https://justfuckingusehtml.com
 Web Front-End|Legend State|https://legendapp.com/open-source/state
 Web Front-End|Local-first Software|https://lofi.so
 Web Front-End|Open UI|https://open-ui.org
 Web Front-End|RxDB|https://rxdb.info
 Web Front-End|web.dev|https://web.dev
+Web Front-End|Why you should test with user-event|https://ph-fritsche.github.io/blog/post/why-userevent
