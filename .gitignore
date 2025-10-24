@@ -16,5 +16,6 @@ w3m/.w3m/**/*
 
 # vim
 vim/.vim/**/*
-!vim/.vim/vimrc
+!vim/.vim/colors
 !vim/.vim/plugins.txt
+!vim/.vim/vimrc

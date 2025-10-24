@@ -1,5 +1,4 @@
-vim.cmd("syntax off")
-vim.cmd("colorscheme wildcharm")
+vim.cmd("colorscheme paige")
 vim.cmd("filetype plugin indent on")
 
 vim.g.mapleader = " "
