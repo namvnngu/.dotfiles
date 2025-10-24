@@ -1,7 +1,11 @@
+vim.cmd("syntax on")
+vim.o.termguicolors = false 
+vim.o.background = vim.env.THEME_MODE
 vim.cmd("colorscheme paige")
-vim.cmd("filetype plugin indent on")
 
 vim.g.mapleader = " "
+
+vim.cmd("filetype plugin indent on")
 
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
@@ -9,7 +13,6 @@ vim.o.smarttab = true
 vim.o.softtabstop = 2
 vim.o.tabstop = 4
 
-vim.o.background = vim.env.THEME_MODE
 vim.o.breakindent = true
 vim.o.clipboard = "unnamed,unnamedplus"
 vim.o.colorcolumn = "80"
@@ -33,7 +36,6 @@ vim.o.signcolumn = "yes"
 vim.o.smartcase = true
 vim.o.smoothscroll = true
 vim.o.swapfile = false
-vim.o.termguicolors = false
 vim.o.undolevels = 10000
 vim.o.virtualedit = "block"
 vim.o.wildmode = "longest:full"

@@ -2,11 +2,14 @@
 " OPTIONS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+syntax on
+set notermguicolors
+let &background = $THEME_MODE
 colorscheme paige
-filetype plugin indent on
 
 let mapleader = ' '
-let &background = $THEME_MODE
+
+filetype plugin indent on
 
 set shiftwidth=2
 set expandtab
@@ -25,7 +28,6 @@ set hlsearch
 set incsearch
 set laststatus=2
 set noswapfile
-set notermguicolors
 set nowrap
 set number
 set relativenumber

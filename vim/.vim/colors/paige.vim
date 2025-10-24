@@ -55,39 +55,39 @@ function! <SID>PaigeHighlight(group, type)
 endfunction
 
 " Types -> [ ctermbg, ctermfg, cterm, guibg, guifg, gui ]
-let s:default_text            = [ '', '232',          '', '#ffffff', '#080808',          '' ]
-let s:default_text_bold       = [ '', '232',      'bold', '#ffffff', '#080808',      'bold' ]
-let s:default_text_italic     = [ '', '232',    'italic', '#ffffff', '#080808',    'italic' ]
-let s:default_text_underline  = [ '', '232', 'underline', '#ffffff', '#080808', 'underline' ]
+let s:default_text            = [ 'NONE', '232',          '',    'NONE', '#080808',          '' ]
+let s:default_text_bold       = [ 'NONE', '232',      'bold',    'NONE', '#080808',      'bold' ]
+let s:default_text_italic     = [ 'NONE', '232',    'italic',    'NONE', '#080808',    'italic' ]
+let s:default_text_underline  = [ 'NONE', '232', 'underline',    'NONE', '#080808', 'underline' ]
 
-let s:alt_fg_text             = [ '', '245',          '', '#ffffff', '#8a8a8a',          '' ]
-let s:alt_fg_text_none        = [ '', '245',      'none', '#ffffff', '#8a8a8a',      'none' ]
-let s:alt_fg_text_2           = [ '', '248',          '', '#ffffff', '#a8a8a8',          '' ]
+let s:alt_fg_text             = [ 'NONE', '245',          '',    'NONE', '#8a8a8a',          '' ]
+let s:alt_fg_text_none        = [ 'NONE', '245',      'NONE',    'NONE', '#8a8a8a',      'NONE' ]
+let s:alt_fg_text_2           = [ 'NONE', '248',          '',    'NONE', '#a8a8a8',          '' ]
 
-let s:alt_bg_text             = [ '254', '232',          '', '#e4e4e4', '#080808',          '' ]
-let s:alt_bg_text_bold        = [ '254', '232',      'bold', '#e4e4e4', '#080808',      'bold' ]
-let s:alt_bg_text_italic      = [ '254', '232',    'italic', '#e4e4e4', '#080808',    'italic' ]
-let s:alt_bg_text_underline   = [ '254', '232', 'underline', '#e4e4e4', '#080808', 'underline' ]
-let s:alt_bg_text_no_override = [ '254',    '',      'none', '#e4e4e4',        '',      'none' ]
-let s:alt_bg_text_none        = [ '254', '232',      'none', '#e4e4e4', '#080808',      'none' ]
-let s:alt_bg_no_fg            = [ '254', '254',      'none', '#e4e4e4', '#e4e4e4',      'none' ]
+let s:alt_bg_text             = [  '254', '232',          '', '#e4e4e4', '#080808',          '' ]
+let s:alt_bg_text_bold        = [  '254', '232',      'bold', '#e4e4e4', '#080808',      'bold' ]
+let s:alt_bg_text_italic      = [  '254', '232',    'italic', '#e4e4e4', '#080808',    'italic' ]
+let s:alt_bg_text_underline   = [  '254', '232', 'underline', '#e4e4e4', '#080808', 'underline' ]
+let s:alt_bg_text_no_override = [  '254',    '',      'NONE', '#e4e4e4',        '',      'NONE' ]
+let s:alt_bg_text_none        = [  '254', '232',      'NONE', '#e4e4e4', '#080808',      'NONE' ]
+let s:alt_bg_no_fg            = [  '254', '254',      'NONE', '#e4e4e4', '#e4e4e4',      'NONE' ]
 
-let s:green_bg_text           = [ '148', '232',          '', '#afd700', '#080808',          '' ]
-let s:red_bg_text             = [ '197', '232',          '', '#ff005f', '#080808',          '' ]
-let s:yellow_bg_text          = [ '220', '232',          '', '#ffd700', '#080808',          '' ]
-let s:blue_bg_text            = [  '39', '232',          '', '#00afff', '#080808',          '' ]
-let s:purple_bg_text_none     = [ '141', '232',      'none', '#af87ff', '#080808',      'none' ]
-let s:alt_purple_bg_text_none = [ '139', '232',      'none', '#af87af', '#080808',      'none' ]
+let s:green_bg_text           = [  '148', '232',          '', '#afd700', '#080808',          '' ]
+let s:red_bg_text             = [  '197', '232',          '', '#ff005f', '#080808',          '' ]
+let s:yellow_bg_text          = [  '220', '232',          '', '#ffd700', '#080808',          '' ]
+let s:blue_bg_text            = [   '39', '232',          '', '#00afff', '#080808',          '' ]
+let s:purple_bg_text_none     = [  '141', '232',      'NONE', '#af87ff', '#080808',      'NONE' ]
+let s:alt_purple_bg_text_none = [  '139', '232',      'NONE', '#af87af', '#080808',      'NONE' ]
 
-let s:red_fg_text             = [ '231', '196',          '', '#ffffff', '#ff0000',          '' ]
-let s:green_fg_text           = [ '231',  '34',          '', '#ffffff', '#00af00',          '' ]
-let s:blue_fg_text            = [ '231',  '21',          '', '#ffffff', '#0000ff',          '' ]
-let s:blue_fg_text_underline  = [ '231',  '21', 'underline', '#ffffff', '#0000ff', 'underline' ]
+let s:red_fg_text             = [  '231', '196',          '', '#ffffff', '#ff0000',          '' ]
+let s:green_fg_text           = [  '231',  '34',          '', '#ffffff', '#00af00',          '' ]
+let s:blue_fg_text            = [  '231',  '21',          '', '#ffffff', '#0000ff',          '' ]
+let s:blue_fg_text_underline  = [  '231',  '21', 'underline', '#ffffff', '#0000ff', 'underline' ]
 
-let s:menu_select             = [ '70 ', '254',      'bold', '#5faf00', '#ffffff',          '' ]
-let s:menu_no_select          = [ '240', '231',          '', '#585858', '#ffffff',          '' ]
-let s:menu_scroll_bar         = [ '240', '240',          '', '#585858', '#585858',          '' ]
-let s:menu_scroll_bar_thumb   = [ '202', '202',          '', '#585858', '#ff5f00',          '' ]
+let s:menu_select             = [   '70', '254',      'bold', '#5faf00', '#ffffff',          '' ]
+let s:menu_no_select          = [  '240', '231',          '', '#585858', '#ffffff',          '' ]
+let s:menu_scroll_bar         = [  '240', '240',          '', '#585858', '#585858',          '' ]
+let s:menu_scroll_bar_thumb   = [  '202', '202',          '', '#585858', '#ff5f00',          '' ]
 
 " UI
 call <sid>PaigeHighlight('Normal',           s:default_text)
@@ -127,6 +127,7 @@ call <sid>PaigeHighlight('WarningMsg',       s:yellow_bg_text)
 call <sid>PaigeHighlight('DiffChange',  s:yellow_bg_text)
 call <sid>PaigeHighlight('DiffAdd',     s:green_bg_text)
 call <sid>PaigeHighlight('DiffDelete',  s:red_bg_text)
+call <sid>PaigeHighlight('DiffText',    s:blue_fg_text)
 call <sid>PaigeHighlight('diffAdded',   s:green_fg_text)
 call <sid>PaigeHighlight('diffRemoved', s:red_fg_text)
 call <sid>PaigeHighlight('diffLine',    s:blue_fg_text)
@@ -165,6 +166,8 @@ call <sid>PaigeHighlight('Label',       s:default_text_underline)
 call <sid>PaigeHighlight('Constant',    s:default_text)
 call <sid>PaigeHighlight('Pointer',     s:default_text)
 call <sid>PaigeHighlight('Delimiter',   s:default_text)
+call <sid>PaigeHighlight('String',      s:default_text)
+call <sid>PaigeHighlight('Function',    s:default_text)
 
 " HTML
 call <sid>PaigeHighlight('htmlTag',            s:default_text_bold)
