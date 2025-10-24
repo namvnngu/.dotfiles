@@ -54,14 +54,14 @@ function! <SID>PaigeHighlight(group, type)
 endfunction
 
 " Types -> [ ctermbg, ctermfg, cterm, guibg, guifg, gui ]
-let s:default_text            = [ '231', '232',          '', '#ffffff', '#080808',          '' ]
-let s:default_text_bold       = [ '231', '232',      'bold', '#ffffff', '#080808',      'bold' ]
-let s:default_text_italic     = [ '231', '232',    'italic', '#ffffff', '#080808',    'italic' ]
-let s:default_text_underline  = [ '231', '232', 'underline', '#ffffff', '#080808', 'underline' ]
+let s:default_text            = [ '', '232',          '', '#ffffff', '#080808',          '' ]
+let s:default_text_bold       = [ '', '232',      'bold', '#ffffff', '#080808',      'bold' ]
+let s:default_text_italic     = [ '', '232',    'italic', '#ffffff', '#080808',    'italic' ]
+let s:default_text_underline  = [ '', '232', 'underline', '#ffffff', '#080808', 'underline' ]
 
-let s:alt_fg_text             = [ '231', '245',          '', '#ffffff', '#8a8a8a',          '' ]
-let s:alt_fg_text_none        = [ '231', '245',      'none', '#ffffff', '#8a8a8a',      'none' ]
-let s:alt_fg_text_2           = [ '231', '248',          '', '#ffffff', '#a8a8a8',          '' ]
+let s:alt_fg_text             = [ '', '245',          '', '#ffffff', '#8a8a8a',          '' ]
+let s:alt_fg_text_none        = [ '', '245',      'none', '#ffffff', '#8a8a8a',      'none' ]
+let s:alt_fg_text_2           = [ '', '248',          '', '#ffffff', '#a8a8a8',          '' ]
 
 let s:alt_bg_text             = [ '254', '232',          '', '#e4e4e4', '#080808',          '' ]
 let s:alt_bg_text_bold        = [ '254', '232',      'bold', '#e4e4e4', '#080808',      'bold' ]
@@ -83,7 +83,7 @@ let s:green_fg_text           = [ '231',  '34',          '', '#ffffff', '#00af00
 let s:blue_fg_text            = [ '231',  '21',          '', '#ffffff', '#0000ff',          '' ]
 let s:blue_fg_text_underline  = [ '231',  '21', 'underline', '#ffffff', '#0000ff', 'underline' ]
 
-let s:menu_select             = [ '70 ', '231',      'bold', '#5faf00', '#ffffff',          '' ]
+let s:menu_select             = [ '70 ', '254',      'bold', '#5faf00', '#ffffff',          '' ]
 let s:menu_no_select          = [ '240', '231',          '', '#585858', '#ffffff',          '' ]
 let s:menu_scroll_bar         = [ '240', '240',          '', '#585858', '#585858',          '' ]
 let s:menu_scroll_bar_thumb   = [ '202', '202',          '', '#585858', '#ff5f00',          '' ]
