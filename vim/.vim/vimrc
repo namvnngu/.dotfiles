@@ -2,8 +2,7 @@
 " OPTIONS                                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax off
-colorscheme wildcharm
+colorscheme paige
 filetype plugin indent on
 
 let mapleader = ' '
