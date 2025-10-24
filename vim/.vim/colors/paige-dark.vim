@@ -10,6 +10,7 @@
 " File:       paige-dark.vim
 " Maintainer: Leon Henrik Plickat <leonhenrik.plickat@stud.uni-goettingen.de>
 " License:    GPLv3
+" Source:     https://github.com/Leon-Plickat/paige
 
 if !has('gui_running') && &t_Co < 256
 	finish
