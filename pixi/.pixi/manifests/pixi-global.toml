@@ -91,6 +91,61 @@ dependencies = { rattler-build = "*" }
 exposed = { rattler-build = "rattler-build" }
 
 [envs.vscode-langservers-extracted]
-channels = ["conda-forge", "~/.pixi/forges/nam-forge/artifacts"]
+channels = ["conda-forge"]
 dependencies = { vscode-langservers-extracted = "*" }
 exposed = { vscode-css-language-server = "vscode-css-language-server", vscode-eslint-language-server = "vscode-eslint-language-server", vscode-html-language-server = "vscode-html-language-server", vscode-json-language-server = "vscode-json-language-server", vscode-markdown-language-server = "vscode-markdown-language-server" }
+
+[envs.fzf]
+channels = ["conda-forge"]
+dependencies = { fzf = "*" }
+exposed = { fzf = "fzf" }
+
+[envs.htop]
+channels = ["conda-forge"]
+dependencies = { htop = "*" }
+exposed = { htop = "htop" }
+
+[envs.hyperfine]
+channels = ["conda-forge"]
+dependencies = { hyperfine = "*" }
+exposed = { hyperfine = "hyperfine" }
+
+[envs.nvim]
+channels = ["conda-forge"]
+dependencies = { nvim = "*" }
+exposed = { nvim = "nvim" }
+
+[envs.pandoc]
+channels = ["conda-forge"]
+dependencies = { pandoc = "*" }
+exposed = { pandoc = "pandoc", pandoc-lua = "pandoc-lua", pandoc-server = "pandoc-server" }
+
+[envs.ripgrep]
+channels = ["conda-forge"]
+dependencies = { ripgrep = "*" }
+exposed = { rg = "rg" }
+
+[envs.stow]
+channels = ["conda-forge"]
+dependencies = { stow = "*" }
+exposed = { chkstow = "chkstow", stow = "stow" }
+
+[envs.tldr]
+channels = ["conda-forge"]
+dependencies = { tldr = "*" }
+exposed = { tldr = "tldr" }
+
+[envs.tmux]
+channels = ["conda-forge"]
+dependencies = { tmux = "*" }
+exposed = { tmux = "tmux" }
+
+[envs.universal-ctags]
+channels = ["conda-forge"]
+dependencies = { universal-ctags = "*" }
+exposed = { ctags = "ctags", optscript = "optscript", readtags = "readtags" }
+
+[envs.watchexec]
+channels = ["conda-forge"]
+dependencies = { watchexec = "*" }
+exposed = { watchexec = "watchexec" }
