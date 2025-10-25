@@ -1,1 +1,5 @@
 misc dtrace debug processes of bash script: sudo dtrace -n 'proc:::exec-success /progenyof($target)/ { trace(curpsinfo->pr_psargs); }' -c <path-to-script>
+misc check the weather: curl 'wttr.in/<location>'
+misc check the weather without colros: curl 'wttr.in/<location>?T'
+misc check the weather with data rich output: curl 'wttr.in/<location>?format=v2'
+misc help for checking the weather: curl 'wttr.in/:help'

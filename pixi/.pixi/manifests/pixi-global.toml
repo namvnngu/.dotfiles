@@ -149,3 +149,28 @@ exposed = { ctags = "ctags", optscript = "optscript", readtags = "readtags" }
 channels = ["conda-forge"]
 dependencies = { watchexec = "*" }
 exposed = { watchexec = "watchexec" }
+
+[envs.ttyd]
+channels = ["conda-forge"]
+dependencies = { ttyd = "*" }
+exposed = { ttyd = "ttyd" }
+
+[envs.croc]
+channels = ["conda-forge"]
+dependencies = { croc = "*" }
+exposed = { croc = "croc" }
+
+[envs.jrnl]
+channels = ["conda-forge"]
+dependencies = { jrnl = "*" }
+exposed = { jrnl = "jrnl" }
+
+[envs.faker]
+channels = ["conda-forge"]
+dependencies = { faker = "*" }
+exposed = { faker = "faker" }
+
+[envs.grex]
+channels = ["conda-forge"]
+dependencies = { grex = "*" }
+exposed = { grex = "grex" }
