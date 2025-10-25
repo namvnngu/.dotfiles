@@ -47,4 +47,3 @@ alias hl='rg --passthru'
 # my own
 export DOTFILES_PATH="$HOME/.dotfiles"
 add_path "$HOME/.dotfiles/bin"
-
