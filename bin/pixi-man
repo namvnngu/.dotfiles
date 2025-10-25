@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Create symbolic links for Pixi environments' man pages.
+# License: The Unlicense
+# Date created: October 25, 2025
+# Date modified: October 25, 2025 
+
+pixi_path="${HOME}/.pixi"
+pixi_man_path="${pixi_path}/man"
+pixi_envs_path="${pixi_path}/envs"
+
+rm -rf "${pixi_man_path}"
+
+pixi_env_man_files=$(find "${pixi_envs_path}" -path '*share/man/man*' -type f -mindepth 5 -maxdepth 5)
+for pixi_env_man_path in ${pixi_env_man_files}; do
+  section_man_path="${pixi_env_man_path/#*\/share\/man\//}"
+  source="${pixi_env_man_path}"
+  destination="${pixi_man_path}/${section_man_path}"
+
+  mkdir -p $(dirname "${destination}")
+  ln -s "${source}" "${destination}"
+done

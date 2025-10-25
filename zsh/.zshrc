@@ -30,6 +30,7 @@ PROMPT='%n %~'$'\n$ '
 
 # pixi
 add_path "$HOME/.pixi/bin"
+export MANPATH=":$HOME/.pixi/man"
 
 # emacs mode
 set -o emacs
@@ -46,3 +47,4 @@ alias hl='rg --passthru'
 # my own
 export DOTFILES_PATH="$HOME/.dotfiles"
 add_path "$HOME/.dotfiles/bin"
+
