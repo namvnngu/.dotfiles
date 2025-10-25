@@ -110,11 +110,6 @@ channels = ["conda-forge"]
 dependencies = { hyperfine = "*" }
 exposed = { hyperfine = "hyperfine" }
 
-[envs.nvim]
-channels = ["conda-forge"]
-dependencies = { nvim = "*" }
-exposed = { nvim = "nvim" }
-
 [envs.pandoc]
 channels = ["conda-forge"]
 dependencies = { pandoc = "*" }
