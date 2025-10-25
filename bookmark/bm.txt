@@ -28,6 +28,7 @@ CSS|The Height Enigma|https://joshwcomeau.com/css/height-enigma
 CSS|Transitioning to Height Auto (Two Ways)|https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto
 C|Awesome C|https://github.com/oz123/awesome-c
 C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
+C|musl: C Standard Library|https://musl.libc.org
 C|Sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 C|zpl: pushing the boundaries of simplicity|https://github.com/zpl-c
 Data Structure and Algorithm|Advent of Code|https://adventofcode.com
@@ -102,6 +103,8 @@ JavaScript|Why I stopped using snapshot testing with Jest|https://medium.com/@to
 JavaScript|You Don't Need Lodash Underscore|https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
 Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
 Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
+Java|Micronaut: A modern, JVM-based, full-stack framework|https://micronaut.io
+Java|Quarkus: Supersonic Subatomic Java|https://quarkus.io
 Java|Virtual Threads|https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 Job Email|7 Email Templates That'll Help You Say "No" (Without Having to Overthink It)|https://themuse.com/advice/7-email-templates-thatll-help-you-say-no-without-having-to-overthink-it
 Job Email|How to decline a job offer: Email template|https://seek.com.au/career-advice/article/job-not-right-for-you-decline-it-with-this-template
@@ -152,6 +155,7 @@ System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of
 System Design|The System Design Primer|https://github.com/donnemartin/system-design-primer
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
 Tools|ANSI Escape Codes|https://ansi.tools
+Tools|Crontab Guru: Cron Schedule Expression Generator|https://crontab.guru
 Tools|D2: Declarative Diagramming|https://d2lang.com
 Tools|Globster|https://globster.xyz
 Tools|markmap|https://markmap.js.org
@@ -171,6 +175,7 @@ TypeScript|TypeScript project references|https://moonrepo.dev/docs/guides/javasc
 TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
 Vim/Neovim|Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
 Vim/Neovim|Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
+Vim/Neovim|Seven habits of effective text editing|https://moolenaar.net/habits.html
 Vim/Neovim|Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
 Web Front-End|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
