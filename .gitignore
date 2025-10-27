@@ -16,3 +16,4 @@ w3m/.w3m/**/*
 
 # vim
 vim/.vim/pack/
+vim/.vim/.netrwhist
