@@ -37,6 +37,10 @@ set wildmenu
 set wildmode=longest:full
 set wildoptions=pum,tagfile
 
+" Avoid using old regexp engine which will incur performance issues in 
+" TypeScript syntax highlighting.
+set regexpengine=0 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEY MAPPINGS                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
