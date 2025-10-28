@@ -1,1 +1,0 @@
-default_channels = ["conda-forge", "~/.pixi/forges/nam-forge/artifacts"]
