@@ -1,55 +1,58 @@
-git prune origin branches: git remote prune origin
-git rename branch given old name: git branch -m <oldname> <newname>
-git rename current branch: git branch -m <newname>
-git delete remote branch: git push origin --delete <oldname>
-git push the local branch and reset upstream branch: git push origin -u <newname>
-git list all remote tags: git ls-remote --tags origin
-git search commits with one-line log format: git log --all --oneline | grep <search>
-git search commits with full log format: git log -g --grep=<search>
-git unset upstream: git branch --unset-upstream && git remote prune origin
-git blame "little" with range: git blame -w -L <line-start>,<line-end> <path-to-file>
+git add a new worktree for a specific branch: git worktree add <new-worktree-path> <branch-name>
 git blame "extreme" with range: git blame -w -C -C -C -L <line-start>,<line-end> <path-to-file>
-git filters logs with the specific keyword added or deleted in a file: git log -S <keyword> -p
+git blame "little" with range: git blame -w -L <line-start>,<line-end> <path-to-file>
+git blame pointing to the original author instead of the formatting commit: git blame --ignore-rev commit-hash
+git check out to a specific commit with some files out of the index, including created files: git checkout <commit-id> --no-overlay -- <path>
 git check steps you have run or messed up: git reflog
+git clone a repo no checkout: git clone --no-checkout <url>
+git clone blobless download all reachable commits and trees while fetching blobs on-demand: git clone --filter=blob:none <url>
+git clone shallow truncate the commit history to reduce the clone size: git clone --depth=<depth> <url>
+git clone treeless download all reachable commits while fetching trees and blobs on-demand: git clone --filter=tree:0 <url>
+git conflict diff: git diff --name-only --diff-filter=U --relative
+git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
+git create a new branch with no history: git checkout --orphan <branch-name>
+git create and switch to a new branch: git switch -c <branch-name>
+git delete ignored folders and files: git clean -fdX
+git delete remote branch: git push origin --delete <oldname>
 git diff changes against HEAD: git diff HEAD <path-to-file>
-git word diff changes against HEAD: git diff --word-diff HEAD <path-to-file>
 git diff unstaged changes against the latest commit: git diff <path-to-file>
-git word diff unstaged changes against the latest commit: git diff --word-diff <path-to-file>
 git discard all unstaged changes: git checkout -- .
 git discard unstaged changes on a specific file: git checkout -- <path-to-file>
-git list all files in a commit: git show --pretty="" --name-only <commit>
-git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
+git discard working directory changes: git restore <path-to-file>
+git enable automatic maintenance: git maintenance start
+git filters logs with the specific keyword added or deleted in a file: git log -S <keyword> -p
 git go back n commit(s) from HEAD: git reset --<mode> HEAD~<n>
-git delete ignored folders and files: git clean -fdX
-git conflict diff: git diff --name-only --diff-filter=U --relative
-git view the current branch: git branch --show-current
+git list all files in a commit: git show --pretty="" --name-only <commit>
+git list all remote tags: git ls-remote --tags origin
+git list of staged files: git diff --name-only --cached
+git list of unstaged files: git diff --name-only
+git log all, decorate and oneline in graph: git log --all --decorate --oneline --graph
+git log all, decorate and oneline: git log --all --decorate --oneline
+git log decorate and oneline in graph: git log --decorate --oneline --graph
+git log decorate and oneline: git log --decorate --oneline
+git prune origin branches: git remote prune origin
+git pull the current branch: git pull origin "$(git branch --show-current)"
+git push the local branch and reset upstream branch: git push origin -u <newname>
+git push the upushed, local branch to remote: git push --set-upstream origin "$(git branch --show-current)"
+git rebase to the root (initial) commit: git rebase -i --root
+git reconstruct the merge commit by replaying the recorded merge strategy and showing the exact changes it introduced: git log --remerge-diff
+git remove a worktree: git worktree remove <worktree-path>
+git rename branch given old name: git branch -m <oldname> <newname>
+git rename current branch: git branch -m <newname>
+git run cleanup tasks immediately: git maintenance run
+git search commits with full log format: git log -g --grep=<search>
+git search commits with one-line log format: git log --all --oneline | grep <search>
+git see who contributed most often to the specific folder since X time: git log --format='%an' --since='<since>' <folder-path> | sort | uniq -c | sort -rn | head
+git see who contributed most often to the specific folder: git log --format='%an' <folder-path> | sort | uniq -c | sort -rn | head
+git sparse-checkout to include only the directories or files in the working directory: git sparse-checkout init --cone && git sparse-checkout set <dirs>
+git switch branch: git switch <branch-name>
+git unset upstream: git branch --unset-upstream && git remote prune origin
+git unstage changes from the index: git restore --staged <path-to-file>
+git view conflict files in vim or nvim: <nvim-or-vim> -q <(git diff --check --relative)
+git view conflict files: git diff --check --relative
 git view the current branch (old): git rev-parse --abbrev-ref HEAD
 git view the current branch (old, expensive): git branch | grep -E '^\* ' | sed 's/^\* //g'
-git log all, decorate and oneline: git log --all --decorate --oneline
-git log decorate and oneline: git log --decorate --oneline
-git log all, decorate and oneline in graph: git log --all --decorate --oneline --graph
-git log decorate and oneline in graph: git log --decorate --oneline --graph
-git push the upushed, local branch to remote: git push --set-upstream origin "$(git branch --show-current)"
-git pull the current branch: git pull origin "$(git branch --show-current)"
-git switch branch: git switch <branch-name>
-git create and switch to a new branch: git switch -c <branch-name>
-git discard working directory changes: git restore <path-to-file>
-git unstage changes from the index: git restore --staged <path-to-file>
-git enable automatic maintenance: git maintenance start
-git run cleanup tasks immediately: git maintenance run
-git include only the directories or files in the working directory: git sparse-checkout set <folders-or-files>
-git reconstruct the merge commit by replaying the recorded merge strategy and showing the exact changes it introduced: git log --remerge-diff
-git blame pointing to the original author instead of the formatting commit: git blame --ignore-rev commit-hash
-git add a new worktree for a specific branch: git worktree add <new-worktree-path> <branch-name>
-git remove a worktree: git worktree remove <worktree-path>
-git rebase to the root (initial) commit: git rebase -i --root
-git check out to a specific commit with some files out of the index, including created files: git checkout <commit-id> --no-overlay -- <path>
-git create a new branch with no history: git checkout --orphan <branch-name>
-git see who contributed most often to the specific folder: git log --format='%an' <folder-path> | sort | uniq -c | sort -rn | head
-git see who contributed most often to the specific folder since X time: git log --format='%an' --since='<since>' <folder-path> | sort | uniq -c | sort -rn | head
+git view the current branch: git branch --show-current
 git view the first commit: git log --pretty=oneline --reverse | head -1
-git blobless clone download all reachable commits and trees while fetching blobs on-demand: git clone --filter=blob:none <url>
-git treeless clone download all reachable commits while fetching trees and blobs on-demand: git clone --filter=tree:0 <url>
-git shallow clone truncate the commit history to reduce the clone size: git clone --depth=<depth> <url>
-git list of unstaged files: git diff --name-only
-git list of staged files: git diff --name-only --cached
+git word diff changes against HEAD: git diff --word-diff HEAD <path-to-file>
+git word diff unstaged changes against the latest commit: git diff --word-diff <path-to-file>

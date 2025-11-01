@@ -1,4 +1,4 @@
-find all directories: find <target-path> -type d -name "<name>" -print
 find all directories and exec a command on them (use null byte (-print0 and -0) as a separator): find <target-path> -type d -name "<name>" -print0 | xargs -0 <cmd>
-find and delete empty directories: find <target-path> -type d -empty -delete
+find all directories: find <target-path> -type d -name "<name>" -print
 find all files exclude a path: find <target-path> -path <excluded-path> -prune -o -type file -print
+find and delete empty directories: find <target-path> -type d -empty -delete

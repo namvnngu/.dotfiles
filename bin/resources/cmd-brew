@@ -1,9 +1,9 @@
-brew count formula: brew list --formula | xargs -n1 | wc -l
-brew count cask: brew list --cask | xargs -n1 | wc -l
-brew clean up all: brew cleanup --prune=all
-brew remove unused depenecies: brew autoremove
-brew get package size: brew info <package> | egrep --color '\d*\.\d*(KB|MB|GB)'
 brew bundle dump dependencies into the (existing) global file: brew bundle dump --global --force
 brew bundle install dependencies based on the global file: brew bundle install --global
 brew bundle uninstall dependencies based on the global file: brew bundle cleanup --global --force
+brew clean up all: brew cleanup --prune=all
+brew count cask: brew list --cask | xargs -n1 | wc -l
+brew count formula: brew list --formula | xargs -n1 | wc -l
+brew get package size: brew info <package> | egrep --color '\d*\.\d*(KB|MB|GB)'
 brew list all installed formulae and cask that are not dependencies of others: brew leaves
+brew remove unused depenecies: brew autoremove

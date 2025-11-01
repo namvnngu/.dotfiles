@@ -1,7 +1,7 @@
 :!cmd: execute the shell command
-:r !cmd: execute the shell command, and insert the command output below the cursor
-:w !cmd: send the current buffer as stdin to the shell command, and execute the command
-:.!cmd: send the current line as stdin to the shell command, execute the command, and replace the current line with the command output
 :%!cmd: send the entire buffer as stdin to the shell command, execute the command, and replace the entire buffer with the command output
 :'<,'>!cmd: send the selection as stdin to the shell command, execute the command, and replace the selection with the command output
+:.!cmd: send the current line as stdin to the shell command, execute the command, and replace the current line with the command output
+:r !cmd: execute the shell command, and insert the command output below the cursor
 :s/\v<(.)(\w*)/\u\1\L\2/g: Turn one line into title caps
+:w !cmd: send the current buffer as stdin to the shell command, and execute the command
