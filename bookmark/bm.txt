@@ -28,8 +28,8 @@ CSS|The Height Enigma|https://joshwcomeau.com/css/height-enigma
 CSS|Transitioning to Height Auto (Two Ways)|https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto
 C|Awesome C|https://github.com/oz123/awesome-c
 C|Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
+C|floooh/sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 C|musl: C Standard Library|https://musl.libc.org
-C|Sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 C|zpl: pushing the boundaries of simplicity|https://github.com/zpl-c
 Data Structure and Algorithm|Advent of Code|https://adventofcode.com
 Data Structure and Algorithm|Algorithms 101|https://artofcode.org/algorithms-101
@@ -71,8 +71,8 @@ Fun|A collection of looks in text|https://looks.wtf
 Fun|DiceBear|https://dicebear.com
 Fun|PlayPhrase|https://playphrase.me
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
-Game Development|flecs: A fast entity component system (ECS) for C & C++|https://github.com/SanderMertens/flecs
 Game Development|Handmade Hero|https://guide.handmadehero.org
+Game Development|SanderMertens/flecs: A fast entity component system (ECS) for C & C++|https://github.com/SanderMertens/flecs
 Git|Bring your monorepo down to size with sparse-checkout|https://github.blog/open-source/git/bring-your-monorepo-down-to-size-with-sparse-checkout
 Git|Get up to speed with partial clone and shallow clone|https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone
 Git|Pro Git|https://git-scm.com/book
@@ -81,20 +81,24 @@ Go|Gist of Go: Concurrency|https://antonz.org/go-concurrency
 Go|Go Scheduler|https://nghiant3223.github.io/2025/04/15/go-scheduler.html
 Go|Practical Go Lessons|https://practical-go-lessons.com
 Go|Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
+Go|samber/do: A dependency injection toolkit|https://github.com/samber/do
+Go|samber/lo: A Lodash-style Go library|https://github.com/samber/lo
+Go|samber/mo: Monads and popular FP abstractions|https://github.com/samber/mo
+Go|samber/oops: Error handling library with context, assertion, stack trace and source fragments|https://github.com/samber/oops
+Go|samber/ro: Reactive Programming paradigm for Go|https://github.com/samber/ro
 Go|Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
 Go|You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_bleh
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 JavaScript|An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
 JavaScript|Anime.js: JavaScript animation engine|https://animejs.com
-JavaScript|chokidar: Minimal and efficient cross-platform file watching library|
-JavaScript|chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
 JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
 JavaScript|JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
 JavaScript|JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
 JavaScript|Jest: Finding the cause of a memory leak in Jest tests|https://making.close.com/posts/finding-the-cause-of-a-memory-leak-in-jest
 JavaScript|Jest: Jest leaks memory from required modules with closures over imports|https://github.com/jestjs/jest/issues/6814
 JavaScript|Jest: Your Jest Tests are Leaking Memory|https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html
+JavaScript|paulmillr/chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
 JavaScript|Secrets of the act(...) api|https://github.com/threepointone/react-act-examples/blob/master/sync.md
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
 JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
@@ -160,19 +164,20 @@ Tools|D2: Declarative Diagramming|https://d2lang.com
 Tools|Globster|https://globster.xyz
 Tools|markmap|https://markmap.js.org
 Tools|Syncthing|https://syncthing.net
-TypeScript|effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
-TypeScript|es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97maller—a major upgrade to lodash|https://github.com/toss/es-toolkit
+TypeScript|Effect-TS/effect: An ecosystem of tools to build robust applications in TypeScript|https://github.com/Effect-TS/effect
+TypeScript|egoist/tsup: The simplest and fastest way to bundle your TypeScript libraries|https://github.com/egoist/tsup
 TypeScript|esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
-TypeScript|fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
-TypeScript|neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
-TypeScript|pkgroll: Zero-config package bundler for Node.js + TypeScript|https://github.com/privatenumber/pkgroll
-TypeScript|radashi: The modern, community-first TypeScript toolkit with all of the fast, readable, and minimal utility functions|https://github.com/radashi-org/radashi
-TypeScript|ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
-TypeScript|ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
-TypeScript|tsdown: The elegant bundler for libraries powered by Rolldown|https://github.com/rolldown/tsdown
-TypeScript|tsup: The simplest and fastest way to bundle your TypeScript libraries|https://github.com/egoist/tsup
+TypeScript|fabian-hiller/valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
+TypeScript|gcanti/fp-ts: Functional programming in TypeScript|https://github.com/gcanti/fp-ts
+TypeScript|gvergnaud/ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
+TypeScript|millsp/ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
+TypeScript|privatenumber/pkgroll: Zero-config package bundler for Node.js + TypeScript|https://github.com/privatenumber/pkgroll
+TypeScript|radashi-org/radashi: The modern, community-first TypeScript toolkit with all of the fast, readable, and minimal utility functions|https://github.com/radashi-org/radashi
+TypeScript|rolldown/tsdown: The elegant bundler for libraries powered by Rolldown|https://github.com/rolldown/tsdown
+TypeScript|supermacro/neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
+TypeScript|toss/es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97maller—a major upgrade to lodash|https://github.com/toss/es-toolkit
+TypeScript|TypeScript Deep Dive|https://basarat.gitbook.io/typescript
 TypeScript|TypeScript project references|https://moonrepo.dev/docs/guides/javascript/typescript-project-refs
-TypeScript|valibot: The modular and type safe schema library for validating structural data|https://github.com/fabian-hiller/valibot
 Vim/Neovim|Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
 Vim/Neovim|Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
 Vim/Neovim|Seven habits of effective text editing|https://moolenaar.net/habits.html
