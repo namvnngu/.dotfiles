@@ -5,7 +5,7 @@
 syntax on
 set notermguicolors
 let &background = $THEME_MODE
-colorscheme paige
+colorscheme vn
 
 let mapleader = ' '
 

@@ -1,7 +1,7 @@
 vim.cmd("syntax on")
 vim.o.termguicolors = false
 vim.o.background = vim.env.THEME_MODE
-vim.cmd("colorscheme paige")
+vim.cmd("colorscheme vn")
 
 vim.g.mapleader = " "
 
