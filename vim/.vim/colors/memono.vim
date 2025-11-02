@@ -1,4 +1,4 @@
-" Name:          VN 
+" Name:          Memono
 " Description:   Simple and less colorful, forked from 'wildcharm'.
 " Author:        Nam Nguyen <vnngucs@outlook.com>
 " License:       The Unlicense
@@ -6,9 +6,9 @@
 " Date Modified: November 02, 2025 
 
 hi clear
-let g:colors_name = 'vn'
+let g:colors_name = 'memono'
 
-" My own
+" Custom
 hi! link Directory Identifier
 hi! link Float Constant
 hi! link Function Constant
@@ -19,7 +19,7 @@ hi! link Statement Identifier
 hi! link String Constant
 hi! link Type Identifier
 
-" Wildcharm
+" Wild Charm
 hi! link CurSearch IncSearch
 hi! link CursorLineFold FoldColumn
 hi! link CursorLineSign FoldColumn
@@ -35,24 +35,24 @@ hi! link TabPanelFill Normal
 hi! link Terminal Normal
 
 if &background == 'dark'
-  " My own
-  hi Comment         guifg=#767676 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=243  ctermbg=NONE cterm=NONE         term=bold
+  " Custom
   hi Constant        guifg=#ffffff guibg=NONE    guisp=NONE    gui=NONE         ctermfg=15   ctermbg=NONE cterm=NONE         term=NONE
-  hi DiffAdd         guifg=NONE    guibg=#273923 guisp=NONE    gui=NONE         ctermfg=252  ctermbg=22   cterm=NONE         term=reverse
-  hi DiffChange      guifg=NONE    guibg=#2f2f2f guisp=NONE    gui=NONE         ctermfg=252  ctermbg=236  cterm=NONE         term=NONE
-  hi DiffDelete      guifg=#767676 guibg=#2f1f1a guisp=NONE    gui=NONE         ctermfg=243  ctermbg=52   cterm=NONE         term=reverse
-  hi DiffText        guifg=NONE    guibg=#0f4f4f guisp=NONE    gui=NONE         ctermfg=252  ctermbg=23   cterm=NONE         term=reverse
   hi Identifier      guifg=#ffffff guibg=NONE    guisp=NONE    gui=bold         ctermfg=15   ctermbg=NONE cterm=bold         term=bold
   hi Normal          guifg=#ffffff guibg=#000000 guisp=NONE    gui=NONE         ctermfg=15   ctermbg=0    cterm=NONE         term=NONE
 
-  " Wildcharm
+  " Wild Charm
   hi Added           guifg=#00af5f guibg=NONE    guisp=NONE    gui=NONE         ctermfg=35   ctermbg=NONE cterm=NONE         term=NONE
   hi Changed         guifg=#0087d7 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=32   ctermbg=NONE cterm=NONE         term=NONE
   hi ColorColumn     guifg=NONE    guibg=#303030 guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=236  cterm=NONE         term=reverse
+  hi Comment         guifg=#767676 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=243  ctermbg=NONE cterm=NONE         term=bold
   hi Conceal         guifg=#585858 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=240  ctermbg=NONE cterm=NONE         term=NONE
   hi CursorColumn    guifg=NONE    guibg=#262626 guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=235  cterm=NONE         term=NONE
   hi CursorLine      guifg=NONE    guibg=#262626 guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=235  cterm=NONE         term=underline
   hi CursorLineNr    guifg=#ffffff guibg=NONE    guisp=NONE    gui=bold         ctermfg=231  ctermbg=NONE cterm=bold         term=bold
+  hi DiffAdd         guifg=NONE    guibg=#273923 guisp=NONE    gui=NONE         ctermfg=252  ctermbg=22   cterm=NONE         term=reverse
+  hi DiffChange      guifg=NONE    guibg=#2f2f2f guisp=NONE    gui=NONE         ctermfg=252  ctermbg=236  cterm=NONE         term=NONE
+  hi DiffDelete      guifg=#767676 guibg=#2f1f1a guisp=NONE    gui=NONE         ctermfg=243  ctermbg=52   cterm=NONE         term=reverse
+  hi DiffText        guifg=NONE    guibg=#0f4f4f guisp=NONE    gui=NONE         ctermfg=252  ctermbg=23   cterm=NONE         term=reverse
   hi EndOfBuffer     guifg=#585858 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=240  ctermbg=NONE cterm=NONE         term=NONE
   hi Error           guifg=#d7005f guibg=#ffffff guisp=NONE    gui=reverse      ctermfg=161  ctermbg=231  cterm=reverse      term=bold,reverse
   hi ErrorMsg        guifg=#d7005f guibg=#ffffff guisp=NONE    gui=reverse      ctermfg=161  ctermbg=231  cterm=reverse      term=bold,reverse
@@ -109,24 +109,24 @@ if &background == 'dark'
 endif
 
 if &background == 'light'
-  " My own
-  hi Comment         guifg=#8a8a8a guibg=NONE    guisp=NONE    gui=NONE         ctermfg=245  ctermbg=NONE cterm=NONE         term=bold
+  " Custom
   hi Constant        guifg=#000000 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=0    ctermbg=NONE cterm=NONE         term=NONE
-  hi DiffAdd         guifg=NONE    guibg=#dafada guisp=NONE    gui=NONE         ctermfg=16   ctermbg=151  cterm=NONE         term=reverse
-  hi DiffChange      guifg=NONE    guibg=#e3e3e3 guisp=NONE    gui=NONE         ctermfg=16   ctermbg=253  cterm=NONE         term=NONE
-  hi DiffDelete      guifg=#808080 guibg=#ffd7d7 guisp=NONE    gui=NONE         ctermfg=240  ctermbg=224  cterm=NONE         term=reverse
-  hi DiffText        guifg=NONE    guibg=#bfe7e7 guisp=NONE    gui=NONE         ctermfg=16   ctermbg=152  cterm=NONE         term=reverse
   hi Identifier      guifg=#000000 guibg=NONE    guisp=NONE    gui=bold         ctermfg=0    ctermbg=NONE cterm=bold         term=bold
   hi Normal          guifg=#000000 guibg=#ffffff guisp=NONE    gui=NONE         ctermfg=0    ctermbg=15   cterm=NONE         term=NONE
 
-  " Wildcharm
+  " Wild Charm
   hi Added           guifg=#5faf5f guibg=NONE    guisp=NONE    gui=NONE         ctermfg=71   ctermbg=NONE cterm=NONE         term=NONE
   hi Changed         guifg=#0087d7 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=32   ctermbg=NONE cterm=NONE         term=NONE
   hi ColorColumn     guifg=NONE    guibg=#e4e4e4 guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=254  cterm=NONE         term=reverse
+  hi Comment         guifg=#8a8a8a guibg=NONE    guisp=NONE    gui=NONE         ctermfg=245  ctermbg=NONE cterm=NONE         term=bold
   hi Conceal         guifg=#a8a8a8 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=248  ctermbg=NONE cterm=NONE         term=NONE
   hi CursorColumn    guifg=NONE    guibg=#eeeeee guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=255  cterm=NONE         term=NONE
   hi CursorLine      guifg=NONE    guibg=#eeeeee guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=255  cterm=NONE         term=underline
   hi CursorLineNr    guifg=#000000 guibg=NONE    guisp=NONE    gui=bold         ctermfg=16   ctermbg=NONE cterm=bold         term=bold
+  hi DiffAdd         guifg=NONE    guibg=#dafada guisp=NONE    gui=NONE         ctermfg=16   ctermbg=151  cterm=NONE         term=reverse
+  hi DiffChange      guifg=NONE    guibg=#e3e3e3 guisp=NONE    gui=NONE         ctermfg=16   ctermbg=253  cterm=NONE         term=NONE
+  hi DiffDelete      guifg=#808080 guibg=#ffd7d7 guisp=NONE    gui=NONE         ctermfg=240  ctermbg=224  cterm=NONE         term=reverse
+  hi DiffText        guifg=NONE    guibg=#bfe7e7 guisp=NONE    gui=NONE         ctermfg=16   ctermbg=152  cterm=NONE         term=reverse
   hi EndOfBuffer     guifg=#a8a8a8 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=248  ctermbg=NONE cterm=NONE         term=NONE
   hi Error           guifg=#af0000 guibg=#ffffff guisp=NONE    gui=reverse      ctermfg=124  ctermbg=231  cterm=reverse      term=bold,reverse
   hi ErrorMsg        guifg=#d70000 guibg=#ffffff guisp=NONE    gui=reverse      ctermfg=160  ctermbg=231  cterm=reverse      term=bold,reverse
