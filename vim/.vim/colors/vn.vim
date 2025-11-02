@@ -8,33 +8,36 @@
 hi clear
 let g:colors_name = 'vn'
 
+" My own
+hi! link Directory Identifier
+hi! link Float Constant
+hi! link Function Constant
+hi! link Number Constant
+hi! link PreProc Identifier
+hi! link Special Identifier
+hi! link Statement Identifier
+hi! link String Constant
+hi! link Type Identifier
+
+" Wildcharm
 hi! link CurSearch IncSearch
 hi! link CursorLineFold FoldColumn
 hi! link CursorLineSign FoldColumn
 hi! link LineNrAbove LineNr
 hi! link LineNrBelow LineNr
 hi! link MessageWindow PMenu
+hi! link PopupNotification Normal
 hi! link PreInsert NonText
 hi! link StatusLineTerm Statusline
 hi! link StatusLineTermNC StatuslineNC
-
-hi! link Constant Normal
-hi! link Directory Identifier
-hi! link Float Normal
-hi! link Function Normal
-hi! link Number Normal
-hi! link PopupNotification Normal
-hi! link PreProc Identifier
-hi! link Special Identifier
-hi! link Statement Identifier
-hi! link String Normal
 hi! link TabPanel Normal
 hi! link TabPanelFill Normal
 hi! link Terminal Normal
-hi! link Type Identifier
 
 if &background == 'dark'
+  " My own
   hi Comment         guifg=#767676 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=243  ctermbg=NONE cterm=NONE         term=bold
+  hi Constant        guifg=#ffffff guibg=NONE    guisp=NONE    gui=NONE         ctermfg=15   ctermbg=NONE cterm=NONE         term=NONE
   hi DiffAdd         guifg=NONE    guibg=#273923 guisp=NONE    gui=NONE         ctermfg=252  ctermbg=22   cterm=NONE         term=reverse
   hi DiffChange      guifg=NONE    guibg=#2f2f2f guisp=NONE    gui=NONE         ctermfg=252  ctermbg=236  cterm=NONE         term=NONE
   hi DiffDelete      guifg=#767676 guibg=#2f1f1a guisp=NONE    gui=NONE         ctermfg=243  ctermbg=52   cterm=NONE         term=reverse
@@ -42,6 +45,7 @@ if &background == 'dark'
   hi Identifier      guifg=#ffffff guibg=NONE    guisp=NONE    gui=bold         ctermfg=15   ctermbg=NONE cterm=bold         term=bold
   hi Normal          guifg=#ffffff guibg=#000000 guisp=NONE    gui=NONE         ctermfg=15   ctermbg=0    cterm=NONE         term=NONE
 
+  " Wildcharm
   hi Added           guifg=#00af5f guibg=NONE    guisp=NONE    gui=NONE         ctermfg=35   ctermbg=NONE cterm=NONE         term=NONE
   hi Changed         guifg=#0087d7 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=32   ctermbg=NONE cterm=NONE         term=NONE
   hi ColorColumn     guifg=NONE    guibg=#303030 guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=236  cterm=NONE         term=reverse
@@ -105,7 +109,9 @@ if &background == 'dark'
 endif
 
 if &background == 'light'
+  " My own
   hi Comment         guifg=#8a8a8a guibg=NONE    guisp=NONE    gui=NONE         ctermfg=245  ctermbg=NONE cterm=NONE         term=bold
+  hi Constant        guifg=#000000 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=0    ctermbg=NONE cterm=NONE         term=NONE
   hi DiffAdd         guifg=NONE    guibg=#dafada guisp=NONE    gui=NONE         ctermfg=16   ctermbg=151  cterm=NONE         term=reverse
   hi DiffChange      guifg=NONE    guibg=#e3e3e3 guisp=NONE    gui=NONE         ctermfg=16   ctermbg=253  cterm=NONE         term=NONE
   hi DiffDelete      guifg=#808080 guibg=#ffd7d7 guisp=NONE    gui=NONE         ctermfg=240  ctermbg=224  cterm=NONE         term=reverse
@@ -113,6 +119,7 @@ if &background == 'light'
   hi Identifier      guifg=#000000 guibg=NONE    guisp=NONE    gui=bold         ctermfg=0    ctermbg=NONE cterm=bold         term=bold
   hi Normal          guifg=#000000 guibg=#ffffff guisp=NONE    gui=NONE         ctermfg=0    ctermbg=15   cterm=NONE         term=NONE
 
+  " Wildcharm
   hi Added           guifg=#5faf5f guibg=NONE    guisp=NONE    gui=NONE         ctermfg=71   ctermbg=NONE cterm=NONE         term=NONE
   hi Changed         guifg=#0087d7 guibg=NONE    guisp=NONE    gui=NONE         ctermfg=32   ctermbg=NONE cterm=NONE         term=NONE
   hi ColorColumn     guifg=NONE    guibg=#e4e4e4 guisp=NONE    gui=NONE         ctermfg=NONE ctermbg=254  cterm=NONE         term=reverse
