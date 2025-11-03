@@ -1,0 +1,1 @@
+pnpm format pnpm-workspace.yaml file: pnpm config set --location=project --json 'format' 'true' && sed -i '' -e '/format: true/,+1d' pnpm-workspace.yaml
