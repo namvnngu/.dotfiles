@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: List and view the man pages of tools installed by mise.
+# License: The Unlicense
+# Date Created: November 07, 2025
+# Date Modified: November 07, 2025
+
+
+manpage=$(find "${MISE_DATA_DIR}" -name '*.1' -type f | fzf)
+man "${manpage}"
