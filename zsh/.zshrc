@@ -28,10 +28,6 @@ export KEYTIMEOUT=1
 # prompt
 PROMPT='%n %~'$'\n$ '
 
-# pixi
-add_path "$HOME/.pixi/bin"
-export MANPATH=":$HOME/.pixi/man"
-
 # emacs mode
 set -o emacs
 
