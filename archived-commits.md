@@ -7,6 +7,7 @@
 - [Remove nvim-cmp](https://github.com/namvnngu/dotfiles/commit/9b60934e474593e8da8998c71d52643d1a0b4d35)
 - [Remove nvim-lint](https://github.com/namvnngu/dotfiles/commit/db97316770098b0c3ead0a1120bf536ac2546f6b)
 - [Remove nvim-treesitter](https://github.com/namvnngu/dotfiles/commit/007055d58ac3316b8c68eb52063ffc3636924bbc)
+- [Remove pixi](https://github.com/namvnngu/.dotfiles/commit/5a0c545a727a6f7b74f8396b074b1018f6510c70)
 - [Remove theme plugin and use default colorscheme](https://github.com/namvnngu/dotfiles/commit/d8f672e65041f6b31a2286c8f00522f06785ec9f)
 - [Remove trim_spaces autocmd](https://github.com/namvnngu/.dotfiles/commit/ebf7f7a336b895ae497cc1b1212e44cedd247f1c)
 - [Remove undotree and lazydev.nvim](https://github.com/namvnngu/dotfiles/commit/2907e8d54dd3f99a7107c7eade246c61a52fc13d)
