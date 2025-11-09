@@ -22,12 +22,17 @@ PROMPT='%n %~'$'\n$ '
 # emacs mode
 set -o emacs
 
+# man1
+export MANPATH=":${HOME}/.local/share/manx"
+
+# pixi
+add_path "${HOME}/.pixi/bin"
+
 # mise
 export MISE_CONFIG_DIR="${HOME}/.config/mise"
 export MISE_CACHE_DIR="${HOME}/.local/share/mise/cache"
 export MISE_STATE_DIR="${HOME}/.local/share/mise/state"
 export MISE_DATA_DIR="${HOME}/.local/share/mise/data"
-export MANPATH=":$HOME/.local/share/mise/man"
 eval "$("${HOME}"/.local/bin/mise activate zsh)"
 
 # default editor
@@ -39,10 +44,6 @@ else
   export EDITOR='vi'
 fi
 
-# pixi
-add_path "$HOME/.pixi/bin"
-export MANPATH=":$HOME/.pixi/man"
-
 # search and highlight
 alias hl='rg --passthru'
 
@@ -52,6 +53,6 @@ source <(fzf --zsh)
 # go
 export GOPATH="${HOME}/.go"
 
-# my own
+# own
 export DOTFILES_PATH="${HOME}/.dotfiles"
 add_path "${HOME}/.dotfiles/bin"

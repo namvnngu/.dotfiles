@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <vnngucs@outlook.com>
+# Description: Create symbolic links for tools' man1 pages.
+# License: The Unlicense
+# Date created: November 09, 2025
+# Date modified: November 09, 2025 
+
+manx_dir="${HOME}/.local/share/manx"
+
+man1_dir="${manx_dir}/man1"
+man1_files=()
+man1_file_total=''
+
+_setup() {
+  rm -rf "${manx_dir}"
+  echo "Deleted ${manx_dir}!"
+
+  mkdir -p "${man1_dir}"
+  echo "Created ${man1_dir}!"
+}
+
+_get_man1_files() {
+  echo "Finding man1 files in ${MISE_DATA_DIR}..."
+  man1_files+=($(find "${MISE_DATA_DIR}" -name '*.1' -type f))
+
+  echo "Finding man1 files in ${HOME}/.pixi/envs..."
+  man1_files+=($(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.1' -type f))
+
+  man1_file_total="${#man1_files[@]}"
+  echo "Found ${man1_file_total} man1 files!"
+}
+
+_create_symlink() {
+  local man_file="${1}"
+  local man_filename="$(basename "${man_file}")"
+  local source="${man_file}"
+  local target="${man1_dir}/${man_filename}"
+
+  ln -Fs "${source}" "${target}"
+}
+
+_progress_bar() {
+  local count="${1}"
+  local total="${2}"
+
+  local percent_done=$((count * 100 / total))
+  local bar_char="|"
+  local bar_total=50
+  local bar_count=$((percent_done * bar_total / 100))
+
+  local i
+  local bars="["
+  for ((i = 0; i < "${bar_count}"; i += 1)); do
+    bars+="${bar_char}"
+  done
+  for ((i = "${bar_count}"; i < "${bar_total}"; i += 1)); do
+    bars+=" "
+  done
+  bars+="]"
+
+  echo -ne "${bars} ${count}/${total} (${percent_done}%)\r"
+}
+
+main() {
+  _setup
+  _get_man1_files
+
+  echo "Creating symlinks..."
+  for ((i = 0; i < "${man1_file_total}"; i += 1)); do
+    _progress_bar "$((i+1))" "${man1_file_total}"
+    _create_symlink "${man1_files[i]}"
+  done
+
+  echo -e "\nCreated ${man1_file_total} symlinks!"
+}
+
+main "$@"
