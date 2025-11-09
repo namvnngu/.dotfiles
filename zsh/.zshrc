@@ -27,6 +27,7 @@ export MISE_CONFIG_DIR="${HOME}/.config/mise"
 export MISE_CACHE_DIR="${HOME}/.local/share/mise/cache"
 export MISE_STATE_DIR="${HOME}/.local/share/mise/state"
 export MISE_DATA_DIR="${HOME}/.local/share/mise/data"
+export MANPATH=":$HOME/.local/share/mise/man"
 eval "$("${HOME}"/.local/bin/mise activate zsh)"
 
 # default editor
@@ -54,4 +55,3 @@ export GOPATH="${HOME}/.go"
 # my own
 export DOTFILES_PATH="${HOME}/.dotfiles"
 add_path "${HOME}/.dotfiles/bin"
-export PATH="/Users/namnguyen/.pixi/bin:$PATH"
