@@ -4,13 +4,13 @@
 # Description: Create symbolic links for tools' man1 pages.
 # License: The Unlicense
 # Date created: November 09, 2025
-# Date modified: November 09, 2025 
+# Date modified: November 10, 2025 
 
 manx_dir="${HOME}/.local/share/manx"
 
 man1_dir="${manx_dir}/man1"
 man1_files=()
-man1_file_total=''
+man1_file_total=0
 
 _setup() {
   rm -rf "${manx_dir}"
@@ -22,10 +22,14 @@ _setup() {
 
 _get_man1_files() {
   echo "Finding man1 files in ${MISE_DATA_DIR}..."
-  man1_files+=($(find "${MISE_DATA_DIR}" -name '*.1' -type f))
+  while read -r file; do 
+    man1_files+=("$file")
+  done < <(find "${MISE_DATA_DIR}" -name '*.1' -type f)
 
   echo "Finding man1 files in ${HOME}/.pixi/envs..."
-  man1_files+=($(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.1' -type f))
+  while read -r file; do 
+    man1_files+=("$file")
+  done < <(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.1' -type f)
 
   man1_file_total="${#man1_files[@]}"
   echo "Found ${man1_file_total} man1 files!"
@@ -33,7 +37,9 @@ _get_man1_files() {
 
 _create_symlink() {
   local man_file="${1}"
-  local man_filename="$(basename "${man_file}")"
+  local man_filename=''
+  man_filename=$(basename "${man_file}")
+
   local source="${man_file}"
   local target="${man1_dir}/${man_filename}"
 
