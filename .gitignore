@@ -15,5 +15,4 @@ w3m/.w3m/**/*
 !w3m/.w3m/keymap
 
 # vim
-vim/.vim/pack/
 vim/.vim/.netrwhist

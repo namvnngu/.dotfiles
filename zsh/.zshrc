@@ -23,7 +23,7 @@ PROMPT='%n %~'$'\n$ '
 set -o emacs
 
 # man1
-export MANPATH=":${HOME}/.local/share/manx"
+export MANPATH="${HOME}/.local/share/manx:"
 
 # pixi
 add_path "${HOME}/.pixi/bin"

@@ -1,48 +1,49 @@
 #!/usr/bin/env bash
 
 # Author: Nam Nguyen <vnngucs@outlook.com>
-# Description: Create symbolic links for tools' man1 pages.
+# Description: Create symbolic links for man pages of mise and pixi tools.
 # License: The Unlicense
 # Date created: November 09, 2025
 # Date modified: November 10, 2025 
 
 manx_dir="${HOME}/.local/share/manx"
 
-man1_dir="${manx_dir}/man1"
-man1_files=()
-man1_file_total=0
+man_files=()
+man_file_total=0
 
 _setup() {
   rm -rf "${manx_dir}"
   echo "Deleted ${manx_dir}!"
 
-  mkdir -p "${man1_dir}"
-  echo "Created ${man1_dir}!"
+  mkdir -p "${manx_dir}"
+  echo "Created ${manx_dir}!"
 }
 
-_get_man1_files() {
-  echo "Finding man1 files in ${MISE_DATA_DIR}..."
+_get_man_files() {
+  echo "Finding man files in ${MISE_DATA_DIR}..."
   while read -r file; do 
-    man1_files+=("$file")
-  done < <(find "${MISE_DATA_DIR}" -name '*.1' -type f)
+    man_files+=("$file")
+  done < <(find "${MISE_DATA_DIR}" -name '*.[1-9]' -type f)
 
-  echo "Finding man1 files in ${HOME}/.pixi/envs..."
+  echo "Finding man files in ${HOME}/.pixi/envs..."
   while read -r file; do 
-    man1_files+=("$file")
-  done < <(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.1' -type f)
+    man_files+=("$file")
+  done < <(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.[1-9]' -type f)
 
-  man1_file_total="${#man1_files[@]}"
-  echo "Found ${man1_file_total} man1 files!"
+  man_file_total="${#man_files[@]}"
+  echo "Found ${man_file_total} man files!"
 }
 
 _create_symlink() {
   local man_file="${1}"
+  local man_type="man${man_file##*.}"
   local man_filename=''
   man_filename=$(basename "${man_file}")
 
   local source="${man_file}"
-  local target="${man1_dir}/${man_filename}"
+  local target="${manx_dir}/${man_type}/${man_filename}"
 
+  mkdir -p "$(dirname "${target}")"
   ln -Fs "${source}" "${target}"
 }
 
@@ -70,15 +71,15 @@ _progress_bar() {
 
 main() {
   _setup
-  _get_man1_files
+  _get_man_files
 
   echo "Creating symlinks..."
-  for ((i = 0; i < "${man1_file_total}"; i += 1)); do
-    _progress_bar "$((i+1))" "${man1_file_total}"
-    _create_symlink "${man1_files[i]}"
+  for ((i = 0; i < "${man_file_total}"; i += 1)); do
+    _progress_bar "$((i+1))" "${man_file_total}"
+    _create_symlink "${man_files[i]}"
   done
 
-  echo -e "\nCreated ${man1_file_total} symlinks!"
+  echo -e "\nCreated ${man_file_total} symlinks!"
 }
 
 main "$@"
