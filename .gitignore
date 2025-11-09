@@ -1,18 +1,2 @@
-# python
-**/__pycache__
-
-# lazygit
-state.yml
-
-# vim
-**/plugged
-
-# neovim
-**/packer_compiled.lua
-
-# w3m
-w3m/.w3m/**/*
-!w3m/.w3m/keymap
-
 # vim
 vim/.vim/.netrwhist
