@@ -1,0 +1,6 @@
+[tools]
+go = "latest"
+node = "latest"
+podman = "latest"
+python = "latest"
+rust = "latest"

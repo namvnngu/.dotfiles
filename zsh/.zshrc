@@ -38,6 +38,10 @@ else
   export EDITOR='vi'
 fi
 
+# pixi
+add_path "$HOME/.pixi/bin"
+export MANPATH=":$HOME/.pixi/man"
+
 # search and highlight
 alias hl='rg --passthru'
 
@@ -50,3 +54,4 @@ export GOPATH="${HOME}/.go"
 # my own
 export DOTFILES_PATH="${HOME}/.dotfiles"
 add_path "${HOME}/.dotfiles/bin"
+export PATH="/Users/namnguyen/.pixi/bin:$PATH"

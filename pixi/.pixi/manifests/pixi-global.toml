@@ -1,0 +1,151 @@
+version = 1
+
+[envs.rattler-build]
+channels = ["conda-forge"]
+dependencies = { rattler-build = "*" }
+exposed = { rattler-build = "rattler-build" }
+
+[envs.htop]
+channels = ["conda-forge"]
+dependencies = { htop = "*" }
+exposed = { htop = "htop" }
+
+[envs.pkgconf]
+channels = ["conda-forge"]
+dependencies = { pkgconf = "*" }
+exposed = { pkgconf = "pkgconf", bomtool = "bomtool" }
+
+[envs.stow]
+channels = ["conda-forge"]
+dependencies = { stow = "*" }
+exposed = { chkstow = "chkstow", stow = "stow" }
+
+[envs.tldr]
+channels = ["conda-forge"]
+dependencies = { tldr = "*" }
+exposed = { tldr = "tldr" }
+
+[envs.ttyd]
+channels = ["conda-forge"]
+dependencies = { ttyd = "*" }
+exposed = { ttyd = "ttyd" }
+
+[envs.universal-ctags]
+channels = ["conda-forge"]
+dependencies = { universal-ctags = "*" }
+exposed = { ctags = "ctags", optscript = "optscript", readtags = "readtags" }
+
+[envs.faker]
+channels = ["conda-forge"]
+dependencies = { faker = "*" }
+exposed = { faker = "faker" }
+
+[envs.jrnl]
+channels = ["conda-forge"]
+dependencies = { jrnl = "*" }
+exposed = { jrnl = "jrnl" }
+
+[envs.tmux]
+channels = ["conda-forge"]
+dependencies = { tmux = "*" }
+exposed = { tmux = "tmux" }
+
+[envs.ripgrep]
+channels = ["conda-forge"]
+dependencies = { ripgrep = "*" }
+exposed = { rg = "rg" }
+
+[envs.pandoc]
+channels = ["conda-forge"]
+dependencies = { pandoc = "*" }
+exposed = { pandoc = "pandoc", pandoc-lua = "pandoc-lua", pandoc-server = "pandoc-server" }
+
+[envs.croc]
+channels = ["conda-forge"]
+dependencies = { croc = "*" }
+exposed = { croc = "croc" }
+
+[envs.typos-lsp]
+channels = ["conda-forge"]
+dependencies = { typos-lsp = "*" }
+exposed = { typos-lsp = "typos-lsp" }
+
+[envs.gopls]
+channels = ["conda-forge"]
+dependencies = { gopls = "*" }
+exposed = { gopls = "gopls" }
+
+[envs.typescript-language-server]
+channels = ["conda-forge"]
+dependencies = { typescript-language-server = "*" }
+exposed = { typescript-language-server = "typescript-language-server" }
+
+[envs.vscode-langservers-extracted]
+channels = ["conda-forge"]
+dependencies = { vscode-langservers-extracted = "*" }
+exposed = { vscode-css-language-server = "vscode-css-language-server", vscode-eslint-language-server = "vscode-eslint-language-server", vscode-html-language-server = "vscode-html-language-server", vscode-json-language-server = "vscode-json-language-server", vscode-markdown-language-server = "vscode-markdown-language-server" }
+
+[envs.fzf]
+channels = ["conda-forge"]
+dependencies = { fzf = "*" }
+exposed = { fzf = "fzf" }
+
+[envs.jq]
+channels = ["conda-forge"]
+dependencies = { jq = "*" }
+exposed = { jq = "jq" }
+
+[envs.grex]
+channels = ["conda-forge"]
+dependencies = { grex = "*" }
+exposed = { grex = "grex" }
+
+[envs.cmake]
+channels = ["conda-forge"]
+dependencies = { cmake = "*" }
+exposed = { ccmake = "ccmake", cmake = "cmake", cpack = "cpack", ctest = "ctest" }
+
+[envs.hurl]
+channels = ["conda-forge"]
+dependencies = { hurl = "*" }
+exposed = { hurl = "hurl", hurlfmt = "hurlfmt" }
+
+[envs.hyperfine]
+channels = ["conda-forge"]
+dependencies = { hyperfine = "*" }
+exposed = { hyperfine = "hyperfine" }
+
+[envs.lua-language-server]
+channels = ["conda-forge"]
+dependencies = { lua-language-server = "*" }
+exposed = { lua-language-server = "lua-language-server" }
+
+[envs.prettier]
+channels = ["conda-forge"]
+dependencies = { prettier = "*" }
+exposed = { prettier = "prettier" }
+
+[envs.shellcheck]
+channels = ["conda-forge"]
+dependencies = { shellcheck = "*" }
+exposed = { shellcheck = "shellcheck" }
+
+[envs.stylua]
+channels = ["conda-forge"]
+dependencies = { stylua = "*" }
+exposed = { stylua = "stylua" }
+
+[envs.tinymist]
+channels = ["conda-forge"]
+dependencies = { tinymist = "*" }
+exposed = { tinymist = "tinymist" }
+
+[envs.watchexec]
+channels = ["conda-forge"]
+dependencies = { watchexec = "*" }
+exposed = { watchexec = "watchexec" }
+
+[envs.nvim]
+channels = ["conda-forge"]
+dependencies = { nvim = "*" }
+exposed = { nvim = "nvim" }
