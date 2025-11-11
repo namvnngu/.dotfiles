@@ -4,7 +4,7 @@
 # Description: Create symbolic links for man pages of mise and pixi tools.
 # License: The Unlicense
 # Date created: November 09, 2025
-# Date modified: November 10, 2025 
+# Date modified: November 11, 2025 
 
 manx_dir="${HOME}/.local/share/manx"
 
@@ -37,14 +37,17 @@ _get_man_files() {
 _create_symlink() {
   local man_file="${1}"
   local man_type="man${man_file##*.}"
-  local man_filename=''
-  man_filename=$(basename "${man_file}")
-
+  local man_dir="${manx_dir}/${man_type}"
+  local man_filename="${man_file##*/}"
   local source="${man_file}"
-  local target="${manx_dir}/${man_type}/${man_filename}"
+  local target="${man_dir}/${man_filename}"
 
-  mkdir -p "$(dirname "${target}")"
-  ln -Fs "${source}" "${target}"
+  if [[ ! -e "${man_dir}" ]]; then
+    mkdir -p "${man_dir}"
+  fi
+  if [[ ! -e "${target}" ]]; then
+    ln -s "${source}" "${target}"
+  fi
 }
 
 _progress_bar() {
