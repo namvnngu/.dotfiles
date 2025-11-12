@@ -1,10 +1,5 @@
 version = 1
 
-[envs.rattler-build]
-channels = ["conda-forge"]
-dependencies = { rattler-build = "*" }
-exposed = { rattler-build = "rattler-build" }
-
 [envs.htop]
 channels = ["conda-forge"]
 dependencies = { htop = "*" }
