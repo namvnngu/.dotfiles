@@ -2,4 +2,4 @@
 
 All dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
-The repository is under [UNLICENSE](https://unlicense.org).
+The repository is under [MIT License](./LICENSE).
