@@ -1,0 +1,19 @@
+colors:
+  body: none
+  date: black
+  tags: yellow
+  title: cyan
+default_hour: 9
+default_minute: 0
+editor: "vim -c 'set viminfo= noswapfile noundofile nobackup nowritebackup noshelltemp history=0 nomodeline secure'"
+encrypt: false
+highlight: true
+indent_character: '|'
+journals:
+  default:
+    journal: ~/.local/share/jrnl/journal.txt
+linewrap: 79
+tagsymbols: '#@'
+template: false
+timeformat: '%F %r'
+version: v4.2
