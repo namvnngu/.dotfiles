@@ -3,5 +3,5 @@ misc check the weather without colros: curl 'wttr.in/<location>?T'
 misc check the weather: curl 'wttr.in/<location>'
 misc dtrace debug processes of bash script: sudo dtrace -n 'proc:::exec-success /progenyof($target)/ { trace(curpsinfo->pr_psargs); }' -c <path-to-script>
 misc help for checking the weather: curl 'wttr.in/:help'
-misc transform from no case to snake-case: echo '<input>' | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '<space-replace>' | sed 's/^_//; s/_$//'
-misc transform from no case to snake-case and copy to mac clipboard: echo '<input>' | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '<space-replace>' | sed 's/^_//; s/_$//' | pbcopy
+misc transform from no case to lower case with separator: printf '<input>' | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '<space-replace>'
+misc transform from no case to lower case with separator and copy to mac clipboard: printf '<input>' | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '<space-replace>' | pbcopy
