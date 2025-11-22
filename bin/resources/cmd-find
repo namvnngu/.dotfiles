@@ -2,3 +2,5 @@ find all directories and exec a command on them (use null byte (-print0 and -0) 
 find all directories: find <target-path> -type d -name "<name>" -print
 find all files exclude a path: find <target-path> -path <excluded-path> -prune -o -type file -print
 find and delete empty directories: find <target-path> -type d -empty -delete
+find links to a specific file that is called <filename>: find -L <root> -samefile <file-path>
+find links to any file that happens to be named <filename>: find <root> -lname <filename>

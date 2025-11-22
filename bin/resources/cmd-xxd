@@ -1,0 +1,2 @@
+xxd dump hex data: xxd -g 1 -u <infile> <outfile>
+xxd assemble from hex data: xxd -r <infile> <outfile>
