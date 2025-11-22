@@ -4,7 +4,7 @@
 # Description: Create symbolic links for man pages of mise and pixi tools.
 # License: The Unlicense
 # Date created: November 09, 2025
-# Date modified: November 11, 2025 
+# Date modified: November 22, 2025 
 
 manx_dir="${HOME}/.local/share/manx"
 
@@ -23,12 +23,12 @@ _get_man_files() {
   echo "Finding man files in ${MISE_DATA_DIR}..."
   while read -r file; do 
     man_files+=("$file")
-  done < <(find "${MISE_DATA_DIR}" -name '*.[1-9]' -type f)
+  done < <(find "${MISE_DATA_DIR}" -name '*.[1-9]' \( -type l -or -type f \))
 
   echo "Finding man files in ${HOME}/.pixi/envs..."
   while read -r file; do 
     man_files+=("$file")
-  done < <(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.[1-9]' -type f)
+  done < <(find "${HOME}/.pixi/envs" -path '*share/man/*' -name '*.[1-9]' \( -type l -or -type f \))
 
   man_file_total="${#man_files[@]}"
   echo "Found ${man_file_total} man files!"
