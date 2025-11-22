@@ -4,98 +4,14 @@
 # Description: The URL bookmark manager (bm)
 # License: The Unlicense
 # Date created: July 02, 2025
-# Date modified: August 24, 2025
+# Date modified: November 22, 2025
 
-# DESIGN COMMAND
-#
-# Command: bm
-#
-# ==============================================================================
 # BOOKMARK FILE
 #
 # Each line in the bookmark file represents a single bookmark. Each bookmark has
 # 3 fields: category, title, and URL. The fields separated by the '|' character.
 #
-#                              category|title|url
-#
-# ==============================================================================
-# ADD A BOOKMARK
-#
-# Subcommand: add
-# Options
-#   -c  Category
-#   -t  Title
-#   -u  URL
-#
-# If one of the options is not provided, bm enters interactive mode and prompts
-# to input the category, title, and/or URL. All options must be provided. In
-# both cases, once the option values are provided, bm adds a new bookmark to
-# the bookmark file using the format described above.The new bookmark is
-# inserted in alphabetical order (A–Z).
-#
-# ==============================================================================
-# OPEN A BOOKMARK
-#
-# Subcommand: open
-# Options
-#   -l Line number
-#
-# If no options are provided, bm enters interactive mode, and displays all
-# bookmarks from the file using the fzf view. If one of the options is
-# provided, bm attempts to find the matching bookmark, and exits if none is
-# found. In both cases, once a bookmark is selected or found, its URL will be
-# extracted and opened in your default browser.
-#
-# ==============================================================================
-# COPY A BOOKMARK
-#
-# Subcommand: cp
-# Options
-#   -l Line number
-#
-# If no options are provided, bm enters interactive mode, and displays all
-# bookmarks from the file using the fzf view. If one of the options is
-# provided, bm attempts to find the matching bookmark, and exits if none is
-# found. In both cases, once a bookmark is selected or found, its URL will be
-# copied to clipboard.
-#
-# ==============================================================================
-# REMOVE A BOOKMARK
-#
-# Subcommand: rm
-# Options
-#   -l Line number
-#
-# If no options are provided, bm enters interactive mode, and displays all
-# bookmarks from the file using the fzf view. If one of the options is
-# provided, bm attempts to find the matching bookmark, and exits if none is
-# found. In both cases, once a bookmark is selected or found, its URL will be
-# removed from the bookmark file.
-#
-# ==============================================================================
-# VIEW BOOKMARKS
-#
-# Subcommand: view
-#
-# Print the content of the bookmark file.
-#
-# ==============================================================================
-# DISPLAY HELP
-#
-# Subcommand: help
-#
-# Print the usage information.
-
-# STRICT MODE
-
-set -o nounset
-set -o errexit
-set -o pipefail
-
-trap 'echo "Error at about line $LINENO. Exit code $?" >&2' ERR
-set -o errtrace
-
-IFS=$'\n\t'
+# category|title|url
 
 # GLOBALS
 
@@ -107,13 +23,33 @@ _bm_separator="|"
 
 # UTILITIES FUNCTIONS
 
+# Exits with status 1 and messages.
+#
+# Usage: _exit_1 [ARGUMENTS]
+#
+# Arguments:
+#   [message]  Error message
 _exit_1() {
-  printf "%s: %s\n" "$(tput setaf 1)Error$(tput sgr0)" "$*" >&2
+  printf "%s: %s\n" "$(tput setaf 1)${_cmd} error$(tput sgr0)" "$*" >&2
   exit 1
 }
 
 # CORE FUNCTIONS
 
+# Adds a bookmark.
+#
+# If one of the options is not provided, bm enters interactive mode and prompts
+# to input the category, title, and/or URL. All options must be provided. In
+# both cases, once the option values are provided, bm adds a new bookmark to
+# the bookmark file using the format described above.The new bookmark is
+# inserted in alphabetical order (A–Z).
+#
+# Usage: _add_bm [OPTIONS]
+#
+# Options:
+#   -c  Bookmark category
+#   -t  Bookmark title
+#   -u  Bookmark URL
 _add_bm() {
   read -r -p "Category: " category
   read -r -p "Title: " title
@@ -126,20 +62,84 @@ _add_bm() {
   printf "${bookmarks}" | sort -f > "${_bm_file}"
 }
 
+# Opens a bookmark in browser.
+#
+# If no options are provided, bm enters interactive mode, and displays all
+# bookmarks from the file using the fzf view. If one of the options is
+# provided, bm attempts to find the matching bookmark, and exits if none is
+# found. In both cases, once a bookmark is selected or found, its URL will be
+# extracted and opened in your default browser.
+#
+# Usage: _open_bm [OPTIONS]
+#
+# Options:
+#   -l Line number
 _open_bm() {
   local bm=$(fzf < "${_bm_file}")
   local url=$(cut -d '|' -f 3 <<< "${bm}")
   opena "${url}"
 }
 
+# Copies a bookmark into clipboard.
+#
+# If no options are provided, bm enters interactive mode, and displays all
+# bookmarks from the file using the fzf view. If one of the options is
+# provided, bm attempts to find the matching bookmark, and exits if none is
+# found. In both cases, once a bookmark is selected or found, its URL will be
+# copied to clipboard.
+#
+# Usage: _copy_bm [OPTIONS]
+#
+# Options:
+#   -l Line number
 _copy_bm() {
   local bm=$(fzf < "${_bm_file}")
   local url=$(cut -d '|' -f 3 <<< "${bm}")
   pbcopy <<< "${url}"
 }
 
+# Removes a bookmark.
+#
+# If no options are provided, bm enters interactive mode, and displays all
+# bookmarks from the file using the fzf view. If one of the options is
+# provided, bm attempts to find the matching bookmark, and exits if none is
+# found. In both cases, once a bookmark is selected or found, its URL will be
+# removed from the bookmark file.
+#
+# Usage: _rm_bm [OPTIONS]
+#
+# Options:
+#   -l Line number
+_rm_bm() {
+  echo "TODO: Remove bookmark"
+}
+
+# Prints the content of the bookmark file.
+#
+# Usage: _view_bm
 _view_bm() {
   cat "${_bm_file}"
+}
+
+# Prints the usage information.
+#
+# Usage: _help
+_help() {
+  printf "${_cmd} - Manage your bookmarks
+
+Usage: ${_cmd} [OPTIONS] [COMMAND]
+
+Commands:
+  add         Add a bookmark
+  open        Open a bookmark in browser
+  copy, cp    Copy a bookmark into clipboard
+  remove, rm  Remove a bookmark
+  view        Print the content of the bookmark file
+  help        Print usage information
+ 
+Options: 
+  -h, --help  Print usage information
+"
 }
 
 # MAIN
@@ -153,21 +153,21 @@ _main() {
     open)
       _open_bm
       ;;
-    cp)
+    copy | cp)
       _copy_bm
       ;;
-    rm)
-      printf "TODO: rm\n"
+    remove | rm)
+      _rm_bm
       ;;
-    view)
+    view | list | ls)
       _view_bm
       ;;
     help | --help | -h)
-      printf "TODO: help\n"
+      _help
       ;;
     *)
-      _exit_1 "unknown subcommand '${subcmd}'." \
-        "For more information, try '${_cmd} help' or '${_cmd} -h'."
+      _exit_1 "unknown command '${subcmd}'
+For more information, try '${_cmd} help' or '${_cmd} -h'"
       ;;
   esac
 }
