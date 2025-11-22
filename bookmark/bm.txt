@@ -169,11 +169,17 @@ System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecule
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|The System Design Primer|https://github.com/donnemartin/system-design-primer
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
+Tools|[Diagram] D2: Declarative Diagramming|https://d2lang.com
+Tools|[Diagram] markmap|https://markmap.js.org
+Tools|[Docs] Docusaurus: Build optimized websites quickly, focus on your content|https://docusaurus.io
+Tools|[Docs] Eleventy: A simpler static site generator|https://11ty.dev
+Tools|[Docs] Fumadocs: The beautiful & flexible React.js docs framework|https://fumadocs.dev
+Tools|[Docs] Hugo: The world's fastest framework for building websites|https://gohugo.io
+Tools|[Docs] Island.js: Vite & MDX powered static site generator based on islands architecture|https://islandjs.dev
+Tools|[Docs] VitePress: Markdown to Beautiful Docs in Minutes|https://vitepress.dev
 Tools|ANSI Escape Codes|https://ansi.tools
 Tools|Crontab Guru: Cron Schedule Expression Generator|https://crontab.guru
-Tools|D2: Declarative Diagramming|https://d2lang.com
 Tools|Globster|https://globster.xyz
-Tools|markmap|https://markmap.js.org
 Tools|RustDesk: An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer|https://github.com/rustdesk/rustdesk
 Tools|strudel: Web-based environment for live coding algorithmic patterns, incorporating a faithful port of TidalCycles to JavaScript|https://strudel.cc
 Tools|Syncthing|https://syncthing.net
@@ -198,10 +204,11 @@ Vim/Neovim|Seven habits of effective text editing|https://moolenaar.net/habits.h
 Vim/Neovim|The tools that I love: Vim|https://lervag.github.io/posts/how-i-vim
 Vim/Neovim|Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
+Web Frontend|[React] Bulletproof React|https://github.com/alan2207/bulletproof-react
+Web Frontend|[React] nuqs: Type-safe search params state manager for React|https://nuqs.dev
 Web Frontend|A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
 Web Frontend|ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
 Web Frontend|Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
-Web Frontend|Bulletproof React|https://github.com/alan2207/bulletproof-react
 Web Frontend|Component testing|https://storybook.js.org/blog/component-testing
 Web Frontend|Fine-Grained Reactivity Fundamentals Series' Articles|https://dev.to/ryansolid/series/13735
 Web Frontend|How Web Works|https://github.com/vasanthk/how-web-works
