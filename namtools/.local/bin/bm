@@ -4,7 +4,7 @@
 # Description: The URL bookmark manager (bm)
 # License: The Unlicense
 # Date created: July 02, 2025
-# Date modified: November 22, 2025
+# Date modified: November 25, 2025
 
 # BOOKMARK FILE
 #
@@ -18,7 +18,7 @@
 _cmd="$(basename "${0}")"
 _version="0.1.0"
 
-_bm_file="${DOTFILES_PATH}/bookmark/bm.txt"
+_bm_file="${NAMTOOLS_DATA_DIR}/bm.txt"
 _bm_separator="|"
 
 # UTILITIES FUNCTIONS

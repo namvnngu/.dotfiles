@@ -4,9 +4,9 @@
 # Description: Find and copy/execute a command
 # License: The Unlicense
 # Date created: January 24, 2024
-# Date modified: November 05, 2025
+# Date modified: November 25, 2025
 
-cmd_dir="$DOTFILES_PATH/bin/resources"
+cmd_dir="${NAMTOOLS_DATA_DIR}"
 
 if [[ "$1" == "ls" ]]; then
   find "$cmd_dir" -maxdepth 1 -name "cmd-*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5

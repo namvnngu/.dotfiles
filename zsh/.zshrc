@@ -22,7 +22,13 @@ PROMPT='%n %~'$'\n$ '
 # emacs mode
 set -o emacs
 
-# man1
+# add local bin
+add_path "${HOME}/.local/bin"
+
+# namtools
+export NAMTOOLS_DATA_DIR="${HOME}/.local/share/namtools"
+
+# manx's man1
 export MANPATH="${HOME}/.local/share/manx:"
 
 # pixi
@@ -53,6 +59,3 @@ source <(fzf --zsh)
 # go
 export GOPATH="${HOME}/.go"
 
-# own
-export DOTFILES_PATH="${HOME}/.dotfiles"
-add_path "${HOME}/.dotfiles/bin"

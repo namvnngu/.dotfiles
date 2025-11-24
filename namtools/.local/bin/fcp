@@ -4,9 +4,9 @@
 # Description: Find and copy something
 # License: The Unlicense
 # Date created: July 22, 2024
-# Date modified: August 23, 2025
+# Date modified: November 25, 2025
 
-fcp_dir="$DOTFILES_PATH/bin/resources"
+fcp_dir="${NAMTOOLS_DATA_DIR}"
 
 if [[ $1 == "ls" ]]; then
   find "$fcp_dir" -maxdepth 1 -name "fcp-*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
