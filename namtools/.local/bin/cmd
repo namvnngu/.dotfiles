@@ -9,17 +9,18 @@
 cmd_dir="${NAMTOOLS_DATA_DIR}"
 
 if [[ "$1" == "ls" ]]; then
-  find "$cmd_dir" -maxdepth 1 -name "cmd-*" | sed "s/^.*cmd-//" | git column --mode=column --padding=5
+  find "$cmd_dir" -maxdepth 1 -name "cmd-*.txt" \
+    | sed -e "s/^.*cmd-//" -e "s/.txt$//"
   exit 0
 fi
 
 category="$1"
-cmd_file="$cmd_dir/cmd-$category"
+cmd_file="$cmd_dir/cmd-$category.txt"
 
 # Fuzzy search
 
 if [[ $# -eq 0 ]]; then
-  cmds=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*" -exec cat {} '+')
+  cmds=$(find "$cmd_dir" -maxdepth 1 -name "cmd-*.txt" -exec cat {} '+')
   cmd=$(echo "$cmds" | fzf)
 elif [[ -e "$cmd_file" ]]; then
   cmd=$(fzf < "$cmd_file")

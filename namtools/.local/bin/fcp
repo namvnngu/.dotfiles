@@ -9,17 +9,18 @@
 fcp_dir="${NAMTOOLS_DATA_DIR}"
 
 if [[ $1 == "ls" ]]; then
-  find "$fcp_dir" -maxdepth 1 -name "fcp-*" | sed "s/^.*fcp-//" | git column --mode=column --padding=5
+  find "$fcp_dir" -maxdepth 1 -name "fcp-*.txt" \
+    | sed -e "s/^.*fcp-//" -e "s/.txt$//"
   exit 0
 fi
 
 category="$1"
-fcp_file="$fcp_dir/fcp-$category"
+fcp_file="$fcp_dir/fcp-$category.txt"
 
 # Fuzzy search
 
 if [[ $# -eq 0 ]]; then
-  files=$(find "$fcp_dir" -maxdepth 1 -name "fcp-*" -exec cat {} '+')
+  files=$(find "$fcp_dir" -maxdepth 1 -name "fcp-*.txt" -exec cat {} '+')
   selected=$(echo "$files" | fzf)
 elif [[ -e "$fcp_file" ]]; then
   selected=$(fzf < "$fcp_file")

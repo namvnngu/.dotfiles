@@ -8,6 +8,7 @@ git clone a repo no checkout: git clone --no-checkout <url>
 git clone blobless download all reachable commits and trees while fetching blobs on-demand: git clone --filter=blob:none <url>
 git clone shallow truncate the commit history to reduce the clone size: git clone --depth=<depth> <url>
 git clone treeless download all reachable commits while fetching trees and blobs on-demand: git clone --filter=tree:0 <url>
+git column table: git column --mode=column --padding=<padding>
 git conflict diff: git diff --name-only --diff-filter=U --relative
 git count files in a commit: git show --pretty="" --name-only <commit> | wc -l
 git create a new branch with no history: git checkout --orphan <branch-name>
