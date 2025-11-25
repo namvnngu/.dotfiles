@@ -1,3 +1,5 @@
+bell-features = no-title
+
 confirm-close-surface = false
 
 cursor-style = block
