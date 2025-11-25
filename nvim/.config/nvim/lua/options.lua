@@ -1,6 +1,5 @@
 vim.cmd("syntax on")
 vim.o.termguicolors = false
-vim.o.background = vim.env.THEME_MODE
 vim.cmd("colorscheme memono")
 
 vim.g.mapleader = " "

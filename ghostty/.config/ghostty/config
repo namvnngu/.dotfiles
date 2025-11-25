@@ -1,0 +1,11 @@
+confirm-close-surface = false
+
+cursor-style = block
+cursor-style-blink = false
+
+font-feature = -calt, -liga, -dlig
+font-size = 15
+
+shell-integration-features = no-cursor
+
+theme = light:Builtin Light,dark:Builtin Dark
