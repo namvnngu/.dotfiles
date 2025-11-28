@@ -148,4 +148,4 @@ exposed = { nvim = "nvim" }
 [envs.radare2]
 channels = ["~/.pixi/forges/nam-forge/packages"]
 dependencies = { radare2 = "*" }
-exposed = { r2 = "r2", r2agent = "r2agent", r2p = "r2p", r2pm = "r2pm", r2r = "r2r", r2sdb = "r2sdb", rabin2 = "rabin2", radare2 = "radare2", radiff2 = "radiff2", rafind2 = "rafind2", ragg2 = "ragg2", rahash2 = "rahash2", rapatch2 = "rapatch2", rarun2 = "rarun2", rasign2 = "rasign2", rasm2 = "rasm2", ravc2 = "ravc2", rax2 = "rax2" }
+exposed = { r2r = "r2r", clang-format-radare2 = "clang-format-radare2", r2 = "r2", r2agent = "r2agent", r2p = "r2p", r2pm = "r2pm", r2sdb = "r2sdb", rabin2 = "rabin2", radare2 = "radare2", radiff2 = "radiff2", rafind2 = "rafind2", rafs2 = "rafs2", ragg2 = "ragg2", rahash2 = "rahash2", rapatch2 = "rapatch2", rarun2 = "rarun2", rasign2 = "rasign2", rasm2 = "rasm2", ravc2 = "ravc2", rax2 = "rax2" }
