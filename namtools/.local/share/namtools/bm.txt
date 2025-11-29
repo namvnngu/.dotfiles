@@ -108,6 +108,7 @@ JavaScript|Jest: Finding the cause of a memory leak in Jest tests|https://making
 JavaScript|Jest: Jest leaks memory from required modules with closures over imports|https://github.com/jestjs/jest/issues/6814
 JavaScript|Jest: Your Jest Tests are Leaking Memory|https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html
 JavaScript|paulmillr/chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
+JavaScript|RxJS: Reactive Extensions Library for JavaScript|https://rxjs.dev
 JavaScript|Secrets of the act(...) api|https://github.com/threepointone/react-act-examples/blob/master/sync.md
 JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
 JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
@@ -160,6 +161,7 @@ Programming|0DE5|https://0de5.net
 Programming|Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
 Programming|Ranking Programming Languages by Energy Efficiency|https://haslab.github.io/SAFER/scp21.pdf
 Rust|A Game Boy Emulator|https://github.com/smparsons/retroboy
+Rust|bacon: A background code checker|https://dystroy.org/bacon
 Rust|Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
 Rust|Rust Embedded Drivers (RED)|https://red.implrust.com
@@ -177,6 +179,9 @@ Tools|[Docs] Fumadocs: The beautiful & flexible React.js docs framework|https://
 Tools|[Docs] Hugo: The world's fastest framework for building websites|https://gohugo.io
 Tools|[Docs] Island.js: Vite & MDX powered static site generator based on islands architecture|https://islandjs.dev
 Tools|[Docs] VitePress: Markdown to Beautiful Docs in Minutes|https://vitepress.dev
+Tools|[Slide] presenterm: A markdown terminal slideshow tool|https://mfontanini.github.io/presenterm
+Tools|[Slide] Slides: Terminal based presentation tool|https://github.com/maaslalani/slides
+Tools|[Slide] Slidev: Presentation Slides for Developers|https://sli.dev
 Tools|ANSI Escape Codes|https://ansi.tools
 Tools|Crontab Guru: Cron Schedule Expression Generator|https://crontab.guru
 Tools|Globster|https://globster.xyz
