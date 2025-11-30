@@ -53,12 +53,6 @@ nnoremap <Leader>l <C-W>l
 " Yank the current file path
 nnoremap yp <Cmd>call setreg('+', expand('%:p'))<CR>
 
-" Yank til the end
-nnoremap Y y$
-
-" Clear highlighting search
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-
 " Keep searching centered
 nnoremap n nzz
 nnoremap N Nzz
@@ -71,24 +65,38 @@ nnoremap <C-U> <C-U>zz
 nnoremap <C-K> <Cmd>cprev<CR>zz
 nnoremap <C-J> <Cmd>cnext<CR>zz
 
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Toggle spelling checker
+map <F12> :setlocal spell! spelllang=en_us<CR>
+
 " Replace currently selected text with black hole register without yanking it
 vnoremap <Leader>p "_dP
 
 " Replace word under cursor
 nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 
+" Make file executable
+nnoremap <silent> <Leader>x <Cmd>!chmod +x %<CR>
+
 " Create or edit file
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" Preview markdown
+nnoremap <Leader>mp <Cmd>!mdp '%'<CR>
 
 " Make the current buffer a scratch buffer
 nnoremap <Leader>bs <Cmd>setlocal bt=nofile bh=wipe noswf<CR>
 
-" Set a new undo point before deleting text in insert mode
-inoremap <C-U> <C-G>u<C-U>
-inoremap <C-W> <C-G>u<C-W>
-
-" Switch between C source and header file
-nnoremap <Leader>c <Cmd>e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+" Fix the indentation of the entire file
+function s:indent()
+  let l:view = winsaveview()
+  keepjumps keeppatterns silent! norm gg=G
+  call winrestview(l:view)
+endfunction
+nnoremap <Leader>= <Cmd>call <SID>indent()<CR>
 
 " Format the entire file
 function s:format()
@@ -98,13 +106,18 @@ function s:format()
 endfunction
 nnoremap <Leader>gq <Cmd>call <SID>format()<CR>
 
-" Fix the indentation of the entire file
-function s:indent()
-  let l:view = winsaveview()
-  keepjumps keeppatterns silent! norm gg=G
-  call winrestview(l:view)
-endfunction
-nnoremap <Leader>= <Cmd>call <SID>indent()<CR>
+" Yank til the end
+nnoremap Y y$
+
+" Clear highlighting search
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
+" Set a new undo point before deleting text in insert mode
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
+
+" Switch between C source and header file
+nnoremap <Leader>cc <Cmd>e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS                                                                "
