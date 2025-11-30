@@ -24,7 +24,7 @@ end
 --- @param cmd string The runner command.
 --- @return string # A string that defines a runner user command.
 function M.runnercmd(cmd)
-  return ("command! Run vs | term %s"):format(cmd)
+  return ("command! Run vert term %s"):format(cmd)
 end
 
 return M

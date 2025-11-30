@@ -91,7 +91,7 @@ nnoremap <Leader>mp <Cmd>!mdp '%'<CR>
 nnoremap <Leader>bs <Cmd>setlocal bt=nofile bh=wipe noswf<CR>
 
 " Fix the indentation of the entire file
-function s:indent()
+function! s:indent()
   let l:view = winsaveview()
   keepjumps keeppatterns silent! norm gg=G
   call winrestview(l:view)
@@ -99,7 +99,7 @@ endfunction
 nnoremap <Leader>= <Cmd>call <SID>indent()<CR>
 
 " Format the entire file
-function s:format()
+function! s:format()
   let l:view = winsaveview()
   keepjumps keeppatterns silent! norm gggqG
   call winrestview(l:view)
@@ -148,9 +148,10 @@ augroup END
 
 augroup c_ft
   autocmd!
-  autocmd FileType c,cpp     setlocal tags=./tags,tags,~/.tags/c-system
-  autocmd FileType c,cpp     if executable('clang-format') | setlocal formatprg=clang-format | endif
-  autocmd BufEnter *.c,*.cpp command! Run :vs | term cc -o %:p:r % && %:p:r
+  autocmd FileType c,cpp setlocal tags=./tags,tags,~/.tags/c-system
+  autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
+  autocmd BufEnter *.c   command! Run :vert term ++shell cc  -o %:p:r % && %:p:r
+  autocmd BufEnter *.cpp command! Run :vert term ++shell c++ -o %:p:r % && %:p:r
 augroup END
 
 augroup markdown_ft
@@ -167,7 +168,7 @@ augroup END
 " COMMANDS                                                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
+command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
       \ | diffthis | wincmd p | diffthis
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
