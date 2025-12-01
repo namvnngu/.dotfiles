@@ -17,19 +17,40 @@
 cmd="$(basename "${0}")"
 version="0.1.0"
 
-templ_dir="${NAMTOOLS_DATA_DIR}"
+template_dir="${NAMTOOLS_DATA_DIR}"
+
+# UTILITIES FUNCTIONS
+
+# Exits with status 1 and messages.
+#
+# Usage: exit-1 [ARGUMENTS]
+#
+# Arguments:
+#   [message]  Error message
+exit-1() {
+  {
+    printf "${cmd}: "
+    printf "%s\n" "${@}"
+  } 1>&2
+  exit 1
+}
 
 # CORE FUNCTIONS
 
 # MAIN
 
 main() {
-  local templ_name="${1}"
+  local template_name="${1}"
   local file_path="${2}"
 
-  local templ_file="${templ_dir}/templ-${templ_name}.txt"
+  local template_file="${template_dir}/templ-${template_name}.txt"
 
-  cp "${templ_file}" "${file_path}"
+  if [[ ! -e "${template_file}" ]]; then
+    exit-1 "${template_file}: No such file"
+  fi
+
+  mkdir -p $(dirname "${file_path}")
+  cp "${template_file}" "${file_path}"
 }
 
 main "$@"
