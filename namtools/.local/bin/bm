@@ -111,7 +111,7 @@ copy-bm() {
 # Options:
 #   -l Line number
 rm-bm() {
-  echo "TODO: Remove bookmark"
+  printf "TODO: Remove bookmark\n"
 }
 
 # Prints the content of the bookmark file.
@@ -123,8 +123,8 @@ view-bm() {
 
 # Prints the usage information.
 #
-# Usage: help
-help() {
+# Usage: print-help
+print-help() {
   printf "${cmd} - Manage your bookmarks
 
 Version: ${version}
@@ -142,6 +142,13 @@ Commands:
 Options: 
   -h, --help  Print usage information
 "
+}
+
+# Prints the version.
+#
+# Usage: print-version
+print-version() {
+  printf "${cmd} ${version}\n"
 }
 
 # MAIN
@@ -165,7 +172,10 @@ main() {
       view-bm
       ;;
     help | --help | -h)
-      help
+      print-help
+      ;;
+    version | --version | -v)
+      print-version
       ;;
     *)
       exit-1 "unknown command '${subcmd}'
