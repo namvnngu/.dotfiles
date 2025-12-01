@@ -25,10 +25,10 @@ bm_separator="|"
 
 # Exits with status 1 and messages.
 #
-# Usage: exit-1 [ARGUMENTS]
+# Usage: exit-1 [MESSAGE...]
 #
 # Arguments:
-#   [message]  Error message
+#   [MESSAGE...]  Error messages
 exit-1() {
   {
     printf "${cmd}: "
@@ -128,10 +128,8 @@ view-bm() {
 #
 # Usage: print-help
 print-help() {
-  printf "${cmd} - Manage your bookmarks
-
-Version: ${version}
-
+  printf "${cmd} - Manage your bookmarks [version ${version}]
+ 
 Usage: ${cmd} [OPTIONS] [COMMAND]
 
 Commands:
@@ -141,9 +139,11 @@ Commands:
   remove, rm  Remove a bookmark
   view        Print the content of the bookmark file
   help        Print usage information
+  version     Print version
  
 Options: 
-  -h, --help  Print usage information
+  -h, --help     Print usage information
+  -v, --version  Print version
 "
 }
 
