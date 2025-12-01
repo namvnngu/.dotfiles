@@ -9,17 +9,3 @@ vim.keymap.set(
       .. "Date Modified: %B %d, %Y"
   )
 )
-
-vim.keymap.set(
-  "ia",
-  "cpcpp@",
-  "#include <iostream><CR>"
-    .. "<CR>"
-    .. "using namespace std;<CR>"
-    .. "<CR>"
-    .. "int main() {<CR>"
-    .. "  ios_base::sync_with_stdio(0);<CR>"
-    .. "  cin.tie(0);<CR>"
-    .. "}"
-    .. "<Esc>gg=GGk^"
-)
