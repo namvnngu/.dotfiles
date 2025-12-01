@@ -23,10 +23,10 @@ template_dir="${NAMTOOLS_DATA_DIR}"
 
 # Exits with status 1 and messages.
 #
-# Usage: exit-1 [ARGUMENTS]
+# Usage: exit-1 [MESSAGE...]
 #
 # Arguments:
-#   [message]  Error message
+#   [MESSAGE...]  Error messages
 exit-1() {
   {
     printf "${cmd}: "
@@ -37,9 +37,49 @@ exit-1() {
 
 # CORE FUNCTIONS
 
+# Prints the usage information.
+#
+# Usage: print-help
+print-help() {
+  printf "${cmd} - Create a file given a template name [version ${version}]
+
+Usage: 
+  ${cmd} [OPTIONS]
+  ${cmd} TEMPLATE_NAME FILE_PATH
+
+Arguments:
+  TEMPLATE_NAME  Template name
+  FILE_PATH      Path of a file created based on TEMPLATE_NAME
+
+Options: 
+  -h, --help     Print usage information
+  -v, --version  Print version
+"
+}
+
+# Prints the version.
+#
+# Usage: print-version
+print-version() {
+  printf "${cmd} ${version}\n"
+}
+
 # MAIN
 
 main() {
+  if (( $# <= 1 )); then
+    local option="${1:-help}"
+    case "${option}" in
+      --version | -v)
+        print-version
+        ;;
+      *)
+        print-help
+        ;;
+    esac
+    exit
+  fi
+
   local template_name="${1}"
   local file_path="${2}"
 
