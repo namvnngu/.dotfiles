@@ -15,22 +15,22 @@
 
 # GLOBALS
 
-_cmd="$(basename "${0}")"
-_version="0.1.1"
+cmd="$(basename "${0}")"
+version="0.1.1"
 
-_bm_file="${NAMTOOLS_DATA_DIR}/bm.txt"
-_bm_separator="|"
+bm_file="${NAMTOOLS_DATA_DIR}/bm.txt"
+bm_separator="|"
 
 # UTILITIES FUNCTIONS
 
 # Exits with status 1 and messages.
 #
-# Usage: _exit_1 [ARGUMENTS]
+# Usage: exit-1 [ARGUMENTS]
 #
 # Arguments:
 #   [message]  Error message
-_exit_1() {
-  printf "%s: %s\n" "$(tput setaf 1)${_cmd} error$(tput sgr0)" "$*" >&2
+exit-1() {
+  printf "%s: %s\n" "$(tput setaf 1)${cmd} error$(tput sgr0)" "$*" >&2
   exit 1
 }
 
@@ -55,11 +55,11 @@ add-bm() {
   read -r -p "Title: " title
   read -r -p "URL: " url
 
-  local bookmark="${category}${_bm_separator}${title}${_bm_separator}${url}"
-  local bookmarks=$(cat "${_bm_file}")
+  local bookmark="${category}${bm_separator}${title}${bm_separator}${url}"
+  local bookmarks=$(cat "${bm_file}")
   bookmarks="${bookmarks}\n${bookmark}"
 
-  printf "${bookmarks}" | sort -f > "${_bm_file}"
+  printf "${bookmarks}" | sort -f > "${bm_file}"
 }
 
 # Opens a bookmark in browser.
@@ -75,7 +75,7 @@ add-bm() {
 # Options:
 #   -l Line number
 open-bm() {
-  local bm=$(fzf < "${_bm_file}")
+  local bm=$(fzf < "${bm_file}")
   local url=$(cut -d '|' -f 3 <<< "${bm}")
   opena "${url}"
 }
@@ -93,7 +93,7 @@ open-bm() {
 # Options:
 #   -l Line number
 copy-bm() {
-  local bm=$(fzf < "${_bm_file}")
+  local bm=$(fzf < "${bm_file}")
   local url=$(cut -d '|' -f 3 <<< "${bm}")
   pbcopy <<< "${url}"
 }
@@ -118,18 +118,18 @@ rm-bm() {
 #
 # Usage: view-bm
 view-bm() {
-  cat "${_bm_file}"
+  cat "${bm_file}"
 }
 
 # Prints the usage information.
 #
 # Usage: help
 help() {
-  printf "${_cmd} - Manage your bookmarks
+  printf "${cmd} - Manage your bookmarks
 
-Version: ${_version}
+Version: ${version}
 
-Usage: ${_cmd} [OPTIONS] [COMMAND]
+Usage: ${cmd} [OPTIONS] [COMMAND]
 
 Commands:
   add         Add a bookmark
@@ -168,8 +168,8 @@ main() {
       help
       ;;
     *)
-      _exit_1 "unknown command '${subcmd}'
-For more information, try '${_cmd} help' or '${_cmd} -h'"
+      exit-1 "unknown command '${subcmd}'
+For more information, try '${cmd} help' or '${cmd} -h'"
       ;;
   esac
 }
