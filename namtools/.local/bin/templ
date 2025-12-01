@@ -6,27 +6,16 @@
 # Date Created: December 01, 2025
 # Date Modified: December 01, 2025
 
-# Template file:
-#
-# templ-<name>.txt
-#
-# <name> is a template name.
-
-# GLOBALS
-
 cmd="$(basename "${0}")"
 version="0.1.0"
-
 template_dir="${NAMTOOLS_DATA_DIR}"
-
-# UTILITIES FUNCTIONS
 
 # Exits with status 1 and messages.
 #
-# Usage: exit-1 [MESSAGE...]
+# Usage: exit-1 [message...]
 #
 # Arguments:
-#   [MESSAGE...]  Error messages
+#   [message...]  Error messages
 exit-1() {
   {
     printf "${cmd}: "
@@ -34,8 +23,6 @@ exit-1() {
   } 1>&2
   exit 1
 }
-
-# CORE FUNCTIONS
 
 # Prints the usage information.
 #
@@ -64,11 +51,10 @@ print-version() {
   printf "${cmd} ${version}\n"
 }
 
-# MAIN
-
 main() {
   if (( $# <= 1 )); then
-    local option="${1:-help}"
+    local option="${1}"
+
     case "${option}" in
       --version | -v)
         print-version
@@ -77,12 +63,12 @@ main() {
         print-help
         ;;
     esac
+
     exit
   fi
 
   local template_name="${1}"
   local file_path="${2}"
-
   local template_file="${template_dir}/templ-${template_name}.txt"
 
   if [[ ! -e "${template_file}" ]]; then

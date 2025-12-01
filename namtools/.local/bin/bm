@@ -13,15 +13,11 @@
 #
 # category|title|url
 
-# GLOBALS
-
 cmd="$(basename "${0}")"
 version="0.1.1"
 
 bm_file="${NAMTOOLS_DATA_DIR}/bm.txt"
 bm_separator="|"
-
-# UTILITIES FUNCTIONS
 
 # Exits with status 1 and messages.
 #
@@ -36,8 +32,6 @@ exit-1() {
   } 1>&2
   exit 1
 }
-
-# CORE FUNCTIONS
 
 # Adds a bookmark.
 #
@@ -153,8 +147,6 @@ Options:
 print-version() {
   printf "${cmd} ${version}\n"
 }
-
-# MAIN
 
 main() {
   local subcmd="${1:-help}"
