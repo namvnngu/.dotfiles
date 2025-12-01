@@ -25,10 +25,10 @@ bm_separator="|"
 
 # Exits with status 1 and messages.
 #
-# Usage: exit-1 [MESSAGE...]
+# Usage: exit-1 [message...]
 #
 # Arguments:
-#   [MESSAGE...]  Error messages
+#   [message...]  Error messages
 exit-1() {
   {
     printf "${cmd}: "
@@ -47,7 +47,7 @@ exit-1() {
 # the bookmark file using the format described above.The new bookmark is
 # inserted in alphabetical order (A–Z).
 #
-# Usage: add-bm [OPTIONS]
+# Usage: add-bm [options]
 #
 # Options:
 #   -c  Bookmark category
@@ -73,7 +73,7 @@ add-bm() {
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # extracted and opened in your default browser.
 #
-# Usage: open-bm [OPTIONS]
+# Usage: open-bm [options]
 #
 # Options:
 #   -l Line number
@@ -91,7 +91,7 @@ open-bm() {
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # copied to clipboard.
 #
-# Usage: copy-bm [OPTIONS]
+# Usage: copy-bm [options]
 #
 # Options:
 #   -l Line number
@@ -109,7 +109,7 @@ copy-bm() {
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # removed from the bookmark file.
 #
-# Usage: rm-bm [OPTIONS]
+# Usage: rm-bm [options]
 #
 # Options:
 #   -l Line number
@@ -130,7 +130,7 @@ view-bm() {
 print-help() {
   printf "${cmd} - Manage your bookmarks [version ${version}]
  
-Usage: ${cmd} [OPTIONS] [COMMAND]
+Usage: ${cmd} [options] [command]
 
 Commands:
   add         Add a bookmark

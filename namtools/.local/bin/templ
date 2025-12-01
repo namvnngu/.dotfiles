@@ -44,12 +44,12 @@ print-help() {
   printf "${cmd} - Create a file given a template name [version ${version}]
 
 Usage: 
-  ${cmd} [OPTIONS]
-  ${cmd} TEMPLATE_NAME FILE_PATH
+  ${cmd} [options]
+  ${cmd} template_name file_path
 
 Arguments:
-  TEMPLATE_NAME  Template name
-  FILE_PATH      Path of a file created based on TEMPLATE_NAME
+  template_name  Template name
+  file_path      Path of a file created based on template_name
 
 Options: 
   -h, --help     Print usage information
