@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
+# Description: Push and create a remote branch if it does not exist yet
+# License: MIT License
+# Date Created: October 17, 2022
+# Date Modified: December 01, 2025
+
 git push --set-upstream origin "$(git branch --show-current)"

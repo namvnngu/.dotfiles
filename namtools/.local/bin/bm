@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Author: Nam Nguyen <vnngucs@outlook.com>
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
 # Description: The URL bookmark manager (bm)
-# License: The Unlicense
+# License: MIT License
 # Date created: July 02, 2025
-# Date modified: November 25, 2025
+# Date modified: December 01, 2025
 
 # BOOKMARK FILE
 #
@@ -16,7 +16,7 @@
 # GLOBALS
 
 _cmd="$(basename "${0}")"
-_version="0.1.0"
+_version="0.1.1"
 
 _bm_file="${NAMTOOLS_DATA_DIR}/bm.txt"
 _bm_separator="|"
@@ -44,13 +44,13 @@ _exit_1() {
 # the bookmark file using the format described above.The new bookmark is
 # inserted in alphabetical order (A–Z).
 #
-# Usage: _add_bm [OPTIONS]
+# Usage: add-bm [OPTIONS]
 #
 # Options:
 #   -c  Bookmark category
 #   -t  Bookmark title
 #   -u  Bookmark URL
-_add_bm() {
+add-bm() {
   read -r -p "Category: " category
   read -r -p "Title: " title
   read -r -p "URL: " url
@@ -70,11 +70,11 @@ _add_bm() {
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # extracted and opened in your default browser.
 #
-# Usage: _open_bm [OPTIONS]
+# Usage: open-bm [OPTIONS]
 #
 # Options:
 #   -l Line number
-_open_bm() {
+open-bm() {
   local bm=$(fzf < "${_bm_file}")
   local url=$(cut -d '|' -f 3 <<< "${bm}")
   opena "${url}"
@@ -88,11 +88,11 @@ _open_bm() {
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # copied to clipboard.
 #
-# Usage: _copy_bm [OPTIONS]
+# Usage: copy-bm [OPTIONS]
 #
 # Options:
 #   -l Line number
-_copy_bm() {
+copy-bm() {
   local bm=$(fzf < "${_bm_file}")
   local url=$(cut -d '|' -f 3 <<< "${bm}")
   pbcopy <<< "${url}"
@@ -106,26 +106,28 @@ _copy_bm() {
 # found. In both cases, once a bookmark is selected or found, its URL will be
 # removed from the bookmark file.
 #
-# Usage: _rm_bm [OPTIONS]
+# Usage: rm-bm [OPTIONS]
 #
 # Options:
 #   -l Line number
-_rm_bm() {
+rm-bm() {
   echo "TODO: Remove bookmark"
 }
 
 # Prints the content of the bookmark file.
 #
-# Usage: _view_bm
-_view_bm() {
+# Usage: view-bm
+view-bm() {
   cat "${_bm_file}"
 }
 
 # Prints the usage information.
 #
-# Usage: _help
-_help() {
+# Usage: help
+help() {
   printf "${_cmd} - Manage your bookmarks
+
+Version: ${_version}
 
 Usage: ${_cmd} [OPTIONS] [COMMAND]
 
@@ -144,26 +146,26 @@ Options:
 
 # MAIN
 
-_main() {
+main() {
   local subcmd="${1:-help}"
   case "${subcmd}" in
     add)
-      _add_bm
+      add-bm
       ;;
     open)
-      _open_bm
+      open-bm
       ;;
     copy | cp)
-      _copy_bm
+      copy-bm
       ;;
     remove | rm)
-      _rm_bm
+      rm-bm
       ;;
     view | list | ls)
-      _view_bm
+      view-bm
       ;;
     help | --help | -h)
-      _help
+      help
       ;;
     *)
       _exit_1 "unknown command '${subcmd}'
@@ -172,4 +174,4 @@ For more information, try '${_cmd} help' or '${_cmd} -h'"
   esac
 }
 
-_main "$@"
+main "$@"

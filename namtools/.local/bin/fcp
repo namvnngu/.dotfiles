@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Author: Nam Nguyen <vnngucs@outlook.com>
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
 # Description: Find and copy something
-# License: The Unlicense
+# License: MIT License
 # Date created: July 22, 2024
-# Date modified: November 25, 2025
+# Date modified: December 01, 2025
 
 fcp_dir="${NAMTOOLS_DATA_DIR}"
 

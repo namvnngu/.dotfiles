@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Author: Nam Nguyen <vnngucs@outlook.com>
-# Description: Print 256 colors
-# License: The Unlicense
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
+# Description: Print 256 terminal colors
+# License: MIT License
 # Date created: October 21, 2024
-# Date modified: May 16, 2025
+# Date modified: December 01, 2025
 
 output=''
 

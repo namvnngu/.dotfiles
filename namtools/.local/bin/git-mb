@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
+# Description: Show current branch
+# License: MIT License
+# Date Created: October 07, 2021
+# Date Modified: December 01, 2025
+
 git branch --show-current

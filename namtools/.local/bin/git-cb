@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
+# Description: Better git checkout
+# License: MIT License
+# Date Created: June 27, 2024
+# Date Modified: December 01, 2025
+
 branches=()
 BLACK="\033[0;30m"
 RED="\033[0;31m"

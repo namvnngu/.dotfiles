@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Author: Nam Nguyen <vnngucs@outlook.com>
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
 # Description: Create symbolic links for man pages of mise and pixi tools.
-# License: The Unlicense
+# License: MIT License
 # Date created: November 09, 2025
-# Date modified: November 22, 2025 
+# Date modified: December 01, 2025
 
 manx_dir="${HOME}/.local/share/manx"
 

@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
+# Description: Fix and format git files based on the eslint config
+# License: MIT License
+# Date Created: June 06, 2023
+# Date Modified: December 01, 2025
+
 # Install eslint_d if it does not exist
 if ! command -v eslint_d &> /dev/null
 then

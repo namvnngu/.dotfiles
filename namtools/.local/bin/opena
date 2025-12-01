@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Author: Nam Nguyen <vnngucs@outlook.com>
+# Author: Nam Nguyen <nguyenvietnam2401@gmail.com>
 # Description: Open a file, a directory or a URL with the default application across operating systems
-# License: The Unlicense
+# License: MIT License
 # Date created: June 18, 2025
-# Date modified: June 18, 2025
+# Date modified: December 01, 2025
 
 value="$1"
 
