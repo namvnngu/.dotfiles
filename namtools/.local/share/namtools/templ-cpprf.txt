@@ -1,0 +1,26 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+
+#define ll long long
+#define newl '\n'
+
+using namespace std;
+
+int main() {
+  string filename = "input.txt";
+  ifstream file(filename);
+
+  if (!file.is_open()) {
+    cout << "error: " << filename << " does not exist" << newl;
+    return 1;
+  }
+
+  string line;
+
+  while (getline(file, line)) {
+    cout << line << newl;
+  }
+
+  file.close();
+}

@@ -1,5 +1,8 @@
 #include <iostream>
 
+#define ll long long
+#define newl '\n'
+
 using namespace std;
 
 int main() {
