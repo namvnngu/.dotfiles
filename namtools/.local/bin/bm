@@ -30,7 +30,10 @@ bm_separator="|"
 # Arguments:
 #   [message]  Error message
 exit-1() {
-  printf "%s: %s\n" "$(tput setaf 1)${cmd} error$(tput sgr0)" "$*" >&2
+  {
+    printf "${cmd}: "
+    printf "%s\n" "${@}"
+  } 1>&2
   exit 1
 }
 
@@ -178,10 +181,10 @@ main() {
       print-version
       ;;
     *)
-      exit-1 "unknown command '${subcmd}'
-For more information, try '${cmd} help' or '${cmd} -h'"
+      exit-1 "Unknown command '${subcmd}'" \
+        "For more information, try '${cmd} help' or '${cmd} -h'"
       ;;
   esac
 }
 
-main "$@"
+main "${@}"
