@@ -1,6 +1,10 @@
+mac burn ISO to a disk: diskutil unmountDisk <disk> && sudo dd if=<iso-path> of=<disk> bs=8M status=progress oflag=direct && diskutil eject <disk>
+mac erase a disk: diskutil unmountDisk <disk> && diskutil eraseDisk <format> <name> <disk>
 mac find processes listening to a port: lsof -i tcp:<port>
 mac ip address: ipconfig getpacket en0
 mac list all available ios simulators: xcrun simctl list devices --json | jq -r '.devices[] | .[] | .name'
 mac list all connected devices: xcrun xctrace list devices
+mac list disk formats: diskutil listFilesystems
+mac list disks: diskutil list
 mac list of dynamic libraries used in an executable: otool -L <executable-path>
 mac list of static libraries used in an executable: nm <executable-path> | grep 'T '
