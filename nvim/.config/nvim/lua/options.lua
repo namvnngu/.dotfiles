@@ -39,5 +39,6 @@ vim.o.undolevels = 10000
 vim.o.virtualedit = "block"
 vim.o.wildmode = "longest:full"
 vim.o.wildoptions = "pum,tagfile"
+vim.o.winborder = "single"
 vim.o.winminwidth = 5
 vim.o.wrap = false
