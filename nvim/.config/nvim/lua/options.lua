@@ -1,4 +1,5 @@
 vim.cmd("syntax on")
+vim.o.background = vim.env.THEME_MODE
 vim.o.termguicolors = false
 vim.cmd("colorscheme memono")
 

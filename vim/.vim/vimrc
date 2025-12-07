@@ -3,6 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 syntax on
+let &background = $THEME_MODE
 set notermguicolors
 colorscheme memono
 
