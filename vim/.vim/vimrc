@@ -35,7 +35,6 @@ set scrolloff=8
 set ttimeout
 set ttimeoutlen=50
 set wildmenu
-set wildmode=longest:full
 set wildoptions=pum,tagfile
 
 " Avoid using old regexp engine which will incur performance issues in 
