@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local start_lsp = vim.lsp.start
 ---@diagnostic disable-next-line: duplicate-set-field
 vim.lsp.start = function(...)
@@ -25,7 +23,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
       -- HOVER
       if client:supports_method(ms.textDocument_documentHighlight) then
-        local hlgroup = utils.augroup("lsp_highlight_symbol", false)
+        local hlgroup = vim.api.nvim_create_augroup("nn_lsp_highlight_symbol", { clear = true })
 
         vim.api.nvim_clear_autocmds({ buffer = bufnr, group = hlgroup })
 

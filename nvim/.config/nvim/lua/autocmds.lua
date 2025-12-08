@@ -1,14 +1,12 @@
-local utils = require("utils")
-
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = utils.augroup("resize_splits"),
+  group = vim.api.nvim_create_augroup("nn_resize_splits", { clear = true }),
   command = "wincmd =",
 })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-  group = utils.augroup("highlight_yank"),
+  group = vim.api.nvim_create_augroup("nn_highlight_yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -16,7 +14,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Stop treesitter
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = utils.augroup("stop_treesitter"),
+  group = vim.api.nvim_create_augroup("nn_stop_treesitter", { clear = true }),
   callback = function(event)
     vim.treesitter.stop(event.buf)
   end,
@@ -24,7 +22,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Create intermediate directories on edit
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = utils.augroup("mkdir_on_edit"),
+  group = vim.api.nvim_create_augroup("nn_mkdir_on_edit", { clear = true }),
   callback = function()
     local dir = vim.fn.expand("<afile>:p:h")
     if dir:match("^/") and vim.fn.isdirectory(dir) == 0 then

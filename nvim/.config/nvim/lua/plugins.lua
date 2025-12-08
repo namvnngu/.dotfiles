@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local PLUGIN_URLS = {
   -- Required
   "https://github.com/junegunn/fzf",
@@ -17,6 +15,15 @@ local PLUGIN_URLS = {
   "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
 }
 local plugin_root_path = vim.fn.stdpath("data") .. "/site/pack/plugins/start"
+
+--- Prints a message.
+---
+--- @param msg string The message.
+--- @param err? boolean If `true`, the message is treated as an error.
+--- @param history? boolean Defaults to `true`. If `true`, add the message to `message-history`.
+local function echo(msg, err, history)
+  vim.api.nvim_echo({ { msg } }, history or true, { err })
+end
 
 --- Extracts the plugin name from a given URL or path.
 ---
@@ -42,19 +49,16 @@ local function install_plugins(plugin_urls, plugin_root)
     local plugin_path = vim.fn.expand(("%s/%s"):format(plugin_root, plugin_name))
 
     if vim.fn.isdirectory(plugin_path) == 0 then
-      utils.echo(("Installing %s..."):format(plugin_name))
+      echo(("Installing %s..."):format(plugin_name))
 
       local job_id = vim.fn.jobstart(
         { "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path },
         {
           on_exit = function(_, exit_code, _)
             if exit_code == 0 then
-              utils.echo(("Installed %s!"):format(plugin_name))
+              echo(("Installed %s!"):format(plugin_name))
             else
-              utils.echo(
-                ("Failed to install %s with exit code %s"):format(plugin_name, exit_code),
-                true
-              )
+              echo(("Failed to install %s with exit code %s"):format(plugin_name, exit_code), true)
             end
           end,
         }
@@ -97,9 +101,9 @@ local function sync_plugins(next_plugin_urls, plugin_root)
   if not vim.tbl_isempty(removed_plugin_path_by_name) then
     local plugin_names = vim.tbl_keys(removed_plugin_path_by_name)
     local plugin_paths = vim.tbl_values(removed_plugin_path_by_name)
-    utils.echo(("Removing %s..."):format(vim.fn.join(plugin_names, "...\nRemoving ")))
+    echo(("Removing %s..."):format(vim.fn.join(plugin_names, "...\nRemoving ")))
     vim.fn.system(vim.list_extend({ "rm", "-rf" }, plugin_paths))
-    utils.echo(("Removed %s!"):format(vim.fn.join(plugin_names, "!\nRemoved ")))
+    echo(("Removed %s!"):format(vim.fn.join(plugin_names, "!\nRemoved ")))
   end
 
   local added_plugin_urls = {}
@@ -116,7 +120,7 @@ local function sync_plugins(next_plugin_urls, plugin_root)
     and vim.tbl_isempty(added_plugin_urls)
 
   if not no_changes then
-    utils.echo("Restart Nvim to get latest updates.")
+    echo("Restart Nvim to get latest updates.")
   end
 
   return no_changes
@@ -130,26 +134,26 @@ local function create_commands(next_plugin_urls, plugin_root)
   vim.api.nvim_create_user_command("Pu", function()
     vim.fn.system({ "rm", "-rf", plugin_root })
     install_plugins(next_plugin_urls, plugin_root)
-    utils.echo("Updated all plugins. Restart Nvim to get latest updates.")
+    echo("Updated all plugins. Restart Nvim to get latest updates.")
   end, { desc = "Update all plugins" })
 
   vim.api.nvim_create_user_command("Ps", function()
     local no_changes = sync_plugins(next_plugin_urls, plugin_root)
     if no_changes then
-      utils.echo("All plugins are already synced.")
+      echo("All plugins are already synced.")
     end
   end, { desc = "Sync plugins" })
 
   vim.api.nvim_create_user_command("Pc", function()
     local plugin_paths = vim.fn.globpath(plugin_root, "*", false, true)
-    utils.echo("Plugin count: " .. vim.tbl_count(plugin_paths))
+    echo("Plugin count: " .. vim.tbl_count(plugin_paths))
   end, { desc = "Count plugins" })
 
   vim.api.nvim_create_user_command("Pl", function()
     local plugin_paths = vim.fn.globpath(plugin_root, "*", false, true)
     for index, plugin_path in pairs(plugin_paths) do
       local plugin_name = extract_plugin_name(plugin_path)
-      utils.echo(("%s. %s: %s"):format(index, plugin_name, plugin_path))
+      echo(("%s. %s: %s"):format(index, plugin_name, plugin_path))
     end
   end, { desc = "List plugins" })
 end

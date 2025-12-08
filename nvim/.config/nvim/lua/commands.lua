@@ -1,4 +1,11 @@
-local utils = require("utils")
+--- Prints a message.
+---
+--- @param msg string The message.
+--- @param err? boolean If `true`, the message is treated as an error.
+--- @param history? boolean Defaults to `true`. If `true`, add the message to `message-history`.
+local function echo(msg, err, history)
+  vim.api.nvim_echo({ { msg } }, history or true, { err })
+end
 
 vim.api.nvim_create_user_command("Grep", function(opts)
   local keyword = opts.args
@@ -50,7 +57,7 @@ vim.api.nvim_create_user_command("GOpenCommit", function()
   end
 
   if repo_url == "" then
-    utils.echo(("Failed to open commit %s. The URL is %s."):format(sha, repo_url), true)
+    echo(("Failed to open commit %s. The URL is %s."):format(sha, repo_url), true)
     return
   end
 
