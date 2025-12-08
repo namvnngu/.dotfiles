@@ -1,4 +1,4 @@
-nvim install a plugin given a URL: git clone --depth=1 --filter=blob:none <url> "$HOME/.local/share/nvim/site/pack/plugins/start/$(basename <url>)"
-nvim intall plugins given a file of plugin URLs: xargs -n1 -P8 -I{} sh -c 'git clone --depth=1 --filter=blob:none {} "$HOME/.local/share/nvim/site/pack/plugins/start/$(basename {})"' < <file-path>
+nvim install a plugin given a URL: git clone --depth=1 <url> "$HOME/.local/share/nvim/site/pack/plugins/start/$(basename <url>)"
+nvim install plugins given a file of plugin URLs: xargs -n1 -P8 -I{} sh -c 'git clone --depth=1 {} "$HOME/.local/share/nvim/site/pack/plugins/start/$(basename {})"' < <file-path>
 nvim uninstall a plugin: rm -rf $(find "$HOME/.local/share/nvim/site/pack/plugins/start" -mindepth 1 -maxdepth 1 -type d | fzf)
 nvim unsintall all plugins: rm -rf "$HOME/.local/share/nvim/site"

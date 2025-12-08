@@ -297,7 +297,7 @@ function s:install_plugins()
 
     call system("echo -e '" . trim(l:install_plugin_urls) . "' "
              \. "| xargs -P8 -I{} sh -c "
-             \. "'git clone --depth=1 --filter=blob:none {} "
+             \. "'git clone --depth=1 {} "
              \. s:plugin_root_path . "/$(basename {})'")
 
     echo trim(l:installed_plugin_msg)

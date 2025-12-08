@@ -153,7 +153,7 @@ vim.api.nvim_create_user_command("Pi", function(opts)
   if force or vim.fn.isdirectory(plugin_path) == 0 then
     vim.print(("Installing %s..."):format(plugin_name))
     vim.fn.system({ "rm", "-rf", plugin_path })
-    vim.fn.system({ "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path })
+    vim.fn.system({ "git", "clone", "--depth=1", plugin_url, plugin_path })
     vim.print(("Installed %s!"):format(plugin_name))
   end
 end, { nargs = 1, bang = true, desc = "Install a plugin given a URL" })

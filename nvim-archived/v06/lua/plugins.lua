@@ -44,7 +44,7 @@ local function install_plugins(plugin_urls, plugin_root)
       utils.echo(("Installing %s..."):format(plugin_name))
 
       local job_id = vim.fn.jobstart(
-        { "git", "clone", "--depth=1", "--filter=blob:none", plugin_url, plugin_path },
+        { "git", "clone", "--depth=1", plugin_url, plugin_path },
         {
           on_exit = function(_, exit_code, _)
             if exit_code == 0 then
