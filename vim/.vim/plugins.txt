@@ -1,3 +1,4 @@
-https://github.com/tpope/vim-dispatch
-https://github.com/tpope/vim-fugitive
 https://github.com/justinmk/vim-dirvish
+https://github.com/tpope/vim-dispatch
+https://github.com/tpope/vim-eunuch
+https://github.com/tpope/vim-fugitive
