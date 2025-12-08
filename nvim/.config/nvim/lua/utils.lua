@@ -19,12 +19,4 @@ function M.augroup(name, clear)
   return vim.api.nvim_create_augroup("namnguyen_" .. name, { clear = clear or true })
 end
 
---- Gets a string that defines a single-file runner user command.
----
---- @param cmd string The runner command.
---- @return string # A string that defines a single-file runner user command.
-function M.runnercmd(cmd)
-  return ("command! Run vert term %s"):format(cmd)
-end
-
 return M

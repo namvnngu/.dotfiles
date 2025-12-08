@@ -152,8 +152,8 @@ augroup c_ft
   autocmd!
   autocmd FileType c,cpp setlocal tags=./tags,tags,~/.tags/c-system
   autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
-  autocmd BufEnter *.c   command! Run :vert term ++shell cc  -o %:p:r % && %:p:r
-  autocmd BufEnter *.cpp command! Run :vert term ++shell c++ -o %:p:r % && %:p:r
+  autocmd FileType c     let b:dispatch = 'cc   -o %:p:r % && %:p:r'
+  autocmd FileType cpp   let b:dispatch = 'cc++ -o %:p:r % && %:p:r'
 augroup END
 
 augroup markdown_ft
