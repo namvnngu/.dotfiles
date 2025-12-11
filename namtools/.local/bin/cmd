@@ -40,7 +40,7 @@ echo "Selected command: $cmd"
 
 # Fill in placeholders
 
-placeholders=$(echo "$cmd" | grep -oE "<(\w|-)+>" | uniq)
+placeholders=$(echo "$cmd" | grep -oE "<(\w|-)+>" | sort -u)
 if [[ -n "$placeholders" ]]; then
   echo "----------------------"
   for k in $placeholders; do
