@@ -1,0 +1,2 @@
+du get the size of directories/files in the current path: du -sh -- *
+du get the size of directory/file given path: du -sh <path>

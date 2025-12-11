@@ -1,0 +1,4 @@
+diskutil burn ISO to a disk: diskutil unmountDisk <disk> && sudo dd if=<iso-path> of=<disk> bs=8M status=progress oflag=direct && diskutil eject <disk>
+diskutil erase a disk: diskutil unmountDisk <disk> && diskutil eraseDisk <format> <name> <disk>
+diskutil list disk formats: diskutil listFilesystems
+diskutil list disks: diskutil list
