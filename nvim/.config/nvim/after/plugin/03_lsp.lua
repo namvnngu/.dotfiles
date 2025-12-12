@@ -139,6 +139,10 @@ if vim.fn.executable("typescript-language-server") == 1 then
   vim.lsp.enable("ts_ls")
 end
 
+if vim.fn.executable("tsgo") == 1 then
+  vim.lsp.enable("tsgo")
+end
+
 if vim.fn.executable("deno") == 1 then
   vim.lsp.enable("denols")
 end
