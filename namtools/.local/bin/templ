@@ -4,10 +4,10 @@
 # Description: Create a file given a template name
 # License: MIT License
 # Date Created: December 01, 2025
-# Date Modified: December 01, 2025
+# Date Modified: December 13, 2025
 
 cmd="$(basename "${0}")"
-version="0.1.0"
+version="0.2.0"
 template_dir="${NAMTOOLS_DATA_DIR}"
 
 # Exits with status 1 and messages.
@@ -22,6 +22,21 @@ exit-1() {
     printf "%s\n" "${@}"
   } 1>&2
   exit 1
+}
+
+# Lists all available templates.
+#
+# Usage: list-templates
+list-templates() {
+  find "${template_dir}" -maxdepth 1 -name "templ-*.txt" \
+    | sed -e "s/^.*templ-//" -e "s/.txt$//"
+}
+
+# Prints the version.
+#
+# Usage: print-version
+print-version() {
+  printf "${cmd} ${version}\n"
 }
 
 # Prints the usage information.
@@ -40,15 +55,9 @@ Arguments:
 
 Options: 
   -h, --help     Print usage information
+  -l, --list     List all available templates
   -v, --version  Print version
 "
-}
-
-# Prints the version.
-#
-# Usage: print-version
-print-version() {
-  printf "${cmd} ${version}\n"
 }
 
 main() {
@@ -56,6 +65,9 @@ main() {
     local option="${1}"
 
     case "${option}" in
+      --list | -l)
+        list-templates
+        ;;
       --version | -v)
         print-version
         ;;
