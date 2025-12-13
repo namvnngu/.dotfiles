@@ -12,10 +12,10 @@ template_dir="${NAMTOOLS_DATA_DIR}"
 
 # Exits with status 1 and messages.
 #
-# Usage: exit-1 [message...]
+# Usage: exit-1 [message ...]
 #
 # Arguments:
-#   [message...]  Error messages
+#   [message ...]  Error messages
 exit-1() {
   {
     printf "${cmd}: "
