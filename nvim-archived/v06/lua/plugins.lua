@@ -43,21 +43,18 @@ local function install_plugins(plugin_urls, plugin_root)
     if vim.fn.isdirectory(plugin_path) == 0 then
       utils.echo(("Installing %s..."):format(plugin_name))
 
-      local job_id = vim.fn.jobstart(
-        { "git", "clone", "--depth=1", plugin_url, plugin_path },
-        {
-          on_exit = function(_, exit_code, _)
-            if exit_code == 0 then
-              utils.echo(("Installed %s!"):format(plugin_name))
-            else
-              utils.echo(
-                ("Failed to install %s with exit code %s"):format(plugin_name, exit_code),
-                true
-              )
-            end
-          end,
-        }
-      )
+      local job_id = vim.fn.jobstart({ "git", "clone", "--depth=1", plugin_url, plugin_path }, {
+        on_exit = function(_, exit_code, _)
+          if exit_code == 0 then
+            utils.echo(("Installed %s!"):format(plugin_name))
+          else
+            utils.echo(
+              ("Failed to install %s with exit code %s"):format(plugin_name, exit_code),
+              true
+            )
+          end
+        end,
+      })
 
       table.insert(job_ids, job_id)
     end
