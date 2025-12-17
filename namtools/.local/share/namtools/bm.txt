@@ -9,6 +9,7 @@ Biomedicine|PubMed Central|https://pmc.ncbi.nlm.nih.gov
 Biomedicine|PubMed|https://pubmed.ncbi.nlm.nih.gov
 Books|Awesome Books|https://github.com/learn-anything/books
 Books|Build Your Own X From Scratch Books|https://build-your-own.org
+Books|Crafting Interpreters|https://craftinginterpreters.com
 Books|Digitale Bibliothek Book|https://dokumen.pub
 Books|Free eBooks - Project Gutenberg|https://gutenberg.org
 Books|Freely available programming books|https://ebookfoundation.github.io/free-programming-books
