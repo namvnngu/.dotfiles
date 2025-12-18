@@ -164,6 +164,7 @@ Miscellaneous|Moonpig Gift Shop|https://moonpig.com
 Network|Beej's Guide to Network Programming|https://beej.us/guide/bgnet/html
 Network|HTTP Made Really Easy|https://jmarshall.com/easy/http
 Operating System|Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
+Operating System|Writing an OS in Rust|https://os.phil-opp.com
 Programming|0DE5|https://0de5.net
 Programming|C3: The Ergonomic, Safe and Familiar Evolution of C|https://c3-lang.org
 Programming|Devhints: Rico's cheatsheets|https://devhints.io
@@ -181,6 +182,9 @@ System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecule
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|The System Design Primer|https://github.com/donnemartin/system-design-primer
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
+Tools|[Audio] Audacity: A free and open-source digital audio editor and recording application software|https://audacityteam.org
+Tools|[Audio] Bosca Ceoil Blue: A simple and beginner-friendly app for making music|https://yurisizov.itch.io/boscaceoil-blue
+Tools|[Audio] Wavacity: A port of the Audacity audio editor to the web browser|https://wavacity.com
 Tools|[Diagram] D2: Declarative Diagramming|https://d2lang.com
 Tools|[Diagram] markmap|https://markmap.js.org
 Tools|[Docs] Docusaurus: Build optimized websites quickly, focus on your content|https://docusaurus.io
@@ -189,6 +193,12 @@ Tools|[Docs] Fumadocs: The beautiful & flexible React.js docs framework|https://
 Tools|[Docs] Hugo: The world's fastest framework for building websites|https://gohugo.io
 Tools|[Docs] Island.js: Vite & MDX powered static site generator based on islands architecture|https://islandjs.dev
 Tools|[Docs] VitePress: Markdown to Beautiful Docs in Minutes|https://vitepress.dev
+Tools|[Graphics] Blender: A free and open-source 3D computer graphics software|https://blender.org
+Tools|[Graphics] GIMP: A free and open-source image editor|https://gimp.org
+Tools|[Graphics] Inkscape: A free and open-source software vector graphics editor|https://inkscape.org
+Tools|[Graphics] Krita: A professional FREE and open source painting program|https://krita.org
+Tools|[Graphics] RawTherapee: A free, cross-platform raw image processing program|https://rawtherapee.com
+Tools|[Graphics] Synfig: A free and open-source vector-based 2D animation software|https://synfig.org
 Tools|[Slide] presenterm: A markdown terminal slideshow tool|https://mfontanini.github.io/presenterm
 Tools|[Slide] Slides: Terminal based presentation tool|https://maaslalani.com/slides/
 Tools|[Slide] Slidev: Presentation Slides for Developers|https://sli.dev
