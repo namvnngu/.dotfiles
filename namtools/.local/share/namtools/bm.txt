@@ -167,8 +167,10 @@ Network|HTTP Made Really Easy|https://jmarshall.com/easy/http
 Operating System|Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
 Operating System|Writing an OS in Rust|https://os.phil-opp.com
 Programming|0DE5|https://0de5.net
+Programming|30 seconds of code: Coding articles to level up your development skills|https://30secondsofcode.org
 Programming|C3: The Ergonomic, Safe and Familiar Evolution of C|https://c3-lang.org
 Programming|Devhints: Rico's cheatsheets|https://devhints.io
+Programming|Github Ranking: A list of the most github stars and forks repositories|https://evanli.github.io/Github-Ranking
 Programming|Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
 Programming|Ranking Programming Languages by Energy Efficiency|https://haslab.github.io/SAFER/scp21.pdf
 Programming|Red: A next-generation programming language strongly inspired by Rebol, but with a broader field of usage thanks to its native-code compiler|https://red-lang.org
