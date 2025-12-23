@@ -4,7 +4,7 @@
 # Description: Create a file given a template name
 # License: MIT License
 # Date Created: December 01, 2025
-# Date Modified: December 13, 2025
+# Date Modified: December 23, 2025
 
 cmd="$(basename "${0}")"
 version="0.2.0"
@@ -72,7 +72,7 @@ main() {
         print-version
         ;;
       *)
-        print-help
+        exit-1 "${option}: No such template"
         ;;
     esac
 
@@ -84,7 +84,7 @@ main() {
   local template_file="${template_dir}/templ-${template_name}.txt"
 
   if [[ ! -e "${template_file}" ]]; then
-    exit-1 "${template_file}: No such file"
+    exit-1 "${template_file}: No such template"
   fi
 
   mkdir -p $(dirname "${file_path}")
