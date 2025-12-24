@@ -107,6 +107,7 @@ Go|You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_b
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 JavaScript|[Lib] Anime.js: JavaScript animation engine|https://animejs.com
+JavaScript|Why would anyone need JavaScript generator functions?|https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
 JavaScript|[Lib] chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
 JavaScript|An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
 JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
