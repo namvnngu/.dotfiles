@@ -1,4 +1,5 @@
 https://github.com/justinmk/vim-dirvish
+https://github.com/ludovicchabant/vim-gutentags
 https://github.com/tpope/vim-dispatch
 https://github.com/tpope/vim-eunuch
 https://github.com/tpope/vim-fugitive
