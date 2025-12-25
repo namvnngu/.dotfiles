@@ -85,6 +85,7 @@ Fun|PlayPhrase|https://playphrase.me
 Game Development|[C/C++] SanderMertens/flecs: A fast entity component system (ECS) for C & C++|https://flecs.dev/flecs
 Game Development|[C] raylib: a simple and easy-to-use library to enjoy videogames programming|https://raylib.com
 Game Development|[Haxe] Heaps.io: Heaps.io is a mature cross platform graphics engine designed for high performance games|https://heaps.io
+Game Development|[Lua] LÖVE: An *awesome* framework you can use to make 2D games in Lua|https://love2d.org
 Game Development|[Rust] macroquad: A simple and easy to use game library for Rust programming language|https://github.com/not-fl3/macroquad
 Game Development|A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
 Game Development|Handmade Hero|https://guide.handmadehero.org
@@ -107,7 +108,6 @@ Go|You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_b
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 JavaScript|[Lib] Anime.js: JavaScript animation engine|https://animejs.com
-JavaScript|Why would anyone need JavaScript generator functions?|https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
 JavaScript|[Lib] chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
 JavaScript|An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
 JavaScript|Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
@@ -122,6 +122,7 @@ JavaScript|The 16-Line Pattern That Eliminates Dependency Passing|https://github
 JavaScript|Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
 JavaScript|What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
 JavaScript|Why I stopped using snapshot testing with Jest|https://medium.com/@tomgold_48918/why-i-stopped-using-snapshot-testing-with-jest-3279fe41ffb2
+JavaScript|Why would anyone need JavaScript generator functions?|https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
 JavaScript|You Don't Need Lodash Underscore|https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
 Java|Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
 Java|Java 21 Virtual Threads - Dude, Where's My Lock?|https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
