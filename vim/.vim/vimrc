@@ -152,10 +152,10 @@ augroup c_ft
   autocmd!
   autocmd FileType c,cpp setlocal tags=./tags,tags,~/.tags/c-system
   autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
-  autocmd FileType c     let b:dispatch = 'cc   -o %:p:r % && %:p:r'
-  autocmd FileType c     let b:start    = 'cc   -o %:p:r % && %:p:r'
-  autocmd FileType cpp   let b:dispatch = 'cc++ -o %:p:r % && %:p:r'
-  autocmd FileType cpp   let b:start    = 'cc++ -o %:p:r % && %:p:r'
+  autocmd FileType c     let b:dispatch = 'cc  -o %:p:r % && %:p:r'
+  autocmd FileType c     let b:start    = 'cc  -o %:p:r % && %:p:r'
+  autocmd FileType cpp   let b:dispatch = 'c++ -std=c++11 -o %:p:r % && %:p:r'
+  autocmd FileType cpp   let b:start    = 'c++ -std=c++11 -o %:p:r % && %:p:r'
 augroup END
 
 augroup markdown_ft

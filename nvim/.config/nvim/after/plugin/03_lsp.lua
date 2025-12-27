@@ -108,7 +108,12 @@ if vim.fn.executable("lua-language-server") == 1 then
 end
 
 if vim.fn.executable("clangd") == 1 then
-  vim.lsp.config("clangd", { capabilities = { offsetEncoding = { "utf-16" } } })
+  vim.lsp.config("clangd", {
+    capabilities = { offsetEncoding = { "utf-16" } },
+    init_options = {
+      fallbackFlags = { "-std=c++11" },
+    },
+  })
   vim.lsp.enable("clangd")
 end
 
@@ -162,7 +167,3 @@ end
 if vim.fn.executable("gopls") == 1 then
   vim.lsp.enable("gopls")
 end
-
--- if vim.fn.executable("zk") == 1 then
---   vim.lsp.enable("zk")
--- end
