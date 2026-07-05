@@ -20,6 +20,7 @@ C++|[Lib] FTXUI: A simple cross-platform C++ library for terminal based user int
 C++|[Lib] RxTerm: A C++ library for functional-reactive terminals. RxTerm is a lean alternative to ncurses for many applications|https://github.com/LoopPerfect/rxterm
 C++|[Lib] SMK: Simple multimedia kit - C++ WebAssembly|https://github.com/ArthurSonzogni/smk
 C++|[Reading] Understanding Smart Pointers in C++|https://thecodinggopher.substack.com/p/understanding-smart-pointers-in-c
+Clojure|[Learning] Clojure-Doc: A community-driven documentation site for Clojure|https://clojure-doc.org
 Clojure|[Lib] cli: Command line parser with good subcommand and help handling|https://github.com/lambdaisland/cli
 Clojure|[Lib] Reagent: Minimalistic React for ClojureScript|https://reagent-project.github.io
 Clojure|[Tool] Babashka: A native, fast starting Clojure interpreter for scripting|https://babashka.org
@@ -27,6 +28,7 @@ Clojure|[Tool] Figwheel: Build your ClojureScript code, and hot load it as you a
 Clojure|[Tool] Joker: A small interpreted dialect of Clojure written in Go, and a Clojure(Script) linter|https://joker-lang.org
 Clojure|[Tool] shadow-cljs: Compile your ClojureScript code with a focus on simplicity and ease of use|https://github.com/thheller/shadow-cljs
 Clojure|[Tool] Squint: A light-weight dialect of ClojureScript with a compiler and standard library|https://github.com/squint-cljs/squint
+Common Lisp|[Tool] Coalton: An efficient, statically typed functional programming language that supercharges Common Lisp|https://coalton-lang.github.io
 CSS|[Learning] Every Layout|https://every-layout.dev
 CSS|[Learning] The Height Enigma|https://joshwcomeau.com/css/height-enigma
 CSS|[Reading] CSS Wrapped 2025|https://chrome.dev/css-wrapped-2025
@@ -224,6 +226,7 @@ Library|Library Genesis|https://libgen.is
 Library|Open Library|https://openlibrary.org
 Library|PDF Books Library|https://pdfbooksworld.com
 Library|Wikibooks|https://wikibooks.org
+Lua|[Tool] Lux: A package manager for Lua|https://lux.lumen-labs.org
 Miscellaneous|[Shopping] Moonpig Gift Shop|https://moonpig.com
 Mobile Development|[Learning] How to Implement iOS Deep Linking Using Universal Links: Step-by-Step Deep Dive Guide — 2025|https://medium.com/@sonerkaraevli/how-to-implement-ios-deep-linking-using-universal-links-step-by-step-deep-dive-guide-2024-fe3882b3017c
 Network|[Guide] How to Send Emails Using Gmail SMTP with Cloudflare Email Routing?|https://dev.to/pierre/gmail-with-cloudflare-email-routing-4413
@@ -293,6 +296,7 @@ Rust|[Lib] Xilem: A high-level architecture for writing GUI apps in Rust|https:/
 Rust|[Reading] Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|[Reading] Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
 Rust|[Tool] bacon: A background code checker|https://dystroy.org/bacon
+Scheme|[Tool] Steel: An embeddable and extensible scheme dialect built in Rust|https://github.com/mattwparas/steel
 Security|Web Security Basics|https://github.com/vasanthk/web-security-basics
 System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
@@ -395,6 +399,7 @@ Web Front End|[Tool] Local-first Software|https://lofi.so
 Writing|[Diagram] D2: Declarative Diagramming|https://d2lang.com
 Writing|[Diagram] markmap: Visualize your Markdown with mindmaps|https://markmap.js.org
 Writing|[Digaram] Diagon: Interactive ASCII art diagram generators|https://github.com/ArthurSonzogni/Diagon
+Writing|[Docs] Cryogen: Static sites generated with Clojure|https://cryogenweb.org
 Writing|[Docs] Docusaurus: Build optimized websites quickly, focus on your content|https://docusaurus.io
 Writing|[Docs] Eleventy: A simpler static site generator|https://11ty.dev
 Writing|[Docs] Fumadocs: The beautiful & flexible React.js docs framework|https://fumadocs.dev
