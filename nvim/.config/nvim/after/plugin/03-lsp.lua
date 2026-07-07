@@ -206,17 +206,12 @@ if is_executable({}, "clojure-lsp") then
     vim.lsp.enable("clojure_lsp")
 end
 
-if is_executable({ "node_modules/.bin/tsgo" }) then
-    vim.lsp.enable("tsgo")
-elseif
+if
     is_executable(
         { "node_modules/.bin/typescript-language-server" },
         "typescript-language-server"
-    )
+    ) and vim.fs.root(0, "package.json")
 then
-    vim.lsp.config("ts_ls", {
-        single_file_support = true,
-    })
     vim.lsp.enable("ts_ls")
 end
 
