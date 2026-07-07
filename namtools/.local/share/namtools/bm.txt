@@ -313,6 +313,7 @@ Tool|Flameshot: Powerful, yet simple to use open-source screenshot software|http
 Tool|Irssi: A modular text mode chat client with IRC support built in|https://irssi.org
 Tool|KeyboardCleanTool: A super simple little tool which blocks all Keyboard and TouchBar input|https://folivora.ai/keyboardcleantool
 Tool|Maccy: Clipboard manager for macOS which does one job - keep your copy history at hand|https://maccy.app/
+Tool|ntfy: A simple HTTP-based pub-sub notification service|https://ntfy.sh
 Tool|PlayPhrase.me: Site for cinema archaeologists|https://playphrase.me
 Tool|PureMac: Free, open-source uninstaller and cleaner for macOS|https://github.com/momenbasel/PureMac
 Tool|RustDesk: An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer|https://rustdesk.com
