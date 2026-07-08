@@ -109,7 +109,7 @@ exposed = { pandoc = "pandoc", pandoc-lua = "pandoc-lua", pandoc-server = "pando
 [envs.pkgconf]
 channels = ["conda-forge"]
 dependencies = { pkgconf = "*" }
-exposed = { pkgconf = "pkgconf", bomtool = "bomtool" }
+exposed = { pkgconf = "pkgconf", bomtool = "bomtool", pccritic = "pccritic", spdxtool = "spdxtool" }
 
 [envs.prettier]
 channels = ["conda-forge"]
