@@ -28,7 +28,7 @@ export MISE_CONFIG_DIR="${HOME}/.config/mise"
 export MISE_CACHE_DIR="${HOME}/.local/share/mise/cache"
 export MISE_STATE_DIR="${HOME}/.local/share/mise/state"
 export MISE_DATA_DIR="${HOME}/.local/share/mise/data"
-eval "$("${HOME}"/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 # fzf
 source <(fzf --zsh)
