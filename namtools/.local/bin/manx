@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Author: Nam Nguyen <nam.vnngu@gmail.com>
-# Description: Create symbolic links for man pages of pixi tools.
+# Description: Create symbolic links for man pages of mise and pixi tools.
 # License: MIT License
 # Date Created: November 09, 2025
-# Date Modified: June 23, 2026
+# Date Modified: July 11, 2026
 
 manx_dir="${HOME}/.local/share/manx"
 
@@ -20,6 +20,11 @@ _setup() {
 }
 
 _get_man_files() {
+    echo "Finding man files in ${MISE_DATA_DIR}..."
+    while read -r file; do 
+        man_files+=("$file")
+    done < <(find "${MISE_DATA_DIR}" -name '*.[1-9]' \( -type l -or -type f \))
+
     echo "Finding man files in ${HOME}/.pixi/envs..."
     while read -r file; do 
         man_files+=("$file")

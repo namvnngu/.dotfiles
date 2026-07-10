@@ -17,7 +17,7 @@ add-path "${HOME}/bin"
 add-path "${HOME}/.local/bin"
 add-path "${HOME}/.pixi/bin"
 
-# tools's missing man pages (e.g. pixi)
+# tools's missing man pages (e.g. pixi, mise)
 export MANPATH="${HOME}/.local/share/manx:"
 
 # namtools
