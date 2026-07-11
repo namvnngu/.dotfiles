@@ -42,3 +42,4 @@
 "npm:typescript-language-server" = "latest"
 "npm:vscode-langservers-extracted" = "latest"
 "vfox:jdx/vfox-clojure" = "latest"
+"vfox:namvnn/vfox-mole" = "latest"

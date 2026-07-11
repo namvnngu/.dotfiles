@@ -5,11 +5,6 @@ channels = ["~/.pixi/forges/nam-forge/packages", "conda-forge"]
 dependencies = { clib = "*" }
 exposed = { clib = "clib", clib-build = "clib-build", clib-configure = "clib-configure", clib-init = "clib-init", clib-install = "clib-install", clib-search = "clib-search", clib-uninstall = "clib-uninstall", clib-update = "clib-update", clib-upgrade = "clib-upgrade" }
 
-[envs.mole]
-channels = ["~/.pixi/forges/nam-forge/packages"]
-dependencies = { mole = "*" }
-exposed = { mo = "mo", mole = "mole" }
-
 [envs.radare2]
 channels = ["~/.pixi/forges/nam-forge/packages"]
 dependencies = { radare2 = "*" }
