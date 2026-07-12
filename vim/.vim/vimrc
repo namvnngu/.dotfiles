@@ -1,6 +1,17 @@
 let mapleader = ' '
 
+syntax on
+let &background = $THEME_MODE
+set notermguicolors
+colorscheme memono
+
 filetype plugin indent on
+
+set shiftwidth=4
+set expandtab
+set smarttab
+set softtabstop=4
+set tabstop=4
 
 set autoindent
 set autoread
@@ -14,6 +25,7 @@ set hlsearch
 set incsearch
 set laststatus=2
 set noswapfile
+set nowrap
 set number
 set relativenumber
 set ruler
@@ -25,19 +37,6 @@ set ttimeout
 set ttimeoutlen=50
 set wildmenu
 set wildoptions=pum,tagfile
-
-" Indentation
-set shiftwidth=4
-set expandtab
-set smarttab
-set softtabstop=4
-set tabstop=4
-
-" Colorscheme
-syntax on
-let &background = $THEME_MODE
-set notermguicolors
-colorscheme memono
 
 " Move to window
 nnoremap <Leader>h <C-W>h
