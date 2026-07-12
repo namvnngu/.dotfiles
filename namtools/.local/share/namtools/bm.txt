@@ -140,6 +140,7 @@ Go|[Lib] oops: Error handling library with context, assertion, stack trace and s
 Go|[Lib] ro: Reactive Programming paradigm for Go|https://ro.samber.dev
 Go|[Lib] Standard Go Project Layout|https://github.com/golang-standards/project-layout
 Go|[Lib] Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Go|[Reading] Goroutines in Go: A Practical Guide to Concurrency|https://getstream.io/blog/goroutines-go-concurrency-guide
 Go|[Reading] How does struct{} take zero bytes in Go|https://bud1m.com/blog/go-empty-struct
 Go|[Reading] The Anatomy of a Go Package. Structure, Imports, and Idioms|https://thecodinggopher.substack.com/p/the-anatomy-of-a-go-package-structure
 Go|[Reading] You probably don't need a DI framework|https://rednafi.com/go/di_frameworks_bleh
@@ -312,7 +313,7 @@ Tool|AppCleaner: A small application which allows you to thoroughly uninstall un
 Tool|Flameshot: Powerful, yet simple to use open-source screenshot software|https://flameshot.org
 Tool|Irssi: A modular text mode chat client with IRC support built in|https://irssi.org
 Tool|KeyboardCleanTool: A super simple little tool which blocks all Keyboard and TouchBar input|https://folivora.ai/keyboardcleantool
-Tool|Maccy: Clipboard manager for macOS which does one job - keep your copy history at hand|https://maccy.app/
+Tool|Maccy: Clipboard manager for macOS which does one job - keep your copy history at hand|https://maccy.app
 Tool|ntfy: A simple HTTP-based pub-sub notification service|https://ntfy.sh
 Tool|PlayPhrase.me: Site for cinema archaeologists|https://playphrase.me
 Tool|PureMac: Free, open-source uninstaller and cleaner for macOS|https://github.com/momenbasel/PureMac
@@ -410,7 +411,7 @@ Writing|[Docs] Starlight: Everything you need to build a stellar documentation w
 Writing|[Docs] VitePress: Markdown to Beautiful Docs in Minutes|https://vitepress.dev
 Writing|[Docs] Zine: Fast, Scalable, and Flexible Static Site Generator|https://zine-ssg.io
 Writing|[Slide] presenterm: A markdown terminal slideshow tool|https://mfontanini.github.io/presenterm
-Writing|[Slide] Slides: Terminal based presentation tool|https://maaslalani.com/slides/
+Writing|[Slide] Slides: Terminal based presentation tool|https://maaslalani.com/slides
 Writing|[Slide] Slidev: Presentation Slides for Developers|https://sli.dev
 Writing|[Tool] Vale: An open-source, command-line tool that brings your editorial style guide to life|https://vale.sh
 Zig|[Learning] Learning Zig|https://openmymind.net/learning_zig
