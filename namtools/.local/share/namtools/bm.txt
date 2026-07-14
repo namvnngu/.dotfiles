@@ -19,7 +19,11 @@ C++|[Learning] getcracked: The quant interview is its own beast|https://getcrack
 C++|[Lib] FTXUI: A simple cross-platform C++ library for terminal based user interfaces|https://arthursonzogni.github.io/FTXUI
 C++|[Lib] RxTerm: A C++ library for functional-reactive terminals. RxTerm is a lean alternative to ncurses for many applications|https://github.com/LoopPerfect/rxterm
 C++|[Lib] SMK: Simple multimedia kit - C++ WebAssembly|https://github.com/ArthurSonzogni/smk
+C++|[Podcast] CppCast: The first podcast by C++ developers for C++ developers|https://cppcast.com
+C++|[Reading] ISO C++ Blog|https://isocpp.org/blog
+C++|[Reading] Simplify C++: Write clean and maintainable C++|https://arne-mertz.de
 C++|[Reading] Understanding Smart Pointers in C++|https://thecodinggopher.substack.com/p/understanding-smart-pointers-in-c
+C++|[Tool] Coliru: C++ online compiler|https://coliru.stacked-crooked.com
 Clojure|[Learning] Clojure-Doc: A community-driven documentation site for Clojure|https://clojure-doc.org
 Clojure|[Lib] cli: Command line parser with good subcommand and help handling|https://github.com/lambdaisland/cli
 Clojure|[Lib] Reagent: Minimalistic React for ClojureScript|https://reagent-project.github.io
@@ -124,12 +128,14 @@ Git|[Reading] Get up to speed with partial clone and shallow clone|https://githu
 Git|[Reading] Git rebase --onto an overview|https://womanonrails.com/git-rebase-onto
 Git|[Reading] How do I fetch all Git branches?|https://stackoverflow.com/a/10312587
 Git|[Snippet] Script to remove a range of commits from all branches in a given remote|https://gist.github.com/pfrenssen/1010a92ffa3e2abfdaec
+Gleam|[Lib] Lustre: Create HTML templates, single page applications, Web Components, and real-time server components|https://lustre.hexdocs.pm
 Go|[Fun] Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
 Go|[Learning] 100 Go Mistakes and How to Avoid Them|https://100go.co
 Go|[Learning] Gist of Go: Concurrency|https://antonz.org/go-concurrency
 Go|[Learning] Go Scheduler|https://nghiant3223.github.io/2025/04/15/go-scheduler.html
 Go|[Learning] Practical Go Lessons|https://practical-go-lessons.com
 Go|[Lib] asciigraph: Go package to make lightweight ASCII line graph ╭┈╯ in command line apps with no other dependencies|https://pkg.go.dev/github.com/guptarohit/asciigraph
+Go|[Lib] Chroma: A general purpose syntax highlighter in pure Go|https://github.com/alecthomas/chroma
 Go|[Lib] do: A dependency injection toolkit|https://do.samber.dev
 Go|[Lib] Folio: A modern PDF library|https://github.com/carlos7ags/folio
 Go|[Lib] Fx: A dependency injection system for Go|https://uber-go.github.io/fx
@@ -234,6 +240,7 @@ Network|[Guide] How to Send Emails Using Gmail SMTP with Cloudflare Email Routin
 Network|[Learning] Beej's Guide to Network Programming|https://beej.us/guide/bgnet
 Network|[Learning] Beej's Guide to Networking Concepts|https://beej.us/guide/bgnet0
 Network|[Learning] HTTP Made Really Easy|https://jmarshall.com/easy/http
+OCaml|[Lib] Daniel Bünzli's Libraries|https://erratique.ch/software
 Programming|[Book] Build Your Own X From Scratch Books|https://build-your-own.org
 Programming|[Book] Crafting Interpreters|https://craftinginterpreters.com
 Programming|[Book] Freely available programming books|https://ebookfoundation.github.io/free-programming-books
@@ -262,6 +269,7 @@ Programming|[Reading] Ranking Programming Languages by Energy Efficiency|https:/
 Programming|[Reading] Why Reproductions are Required|https://antfu.me/posts/why-reproductions-are-required
 Programming|[Tool] ANSI Escape Codes|https://ansi.tools
 Programming|[Tool] Codapi: A lightweight sandbox server for interactive documentation and learning|https://codapi.org
+Programming|[Tool] Compiler Explorer: An interactive online compiler which shows the assembly output|https://godbolt.org
 Programming|[Tool] Crontab Guru: Cron Schedule Expression Generator|https://crontab.guru
 Programming|[Tool] Emacs: An extensible, customizable, free/libre text editor — and more|https://gnu.org/software/emacs
 Programming|[Tool] Flow Control: A programmer's text editor|https://flow-control.dev
@@ -272,6 +280,7 @@ Programming|[Tool] Micro: A modern and intuitive terminal-based text editor|http
 Programming|[Tool] Neovim: A hyperextensible Vim-based text editor|https://neovim.io
 Programming|[Tool] paste: A no-datastore, client-side paste service|https://topaz.github.io/paste
 Programming|[Tool] Vim: A highly configurable text editor built to make creating and changing any kind of text very efficient|https://www.vim.org
+Programming|[Tool] Wandbox: A multi-language online compiler|https://wandbox.org
 Programming|[Tool] Zstandard: Fast real-time compression algorithm|https://facebook.github.io/zstd
 Research|How to Read an Academic Article|https://organizationsandmarkets.com/2010/08/31/how-to-read-an-academic-article
 Reverse Engineering|[Tool] Ghidra: A software reverse engineering (SRE) framework created and maintained by the National Security Agency Research Directorate|https://github.com/NationalSecurityAgency/ghidra
