@@ -53,6 +53,7 @@ git search commits with full log format: git log -g --grep=<search>
 git search commits with one-line log format: git log --all --oneline | grep <search>
 git shortlog who contributed most often to the specific directory since X time: git shortlog -sne --since='<since>' <directory-path> | head -10
 git shortlog who contributed most often to the specific directory: git shortlog -sne <directory-path> | head -10
+git show initial commit: git show $(git rev-list --max-parents=0 HEAD)
 git sparse-checkout to include only the directories or files in the working directory: git sparse-checkout init --cone && git sparse-checkout set <dirs>
 git switch branch: git switch <branch-name>
 git unset upstream: git branch --unset-upstream && git remote prune origin
