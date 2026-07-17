@@ -38,6 +38,7 @@
 "core:rust" = "latest"
 "core:zig" = "latest"
 "github:jgm/pandoc" = "latest"
+"github:prefix-dev/pixi" = "latest"
 "npm:prettier" = "latest"
 "npm:typescript-language-server" = "latest"
 "npm:vscode-langservers-extracted" = "latest"
