@@ -241,6 +241,7 @@ Network|[Learning] Beej's Guide to Network Programming|https://beej.us/guide/bgn
 Network|[Learning] Beej's Guide to Networking Concepts|https://beej.us/guide/bgnet0
 Network|[Learning] HTTP Made Really Easy|https://jmarshall.com/easy/http
 OCaml|[Lib] Daniel Bünzli's Libraries|https://erratique.ch/software
+Programmer|Fabrice Bellard|https://bellard.org
 Programming|[Book] Build Your Own X From Scratch Books|https://build-your-own.org
 Programming|[Book] Crafting Interpreters|https://craftinginterpreters.com
 Programming|[Book] Freely available programming books|https://ebookfoundation.github.io/free-programming-books
@@ -317,6 +318,7 @@ System Programming|[Learning] Writing an OS in Rust|https://os.phil-opp.com
 System Programming|[Reading] Putting the "You" in CPU|https://cpu.land
 System Programming|[Reading] Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
 System Programming|[Reading] What Every Programmer Should Know About Memory|https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+System Programming|[Tool] QEMU: A generic and open source machine emulator and virtualizer|https://qemu.org
 Tool|AeroSpace: An i3-like tiling window manager for macOS|https://github.com/nikitabobko/AeroSpace
 Tool|AppCleaner: A small application which allows you to thoroughly uninstall unwanted apps|https://freemacsoft.net/appcleaner
 Tool|Flameshot: Powerful, yet simple to use open-source screenshot software|https://flameshot.org
