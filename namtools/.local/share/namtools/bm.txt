@@ -25,8 +25,20 @@ C++|[Reading] Simplify C++: Write clean and maintainable C++|https://arne-mertz.
 C++|[Reading] Understanding Smart Pointers in C++|https://thecodinggopher.substack.com/p/understanding-smart-pointers-in-c
 C++|[Tool] Coliru: C++ online compiler|https://coliru.stacked-crooked.com
 Clojure|[Learning] Clojure-Doc: A community-driven documentation site for Clojure|https://clojure-doc.org
+Clojure|[Lib] Biff: A full-stack web framework|https://biffweb.com
+Clojure|[Lib] Buddy: Security library|https://github.com/funcool/buddy
 Clojure|[Lib] cli: Command line parser with good subcommand and help handling|https://github.com/lambdaisland/cli
+Clojure|[Lib] Component: Managed lifecycle of stateful objects|https://github.com/stuartsierra/component
+Clojure|[Lib] Duct: A server-side framework|https://duct-framework.org
+Clojure|[Lib] Honey SQL: Turn Clojure data structures into SQL|https://github.com/seancorfield/honeysql
+Clojure|[Lib] Kit: A lightweight, modular framework for scalable web development|https://kit-clj.github.io
+Clojure|[Lib] malli: High-performance data-driven schemas|https://github.com/metosin/malli
+Clojure|[Lib] next.jdbc: A modern low-level Clojure wrapper for JDBC-based access to databases|https://github.com/seancorfield/next-jdbc
+Clojure|[Lib] Pedestal: A sturdy and reliable base for services, APIs, and applications|https://pedestal.io
 Clojure|[Lib] Reagent: Minimalistic React for ClojureScript|https://reagent-project.github.io
+Clojure|[Lib] reitit: A fast data-driven router|https://github.com/metosin/reitit
+Clojure|[Lib] Ring: A Clojure web applications library inspired by Python's WSGI and Ruby's Rack|https://github.com/ring-clojure/ring
+Clojure|[Lib] rj9a: An enhanced version of jetty adapter for ring|https://github.com/sunng87/ring-jetty9-adapter
 Clojure|[Tool] Babashka: A native, fast starting Clojure interpreter for scripting|https://babashka.org
 Clojure|[Tool] Figwheel: Build your ClojureScript code, and hot load it as you are coding|https://figwheel.org
 Clojure|[Tool] Joker: A small interpreted dialect of Clojure written in Go, and a Clojure(Script) linter|https://joker-lang.org
@@ -42,6 +54,9 @@ CSS|[Tool] CSS Spring Easing Generator|https://kvin.me/css-springs
 C|[Learning] Beej's Guide to C Programming - Library Reference|https://beej.us/guide/bgclr
 C|[Learning] Beej's Guide to C Programming|https://beej.us/guide/bgc
 C|[Learning] Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
+C|[Learning] Making a simple HTTP webserver in C|https://bruinsslot.jp/post/simple-http-webserver-in-c
+C|[Lib] facil.io: A C micro-framework for web applications|https://facil.io
+C|[Lib] lwan: A high-performance & scalable web server in C|https://lwan.ws
 C|[Lib] microui: A tiny immediate-mode UI library|https://github.com/rxi/microui
 C|[Lib] miniaudio: An audio playback and capture library in a single source file|https://miniaud.io
 C|[Lib] musl: C Standard Library|https://musl.libc.org
@@ -77,6 +92,7 @@ Data Structure and Algorithm|[Problems] NeetCode|https://neetcode.io
 Data Structure and Algorithm|[Problems] Project Euler|https://projecteuler.net
 Database|[Learning] Let's Build a Simple Database|https://cstack.github.io/db_tutorial
 Database|[Lib] Honker: Durable queues, streams, pub/sub, and time-trigger scheduling — inside your SQLite file|https://honker.dev
+Database|[Lib] PocketBase: Open Source realtime backend in 1 file|https://pocketbase.io
 English|"only a few" vs. "(very) few"|https://ell.stackexchange.com/questions/280182/only-a-few-vs-very-few
 English|Cambridge Dictionary|https://dictionary.cambridge.org
 English|Come|https://dictionary.cambridge.org/grammar/british-grammar/arrive
@@ -136,16 +152,19 @@ Go|[Learning] Go Scheduler|https://nghiant3223.github.io/2025/04/15/go-scheduler
 Go|[Learning] Practical Go Lessons|https://practical-go-lessons.com
 Go|[Lib] asciigraph: Go package to make lightweight ASCII line graph ╭┈╯ in command line apps with no other dependencies|https://pkg.go.dev/github.com/guptarohit/asciigraph
 Go|[Lib] Chroma: A general purpose syntax highlighter in pure Go|https://github.com/alecthomas/chroma
+Go|[Lib] Cobra: A library for creating powerful modern CLI applications|https://cobra.dev
 Go|[Lib] do: A dependency injection toolkit|https://do.samber.dev
 Go|[Lib] Folio: A modern PDF library|https://github.com/carlos7ags/folio
 Go|[Lib] Fx: A dependency injection system for Go|https://uber-go.github.io/fx
 Go|[Lib] gpdf: A pure Go, zero-dependency PDF generation library|https://github.com/gpdf-dev/gpdf
+Go|[Lib] Kong: A command-line parser|https://github.com/alecthomas/kong
 Go|[Lib] lo: A Lodash-style Go library|https://lo.samber.dev
 Go|[Lib] mo: Monads and popular FP abstractions|https://pkg.go.dev/github.com/samber/mo
 Go|[Lib] oops: Error handling library with context, assertion, stack trace and source fragments|https://pkg.go.dev/github.com/samber/oops
 Go|[Lib] ro: Reactive Programming paradigm for Go|https://ro.samber.dev
 Go|[Lib] Standard Go Project Layout|https://github.com/golang-standards/project-layout
 Go|[Lib] Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
+Go|[Lib] urfave/cli: A eclarative, simple, fast, and fun package for building command line tools|https://cli.urfave.org
 Go|[Reading] Goroutines in Go: A Practical Guide to Concurrency|https://getstream.io/blog/goroutines-go-concurrency-guide
 Go|[Reading] How does struct{} take zero bytes in Go|https://bud1m.com/blog/go-empty-struct
 Go|[Reading] The Anatomy of a Go Package. Structure, Imports, and Idioms|https://thecodinggopher.substack.com/p/the-anatomy-of-a-go-package-structure
@@ -174,23 +193,6 @@ Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 Home|How to Read Laundry Symbols|https://tide.com/en-us/how-to-wash-clothes/how-to-do-laundry/how-to-read-laundry-symbols
 Home|The Free Repair Guide|https://ifixit.com
-JavaScript|[Learning] Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
-JavaScript|[Learning] JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
-JavaScript|[Learning] JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
-JavaScript|[Learning] The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
-JavaScript|[Learning] What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
-JavaScript|[Lib] chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
-JavaScript|[Lib] LZMA-JS: A JavaScript implementation of the Lempel-Ziv-Markov (LZMA) chain compression algorithm|https://github.com/LZMA-JS/LZMA-JS
-JavaScript|[Lib] RxJS: Reactive Extensions Library for JavaScript|https://rxjs.dev
-JavaScript|[Reading] An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
-JavaScript|[Reading] Jest: Finding the cause of a memory leak in Jest tests|https://making.close.com/posts/finding-the-cause-of-a-memory-leak-in-jest
-JavaScript|[Reading] Jest: Jest leaks memory from required modules with closures over imports|https://github.com/jestjs/jest/issues/6814
-JavaScript|[Reading] Jest: Your Jest Tests are Leaking Memory|https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html
-JavaScript|[Reading] Secrets of the act(...) api|https://github.com/threepointone/react-act-examples/blob/master/sync.md
-JavaScript|[Reading] Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
-JavaScript|[Reading] Why I stopped using snapshot testing with Jest|https://medium.com/@tomgold_48918/why-i-stopped-using-snapshot-testing-with-jest-3279fe41ffb2
-JavaScript|[Reading] Why would anyone need JavaScript generator functions?|https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
-JavaScript|[Reference] You Don't Need Lodash Underscore|https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
 Java|[Lib] Micronaut: A modern, JVM-based, full-stack framework|https://micronaut.io
 Java|[Lib] Quarkus: Supersonic Subatomic Java|https://quarkus.io
 Java|[Reading] Java 21 Virtual Threads (Project Loom) vs. Reactive Programming: A Practical Guide for Modern Developers|https://archive.md/x71uq
@@ -241,6 +243,7 @@ Network|[Learning] Beej's Guide to Network Programming|https://beej.us/guide/bgn
 Network|[Learning] Beej's Guide to Networking Concepts|https://beej.us/guide/bgnet0
 Network|[Learning] HTTP Made Really Easy|https://jmarshall.com/easy/http
 OCaml|[Lib] Daniel Bünzli's Libraries|https://erratique.ch/software
+OCaml|[Lib] Ocsigen: A complete framework for developing Web and mobile apps using cutting edge techniques|https://ocsigen.org
 Programmer|Fabrice Bellard|https://bellard.org
 Programming|[Book] Build Your Own X From Scratch Books|https://build-your-own.org
 Programming|[Book] Crafting Interpreters|https://craftinginterpreters.com
@@ -249,6 +252,7 @@ Programming|[Book] Structure and Interpretation of Computer Programs|https://mit
 Programming|[Book] The Architecture of Open Source Applications|https://aosabook.org
 Programming|[Language] Amber: A programming language compiled into Bash Script|https://docs.amber-lang.com
 Programming|[Language] C3: The Ergonomic, Safe and Familiar Evolution of C|https://c3-lang.org
+Programming|[Language] Elm: A delightful language for reliable web applications|https://elm-lang.org
 Programming|[Language] Hare: A systems programming language designed to be simple, stable, and robust|https://harelang.org
 Programming|[Language] Odin: A general-purpose programming language with distinct typing built for high performance, modern systems and data-oriented programming|https://odin-lang.org
 Programming|[Language] Reason: Simple, fast & type safe code that leverages the JavaScript & OCaml ecosystems|https://reasonml.github.io
@@ -298,11 +302,15 @@ Rust|[Learning] Rust Practise Questions|https://rust-unofficial.github.io/rust-p
 Rust|[Learning] Rust 🦀 and WebAssembly 🕸|https://rustwasm.github.io/docs/book
 Rust|[Lib] Blessed.rs: Very commonly used crates that everyone should know about|https://blessed.rs
 Rust|[Lib] cuda-oxide: A custom rustc backend for compiling GPU kernels in pure Rust|https://github.com/NVlabs/cuda-oxide
+Rust|[Lib] Dioxus: The Rust framework for building fullstack web, desktop and mobile apps|https://dioxuslabs.com
 Rust|[Lib] Druid: A data-first Rust-native GUI design toolkit|https://github.com/linebender/druid
 Rust|[Lib] egui: An easy-to-use immediate mode GUI in Rust that runs on both web and native|https://egui.rs
 Rust|[Lib] iced: A cross-platform GUI library for Rust focused on simplicity and type-safety|https://iced.rs
+Rust|[Lib] Leptos: A cutting-edge Rust framework for the modern web|https://dioxuslabs.com
 Rust|[Lib] Lib.rs: A catalog of programs and libraries written in the Rust programming language|https://lib.rs
+Rust|[Lib] oxichrome: Write type-safe browser extensions with proc macros and Leptos entirely in Rust|https://oxichrome.dev
 Rust|[Lib] Polars: A blazingly fast DataFrame library for manipulating structured data|https://docs.pola.rs
+Rust|[Lib] Servo: A web browser rendering engine written in Rust|https://servo.org
 Rust|[Lib] Xilem: A high-level architecture for writing GUI apps in Rust|https://github.com/linebender/xilem
 Rust|[Reading] Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|[Reading] Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
@@ -318,6 +326,8 @@ System Programming|[Learning] Writing an OS in Rust|https://os.phil-opp.com
 System Programming|[Reading] Putting the "You" in CPU|https://cpu.land
 System Programming|[Reading] Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
 System Programming|[Reading] What Every Programmer Should Know About Memory|https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+System Programming|[Tool] Colima: Container runtimes on macOS (and Linux) with minimal setup|https://colima.run
+System Programming|[Tool] Lima: Linux virtual machines, with a focus on running containers|https://lima-vm.io
 System Programming|[Tool] QEMU: A generic and open source machine emulator and virtualizer|https://qemu.org
 Tool|AeroSpace: An i3-like tiling window manager for macOS|https://github.com/nikitabobko/AeroSpace
 Tool|AppCleaner: A small application which allows you to thoroughly uninstall unwanted apps|https://freemacsoft.net/appcleaner
@@ -331,84 +341,86 @@ Tool|PureMac: Free, open-source uninstaller and cleaner for macOS|https://github
 Tool|RustDesk: An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer|https://rustdesk.com
 Tool|Syncthing: A continuous file synchronization program|https://syncthing.net
 Tool|WeeChat: The extensible chat client|https://weechat.org
-TypeScript|[Lib] ArkType: TypeScript's 1:1 validator, optimized from editor to runtime|https://arktype.io
-TypeScript|[Lib] Effect: An ecosystem of tools to build robust applications in TypeScript|https://effect.website
-TypeScript|[Lib] es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller — a major upgrade to lodash|https://es-toolkit.dev
-TypeScript|[Lib] esbuild issue: no matching export for types|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
-TypeScript|[Lib] fp-ts: Functional programming in TypeScript|https://gcanti.github.io/fp-ts
-TypeScript|[Lib] neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
-TypeScript|[Lib] pkgroll: Zero-config package bundler for Node.js + TypeScript|https://github.com/privatenumber/pkgroll
-TypeScript|[Lib] radashi: The modern, community-first TypeScript toolkit with all of the fast, readable, and minimal utility functions|https://radashi.js.org
-TypeScript|[Lib] Remeda: Fully written in TypeScript for powerful, type-safe, and functional utilities|https://remedajs.com
-TypeScript|[Lib] ts-essentials: All essential TypeScript types in one place 🤙|https://github.com/ts-essentials/ts-essentials
-TypeScript|[Lib] ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
-TypeScript|[Lib] ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
-TypeScript|[Lib] tsdown: The elegant bundler for libraries powered by Rolldown|https://tsdown.dev
-TypeScript|[Lib] tsup: The simplest and fastest way to bundle your TypeScript libraries|https://tsup.egoist.dev
-TypeScript|[Lib] type-fest: A collection of essential TypeScript types|https://github.com/sindresorhus/type-fest
-TypeScript|[Lib] utility-types: Collection of utility types, complementing TypeScript built-in mapped types and aliases (think "lodash" for static types)|https://github.com/piotrwitek/utility-types
-TypeScript|[Lib] Valibot: The modular and type safe schema library for validating structural data|https://valibot.dev
-TypeScript|[Lib] Zod: TypeScript-first schema validation with static type inference|https://zod.dev
-TypeScript|TypeScript Deep Dive|https://basarat.gitbook.io/typescript
-TypeScript|TypeScript project references|https://moonrepo.dev/docs/guides/javascript/typescript-project-refs
+TypeScript/JavaScript|[Learning] Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ...|https://youtu.be/cCOL7MC4Pl0
+TypeScript/JavaScript|[Learning] JavaScript Event Loop Visualized – The Ultimate Interactive Guide|https://hromium.com/javascript-visualized-event-loop
+TypeScript/JavaScript|[Learning] JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue|https://youtu.be/eiC58R16hb8
+TypeScript/JavaScript|[Learning] No matching export for types in esbuild|https://github.com/evanw/esbuild/issues/1941#issuecomment-1014041320
+TypeScript/JavaScript|[Learning] The 16-Line Pattern That Eliminates Dependency Passing|https://github.com/doeixd/effectively/blob/main/docs/generator-context-pattern.md
+TypeScript/JavaScript|[Learning] TypeScript Deep Dive|https://basarat.gitbook.io/typescript
+TypeScript/JavaScript|[Learning] What the heck is the event loop anyway? - Philip Roberts|https://youtu.be/8aGhZQkoFbQ
+TypeScript/JavaScript|[Learning] You Don't Need Lodash Underscore|https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
+TypeScript/JavaScript|[Lib] ArkType: TypeScript's 1:1 validator, optimized from editor to runtime|https://arktype.io
+TypeScript/JavaScript|[Lib] chokidar: Minimal and efficient cross-platform file watching library|https://github.com/paulmillr/chokidar
+TypeScript/JavaScript|[Lib] Effect: An ecosystem of tools to build robust applications in TypeScript|https://effect.website
+TypeScript/JavaScript|[Lib] es-toolkit: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller — a major upgrade to lodash|https://es-toolkit.dev
+TypeScript/JavaScript|[Lib] fp-ts: Functional programming in TypeScript|https://gcanti.github.io/fp-ts
+TypeScript/JavaScript|[Lib] Hono: A fast, lightweight web application framework, built on Web Standards|https://hono.dev
+TypeScript/JavaScript|[Lib] Legend-State: An extremely fast signal-based state library with fine-grained reactivity and a powerful sync system|https://legendapp.com/open-source/state
+TypeScript/JavaScript|[Lib] LZMA-JS: A JavaScript implementation of the Lempel-Ziv-Markov (LZMA) chain compression algorithm|https://github.com/LZMA-JS/LZMA-JS
+TypeScript/JavaScript|[Lib] neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
+TypeScript/JavaScript|[Lib] pkgroll: Zero-config package bundler|https://github.com/privatenumber/pkgroll
+TypeScript/JavaScript|[Lib] radashi: The modern, community-first TypeScript toolkit with all of the fast, readable, and minimal utility functions|https://radashi.js.org
+TypeScript/JavaScript|[Lib] Remeda: Fully written in TypeScript for powerful, type-safe, and functional utilities|https://remedajs.com
+TypeScript/JavaScript|[Lib] RxDB: A NoSQL database for JavaScript that runs directly in your app|https://rxdb.info
+TypeScript/JavaScript|[Lib] RxJS: Reactive Extensions Library for JavaScript|https://rxjs.dev
+TypeScript/JavaScript|[Lib] TinyBase: A reactive in-memory data store with persistence and synchronization for local-first|https://tinybase.org
+TypeScript/JavaScript|[Lib] ts-essentials: All essential TypeScript types in one place 🤙|https://github.com/ts-essentials/ts-essentials
+TypeScript/JavaScript|[Lib] ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
+TypeScript/JavaScript|[Lib] ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
+TypeScript/JavaScript|[Lib] tsdown: The elegant bundler for libraries powered by Rolldown|https://tsdown.dev
+TypeScript/JavaScript|[Lib] tsup: The simplest and fastest way to bundle your TypeScript libraries|https://tsup.egoist.dev
+TypeScript/JavaScript|[Lib] type-fest: A collection of essential TypeScript types|https://github.com/sindresorhus/type-fest
+TypeScript/JavaScript|[Lib] utility-types: Collection of utility types, complementing TypeScript built-in mapped types and aliases (think "lodash" for static types)|https://github.com/piotrwitek/utility-types
+TypeScript/JavaScript|[Lib] Valibot: The modular and type safe schema library for validating structural data|https://valibot.dev
+TypeScript/JavaScript|[Lib] validation-enhancer: The easiest, most lightweight validation system|https://gitlab.com/alistairldavidson/validation-enhancer
+TypeScript/JavaScript|[Lib] Zod: TypeScript-first schema validation with static type inference|https://zod.dev
+TypeScript/JavaScript|[Reading] An interesting kind of JavaScript memory leak|https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156
+TypeScript/JavaScript|[Reading] Jest: Finding the cause of a memory leak in Jest tests|https://making.close.com/posts/finding-the-cause-of-a-memory-leak-in-jest
+TypeScript/JavaScript|[Reading] Jest: Jest leaks memory from required modules with closures over imports|https://github.com/jestjs/jest/issues/6814
+TypeScript/JavaScript|[Reading] Jest: Your Jest Tests are Leaking Memory|https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html
+TypeScript/JavaScript|[Reading] Secrets of the act(...) api|https://github.com/threepointone/react-act-examples/blob/master/sync.md
+TypeScript/JavaScript|[Reading] TypeScript project references|https://moonrepo.dev/docs/guides/javascript/typescript-project-refs
+TypeScript/JavaScript|[Reading] Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
+TypeScript/JavaScript|[Reading] Why I stopped using snapshot testing with Jest|https://medium.com/@tomgold_48918/why-i-stopped-using-snapshot-testing-with-jest-3279fe41ffb2
+TypeScript/JavaScript|[Reading] Why would anyone need JavaScript generator functions?|https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
 Video|[Learning] ffmprovisr: Making FFmpeg Easier|https://amiaopensource.github.io/ffmprovisr
 Video|[Tool] DaVinci Resolve: The world's only solution that combines editing, color correction, visual effects, motion graphics and audio post production all in one software tool|https://blackmagicdesign.com/products/davinciresolve
-Video|[Tool] Motion Canvas: A TypeScript library for creating animated videos using the Canvas API|https://motioncanvas.io
+Video|[Tool] Motion Canvas: A library for creating animated videos using the Canvas API|https://motioncanvas.io
 Vim/Neovim|[Learning] Vim Cheat Sheet|https://vim.rtorr.com
 Vim/Neovim|[Reading] Load launch.json debug configs even for JS based languages|https://reddit.com/r/neovim/s/p5tYkzKJdi
 Vim/Neovim|[Reading] Remote Neovim for Dummies|https://kraust.github.io/posts/remote-neovim-for-dummies
 Vim/Neovim|[Reading] Seven habits of effective text editing|https://moolenaar.net/habits.html
 Vim/Neovim|[Reading] The tools that I love: Vim|https://lervag.github.io/posts/how-i-vim
 Vim/Neovim|[Reading] Why I got rid of all my neovim plugins|https://yobibyte.github.io/vim.html
-Web Back End|[Learning] Making a simple HTTP webserver in C|https://bruinsslot.jp/post/simple-http-webserver-in-c
-Web Back End|[Lib] facil.io: A C micro-framework for web applications|https://facil.io
-Web Back End|[Lib] Hono: A fast, lightweight web application framework, built on Web Standards|https://hono.dev
-Web Back End|[Lib] httpz: An HTTP/1.1 server for Zig|https://github.com/karlseguin/http.zig
-Web Back End|[Lib] Jetzig: An MIT licensed web framework written in Zig|https://jetzig.dev
-Web Back End|[Lib] Lwan: A high-performance & scalable web server in C|https://lwan.ws
-Web Back End|[Lib] PocketBase: Open Source realtime backend in 1 file|https://pocketbase.io
-Web Back End|[Lib] Zap: A blazingly fast backends in zig|https://github.com/zigzap/zap
-Web Back End|[Reading] Debugging WebSocket Hibernation with Cloudflare Durable Objects (and What I Learned)|https://thomasgauvin.com/writing/how-cloudflare-durable-objects-websocket-hibernation-works
-Web Back End|[Reading] Podman vs. Docker: Containerization Tools Comparison|https://spacelift.io/blog/podman-vs-docker
-Web Back End|[Tool] Bombardier: Fast cross-platform HTTP benchmarking tool written in Go|https://github.com/codesenberg/bombardier
-Web Back End|[Tool] Colima: Container runtimes on macOS (and Linux) with minimal setup|https://colima.run
-Web Back End|[Tool] Lima: Linux virtual machines, with a focus on running containers|https://lima-vm.io
-Web Front End|[Docs] ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
-Web Front End|[Docs] Bulletproof React|https://github.com/alan2207/bulletproof-react
-Web Front End|[Docs] Open UI|https://open-ui.org
-Web Front End|[Fun] Just fucking use HTML|https://justfuckingusehtml.com
-Web Front End|[Learning] A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
-Web Front End|[Learning] Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
-Web Front End|[Learning] Fine-Grained Reactivity Fundamentals Series' Articles|https://dev.to/ryansolid/series/13735
-Web Front End|[Learning] web.dev|https://web.dev
-Web Front End|[Lib] Anime.js: JavaScript animation engine|https://animejs.com
-Web Front End|[Lib] Blueprint: A React-based UI toolkit for building complex data-dense interfaces for desktop applications|https://blueprintjs.com
-Web Front End|[Lib] Dioxus: The Rust framework for building fullstack web, desktop, and mobile apps|https://dioxuslabs.com
-Web Front End|[Lib] elm: A delightful language for reliable web applications|https://elm-lang.org
-Web Front End|[Lib] Extension.js: Build browser extensions for Chrome, Edge, and Firefox with one modern workflow|https://extension.js.org
-Web Front End|[Lib] GSAP: A wildly robust JavaScript animation library built for professionals|https://gsap.com
-Web Front End|[Lib] Legend-State: An extremely fast signal-based state library with fine-grained reactivity and a powerful sync system|https://legendapp.com/open-source/state
-Web Front End|[Lib] Leptos: A cutting-edge Rust framework for the modern web|https://dioxuslabs.com
-Web Front End|[Lib] Motion: A production-grade animation library for the web|https://motion.dev
-Web Front End|[Lib] nuqs: Type-safe search params state manager for React|https://nuqs.dev
-Web Front End|[Lib] Ocsigen: A complete framework for developing Web and mobile apps using cutting edge techniques|https://ocsigen.org
-Web Front End|[Lib] oxichrome: Write type-safe browser extensions with proc macros and Leptos entirely in Rust|https://oxichrome.dev
-Web Front End|[Lib] Pretext: Fast, accurate & comprehensive text measurement & layout|https://pretextjs.net
-Web Front End|[Lib] react-admin: The best developer experience, lets you focus on business needs, and build delightful user interfaces|https://marmelab.com/react-admin
-Web Front End|[Lib] react-spring: A spring physics based React animation library|https://react-spring.dev
-Web Front End|[Lib] RxDB: A NoSQL database for JavaScript that runs directly in your app|https://rxdb.info
-Web Front End|[Lib] Servo: A web browser rendering engine written in Rust|https://servo.org
-Web Front End|[Lib] Valdi: A cross-platform UI framework that delivers native performance without sacrificing developer velocity|https://github.com/Snapchat/Valdi
-Web Front End|[Lib] validation-enhancer: The easiest, most lightweight validation system|https://gitlab.com/alistairldavidson/validation-enhancer
-Web Front End|[Lib] Vaul: Drawer component for React|https://vaul.emilkowal.ski
-Web Front End|[Lib] WXT: Next-gen Web Extension Framework|https://wxt.dev
-Web Front End|[Lib] xyflow: Powerful open source libraries for building node-based UIs|https://xyflow.com
-Web Front End|[Reading] Component testing|https://storybook.js.org/blog/component-testing
-Web Front End|[Reading] How to useMemo and useCallback: you can remove most of them|https://developerway.com/posts/how-to-use-memo-use-callback
-Web Front End|[Reading] How Web Works|https://github.com/vasanthk/how-web-works
-Web Front End|[Reading] pretext - under the hood|https://tools.simonwillison.net/pretext-explainer
-Web Front End|[Reading] Why you should test with user-event|https://ph-fritsche.github.io/blog/post/why-userevent
-Web Front End|[Tool] Local-first Software|https://lofi.so
+Web|[Docs] ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
+Web|[Docs] Bulletproof React|https://github.com/alan2207/bulletproof-react
+Web|[Docs] Open UI|https://open-ui.org
+Web|[Fun] Just fucking use HTML|https://justfuckingusehtml.com
+Web|[Learning] A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
+Web|[Learning] Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
+Web|[Learning] Fine-Grained Reactivity Fundamentals Series' Articles|https://dev.to/ryansolid/series/13735
+Web|[Learning] web.dev|https://web.dev
+Web|[Lib] Anime.js: JavaScript animation engine|https://animejs.com
+Web|[Lib] Blueprint: A React-based UI toolkit for building complex data-dense interfaces for desktop applications|https://blueprintjs.com
+Web|[Lib] Extension.js: Build browser extensions for Chrome, Edge, and Firefox with one modern workflow|https://extension.js.org
+Web|[Lib] GSAP: A wildly robust JavaScript animation library built for professionals|https://gsap.com
+Web|[Lib] Motion: A production-grade animation library for the web|https://motion.dev
+Web|[Lib] nuqs: Type-safe search params state manager for React|https://nuqs.dev
+Web|[Lib] Pretext: Fast, accurate & comprehensive text measurement & layout|https://pretextjs.net
+Web|[Lib] react-admin: The best developer experience, lets you focus on business needs, and build delightful user interfaces|https://marmelab.com/react-admin
+Web|[Lib] react-spring: A spring physics based React animation library|https://react-spring.dev
+Web|[Lib] Valdi: A cross-platform UI framework that delivers native performance without sacrificing developer velocity|https://github.com/Snapchat/Valdi
+Web|[Lib] Vaul: Drawer component for React|https://vaul.emilkowal.ski
+Web|[Lib] WXT: Next-gen Web Extension Framework|https://wxt.dev
+Web|[Lib] xyflow: Powerful open source libraries for building node-based UIs|https://xyflow.com
+Web|[Reading] Component testing|https://storybook.js.org/blog/component-testing
+Web|[Reading] Debugging WebSocket Hibernation with Cloudflare Durable Objects (and What I Learned)|https://thomasgauvin.com/writing/how-cloudflare-durable-objects-websocket-hibernation-works
+Web|[Reading] How to useMemo and useCallback: you can remove most of them|https://developerway.com/posts/how-to-use-memo-use-callback
+Web|[Reading] How Web Works|https://github.com/vasanthk/how-web-works
+Web|[Reading] Podman vs. Docker: Containerization Tools Comparison|https://spacelift.io/blog/podman-vs-docker
+Web|[Reading] pretext under the hood|https://tools.simonwillison.net/pretext-explainer
+Web|[Reading] Why you should test with user-event|https://ph-fritsche.github.io/blog/post/why-userevent
+Web|[Tool] Bombardier: Fast cross-platform HTTP benchmarking tool written in Go|https://github.com/codesenberg/bombardier
 Writing|[Diagram] D2: Declarative Diagramming|https://d2lang.com
 Writing|[Diagram] markmap: Visualize your Markdown with mindmaps|https://markmap.js.org
 Writing|[Digaram] Diagon: Interactive ASCII art diagram generators|https://github.com/ArthurSonzogni/Diagon
@@ -427,4 +439,7 @@ Writing|[Slide] Slidev: Presentation Slides for Developers|https://sli.dev
 Writing|[Tool] Vale: An open-source, command-line tool that brings your editorial style guide to life|https://vale.sh
 Zig|[Learning] Learning Zig|https://openmymind.net/learning_zig
 Zig|[Learning] Ziglings: Learn the ⚡Zig programming language by fixing tiny broken programs|https://codeberg.org/ziglings/exercises
+Zig|[Lib] httpz: An HTTP/1.1 server for Zig|https://github.com/karlseguin/http.zig
+Zig|[Lib] Jetzig: An MIT licensed web framework written in Zig|https://jetzig.dev
+Zig|[Lib] Zap: A blazingly fast backends in Zig|https://github.com/zigzap/zap
 Zig|[Reading] Learning Zig's Build System using raylib|https://tung.github.io/posts/learning-zigs-build-system-using-raylib
