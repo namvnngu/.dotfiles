@@ -28,15 +28,30 @@ local csharp = {
     "https://github.com/GustavEikaas/easy-dotnet.nvim",
 }
 
-local plugin_config_status, plugin_config = pcall(require, "plugins-local")
+local config_status, config = pcall(require, "_config")
 local plugins = vim.list_extend({}, base)
 
-if plugin_config_status then
-    vim.list_extend(plugins, plugin_config.toggles.lsp and lsp or {})
-    vim.list_extend(plugins, plugin_config.toggles.formatting and formatting or {})
-    vim.list_extend(plugins, plugin_config.toggles.testing and testing or {})
-    vim.list_extend(plugins, plugin_config.toggles.database and database or {})
-    vim.list_extend(plugins, plugin_config.toggles.csharp and csharp or {})
+if config_status and config.plugins and config.plugins.toggles then
+    vim.list_extend(
+        plugins, --
+        config.plugins.toggles.lsp and lsp or {}
+    )
+    vim.list_extend(
+        plugins, --
+        config.plugins.toggles.formatting and formatting or {}
+    )
+    vim.list_extend(
+        plugins, --
+        config.plugins.toggles.testing and testing or {}
+    )
+    vim.list_extend(
+        plugins, --
+        config.plugins.toggles.database and database or {}
+    )
+    vim.list_extend(
+        plugins, --
+        config.plugins.toggles.csharp and csharp or {}
+    )
 end
 
 vim.pack.add(plugins)

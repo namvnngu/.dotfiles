@@ -4,6 +4,7 @@ vim/.vim/.netrwhist
 
 # neovim
 nvim-pack-lock.json
+nvim/.config/nvim/lua/_config.lua
 
-# local files
-*local.*
+# alacritty
+alacritty.local.toml
