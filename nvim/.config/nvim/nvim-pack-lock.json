@@ -4,20 +4,24 @@
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "https://github.com/stevearc/conform.nvim"
     },
-    "csharpls-extended-lsp.nvim": {
-      "rev": "ed20a88af5774319c7eafc7faa45c9fde7314b4e",
-      "src": "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim"
+    "easy-dotnet.nvim": {
+      "rev": "5823c50d0de015c01f591319f6e846506518165e",
+      "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "fidget.nvim": {
       "rev": "6f793b2bcd2d35e201c09520f698bb763220908a",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "fzf": {
-      "rev": "9e2856559d50637df482b8598fd7b35b2d746485",
+      "rev": "235a726fae89bec3ac6d3e7facd2716d78bb625d",
       "src": "https://github.com/junegunn/fzf"
     },
+    "nvim-dap": {
+      "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
     "nvim-lspconfig": {
-      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
+      "rev": "b89138d9af0a96e6048e202a15765fc6b6416bd4",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "oil.nvim": {

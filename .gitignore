@@ -2,5 +2,5 @@
 vim/.vim/.netrwhist
 *.swp
 
-# alacritty
-alacritty.local.toml
+# local files
+*local.*

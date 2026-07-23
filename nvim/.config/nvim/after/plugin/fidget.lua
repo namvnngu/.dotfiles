@@ -1,5 +1,7 @@
 local status, fidget = pcall(require, "fidget")
 
-if status then
-    fidget.setup({})
+if not status then
+    return
 end
+
+fidget.setup({})

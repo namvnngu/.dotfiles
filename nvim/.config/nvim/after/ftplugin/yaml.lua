@@ -1,8 +1,5 @@
-vim.b.dispatch = "mdp '%'"
-vim.b.start = "mdp '%'"
-
 local conform_status, conform = pcall(require, "conform")
 if conform_status then
-    conform.formatters_by_ft.markdown =
+    conform.formatters_by_ft.yaml =
         { "oxfmt", "prettier", stop_after_first = true }
 end
