@@ -112,7 +112,7 @@ vim.api.nvim_create_user_command("Ddg", function(opts)
     local escaped = vim.uri_encode(opts.args)
     local url = ("https://duckduckgo.com/?q=%s"):format(escaped)
     vim.ui.open(url)
-end, { nargs = 1, desc = "Google" })
+end, { nargs = 1, desc = "DuckDuckGo" })
 
 vim.api.nvim_create_user_command("SendQf", function()
     local list = {}

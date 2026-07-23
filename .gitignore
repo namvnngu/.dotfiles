@@ -2,5 +2,8 @@
 vim/.vim/.netrwhist
 *.swp
 
+# neovim
+nvim-pack-lock.json
+
 # local files
 *local.*
