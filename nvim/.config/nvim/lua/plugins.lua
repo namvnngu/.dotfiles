@@ -1,4 +1,4 @@
-local base = {
+local plugins = {
     "https://github.com/junegunn/fzf",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/tommcdo/vim-lion",
@@ -6,52 +6,35 @@ local base = {
     "https://github.com/tpope/vim-fugitive",
 }
 
-local lsp = {
-    "https://github.com/neovim/nvim-lspconfig",
-    "https://github.com/j-hui/fidget.nvim",
+local optional = {
+    lsp = {
+        "https://github.com/neovim/nvim-lspconfig",
+        "https://github.com/j-hui/fidget.nvim",
+    },
+    formatting = {
+        "https://github.com/stevearc/conform.nvim",
+    },
+    testing = {
+        "https://github.com/mfussenegger/nvim-dap",
+    },
+    database = {
+        "https://github.com/tpope/vim-dadbod",
+        "https://github.com/kristijanhusak/vim-dadbod-ui",
+    },
+    csharp = {
+        "https://github.com/GustavEikaas/easy-dotnet.nvim",
+    },
 }
 
-local formatting = {
-    "https://github.com/stevearc/conform.nvim",
-}
+local config_ok, config = pcall(require, "_config")
 
-local testing = {
-    "https://github.com/mfussenegger/nvim-dap",
-}
-
-local database = {
-    "https://github.com/tpope/vim-dadbod",
-    "https://github.com/kristijanhusak/vim-dadbod-ui",
-}
-
-local csharp = {
-    "https://github.com/GustavEikaas/easy-dotnet.nvim",
-}
-
-local config_status, config = pcall(require, "_config")
-local plugins = vim.list_extend({}, base)
-
-if config_status and config.plugins and config.plugins.toggles then
-    vim.list_extend(
-        plugins, --
-        config.plugins.toggles.lsp and lsp or {}
-    )
-    vim.list_extend(
-        plugins, --
-        config.plugins.toggles.formatting and formatting or {}
-    )
-    vim.list_extend(
-        plugins, --
-        config.plugins.toggles.testing and testing or {}
-    )
-    vim.list_extend(
-        plugins, --
-        config.plugins.toggles.database and database or {}
-    )
-    vim.list_extend(
-        plugins, --
-        config.plugins.toggles.csharp and csharp or {}
-    )
+if config_ok and config.plugins then
+    for name, group in pairs(optional) do
+        local plugin = config.plugins[name]
+        if plugin and plugin.enabled then
+            vim.list_extend(plugins, group)
+        end
+    end
 end
 
 vim.pack.add(plugins)

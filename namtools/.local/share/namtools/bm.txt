@@ -197,6 +197,9 @@ Graphics|[Tool] The Book of Shaders Editor|http://editor.thebookofshaders.com
 Haskell|[Lib] brick: A declarative Unix terminal UI library|https://github.com/jtdaugherty/brick
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
+Home|Bargain Home Appliances|https://bargainhomeappliances.com.au
+Home|Ben Adams Furniture Studio|https://www.benadams.studio
+Home|Home Clearance|https://www.homeclearance.com.au
 Home|How to Read Laundry Symbols|https://tide.com/en-us/how-to-wash-clothes/how-to-do-laundry/how-to-read-laundry-symbols
 Home|The Free Repair Guide|https://ifixit.com
 Java|[Lib] Micronaut: A modern, JVM-based, full-stack framework|https://micronaut.io

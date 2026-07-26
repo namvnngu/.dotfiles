@@ -55,8 +55,8 @@ for _, server in ipairs(lsp_servers) do
     end
 end
 
-local conform_status, conform = pcall(require, "conform")
-if conform_status then
+local conform_ok, conform = pcall(require, "conform")
+if conform_ok then
     conform.formatters_by_ft.typescriptreact =
         { "oxfmt", "biome", "prettier", stop_after_first = true }
 end

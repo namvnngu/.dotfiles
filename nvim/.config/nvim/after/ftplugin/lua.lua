@@ -36,7 +36,7 @@ if vim.fn.executable("lua-language-server") then
     vim.lsp.enable("lua_ls")
 end
 
-local conform_status, conform = pcall(require, "conform")
-if conform_status then
+local conform_ok, conform = pcall(require, "conform")
+if conform_ok then
     conform.formatters_by_ft.lua = { "stylua" }
 end

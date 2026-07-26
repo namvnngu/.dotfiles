@@ -1,6 +1,6 @@
-local status, conform = pcall(require, "conform")
+local ok, conform = pcall(require, "conform")
 
-if not status then
+if not ok then
     return
 end
 
