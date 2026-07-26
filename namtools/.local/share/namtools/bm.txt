@@ -46,6 +46,7 @@ Clojure|[Tool] Joker: A small interpreted dialect of Clojure written in Go, and 
 Clojure|[Tool] let-go: A Clojure dialect with a bytecode compiler and stack VM|https://github.com/nooga/let-go
 Clojure|[Tool] shadow-cljs: Compile your ClojureScript code with a focus on simplicity and ease of use|https://github.com/thheller/shadow-cljs
 Clojure|[Tool] Squint: A light-weight dialect of ClojureScript with a compiler and standard library|https://github.com/squint-cljs/squint
+Clojure|[Tool] The Clojure Toolbox: A categorised directory of libraries and tools|https://www.clojure-toolbox.com
 Common Lisp|[Tool] Coalton: An efficient, statically typed functional programming language that supercharges Common Lisp|https://coalton-lang.github.io
 CSS|[Learning] Every Layout|https://every-layout.dev
 CSS|[Learning] The Height Enigma|https://joshwcomeau.com/css/height-enigma
@@ -198,8 +199,8 @@ Haskell|[Lib] brick: A declarative Unix terminal UI library|https://github.com/j
 Health|Australian PFAS Chemicals Map|https://pfas.australianmap.net
 Health|Eczema|https://my.clevelandclinic.org/health/diseases/9998-eczema
 Home|Bargain Home Appliances|https://bargainhomeappliances.com.au
-Home|Ben Adams Furniture Studio|https://www.benadams.studio
-Home|Home Clearance|https://www.homeclearance.com.au
+Home|Ben Adams Furniture Studio|https://benadams.studio
+Home|Home Clearance|https://homeclearance.com.au
 Home|How to Read Laundry Symbols|https://tide.com/en-us/how-to-wash-clothes/how-to-do-laundry/how-to-read-laundry-symbols
 Home|The Free Repair Guide|https://ifixit.com
 Java|[Lib] Micronaut: A modern, JVM-based, full-stack framework|https://micronaut.io
