@@ -41,7 +41,9 @@ Clojure|[Lib] Ring: A Clojure web applications library inspired by Python's WSGI
 Clojure|[Lib] rj9a: An enhanced version of jetty adapter for ring|https://github.com/sunng87/ring-jetty9-adapter
 Clojure|[Tool] Babashka: A native, fast starting Clojure interpreter for scripting|https://babashka.org
 Clojure|[Tool] Figwheel: Build your ClojureScript code, and hot load it as you are coding|https://figwheel.org
+Clojure|[Tool] Glojure: A Clojure interpreter hosted on Go, with extensible interop support|https://github.com/glojurelang/glojure
 Clojure|[Tool] Joker: A small interpreted dialect of Clojure written in Go, and a Clojure(Script) linter|https://joker-lang.org
+Clojure|[Tool] let-go: A Clojure dialect with a bytecode compiler and stack VM|https://github.com/nooga/let-go
 Clojure|[Tool] shadow-cljs: Compile your ClojureScript code with a focus on simplicity and ease of use|https://github.com/thheller/shadow-cljs
 Clojure|[Tool] Squint: A light-weight dialect of ClojureScript with a compiler and standard library|https://github.com/squint-cljs/squint
 Common Lisp|[Tool] Coalton: An efficient, statically typed functional programming language that supercharges Common Lisp|https://coalton-lang.github.io
@@ -179,6 +181,10 @@ Graphics|[Learning] Scratchapixel|https://scratchapixel.com
 Graphics|[Learning] Software Renderer in Odin from Scratch|https://marianpekar.com/blog/software-renderer-in-odin-from-scratch-part-i
 Graphics|[Learning] The Book of Shaders|https://thebookofshaders.com
 Graphics|[Learning] The Nature of Code|https://natureofcode.com
+Graphics|[Learning] TinyKABOOM: KABOOM! in 180 lines of bare C++|https://github.com/ssloy/tinykaboom
+Graphics|[Learning] TinyRayCaster: Old-school FPS in a weekend in 486 lines of C++|https://github.com/ssloy/tinyraycaster
+Graphics|[Learning] TinyRayTracer: Understandable RayTracing in 256 lines of bare C++|https://github.com/ssloy/tinyraytracer
+Graphics|[Learning] TinyRenderer: Software rendering in 500 lines of bare C++|https://haqr.eu/tinyrenderer
 Graphics|[Platform] Shadertoy|https://shadertoy.com
 Graphics|[Tool] Blender: A free and open-source 3D computer graphics software|https://blender.org
 Graphics|[Tool] GIMP: A free and open-source image editor|https://gimp.org
@@ -244,6 +250,7 @@ Network|[Learning] Beej's Guide to Networking Concepts|https://beej.us/guide/bgn
 Network|[Learning] HTTP Made Really Easy|https://jmarshall.com/easy/http
 OCaml|[Lib] Daniel Bünzli's Libraries|https://erratique.ch/software
 OCaml|[Lib] Ocsigen: A complete framework for developing Web and mobile apps using cutting edge techniques|https://ocsigen.org
+Programmer|Dmitry V. Sokolov|https://github.com/ssloy
 Programmer|Fabrice Bellard|https://bellard.org
 Programming|[Book] Build Your Own X From Scratch Books|https://build-your-own.org
 Programming|[Book] Crafting Interpreters|https://craftinginterpreters.com
@@ -263,10 +270,15 @@ Programming|[Learning] 30 seconds of code: Coding articles to level up your deve
 Programming|[Learning] Beej's Guides|https://beej.us/guide
 Programming|[Learning] Build your own X|https://github.com/codecrafters-io/build-your-own-x
 Programming|[Learning] Challenging projects every programmer should try|https://austinhenley.com/blog/challengingprojects.html
+Programming|[Learning] Cursed fire or #define black magic|https://haqr.eu/strange/cursed-fire
 Programming|[Learning] Devhints: Rico's cheatsheets|https://devhints.io
 Programming|[Learning] Project Based Learning|https://github.com/practical-tutorials/project-based-learning
 Programming|[Learning] Rosetta Code: A programming chrestomathy site|https://rosettacode.org
 Programming|[Learning] Software Patterns Lexicon: Design Patterns, Architectures & Idioms|https://softwarepatternslexicon.com
+Programming|[Learning] The Banana Tossing Project|https://haqr.eu/banana
+Programming|[Learning] TinyCompiler: A compiler in a week-end|https://haqr.eu/tinycompiler
+Programming|[Learning] TinyFloat: The most unoptimized soft float library on the net|https://haqr.eu/tinyfloat
+Programming|[Learning] TinyOptimizer: An optimizing compiler challenge|https://haqr.eu/tinyoptimizer
 Programming|[Reading] Github Ranking: A list of the most github stars and forks repositories|https://evanli.github.io/Github-Ranking
 Programming|[Reading] Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
 Programming|[Reading] Papers We Love: Papers from the computer science community to read and discuss|https://github.com/papers-we-love/papers-we-love
@@ -335,6 +347,7 @@ Tool|Flameshot: Powerful, yet simple to use open-source screenshot software|http
 Tool|Irssi: A modular text mode chat client with IRC support built in|https://irssi.org
 Tool|KeyboardCleanTool: A super simple little tool which blocks all Keyboard and TouchBar input|https://folivora.ai/keyboardcleantool
 Tool|Maccy: Clipboard manager for macOS which does one job - keep your copy history at hand|https://maccy.app
+Tool|Muttwizard: A tool that automatically sets up a neomutt-based minimal email system|https://muttwizard.com
 Tool|ntfy: A simple HTTP-based pub-sub notification service|https://ntfy.sh
 Tool|PlayPhrase.me: Site for cinema archaeologists|https://playphrase.me
 Tool|PureMac: Free, open-source uninstaller and cleaner for macOS|https://github.com/momenbasel/PureMac
