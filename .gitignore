@@ -7,4 +7,4 @@ nvim-pack-lock.json
 nvim/.config/nvim/lua/_config.lua
 
 # alacritty
-alacritty.local.toml
+alacritty/.config/alacritty/_alacritty.toml
