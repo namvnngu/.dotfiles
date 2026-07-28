@@ -4,6 +4,7 @@ local plugins = {
     "https://github.com/tommcdo/vim-lion",
     "https://github.com/tpope/vim-dispatch",
     "https://github.com/tpope/vim-fugitive",
+    "https://github.com/tpope/vim-projectionist",
 }
 
 local optional = {
@@ -20,6 +21,10 @@ local optional = {
     database = {
         "https://github.com/tpope/vim-dadbod",
         "https://github.com/kristijanhusak/vim-dadbod-ui",
+    },
+    clojure = {
+        "https://github.com/tpope/vim-fireplace",
+        "https://github.com/tpope/vim-salve",
     },
     csharp = {
         "https://github.com/GustavEikaas/easy-dotnet.nvim",
