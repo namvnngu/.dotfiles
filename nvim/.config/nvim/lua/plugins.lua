@@ -12,10 +12,10 @@ local optional = {
         "https://github.com/neovim/nvim-lspconfig",
         "https://github.com/j-hui/fidget.nvim",
     },
-    formatting = {
+    format = {
         "https://github.com/stevearc/conform.nvim",
     },
-    testing = {
+    debug = {
         "https://github.com/mfussenegger/nvim-dap",
     },
     database = {

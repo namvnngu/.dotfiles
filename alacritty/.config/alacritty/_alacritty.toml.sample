@@ -1,0 +1,5 @@
+[general]
+import = [
+  "~/.config/alacritty/colorschemes/xterm.toml",
+  "~/.config/alacritty/fonts/jetbrains-mono.toml",
+]

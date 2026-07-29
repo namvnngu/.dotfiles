@@ -1,0 +1,22 @@
+return {
+    plugins = {
+        lsp = {
+            enabled = false,
+        },
+        format = {
+            enabled = false,
+        },
+        debug = {
+            enabled = false,
+        },
+        database = {
+            enabled = false
+        },
+        clojure = {
+            enabled = false,
+        },
+        csharp = {
+            enabled = false,
+        },
+    },
+}
