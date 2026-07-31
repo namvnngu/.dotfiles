@@ -12,6 +12,33 @@ local lsp_servers = {
             "node_modules/.bin/typescript-language-server",
             "typescript-language-server",
         },
+        config = {
+            cmd = function(dispatchers, config)
+                local version = string.match(
+                    vim.trim(vim.fn.system("pnpm tsc --version")),
+                    "^Version (%d+%.%d+%.%d+)$"
+                )
+                if string.find(version, "7%.%d+%.%d+") then
+                    return vim.lsp.rpc.start(
+                        { "pnpm", "tsc", "--lsp", "--stdio" },
+                        dispatchers
+                    )
+                end
+
+                local cmd = "typescript-language-server"
+                if (config or {}).root_dir then
+                    local local_cmd = vim.fs.joinpath(
+                        config.root_dir,
+                        "node_modules/.bin",
+                        cmd
+                    )
+                    if vim.fn.executable(local_cmd) == 1 then
+                        cmd = local_cmd
+                    end
+                end
+                return vim.lsp.rpc.start({ cmd, "--stdio" }, dispatchers)
+            end,
+        },
     },
     {
         name = "eslint",
@@ -50,6 +77,9 @@ for _, server in ipairs(lsp_servers) do
             return vim.fn.executable(exe) == 1
         end)
 
+    if ok and server.config then
+        vim.lsp.config(server.name, server.config)
+    end
     if ok then
         vim.lsp.enable(server.name)
     end
