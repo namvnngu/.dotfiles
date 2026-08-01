@@ -247,6 +247,7 @@ Library|PDF Books Library|https://pdfbooksworld.com
 Library|Wikibooks|https://wikibooks.org
 Lua|[Tool] Lux: A package manager for Lua|https://lux.lumen-labs.org
 Miscellaneous|[Shopping] Moonpig Gift Shop|https://moonpig.com
+Miscellaneous|[Utility] Useful Links|https://start.me/p/L1rEYQ/osint4all
 Mobile Development|[Learning] How to Implement iOS Deep Linking Using Universal Links: Step-by-Step Deep Dive Guide — 2025|https://medium.com/@sonerkaraevli/how-to-implement-ios-deep-linking-using-universal-links-step-by-step-deep-dive-guide-2024-fe3882b3017c
 Network|[Guide] How to Send Emails Using Gmail SMTP with Cloudflare Email Routing?|https://dev.to/pierre/gmail-with-cloudflare-email-routing-4413
 Network|[Learning] Beej's Guide to Network Programming|https://beej.us/guide/bgnet
@@ -256,6 +257,7 @@ OCaml|[Lib] Daniel Bünzli's Libraries|https://erratique.ch/software
 OCaml|[Lib] Ocsigen: A complete framework for developing Web and mobile apps using cutting edge techniques|https://ocsigen.org
 Programmer|Dmitry V. Sokolov|https://github.com/ssloy
 Programmer|Fabrice Bellard|https://bellard.org
+Programmer|Russ Cox|https://swtch.com/~rsc
 Programming|[Book] Build Your Own X From Scratch Books|https://build-your-own.org
 Programming|[Book] Crafting Interpreters|https://craftinginterpreters.com
 Programming|[Book] Freely available programming books|https://ebookfoundation.github.io/free-programming-books
@@ -284,6 +286,7 @@ Programming|[Learning] TinyCompiler: A compiler in a week-end|https://haqr.eu/ti
 Programming|[Learning] TinyFloat: The most unoptimized soft float library on the net|https://haqr.eu/tinyfloat
 Programming|[Learning] TinyOptimizer: An optimizing compiler challenge|https://haqr.eu/tinyoptimizer
 Programming|[Reading] Github Ranking: A list of the most github stars and forks repositories|https://evanli.github.io/Github-Ranking
+Programming|[Reading] Handles are the better pointers|https://floooh.github.io/2018/06/17/handles-vs-pointers.html
 Programming|[Reading] Notes on structured concurrency, or: Go statement considered harmful|https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful
 Programming|[Reading] Papers We Love: Papers from the computer science community to read and discuss|https://github.com/papers-we-love/papers-we-love
 Programming|[Reading] Ranking Programming Languages by Energy Efficiency|https://haslab.github.io/SAFER/scp21.pdf
@@ -332,7 +335,9 @@ Rust|[Reading] Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/pos
 Rust|[Reading] Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
 Rust|[Tool] bacon: A background code checker|https://dystroy.org/bacon
 Scheme|[Tool] Steel: An embeddable and extensible scheme dialect built in Rust|https://github.com/mattwparas/steel
-Security|Web Security Basics|https://github.com/vasanthk/web-security-basics
+Security|[Learning] Web Security Academy, PortSwigger|https://portswigger.net/web-security
+Security|[Learning] Web Security Basics|https://github.com/vasanthk/web-security-basics
+Security|[Reading] OWASP Top 10:2025|https://owasp.org/Top10/2025
 System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecules-organisms
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|The System Design Primer|https://github.com/donnemartin/system-design-primer
