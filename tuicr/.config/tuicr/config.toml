@@ -1,0 +1,14 @@
+theme_dark="github-dark"
+theme_light="github-light"
+
+comment_vim = true
+diff_view = "side-by-side"
+leader = " "
+
+comment_types = [
+    { id = "note", label = "question", definition = "ask for clarification" },
+    { id = "suggestion", definition = "possible improvements" },
+    { id = "issue", definition = "problems to fix" },
+    { id = "praise", definition = "positive feedback" },
+    { id = "nit", label = "nitpick", definition = "small optional tweaks" },
+]
