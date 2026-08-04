@@ -5,3 +5,4 @@ https://github.com/tommcdo/vim-lion
 https://github.com/tpope/vim-dispatch
 https://github.com/tpope/vim-eunuch
 https://github.com/tpope/vim-fugitive
+https://github.com/tpope/vim-projectionist
