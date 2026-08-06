@@ -37,6 +37,7 @@
 "core:node" = "latest"
 "core:rust" = "latest"
 "github:babashka/babashka" = "latest"
+"github:candid82/joker" = "latest"
 "github:jgm/pandoc" = "latest"
 "github:odin-lang/Odin" = "latest"
 "github:prefix-dev/pixi" = "latest"
