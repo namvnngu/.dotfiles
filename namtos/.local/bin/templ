@@ -47,7 +47,7 @@ print-help() {
 
 Usage: 
   ${cmd} [options]
-  ${cmd} template_name file_path
+  ${cmd} <template_name> <file_path>
 
 Arguments:
   template_name  Template name
@@ -67,27 +67,29 @@ main() {
         case "${option}" in
             --help | -h)
                 print-help
+                exit
                 ;;
             --list | -l)
                 list-templates
+                exit
                 ;;
             --version | -v)
                 print-version
-                ;;
-            *)
-                exit-1 "${option}: No such template"
+                exit
                 ;;
         esac
-
-        exit
     fi
 
     local template_name="${1}"
-    local file_path="${2}"
     local template_file="${template_dir}/templ-${template_name}.txt"
+    local file_path="${2}"
 
     if [[ ! -e "${template_file}" ]]; then
         exit-1 "${template_file}: No such template"
+    fi
+
+    if [[ -z "${file_path}" ]]; then
+        exit-1 "Missing path of a file created based on \"${template_name}\""
     fi
 
     mkdir -p $(dirname "${file_path}")
