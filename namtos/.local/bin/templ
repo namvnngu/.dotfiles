@@ -4,10 +4,10 @@
 # Description: Create a file given a template name
 # License: MIT License
 # Date Created: December 01, 2025
-# Date Modified: June 23, 2026
+# Date Modified: August 07, 2026
 
 cmd="$(basename "${0}")"
-version="0.2.0"
+version="0.2.1"
 template_dir="${NAMTOOLS_DATA_DIR}"
 
 # Exits with status 1 and messages.
@@ -65,6 +65,9 @@ main() {
         local option="${1}"
 
         case "${option}" in
+            --help | -h)
+                print-help
+                ;;
             --list | -l)
                 list-templates
                 ;;
