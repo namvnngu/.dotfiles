@@ -14,8 +14,8 @@ add-path "${HOME}/.local/bin"
 # tools's missing man pages (e.g. mise, pixi)
 export MANPATH="${HOME}/.local/share/manx:"
 
-# namtools
-export NAMTOOLS_DATA_DIR="${HOME}/.local/share/namtools"
+# namtos
+export NAMTOOLS_DATA_DIR="${HOME}/.local/share/namtos"
 
 # mise
 export MISE_CONFIG_DIR="${HOME}/.config/mise"
