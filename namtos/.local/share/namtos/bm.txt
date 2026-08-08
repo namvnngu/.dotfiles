@@ -69,6 +69,7 @@ C|[Lib] vaqt: High-precision date/time|https://github.com/nalgeon/vaqt
 C|[Lib] zpl: pushing the boundaries of simplicity|https://github.com/zpl-c
 C|[Reading] Awesome C|https://github.com/oz123/awesome-c
 C|[Reading] MallocInternals|https://sourceware.org/glibc/wiki/MallocInternals
+C|[Reading] One year of C|https://floooh.github.io/2018/06/02/one-year-of-c
 C|[Reading] The C programming language|https://c-language.org
 C|[Tool] clib: A package manager for the C programming language|https://github.com/clibs/clib
 C|[Tool] Spack: A flexible package manager that supports multiple versions, configurations, platforms, and compilers|https://spack.io
@@ -312,6 +313,7 @@ Reverse Engineering|[Tool] ImHex: A Hex Editor, a tool to display, decode and an
 Reverse Engineering|[Tool] radare2: A free/libre toolchain for easing several low level tasks like forensics, software reverse engineering, exploiting and debugging|https://radare.org/n/radare2.html
 Rust|[Fun] A Game Boy Emulator|https://github.com/smparsons/retroboy
 Rust|[Learning] 100 Exercises To Learn Rust|https://rust-exercises.com/100-exercises
+Rust|[Learning] Async Rust in Three Parts|https://jacko.io/async_intro.html
 Rust|[Learning] Learn Rust With Entirely Too Many Linked Lists|https://rust-unofficial.github.io/too-many-lists
 Rust|[Learning] Rust By Practice|https://practice.course.rs
 Rust|[Learning] Rust Design Patterns|https://rust-unofficial.github.io/patterns
@@ -329,11 +331,13 @@ Rust|[Lib] Leptos: A cutting-edge Rust framework for the modern web|https://diox
 Rust|[Lib] Lib.rs: A catalog of programs and libraries written in the Rust programming language|https://lib.rs
 Rust|[Lib] oxichrome: Write type-safe browser extensions with proc macros and Leptos entirely in Rust|https://oxichrome.dev
 Rust|[Lib] Polars: A blazingly fast DataFrame library for manipulating structured data|https://docs.pola.rs
+Rust|[Lib] Polars: Extremely fast Query Engine for DataFrames|https://pola.rs
 Rust|[Lib] Servo: A web browser rendering engine written in Rust|https://servo.org
 Rust|[Lib] Xilem: A high-level architecture for writing GUI apps in Rust|https://github.com/linebender/xilem
 Rust|[Reading] Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|[Reading] Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
 Rust|[Tool] bacon: A background code checker|https://dystroy.org/bacon
+Rust|[Tool] Xberg: Extract text, metadata, images, and structured data from 101 formats|https://docs.xberg.io
 Scheme|[Tool] Steel: An embeddable and extensible scheme dialect built in Rust|https://github.com/mattwparas/steel
 Security|[Learning] Web Security Academy, PortSwigger|https://portswigger.net/web-security
 Security|[Learning] Web Security Basics|https://github.com/vasanthk/web-security-basics
@@ -417,6 +421,7 @@ Vim/Neovim|[Reading] Why I got rid of all my neovim plugins|https://yobibyte.git
 Web|[Docs] ARIA Authoring Practices Guide|https://w3.org/WAI/ARIA/apg
 Web|[Docs] Bulletproof React|https://github.com/alan2207/bulletproof-react
 Web|[Docs] Open UI|https://open-ui.org
+Web|[Docs] What PWA Can Do Today|https://whatpwacando.today
 Web|[Fun] Just fucking use HTML|https://justfuckingusehtml.com
 Web|[Learning] A Friendly Introduction to SVG|https://joshwcomeau.com/svg/friendly-introduction-to-svg
 Web|[Learning] Atomic Design|https://bradfrost.com/blog/post/atomic-web-design
