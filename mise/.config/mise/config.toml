@@ -39,6 +39,7 @@
 "github:babashka/babashka" = "latest"
 "github:candid82/joker" = "latest"
 "github:jgm/pandoc" = "latest"
+"github:microsoft/aspire" = "latest"
 "github:odin-lang/Odin" = "latest"
 "github:prefix-dev/pixi" = "latest"
 "npm:prettier" = "latest"
