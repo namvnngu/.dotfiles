@@ -54,6 +54,7 @@ CSS|[Reading] CSS Wrapped 2025|https://chrome.dev/css-wrapped-2025
 CSS|[Reading] Modern CSS Fundamentals|https://css-fundamentals.kevinpowell.co
 CSS|[Tip] Transitioning to Height Auto (Two Ways)|https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto
 CSS|[Tool] CSS Spring Easing Generator|https://kvin.me/css-springs
+C|[Docs] The Open Group Standard Base Specifications|https://pubs.opengroup.org/onlinepubs
 C|[Learning] Beej's Guide to C Programming - Library Reference|https://beej.us/guide/bgclr
 C|[Learning] Beej's Guide to C Programming|https://beej.us/guide/bgc
 C|[Learning] Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
