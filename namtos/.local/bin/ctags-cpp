@@ -135,7 +135,7 @@ main() {
             ;;
     esac
 
-    local compiler="${1:-clang}"
+    local compiler="${1:-c++}"
 
     require-cmd 'ctags'
     require-cmd "${compiler}"
