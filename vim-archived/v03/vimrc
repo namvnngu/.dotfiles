@@ -169,7 +169,7 @@ augroup rust_ft
     autocmd FileType rust if executable('rustfmt') | setlocal formatprg=rustfmt | endif
 augroup END
 
-augroup rust_ft
+augroup python_ft
     autocmd!
     autocmd FileType python if executable('ruff') | setlocal formatprg=ruff\ format\ - | endif
     autocmd FileType python let b:dispatch = 'python3 %'

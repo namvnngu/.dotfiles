@@ -1,3 +1,7 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OPTIONS                                                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let mapleader = ' '
 
 filetype plugin indent on
@@ -38,6 +42,10 @@ set ttimeoutlen=50
 set wildmenu
 set wildoptions=pum,tagfile
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY MAPPINGS                                                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Move to window
 nnoremap <Leader>h <C-W>h
 nnoremap <Leader>j <C-W>j
@@ -75,6 +83,22 @@ nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 " Make the current buffer a scratch buffer
 nnoremap <Leader>bs <Cmd>setlocal bt=nofile bh=wipe noswf nobl<CR>
 
+" Fix the indentation of the entire file
+function! s:indent()
+    let l:view = winsaveview()
+    keepjumps keeppatterns silent! norm gg=G
+    call winrestview(l:view)
+endfunction
+nnoremap <Leader>= <Cmd>call <SID>indent()<CR>
+
+" Format the entire file
+function! s:format()
+    let l:view = winsaveview()
+    keepjumps keeppatterns silent! norm gggqG
+    call winrestview(l:view)
+endfunction
+nnoremap <Leader>gq <Cmd>call <SID>format()<CR>
+
 " Yank til the end
 nnoremap Y y$
 
@@ -85,8 +109,65 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-" Switch between C source and header file
-nnoremap <Leader>cc <Cmd>e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ABBREVIATIONS                                                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+ia <expr> me@ strftime('Author: Nam Nguyen <nam.vnngu@gmail.com><CR>
+                       \Description:<CR>
+                       \License: MIT License<CR>
+                       \Date Created: %B %d, %Y<CR>
+                       \Date Modified: %B %d, %Y')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AUTOCOMMANDS                                                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup mkdir_on_edit
+    autocmd!
+    autocmd BufWritePre * call s:mkdir_on_edit(expand('<afile>:p:h'))
+
+    function! s:mkdir_on_edit(dir)
+      if a:dir =~ '^/'
+            \ && !isdirectory(a:dir)
+            \ && input("'" . a:dir . "' does not exist. Create? [y/N] ") =~? '^y\%[es]$'
+        call mkdir(a:dir, 'p')
+      endif
+    endfunction
+augroup END
+
+augroup c_ft
+    autocmd!
+    autocmd FileType c setlocal tags=./tags,tags,~/.tags/c-system
+    autocmd FileType c if executable('clang-format') | setlocal formatprg=clang-format | endif
+    autocmd FileType c let b:dispatch = 'cc -std=c99 -o %:p:r % && %:p:r'
+    autocmd FileType c let b:start    = 'cc -std=c99 -o %:p:r % && %:p:r'
+augroup END
+
+augroup cpp_ft
+    autocmd!
+    autocmd FileType cpp setlocal tags=./tags,tags,~/.tags/cpp-system
+    autocmd FileType cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
+    autocmd FileType cpp let b:dispatch = 'c++ -std=c++23 -o %:p:r % && %:p:r'
+    autocmd FileType cpp let b:start    = 'c++ -std=c++23 -o %:p:r % && %:p:r'
+augroup END
+
+augroup python_ft
+    autocmd!
+    autocmd FileType python if executable('ruff') | setlocal formatprg=ruff\ format\ - | endif
+    autocmd FileType python let b:dispatch = 'python3 %'
+    autocmd FileType python let b:start    = 'python3 %'
+augroup END
+
+augroup markdown_ft
+    autocmd!
+    autocmd FileType markdown let b:dispatch = "mdp '%'"
+    autocmd FileType markdown let b:start    = "mdp '%'"
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS                                                                      "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enable manual page
 runtime ftplugin/man.vim
