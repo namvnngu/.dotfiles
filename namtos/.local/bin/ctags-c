@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+# Author: Nam Nguyen <nam.vnngu@gmail.com>
+# Description: Generate C global tags file
+# License: MIT License
+# Date Created: January 25, 2026
+# Date Modified: August 10, 2026 
+
+me="$(basename "${0}")"
+VERSION="0.2.0"
+
+tags_dir="${HOME}/.tags"
+tags_file="${tags_dir}/c"
+include_dirs=()
+
+# Exits with status 1 and messages.
+#
+# Usage: exit-1 [message ...]
+#
+# Arguments:
+#   [message ...]  Error messages
+exit-1() {
+    {
+        printf "${me}: "
+        printf "%s\n" "${@}"
+    } 1>&2
+    exit 1
+}
+
+# Prints the version.
+#
+# Usage: print-version
+print-version() {
+    printf "${me} ${VERSION}\n"
+}
+
+# Prints the usage information.
+#
+# Usage: print-help
+print-help() {
+    printf "${me} - Generate C global tags file [version ${VERSION}]
+
+Usage: 
+  ${me} [compiler]
+
+Arguments:
+  compiler  C compiler (default: cc)
+
+Options: 
+  -h, --help     Print usage information
+  -v, --version  Print version
+"
+}
+
+# Checks if required command is available.
+#
+# Usage: require-cmd <command>
+#
+# Arguments:
+#   <command>  Required command
+require-cmd() {
+    local cmd="${1}"
+    if ! command -v "${cmd}" >/dev/null 2>&1; then
+        exit-1 "${cmd} not found"
+    fi
+}
+
+# Collects C compiler header directories.
+#
+# Usage: collect-compiler-header-dirs <compiler>
+#
+# Arguments:
+#   <compiler>  C compiler
+collect-compiler-header-dirs() {
+    local compiler="${1}"
+    local compiler_output="$("${compiler}" -v -E -x c /dev/null 2>&1)"
+    local searching=false
+    local dir
+
+    while IFS= read -r line; do
+        if [[ "${line}" == '#include <...> search starts here:' ]]; then
+            searching=true
+            continue
+        fi
+
+        if [[ "${line}" == 'End of search list.' ]]; then
+            searching=false
+            continue
+        fi
+
+        if [[ "${searching}" != true ]]; then
+            continue
+        fi
+
+        # Remove leading whitespace:
+        #   - `${line%%[![:space:]]*}` Remove the longest matching suffix from line,
+        #   which is non-whitespace characters, and produce whitespaces.
+        #   - `${line#"    "}`         Remove the shortest matching prefix from line,
+        #   which is whitespaces produced above.
+        dir="${line#"${line%%[![:space:]]*}"}"
+
+        if [[ -d "${dir}" ]]; then
+            include_dirs+=("${dir}")
+        fi
+    done <<< "${compiler_output}"
+}
+
+# Generates tags file.
+#
+# Usage: generate-tags
+generate-tags() {
+    echo "Found include directories:"
+    printf '  %s\n' "${include_dirs[@]}"
+
+    echo "Generating tags ${tags_file} ..."
+    mkdir -p "${tags_dir}"
+    ctags \
+        --languages=c \
+        --langmap=c:+.h \
+        --kinds-c=+p \
+        --recurse \
+        -o "${tags_file}" \
+        "${include_dirs[@]}"
+}
+
+main() {
+    case "${1}" in
+        --help | -h)
+            print-help
+            exit
+            ;;
+        --version | -v)
+            print-version
+            exit
+            ;;
+    esac
+
+    local compiler="${1:-clang}"
+
+    require-cmd 'ctags'
+    require-cmd "${compiler}"
+    collect-compiler-header-dirs "${compiler}"
+    generate-tags
+
+    echo "Done!"
+}
+
+main "${@}"

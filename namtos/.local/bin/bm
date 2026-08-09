@@ -4,7 +4,7 @@
 # Description: The URL bookmark manager (bm)
 # License: MIT License
 # Date Created: July 02, 2025
-# Date Modified: June 23, 2026
+# Date Modified: August 10, 2026
 
 # BOOKMARK FILE
 #
@@ -13,8 +13,8 @@
 #
 # category|title|url
 
-cmd="$(basename "${0}")"
-version="0.1.1"
+me="$(basename "${0}")"
+VERSION="0.1.1"
 
 bm_file="${NAMTOOLS_DATA_DIR}/bm.txt"
 bm_separator="|"
@@ -27,7 +27,7 @@ bm_separator="|"
 #   [message ...]  Error messages
 exit-1() {
     {
-        printf "${cmd}: "
+        printf "${me}: "
         printf "%s\n" "${@}"
     } 1>&2
     exit 1
@@ -122,9 +122,9 @@ view-bm() {
 #
 # Usage: print-help
 print-help() {
-    printf "${cmd} - Manage your bookmarks [version ${version}]
+    printf "${me} - Manage your bookmarks [version ${VERSION}]
  
-Usage: ${cmd} [options] [command]
+Usage: ${me} [options] [command]
 
 Commands:
   add         Add a bookmark
@@ -145,7 +145,7 @@ Options:
 #
 # Usage: print-version
 print-version() {
-    printf "${cmd} ${version}\n"
+    printf "${me} ${VERSION}\n"
 }
 
 main() {
@@ -174,7 +174,7 @@ main() {
             ;;
         *)
             exit-1 "Unknown command '${subcmd}'" \
-                "For more information, try '${cmd} help' or '${cmd} -h'"
+                "For more information, try '${me} help' or '${me} -h'"
             ;;
     esac
 }
