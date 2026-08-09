@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Author: Nam Nguyen <nam.vnngu@gmail.com>
-# Description: Generate a tags file (~/.tags/c-system) on system header files
+# Description: Generate a tags file (~/.tags/cpp-system) on system header files
 # License: MIT License
-# Date Created: January 25, 2026
+# Date Created: August 09, 2026
 # Date Modified: August 09, 2026 
 
 if ! command -v ctags >/dev/null 2>&1; then
@@ -18,7 +18,7 @@ if ! command -v "${compiler}" >/dev/null 2>&1; then
 fi
 
 default_tags_dir="${HOME}/.tags"
-default_tags_file="${default_tags_dir}/c-system"
+default_tags_file="${default_tags_dir}/cpp-system"
 tags_file="${2:-${default_tags_file}}"
 tags_dir="${tags_file%/*}"
 
@@ -62,9 +62,9 @@ printf '  %s\n' "${include_dirs[@]}"
 echo "Generating tags ${tags_file}..."
 
 ctags \
-    --languages=c \
-    --langmap=c:+.h \
-    --kinds-c=+p \
+    --languages=c,c++ \
+    --fields=+iaS \
+    --extras=+q \
     --recurse \
     -o "${tags_file}" \
     "${include_dirs[@]}"
