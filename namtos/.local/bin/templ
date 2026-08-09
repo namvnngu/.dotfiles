@@ -4,7 +4,7 @@
 # Description: Create a file given a template name
 # License: MIT License
 # Date Created: December 01, 2025
-# Date Modified: August 07, 2026
+# Date Modified: August 10, 2026
 
 cmd="$(basename "${0}")"
 version="0.2.1"
@@ -96,4 +96,4 @@ main() {
     cp "${template_file}" "${file_path}"
 }
 
-main "$@"
+main "${@}"

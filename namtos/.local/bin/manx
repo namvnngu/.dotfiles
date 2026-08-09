@@ -4,7 +4,7 @@
 # Description: Create symbolic links for man pages of mise and pixi tools.
 # License: MIT License
 # Date Created: November 09, 2025
-# Date Modified: July 11, 2026
+# Date Modified: August 10, 2026
 
 home="${XDG_DATA_HOME:-${HOME}}"
 manx_dir="${home}/.local/share/manx"
@@ -92,4 +92,4 @@ main() {
     echo -e "\nCreated ${man_file_total} symlinks!"
 }
 
-main "$@"
+main "${@}"
