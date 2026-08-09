@@ -1,10 +1,30 @@
 #!/usr/bin/env bash
 
 # Author: Nam Nguyen <nam.vnngu@gmail.com>
-# Description: Generate a tags file (~/.tags/cpp-system) on system header files
+# Description: Generate C++ tags file on system header files
 # License: MIT License
 # Date Created: August 09, 2026
 # Date Modified: August 09, 2026 
+
+# HELP
+
+if [[ "${1}" == *-h* ]]; then
+    printf "Generate C++ tags file on system header files.
+
+Usage: 
+  ctags-cpp-system [compiler] [tags_file]
+
+Arguments:
+  compiler   C compiler (default: clang)
+  tags_file  Path of tags file (default: ~/.tags/cpp-system)
+
+Options: 
+  -h, --help     Print usage information
+"
+    exit 0
+fi
+
+# MAIN
 
 if ! command -v ctags >/dev/null 2>&1; then
     echo "Error: ctags not found" >&2
@@ -22,10 +42,7 @@ default_tags_file="${default_tags_dir}/cpp-system"
 tags_file="${2:-${default_tags_file}}"
 tags_dir="${tags_file%/*}"
 
-mkdir -p "${tags_dir}"
-
 compiler_output="$("${compiler}" -v -E -x c /dev/null 2>&1)"
-
 include_dirs=()
 searching=false
 
@@ -54,13 +71,14 @@ while IFS= read -r line; do
     if [[ -d "${directory}" ]]; then
         include_dirs+=("${directory}")
     fi
-done <<< "$compiler_output"
+done <<< "${compiler_output}"
 
 echo "Found system include directories:"
 printf '  %s\n' "${include_dirs[@]}"
 
-echo "Generating tags ${tags_file}..."
+echo "Generating tags ${tags_file} ..."
 
+mkdir -p "${tags_dir}"
 ctags \
     --languages=c,c++ \
     --fields=+iaS \
