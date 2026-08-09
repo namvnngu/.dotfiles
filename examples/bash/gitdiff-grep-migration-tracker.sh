@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 if [[ -n "$(git status -s)" ]]; then
   echo "Error: Commit changes before starting checking"
   exit 1

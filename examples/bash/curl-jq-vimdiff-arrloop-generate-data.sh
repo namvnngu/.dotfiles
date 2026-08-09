@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 root="${1/%\//}"
 base_url='http://localhost:5173/_/api/v1'
 version='675636'
