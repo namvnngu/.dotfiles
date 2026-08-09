@@ -156,7 +156,7 @@ augroup END
 
 augroup cc_ft
     autocmd!
-    autocmd FileType c,cpp setlocal tags=./tags,tags,~/.tags/c-system
+    autocmd FileType c,cpp setlocal tags+=~/.tags/c
     autocmd FileType c,cpp if executable('clang-format') | setlocal formatprg=clang-format | endif
     autocmd FileType c     let b:dispatch = 'cc  -o %:p:r % && %:p:r'
     autocmd FileType c     let b:start    = 'cc  -o %:p:r % && %:p:r'
