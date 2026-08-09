@@ -64,6 +64,7 @@ C|[Lib] lwan: A high-performance & scalable web server in C|https://lwan.ws
 C|[Lib] microui: A tiny immediate-mode UI library|https://github.com/rxi/microui
 C|[Lib] miniaudio: An audio playback and capture library in a single source file|https://miniaud.io
 C|[Lib] musl: C Standard Library|https://musl.libc.org
+C|[Lib] single_file_libs: List of single-file C/C++ libraries|https://github.com/r-lyeh/single_file_libs
 C|[Lib] sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 C|[Lib] stb: single-file public domain (or MIT licensed) libraries|https://github.com/nothings/stb
 C|[Lib] vaqt: High-precision date/time|https://github.com/nalgeon/vaqt
