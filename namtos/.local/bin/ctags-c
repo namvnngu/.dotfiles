@@ -21,8 +21,8 @@ include_dirs=()
 #   [message ...]  Error messages
 exit-1() {
     {
-        printf "${me}: "
-        printf "%s\n" "${@}"
+        printf '%s: ' "${me}"
+        printf '%s\n' "${@}"
     } 1>&2
     exit 1
 }
@@ -31,14 +31,15 @@ exit-1() {
 #
 # Usage: print-version
 print-version() {
-    printf "${me} ${VERSION}\n"
+    printf '%s %s\n' "${me}" "${VERSION}"
 }
 
 # Prints the usage information.
 #
 # Usage: print-help
 print-help() {
-    printf "${me} - Generate C global tags file [version ${VERSION}]
+    cat <<HEREDOC
+${me} - Generate C global tags file [version ${VERSION}]
 
 Usage: 
   ${me} [compiler]
@@ -49,7 +50,7 @@ Arguments:
 Options: 
   -h, --help     Print usage information
   -v, --version  Print version
-"
+HEREDOC
 }
 
 # Checks if required command is available.
@@ -73,9 +74,11 @@ require-cmd() {
 #   <compiler>  C compiler
 collect-compiler-header-dirs() {
     local compiler="${1}"
-    local compiler_output="$("${compiler}" -v -E -x c /dev/null 2>&1)"
+    local compiler_output
     local searching=false
     local dir
+
+    compiler_output="$("${compiler}" -v -E -x c /dev/null 2>&1)"
 
     while IFS= read -r line; do
         if [[ "${line}" == '#include <...> search starts here:' ]]; then

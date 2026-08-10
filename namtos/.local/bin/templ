@@ -18,8 +18,8 @@ template_dir="${NAMTOOLS_DATA_DIR}"
 #   [message ...]  Error messages
 exit-1() {
     {
-        printf "${me}: "
-        printf "%s\n" "${@}"
+        printf '%s: ' "${me}"
+        printf '%s\n' "${@}"
     } 1>&2
     exit 1
 }
@@ -28,14 +28,15 @@ exit-1() {
 #
 # Usage: print-version
 print-version() {
-    printf "${me} ${VERSION}\n"
+    printf '%s %s\n' "${me}" "${VERSION}"
 }
 
 # Prints the usage information.
 #
 # Usage: print-help
 print-help() {
-    printf "${me} - Create a file given a template name [version ${VERSION}]
+    cat <<HEREDOC
+${me} - Create a file given a template name [version ${VERSION}]
 
 Usage: 
   ${me} [options]
@@ -49,7 +50,7 @@ Options:
   -h, --help     Print usage information
   -l, --list     List all available templates
   -v, --version  Print version
-"
+HEREDOC
 }
 
 # Lists all available templates.
@@ -92,7 +93,7 @@ main() {
         exit-1 "${template_file}: No such template"
     fi
 
-    mkdir -p $(dirname "${file_path}")
+    mkdir -p "$(dirname "${file_path}")"
     cp "${template_file}" "${file_path}"
 }
 

@@ -8,6 +8,7 @@ Audio|[Tool] Wavacity: A port of the Audacity audio editor to the web browser|ht
 Australia|Aussiecitizenshiptest.com|https://aussiecitizenshiptest.com
 Australia|Certified copies of original documents|https://justice.vic.gov.au/certifiedcopies
 Australia|Weather in Melbourne|https://australia.com/en/facts-and-planning/weather-in-australia/melbourne-weather
+Bash|[Guide] YSAP's Bash Style Guide|https://style.ysap.sh
 Bash|[Learning] BashGuide|https://mywiki.wooledge.org
 Bash|[Tool] Bash Boilerplate|https://github.com/xwmx/bash-boilerplate
 Bash|[Tool] Bats: A TAP-compliant testing framework for Bash 3.2 or above|https://bats-core.readthedocs.io

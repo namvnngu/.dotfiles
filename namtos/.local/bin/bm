@@ -27,8 +27,8 @@ bm_separator="|"
 #   [message ...]  Error messages
 exit-1() {
     {
-        printf "${me}: "
-        printf "%s\n" "${@}"
+        printf '%s: ' "${me}"
+        printf '%s\n' "${@}"
     } 1>&2
     exit 1
 }
@@ -48,15 +48,15 @@ exit-1() {
 #   -t  Bookmark title
 #   -u  Bookmark URL
 add-bm() {
-    read -r -p "Category: " category
-    read -r -p "Title: " title
-    read -r -p "URL: " url
+    read -r -p 'Category: ' category
+    read -r -p 'Title: ' title
+    read -r -p 'URL: ' url
 
     local bookmark="${category}${bm_separator}${title}${bm_separator}${url}"
-    local bookmarks=$(cat "${bm_file}")
-    bookmarks="${bookmarks}\n${bookmark}"
+    local bookmarks
+    bookmarks=$(cat "${bm_file}")
 
-    printf "${bookmarks}" | sort -f > "${bm_file}"
+    printf '%s\n%s' "${bookmarks}" "${bookmark}" | sort -f > "${bm_file}"
 }
 
 # Opens a bookmark in browser.
@@ -72,8 +72,10 @@ add-bm() {
 # Options:
 #   -l Line number
 open-bm() {
-    local bm=$(fzf < "${bm_file}")
-    local url=$(cut -d '|' -f 3 <<< "${bm}")
+    local bm
+    local url
+    bm=$(fzf < "${bm_file}")
+    url=$(cut -d '|' -f 3 <<< "${bm}")
     opena "${url}"
 }
 
@@ -90,8 +92,10 @@ open-bm() {
 # Options:
 #   -l Line number
 copy-bm() {
-    local bm=$(fzf < "${bm_file}")
-    local url=$(cut -d '|' -f 3 <<< "${bm}")
+    local bm
+    local url
+    bm=$(fzf < "${bm_file}")
+    url=$(cut -d '|' -f 3 <<< "${bm}")
     pbcopy <<< "${url}"
 }
 
@@ -108,7 +112,7 @@ copy-bm() {
 # Options:
 #   -l Line number
 rm-bm() {
-    printf "TODO: Remove bookmark\n"
+    printf 'TODO: Remove bookmark\n'
 }
 
 # Prints the content of the bookmark file.
@@ -122,7 +126,8 @@ view-bm() {
 #
 # Usage: print-help
 print-help() {
-    printf "${me} - Manage your bookmarks [version ${VERSION}]
+    cat <<HEREDOC
+${me} - Manage your bookmarks [version ${VERSION}]
  
 Usage: ${me} [options] [command]
 
@@ -138,14 +143,14 @@ Commands:
 Options: 
   -h, --help     Print usage information
   -v, --version  Print version
-"
+HEREDOC
 }
 
 # Prints the version.
 #
 # Usage: print-version
 print-version() {
-    printf "${me} ${VERSION}\n"
+    printf '%s %s\n' "${me}" "${VERSION}"
 }
 
 main() {
