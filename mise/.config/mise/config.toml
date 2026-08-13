@@ -18,6 +18,7 @@
 "aqua:sharkdp/hyperfine" = "latest"
 "aqua:tldr-pages/tlrc" = "latest"
 "aqua:tmux/tmux-builds" = "latest"
+"aqua:typst/typst" = "latest"
 "aqua:watchexec/watchexec" = "latest"
 "conda:chafa" = "latest"
 "conda:clang-format" = "latest"
