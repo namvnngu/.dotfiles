@@ -48,7 +48,9 @@ Clojure|[Tool] let-go: A Clojure dialect with a bytecode compiler and stack VM|h
 Clojure|[Tool] shadow-cljs: Compile your ClojureScript code with a focus on simplicity and ease of use|https://github.com/thheller/shadow-cljs
 Clojure|[Tool] Squint: A light-weight dialect of ClojureScript with a compiler and standard library|https://github.com/squint-cljs/squint
 Clojure|[Tool] The Clojure Toolbox: A categorised directory of libraries and tools|https://www.clojure-toolbox.com
+Common Lisp|[Lib] The Barium Toolkit: An X Window System toolkit for Common|https://tomscii.sig7.se/barium
 Common Lisp|[Tool] Coalton: An efficient, statically typed functional programming language that supercharges Common Lisp|https://coalton-lang.github.io
+Common Lisp|[Tool] ICL: Interactive Common Lisp, An Enhanced REPL|https://github.com/atgreen/icl
 CSS|[Learning] Every Layout|https://every-layout.dev
 CSS|[Learning] The Height Enigma|https://joshwcomeau.com/css/height-enigma
 CSS|[Reading] CSS Wrapped 2025|https://chrome.dev/css-wrapped-2025
@@ -349,7 +351,9 @@ System Design|Atoms, molecules, organisms|https://swizec.com/blog/atoms-molecule
 System Design|The Laws of Software Evolution|https://swizec.com/blog/the-laws-of-software-evolution
 System Design|The System Design Primer|https://github.com/donnemartin/system-design-primer
 System Design|Why utils are bad, an example|https://swizec.com/blog/why-utils-are-bad-an-example
+System Programming|[Book] Operating Systems: Three Easy Pieces|http://ostep.org
 System Programming|[Learning] CS 341: System Programming|https://cs341.cs.illinois.edu/coursebook
+System Programming|[Learning] Projects for an undergraduate OS course|https://github.com/remzi-arpacidusseau/ostep-projects
 System Programming|[Learning] Writing an OS in Rust|https://os.phil-opp.com
 System Programming|[Reading] Putting the "You" in CPU|https://cpu.land
 System Programming|[Reading] Unix as IDE|https://blog.sanctum.geek.nz/series/unix-as-ide
