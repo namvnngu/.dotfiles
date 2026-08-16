@@ -34,7 +34,7 @@ vim.keymap.set(
 )
 
 -- Create or edit file
-vim.keymap.set("n", "<Leader>e", ":e <C-R>=expand('%:p:h') . '/'<CR>")
+vim.keymap.set("n", "<Leader>e", ":e <C-R>=expand('%:.:h')<CR>")
 
 -- Make the current buffer a scratch buffer
 vim.keymap.set(

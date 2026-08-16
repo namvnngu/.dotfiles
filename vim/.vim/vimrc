@@ -78,7 +78,7 @@ vnoremap <Leader>p "_dP
 nnoremap <Leader>s :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
 
 " Create or edit file
-nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>e :e <C-R>=expand('%:.:h')<CR>
 
 " Make the current buffer a scratch buffer
 nnoremap <Leader>bs <Cmd>setlocal bt=nofile bh=wipe noswf nobl<CR>
@@ -128,11 +128,9 @@ augroup mkdir_on_edit
     autocmd BufWritePre * call s:mkdir_on_edit(expand('<afile>:p:h'))
 
     function! s:mkdir_on_edit(dir)
-      if a:dir =~ '^/'
-            \ && !isdirectory(a:dir)
-            \ && input("'" . a:dir . "' does not exist. Create? [y/N] ") =~? '^y\%[es]$'
-        call mkdir(a:dir, 'p')
-      endif
+        if a:dir =~ '^/' && !isdirectory(a:dir)
+            call mkdir(a:dir, 'p')
+        endif
     endfunction
 augroup END
 
