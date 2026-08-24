@@ -1,20 +1,15 @@
 
 
-# <type>(<scope>): <short summary>
-# <description>
-# 
-# <short summary> is in present tense, not capitalized and has no period at the end.
-# <description> is optional.
-# <scope> is optional.
-# <type> is
-#     build:    changes that affect the build system
-#     chore:    routine maintenance, tooling, dependency updates, or other non-production changes
-#     ci:       changes to CI configuration files and scripts
-#     docs:     documentation only changes
-#     feat:     a new feature
-#     fix:      a bug fix
-#     perf:     a code change that improves performance
-#     refactor: a code change that neither fixes a bug nor adds a feature
-#     style:    changes that do not affect the meaning of the code (e.g. formatting, whitespace)
-#     test:     adding missing tests or correcting existing tests
+# <scope>: <description>
 #
+# [optional body]
+#
+# [optional trailer(s)]
+#
+# <scope>: the subsystem, area, or module that the commit touches
+# <description>: a short description of the changes made
+# [optional body]: detailed information about the changes
+# [optional trailer(s)]: additional metadata about the commit
+# 
+# Reference: https://scopedcommits.com
+# -----------------------------------------------------------------------------
