@@ -1,5 +1,6 @@
 AI|[Reading] The Bitter Lesson|http://incompleteideas.net/IncIdeas/BitterLesson.html
 AI|[Tool] llamafile: Distribute and run LLMs with a single file|https://github.com/mozilla-ai/llamafile
+AI|[Tool] Your AI-Free Content Deserves a Badge|https://notbyai.fyi
 Audio|[Tool] Ambiphone: Ambient music + sounds for work, study and relaxation|https://ambiph.one
 Audio|[Tool] Audacity: A free and open-source digital audio editor and recording application software|https://audacityteam.org
 Audio|[Tool] Bosca Ceoil Blue: A simple and beginner-friendly app for making music|https://yurisizov.itch.io/boscaceoil-blue
@@ -149,11 +150,13 @@ Game Development|[Lib] raylib: a simple and easy-to-use library to enjoy videoga
 Game Development|[Lib] SDL: A cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D|https://libsdl.org
 Game Development|[Lib] SFML: SFML provides a simple interface to the various components of your PC, to ease the development of games and multimedia applications|https://sfml-dev.org
 Game Development|[Tool] A list of Game Development resources to make magic happen|https://github.com/ellisonleao/magictools
+Git|[Guide] Scoped Commits: A commit format focused on what matters|https://scopedcommits.com
 Git|[Learning] Pro Git|https://git-scm.com/book
 Git|[Reading] Bring your monorepo down to size with sparse-checkout|https://github.blog/open-source/git/bring-your-monorepo-down-to-size-with-sparse-checkout
 Git|[Reading] Get up to speed with partial clone and shallow clone|https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone
 Git|[Reading] Git rebase --onto an overview|https://womanonrails.com/git-rebase-onto
 Git|[Reading] How do I fetch all Git branches?|https://stackoverflow.com/a/10312587
+Git|[Reading] Stop Using Conventional Commits|https://sumnerevans.com/posts/software-engineering/stop-using-conventional-commits
 Git|[Snippet] Script to remove a range of commits from all branches in a given remote|https://gist.github.com/pfrenssen/1010a92ffa3e2abfdaec
 Gleam|[Lib] Lustre: Create HTML templates, single page applications, Web Components, and real-time server components|https://lustre.hexdocs.pm
 Go|[Fun] Pure Go minimal Doom implementation|https://github.com/AndreRenaud/Gore
