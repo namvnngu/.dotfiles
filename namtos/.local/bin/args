@@ -1,0 +1,10 @@
+#!/usr/bin/env bash -
+
+# Source: https://mywiki.wooledge.org/WordSplitting
+# Description: Show arguments as passed by shell
+# Date Created: August 24, 2026
+# Date Modified: August 24, 2026 
+
+printf "%d args:" "$#"
+[ "$#" -eq 0 ] || printf " <%s>" "$@"
+echo
