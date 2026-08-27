@@ -55,18 +55,6 @@ nnoremap <Leader>l <C-W>l
 " Yank the current file path
 nnoremap yp <Cmd>call setreg('+', expand('%:p'))<CR>
 
-" Keep searching centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Keep half-window scrolling centered
-nnoremap <C-D> <C-D>zz
-nnoremap <C-U> <C-U>zz
-
-" Navigate quickfix list and keep it centered
-nnoremap <C-K> <Cmd>cprev<CR>zz
-nnoremap <C-J> <Cmd>cnext<CR>zz
-
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
@@ -98,6 +86,10 @@ function! s:format()
     call winrestview(l:view)
 endfunction
 nnoremap <Leader>gq <Cmd>call <SID>format()<CR>
+
+" Navigate quickfix list
+nnoremap [q <Cmd>cprev<CR>zz
+nnoremap ]q <Cmd>cnext<CR>zz
 
 " Yank til the end
 nnoremap Y y$

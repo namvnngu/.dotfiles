@@ -7,18 +7,6 @@ vim.keymap.set("n", "<Leader>l", "<C-W>l", { remap = true })
 -- Yank the current file path
 vim.keymap.set("n", "yp", "<Cmd>call setreg('+', expand('%:p'))<CR>")
 
--- Keep searching centered
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
--- Keep half-window scrolling centered
-vim.keymap.set("n", "<C-D>", "<C-D>zz")
-vim.keymap.set("n", "<C-U>", "<C-U>zz")
-
--- Navigate quickfix list and keep it centered
-vim.keymap.set("n", "<C-J>", "<Cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-K>", "<Cmd>cprev<CR>zz")
-
 -- Better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
