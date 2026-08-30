@@ -31,6 +31,7 @@ Clojure|[Learning] Clojure-Doc: A community-driven documentation site for Clojur
 Clojure|[Lib] Biff: A full-stack web framework|https://biffweb.com
 Clojure|[Lib] Buddy: Security library|https://github.com/funcool/buddy
 Clojure|[Lib] cli: Command line parser with good subcommand and help handling|https://github.com/lambdaisland/cli
+Clojure|[Lib] CLJ Commons: A community-led project to build up the supporting infrastructure around Clojure|https://clj-commons.org
 Clojure|[Lib] cljfx: Declarative, functional and extensible wrapper of JavaFX inspired by react and re-frame|https://github.com/cljfx
 Clojure|[Lib] Component: Managed lifecycle of stateful objects|https://github.com/stuartsierra/component
 Clojure|[Lib] Duct: A server-side framework|https://duct-framework.org
@@ -74,7 +75,7 @@ C|[Lib] single_file_libs: List of single-file C/C++ libraries|https://github.com
 C|[Lib] sokol: Minimal cross-platform standalone C headers|https://github.com/floooh/sokol
 C|[Lib] stb: single-file public domain (or MIT licensed) libraries|https://github.com/nothings/stb
 C|[Lib] vaqt: High-precision date/time|https://github.com/nalgeon/vaqt
-C|[Lib] zpl: pushing the boundaries of simplicity|https://github.com/zpl-c
+C|[Lib] zpl: A collection of single-file header-only libraries|https://github.com/zpl-c
 C|[Reading] Awesome C|https://github.com/oz123/awesome-c
 C|[Reading] MallocInternals|https://sourceware.org/glibc/wiki/MallocInternals
 C|[Reading] One year of C|https://floooh.github.io/2018/06/02/one-year-of-c
