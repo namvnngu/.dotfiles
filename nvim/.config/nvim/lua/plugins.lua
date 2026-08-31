@@ -22,6 +22,9 @@ local optional = {
         "https://github.com/tpope/vim-dadbod",
         "https://github.com/kristijanhusak/vim-dadbod-ui",
     },
+    repl = {
+        "https://github.com/Olical/conjure",
+    },
     clojure = {
         "https://github.com/tpope/vim-fireplace",
         "https://github.com/tpope/vim-salve",
@@ -29,16 +32,28 @@ local optional = {
     csharp = {
         "https://github.com/GustavEikaas/easy-dotnet.nvim",
     },
+    java = {
+        "https://github.com/nvim-java/nvim-java",
+    },
 }
 
 local config_ok, config = pcall(require, "_config")
+local function apply_optional_plugins(name, group)
+    local plugin = config.plugins[name]
+    if not plugin or not plugin.enabled then
+        return
+    end
+
+    vim.list_extend(plugins, group)
+
+    for gkey, gvalue in pairs(plugin.gvars or {}) do
+        vim.g[gkey] = gvalue
+    end
+end
 
 if config_ok and config.plugins then
     for name, group in pairs(optional) do
-        local plugin = config.plugins[name]
-        if plugin and plugin.enabled then
-            vim.list_extend(plugins, group)
-        end
+        apply_optional_plugins(name, group)
     end
 end
 

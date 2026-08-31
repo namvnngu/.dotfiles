@@ -10,12 +10,21 @@ return {
             enabled = false,
         },
         database = {
-            enabled = false
+            enabled = false,
+        },
+        repl = {
+            enabled = false,
+            gvars = {
+                ["conjure#filetypes"] = { "clojure" },
+            },
         },
         clojure = {
             enabled = false,
         },
         csharp = {
+            enabled = false,
+        },
+        java = {
             enabled = false,
         },
     },
