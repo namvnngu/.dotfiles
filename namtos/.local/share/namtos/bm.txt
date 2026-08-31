@@ -28,6 +28,7 @@ C++|[Reading] Simplify C++: Write clean and maintainable C++|https://arne-mertz.
 C++|[Reading] Understanding Smart Pointers in C++|https://thecodinggopher.substack.com/p/understanding-smart-pointers-in-c
 C++|[Tool] Coliru: C++ online compiler|https://coliru.stacked-crooked.com
 Clojure|[Learning] Clojure-Doc: A community-driven documentation site for Clojure|https://clojure-doc.org
+Clojure|[Learning] Practicalli: Online books, articles and live coding videos for software engineering, with a focus on Clojure|https://practical.li
 Clojure|[Lib] Biff: A full-stack web framework|https://biffweb.com
 Clojure|[Lib] Buddy: Security library|https://github.com/funcool/buddy
 Clojure|[Lib] cli: Command line parser with good subcommand and help handling|https://github.com/lambdaisland/cli
@@ -180,6 +181,7 @@ Go|[Lib] ro: Reactive Programming paradigm for Go|https://ro.samber.dev
 Go|[Lib] Standard Go Project Layout|https://github.com/golang-standards/project-layout
 Go|[Lib] Ultimate Golang Makefile Template|https://github.com/crazywolf132/ultimate-gomake
 Go|[Lib] urfave/cli: A eclarative, simple, fast, and fun package for building command line tools|https://cli.urfave.org
+Go|[Lib] Wails: Build beautiful cross-platform applications|https://wails.io
 Go|[Reading] Goroutines in Go: A Practical Guide to Concurrency|https://getstream.io/blog/goroutines-go-concurrency-guide
 Go|[Reading] How does struct{} take zero bytes in Go|https://bud1m.com/blog/go-empty-struct
 Go|[Reading] The Anatomy of a Go Package. Structure, Imports, and Idioms|https://thecodinggopher.substack.com/p/the-anatomy-of-a-go-package-structure
@@ -270,6 +272,7 @@ OCaml|[Lib] Daniel Bünzli's Libraries|https://erratique.ch/software
 OCaml|[Lib] Ocsigen: A complete framework for developing Web and mobile apps using cutting edge techniques|https://ocsigen.org
 Programmer|Dmitry V. Sokolov|https://github.com/ssloy
 Programmer|Fabrice Bellard|https://bellard.org
+Programmer|Matt Godbolt|https://xania.org
 Programmer|Russ Cox|https://swtch.com/~rsc
 Programming|[Book] Build Your Own X From Scratch Books|https://build-your-own.org
 Programming|[Book] Crafting Interpreters|https://craftinginterpreters.com
@@ -345,6 +348,7 @@ Rust|[Lib] oxichrome: Write type-safe browser extensions with proc macros and Le
 Rust|[Lib] Polars: A blazingly fast DataFrame library for manipulating structured data|https://docs.pola.rs
 Rust|[Lib] Polars: Extremely fast Query Engine for DataFrames|https://pola.rs
 Rust|[Lib] Servo: A web browser rendering engine written in Rust|https://servo.org
+Rust|[Lib] Tauri: Create small, fast, secure, cross-platform applications|https://tauri.app
 Rust|[Lib] Xilem: A high-level architecture for writing GUI apps in Rust|https://github.com/linebender/xilem
 Rust|[Reading] Generating 1 Million PDFs in 10 Minutes|https://ersteiger.com/posts/rendering-one-million-pdfs
 Rust|[Reading] Master hexagonal architecture in Rust|https://howtocodeit.com/articles/master-hexagonal-architecture-rust
@@ -398,7 +402,6 @@ TypeScript/JavaScript|[Lib] Hono: A fast, lightweight web application framework,
 TypeScript/JavaScript|[Lib] Legend-State: An extremely fast signal-based state library with fine-grained reactivity and a powerful sync system|https://legendapp.com/open-source/state
 TypeScript/JavaScript|[Lib] LZMA-JS: A JavaScript implementation of the Lempel-Ziv-Markov (LZMA) chain compression algorithm|https://github.com/LZMA-JS/LZMA-JS
 TypeScript/JavaScript|[Lib] neverthrow: Type-safe errors for TypeScript|https://github.com/supermacro/neverthrow
-TypeScript/JavaScript|[Lib] pkgroll: Zero-config package bundler|https://github.com/privatenumber/pkgroll
 TypeScript/JavaScript|[Lib] radashi: The modern, community-first TypeScript toolkit with all of the fast, readable, and minimal utility functions|https://radashi.js.org
 TypeScript/JavaScript|[Lib] Remeda: Fully written in TypeScript for powerful, type-safe, and functional utilities|https://remedajs.com
 TypeScript/JavaScript|[Lib] RxDB: A NoSQL database for JavaScript that runs directly in your app|https://rxdb.info
@@ -407,8 +410,6 @@ TypeScript/JavaScript|[Lib] TinyBase: A reactive in-memory data store with persi
 TypeScript/JavaScript|[Lib] ts-essentials: All essential TypeScript types in one place 🤙|https://github.com/ts-essentials/ts-essentials
 TypeScript/JavaScript|[Lib] ts-pattern: The exhaustive Pattern Matching library for TypeScript, with smart type inference|https://github.com/gvergnaud/ts-pattern
 TypeScript/JavaScript|[Lib] ts-toolbelt: TypeScript's largest type utility library|https://github.com/millsp/ts-toolbelt
-TypeScript/JavaScript|[Lib] tsdown: The elegant bundler for libraries powered by Rolldown|https://tsdown.dev
-TypeScript/JavaScript|[Lib] tsup: The simplest and fastest way to bundle your TypeScript libraries|https://tsup.egoist.dev
 TypeScript/JavaScript|[Lib] type-fest: A collection of essential TypeScript types|https://github.com/sindresorhus/type-fest
 TypeScript/JavaScript|[Lib] utility-types: Collection of utility types, complementing TypeScript built-in mapped types and aliases (think "lodash" for static types)|https://github.com/piotrwitek/utility-types
 TypeScript/JavaScript|[Lib] Valibot: The modular and type safe schema library for validating structural data|https://valibot.dev
@@ -423,6 +424,9 @@ TypeScript/JavaScript|[Reading] TypeScript project references|https://moonrepo.d
 TypeScript/JavaScript|[Reading] Understanding and Tuning Memory|https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory
 TypeScript/JavaScript|[Reading] Why I stopped using snapshot testing with Jest|https://medium.com/@tomgold_48918/why-i-stopped-using-snapshot-testing-with-jest-3279fe41ffb2
 TypeScript/JavaScript|[Reading] Why would anyone need JavaScript generator functions?|https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
+TypeScript/JavaScript|[Tool] pkgroll: Zero-config package bundler|https://github.com/privatenumber/pkgroll
+TypeScript/JavaScript|[Tool] tsdown: The elegant bundler for libraries powered by Rolldown|https://tsdown.dev
+TypeScript/JavaScript|[Tool] tsup: The simplest and fastest way to bundle your TypeScript libraries|https://tsup.egoist.dev
 Video|[Learning] ffmprovisr: Making FFmpeg Easier|https://amiaopensource.github.io/ffmprovisr
 Video|[Tool] DaVinci Resolve: The world's only solution that combines editing, color correction, visual effects, motion graphics and audio post production all in one software tool|https://blackmagicdesign.com/products/davinciresolve
 Video|[Tool] Motion Canvas: A library for creating animated videos using the Canvas API|https://motioncanvas.io
