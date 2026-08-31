@@ -12,7 +12,7 @@ if [[ -z "${env}" || -z "${phone}" ]]; then
     exit 1
 fi
 
-case "$env" in
+case "${env}" in
     dev)
         account_name="${DEV_AZURE_STORAGE_ACCOUNT}"
         account_key="${DEV_AZURE_STORAGE_ACCESS_KEY}"
@@ -57,5 +57,5 @@ otp="$(
     sed -n 's/.*OTP is: \([0-9][0-9]*\).*/\1/p' "${tmp_file}" |
     head -n 1
 )"
-printf '%s' "$otp" | pbcopy
+printf '%s' "${otp}" | pbcopy
 echo "Copied OTP ${otp} to clipboard!"
