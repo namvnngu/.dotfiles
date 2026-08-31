@@ -65,7 +65,6 @@ CSS|[Tool] CSS Spring Easing Generator|https://kvin.me/css-springs
 C|[Docs] The Open Group Standard Base Specifications|https://pubs.opengroup.org/onlinepubs
 C|[Learning] Beej's Guide to C Programming - Library Reference|https://beej.us/guide/bgclr
 C|[Learning] Beej's Guide to C Programming|https://beej.us/guide/bgc
-C|[Learning] Building your own C application|https://opengl-tutorial.org/miscellaneous/building-your-own-c-application
 C|[Learning] Making a simple HTTP webserver in C|https://bruinsslot.jp/post/simple-http-webserver-in-c
 C|[Lib] facil.io: A C micro-framework for web applications|https://facil.io
 C|[Lib] lwan: A high-performance & scalable web server in C|https://lwan.ws
@@ -263,7 +262,7 @@ Library|Wikibooks|https://wikibooks.org
 Lua|[Tool] Lux: A package manager for Lua|https://lux.lumen-labs.org
 Miscellaneous|[Shopping] Moonpig Gift Shop|https://moonpig.com
 Miscellaneous|[Utility] Useful Links|https://start.me/p/L1rEYQ/osint4all
-Mobile Development|[Learning] How to Implement iOS Deep Linking Using Universal Links: Step-by-Step Deep Dive Guide — 2025|https://medium.com/@sonerkaraevli/how-to-implement-ios-deep-linking-using-universal-links-step-by-step-deep-dive-guide-2024-fe3882b3017c
+Mobile Development|[Learning] How to Implement iOS Deep Linking Using Universal Links: Step-by-Step Deep Dive Guide - 2025|https://medium.com/@sonerkaraevli/how-to-implement-ios-deep-linking-using-universal-links-step-by-step-deep-dive-guide-2024-fe3882b3017c
 Network|[Guide] How to Send Emails Using Gmail SMTP with Cloudflare Email Routing?|https://dev.to/pierre/gmail-with-cloudflare-email-routing-4413
 Network|[Learning] Beej's Guide to Network Programming|https://beej.us/guide/bgnet
 Network|[Learning] Beej's Guide to Networking Concepts|https://beej.us/guide/bgnet0
