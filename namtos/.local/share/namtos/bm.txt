@@ -27,7 +27,7 @@ C++|[Reading] ISO C++ Blog|https://isocpp.org/blog
 C++|[Reading] Simplify C++: Write clean and maintainable C++|https://arne-mertz.de
 C++|[Reading] Understanding Smart Pointers in C++|https://thecodinggopher.substack.com/p/understanding-smart-pointers-in-c
 C++|[Tool] Coliru: C++ online compiler|https://coliru.stacked-crooked.com
-Clojure|[Learning] Clojure-Doc: A community-driven documentation site for Clojure|https://clojure-doc.org
+Clojure|[Learning] Clojure-doc: A community-driven documentation site for Clojure|https://clojure-doc.org
 Clojure|[Learning] Practicalli: Online books, articles and live coding videos for software engineering, with a focus on Clojure|https://practical.li
 Clojure|[Lib] Biff: A full-stack web framework|https://biffweb.com
 Clojure|[Lib] Buddy: Security library|https://github.com/funcool/buddy
@@ -41,6 +41,7 @@ Clojure|[Lib] Kit: A lightweight, modular framework for scalable web development
 Clojure|[Lib] malli: High-performance data-driven schemas|https://github.com/metosin/malli
 Clojure|[Lib] next.jdbc: A modern low-level Clojure wrapper for JDBC-based access to databases|https://github.com/seancorfield/next-jdbc
 Clojure|[Lib] Pedestal: A sturdy and reliable base for services, APIs, and applications|https://pedestal.io
+Clojure|[Lib] Plotje: Composable plotting|https://scicloj.github.io/plotje
 Clojure|[Lib] Reagent: Minimalistic React for ClojureScript|https://reagent-project.github.io
 Clojure|[Lib] reitit: A fast data-driven router|https://github.com/metosin/reitit
 Clojure|[Lib] Ring: A Clojure web applications library inspired by Python's WSGI and Ruby's Rack|https://github.com/ring-clojure/ring
@@ -49,6 +50,7 @@ Clojure|[Tool] Babashka: A native, fast starting Clojure interpreter for scripti
 Clojure|[Tool] Figwheel: Build your ClojureScript code, and hot load it as you are coding|https://figwheel.org
 Clojure|[Tool] Glojure: A Clojure interpreter hosted on Go, with extensible interop support|https://github.com/glojurelang/glojure
 Clojure|[Tool] Joker: A small interpreted dialect of Clojure written in Go, and a Clojure(Script) linter|https://joker-lang.org
+Clojure|[Tool] Jolt: A self-hosted Clojure implementation that runs on a portable Scheme layer|https://jolt-lang.net
 Clojure|[Tool] let-go: A Clojure dialect with a bytecode compiler and stack VM|https://github.com/nooga/let-go
 Clojure|[Tool] shadow-cljs: Compile your ClojureScript code with a focus on simplicity and ease of use|https://github.com/thheller/shadow-cljs
 Clojure|[Tool] Squint: A light-weight dialect of ClojureScript with a compiler and standard library|https://github.com/squint-cljs/squint
