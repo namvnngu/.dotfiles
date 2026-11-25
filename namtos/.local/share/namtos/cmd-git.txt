@@ -54,7 +54,8 @@ git search commits with one-line log format: git log --all --oneline | grep <sea
 git shortlog who contributed most often to the specific directory since X time: git shortlog -sne --since='<since>' <directory-path> | head -10
 git shortlog who contributed most often to the specific directory: git shortlog -sne <directory-path> | head -10
 git show initial commit: git show $(git rev-list --max-parents=0 HEAD)
-git sparse-checkout to include only the directories or files in the working directory: git sparse-checkout init --cone && git sparse-checkout set <dirs>
+git sparse-checkout to include only the directories in the existing repository: git sparse-checkout init --cone && git sparse-checkout set <dirs>
+git sparse-checkout to include only the directories in the new repository: git clone --no-checkout <url> && git sparse-checkout init --cone && git sparse-checkout set <dirs>
 git switch branch: git switch <branch-name>
 git unset upstream: git branch --unset-upstream && git remote prune origin
 git unstage changes from the index: git restore --staged <path-to-file>
